@@ -1,0 +1,79 @@
+[
+  {
+    "id": "warrior/arms/r0c0",
+    "class": "warrior",
+    "tree": "Arms",
+    "page": "Primary",
+    "row": 0,
+    "col": 0,
+    "name": "Improved Heroic Strike",
+    "rank": {"current": 0, "max": 3},
+    "description_rank1": "Reduces the cost of your Heroic Strike ability by 1 rage point.",
+    "requires": [],
+    "extra_lines": [],
+    "source": {
+      "video": "DxtVEhjyROU", "t": 17832.25, "timestamp": "04:57:12.250", "frame_index": 1069935,
+      "frame_path": "work/frames/warrior/17832.25.png", "crop_path": "work/crops/warrior/17832.25.png",
+      "reader": "qwen3-vl-4b-instruct-q4_k_m", "confidence": 0.93, "reviewed": false
+    }
+  },
+  {
+    "id": "warrior/arms/r1c1",
+    "class": "warrior",
+    "tree": "Arms",
+    "page": "Primary",
+    "row": 1,
+    "col": 1,
+    "name": "Tactical Mastery",
+    "rank": {"current": 0, "max": 5},
+    "description_rank1": "You retain up to 5 of your rage points when you change stances.",
+    "requires": ["Requires 5 points in Arms Talents"],
+    "extra_lines": [],
+    "source": {
+      "video": "DxtVEhjyROU", "t": 17840.5, "timestamp": "04:57:20.500", "frame_index": 1070430,
+      "frame_path": "work/frames/warrior/17840.5.png", "crop_path": "work/crops/warrior/17840.5.png",
+      "reader": "qwen3-vl-4b-instruct-q4_k_m", "confidence": 0.71, "reviewed": false,
+      "readings": [
+        {"reader": "qwen3-vl-4b-instruct-q4_k_m/pass2", "name": "Tactical Mastery",
+         "description": "You retain up to 5 of your rage points when you change stances.", "maxRank": 5, "confidence": 0.71}
+      ]
+    }
+  },
+  {
+    "id": "warrior/arms/r2c1",
+    "class": "warrior",
+    "tree": "Arms",
+    "page": "Primary",
+    "row": 2,
+    "col": 1,
+    "name": "Anger Management",
+    "rank": {"current": 0, "max": 1},
+    "description_rank1": "Increases the time required for your rage to decay while out of combat by 30%.",
+    "requires": ["Requires 10 points in Arms Talents", "Requires 5 points in Tactical Mastery"],
+    "extra_lines": [],
+    "source": {
+      "video": "DxtVEhjyROU", "t": 17851.0, "timestamp": "04:57:31.000", "frame_index": 1071060,
+      "frame_path": "work/frames/warrior/17851.0.png", "crop_path": "work/crops/warrior/17851.0.png",
+      "reader": "qwen3-vl-4b-instruct-q4_k_m", "confidence": 0.95, "reviewed": false
+    }
+  },
+  {
+    "id": "warrior/arms/r2c1-dup",
+    "class": "warrior",
+    "tree": "Arms",
+    "page": "Primary",
+    "row": 2,
+    "col": 1,
+    "name": "Anger Managment",
+    "rank": {"current": 0, "max": 1},
+    "description_rank1": "Increases the time required for your rage to decay while out of combat by 30%.",
+    "requires": ["Requires Tactical Mastery (Rank 5)"],
+    "extra_lines": [],
+    "cut_off": true,
+    "source": {
+      "video": "DxtVEhjyROU", "t": 17990.0, "timestamp": "04:59:50.000", "frame_index": 1079400,
+      "frame_path": "work/frames/warrior/17990.0.png", "crop_path": "work/crops/warrior/17990.0.png",
+      "reader": "qwen3-vl-4b-instruct-q4_k_m", "confidence": 0.99, "reviewed": false
+    }
+  }
+]
