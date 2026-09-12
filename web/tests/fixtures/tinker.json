@@ -1,0 +1,170 @@
+{
+  "$schema": "../schema/class.schema.json",
+  "schemaVersion": 1,
+  "class": "tinker",
+  "className": "Tinker",
+  "dataVersion": 1,
+  "dataSource": "video",
+  "generatedAt": "2026-09-15T18:42:07Z",
+  "rules": {
+    "pointsPerRow": 5,
+    "maxPoints": 51,
+    "firstPointLevel": 10,
+    "maxLevel": 60,
+    "pointsPerPage": { "primary": 51, "secondary": 10 },
+    "rulesSource": "assumed"
+  },
+  "pages": [
+    { "id": "primary", "name": "Primary" },
+    { "id": "secondary", "name": "Secondary", "note": "Meaning of the Secondary tab unconfirmed; modelled as a separate 10-point pool." }
+  ],
+  "trees": [
+    {
+      "id": "gadgetry",
+      "name": "Gadgetry",
+      "page": "primary",
+      "order": 0,
+      "icon": "inv_misc_enggizmos_27",
+      "background": "tinker-gadgetry",
+      "rows": 7,
+      "cols": 4,
+      "role": "dps",
+      "source": { "kind": "video", "video": "DxtVEhjyROU", "t": 13102.500, "frame": 786150, "crop": "data/review/tinker/gadgetry/_header.png", "confidence": 0.99, "reader": "qwen3-vl-8b-instruct-q4_k_m", "reviewed": false },
+      "talents": [
+        {
+          "id": "improved-wrench",
+          "name": "Improved Wrench",
+          "row": 0, "col": 1,
+          "maxRank": 3,
+          "icon": "inv_misc_wrench_01",
+          "iconSource": "classic",
+          "description": "Reduces the cost of your Wrench Strike ability by {0} energy point{1}.",
+          "ranks": [[1, ""], [2, "s"], [3, "s"]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": { "classicTalentId": 124, "classicSpellIds": [12282, 12663, 12664], "match": "description", "similarity": 0.93 },
+          "ranksNote": "Same wording as Improved Heroic Strike; Classic scales 1/2/3.",
+          "tags": ["classic-unchanged"],
+          "source": {
+            "kind": "video", "video": "DxtVEhjyROU", "t": 13110.250, "frame": 786615,
+            "crop": "data/review/tinker/gadgetry/improved-wrench.png",
+            "confidence": 0.94, "reader": "qwen3-vl-8b-instruct-q4_k_m",
+            "reviewed": true, "reviewedBy": "deradon", "reviewedAt": "2026-09-15T17:30:00Z"
+          }
+        },
+        {
+          "id": "steady-hands",
+          "name": "Steady Hands",
+          "row": 0, "col": 2,
+          "maxRank": 5,
+          "icon": "crop-steady-hands",
+          "iconSource": "crop",
+          "iconCrop": "data/review/tinker/gadgetry/steady-hands.icon.png",
+          "description": "Increases your chance to hit with Gadgets by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": { "classicTalentId": 1341, "classicSpellIds": [12960, 12961, 12962, 12963, 12964], "match": "fuzzy-name", "similarity": 0.91 },
+          "source": {
+            "kind": "video", "video": "DxtVEhjyROU", "t": 13114.000, "frame": 786840,
+            "crop": "data/review/tinker/gadgetry/steady-hands.png",
+            "confidence": 0.71, "reader": "qwen3-vl-8b-instruct-q4_k_m",
+            "readings": [ { "reader": "rapidocr-1.4", "name": "Steady Hand", "description": "Increases your chance to hit with Gadgets by 1%.", "maxRank": 5, "confidence": 0.62 } ],
+            "reviewed": false,
+            "note": "cursor overlaps the icon; icon unmatched"
+          }
+        },
+        {
+          "id": "rocket-boots",
+          "name": "Rocket Boots",
+          "row": 2, "col": 1,
+          "maxRank": 1,
+          "icon": "inv_boots_02",
+          "iconSource": "classic",
+          "description": "Propels you forward, increasing movement speed by {0}% for {1} sec. {2} min cooldown.",
+          "ranks": [[70, 3, 2]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [ { "talent": "improved-wrench", "rank": 3 } ],
+          "tags": ["new"],
+          "source": {
+            "kind": "video", "video": "DxtVEhjyROU", "t": 13131.750, "frame": 787905,
+            "crop": "data/review/tinker/gadgetry/rocket-boots.png",
+            "confidence": 0.97, "reader": "qwen3-vl-8b-instruct-q4_k_m",
+            "reviewed": true, "reviewedBy": "deradon", "reviewedAt": "2026-09-15T17:31:00Z"
+          }
+        },
+        {
+          "id": "overclock",
+          "name": "Overclock",
+          "row": 6, "col": 1,
+          "maxRank": 1,
+          "icon": "spell_nature_lightning",
+          "iconSource": "classic",
+          "capstone": true,
+          "description": "Overclocks your gadgets, increasing all damage dealt by {0}% for {1} sec.",
+          "ranks": [[20, 15]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [990001],
+          "source": {
+            "kind": "manual",
+            "reviewed": true, "reviewedBy": "deradon", "reviewedAt": "2026-09-15T17:40:00Z",
+            "note": "Not hovered in the stream; text taken from the Output Lag panel screenshot."
+          }
+        }
+      ]
+    },
+    {
+      "id": "chemistry",
+      "name": "Chemistry",
+      "page": "secondary",
+      "order": 0,
+      "icon": "inv_potion_24",
+      "rows": 3,
+      "cols": 4,
+      "role": "hybrid",
+      "datamined": { "talentTabId": 999, "build": "1.60.1.69704" },
+      "talents": [
+        {
+          "id": "volatile-mixture",
+          "name": "Volatile Mixture",
+          "row": 0, "col": 0,
+          "maxRank": 3,
+          "icon": "inv_potion_23",
+          "iconSource": "classic",
+          "description": "Your Flasks also deal {0} Fire damage to nearby enemies.",
+          "ranks": [[40], [80], [120]],
+          "ranksObserved": [1],
+          "ranksSource": "extrapolated",
+          "ranksNote": "No Classic counterpart; linear x2, x3 of rank 1 assumed.",
+          "tags": ["new"],
+          "source": {
+            "kind": "video", "video": "DxtVEhjyROU", "t": 13240.000, "frame": 794400,
+            "crop": "data/review/tinker/chemistry/volatile-mixture.png",
+            "confidence": 0.88, "reader": "qwen3-vl-8b-instruct-q4_k_m",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "field-medic",
+          "name": "Field Medic",
+          "row": 1, "col": 1,
+          "maxRank": 2,
+          "icon": "inv_misc_bandage_12",
+          "iconSource": "datamined",
+          "description": "Your bandages heal {0}% more and can be used while moving.",
+          "ranks": ["Your bandages heal 10% more.", "Your bandages heal 20% more and can be used while moving."],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [990010, 990011],
+          "source": {
+            "kind": "datamined", "build": "1.60.1.69704", "talentId": 2101,
+            "reviewed": false
+          }
+        }
+      ]
+    }
+  ],
+  "notes": ["Fictional example class used to document the schema; not game data."]
+}

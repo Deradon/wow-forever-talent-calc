@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "createdAt": "2026-09-13T00:00:00Z",
+  "note": "Web fixture derived from the tinker example in docs/DATA-SCHEMA.md section 11; superseded by data/encoding/ once it exists.",
+  "classes": {
+    "tinker": {
+      "trees": ["gadgetry", "chemistry"],
+      "order": {
+        "gadgetry": ["improved-wrench", "steady-hands", "rocket-boots", "overclock"],
+        "chemistry": ["volatile-mixture", "field-medic"]
+      }
+    }
+  }
+}

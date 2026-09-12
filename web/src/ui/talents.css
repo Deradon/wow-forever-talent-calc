@@ -1,0 +1,211 @@
+/* The Classic skin: dark panels, gold borders, 44px cells. Layout is Tailwind. */
+
+:root {
+  --cell: 44px;
+  --gap: 12px;
+}
+
+.panel {
+  background: linear-gradient(180deg, var(--panel-2) 0%, var(--panel) 100%);
+  border: 1px solid var(--gold-border);
+  box-shadow:
+    inset 0 0 0 1px #000,
+    0 2px 12px rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+}
+
+.serif {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+}
+
+.btn {
+  border: 1px solid var(--gold-border);
+  background: linear-gradient(180deg, #2a2340 0%, #14101f 100%);
+  color: var(--gold);
+  padding: 4px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:hover {
+  border-color: var(--gold-dim);
+  filter: brightness(1.2);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  filter: none;
+}
+
+/* --- page tabs --- */
+.tab {
+  border: 1px solid var(--gold-border);
+  border-bottom: none;
+  background: #0b101c;
+  color: var(--text-dim);
+  padding: 6px 18px;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+}
+.tab[aria-selected='true'] {
+  background: var(--panel-2);
+  color: var(--gold);
+}
+
+/* --- tree grid --- */
+.tree-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--cell));
+  grid-template-rows: repeat(var(--rows), var(--cell));
+  gap: var(--gap);
+  padding: 14px;
+  background:
+    linear-gradient(rgba(6, 8, 16, 0.78), rgba(6, 8, 16, 0.92)),
+    radial-gradient(circle at 50% 20%, #1f2a4a 0%, #0a0d18 70%);
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+.tree-grid > svg.arrows {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* --- talent cell --- */
+.cell {
+  position: relative;
+  width: var(--cell);
+  height: var(--cell);
+  padding: 0;
+  border: 2px solid var(--grey);
+  border-radius: 4px;
+  background: #000;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  z-index: 1;
+}
+.cell:focus-visible {
+  box-shadow: 0 0 0 2px #fff;
+}
+.cell img,
+.cell .icon-fallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  object-fit: cover;
+}
+.cell .icon-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ddd;
+  background: linear-gradient(135deg, #3a3f5c, #1b1e2e);
+}
+.cell .badge {
+  position: absolute;
+  right: -7px;
+  bottom: -7px;
+  min-width: 18px;
+  padding: 0 3px;
+  height: 16px;
+  line-height: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background: #0b0b0b;
+  color: var(--grey);
+}
+
+.cell[data-state='available'],
+.cell[data-state='partial'] {
+  border-color: var(--green);
+}
+.cell[data-state='available'] .badge,
+.cell[data-state='partial'] .badge {
+  color: var(--green);
+}
+.cell[data-state='maxed'] {
+  border-color: var(--gold);
+}
+.cell[data-state='maxed'] .badge {
+  color: var(--gold);
+}
+.cell[data-state='locked'] {
+  border-color: #555;
+  cursor: not-allowed;
+}
+.cell[data-state='locked'] img,
+.cell[data-state='locked'] .icon-fallback {
+  filter: grayscale(1) brightness(0.5);
+}
+.cell[data-state='available'][data-addable='false'] {
+  cursor: default;
+}
+
+/* --- tooltip --- */
+.tooltip {
+  z-index: 50;
+  width: 300px;
+  max-width: calc(100vw - 16px);
+  padding: 8px 10px;
+  background: rgba(10, 14, 30, 0.97);
+  border: 1px solid var(--gold-border);
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 13px;
+  pointer-events: none;
+}
+.tooltip .name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+.tooltip .rank {
+  color: #fff;
+}
+.tooltip .desc {
+  color: #ffd;
+  margin-top: 6px;
+  white-space: pre-line;
+}
+.tooltip .next {
+  color: #ffd;
+  margin-top: 6px;
+}
+.tooltip .next.dim {
+  opacity: 0.7;
+}
+.tooltip .req {
+  color: var(--red);
+  margin-top: 6px;
+}
+.tooltip .caveat {
+  color: #e2a640;
+  margin-top: 6px;
+  font-size: 12px;
+}
+.tooltip .prov {
+  color: #8f98b3;
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+/* --- notices --- */
+.notice {
+  border: 1px solid #a67c1a;
+  background: #2b2210;
+  color: #ffe3a0;
+  padding: 6px 10px;
+  border-radius: 3px;
+}

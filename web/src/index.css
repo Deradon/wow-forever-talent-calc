@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+@import './ui/talents.css';
+
+:root {
+  color-scheme: dark;
+  --gold: #ffd100;
+  --gold-dim: #c8a24a;
+  --gold-border: #7a6230;
+  --green: #1eff00;
+  --grey: #8d8d8d;
+  --red: #ff4040;
+  --panel: #0f1526;
+  --panel-2: #161d33;
+  --bg: #07090f;
+  --text: #f0e6d2;
+  --text-dim: #b8b0a0;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+body {
+  background-image: radial-gradient(ellipse at top, #141b33 0%, var(--bg) 60%);
+}
+
+a {
+  color: var(--gold-dim);
+}
+
+button {
+  font: inherit;
+}
