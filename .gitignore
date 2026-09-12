@@ -1,0 +1,21 @@
+# pipeline artefacts
+pipeline/work/
+*.mp4
+*.mkv
+*.webm
+*.part
+*.ytdl
+
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# node
+node_modules/
+web/dist/
+
+# misc
+.DS_Store
+*.log
+.env
