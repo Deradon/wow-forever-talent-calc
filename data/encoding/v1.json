@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "createdAt": "2026-09-13T01:00:00Z",
+  "note": "Initial version. Only the fictional tinker example class (data/examples/tinker.json); real classes are added as they pass review, which bumps the version.",
+  "classes": {
+    "tinker": {
+      "trees": [
+        "gadgetry",
+        "chemistry"
+      ],
+      "order": {
+        "gadgetry": [
+          "improved-wrench",
+          "steady-hands",
+          "rocket-boots",
+          "overclock"
+        ],
+        "chemistry": [
+          "volatile-mixture",
+          "field-medic"
+        ]
+      }
+    }
+  }
+}

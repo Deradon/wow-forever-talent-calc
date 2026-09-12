@@ -1,0 +1,344 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/deradon/wow4ever-talents/data/schema/class.schema.json",
+  "title": "WoW Forever talent class file",
+  "description": "Schema version 1. Normative text: docs/DATA-SCHEMA.md. Validates data/talents/<class>.json and data/extracted/<class>.json. Cross-field rules that JSON Schema cannot express (ranks.length == maxRank, requires targets, uniqueness, file existence, encoding versions) live in pipeline/validate.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "class",
+    "className",
+    "dataVersion",
+    "dataSource",
+    "generatedAt",
+    "rules",
+    "pages",
+    "trees"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Relative path to this schema, for editor support only."
+    },
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "class": {
+      "$ref": "#/$defs/classId"
+    },
+    "className": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "dataVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "dataSource": {
+      "type": "string",
+      "enum": ["video", "datamined", "mixed", "manual"]
+    },
+    "generatedAt": {
+      "$ref": "#/$defs/rfc3339"
+    },
+    "rules": {
+      "$ref": "#/$defs/rules"
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/page" }
+    },
+    "trees": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/tree" }
+    },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "classId": {
+      "description": "Slug of the class name. The known set (druid hunter mage paladin priest rogue shaman warlock warrior) is checked by validate.py as a warning so fictional example classes still validate.",
+      "$ref": "#/$defs/slug"
+    },
+    "pageId": {
+      "type": "string",
+      "enum": ["primary", "secondary"]
+    },
+    "treeId": {
+      "$ref": "#/$defs/slug"
+    },
+    "talentId": {
+      "$ref": "#/$defs/slug"
+    },
+    "icon": {
+      "description": "Blizzard icon file name, lower-case, no extension; or the provisional slug crop-<talent-id> when iconSource is crop.",
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+$",
+      "minLength": 1,
+      "maxLength": 96
+    },
+    "rfc3339": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+    },
+    "repoPath": {
+      "description": "Repo-relative path, forward slashes, no leading slash or dot segments.",
+      "type": "string",
+      "pattern": "^(?!/)(?!\\.\\.?/)([^/\\\\]+/)*[^/\\\\]+$",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pointsPerRow", "maxPoints", "firstPointLevel", "maxLevel", "rulesSource"],
+      "properties": {
+        "pointsPerRow": { "type": "integer", "minimum": 0 },
+        "maxPoints": { "type": "integer", "minimum": 1 },
+        "firstPointLevel": { "type": "integer", "minimum": 1 },
+        "maxLevel": { "type": "integer", "minimum": 1 },
+        "pointsPerPage": {
+          "type": "object",
+          "propertyNames": { "$ref": "#/$defs/pageId" },
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "rulesSource": {
+          "type": "string",
+          "enum": ["observed", "classic-prior", "assumed"]
+        }
+      }
+    },
+    "page": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "$ref": "#/$defs/pageId" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "datamined": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["talentTabId", "build"],
+      "properties": {
+        "talentTabId": { "type": "integer", "minimum": 0 },
+        "build": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$" }
+      }
+    },
+    "tree": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "page", "order", "icon", "rows", "cols", "talents"],
+      "properties": {
+        "id": { "$ref": "#/$defs/treeId" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "page": { "$ref": "#/$defs/pageId" },
+        "order": { "type": "integer", "minimum": 0 },
+        "icon": { "$ref": "#/$defs/icon" },
+        "background": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "rows": { "type": "integer", "minimum": 1 },
+        "cols": { "type": "integer", "minimum": 1 },
+        "role": { "type": "string", "enum": ["tank", "healer", "dps", "hybrid"] },
+        "datamined": { "$ref": "#/$defs/datamined" },
+        "source": { "$ref": "#/$defs/source" },
+        "talents": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/talent" }
+        }
+      }
+    },
+    "requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["talent", "rank"],
+      "properties": {
+        "talent": { "$ref": "#/$defs/talentId" },
+        "rank": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "ranksPrior": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classicTalentId", "classicSpellIds", "match", "similarity"],
+      "properties": {
+        "classicTalentId": { "type": "integer", "minimum": 1 },
+        "classicSpellIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 9,
+          "items": { "type": "integer", "minimum": 1 }
+        },
+        "match": { "type": "string", "enum": ["exact-name", "fuzzy-name", "description"] },
+        "similarity": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "rankSlots": {
+      "description": "Array form of one rank: one value per {n} placeholder in description.",
+      "type": "array",
+      "items": { "type": ["number", "string"] }
+    },
+    "rankText": {
+      "description": "String form of one rank: the full rendered sentence, no placeholders.",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^{}]*$"
+    },
+    "reading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reader"],
+      "properties": {
+        "reader": { "type": "string", "minLength": 1 },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "maxRank": { "type": "integer", "minimum": 1, "maximum": 9 },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "reviewed"],
+      "properties": {
+        "kind": { "type": "string", "enum": ["video", "datamined", "manual"] },
+        "video": { "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" },
+        "t": { "type": "number", "minimum": 0 },
+        "frame": { "type": "integer", "minimum": 0 },
+        "crop": { "$ref": "#/$defs/repoPath" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "reader": { "type": "string", "minLength": 1 },
+        "readings": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/reading" }
+        },
+        "build": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "talentId": { "type": "integer", "minimum": 0 },
+        "reviewed": { "type": "boolean" },
+        "reviewedBy": { "type": "string", "minLength": 1 },
+        "reviewedAt": { "$ref": "#/$defs/rfc3339" },
+        "note": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "if": { "required": ["kind"], "properties": { "kind": { "const": "video" } } },
+          "then": { "required": ["video", "t", "frame", "crop", "confidence", "reader"] },
+          "else": {
+            "properties": {
+              "video": false, "t": false, "frame": false, "crop": false,
+              "confidence": false, "reader": false
+            }
+          }
+        },
+        {
+          "if": { "required": ["kind"], "properties": { "kind": { "const": "datamined" } } },
+          "then": { "required": ["build", "talentId"] },
+          "else": { "properties": { "build": false, "talentId": false } }
+        },
+        {
+          "if": { "required": ["reviewed"], "properties": { "reviewed": { "const": true } } },
+          "then": { "required": ["reviewedBy", "reviewedAt"] },
+          "else": { "properties": { "reviewedBy": false, "reviewedAt": false } }
+        }
+      ]
+    },
+    "talent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "name", "row", "col", "maxRank", "icon", "iconSource",
+        "description", "ranks", "ranksObserved", "ranksSource", "source"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/talentId" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "row": { "type": "integer", "minimum": 0 },
+        "col": { "type": "integer", "minimum": 0 },
+        "maxRank": { "type": "integer", "minimum": 1, "maximum": 9 },
+        "icon": { "$ref": "#/$defs/icon" },
+        "iconSource": { "type": "string", "enum": ["classic", "crop", "datamined", "manual"] },
+        "iconCrop": { "$ref": "#/$defs/repoPath" },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^{}]*(\\{[0-9]+\\}[^{}]*)*$"
+        },
+        "ranks": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 9,
+          "items": {
+            "oneOf": [
+              { "$ref": "#/$defs/rankSlots" },
+              { "$ref": "#/$defs/rankText" }
+            ]
+          }
+        },
+        "ranksObserved": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 9,
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 1, "maximum": 9 }
+        },
+        "ranksSource": {
+          "type": "string",
+          "enum": ["observed", "classic-prior", "extrapolated", "manual"]
+        },
+        "ranksPrior": { "$ref": "#/$defs/ranksPrior" },
+        "ranksNote": { "type": "string", "minLength": 1 },
+        "requires": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": { "$ref": "#/$defs/requirement" }
+        },
+        "capstone": { "type": "boolean" },
+        "spellIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 9,
+          "items": { "type": "integer", "minimum": 1 }
+        },
+        "tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" }
+        },
+        "source": { "$ref": "#/$defs/source" }
+      },
+      "allOf": [
+        {
+          "if": { "required": ["iconSource"], "properties": { "iconSource": { "const": "crop" } } },
+          "then": { "required": ["iconCrop"] },
+          "else": { "properties": { "iconCrop": false } }
+        },
+        {
+          "if": { "required": ["ranksSource"], "properties": { "ranksSource": { "const": "classic-prior" } } },
+          "then": { "required": ["ranksPrior"] },
+          "else": { "properties": { "ranksPrior": false } }
+        },
+        {
+          "if": { "required": ["ranksSource"], "properties": { "ranksSource": { "const": "manual" } } },
+          "then": { "required": ["ranksNote"] }
+        }
+      ]
+    }
+  }
+}
