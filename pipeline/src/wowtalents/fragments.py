@@ -13,6 +13,7 @@ import datetime as dt
 import json
 import re
 import subprocess
+import time
 from pathlib import Path
 
 import requests
@@ -169,3 +170,59 @@ class FragmentClient:
 
     def fetch(self, sq: int) -> bytes:
         return fetch_fragment(self.url, sq, self.session, self.timeout)
+
+
+FRAGS_DIR = WORK / "frags"
+
+
+class FragmentCache:
+    """On-disk cache of raw fragments (``work/frags/<sq>.bin``) for stages 3 and 4.
+
+    One request at a time, ``sleep`` seconds between network fetches, refresh
+    the URL after ``max_failures`` consecutive failures, abort when the main
+    download starts skipping fragments. Cached fragments cost no request.
+    """
+
+    def __init__(self, cache_dir: Path = FRAGS_DIR, sleep: float = 0.3, max_failures: int = 3,
+                 client: FragmentClient | None = None):
+        self.cache_dir = cache_dir
+        self.sleep = sleep
+        self.max_failures = max_failures
+        self._client = client
+        self.fetched = 0
+
+    @property
+    def client(self) -> FragmentClient:
+        if self._client is None:
+            self._client = FragmentClient()
+        return self._client
+
+    def path(self, sq: int) -> Path:
+        return self.cache_dir / f"{sq}.bin"
+
+    def get(self, sq: int) -> bytes:
+        p = self.path(sq)
+        if p.exists():
+            return p.read_bytes()
+        if skipped_fragments():
+            raise FragmentError("download.log shows skipped fragments; not touching the stream")
+        failures = 0
+        refreshed = False
+        while True:
+            try:
+                data = self.client.fetch(sq)
+                break
+            except Exception as e:  # noqa: BLE001
+                failures += 1
+                if failures >= self.max_failures:
+                    if refreshed:
+                        raise FragmentError(f"sq={sq}: still failing after a URL refresh: {e}") from e
+                    self.client.refresh()
+                    refreshed = True
+                    failures = 0
+                time.sleep(max(self.sleep, 1.0))
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_bytes(data)
+        self.fetched += 1
+        time.sleep(self.sleep)
+        return data

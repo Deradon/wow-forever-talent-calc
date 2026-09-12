@@ -3,4 +3,4 @@
 Stages live in ``pipeline/stages/NN_name.py`` and import from here.
 """
 
-__all__ = ["fragments"]
+__all__ = ["export", "fragments", "ranks"]

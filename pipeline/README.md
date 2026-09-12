@@ -50,6 +50,35 @@ consecutive failures trigger one `yt-dlp -j` URL refresh, failing again
 aborts, and any `Skipping fragment` line in `work/video/download.log` aborts
 immediately.
 
+## Stages 3 and 4: calibrate a segment, crop its tooltip hovers
+
+Both run on fragment streams while the mkv download is still going, using
+the segment list in `../data/extracted/segments.json`. A segment is addressed
+by its 1-based index, its id (`<index>-<class>-<t_start>`, e.g.
+`01-paladin-13640`) or its `t_start`. Raw fragments are cached in
+`work/frags/<sq>.bin` (about 400 KB each) so re-runs cost no requests; the
+same one-request-at-a-time / 0.3 s / refresh-on-failure / abort-on-skip
+rules as stage 0 apply.
+
+```bash
+# stage 3: median background (30 frames), icon grid, tab state, header crops
+uv run stages/03_calibrate.py run 1
+#   -> work/calib/01-paladin-13640.json, -median.png, -overlay.png (eyeball this),
+#      -header.png, -tree{1,2,3}.png (tree-name strips for the VLM)
+
+# stage 4: hovers at 15 fps (every 4th frame), one native crop per hovered cell
+uv run stages/04_hovers.py run 1
+uv run stages/04_hovers.py run 1 --start 13680 --end 13682   # a sub-range
+#   -> work/hovers/01-paladin-13640/<tree>-r<row>c<col>.png (tooltip),
+#      ...-icon.png (36 px icon from the median), unresolved-<n>.png,
+#      work/hovers/01-paladin-13640.json (per hover: t, sq, offset, bbox,
+#      cell, sharpness, hash, frames, cursor cross-check, cut_off) and
+#      work/hovers/01-paladin-13640-sheet.png (contact sheet)
+```
+
+Shared helpers (grid detection, tooltip blob, dHash grouping, cell lookup)
+live in `src/wowtalents/ui.py` and are unit-tested in `tests/test_ui.py`.
+
 ## Tests
 
 ```bash
