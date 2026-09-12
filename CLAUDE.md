@@ -40,6 +40,15 @@ gameplay video into talent JSON, and a static web app that renders it.
   exist; higher ranks are anticipated from Classic Era scaling and marked via
   `ranksSource`.
 
+## Commits and privacy
+
+- Public repository. No real names, e-mail addresses, home paths, hostnames
+  or hardware readouts in tracked files. Commit author identity is the
+  owner's normal git identity and is fine.
+- Commit messages: a `Co-Authored-By` line for Claude is fine; never add a
+  `Claude-Session:` line or any claude.ai session URL. A local commit-msg
+  hook rejects them.
+
 ## Commands
 
 See `README.md` (filled in as tooling lands). The stream download lives in
