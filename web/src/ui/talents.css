@@ -156,6 +156,7 @@
 /* The positioned element is the floating wrapper; z-index must live there. */
 .tooltip-layer {
   z-index: 50;
+  pointer-events: none; /* game tooltips are not interactive; never block cells */
 }
 .tooltip {
   width: 300px;
