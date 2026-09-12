@@ -1,0 +1,422 @@
+[
+  {
+    "t_start": 13640,
+    "t_end": 13700,
+    "start": "03:47:20",
+    "end": "03:48:20",
+    "class": "paladin",
+    "trees_visible": [
+      "Holy",
+      "Protection",
+      "Retribution"
+    ],
+    "page": "Primary",
+    "notes": "Horde paladin (level 38, 29 unspent), Durotar; hovers with tooltips",
+    "observations": 1
+  },
+  {
+    "t_start": 14320,
+    "t_end": 14350,
+    "start": "03:58:40",
+    "end": "03:59:10",
+    "class": "paladin",
+    "trees_visible": [
+      "Holy",
+      "Protection",
+      "Retribution"
+    ],
+    "page": "Primary",
+    "notes": "same paladin; short reopen",
+    "observations": 1
+  },
+  {
+    "t_start": 14430,
+    "t_end": 14450,
+    "start": "04:00:30",
+    "end": "04:00:50",
+    "class": "paladin",
+    "trees_visible": [
+      "Holy",
+      "Protection",
+      "Retribution"
+    ],
+    "page": "Primary",
+    "notes": "search box used (Improved Seal of Fury); interleaved with spellbook/who window",
+    "observations": 1
+  },
+  {
+    "t_start": 14460,
+    "t_end": 14480,
+    "start": "04:01:00",
+    "end": "04:01:20",
+    "class": "paladin",
+    "trees_visible": [
+      "Holy",
+      "Protection",
+      "Retribution"
+    ],
+    "page": "Primary",
+    "notes": "search box used (Improved Seal of Fury); interleaved with spellbook/who window",
+    "observations": 1
+  },
+  {
+    "t_start": 14510,
+    "t_end": 14520,
+    "start": "04:01:50",
+    "end": "04:02:00",
+    "class": "paladin",
+    "trees_visible": [
+      "Holy",
+      "Protection",
+      "Retribution"
+    ],
+    "page": "Primary",
+    "notes": "search box used (Improved Seal of Fury); interleaved with spellbook/who window",
+    "observations": 1
+  },
+  {
+    "t_start": 14760,
+    "t_end": 14830,
+    "start": "04:06:00",
+    "end": "04:07:10",
+    "class": "mage",
+    "trees_visible": [
+      "Arcane",
+      "Fire",
+      "Frost"
+    ],
+    "page": "Primary",
+    "notes": "Undead mage, Durotar; main hover pass; 14830-14840 and 14900-14960 settings/gameplay interruptions",
+    "observations": 1
+  },
+  {
+    "t_start": 14850,
+    "t_end": 14900,
+    "start": "04:07:30",
+    "end": "04:08:20",
+    "class": "mage",
+    "trees_visible": [
+      "Arcane",
+      "Fire",
+      "Frost"
+    ],
+    "page": "Primary",
+    "notes": "window open, idle (no tooltip most frames)",
+    "observations": 1
+  },
+  {
+    "t_start": 14970,
+    "t_end": 15020,
+    "start": "04:09:30",
+    "end": "04:10:20",
+    "class": "mage",
+    "trees_visible": [
+      "Arcane",
+      "Fire",
+      "Frost"
+    ],
+    "page": "Primary",
+    "notes": "hover pass continues",
+    "observations": 1
+  },
+  {
+    "t_start": 15040,
+    "t_end": 15150,
+    "start": "04:10:40",
+    "end": "04:12:30",
+    "class": "mage",
+    "trees_visible": [
+      "Arcane",
+      "Fire",
+      "Frost"
+    ],
+    "page": "Primary",
+    "notes": "hover pass continues; at 15120-15140 unspent count drops (points being spent), see check sheet",
+    "observations": 1
+  },
+  {
+    "t_start": 17580,
+    "t_end": 17600,
+    "start": "04:53:00",
+    "end": "04:53:20",
+    "class": "mage",
+    "trees_visible": [
+      "Arcane",
+      "Fire",
+      "Frost"
+    ],
+    "page": "Primary",
+    "notes": "RANK>0 RISK: 7 points already in Frost, 22 then 4 unspent; hovers here may show rank>0 (Permafrost 0/3 seen)",
+    "observations": 1
+  },
+  {
+    "t_start": 17610,
+    "t_end": 17620,
+    "start": "04:53:30",
+    "end": "04:53:40",
+    "class": "mage",
+    "trees_visible": [
+      "Arcane",
+      "Fire",
+      "Frost"
+    ],
+    "page": "Primary",
+    "notes": "RANK>0 RISK: points being spent",
+    "observations": 1
+  },
+  {
+    "t_start": 17830,
+    "t_end": 17840,
+    "start": "04:57:10",
+    "end": "04:57:20",
+    "class": "warrior",
+    "trees_visible": [
+      "Arms",
+      "Fury",
+      "Protection"
+    ],
+    "page": "Primary",
+    "notes": "Ashenvale (purple zone); 17840 audio settings; 17940 Accept/Decline dialog covers Fury header",
+    "observations": 1
+  },
+  {
+    "t_start": 17850,
+    "t_end": 18090,
+    "start": "04:57:30",
+    "end": "05:01:30",
+    "class": "warrior",
+    "trees_visible": [
+      "Arms",
+      "Fury",
+      "Protection"
+    ],
+    "page": "Primary",
+    "notes": "main warrior hover pass",
+    "observations": 1
+  },
+  {
+    "t_start": 18260,
+    "t_end": 18270,
+    "start": "05:04:20",
+    "end": "05:04:30",
+    "class": "rogue",
+    "trees_visible": [
+      "Assassination",
+      "Combat",
+      "Subtlety"
+    ],
+    "page": "Primary",
+    "notes": "Gnome rogue, Ashenvale; 18270 settings window",
+    "observations": 1
+  },
+  {
+    "t_start": 18280,
+    "t_end": 18600,
+    "start": "05:04:40",
+    "end": "05:10:00",
+    "class": "rogue",
+    "trees_visible": [
+      "Assassination",
+      "Combat",
+      "Subtlety"
+    ],
+    "page": "Primary",
+    "notes": "main rogue hover pass",
+    "observations": 1
+  },
+  {
+    "t_start": 18980,
+    "t_end": 19120,
+    "start": "05:16:20",
+    "end": "05:18:40",
+    "class": "warlock",
+    "trees_visible": [
+      "Affliction",
+      "Demonology",
+      "Destruction"
+    ],
+    "page": "Primary",
+    "notes": "Orc warlock, Durotar; second person on webcam",
+    "observations": 1
+  },
+  {
+    "t_start": 19140,
+    "t_end": 19400,
+    "start": "05:19:00",
+    "end": "05:23:20",
+    "class": "warlock",
+    "trees_visible": [
+      "Affliction",
+      "Demonology",
+      "Destruction"
+    ],
+    "page": "Primary",
+    "notes": "hover pass continues after spellbook",
+    "observations": 1
+  },
+  {
+    "t_start": 19460,
+    "t_end": 19780,
+    "start": "05:24:20",
+    "end": "05:29:40",
+    "class": "priest",
+    "trees_visible": [
+      "Discipline",
+      "Holy",
+      "Shadow Magic"
+    ],
+    "page": "Primary",
+    "notes": "Troll priest, Durotar; tree 3 is named Shadow Magic",
+    "observations": 1
+  },
+  {
+    "t_start": 19830,
+    "t_end": 20010,
+    "start": "05:30:30",
+    "end": "05:33:30",
+    "class": "shaman",
+    "trees_visible": [
+      "Elemental Combat",
+      "Enhancement",
+      "Restoration"
+    ],
+    "page": "Primary",
+    "notes": "Orc shaman, Durotar; tree 1 is named Elemental Combat",
+    "observations": 1
+  },
+  {
+    "t_start": 20040,
+    "t_end": 20050,
+    "start": "05:34:00",
+    "end": "05:34:10",
+    "class": "shaman",
+    "trees_visible": [
+      "Elemental Combat",
+      "Enhancement",
+      "Restoration"
+    ],
+    "page": "Primary",
+    "notes": "brief reopen between spellbook pages",
+    "observations": 1
+  },
+  {
+    "t_start": 20130,
+    "t_end": 20330,
+    "start": "05:35:30",
+    "end": "05:38:50",
+    "class": "shaman",
+    "trees_visible": [
+      "Elemental Combat",
+      "Enhancement",
+      "Restoration"
+    ],
+    "page": "Primary",
+    "notes": "hover pass continues; bag windows open on the right edge from 20240",
+    "observations": 1
+  },
+  {
+    "t_start": 20650,
+    "t_end": 20920,
+    "start": "05:44:10",
+    "end": "05:48:40",
+    "class": "druid",
+    "trees_visible": [
+      "Balance",
+      "Feral Combat",
+      "Restoration"
+    ],
+    "page": "Primary",
+    "notes": "Tauren druid, Durotar",
+    "observations": 1
+  },
+  {
+    "t_start": 21030,
+    "t_end": 21050,
+    "start": "05:50:30",
+    "end": "05:50:50",
+    "class": "hunter",
+    "trees_visible": [
+      "Beast Mastery",
+      "Marksmanship",
+      "Survival"
+    ],
+    "page": "Primary",
+    "notes": "Night elf hunter, Ashenvale; 21050 settings window",
+    "observations": 1
+  },
+  {
+    "t_start": 21060,
+    "t_end": 21320,
+    "start": "05:51:00",
+    "end": "05:55:20",
+    "class": "hunter",
+    "trees_visible": [
+      "Beast Mastery",
+      "Marksmanship",
+      "Survival"
+    ],
+    "page": "Primary",
+    "notes": "main hunter hover pass",
+    "observations": 1
+  },
+  {
+    "t_start": 21570,
+    "t_end": 21620,
+    "start": "05:59:30",
+    "end": "06:00:20",
+    "class": "paladin",
+    "trees_visible": [
+      "Holy",
+      "Protection",
+      "Retribution"
+    ],
+    "page": "Primary",
+    "notes": "second paladin (Dwarf, Alliance), Ashenvale; 21620 spellbook",
+    "observations": 1
+  },
+  {
+    "t_start": 21630,
+    "t_end": 21700,
+    "start": "06:00:30",
+    "end": "06:01:40",
+    "class": "paladin",
+    "trees_visible": [
+      "Holy",
+      "Protection",
+      "Retribution"
+    ],
+    "page": "Primary",
+    "notes": "paladin hover pass continues",
+    "observations": 1
+  },
+  {
+    "t_start": 21740,
+    "t_end": 21830,
+    "start": "06:02:20",
+    "end": "06:03:50",
+    "class": "paladin",
+    "trees_visible": [
+      "Holy",
+      "Protection",
+      "Retribution"
+    ],
+    "page": "Primary",
+    "notes": "paladin hover pass continues; 21830 game restarts (photosensitivity warning)",
+    "observations": 1
+  },
+  {
+    "t_start": 22600,
+    "t_end": 22660,
+    "start": "06:16:40",
+    "end": "06:17:40",
+    "class": "warrior",
+    "trees_visible": [
+      "Arms",
+      "Fury",
+      "Protection"
+    ],
+    "page": "Primary",
+    "notes": "warrior again, Durotar; search box used (charge)",
+    "observations": 1
+  }
+]

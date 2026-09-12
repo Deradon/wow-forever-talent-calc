@@ -142,6 +142,17 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-13 ~01:30: all three workstreams have a first increment. Data:
+  schema, validator (17 tests), encoding v1, Classic Era prior (432 talents).
+  Web: milestone 1 live at https://deradon.github.io/wow-forever-talent-calc/
+  on the example class (40 unit tests, 4 browser tests). Pipeline: uv project,
+  fragment client, stage 0 probe done: 28 segments, 49 min of talent footage
+  from 03:47:20 to 06:17, all nine classes, UI measured pixel-exact (see
+  `docs/handover/2026-09-13-pipeline-probe.md`). llama.cpp built with CUDA;
+  model weights not yet downloaded (waiting for the video download).
+- Next: `03_calibrate` and `04_hovers` on the Paladin segment using the probe
+  samples; download the 4B model once the video is in; then `05_read`.
+
 - 2026-09-13 00:27: download restarted with yt-dlp 2026.08.19 after the
   first attempt (2026.07.04) skipped ~1,200 fragments on 403s. Zero skips
   since; ETA ~02:50 local.
