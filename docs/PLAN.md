@@ -150,8 +150,12 @@ on every push to `main`.
   from 03:47:20 to 06:17, all nine classes, UI measured pixel-exact (see
   `docs/handover/2026-09-13-pipeline-probe.md`). llama.cpp built with CUDA;
   model weights not yet downloaded (waiting for the video download).
-- Next: `03_calibrate` and `04_hovers` on the Paladin segment using the probe
-  samples; download the 4B model once the video is in; then `05_read`.
+- 2026-09-13 ~02:15: Qwen3-VL-4B weights downloaded; llama-server runs on
+  port 8089 (8080 was taken on this machine) at ~1.6 s per crop. Stages 03/04
+  work: Paladin grid calibrated (52 cells: Holy 18, Protection 16,
+  Retribution 18, so Forever trees are larger than Classic's 15/14/15), 15
+  crops from the first segment. Rank anticipation and export scripts done
+  (81 pipeline tests). Stage 05 (read) in progress on Paladin end to end.
 
 - 2026-09-13 00:27: download restarted with yt-dlp 2026.08.19 after the
   first attempt (2026.07.04) skipped ~1,200 fragments on 403s. Zero skips
