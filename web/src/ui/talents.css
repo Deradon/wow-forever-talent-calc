@@ -153,8 +153,11 @@
 }
 
 /* --- tooltip --- */
-.tooltip {
+/* The positioned element is the floating wrapper; z-index must live there. */
+.tooltip-layer {
   z-index: 50;
+}
+.tooltip {
   width: 300px;
   max-width: calc(100vw - 16px);
   padding: 8px 10px;

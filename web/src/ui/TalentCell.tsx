@@ -89,7 +89,7 @@ export function TalentCell({ cls, tree, talent, rank, addVerdict, onAdd, onRemov
       </button>
       {open && (
         <FloatingPortal>
-          <div ref={refs.setFloating} style={floatingStyles} {...getFloatingProps()}>
+          <div ref={refs.setFloating} className="tooltip-layer" style={floatingStyles} {...getFloatingProps()}>
             <TooltipContent cls={cls} tree={tree} talent={talent} rank={rank} verdict={addVerdict} />
           </div>
         </FloatingPortal>
