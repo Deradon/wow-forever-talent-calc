@@ -84,6 +84,21 @@ talents, every talent traceable to a frame, rules working, links shareable.
   classes as they pass review. Web M2: tooltips with next rank, self-hosted
   icons, review route, class picker, provenance badge.
 
+### Phase 2b-2d: beyond talents (after Phase 2; brief: `docs/briefs/beyond-talents.md`)
+
+The stream also shows character creation with racial trait panels for 9 of
+10 races (about 60 % differ from Classic, Skyborne has two faction variants),
+a redesigned spellbook with new baseline spells, a new Legacy system, the
+Skyborne starting zone and a new character sheet. Inventory with timestamps:
+`data/extracted/other-content.md`.
+
+- 2b Races and race/class combos (~half a day): `data/races/<race>.json`,
+  route `#/races`. Cheapest, complete, highest news value.
+- 2c "What changed vs Classic" view (~1 day): route `#/changes`, generated
+  `data/changes/index.json`; stays valuable after datamining.
+- 2d Spellbook lists and hover tooltips (~1 day) only if talents are done;
+  Legacy and lore as a hand-written notes page (2-3 h).
+
 ### Phase 3: harden and prepare for datamined data (from 2026-09-17)
 - Importer path from DB2/Wowhead data into the same schema; data version bump
   and encoding migrations; addon export; SEO/OG; polish.
