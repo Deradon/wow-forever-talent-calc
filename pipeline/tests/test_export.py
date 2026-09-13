@@ -136,6 +136,41 @@ def test_unresolved_requirement_goes_to_source_note(tmp_path, prior):
     assert "requires" not in am and "unresolved requirement" in am["source"]["note"]
 
 
+def test_arrow_requires_merge_and_conflicts(tmp_path, prior):
+    root, records = make_repo(tmp_path)
+    arrow = {"tree": "Arms", "row": 1, "col": 1, "name": "Tactical Mastery", "rank": 5, "shape": "straight",
+             "confidence": 0.95, "medians": 2}
+    # 1. no tooltip requirement: the arrow becomes the prerequisite, with the max-rank note
+    records[2]["requires"] = []
+    records[2]["requires_arrows"] = [dict(arrow)]
+    doc = X.build_extracted("warrior", copy.deepcopy(records), prior, root=root)
+    am = talents_of(doc)["anger-management"]
+    assert am["requires"] == [{"talent": "tactical-mastery", "rank": 5}]
+    assert "prerequisite from tree arrow (stage 7): Tactical Mastery at rank 5 = its max rank" in am["source"]["note"]
+    # 2. tooltip says rank 3, arrow says 5: the tooltip wins, the conflict is logged and noted
+    records[2]["requires"] = ["Requires Tactical Mastery (Rank 3)"]
+    log = X.Log()
+    doc = X.build_extracted("warrior", copy.deepcopy(records), prior, root=root, log=log)
+    am = talents_of(doc)["anger-management"]
+    assert am["requires"] == [{"talent": "tactical-mastery", "rank": 3}]
+    assert any("ARROW-CONFLICT" in l for l in log.lines) and "arrow conflict" in am["source"]["note"]
+    # 3. tooltip names another talent: the arrow is dropped, tooltip kept
+    records[2]["requires"] = ["Requires Improved Heroic Strike (Rank 3)"]
+    log = X.Log()
+    doc = X.build_extracted("warrior", copy.deepcopy(records), prior, root=root, log=log)
+    am = talents_of(doc)["anger-management"]
+    assert am["requires"] == [{"talent": "improved-heroic-strike", "rank": 3}]
+    assert any("ARROW-CONFLICT" in l for l in log.lines)
+    # 4. same-row arrow: note only, no requires entry (schema rule 8)
+    records[2]["requires"] = []
+    records[1]["requires_arrows"] = [{"tree": "Arms", "row": 2, "col": 1, "name": "Anger Management", "rank": 1,
+                                      "shape": "row", "confidence": 1.0, "medians": 2}]
+    records[2]["requires_arrows"] = []
+    doc = X.build_extracted("warrior", copy.deepcopy(records), prior, root=root)
+    tm = talents_of(doc)["tactical-mastery"]
+    assert "requires" not in tm and "same-row prerequisite arrow from Anger Management" in tm["source"]["note"]
+
+
 def test_id_collision_across_trees_gets_tree_suffix(tmp_path, prior):
     root, records = make_repo(tmp_path)
     clone = copy.deepcopy(records[0])
@@ -286,3 +321,27 @@ def test_video_source_omits_null_reading_maxrank():
                         {"reader": "codex-cli", "name": "Feral Charge", "description": "x", "maxRank": 1, "confidence": 0.3}]}
     out = E._video_source(src, "data/review/druid/feral-combat/x.png", "vid", 60)
     assert "maxRank" not in out["readings"][0] and out["readings"][1]["maxRank"] == 1
+
+
+# ----------------------------------------------------------------------------
+# stage 9 icon fields on the candidate record
+# ----------------------------------------------------------------------------
+def test_candidate_icon_fields_replace_the_crop(tmp_path, prior):
+    root, records = make_repo(tmp_path)
+    records = copy.deepcopy(records)
+    records[0]["icon"] = "Ability_Warrior_SavageBlow"
+    records[0]["icon_source"] = "classic"
+    records[1]["icon"] = "inv_sword_27"           # no icon_source: ignored, stays a crop
+    records[2]["icon"] = "inv_axe_01"
+    records[2]["icon_source"] = "crop"           # not a known-icon source: ignored
+    doc = X.build_extracted("warrior", records, prior, root=root)
+    by_t = {(t["row"], t["col"], tree["name"]): t for tree in doc["trees"] for t in tree["talents"]}
+    matched = by_t[(records[0]["row"], records[0]["col"], records[0]["tree"])]
+    assert matched["icon"] == "ability_warrior_savageblow" and matched["iconSource"] == "classic"
+    assert "iconCrop" not in matched and matched["source"]["crop"].endswith(".png")
+    for rec in records[1:3]:
+        t = by_t[(rec["row"], rec["col"], rec["tree"])]
+        assert t["iconSource"] == "crop" and t["icon"] == f"crop-{t['id']}" and "iconCrop" in t
+    log = X.Log()
+    X.update_encoding(root, doc, log)
+    assert X.write_validated(doc, root / "data" / "extracted" / "warrior.json", root, log) is True

@@ -1762,7 +1762,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Affliction",
+          "row": 2,
+          "col": 2,
+          "name": "Amplify Curse",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.929,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warlock/affliction/r4c1",
@@ -2280,7 +2292,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Affliction",
+          "row": 4,
+          "col": 1,
+          "name": "Siphon Life",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warlock/demonology/r0c0",
@@ -3907,7 +3931,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Demonology",
+          "row": 2,
+          "col": 2,
+          "name": "Master Summoner",
+          "rank": 2,
+          "shape": "straight",
+          "confidence": 0.959,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warlock/demonology/r3c3",
@@ -4267,7 +4303,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Demonology",
+          "row": 2,
+          "col": 1,
+          "name": "Demonic Sacrifice",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warlock/demonology/r4c2",
@@ -4641,7 +4689,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Demonology",
+          "row": 4,
+          "col": 1,
+          "name": "Soul Link",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warlock/destruction/r0c0",
@@ -6126,7 +6186,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Destruction",
+          "row": 2,
+          "col": 2,
+          "name": "Shadowburn",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warlock/destruction/r4c0",
@@ -6259,7 +6331,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Destruction",
+          "row": 3,
+          "col": 0,
+          "name": "Intensity",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.923,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warlock/destruction/r4c1",
@@ -6525,7 +6609,19 @@
           "match": "description",
           "similarity": 0.91
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Destruction",
+          "row": 3,
+          "col": 2,
+          "name": "Conflagrate",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warlock/destruction/r5c2",
@@ -6791,7 +6887,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Destruction",
+          "row": 4,
+          "col": 1,
+          "name": "Bane of Havoc",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     }
   ],
   "recovery": {
@@ -6806,5 +6914,17 @@
     ],
     "collisions": [],
     "duplicate_names": []
+  },
+  "arrows": {
+    "generated_at": "2026-09-13T11:17:13Z",
+    "source": "work/arrows/warlock.json",
+    "calibrations": [
+      "16-warlock-18980",
+      "17-warlock-19140"
+    ],
+    "arrows": 9,
+    "merged": 9,
+    "unmatched": [],
+    "conflicts": []
   }
 }

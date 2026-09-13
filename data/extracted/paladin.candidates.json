@@ -1582,7 +1582,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Holy",
+          "row": 2,
+          "col": 1,
+          "name": "Reverence",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 7
+        }
+      ]
     },
     {
       "id": "paladin/holy/r3c2",
@@ -1843,7 +1855,19 @@
           "match": "description",
           "similarity": 0.91
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Holy",
+          "row": 4,
+          "col": 1,
+          "name": "Holy Shock",
+          "rank": 1,
+          "shape": "row",
+          "confidence": 1.0,
+          "medians": 7
+        }
+      ]
     },
     {
       "id": "paladin/holy/r4c1",
@@ -2351,7 +2375,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Holy",
+          "row": 4,
+          "col": 1,
+          "name": "Holy Shock",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 7
+        }
+      ]
     },
     {
       "id": "paladin/protection/r0c1",
@@ -3494,7 +3530,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Protection",
+          "row": 0,
+          "col": 2,
+          "name": "Redoubt",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 7
+        }
+      ]
     },
     {
       "id": "paladin/protection/r2c3",
@@ -3735,7 +3783,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Protection",
+          "row": 2,
+          "col": 0,
+          "name": "Improved Seal of Fury",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.988,
+          "medians": 7
+        }
+      ]
     },
     {
       "id": "paladin/protection/r3c1",
@@ -4563,7 +4623,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Protection",
+          "row": 4,
+          "col": 1,
+          "name": "Templar's Bulwark",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.902,
+          "medians": 7
+        }
+      ]
     },
     {
       "id": "paladin/retribution/r0c1",
@@ -6370,7 +6442,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Retribution",
+          "row": 2,
+          "col": 1,
+          "name": "Sanctified Judgement",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 7
+        }
+      ]
     },
     {
       "id": "paladin/retribution/r4c2",
@@ -7016,5 +7100,22 @@
         "paladin/holy/r1c0"
       ]
     }
-  ]
+  ],
+  "arrows": {
+    "generated_at": "2026-09-13T11:17:11Z",
+    "source": "work/arrows/paladin.json",
+    "calibrations": [
+      "01-paladin-13640",
+      "02-paladin-14320",
+      "03-paladin-14430",
+      "04-paladin-14460",
+      "25-paladin-21570",
+      "26-paladin-21630",
+      "27-paladin-21740"
+    ],
+    "arrows": 7,
+    "merged": 7,
+    "unmatched": [],
+    "conflicts": []
+  }
 }

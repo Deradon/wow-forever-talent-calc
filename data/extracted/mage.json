@@ -5,7 +5,7 @@
   "className": "Mage",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T10:25:08Z",
+  "generatedAt": "2026-09-13T11:17:14Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -676,6 +676,12 @@
             "similarity": 1.0
           },
           "ranksNote": "Classic mage/arcane/Arcane Meditation (talent 1142): Classic 5/10/15, Forever rank 1 is 17: applied +5/rank.",
+          "requires": [
+            {
+              "talent": "arcane-concentration",
+              "rank": 5
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -707,7 +713,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Arcane Concentration at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -914,6 +921,12 @@
           "ranks": [[15, 30, 30]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "presence-of-mind",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -945,7 +958,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Presence of Mind at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.78"
           }
         }
       ]
@@ -1512,6 +1526,12 @@
           "ranks": [[15, 25, 3]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "pyroblast",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1543,7 +1563,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Pyroblast at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1769,6 +1790,12 @@
           "ranks": [[10, 4]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "critical-mass",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1800,7 +1827,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Critical Mass at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         }
       ]
@@ -2672,6 +2700,12 @@
           "ranksObserved": [1],
           "ranksSource": "manual",
           "ranksNote": "needs manual ranks: duration slot (15 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+          "requires": [
+            {
+              "talent": "ice-lance",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2704,7 +2738,7 @@
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Ice Lance at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -2775,6 +2809,12 @@
           "ranks": [[431, 1]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "cold-snap",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2806,7 +2846,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Cold Snap at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         }
       ]

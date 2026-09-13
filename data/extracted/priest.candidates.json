@@ -1710,7 +1710,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Discipline",
+          "row": 1,
+          "col": 2,
+          "name": "Improved Power Word: Shield",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "priest/discipline/r3c3",
@@ -2075,7 +2087,19 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Discipline",
+          "row": 3,
+          "col": 2,
+          "name": "Soul Warding",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "priest/discipline/r5c2",
@@ -2315,7 +2339,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Discipline",
+          "row": 4,
+          "col": 1,
+          "name": "Penance",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "priest/holy/r0c0",
@@ -3763,7 +3799,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Holy",
+          "row": 1,
+          "col": 2,
+          "name": "Divine Fury",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "priest/holy/r3c3",
@@ -4487,7 +4535,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Holy",
+          "row": 4,
+          "col": 1,
+          "name": "Spirit of Redemption",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.879,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "priest/shadow-magic/r0c0",
@@ -5556,7 +5616,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Shadow Magic",
+          "row": 0,
+          "col": 1,
+          "name": "Blackout",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "priest/shadow-magic/r2c2",
@@ -6783,7 +6855,30 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Shadow Magic",
+          "row": 3,
+          "col": 1,
+          "name": "Vampiric Embrace",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 1
+        }
+      ]
     }
-  ]
+  ],
+  "arrows": {
+    "generated_at": "2026-09-13T11:17:12Z",
+    "source": "work/arrows/priest.json",
+    "calibrations": [
+      "18-priest-19460"
+    ],
+    "arrows": 7,
+    "merged": 7,
+    "unmatched": [],
+    "conflicts": []
+  }
 }

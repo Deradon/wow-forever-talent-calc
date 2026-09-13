@@ -58,6 +58,8 @@ if [ "$second" = 1 ]; then
 fi
 echo "== stage 06 $cls"
 uv run stages/06_rankfill.py "$cls" --force
+echo "== stage 07 $cls"
+uv run stages/07_arrows.py all "$cls"
 echo "== stage 08 $cls"
 uv run stages/08_export.py extract "$cls" $encoding
 echo "== validate"

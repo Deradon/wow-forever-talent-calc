@@ -50,9 +50,9 @@ test('manual-rank talents say higher ranks are unknown', async ({ page }) => {
 test('review route lists every talent, worst reading first, with crops and two tooltips', async ({ page }) => {
   await page.goto('/#/review/paladin')
   await expect(page).toHaveTitle('Review Paladin - WoW Forever Talent Calculator')
-  await expect(page.getByTestId('review-stats')).toContainText('45 talents')
+  await expect(page.getByTestId('review-stats')).toContainText('52 talents')
   const rows = page.locator('[data-testid^="review-"][data-group]')
-  await expect(rows).toHaveCount(45)
+  await expect(rows).toHaveCount(52)
   await expect(rows.first()).toHaveAttribute('data-group', 'queue')
   await expect(rows.first()).toContainText('70%')
   await expect(rows.last()).toContainText('100%')

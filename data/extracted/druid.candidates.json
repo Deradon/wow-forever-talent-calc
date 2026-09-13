@@ -1063,7 +1063,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Balance",
+          "row": 1,
+          "col": 2,
+          "name": "Nature's Majesty",
+          "rank": 2,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "druid/balance/r2c3",
@@ -1456,7 +1468,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Balance",
+          "row": 1,
+          "col": 1,
+          "name": "Improved Moonfire",
+          "rank": 2,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "druid/balance/r3c2",
@@ -3622,7 +3646,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Feral Combat",
+          "row": 2,
+          "col": 1,
+          "name": "Savage Fury",
+          "rank": 2,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "druid/feral-combat/r3c2",
@@ -3883,7 +3919,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Feral Combat",
+          "row": 2,
+          "col": 3,
+          "name": "Sharpened Claws",
+          "rank": 2,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "druid/feral-combat/r4c0",
@@ -4513,7 +4561,19 @@
           "match": "description",
           "similarity": 0.88
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Feral Combat",
+          "row": 3,
+          "col": 2,
+          "name": "Predatory Strikes",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "druid/feral-combat/r6c1",
@@ -4636,7 +4696,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Feral Combat",
+          "row": 4,
+          "col": 1,
+          "name": "Leader of the Pack",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "druid/restoration/r0c1",
@@ -6210,7 +6282,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Restoration",
+          "row": 1,
+          "col": 0,
+          "name": "Naturalist",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "druid/restoration/r4c1",
@@ -6605,7 +6689,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Restoration",
+          "row": 3,
+          "col": 2,
+          "name": "Improved Rejuvenation",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "druid/restoration/r6c1",
@@ -6738,7 +6834,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Restoration",
+          "row": 4,
+          "col": 1,
+          "name": "Living Spirit",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 1
+        }
+      ]
     }
   ],
   "recovery": {
@@ -6753,5 +6861,16 @@
     ],
     "collisions": [],
     "duplicate_names": []
+  },
+  "arrows": {
+    "generated_at": "2026-09-13T11:17:09Z",
+    "source": "work/arrows/druid.json",
+    "calibrations": [
+      "22-druid-20650"
+    ],
+    "arrows": 9,
+    "merged": 9,
+    "unmatched": [],
+    "conflicts": []
   }
 }

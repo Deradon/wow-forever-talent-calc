@@ -1864,7 +1864,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Arcane",
+          "row": 1,
+          "col": 2,
+          "name": "Arcane Concentration",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 0.985,
+          "medians": 5
+        }
+      ]
     },
     {
       "id": "mage/arcane/r3c3",
@@ -2465,7 +2477,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Arcane",
+          "row": 4,
+          "col": 1,
+          "name": "Presence of Mind",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.776,
+          "medians": 5
+        }
+      ]
     },
     {
       "id": "mage/fire/r0c0",
@@ -4509,7 +4533,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Fire",
+          "row": 4,
+          "col": 1,
+          "name": "Critical Mass",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 5
+        }
+      ]
     },
     {
       "id": "mage/frost/r0c0",
@@ -6765,7 +6801,19 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Frost",
+          "row": 2,
+          "col": 2,
+          "name": "Ice Lance",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 5
+        }
+      ]
     },
     {
       "id": "mage/frost/r5c2",
@@ -7039,7 +7087,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Frost",
+          "row": 4,
+          "col": 1,
+          "name": "Cold Snap",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 5
+        }
+      ]
     },
     {
       "id": "mage/fire/r3c2",
@@ -7154,7 +7214,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Fire",
+          "row": 2,
+          "col": 2,
+          "name": "Pyroblast",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.861,
+          "medians": 5
+        }
+      ]
     }
   ],
   "recovery": {
@@ -7226,5 +7298,20 @@
         "mage/fire/r3c2"
       ]
     }
-  ]
+  ],
+  "arrows": {
+    "generated_at": "2026-09-13T11:17:10Z",
+    "source": "work/arrows/mage.json",
+    "calibrations": [
+      "06-mage-14760",
+      "07-mage-14850",
+      "08-mage-14970",
+      "09-mage-15040",
+      "10-mage-17580"
+    ],
+    "arrows": 6,
+    "merged": 6,
+    "unmatched": [],
+    "conflicts": []
+  }
 }

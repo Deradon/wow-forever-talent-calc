@@ -1488,7 +1488,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Elemental Combat",
+          "row": 2,
+          "col": 2,
+          "name": "Elemental Fury",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 3
+        }
+      ]
     },
     {
       "id": "shaman/elemental-combat/r4c0",
@@ -1944,7 +1956,19 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Elemental Combat",
+          "row": 3,
+          "col": 2,
+          "name": "Call of Thunder",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.894,
+          "medians": 3
+        }
+      ]
     },
     {
       "id": "shaman/elemental-combat/r6c1",
@@ -2068,7 +2092,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Elemental Combat",
+          "row": 4,
+          "col": 1,
+          "name": "Lightning Overload",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.929,
+          "medians": 3
+        }
+      ]
     },
     {
       "id": "shaman/enhancement/r0c0",
@@ -3656,7 +3692,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Enhancement",
+          "row": 1,
+          "col": 1,
+          "name": "Mental Dexterity",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 3
+        }
+      ]
     },
     {
       "id": "shaman/enhancement/r3c2",
@@ -4127,7 +4175,19 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Enhancement",
+          "row": 3,
+          "col": 2,
+          "name": "Stormstrike",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 3
+        }
+      ]
     },
     {
       "id": "shaman/enhancement/r5c2",
@@ -4373,7 +4433,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Enhancement",
+          "row": 4,
+          "col": 1,
+          "name": "Mental Quickness",
+          "rank": 2,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 3
+        }
+      ]
     },
     {
       "id": "shaman/restoration/r0c1",
@@ -6461,7 +6533,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Restoration",
+          "row": 4,
+          "col": 1,
+          "name": "Healing Way",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.831,
+          "medians": 3
+        }
+      ]
     }
   ],
   "recovery": {
@@ -6480,5 +6564,18 @@
     ],
     "collisions": [],
     "duplicate_names": []
+  },
+  "arrows": {
+    "generated_at": "2026-09-13T11:17:12Z",
+    "source": "work/arrows/shaman.json",
+    "calibrations": [
+      "19-shaman-19830",
+      "20-shaman-20040",
+      "21-shaman-20130"
+    ],
+    "arrows": 7,
+    "merged": 7,
+    "unmatched": [],
+    "conflicts": []
   }
 }

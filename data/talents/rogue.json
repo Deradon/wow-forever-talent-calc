@@ -5,7 +5,7 @@
   "className": "Rogue",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T10:04:05Z",
+  "generatedAt": "2026-09-13T11:17:17Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -295,6 +295,12 @@
             "similarity": 1.0
           },
           "ranksNote": "Classic rogue/assassination/Lethality (talent 269): ranks copied.",
+          "requires": [
+            {
+              "talent": "malice",
+              "rank": 5
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -303,7 +309,8 @@
             "crop": "data/review/rogue/assassination/lethality.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Malice at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {
@@ -510,6 +517,12 @@
           "ranks": [[30, 10, 1, 9, 2, 12, 3, 15, 4, 18, 5, 21]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "mutilate",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -518,7 +531,8 @@
             "crop": "data/review/rogue/assassination/venom.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Mutilate at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -760,6 +774,12 @@
           "ranks": [[150, 6]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "deflection",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -768,7 +788,8 @@
             "crop": "data/review/rogue/combat/riposte.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Deflection at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -877,6 +898,12 @@
             "similarity": 1.0
           },
           "ranksNote": "Classic rogue/combat/Dual Wield Specialization (talent 221): Classic 10/20/30/40/50 scaled by 0.5.",
+          "requires": [
+            {
+              "talent": "precision",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -885,7 +912,8 @@
             "crop": "data/review/rogue/combat/dual-wield-specialization.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Precision at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.77"
           }
         },
         {
@@ -957,6 +985,12 @@
             "similarity": 1.0
           },
           "ranksNote": "Classic rogue/combat/Weapon Expertise (talent 1703): Classic 3/5, Forever rank 1 is 1: applied +2/rank.",
+          "requires": [
+            {
+              "talent": "blade-flurry",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -965,7 +999,8 @@
             "crop": "data/review/rogue/combat/weapon-expertise.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Blade Flurry at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.67"
           }
         },
         {
@@ -1487,6 +1522,12 @@
           "ranks": [[100, 145, 15, 15, 1]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "serrated-blades",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1495,7 +1536,8 @@
             "crop": "data/review/rogue/subtlety/hemorrhage.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Serrated Blades at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1512,6 +1554,12 @@
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
           "ranksNote": "No Classic counterpart; linear x2..x5 of rank 1 assumed.",
+          "requires": [
+            {
+              "talent": "dirty-deeds",
+              "rank": 2
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1520,7 +1568,8 @@
             "crop": "data/review/rogue/subtlety/quietus.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Dirty Deeds at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1561,6 +1610,12 @@
           "ranks": [[10, 3, 5]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "preparation",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1570,7 +1625,7 @@
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Preparation at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]

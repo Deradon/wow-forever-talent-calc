@@ -5,7 +5,7 @@
   "className": "Paladin",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T10:22:23Z",
+  "generatedAt": "2026-09-13T11:17:14Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -629,6 +629,12 @@
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
           "ranksNote": "Classic match paladin/holy/Illumination (talent 1461) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+          "requires": [
+            {
+              "talent": "reverence",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -660,7 +666,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Reverence at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {
@@ -762,7 +769,7 @@
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "second reader (codex) differs in description; same-row prerequisite arrow from Holy Shock (rank 1); not representable, the schema needs an earlier row"
           }
         },
         {
@@ -922,6 +929,12 @@
           "ranks": [[30, 315, 333, 175, 189, 75, 1]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "holy-shock",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -953,7 +966,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Holy Shock at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -1357,6 +1371,12 @@
           "ranksObserved": [1],
           "ranksSource": "manual",
           "ranksNote": "needs manual ranks: Classic match paladin/protection/Shield Specialization (talent 1424) has no alignable slots; ranks 2..3 are copies of rank 1.",
+          "requires": [
+            {
+              "talent": "redoubt",
+              "rank": 5
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1388,7 +1408,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Redoubt at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {
@@ -1453,6 +1474,12 @@
           "ranks": [[100]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "improved-seal-of-fury",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1484,7 +1511,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Improved Seal of Fury at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1751,6 +1779,12 @@
           "ranks": [[20, 10, 110, 20, 4]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "templars-bulwark",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1783,7 +1817,7 @@
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description; unparsed requirement: Requires Shields"
+            "note": "second reader (codex) differs in description; unparsed requirement: Requires Shields; prerequisite from tree arrow (stage 7): Templar's Bulwark at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -2487,6 +2521,12 @@
           "ranksObserved": [1],
           "ranksSource": "manual",
           "ranksNote": "needs manual ranks: Classic match paladin/retribution/Vengeance (talent 1402) has no alignable slots; ranks 2..3 are copies of rank 1.",
+          "requires": [
+            {
+              "talent": "sanctified-judgement",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2518,7 +2558,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Sanctified Judgement at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {

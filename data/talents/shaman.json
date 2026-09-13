@@ -5,7 +5,7 @@
   "className": "Shaman",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T10:04:06Z",
+  "generatedAt": "2026-09-13T11:17:17Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -339,6 +339,12 @@
           "ranks": [[3]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "elemental-fury",
+              "rank": 5
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -347,7 +353,8 @@
             "crop": "data/review/shaman/elemental-combat/call-of-thunder.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Elemental Fury at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {
@@ -439,6 +446,12 @@
           "ranksObserved": [1],
           "ranksSource": "manual",
           "ranksNote": "needs manual ranks: duration slot (0.17 sec) is never extrapolated; ranks 2..3 are copies of rank 1.",
+          "requires": [
+            {
+              "talent": "call-of-thunder",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -447,7 +460,8 @@
             "crop": "data/review/shaman/elemental-combat/elemental-alacrity.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Call of Thunder at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -463,6 +477,12 @@
           "ranks": [[158, 187, 20]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "lightning-overload",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -472,7 +492,7 @@
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Lightning Overload at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -845,6 +865,12 @@
             "similarity": 1.0
           },
           "ranksNote": "Classic shaman/enhancement/Flurry (talent 602): Classic 10/15/20/25/30, Forever rank 1 is 5: applied +5/rank.",
+          "requires": [
+            {
+              "talent": "mental-dexterity",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -853,7 +879,8 @@
             "crop": "data/review/shaman/enhancement/flurry.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Mental Dexterity at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -945,6 +972,12 @@
           "ranksObserved": [1],
           "ranksSource": "manual",
           "ranksNote": "needs manual ranks: duration slot (15 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+          "requires": [
+            {
+              "talent": "stormstrike",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -953,7 +986,8 @@
             "crop": "data/review/shaman/enhancement/improved-stormstrike.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Stormstrike at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -994,6 +1028,12 @@
           "ranks": [[30, 25]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "mental-quickness",
+              "rank": 2
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1003,7 +1043,7 @@
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in name"
+            "note": "second reader (codex) differs in name; prerequisite from tree arrow (stage 7): Mental Quickness at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -1462,6 +1502,12 @@
           "ranks": [[479, 528, 499, 15, 25]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "healing-way",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1470,7 +1516,8 @@
             "crop": "data/review/shaman/restoration/riptide.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Healing Way at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]

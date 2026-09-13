@@ -5,7 +5,7 @@
   "className": "Druid",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T10:04:07Z",
+  "generatedAt": "2026-09-13T11:17:13Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -413,6 +413,12 @@
           "ranks": [[3, 6, 2]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "natures-majesty",
+              "rank": 2
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -444,7 +450,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Nature's Majesty at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -562,6 +569,12 @@
             "similarity": 1.0
           },
           "ranksNote": "Classic druid/balance/Vengeance (talent 792): ranks copied.",
+          "requires": [
+            {
+              "talent": "improved-moonfire",
+              "rank": 2
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -593,7 +606,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Improved Moonfire at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1439,6 +1453,12 @@
           "ranks": [[100, 26]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "savage-fury",
+              "rank": 2
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1471,7 +1491,7 @@
               }
             ],
             "reviewed": false,
-            "note": "unparsed requirement: Requires Bear Form, Dire Bear Form"
+            "note": "unparsed requirement: Requires Bear Form, Dire Bear Form; prerequisite from tree arrow (stage 7): Savage Fury at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {
@@ -1543,6 +1563,12 @@
           "ranksObserved": [1],
           "ranksSource": "manual",
           "ranksNote": "needs manual ranks: Classic match druid/feral-combat/Primal Fury (talent 801) has no alignable slots; rank 2 is a copy of rank 1.",
+          "requires": [
+            {
+              "talent": "sharpened-claws",
+              "rank": 2
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1574,7 +1600,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Sharpened Claws at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1796,6 +1823,12 @@
             "similarity": 0.88
           },
           "ranksNote": "Classic hunter/beast-mastery/Unleashed Fury (talent 1396) (cross-class), matched on description (0.88): Classic 4/8/12/16/20 scaled by 0.5.",
+          "requires": [
+            {
+              "talent": "predatory-strikes",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1827,7 +1860,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Predatory Strikes at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1843,6 +1877,12 @@
           "ranks": [[3, 100, 15]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "leader-of-the-pack",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1875,7 +1915,7 @@
               }
             ],
             "reviewed": false,
-            "note": "unparsed requirement: Requires Cat Form, Bear Form, Dire Bear Form"
+            "note": "unparsed requirement: Requires Cat Form, Bear Form, Dire Bear Form; prerequisite from tree arrow (stage 7): Leader of the Pack at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -2488,6 +2528,12 @@
           "ranks": [[]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "naturalist",
+              "rank": 5
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2520,7 +2566,7 @@
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Naturalist at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {
@@ -2645,6 +2691,12 @@
             "similarity": 1.0
           },
           "ranksNote": "Classic druid/restoration/Improved Regrowth (talent 825): ranks copied.",
+          "requires": [
+            {
+              "talent": "improved-rejuvenation",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2676,7 +2728,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Improved Rejuvenation at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {
@@ -2692,6 +2745,12 @@
           "ranks": [[285, 7, 43]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "living-spirit",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2723,7 +2782,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Living Spirit at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         }
       ]

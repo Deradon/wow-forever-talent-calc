@@ -2,22 +2,22 @@
 
 Raw pipeline output (`data/extracted/<class>.json`, unreviewed) for all nine classes, validated with 0 errors each; includes the 34 cells recovered by the cursor track and the two recovered from the merged mkv (2026-09-13, `docs/handover/2026-09-13-all-classes.md` sections "Recovery" and "Recovery from the mkv"). Per-class run logs and fixes: `docs/handover/2026-09-13-all-classes.md`; method and error model: `docs/handover/2026-09-13-paladin-e2e.md`.
 
-Columns: cells = icon cells in the consensus grid (Forever tree size); crops = cells with a tooltip crop; read = records exported; needs-review = `source.confidence < 0.8` after the codex second opinion (a disagreement between the two readers, or a header-less tooltip); ranks manual/extrap. = `ranksSource` manual or extrapolated (no usable Classic pattern); missing = consensus cells with no tooltip on stream (fly-overs). Every exported record is in the review queue (unreviewed); the two review columns are the ones needing a decision.
+Columns: cells = icon cells in the consensus grid (Forever tree size); crops = cells with a tooltip crop; read = records exported; needs-review = `source.confidence < 0.8` after the codex second opinion (a disagreement between the two readers, or a header-less tooltip); prereqs (arrows) = talents with `requires`, all from the tree arrows read by stage 7 (`docs/handover/2026-09-13-prerequisites.md`); the Classic column shows the Classic Era talent count and, in parentheses, its prerequisite count; ranks manual/extrap. = `ranksSource` manual or extrapolated (no usable Classic pattern); missing = consensus cells with no tooltip on stream (fly-overs). Every exported record is in the review queue (unreviewed); the two review columns are the ones needing a decision.
 
 ## Per class
 
-| class | cells | read | needs-review | ranks manual/extrap. | missing | Classic talents |
-|---|---|---|---|---|---|---|
-| warrior | 54 | 54 | 5 | 14 | 0 | 52 |
-| paladin | 52 | 52 | 8 | 17 | 0 | 44 |
-| hunter | 50 | 50 | 8 | 15 | 0 | 46 |
-| rogue | 53 | 53 | 3 | 11 | 0 | 51 |
-| priest | 53 | 53 | 9 | 14 | 0 | 47 |
-| shaman | 50 | 50 | 10 | 14 | 0 | 46 |
-| mage | 54 | 53 | 9 | 10 | 1 | 49 |
-| warlock | 52 | 52 | 16 | 23 | 0 | 50 |
-| druid | 52 | 52 | 9 | 16 | 0 | 47 |
-| **total** | **470** | **469** | **77** | **134** | **1** | **432** |
+| class | cells | read | needs-review | ranks manual/extrap. | missing | prereqs (arrows) | Classic talents (prereqs) |
+|---|---|---|---|---|---|---|---|
+| warrior | 54 | 54 | 5 | 14 | 0 | 7 | 52 (9) |
+| paladin | 52 | 52 | 8 | 17 | 0 | 6 | 44 (5) |
+| hunter | 50 | 50 | 8 | 15 | 0 | 8 | 46 (6) |
+| rogue | 53 | 53 | 3 | 11 | 0 | 8 | 51 (7) |
+| priest | 53 | 53 | 9 | 14 | 0 | 7 | 47 (7) |
+| shaman | 50 | 50 | 10 | 14 | 0 | 7 | 46 (5) |
+| mage | 54 | 53 | 9 | 10 | 1 | 6 | 49 (7) |
+| warlock | 52 | 52 | 16 | 23 | 0 | 9 | 50 (9) |
+| druid | 52 | 52 | 9 | 16 | 0 | 9 | 47 (10) |
+| **total** | **470** | **469** | **77** | **134** | **1** | **67** | **432** (65) |
 
 ## Per tree
 
@@ -52,6 +52,35 @@ Forever cell counts next to the Classic Era tree (talent count) they descend fro
 | druid | Balance | 17 | 17 | 17 | 3 | 6 | 0 | Balance 16 |
 | druid | Feral Combat | 19 | 19 | 19 | 3 | 7 | 0 | Feral Combat 16 |
 | druid | Restoration | 16 | 16 | 16 | 3 | 3 | 0 | Restoration 15 |
+
+## Prerequisites (tree arrows, 2026-09-13)
+
+Rank-0 tooltips never list a talent prerequisite, so `requires` comes from
+the arrows between cells on the un-hovered tree (`pipeline/stages/07_arrows.py`
+on the stage-3 medians, `docs/handover/2026-09-13-prerequisites.md`). 68
+arrows over the 27 trees, 67 written (the paladin Holy Shock -> Divine
+Precision arrow runs along one row, which the schema cannot express; it is a
+`source.note` on Divine Precision). Every entry requires the target's max rank
+(the Classic rule; noted per talent). Codex reading the same crops confirms
+67 of the 68 and disagrees on none of the directions; 22 match a Classic Era
+prerequisite by name. Known errors: one false positive (warlock Shadowburn ->
+Conflagrate, an art stripe, confidence 0.7) and two misses (warrior Improved
+Bloodrage -> Last Stand, priest Mind Flay -> Improved Mind Flay). The 10
+"Requires ..." tooltip lines that do exist are stances, forms, shields and a
+level and stay in `source.note` (`unparsed requirement`).
+
+| class | prereqs written | per tree | at confidence 0.7 |
+|---|---|---|---|
+| warrior | 7 | Arms 3, Fury 2, Protection 2 | 0 |
+| paladin | 6 (+1 same-row note) | Holy 2, Protection 3, Retribution 1 | 3 |
+| hunter | 8 | Beast Mastery 3, Marksmanship 3, Survival 2 | 2 |
+| rogue | 8 | Assassination 2, Combat 3, Subtlety 3 | 3 |
+| priest | 7 | Discipline 3, Holy 2, Shadow Magic 2 | 2 |
+| shaman | 7 | Elemental Combat 3, Enhancement 3, Restoration 1 | 1 |
+| mage | 6 | Arcane 2, Fire 2, Frost 2 | 3 |
+| warlock | 9 | Affliction 2, Demonology 3, Destruction 4 | 3 |
+| druid | 9 | Balance 2, Feral Combat 4, Restoration 3 | 4 |
+| **total** | **67** | | **21** |
 
 ## Missing cells (1-based `r<row>c<col>` of the tree)
 

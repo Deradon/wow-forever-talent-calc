@@ -5,7 +5,7 @@
   "className": "Warrior",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T10:04:05Z",
+  "generatedAt": "2026-09-13T11:17:18Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -232,6 +232,12 @@
           "ranks": [[1, 3, 30]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "improved-tactical-mastery",
+              "rank": 5
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -240,7 +246,8 @@
             "crop": "data/review/warrior/arms/anger-management.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Improved Tactical Mastery at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -263,6 +270,12 @@
             "similarity": 1.0
           },
           "ranksNote": "Classic warrior/arms/Deep Wounds (talent 121): ranks copied.",
+          "requires": [
+            {
+              "talent": "improved-rend",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -271,7 +284,8 @@
             "crop": "data/review/warrior/arms/deep-wounds.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Improved Rend at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -511,6 +525,12 @@
           "ranks": [[85, 50, 10]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "sweeping-strikes",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -519,7 +539,8 @@
             "crop": "data/review/warrior/arms/mortal-strike.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Sweeping Strikes at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -1011,6 +1032,12 @@
             "similarity": 1.0
           },
           "ranksNote": "Classic warrior/fury/Flurry (talent 156): Classic 10/15/20/25/30, Forever rank 1 is 5: applied +5/rank.",
+          "requires": [
+            {
+              "talent": "enrage",
+              "rank": 5
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1019,7 +1046,8 @@
             "crop": "data/review/warrior/fury/flurry.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Enrage at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1035,6 +1063,12 @@
           "ranks": [[35, 30, 10, 10]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "death-wish",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1043,7 +1077,8 @@
             "crop": "data/review/warrior/fury/bloodthirst.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Death Wish at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -1254,6 +1289,12 @@
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
           "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+          "requires": [
+            {
+              "talent": "shield-specialization",
+              "rank": 5
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1262,7 +1303,8 @@
             "crop": "data/review/warrior/protection/master-of-defense.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Shield Specialization at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1582,6 +1624,12 @@
           "ranks": [[421, 439, 50, 1]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "concussion-blow",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1591,7 +1639,7 @@
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in description; unparsed requirement: Requires Shields"
+            "note": "second reader (codex) differs in description; unparsed requirement: Requires Shields; prerequisite from tree arrow (stage 7): Concussion Blow at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]

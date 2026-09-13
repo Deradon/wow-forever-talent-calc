@@ -957,7 +957,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Arms",
+          "row": 1,
+          "col": 1,
+          "name": "Improved Tactical Mastery",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 0.917,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warrior/arms/r2c2",
@@ -1091,7 +1103,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Arms",
+          "row": 0,
+          "col": 2,
+          "name": "Improved Rend",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warrior/arms/r3c0",
@@ -2284,7 +2308,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Arms",
+          "row": 4,
+          "col": 1,
+          "name": "Sweeping Strikes",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.985,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warrior/fury/r0c1",
@@ -4552,7 +4588,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Fury",
+          "row": 3,
+          "col": 2,
+          "name": "Enrage",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 0.879,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warrior/fury/r6c1",
@@ -4683,7 +4731,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Fury",
+          "row": 4,
+          "col": 1,
+          "name": "Death Wish",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.962,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warrior/protection/r0c1",
@@ -5637,7 +5697,19 @@
         "confidence": "low",
         "review": true,
         "rule": "linear"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Protection",
+          "row": 0,
+          "col": 1,
+          "name": "Shield Specialization",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warrior/protection/r2c2",
@@ -7216,7 +7288,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Protection",
+          "row": 4,
+          "col": 1,
+          "name": "Concussion Blow",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     }
   ],
   "recovery": {
@@ -7233,5 +7317,17 @@
     ],
     "collisions": [],
     "duplicate_names": []
+  },
+  "arrows": {
+    "generated_at": "2026-09-13T11:17:13Z",
+    "source": "work/arrows/warrior.json",
+    "calibrations": [
+      "13-warrior-17850",
+      "28-warrior-22600"
+    ],
+    "arrows": 7,
+    "merged": 7,
+    "unmatched": [],
+    "conflicts": []
   }
 }

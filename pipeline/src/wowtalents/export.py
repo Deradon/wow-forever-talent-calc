@@ -241,9 +241,10 @@ def build_extracted(cls: str, records: list[dict], prior: R.Prior | None, *, roo
         by_name = {R.slug(R.clean_text(r.get("name") or "")): i for r, i in zip(t["records"], ids) if r.get("name")}
         names = [(R.clean_text(r.get("name") or ""), i) for r, i in zip(t["records"], ids) if r.get("name")]
         rows_of = {i: int(r.get("row", 0)) for r, i in zip(t["records"], ids)}
+        id_at = {(int(r.get("row", 0)), int(r.get("col", 0))): i for r, i in zip(t["records"], ids)}
         talents = []
         for rec, tid in zip(t["records"], ids):
-            talents.append(_talent(cls, t, rec, tid, by_name, names, rows_of, root, video, fps, copy_crops, log))
+            talents.append(_talent(cls, t, rec, tid, by_name, names, rows_of, root, video, fps, copy_crops, log, id_at))
         talents.sort(key=lambda x: (x["row"], x["col"]))
         rows = max(DEFAULT_ROWS, max(x["row"] for x in talents) + 1)
         cols = max(DEFAULT_COLS, max(x["col"] for x in talents) + 1)
@@ -321,8 +322,53 @@ def _place_crop(src_path: str | None, dest_rel: str, root: Path, copy_crops: boo
     return True
 
 
+ARROW_NOTE = "prerequisite from tree arrow (stage 7): {name} at rank {rank} = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+
+
+def merge_arrow_requires(rec: dict, path: str, requires: list[dict], rows_of: dict, id_at: dict[tuple[int, int], str],
+                         notes: list[str], log: Log) -> None:
+    """Add the arrow-derived prerequisites of ``rec`` (``requires_arrows`` from stage 7) to ``requires``.
+
+    A tooltip-derived requirement is never overwritten: when the tooltip names the same
+    target with another rank the tooltip's rank stays, and when the tooltip names other
+    targets only, the arrow is dropped; both are logged as ``ARROW-CONFLICT`` and noted.
+    An arrow whose target is not in an earlier row (same-row arrows, which the schema
+    cannot express) or whose target cell has no record goes to ``source.note`` only.
+    """
+    tooltip_targets = {r["talent"] for r in requires}
+    for arrow in rec.get("requires_arrows") or []:
+        row, col = int(arrow.get("row", -1)), int(arrow.get("col", -1))
+        name = str(arrow.get("name") or f"r{row}c{col}")
+        rank = int(arrow.get("rank") or 1)
+        target = id_at.get((row, col))
+        if target is None:
+            log.warn(f"{path}: arrow from cell r{row}c{col} has no talent record; kept as a note")
+            notes.append(f"unresolved prerequisite arrow from r{row}c{col} ({name})")
+            continue
+        if rows_of.get(target, 0) >= int(rec.get("row", 0)):
+            log.warn(f"{path}: arrow from {target!r} is not from an earlier row (same-row prerequisite); kept as a note")
+            notes.append(f"same-row prerequisite arrow from {name} (rank {rank}); not representable, the schema needs an earlier row")
+            continue
+        if tooltip_targets and target not in tooltip_targets:
+            log.warn(f"{path}: ARROW-CONFLICT arrow from {target!r} but the tooltip requires {sorted(tooltip_targets)}; tooltip kept")
+            notes.append(f"arrow conflict: tree arrow from {name} (rank {rank}), tooltip names another talent; tooltip kept")
+            continue
+        if target in tooltip_targets:
+            cur = next(r for r in requires if r["talent"] == target)
+            if cur["rank"] != rank:
+                log.warn(f"{path}: ARROW-CONFLICT arrow says {target!r} rank {rank}, tooltip says rank {cur['rank']}; tooltip kept")
+                notes.append(f"arrow conflict: tree arrow implies {name} rank {rank}, tooltip says rank {cur['rank']}; tooltip kept")
+            else:
+                log.info(f"{path}: arrow from {target!r} confirms the tooltip requirement")
+            continue
+        requires.append({"talent": target, "rank": rank})
+        notes.append(ARROW_NOTE.format(name=name, rank=rank))
+        if float(arrow.get("confidence") or 0.0) < 0.8:
+            notes.append(f"arrow confidence {float(arrow.get('confidence') or 0.0):.2f}")
+
+
 def _talent(cls: str, tree: dict, rec: dict, tid: str, by_name: dict, names: list, rows_of: dict, root: Path,
-            video: str, fps: int, copy_crops: bool, log: Log) -> dict:
+            video: str, fps: int, copy_crops: bool, log: Log, id_at: dict[tuple[int, int], str] | None = None) -> dict:
     path = f"{cls}/{tree['id']}/{tid}"
     name = R.clean_text(rec.get("name") or "") or f"Unread r{rec.get('row')}c{rec.get('col')}"
     rank = rec.get("rank") or {}
@@ -362,6 +408,7 @@ def _talent(cls: str, tree: dict, rec: dict, tid: str, by_name: dict, names: lis
         if rows_of.get(target, 0) >= int(rec.get("row", 0)):
             log.warn(f"{path}: requirement target {target!r} is not in an earlier row")
         requires.append({"talent": target, "rank": int(req["points"])})
+    merge_arrow_requires(rec, path, requires, rows_of, id_at or {}, notes, log)
 
     t: dict[str, Any] = {
         "id": tid,
@@ -377,6 +424,11 @@ def _talent(cls: str, tree: dict, rec: dict, tid: str, by_name: dict, names: lis
         "ranksObserved": [1],
         "ranksSource": ra["ranksSource"],
     }
+    # stage 9 (icon matching) writes icon / icon_source into the candidate record
+    if rec.get("icon") and rec.get("icon_source") in ("classic", "datamined", "manual"):
+        t["icon"] = str(rec["icon"]).lower()
+        t["iconSource"] = str(rec["icon_source"])
+        t.pop("iconCrop", None)  # schema: iconCrop iff iconSource == "crop"; the crop file stays under data/review/
     if "ranksPrior" in ra:
         t["ranksPrior"] = ra["ranksPrior"]
     if ra.get("ranksNote"):

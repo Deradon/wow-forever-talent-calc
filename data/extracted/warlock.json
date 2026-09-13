@@ -5,7 +5,7 @@
   "className": "Warlock",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T10:04:06Z",
+  "generatedAt": "2026-09-13T11:17:18Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -666,6 +666,12 @@
           "ranks": [[30, 12]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "amplify-curse",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -697,7 +703,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Amplify Curse at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -863,6 +870,12 @@
           "ranks": [[52, 1, 10, 6]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "siphon-life",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -895,7 +908,7 @@
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Siphon Life at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -1535,6 +1548,12 @@
           "ranks": [[5.5, 50]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "master-summoner",
+              "rank": 2
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1566,7 +1585,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Master Summoner at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1678,6 +1698,12 @@
           "ranks": [[30, 3]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "demonic-sacrifice",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1709,7 +1735,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Demonic Sacrifice at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {
@@ -1827,6 +1854,12 @@
           "ranks": [[]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "soul-link",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1858,7 +1891,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Soul Link at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         }
       ]
@@ -2400,6 +2434,12 @@
           "ranks": [[109, 132]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "shadowburn",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2431,7 +2471,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Shadowburn at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {
@@ -2448,6 +2489,12 @@
           "ranksObserved": [1],
           "ranksSource": "manual",
           "ranksNote": "needs manual ranks: Classic match warlock/destruction/Pyroclasm (talent 986) has no alignable slots; rank 2 is a copy of rank 1.",
+          "requires": [
+            {
+              "talent": "intensity",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2480,7 +2527,7 @@
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Intensity at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -2550,6 +2597,12 @@
             "similarity": 0.91
           },
           "ranksNote": "Classic mage/fire/Critical Mass (talent 33) (cross-class), matched on description (0.91): Classic 2/4/6 scaled by 4.",
+          "requires": [
+            {
+              "talent": "conflagrate",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2581,7 +2634,8 @@
                 "confidence": 1.0
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Conflagrate at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -2652,6 +2706,12 @@
           "ranks": [[125, 140, 25]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "bane-of-havoc",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2684,7 +2744,7 @@
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Bane of Havoc at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]

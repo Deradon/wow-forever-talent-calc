@@ -163,6 +163,86 @@ Tests: `tests/test_ranks.py` (real Classic talents as fixtures) and
 `tests/test_export.py` (synthetic `tests/fixtures/warrior.candidates.json`,
 end to end through the stage CLI in a temporary repo root).
 
+<!-- stage 9 (icon matching); keep this section self-contained -->
+<!-- stage 7 (prerequisite arrows); keep this section self-contained -->
+## Stage 7: prerequisite arrows
+
+Rank-0 tooltips never list a talent prerequisite (0 of 1155 cached readings
+carry a "Requires <talent> (Rank N)" line; the 10 "Requires ..." lines that
+exist are stances, forms, shields and a level), so `requires` comes from the
+arrows drawn between cells. Shared code `src/wowtalents/arrows.py`, stage
+`stages/07_arrows.py`, tests `tests/test_arrows.py` (synthetic tree).
+
+```bash
+uv run stages/07_arrows.py detect warrior     # -> work/arrows/warrior.json + warrior-overlay.png (eyeball this)
+uv run stages/07_arrows.py merge warrior      # requires_arrows into data/extracted/warrior.candidates.json
+uv run stages/07_arrows.py all all            # both, every class; run_class.sh runs it between 06 and 08
+uv run stages/08_export.py all warrior --update-encoding
+```
+
+How it works: the class's own Primary-page calibration medians (stage 3,
+`>= 40` cells, borrowed `m*` calibrations skipped) give the un-hovered tree;
+the consensus grid (cells in more than half of the medians, median rects) the
+cell rects. The arrow texture is a bevelled ~2 px stroke (dark outline, 1 px
+lighter core) ending in a small filled triangle at the dependent talent; on
+the stream it reads as a thin line about half as bright as the art 4-7 px to
+either side (dark art: 12 vs 20, bright art: 31 vs 60). For every ordered
+cell pair of a tree (up to 4 rows down, 3 columns across) the candidate paths
+that cross no cell are tested: `straight` (same column), `row` (same row),
+`L-top` (along the required talent's row, then down) and `L-bottom` (down,
+then along the dependent's row). A path counts when every leg has at least
+50 % of its pixels on a ridge (`ridge_masks`: centre darker than both sides
+by `max(5, 0.22 x side)`, or brighter for a satisfied gold arrow) and the
+head end shows an arrowhead: mean |Laplacian| over a 9 px band in the 8 px
+before the dependent cell (cell border skipped) of at least 9.5 (measured
+arrows 9.6-22, stroke 8-12, art between cells 2-8.4; a same-row arrow points
+at the end with more energy). Medians vote (seen in more than half), an L
+whose vertical leg is a detected straight arrow is dropped, and `confidence`
+is mean coverage x vote share, capped at 0.7 for a weak arrowhead (below 11
+or under 1.3 x the stroke) and 0.5 for an unreadable same-row direction.
+
+`merge` puts `requires_arrows` (target cell, name, `rank` = the target's max
+rank, shape, confidence, medians) on the dependent record and an `arrows`
+block on the candidates file; stage 5 rewrites the candidates file, so run
+stage 7 again after it. Stage 8 (`export.merge_arrow_requires`) resolves the
+target id by (row, col), never overwrites a tooltip-derived requirement
+(`ARROW-CONFLICT` when the tooltip names another talent or rank; the tooltip
+stays), keeps a same-row arrow as a `source.note` only (the schema needs an
+earlier row) and notes every arrow-derived entry: `prerequisite from tree
+arrow (stage 7): <name> at rank N = its max rank (Classic rule; rank-0
+tooltips do not list talent prerequisites)`. The max-rank rule is the Classic
+Era behaviour (all 65 prerequisites in `data/prior/classic-era/talents.json`
+require the target's max rank) and cannot be confirmed from this footage.
+
+Cross-checks on the BlizzCon footage (2026-09-13): 67 arrows over 27 trees;
+codex reading the same tree crops confirms 66 (every direction agrees), 22
+match a Classic Era prerequisite by name; one known false positive
+(warlock Shadowburn -> Conflagrate, an art stripe, confidence 0.7) and two
+known misses (warrior Improved Bloodrage -> Last Stand, the stroke sits on
+an art edge; priest Mind Flay -> Improved Mind Flay, same-row, head energy
+8.3) are listed in `docs/handover/2026-09-13-prerequisites.md`.
+
+## Stage 9: icons
+
+Shared code: `src/wowtalents/icons.py` (features, NCC scoring, pHash re-rank,
+Classic-prior hint, decision, `apply_matches`); stage `stages/09_icons.py`.
+Sources, method and licensing: `data/icons/SOURCES.md`.
+
+```bash
+uv run stages/09_icons.py refs --fetch-lists   # reference list + 36 px icons into work/icons/ (one request per icon, 0.3 s pause)
+uv run stages/09_icons.py match all --sheet    # crops of data/extracted/<class>.json -> data/icons/matches.json, sheets in work/icons/sheets/
+uv run stages/09_icons.py fetch                # 56 px icon per accepted match -> web/public/icons/<name>.jpg
+uv run stages/09_icons.py apply all --dry-run  # then without --dry-run: icon / icon_source into the candidates files
+uv run stages/08_export.py extract <class> && uv run stages/08_export.py promote <class>   # picks the icon fields up
+```
+
+A talent with an accepted match exports as `icon: <name>`, `iconSource:
+"classic"` and no `iconCrop`; everything else stays a crop. Hand verdicts go
+into `data/icons/verified.json` (`true` / `false` / `"<icon name>"` per
+`class -> tree/talent`) and are merged on the next `match`. Tests:
+`tests/test_icons.py` (synthetic icons and cells) and the icon case in
+`tests/test_export.py`.
+
 <!-- stage 5 (VLM read) and the per-class wrapper; keep this section self-contained -->
 ## Stage 5: read the crops, and `run_class.sh`
 

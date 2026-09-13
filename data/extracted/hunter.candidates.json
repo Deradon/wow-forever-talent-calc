@@ -1745,7 +1745,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Beast Mastery",
+          "row": 2,
+          "col": 1,
+          "name": "Bestial Swiftness",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "hunter/beast-mastery/r4c3",
@@ -2013,7 +2025,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Beast Mastery",
+          "row": 3,
+          "col": 2,
+          "name": "Ferocity",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 0.894,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "hunter/beast-mastery/r6c1",
@@ -2135,7 +2159,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Beast Mastery",
+          "row": 4,
+          "col": 1,
+          "name": "Intimidation",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.962,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "hunter/marksmanship/r0c0",
@@ -3577,7 +3613,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Marksmanship",
+          "row": 1,
+          "col": 2,
+          "name": "Careful Aim",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 0.992,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "hunter/marksmanship/r4c0",
@@ -3691,7 +3739,19 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Marksmanship",
+          "row": 2,
+          "col": 0,
+          "name": "Rapid Killing",
+          "rank": 2,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "hunter/marksmanship/r4c2",
@@ -4200,7 +4260,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Marksmanship",
+          "row": 3,
+          "col": 1,
+          "name": "Trueshot Aura",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "hunter/survival/r0c1",
@@ -5737,7 +5809,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Survival",
+          "row": 2,
+          "col": 2,
+          "name": "Deterrence",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "hunter/survival/r4c0",
@@ -6440,7 +6524,31 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Survival",
+          "row": 4,
+          "col": 1,
+          "name": "Expose Prey",
+          "rank": 2,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     }
-  ]
+  ],
+  "arrows": {
+    "generated_at": "2026-09-13T11:17:10Z",
+    "source": "work/arrows/hunter.json",
+    "calibrations": [
+      "23-hunter-21030",
+      "24-hunter-21060"
+    ],
+    "arrows": 8,
+    "merged": 8,
+    "unmatched": [],
+    "conflicts": []
+  }
 }

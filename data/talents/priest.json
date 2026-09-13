@@ -5,7 +5,7 @@
   "className": "Priest",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T02:04:39Z",
+  "generatedAt": "2026-09-13T11:17:16Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -401,6 +401,12 @@
           "ranks": [[4, 15]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "improved-power-word-shield",
+              "rank": 3
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -409,7 +415,8 @@
             "crop": "data/review/priest/discipline/soul-warding.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Improved Power Word: Shield at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {
@@ -476,6 +483,12 @@
           "ranksObserved": [1],
           "ranksSource": "manual",
           "ranksNote": "needs manual ranks: duration slot (1 sec) is never extrapolated; ranks 2..5 are copies of rank 1.",
+          "requires": [
+            {
+              "talent": "soul-warding",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -485,7 +498,7 @@
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Soul Warding at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -526,6 +539,12 @@
           "ranks": [[20, 15]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "penance",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -534,7 +553,8 @@
             "crop": "data/review/priest/discipline/power-infusion.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Penance at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         }
       ]
@@ -870,6 +890,12 @@
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
           "ranksNote": "Classic match priest/holy/Searing Light (talent 403) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+          "requires": [
+            {
+              "talent": "divine-fury",
+              "rank": 5
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -878,7 +904,8 @@
             "crop": "data/review/priest/holy/searing-light.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Divine Fury at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1024,6 +1051,12 @@
           "ranks": [[231, 20, 5, 30]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "spirit-of-redemption",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1032,7 +1065,8 @@
             "crop": "data/review/priest/holy/prayer-of-mending.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Spirit of Redemption at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -1287,6 +1321,12 @@
             "similarity": 1.0
           },
           "ranksNote": "Classic priest/shadow/Improved Psychic Scream (talent 542): ranks copied.",
+          "requires": [
+            {
+              "talent": "blackout",
+              "rank": 5
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1295,7 +1335,8 @@
             "crop": "data/review/priest/shadow-magic/improved-psychic-scream.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Blackout at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1553,6 +1594,12 @@
           "ranks": [[10, 50, 100, 15]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "vampiric-embrace",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1562,7 +1609,7 @@
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Vampiric Embrace at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]

@@ -1229,7 +1229,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Assassination",
+          "row": 0,
+          "col": 2,
+          "name": "Malice",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "rogue/assassination/r3c0",
@@ -2277,7 +2289,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Assassination",
+          "row": 4,
+          "col": 1,
+          "name": "Mutilate",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.924,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "rogue/combat/r0c0",
@@ -3356,7 +3380,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Combat",
+          "row": 1,
+          "col": 1,
+          "name": "Deflection",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.909,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "rogue/combat/r2c3",
@@ -3882,7 +3918,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Combat",
+          "row": 1,
+          "col": 2,
+          "name": "Precision",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.773,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "rogue/combat/r4c1",
@@ -4277,7 +4325,19 @@
           "match": "exact-name",
           "similarity": 1.0
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Combat",
+          "row": 4,
+          "col": 1,
+          "name": "Blade Flurry",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.666,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "rogue/combat/r5c2",
@@ -6568,7 +6628,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Subtlety",
+          "row": 3,
+          "col": 2,
+          "name": "Serrated Blades",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "rogue/subtlety/r5c0",
@@ -6694,7 +6766,19 @@
         "confidence": "low",
         "review": true,
         "rule": "linear"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Subtlety",
+          "row": 4,
+          "col": 0,
+          "name": "Dirty Deeds",
+          "rank": 2,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "rogue/subtlety/r5c2",
@@ -6927,7 +7011,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Subtlety",
+          "row": 4,
+          "col": 1,
+          "name": "Preparation",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     }
   ],
   "recovery": {
@@ -6960,5 +7056,17 @@
     ],
     "collisions": [],
     "duplicate_names": []
+  },
+  "arrows": {
+    "generated_at": "2026-09-13T11:17:12Z",
+    "source": "work/arrows/rogue.json",
+    "calibrations": [
+      "14-rogue-18260",
+      "15-rogue-18280"
+    ],
+    "arrows": 8,
+    "merged": 8,
+    "unmatched": [],
+    "conflicts": []
   }
 }
