@@ -49,7 +49,7 @@ def _extract(cls: str, root: Path, candidates: Path | None, video: str, fps: int
              update_encoding: bool, no_files: bool, copy_crops: bool, dry_run: bool, verbose: bool) -> bool:
     src = candidates or (root / "data" / "extracted" / f"{cls}.candidates.json")
     if not src.is_file():
-        typer.echo(f"no candidates file: {src}")
+        typer.echo(f"no candidates file: {src}", err=True)
         raise typer.Exit(code=2)
     log = X.Log()
     prior = R.Prior.load(root / "data" / "prior" / "classic-era" / "talents.json") if (root / "data" / "prior" / "classic-era" / "talents.json").is_file() else None
@@ -70,10 +70,27 @@ def _extract(cls: str, root: Path, candidates: Path | None, video: str, fps: int
     return ok
 
 
+def _prune(root: Path, verbose: bool, dry_run: bool) -> None:
+    """Delete data/review PNGs no class file references any more (all nine files must exist)."""
+    log = X.Log()
+    paths = sorted((root / "data" / "talents").glob("*.json"))
+    if len(paths) < 9:
+        typer.echo(f"prune: only {len(paths)} class file(s) in data/talents; refusing to prune against a partial set",
+                   err=True)
+        raise typer.Exit(code=2)
+    # data/examples/*.json keeps its own crops under data/review/<class>/ (the tinker sample the
+    # schema, validator and web tests all point at); those are referenced, not orphaned
+    paths += sorted((root / "data" / "examples").glob("*.json"))
+    docs = [json.loads(p.read_text(encoding="utf-8")) for p in paths]
+    gone = X.prune_review_crops(root, docs, log, dry_run=dry_run)
+    _print(log, verbose)
+    typer.echo(f"{'would remove' if dry_run else 'removed'} {len(gone)} orphaned crop(s) under data/review")
+
+
 def _promote(cls: str, root: Path, update_encoding: bool, no_files: bool, verbose: bool) -> bool:
     extracted = root / "data" / "extracted" / f"{cls}.json"
     if not extracted.is_file():
-        typer.echo(f"no extracted file: {extracted} (run extract first)")
+        typer.echo(f"no extracted file: {extracted} (run extract first)", err=True)
         raise typer.Exit(code=2)
     log = X.Log()
     doc = X.build_talents(_load(extracted), _load(root / "data" / "overrides" / f"{cls}.json"),
@@ -125,6 +142,16 @@ def promote(
     """extracted + overrides + reviewed records -> data/talents/<class>.json"""
     if not _promote(cls, root, update_encoding, no_files, verbose):
         raise typer.Exit(code=1)
+
+
+@app.command()
+def prune(
+    root: Path = ROOT_OPT,
+    dry_run: bool = typer.Option(False, "--dry-run", help="list the orphans, delete nothing"),
+    verbose: bool = VERBOSE_OPT,
+) -> None:
+    """delete data/review crops no data/talents or data/examples file references (run after promote)"""
+    _prune(root, verbose, dry_run)
 
 
 @app.command(name="all")

@@ -6,7 +6,7 @@ normative description is `docs/DATA-SCHEMA.md` section 8.
 
 ## Files
 
-- `v<N>.json`: `{ version, createdAt, note, classes: { <class>: { trees, order } } }`.
+- `v<N>.json`: `{ version, createdAt, frozen, note, classes: { <class>: { trees, order } } }`.
   `trees` lists tree ids in string-segment order (pages flattened: primary
   trees by `order`, then secondary trees). `order[<tree>]` lists talent ids
   row-major, i.e. the tree's talents sorted by `(row, col)` at the time the
@@ -18,7 +18,11 @@ normative description is `docs/DATA-SCHEMA.md` section 8.
 
 ## Rules
 
-1. A version file is immutable once merged to `main`.
+1. A version file is immutable once it is published, and `frozen: true` is what
+   says so. `pipeline/stages/08_export.py --update-encoding` refuses to rewrite a
+   frozen file: it copies it to `v<N+1>.json` (unfrozen), writes an empty
+   `migrations/v<N>-v<N+1>.json` and tells you to fill both in. A missing
+   `frozen` key is read as `false`.
 2. Any change to the *set or order* of talent ids of any class (add, remove,
    rename, move between trees) requires `v<N+1>.json` covering all classes
    plus `migrations/v<N>-v<N+1>.json`. Text-only fixes (name spelling,
@@ -32,15 +36,18 @@ normative description is `docs/DATA-SCHEMA.md` section 8.
 
 ## Current state
 
-- `v1.json` (2026-09-13): only the fictional `tinker` example class from
-  `data/examples/tinker.json`, so the schema, validator and web sample have a
-  consistent version to point at. Real classes are added as they pass review;
-  the first real class bumps to `v2.json` with a migration that carries the
-  tinker entry (or removes it, once the web app no longer uses the sample).
+- `v1.json` (2026-09-13): the `tinker` example class plus all nine real classes,
+  `frozen: false`. Owner decision of 2026-09-13: v1 stays mutable until launch
+  is declared, because the data is still being corrected and no link is
+  promised yet. It was in fact rewritten in place four times before the flag
+  existed (see `docs/reviews/2026-09-13-code-and-docs.md` A1), which is exactly
+  what `frozen` now prevents. **At launch: set `frozen: true`.** From then on
+  any id or order change forks `v2.json`.
 
 ## How to bump
 
-1. Copy `v<N>.json` to `v<N+1>.json`, set `version`, `createdAt`, `note`.
+1. Copy `v<N>.json` to `v<N+1>.json`, set `version`, `createdAt`, `note` and
+   `frozen: false` (`--update-encoding` does this for you when `v<N>` is frozen).
 2. For every class, regenerate `trees` and `order` from the class file
    (row-major per tree). Keep a talent's id stable unless the rename changed
    its meaning.

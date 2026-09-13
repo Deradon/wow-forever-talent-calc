@@ -5,7 +5,7 @@
   "className": "Priest",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T12:03:33Z",
+  "generatedAt": "2026-09-13T13:45:03Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -355,7 +355,7 @@
           "maxRank": 2,
           "icon": "spell_nature_tranquility",
           "iconSource": "classic",
-          "description": "Gives you a {0}% chance to gain Focused Casting for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing casting time when taking damage and increases your resistance to Interrupt effects by {1}%.",
+          "description": "Gives you a {0}% chance to gain Focused Casting for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing Casting time when taking damage and increases your resistance to Interrupt effects by {1}%.",
           "ranks": [[50, 20], [100, 40]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -372,7 +372,7 @@
             "t": 19484.733,
             "frame": 1169084,
             "crop": "data/review/priest/discipline/martyrdom.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -395,10 +395,23 @@
                 "description": "Gives you a 50% chance to gain Focused Casting for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing Casting time when taking damage and increases your resistance to Interrupt effects by 20%.",
                 "maxRank": 2,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Martyrdom",
+                "description": "Gives you a 50% chance to gain Focused Casting for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing casting time when taking damage and increases your resistance to Interrupt effects by 20%.",
+                "maxRank": 2,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Martyrdom",
+                "description": "Gives you a 50% chance to gain Focused Casting for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing casting time when taking damage and increases your resistance to Interrupt effects by 20%.",
+                "maxRank": 2,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -409,7 +422,7 @@
           "maxRank": 3,
           "icon": "ability_hibernation",
           "iconSource": "classic",
-          "description": "Reduces the mana cost of your Smite, Holy Fire, and Instant cast spells by {0}%.",
+          "description": "Reduces the mana cost of your Smite, Holy Fire, and instant cast spells by {0}%.",
           "ranks": [[3], [6], [9]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -426,7 +439,7 @@
             "t": 19491.533,
             "frame": 1169492,
             "crop": "data/review/priest/discipline/mental-agility.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -449,10 +462,23 @@
                 "description": "Reduces the mana cost of your Smite, Holy Fire, and instant cast spells by 3%.",
                 "maxRank": 3,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Mental Agility",
+                "description": "Reduces the mana cost of your Smite, Holy Fire, and Instant cast spells by 3.",
+                "maxRank": 3,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Mental Agility",
+                "description": "Reduces the mana cost of your Smite, Holy Fire, and Instant cast spells by 3%.",
+                "maxRank": 3,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -762,7 +788,7 @@
           "maxRank": 1,
           "icon": "spell_holy_penance",
           "iconSource": "classic",
-          "description": "Launches a volley of holy light at the target, causing {0} Holy damage to an enemy, or {1} healing to an ally, Instantly and every {2} sec for {3} sec.",
+          "description": "Launches a volley of holy light at the target, causing {0} Holy damage to an enemy, or {1} healing to an ally, instantly and every {2} sec for {3} sec.",
           "ranks": [[93, 223, 1, 2]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -772,7 +798,7 @@
             "t": 19512.4,
             "frame": 1170744,
             "crop": "data/review/priest/discipline/penance.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -795,10 +821,23 @@
                 "description": "Launches a volley of holy light at the target, causing 93 Holy damage to an enemy, or 223 healing to an ally, instantly and every 1 sec for 2 sec.",
                 "maxRank": 1,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Penance",
+                "description": "Launches a volley of holy light at the target, causing 93 Holy damage to an enemy, or 223 healing to an ally, Instantly and every 1 sec for 2 sec.",
+                "maxRank": 1,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Penance",
+                "description": "Launches a volley of holy light at the target, causing 93 Holy damage to an enemy, or 223 healing to an ally, Instantly and every 1 sec for 2 sec.",
+                "maxRank": 1,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -809,7 +848,7 @@
           "maxRank": 5,
           "icon": "spell_holy_holyprotection",
           "iconSource": "classic",
-          "description": "Your heals from Flash Heal, Binding Heal, Lesser Heal, Heal, Greater Heal, and Penance gain {0}% Increased critical strike chance when cast on targets with Weakened Soul, and reduce the remaining duration of Weakened Soul on their target by {1} sec.",
+          "description": "Your heals from Flash Heal, Binding Heal, Lesser Heal, Heal, Greater Heal, and Penance gain {0}% increased critical strike chance when cast on targets with Weakened Soul, and reduce the remaining duration of Weakened Soul on their target by {1} sec.",
           "ranks": [[2, 1], [2, 1], [2, 1], [2, 1], [2, 1]],
           "ranksObserved": [1],
           "ranksSource": "manual",
@@ -826,7 +865,7 @@
             "t": 19508.0,
             "frame": 1170480,
             "crop": "data/review/priest/discipline/renewed-hope.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -849,10 +888,24 @@
                 "description": "Your heals from Flash Heal, Binding Heal, Lesser Heal, Heal, Greater Heal, and Penance gain 2% increased critical strike chance when cast on targets with Weakened Soul, and reduce the remaining duration of Weakened Soul on their target by 1 sec.",
                 "maxRank": 5,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Renewed Hope",
+                "description": "Your heals from Flash Heal, Binding Heal, Lesser Heal, Heal, Greater Heal, and Penance gain 2% Increased critical strike chance when cast on targets with Weakened Soul, and reduce the remaining duration of Weakened Soul on their target by 1 sec.",
+                "maxRank": 5,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Renewed Hope",
+                "description": "Your heals from Flash Heal, Binding Heal, Lesser Heal, Heal, Greater Heal, and Penance gain 2% Increased critical strike chance when cast on targets with Weakened Soul, and reduce the remaining duration of Weakened Soul on their target by 1 sec.",
+                "maxRank": 5,
+                "confidence": 0.7
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Soul Warding at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "note": "prerequisite from tree arrow (stage 7): Soul Warding at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1198,7 +1251,7 @@
           "maxRank": 5,
           "icon": "spell_holy_sealofwrath",
           "iconSource": "classic",
-          "description": "Reduces the casting time of your Smite, Holy fire, Heal, and Greater Heal spells by {0} sec.",
+          "description": "Reduces the casting time of your Smite, Holy Fire, Heal, and Greater Heal spells by {0} sec.",
           "ranks": [[0.1], [0.2], [0.3], [0.4], [0.5]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -1215,7 +1268,7 @@
             "t": 19538.933,
             "frame": 1172336,
             "crop": "data/review/priest/holy/divine-fury.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -1238,10 +1291,23 @@
                 "description": "Reduces the casting time of your Smite, Holy Fire, Heal, and Greater Heal spells by 0.1 sec.",
                 "maxRank": 5,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Divine Fury",
+                "description": "Reduces the casting time of your Smite, Holy fire, Heal, and Greater Heal spells by 0.1 sec.",
+                "maxRank": 5,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Divine Fury",
+                "description": "Reduces the casting time of your Smite, Holy fire, Heal, and Greater Heal spells by 0.1 sec.",
+                "maxRank": 5,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -1558,7 +1624,7 @@
           "maxRank": 1,
           "icon": "spell_holy_blindingheal",
           "iconSource": "classic",
-          "description": "Heals a friendly target and the caster for {0} to {1}. Low threat.",
+          "description": "Heals a friendly target and the caster for {0} to {1}.",
           "ranks": [[330, 387]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -1568,7 +1634,7 @@
             "t": 19562.0,
             "frame": 1173720,
             "crop": "data/review/priest/holy/binding-heal.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -1591,10 +1657,23 @@
                 "description": "Heals a friendly target and the caster for 330 to 387.",
                 "maxRank": 1,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Binding Heal",
+                "description": "Heals a friendly target and the caster for 330 to 387. Low threat.",
+                "maxRank": 1,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Binding Heal",
+                "description": "Heals a friendly target and the caster for 330 to 387. Low threat.",
+                "maxRank": 1,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -2349,7 +2428,7 @@
           "maxRank": 2,
           "icon": "spell_shadow_soulleech_2",
           "iconSource": "classic",
-          "description": "Your Mind Flay now deals {0}% more damage, gains {1} yards Increased range, but slows the target's movement speed by {2}%.",
+          "description": "Your Mind Flay now deals {0}% more damage, gains {1} yards increased range, but slows the target's movement speed by {2}%.",
           "ranks": [[10, 5, 35], [10, 5, 35]],
           "ranksObserved": [1],
           "ranksSource": "manual",
@@ -2360,7 +2439,7 @@
             "t": 19662.667,
             "frame": 1179760,
             "crop": "data/review/priest/shadow-magic/improved-mind-flay.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -2383,10 +2462,23 @@
                 "description": "Your Mind Flay now deals 10% more damage, gains 5 yards increased range, but slows the target's movement speed by 35%.",
                 "maxRank": 2,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Improved Mind Flay",
+                "description": "Your Mind Flay now deals 10% more damage, gains 5 yards increased range, but slows the target's movement speed by 35%.",
+                "maxRank": 2,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Improved Mind Flay",
+                "description": "Your Mind Flay now deals 10% more damage, gains 5 yards Increased range, but slows the target's movement speed by 35%.",
+                "maxRank": 2,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -2607,7 +2699,7 @@
             "t": 19694.467,
             "frame": 1181668,
             "crop": "data/review/priest/shadow-magic/devouring-contagion.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -2630,10 +2722,16 @@
                 "description": "Reduces the mana cost of your Devouring Plague by 25%. Targets that die while Devouring Plague is active spreads it, jumping to a nearby enemy within 5 yards for the remaining duration.",
                 "maxRank": 2,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Devouring Contagion",
+                "description": "Reduces the mana cost of your Devouring Plague by 25%. Targets that die while Devouring Plague it is active spreads it, jumping to a nearby enemy within 5 yards for the remaining duration.",
+                "maxRank": 2,
+                "confidence": 1.0
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -2744,7 +2842,7 @@
           "maxRank": 1,
           "icon": "spell_shadow_shadowform",
           "iconSource": "classic",
-          "description": "Assume Shadowform, increasing your Shadow damage by {0}%, reducing the Mana cost of all Shadow spells by {1}%, increasing the critical strike damage bonus of your Shadow spells by {2}%, and reducing Physical damage taken by you by {3}%. However, you may not cast healing spells while in this form.",
+          "description": "Assume Shadowform, increasing your Shadow damage by {0}%, reducing the Mana cost of all Shadow spells by {1}%, increasing the Critical strike damage bonus of your Shadow spells by {2}%, and reducing Physical damage taken by you by {3}%. However, you may not cast healing spells while in this form.",
           "ranks": [[10, 50, 100, 15]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -2760,7 +2858,7 @@
             "t": 19740.467,
             "frame": 1184428,
             "crop": "data/review/priest/shadow-magic/shadowform.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -2783,10 +2881,24 @@
                 "description": "Assume Shadowform, increasing your Shadow damage by 10%, reducing the Mana cost of all Shadow spells by 50%, increasing the Critical strike damage bonus of your Shadow spells by 100%, and reducing Physical damage taken by you by 15%. However, you may not cast healing spells while in this form.",
                 "maxRank": 1,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Shadowform",
+                "description": "Assume Shadowform, increasing your Shadow damage by 10%, reducing the Mana cost of all Shadow spells by 50%, increasing the critical strike damage bonus of your Shadow spells by 100%, and reducing Physical damage taken by you by 15%. However, you may not cast healing spells while In this form.",
+                "maxRank": 1,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Shadowform",
+                "description": "Assume Shadowform, increasing your Shadow damage by 10%, reducing the Mana cost of all Shadow spells by 50%, increasing the critical strike damage bonus of your Shadow spells by 100%, and reducing Physical damage taken by you by 15%. However, you may not cast healing spells while in this form.",
+                "maxRank": 1,
+                "confidence": 0.7
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Vampiric Embrace at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "note": "prerequisite from tree arrow (stage 7): Vampiric Embrace at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]

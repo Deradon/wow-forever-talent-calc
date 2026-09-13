@@ -5,7 +5,7 @@
   "className": "Warrior",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T12:03:35Z",
+  "generatedAt": "2026-09-13T13:45:04Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -387,7 +387,7 @@
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in name"
+            "note": "readers still differ on name 'Bloodthrill' vs 'Bloodthirst'"
           }
         },
         {
@@ -741,7 +741,7 @@
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in name"
+            "note": "readers still differ on name 'Blood Crazed' vs 'Blood Craze'"
           }
         },
         {
@@ -823,7 +823,7 @@
           "maxRank": 5,
           "icon": "spell_shadow_unholyfrenzy",
           "iconSource": "classic",
-          "description": "Gives you a {0}% chance to deal 2% Increased Physical damage for 12 sec after being the victim of any damaging attack.",
+          "description": "Gives you a {0}% chance to deal 2% increased Physical damage for 12 sec after being the victim of any damaging attack.",
           "ranks": [[30], [60], [90], [120], [150]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -840,10 +840,11 @@
             "t": 18002.8,
             "frame": 1080168,
             "crop": "data/review/warrior/fury/enrage.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -914,7 +915,7 @@
           "maxRank": 1,
           "icon": "spell_shadow_deathpact",
           "iconSource": "classic",
-          "description": "When activated, increases your Physical damage done by {0}% and makes you Immune to Fear effects, but increases all damage you take by {1}%. Lasts {2} sec.",
+          "description": "When activated, increases your Physical damage done by {0}% and makes you immune to Fear effects, but increases all damage you take by {1}%. Lasts {2} sec.",
           "ranks": [[20, 5, 30]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -924,10 +925,11 @@
             "t": 18007.0,
             "frame": 1080420,
             "crop": "data/review/warrior/fury/death-wish.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -1234,6 +1236,12 @@
           "ranks": [[30, 20]],
           "ranksObserved": [1],
           "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "improved-bloodrage",
+              "rank": 2
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1242,7 +1250,10 @@
             "crop": "data/review/warrior/protection/last-stand.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z",
+            "note": "prerequisite from tree arrow (stage 7): Improved Bloodrage at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); added by hand, data audit 2026-09-13"
           }
         },
         {
@@ -1578,7 +1589,7 @@
           "maxRank": 1,
           "icon": "inv_shield_05",
           "iconSource": "classic",
-          "description": "Slam the target with your shield, causing {0} to {1} damage, Increased by your Block Value, and has a {2}% chance of dispelling {3} magic effect on the target. Causes a very high amount of threat.",
+          "description": "Slam the target with your shield, causing {0} to {1} damage, increased by your Block Value, and has a {2}% chance of dispelling {3} magic effect on the target. Causes a very high amount of threat.",
           "ranks": [[421, 439, 50, 1]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -1594,10 +1605,12 @@
             "t": 18074.933,
             "frame": 1084496,
             "crop": "data/review/warrior/protection/shield-slam.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description; unparsed requirement: Requires Shields; prerequisite from tree arrow (stage 7): Concussion Blow at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z",
+            "note": "unparsed requirement: Requires Shields; prerequisite from tree arrow (stage 7): Concussion Blow at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]

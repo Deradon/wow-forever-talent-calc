@@ -38,6 +38,7 @@ import typer
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import arrows as A  # noqa: E402
 from wowtalents import export as X  # noqa: E402
+from wowtalents.fsio import write_candidates_atomic, write_json_atomic  # noqa: E402
 
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 
@@ -66,7 +67,7 @@ def cell_key(c: dict) -> tuple[int, int, int]:
 def _detect(cls: str, overlay: bool) -> dict:
     calibs = A.class_calibs(cls, CALIB_DIR)
     if not calibs:
-        typer.echo(f"{cls}: no Primary-page calibration with a median under {CALIB_DIR}")
+        typer.echo(f"{cls}: no Primary-page calibration with a median under {CALIB_DIR}", err=True)
         raise typer.Exit(code=2)
     cells = A.consensus_rects(calibs)
     arrows = A.detect_class(calibs, cells)
@@ -87,7 +88,7 @@ def _detect(cls: str, overlay: bool) -> dict:
     }
     A_DIR = ARROWS_DIR
     A_DIR.mkdir(parents=True, exist_ok=True)
-    (A_DIR / f"{cls}.json").write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")
+    write_json_atomic(A_DIR / f"{cls}.json", doc)
     if overlay:
         img = cv2.imread(str(calibs[0]["_median_path"]))
         if img is not None:
@@ -106,14 +107,15 @@ def _merge(cls: str) -> dict:
     arrows_path = ARROWS_DIR / f"{cls}.json"
     cand_path = EXTRACTED / f"{cls}.candidates.json"
     if not arrows_path.is_file():
-        typer.echo(f"{cls}: no {arrows_path}; run detect first")
+        typer.echo(f"{cls}: no {arrows_path}; run detect first", err=True)
         raise typer.Exit(code=2)
     if not cand_path.is_file():
-        typer.echo(f"{cls}: no candidates file {cand_path}")
+        typer.echo(f"{cls}: no candidates file {cand_path}", err=True)
         raise typer.Exit(code=2)
     arrows_doc = json.loads(arrows_path.read_text(encoding="utf-8"))
     cand = json.loads(cand_path.read_text(encoding="utf-8"))
     records = cand["candidates"] if isinstance(cand, dict) else cand
+    n_before = len(records)
     tree_index = {v: int(k) for k, v in ((cand.get("trees") or {}) if isinstance(cand, dict) else {}).items()}
     if not tree_index:
         for rec in records:
@@ -151,7 +153,7 @@ def _merge(cls: str) -> dict:
     if isinstance(cand, dict):
         cand["arrows"] = {"generated_at": now(), "source": str(arrows_path.relative_to(PIPELINE)),
                           "calibrations": arrows_doc["calibrations"], **stats}
-    cand_path.write_text(json.dumps(cand, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    write_candidates_atomic(cand_path, cand, before=n_before)
     typer.echo(f"{cls}: {stats['merged']} of {stats['arrows']} arrows merged into {cand_path.name}, "
                f"{len(stats['unmatched'])} unmatched, {len(stats['conflicts'])} tooltip conflicts")
     return stats

@@ -36,6 +36,7 @@ import typer
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import fragments as fr  # noqa: E402
 from wowtalents import ui  # noqa: E402
+from wowtalents.fsio import write_json_atomic  # noqa: E402
 
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 
@@ -181,7 +182,7 @@ def finish(sid: str, cls: str, calib: dict, bg: np.ndarray, cells: list[ui.Cell]
         "per_tree": per_tree, "cells_per_tree": expected, "missing_cells": missing,
         "files": {"sheet": f"{sid}-sheet.png"},
     }
-    (out_dir / f"{sid}.json").write_text(json.dumps(result, indent=2) + "\n")
+    write_json_atomic(out_dir / f"{sid}.json", result)
     typer.echo(f"{tracker.dropped_short} short runs dropped, {len(rejected_frames)} frames with a big non-tooltip blob")
     typer.echo(f"{len(runs)} runs -> {len(hovers_out)} unique cells {per_tree} of {expected}; "
                f"{len(unresolved_out)} unresolved; missing {len(missing)}: {', '.join(missing) or '-'}")
@@ -211,11 +212,15 @@ def run(
     sid = ui.segment_id(seg, idx)
     calib_path = calib_dir / f"{sid}.json"
     if not calib_path.exists():
-        typer.echo(f"no calibration at {calib_path}; run stages/03_calibrate.py first")
+        typer.echo(f"no calibration at {calib_path}; run stages/03_calibrate.py first", err=True)
         raise typer.Exit(code=2)
     calib = json.loads(calib_path.read_text())
     cells = [ui.Cell.from_json(c) for c in calib["cells"]]
-    bg = cv2.imread(str(calib_dir / calib["files"]["median"]))
+    median_path = calib_dir / calib["files"]["median"]
+    bg = cv2.imread(str(median_path))
+    if bg is None:
+        typer.echo(f"cannot read the calibration median {median_path}; re-run stages/03_calibrate.py", err=True)
+        raise typer.Exit(code=2)
     slugs = tree_slugs(calib)
     t0 = start if start is not None else seg["t_start"]
     t1 = end if end is not None else seg["t_end"]
@@ -248,6 +253,12 @@ def run(
     done = tracker.finish()
     if done:
         runs.append(done)
+    if n_frames == 0:
+        # Without this, a failed decode wrote a hovers file with zero hovers and exited 0;
+        # stage 5 then reported every cell of the segment as never hovered with no clue why.
+        typer.echo(f"no frame decoded from fragments {t0}..{t1 - 1} (ffmpeg failure, or the range is outside "
+                   f"the stream); nothing written", err=True)
+        raise typer.Exit(code=1)
 
     result = finish(sid, seg["class"], calib, bg, cells, slugs, runs, infos, tracker, rejected_frames, out_dir,
                     {"t_start": t0, "t_end": t1, "every": every, "fps": FPS / every, "frames_seen": n_frames,

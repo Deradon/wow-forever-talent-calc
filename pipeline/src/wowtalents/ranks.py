@@ -51,12 +51,13 @@ from __future__ import annotations
 import json
 import math
 import re
-import unicodedata
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
 from rapidfuzz import fuzz
+
+from . import text as _text
 
 PRIOR_PATH = Path(__file__).resolve().parents[3] / "data" / "prior" / "classic-era" / "talents.json"
 
@@ -83,20 +84,10 @@ MAXRANK_PENALTY = 10.0       # brief (b) step 2
 # Text helpers (mirroring data/prior/classic-era/build.py)
 # ----------------------------------------------------------------------------
 
-def slug(name: str) -> str:
-    """DATA-SCHEMA.md section 3 slug rule."""
-    s = unicodedata.normalize("NFKD", name)
-    s = "".join(c for c in s if not unicodedata.combining(c)).lower()
-    s = s.replace("'", "").replace("’", "")
-    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
-    return s
-
-
-def clean_text(s: str) -> str:
-    """Section 2 normalisation: nbsp/curly quotes to ASCII, collapse spaces, trim."""
-    s = s.replace(" ", " ").replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
-    s = re.sub(r"[ \t\r\n]+", " ", s)
-    return s.strip()
+# One slug rule and one text normaliser, both defined in wowtalents.text (DATA-SCHEMA sections 2-3).
+# They stay importable from here because every stage and data/prior/.../build.py already call R.slug.
+slug = _text.slug
+clean_text = _text.clean_text
 
 
 def _stem(word: str) -> str:
@@ -509,13 +500,16 @@ class RankResult:
     match: Match | None = None
     rule: str | None = None           # copied | constant | proportional | affine | none
     review: bool = False              # belongs in the review queue
+    # Which ranks the footage actually showed. [1] for every rank-0 tooltip; a crop taken with
+    # points already spent reports the rank it really shows (see `observed_rank` in `anticipate`).
+    ranks_observed: list[int] = field(default_factory=lambda: [1])
 
     def to_fields(self) -> dict:
         """Canonical talent fields (DATA-SCHEMA.md section 4.4) plus pipeline extras."""
         out: dict[str, Any] = {
             "description": self.description,
             "ranks": self.ranks,
-            "ranksObserved": [1],
+            "ranksObserved": list(self.ranks_observed),
             "ranksSource": self.ranks_source,
         }
         if self.ranks_prior is not None:
@@ -588,12 +582,22 @@ def _finish(text: str, tokens: list[Token], num_slots: list[tuple[NumberInfo, li
 # ----------------------------------------------------------------------------
 
 def anticipate(name: str, description_rank1: str, max_rank: int, cls: str, prior: Prior | None,
-               tree: str | None = None) -> RankResult:
+               tree: str | None = None, observed_rank: int = 1) -> RankResult:
     text = clean_text(description_rank1 or "")
     tokens = tokenize(text)
     nums = number_infos(text, tokens)
     slot_nums = [n for n in nums if not n.is_rank_ref]
     max_rank = int(max_rank or 1)
+    observed_rank = int(observed_rank or 1)
+
+    # The tooltip was captured with points already spent, so its numbers are rank `observed_rank`,
+    # not rank 1. Scaling them as if they were rank 1 is how mage/shatter's rank-3 "50%" became
+    # 50/100/150, i.e. "150% critical strike chance". Never extrapolate from such a reading.
+    if observed_rank > 1:
+        res = _manual(text, tokens, nums, max_rank,
+                      f"tooltip shows rank {observed_rank}/{max_rank}, so its numbers are not rank 1", None)
+        res.ranks_observed = [observed_rank] if observed_rank <= max_rank else [1]
+        return res
 
     # Row 1: nothing to anticipate
     if max_rank <= 1:
@@ -761,5 +765,7 @@ def anticipate_record(rec: dict, prior: Prior | None) -> RankResult:
     """Convenience over a candidate record (pipeline brief section 1 shape)."""
     rank = rec.get("rank") or {}
     max_rank = rank.get("max") if isinstance(rank, dict) else rec.get("rank_max")
+    observed = (rank.get("current") if isinstance(rank, dict) else None) or 0
     return anticipate(rec.get("name") or "", rec.get("description_rank1") or rec.get("description") or "",
-                      max_rank or 1, rec.get("class") or "", prior, rec.get("tree"))
+                      max_rank or 1, rec.get("class") or "", prior, rec.get("tree"),
+                      observed_rank=max(1, int(observed)))

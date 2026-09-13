@@ -198,7 +198,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -354,6 +360,12 @@
             2
           ],
           "darkness": 0.9
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -512,7 +524,13 @@
             "sharpness": 3966.0,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -652,7 +670,13 @@
             "sharpness": 3425.4,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -793,7 +817,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -946,7 +976,13 @@
             "sharpness": 4189.9,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -1099,7 +1135,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -1229,7 +1271,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -1374,6 +1422,12 @@
             2
           ],
           "darkness": 0.88
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -1533,7 +1587,13 @@
             "sharpness": 4133.5,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -1655,7 +1715,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -1787,7 +1853,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -1924,7 +1996,13 @@
             "sharpness": 3121.6,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -2079,7 +2157,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -2138,7 +2222,7 @@
         "3 min cooldown"
       ],
       "requires": [],
-      "description_rank1": "When activated, your next Mage spell with a casting time less than 10 sec becomes an Instant cast spell.",
+      "description_rank1": "When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -2149,7 +2233,7 @@
         "crop_path": "work/hovers/06-mage-14760/arcane-r5c2.png",
         "icon_crop_path": "work/hovers/06-mage-14760/arcane-r5c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "06-mage-14760",
         "hover_id": "arcane-r5c2",
@@ -2207,10 +2291,31 @@
             "description": "When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Presence of Mind",
+            "description": "When activated, your next Mage spell with a casting time less than 10 sec becomes an Instant cast spell.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Presence of Mind",
+            "description": "When activated, your next Mage spell with a casting time less than 10 sec becomes an Instant cast spell.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -2218,22 +2323,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "When activated, your next Mage spell with a casting time less than {0} sec becomes an Instant cast spell.",
-        "ranks": [
-          [
-            10
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "icon": "spell_nature_enchantarmor",
       "icon_source": "classic",
@@ -2327,7 +2416,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -2471,7 +2566,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -2616,7 +2717,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -2747,7 +2854,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -2805,7 +2918,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the critical strike chance of your Fire Blast. Ice Lance, Arcane Blast, and Scorch spells by 2%.",
+      "description_rank1": "Increases the critical strike chance of your Fire Blast, Ice Lance, Arcane Blast, and Scorch spells by 2%.",
       "footer": "Click to learn",
       "cut_off": false,
       "source": {
@@ -2816,7 +2929,7 @@
         "crop_path": "work/hovers/06-mage-14760/fire-r1c2.png",
         "icon_crop_path": "work/hovers/06-mage-14760/fire-r1c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "06-mage-14760",
         "hover_id": "fire-r1c2",
@@ -2868,10 +2981,31 @@
             "description": "Increases the critical strike chance of your Fire Blast, Ice Lance, Arcane Blast, and Scorch spells by 2%.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Incineration",
+            "description": "Increases the critical strike chance of your Fire Blast. Ice Lance. Arcane Blast, and Scorch spells by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Incineration",
+            "description": "Increases the critical strike chance of your Fire Blast. Ice Lance, Arcane Blast, and Scorch spells by 2%.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -2879,48 +3013,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases the critical strike chance of your Fire Blast. Ice Lance, Arcane Blast, and Scorch spells by {0}%.",
-        "ranks": [
-          [
-            2
-          ],
-          [
-            4
-          ],
-          [
-            6
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 33,
-          "classicSpellIds": [
-            11115,
-            11367,
-            11368
-          ],
-          "match": "description",
-          "similarity": 0.99
-        },
-        "ranksNote": "Classic mage/fire/Critical Mass (talent 33), matched on description (0.99): ranks copied.",
-        "needsManual": false,
-        "confidence": "medium",
-        "review": true,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 33,
-          "name": "Critical Mass",
-          "class": "mage",
-          "tree": "fire",
-          "maxRank": 3,
-          "match": "description",
-          "similarity": 0.99
-        }
       }
     },
     {
@@ -3003,7 +3095,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -3154,7 +3252,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14760,
@@ -3305,6 +3409,12 @@
             3
           ],
           "darkness": 0.89
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -3449,6 +3559,12 @@
             1
           ],
           "darkness": 0.84
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -3606,6 +3722,12 @@
             2
           ],
           "darkness": 0.86
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -3687,7 +3809,7 @@
         "6 sec cast"
       ],
       "requires": [],
-      "description_rank1": "Hurts an immense fiery boulder that causes 155 to 185 Fire damage and an additional 76 Fire damage over 12 sec.",
+      "description_rank1": "Hurls an immense fiery boulder that causes 155 to 185 Fire damage and an additional 76 Fire damage over 12 sec.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -3698,7 +3820,7 @@
         "crop_path": "work/cursor/recovered/mage/fire-r3c3.png",
         "icon_crop_path": "work/cursor/recovered/mage/fire-r3c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "08-mage-14970",
         "hover_id": "fire-r3c3",
@@ -3758,6 +3880,20 @@
             "description": "Hurls an immense fiery boulder that causes 155 to 185 Fire damage and an additional 76 Fire damage over 12 sec.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Pyroblast",
+            "description": "Hurls an immense fiery boulder that causes 155 to 185 Fire damage and an additional 76 Fire damage over 12 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Pyroblast",
+            "description": "Hurts an immense fiery boulder that causes 155 to 185 Fire damage and an additional 76 Fire damage over 12 sec.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
@@ -3771,7 +3907,14 @@
           ],
           "darkness": 0.85
         },
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "word": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14970,
@@ -3779,25 +3922,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Hurts an immense fiery boulder that causes {0} to {1} Fire damage and an additional {2} Fire damage over {3} sec.",
-        "ranks": [
-          [
-            155,
-            185,
-            76,
-            12
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "icon": "spell_fire_fireball02",
       "icon_source": "classic",
@@ -3826,7 +3950,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Your Scorch spell has a 33% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all Fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
+      "description_rank1": "Your Scorch spell has a 33% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -3837,7 +3961,7 @@
         "crop_path": "work/cursor/recovered/mage/fire-r4c1.png",
         "icon_crop_path": "work/cursor/recovered/mage/fire-r4c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "08-mage-14970",
         "hover_id": "fire-r4c1",
@@ -3889,6 +4013,20 @@
             "description": "Your Scorch spell has a 33% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Improved Scorch",
+            "description": "Your Scorch spell has a 33% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all Fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Improved Scorch",
+            "description": "Your Scorch spell has a 33% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all Fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
@@ -3902,7 +4040,14 @@
           ],
           "darkness": 0.81
         },
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14970,
@@ -3910,48 +4055,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Your Scorch spell has a {0}% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all Fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
-        "ranks": [
-          [
-            33
-          ],
-          [
-            66
-          ],
-          [
-            100
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 25,
-          "classicSpellIds": [
-            11095,
-            12872,
-            12873
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic mage/fire/Improved Scorch (talent 25): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 25,
-          "name": "Improved Scorch",
-          "class": "mage",
-          "tree": "fire",
-          "maxRank": 3,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_fire_windsofwoe",
       "icon_source": "classic",
@@ -4055,6 +4158,12 @@
             2
           ],
           "darkness": 0.87
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -4205,7 +4314,13 @@
           ],
           "darkness": 0.85
         },
-        "note": "Master of Elements was also read at r4c3@08-mage-14970 (04:10:03.7) from a box glued to the Hot Streak ghost in that segment's median; that record was removed on 2026-09-13 (pointer on r4c4 for the whole run, r4c3 is Hot Streak)"
+        "note": "Master of Elements was also read at r4c3@08-mage-14970 (04:10:03.7) from a box glued to the Hot Streak ghost in that segment's median; that record was removed on 2026-09-13 (pointer on r4c4 for the whole run, r4c3 is Hot Streak)",
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14970,
@@ -4349,6 +4464,12 @@
             2
           ],
           "darkness": 0.89
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -4504,7 +4625,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14970,
@@ -4623,6 +4750,12 @@
             3
           ],
           "darkness": 0.89
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -4772,7 +4905,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14970,
@@ -4902,7 +5041,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -5043,7 +5188,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -5194,7 +5345,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -5350,7 +5507,13 @@
             "sharpness": 3335.5,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -5508,7 +5671,13 @@
             "sharpness": 2921.0,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -5644,7 +5813,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -5792,7 +5967,13 @@
             "sharpness": 2618.7,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -5933,6 +6114,13 @@
             "description": "Increases the damage caused by your Frost spells by 2%.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Piercing Ice",
+            "description": "Increases the damage done by your Frost spells by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0
           }
         ],
         "alternates": [
@@ -5943,7 +6131,13 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        },
+        "note": "crop is 181 px wide and missing a tooltip border, so the tooltip is cut off and the reading cannot be verified from it - re-crop the cell"
       },
       "tree_source": {
         "t": 17580,
@@ -6093,7 +6287,13 @@
             "sharpness": 3373.1,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -6255,7 +6455,13 @@
             "sharpness": 3438.1,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -6374,7 +6580,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -6517,7 +6729,13 @@
             "sharpness": 3152.5,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -6594,7 +6812,7 @@
         "Instant"
       ],
       "requires": [],
-      "description_rank1": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec. but during that time you cannot attack, move, or cast spells.",
+      "description_rank1": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec, but during that time you cannot attack, move, or cast spells.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -6605,7 +6823,7 @@
         "crop_path": "work/hovers/09-mage-15040/frost-r4c2.png",
         "icon_crop_path": "work/hovers/09-mage-15040/frost-r4c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "09-mage-15040",
         "hover_id": "frost-r4c2",
@@ -6663,6 +6881,20 @@
             "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec, but during that time you cannot attack, move, or cast spells.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Ice Block",
+            "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec. but during that time you cannot attack, move, or cast spells.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Ice Block",
+            "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec. but during that time you cannot attack, move, or cast spells.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -6673,7 +6905,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -6681,22 +6920,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 0.7
-      },
-      "ranks_anticipated": {
-        "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for {0} sec. but during that time you cannot attack, move, or cast spells.",
-        "ranks": [
-          [
-            10
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "icon": "spell_frost_frost",
       "icon_source": "classic",
@@ -6725,7 +6948,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the critical strike chance of all your spells against Frozen targets by 50.",
+      "description_rank1": "Increases the critical strike chance of all your spells against frozen targets by 50%.",
       "footer": "Right click to unlearn",
       "cut_off": false,
       "source": {
@@ -6736,7 +6959,7 @@
         "crop_path": "work/hovers/10-mage-17580/frost-r4c4.png",
         "icon_crop_path": "work/hovers/10-mage-17580/frost-r4c4-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "10-mage-17580",
         "hover_id": "frost-r4c4",
@@ -6788,10 +7011,33 @@
             "description": "Increases the critical strike chance of all your spells against frozen targets by 50%.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Shatter",
+            "description": "Increases the critical strike chance of all your spells against Frozen targets by 33%. Next Rank: Passive Increases the critical strike chance of all your spells against Frozen targets by 50.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Shatter",
+            "description": "Increases the critical strike chance of all your spells against Frozen targets by 50.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "every crop of this cell shows rank 3/3 (points already spent); text may not be rank 1; second reader (codex) differs in description"
+        "note": "every crop of this cell shows rank 3/3 (points already spent); text may not be rank 1",
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1,
+            "percent": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 17580,
@@ -6799,50 +7045,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 0.7
-      },
-      "ranks_anticipated": {
-        "description": "Increases the critical strike chance of all your spells against Frozen targets by {0}.",
-        "ranks": [
-          [
-            50
-          ],
-          [
-            100
-          ],
-          [
-            150
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 67,
-          "classicSpellIds": [
-            11170,
-            12982,
-            12983,
-            12984,
-            12985
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic mage/frost/Shatter (talent 67): Classic 10/20/30/40/50 is proportional, Classic has 5 ranks; Forever rank 1 is 50: scaled proportionally (50 x rank).",
-        "needsManual": false,
-        "confidence": "medium",
-        "review": true,
-        "rule": "proportional",
-        "match": {
-          "classicTalentId": 67,
-          "name": "Shatter",
-          "class": "mage",
-          "tree": "frost",
-          "maxRank": 5,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       }
     },
     {
@@ -6927,7 +7129,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -7086,7 +7294,13 @@
             "sharpness": 2957.1,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -7136,7 +7350,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 1 spell cast as if the target were Frozen. Lasts 15 sec.",
+      "description_rank1": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 1 spell cast as if the target were frozen. Lasts 15 sec.",
       "footer": "Click to learn",
       "cut_off": false,
       "source": {
@@ -7147,7 +7361,7 @@
         "crop_path": "work/hovers/09-mage-15040/frost-r5c3.png",
         "icon_crop_path": "work/hovers/09-mage-15040/frost-r5c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "09-mage-15040",
         "hover_id": "frost-r5c3",
@@ -7199,6 +7413,20 @@
             "description": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 2 spell casts as if the target were frozen. Lasts 15 sec.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Fingers of Frost",
+            "description": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 1 spell cast as if the target were Frozen. Lasts 15 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Fingers of Frost",
+            "description": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 1 spell cast as if the target were Frozen. Lasts 15 sec.",
+            "maxRank": 2,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -7209,7 +7437,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -7217,30 +7452,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 0.7
-      },
-      "ranks_anticipated": {
-        "description": "Gives your Chill effects a {0}% chance to grant you the Fingers of Frost effect, which treats your next {1} spell cast as if the target were Frozen. Lasts {2} sec.",
-        "ranks": [
-          [
-            15,
-            1,
-            15
-          ],
-          [
-            15,
-            1,
-            15
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "manual",
-        "ranksNote": "needs manual ranks: duration slot (15 sec) is never extrapolated; rank 2 is a copy of rank 1.",
-        "needsManual": true,
-        "confidence": "low",
-        "review": true,
-        "rule": "none"
       },
       "requires_arrows": [
         {
@@ -7281,7 +7492,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Gives your Frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
+      "description_rank1": "Gives your frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -7292,7 +7503,7 @@
         "crop_path": "work/hovers/09-mage-15040/frost-r6c3.png",
         "icon_crop_path": "work/hovers/09-mage-15040/frost-r6c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "09-mage-15040",
         "hover_id": "frost-r6c3",
@@ -7344,6 +7555,20 @@
             "description": "Gives your frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
             "maxRank": 5,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Winter's Chill",
+            "description": "Gives your Frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
+            "maxRank": 5,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Winter's Chill",
+            "description": "Gives your Frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
+            "maxRank": 5,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -7354,7 +7579,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -7362,56 +7594,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 0.7
-      },
-      "ranks_anticipated": {
-        "description": "Gives your Frost damage spells a {0}% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
-        "ranks": [
-          [
-            20
-          ],
-          [
-            40
-          ],
-          [
-            60
-          ],
-          [
-            80
-          ],
-          [
-            100
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 68,
-          "classicSpellIds": [
-            11180,
-            28592,
-            28593,
-            28594,
-            28595
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic mage/frost/Winter's Chill (talent 68): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 68,
-          "name": "Winter's Chill",
-          "class": "mage",
-          "tree": "frost",
-          "maxRank": 5,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_frost_chillingblast",
       "icon_source": "classic",
@@ -7524,7 +7706,13 @@
             "sharpness": 4006.8,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 15040,
@@ -7661,7 +7849,13 @@
             "sharpness": 3680.7,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14970,

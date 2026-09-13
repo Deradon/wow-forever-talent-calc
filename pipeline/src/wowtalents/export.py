@@ -31,10 +31,11 @@ import sys
 from collections import Counter, OrderedDict
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, Iterable
 
 from rapidfuzz import fuzz
 
+from . import fsio
 from . import ranks as R
 
 PIPELINE_DIR = Path(__file__).resolve().parents[2]
@@ -383,8 +384,14 @@ def _talent(cls: str, tree: dict, rec: dict, tid: str, by_name: dict, names: lis
 
     crop_rel = f"data/review/{cls}/{tree['id']}/{tid}.png"
     _place_crop(src.get("crop_path"), crop_rel, root, copy_crops, log, path)
+    # stage 9 (icon matching) writes icon / icon_source into the candidate record; once it has,
+    # the record keeps no iconCrop, so copying the icon crop here would only create an orphan
+    # under data/review/ (405 such files were being globbed into the web bundle and deployed)
+    matched_icon = bool(rec.get("icon")) and rec.get("icon_source") in ("classic", "datamined", "manual")
     icon_rel = f"data/review/{cls}/{tree['id']}/{tid}.icon.png"
-    if not _place_crop(src.get("icon_crop_path"), icon_rel, root, copy_crops, Log(), path):
+    if matched_icon:
+        icon_rel = None
+    elif not _place_crop(src.get("icon_crop_path"), icon_rel, root, copy_crops, Log(), path):
         icon_rel = crop_rel  # no icon crop yet: the tooltip crop stands in (both are provisional)
 
     requires = []
@@ -418,17 +425,18 @@ def _talent(cls: str, tree: dict, rec: dict, tid: str, by_name: dict, names: lis
         "maxRank": max_rank,
         "icon": f"crop-{tid}",
         "iconSource": "crop",
-        "iconCrop": icon_rel,
         "description": ra["description"],
         "ranks": ra["ranks"],
-        "ranksObserved": [1],
+        # normally [1] (only rank-0 tooltips exist), but a crop taken with points already spent
+        # reports the rank it actually shows - see ranks.anticipate's observed_rank guard
+        "ranksObserved": list(ra.get("ranksObserved") or [1]),
         "ranksSource": ra["ranksSource"],
     }
-    # stage 9 (icon matching) writes icon / icon_source into the candidate record
-    if rec.get("icon") and rec.get("icon_source") in ("classic", "datamined", "manual"):
+    if matched_icon:
         t["icon"] = str(rec["icon"]).lower()
-        t["iconSource"] = str(rec["icon_source"])
-        t.pop("iconCrop", None)  # schema: iconCrop iff iconSource == "crop"; the crop file stays under data/review/
+        t["iconSource"] = str(rec["icon_source"])   # schema: iconCrop iff iconSource == "crop"
+    else:
+        t["iconCrop"] = icon_rel
     if "ranksPrior" in ra:
         t["ranksPrior"] = ra["ranksPrior"]
     if ra.get("ranksNote"):
@@ -492,6 +500,17 @@ def apply_overrides(doc: dict, overrides: dict | None, log: Log) -> set[str]:
             touched.add(target["id"])
             continue
         before = _reading_of(target)
+        for field_name in o.get("unset") or []:
+            # section 6.2 "Deleting a field": unset runs before set, so set wins on a field in both.
+            # A shallow merge can only add or replace, so this is the only way to drop a wrong
+            # `requires` arrow or a stale ranksNote. Unsetting an absent field is a no-op.
+            if field_name not in validate.UNSETTABLE:
+                log.warn(f"{label}: unset {field_name!r} is not an optional field; ignored")
+                continue
+            if field_name.startswith("source."):
+                (target.get("source") or {}).pop(field_name.split(".", 1)[1], None)
+            else:
+                target.pop(field_name, None)
         if "set" in o:
             for k, v in o["set"].items():
                 if k == "source" and isinstance(v, dict):
@@ -597,27 +616,115 @@ def highest_encoding_version(root: Path) -> int:
     return max(versions) if versions else 1
 
 
+def class_encoding_entry(doc: dict) -> dict:
+    """This class's ``{trees, order}`` block: pages flattened, talents row-major (schema section 8)."""
+    page_rank = {p["id"]: i for i, p in enumerate(doc["pages"])}
+    trees = sorted(doc["trees"], key=lambda t: (page_rank.get(t["page"], 99), t["order"]))
+    return {
+        "trees": [t["id"] for t in trees],
+        "order": {t["id"]: [x["id"] for x in sorted(t["talents"], key=lambda x: (x["row"], x["col"]))] for t in trees},
+    }
+
+
+def _fork_frozen(root: Path, path: Path, enc: dict, log: Log) -> tuple[Path, dict]:
+    """A frozen v<N> is published: copy it to v<N+1> and leave every minted digit alone.
+
+    This is the guard for the failure the version mechanism exists to prevent: v1 was
+    rewritten in place four times, and inserting a recovered talent into ``order`` shifted
+    every digit after it, so shared ``?v=1&t=...`` links silently decoded to other talents.
+    """
+    n = int(enc.get("version") or 1)
+    new_path = path.with_name(f"v{n + 1}.json")
+    if new_path.exists():
+        raise FileExistsError(f"{path.name} is frozen and {new_path.name} already exists; "
+                              f"set dataVersion to {n + 1} and re-run, or unfreeze deliberately")
+    new_enc = copy.deepcopy(enc)
+    new_enc["version"] = n + 1
+    new_enc["createdAt"] = now_rfc3339()
+    new_enc["frozen"] = False
+    new_enc["note"] = (f"Forked from v{n}.json by 08_export --update-encoding because v{n} is frozen. "
+                       f"Fill in migrations/v{n}-v{n + 1}.json and set dataVersion to {n + 1} in every class file.")
+    mig = root / "data" / "encoding" / "migrations" / f"v{n}-v{n + 1}.json"
+    if not mig.is_file():
+        mig.parent.mkdir(parents=True, exist_ok=True)
+        fsio.write_json_atomic(mig, {"from": n, "to": n + 1, "classes": {}})
+        log.warn(f"encoding: wrote an empty migration {mig.name}; fill in renamed/removed/moved before publishing")
+    log.warn(f"encoding: v{n}.json is frozen; created {new_path.name} instead. Every data/talents/*.json and "
+             f"data/examples/*.json must move to dataVersion {n + 1} before the validator passes again.")
+    return new_path, new_enc
+
+
 def update_encoding(root: Path, doc: dict, log: Log) -> Path:
-    """Upsert this class into the highest data/encoding/v<N>.json (only legal before that version is published)."""
+    """Upsert this class into the highest ``data/encoding/v<N>.json``.
+
+    A version file carrying ``"frozen": true`` is published and immutable
+    (``data/encoding/README.md`` rule 1): this refuses to touch it and forks v<N+1>.
+    """
     versions = validate._encoding_versions(root)
     if not versions:
         enc_dir = root / "data" / "encoding"
         enc_dir.mkdir(parents=True, exist_ok=True)
         path = enc_dir / "v1.json"
-        enc = {"version": 1, "createdAt": now_rfc3339(), "note": "created by 08_export", "classes": {}}
+        enc = {"version": 1, "createdAt": now_rfc3339(), "note": "created by 08_export", "frozen": False, "classes": {}}
     else:
         path = versions[max(versions)]
         enc = json.loads(path.read_text(encoding="utf-8"))
-    page_rank = {p["id"]: i for i, p in enumerate(doc["pages"])}
-    trees = sorted(doc["trees"], key=lambda t: (page_rank.get(t["page"], 99), t["order"]))
-    enc.setdefault("classes", {})[doc["class"]] = {
-        "trees": [t["id"] for t in trees],
-        "order": {t["id"]: [x["id"] for x in sorted(t["talents"], key=lambda x: (x["row"], x["col"]))] for t in trees},
-    }
-    path.write_text(json.dumps(enc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    entry = class_encoding_entry(doc)
+    if enc.get("frozen"):
+        if (enc.get("classes") or {}).get(doc["class"]) == entry:
+            log.info(f"encoding {path.name}: frozen, class {doc['class']} entry already identical; nothing to do")
+            doc["dataVersion"] = enc["version"]
+            return path
+        path, enc = _fork_frozen(root, path, enc, log)
+    enc.setdefault("classes", {})[doc["class"]] = entry
+    fsio.write_json_atomic(path, enc)
     log.info(f"encoding {path.name}: class {doc['class']} entry updated")
     doc["dataVersion"] = enc["version"]
     return path
+
+
+def referenced_crops(doc: dict) -> set[str]:
+    """Every ``data/review/`` path one class document points at: tooltip crops, icon crops, tree headers."""
+    out: set[str] = set()
+    for tree in doc.get("trees") or []:
+        src = tree.get("source") or {}
+        if src.get("crop"):
+            out.add(str(src["crop"]))
+        for t in tree.get("talents") or []:
+            if t.get("iconCrop"):
+                out.add(str(t["iconCrop"]))
+            if (t.get("source") or {}).get("crop"):
+                out.add(str(t["source"]["crop"]))
+    return out
+
+
+def orphan_crops(root: Path, docs: Iterable[dict]) -> list[Path]:
+    """PNGs under ``data/review/`` that no class document references any more.
+
+    Stage 9 switches a talent to ``iconSource: "classic"`` and drops its ``iconCrop``; the
+    file stays behind. 405 such files (1.0 MB) were still being globbed into the web bundle
+    and deployed. Tooltip crops named in ``source.crop`` are provenance and are never orphans.
+    """
+    review = root / "data" / "review"
+    if not review.is_dir():
+        return []
+    keep: set[str] = set()
+    for doc in docs:
+        keep |= referenced_crops(doc)
+    return sorted(p for p in review.rglob("*.png") if str(p.relative_to(root)) not in keep)
+
+
+def prune_review_crops(root: Path, docs: Iterable[dict], log: Log, *, dry_run: bool = False) -> list[Path]:
+    """Delete the orphans; returns what was (or would be) removed."""
+    gone = orphan_crops(root, docs)
+    for p in gone:
+        log.info(f"{'would remove' if dry_run else 'removed'} orphan crop {p.relative_to(root)}")
+        if not dry_run:
+            p.unlink(missing_ok=True)
+    if gone:
+        kb = sum(1 for _ in gone)
+        log.warn(f"data/review: {kb} orphaned crop(s) {'would be' if dry_run else ''} removed")
+    return gone
 
 
 def run_validator(path: Path, root: Path, *, check: bool = False, no_files: bool = False, strict: bool = False):

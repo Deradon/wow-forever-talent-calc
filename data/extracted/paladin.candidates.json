@@ -219,7 +219,13 @@
             "sharpness": 3364.5,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -354,7 +360,13 @@
             "sharpness": 3068.0,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -505,7 +517,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -654,7 +672,13 @@
             "sharpness": 3519.0,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 13640,
@@ -798,7 +822,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 13640,
@@ -941,7 +971,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 13640,
@@ -1089,7 +1125,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21570,
@@ -1219,7 +1261,13 @@
             "sharpness": 3023.6,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21570,
@@ -1362,7 +1410,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21570,
@@ -1483,6 +1537,13 @@
             "description": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within 15 sec. by 0.5 sec.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Infusion of Light",
+            "description": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within 15 sec by 0.5 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
           }
         ],
         "alternates": [],
@@ -1496,7 +1557,15 @@
           ],
           "darkness": 0.85
         },
-        "note": "second reader (codex) differs in description"
+        "note": "readers still differ on 'sec' vs 'sec.'",
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [
+            "'sec' vs 'sec.'"
+          ],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21570,
@@ -1619,7 +1688,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 13640,
@@ -1797,6 +1872,12 @@
             3
           ],
           "darkness": 0.85
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -1838,7 +1919,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases your chance to hit with Holy spells by 6.",
+      "description_rank1": "Increases your chance to hit with Holy spells by 6%.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -1849,7 +1930,7 @@
         "crop_path": "work/hovers/25-paladin-21570/holy-r5c1.png",
         "icon_crop_path": "work/hovers/25-paladin-21570/holy-r5c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "25-paladin-21570",
         "hover_id": "holy-r5c1",
@@ -1901,10 +1982,31 @@
             "description": "Increases your chance to hit with Holy spells by 6%.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Divine Precision",
+            "description": "Increases your chance to hit with Holy spells by 6%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Divine Precision",
+            "description": "Increases your chance to hit with Holy spells by 6.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "percent": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21570,
@@ -1912,48 +2014,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases your chance to hit with Holy spells by {0}.",
-        "ranks": [
-          [
-            6
-          ],
-          [
-            12
-          ],
-          [
-            18
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 583,
-          "classicSpellIds": [
-            16180,
-            16196,
-            16198
-          ],
-          "match": "description",
-          "similarity": 0.91
-        },
-        "ranksNote": "Classic shaman/restoration/Nature's Guidance (talent 583) (cross-class), matched on description (0.91): Classic 1/2/3 is proportional; Forever rank 1 is 6: scaled proportionally (6 x rank).",
-        "needsManual": false,
-        "confidence": "medium",
-        "review": true,
-        "rule": "proportional",
-        "match": {
-          "classicTalentId": 583,
-          "name": "Nature's Guidance",
-          "class": "shaman",
-          "tree": "restoration",
-          "maxRank": 3,
-          "match": "description",
-          "similarity": 0.91
-        }
       },
       "requires_arrows": [
         {
@@ -2064,7 +2124,13 @@
             "sharpness": 4657.7,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21570,
@@ -2119,7 +2185,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Gives your Holy spells 5% Increased damage against the first 4 enemies that enter your Consecration.",
+      "description_rank1": "Gives your Holy spells 5% increased damage against the first 4 enemies that enter your Consecration.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -2130,7 +2196,7 @@
         "crop_path": "work/hovers/25-paladin-21570/holy-r5c3.png",
         "icon_crop_path": "work/hovers/25-paladin-21570/holy-r5c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "25-paladin-21570",
         "hover_id": "holy-r5c3",
@@ -2182,10 +2248,31 @@
             "description": "Gives your Holy spells 5% increased damage against the first 4 enemies that enter your Consecration.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Consecrated Ground",
+            "description": "Gives your Holy spells 5% Increased damage against the first 4 enemies that enter your Consecration.",
+            "maxRank": 2,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Consecrated Ground",
+            "description": "Gives your Holy spells 5% Increased damage against the first 4 enemies that enter your Consecration.",
+            "maxRank": 2,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21570,
@@ -2193,28 +2280,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Gives your Holy spells {0}% Increased damage against the first {1} enemies that enter your Consecration.",
-        "ranks": [
-          [
-            5,
-            4
-          ],
-          [
-            10,
-            8
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
-        "needsManual": false,
-        "confidence": "low",
-        "review": true,
-        "rule": "proportional"
       },
       "icon": "spell_holy_innerfire",
       "icon_source": "classic",
@@ -2308,7 +2373,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21570,
@@ -2477,7 +2548,13 @@
             "sharpness": 5446.1,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 13640,
@@ -2619,7 +2696,13 @@
             "sharpness": 2300.4,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 13640,
@@ -2777,7 +2860,13 @@
             "sharpness": 3009.1,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 13640,
@@ -2946,7 +3035,13 @@
             "sharpness": 2840.8,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -3024,7 +3119,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Reduces the cooldown of your Blessing of Protection by 1 min and Increases the duration of your Blessing of Freedom by 3 sec.",
+      "description_rank1": "Reduces the cooldown of your Blessing of Protection by 1 min and increases the duration of your Blessing of Freedom by 3 sec.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -3035,7 +3130,7 @@
         "crop_path": "work/hovers/26-paladin-21630/protection-r2c2.png",
         "icon_crop_path": "work/hovers/26-paladin-21630/protection-r2c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "26-paladin-21630",
         "hover_id": "protection-r2c2",
@@ -3087,6 +3182,20 @@
             "description": "Reduces the cooldown of your Blessing of Protection by 1 min and increases the duration of your Blessing of Freedom by 3 sec.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Guardian's Favor",
+            "description": "Reduces the cooldown of your Blessing of Protection by 1 min and increases the duration of your Blessing of Freedom by 3 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Guardian's Favor",
+            "description": "Reduces the cooldown of your Blessing of Protection by 1 min and Increases the duration of your Blessing of Freedom by 3 sec.",
+            "maxRank": 2,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -3103,7 +3212,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -3111,46 +3227,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Reduces the cooldown of your Blessing of Protection by {0} min and Increases the duration of your Blessing of Freedom by {1} sec.",
-        "ranks": [
-          [
-            1,
-            3
-          ],
-          [
-            2,
-            6
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1425,
-          "classicSpellIds": [
-            20174,
-            20175
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic paladin/protection/Guardian's Favor (talent 1425): Classic 60/120 sec taken as 1/2 min.",
-        "needsManual": false,
-        "confidence": "medium",
-        "review": true,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 1425,
-          "name": "Guardian's Favor",
-          "class": "paladin",
-          "tree": "protection",
-          "maxRank": 2,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_holy_sealofprotection",
       "icon_source": "classic",
@@ -3259,7 +3335,13 @@
             "sharpness": 3362.0,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 13640,
@@ -3425,7 +3507,13 @@
             "sharpness": 4144.8,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -3551,7 +3639,13 @@
             "sharpness": 3998.8,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -3701,7 +3795,13 @@
             "sharpness": 4907.7,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -3779,7 +3879,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield. Divine Protection, and Templar's Bulwark spells by 30 sec.",
+      "description_rank1": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by 30 sec.",
       "footer": "Click to learn",
       "cut_off": false,
       "source": {
@@ -3790,7 +3890,7 @@
         "crop_path": "work/hovers/02-paladin-14320/protection-r3c4.png",
         "icon_crop_path": "work/hovers/02-paladin-14320/protection-r3c4-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "02-paladin-14320",
         "hover_id": "protection-r3c4",
@@ -3842,6 +3942,20 @@
             "description": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by 30 sec.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Sacred Duty",
+            "description": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield. Divine Protection, and Templar's Bulwark spells by 30 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Sacred Duty",
+            "description": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield. Divine Protection, and Templar's Bulwark spells by 30 sec.",
+            "maxRank": 2,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -3858,7 +3972,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -3866,28 +3987,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases your total Stamina by {0}% and reduces the cooldown of your Divine Shield. Divine Protection, and Templar's Bulwark spells by {1} sec.",
-        "ranks": [
-          [
-            2,
-            30
-          ],
-          [
-            2,
-            30
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "manual",
-        "ranksNote": "needs manual ranks: duration slot (30 sec) is never extrapolated; rank 2 is a copy of rank 1.",
-        "needsManual": true,
-        "confidence": "low",
-        "review": true,
-        "rule": "none"
       }
     },
     {
@@ -3979,7 +4078,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -4108,7 +4213,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -4260,7 +4371,13 @@
             "sharpness": 4396.0,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -4415,7 +4532,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -4538,7 +4661,13 @@
             "sharpness": 4023.7,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -4689,7 +4818,13 @@
             "sharpness": 4183.1,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -4768,7 +4903,7 @@
       "requires": [
         "Requires Shields"
       ],
-      "description_rank1": "Increases chance to block by 20% for 10 sec, and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+      "description_rank1": "Increases chance to block by 20% for 10 sec. and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -4779,7 +4914,7 @@
         "crop_path": "work/hovers/26-paladin-21630/protection-r7c2.png",
         "icon_crop_path": "work/hovers/26-paladin-21630/protection-r7c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "26-paladin-21630",
         "hover_id": "protection-r7c2",
@@ -4843,6 +4978,20 @@
             "description": "Increases chance to block by 20% for 10 sec. and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Holy Shield",
+            "description": "Increases chance to block by 20% for 10 sec, and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Holy Shield",
+            "description": "Increases chance to block by 20% for 10 sec, and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -4859,7 +5008,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21630,
@@ -4867,26 +5023,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases chance to block by {0}% for {1} sec, and deals {2} Holy damage for each attack blocked while active. Damage caused by Holy Shield causes {3}% additional threat. Each block expends a charge. {4} charges.",
-        "ranks": [
-          [
-            20,
-            10,
-            110,
-            20,
-            4
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "requires_arrows": [
         {
@@ -4992,7 +5128,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 13640,
@@ -5153,6 +5295,12 @@
             3
           ],
           "darkness": 0.89
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -5314,6 +5462,12 @@
             1
           ],
           "darkness": 0.84
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -5463,6 +5617,12 @@
             2
           ],
           "darkness": 0.84
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -5585,6 +5745,12 @@
             3
           ],
           "darkness": 0.88
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -5725,7 +5891,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -5864,7 +6036,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -5929,7 +6107,7 @@
         "Instant"
       ],
       "requires": [],
-      "description_rank1": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or Incapacitated.",
+      "description_rank1": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or incapacitated.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -5940,7 +6118,7 @@
         "crop_path": "work/hovers/27-paladin-21740/retribution-r3c3.png",
         "icon_crop_path": "work/hovers/27-paladin-21740/retribution-r3c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "27-paladin-21740",
         "hover_id": "retribution-r3c3",
@@ -5998,6 +6176,20 @@
             "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or incapacitated.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Seal of Command",
+            "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, Instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or incapacitated.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Seal of Command",
+            "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or Incapacitated.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -6008,7 +6200,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21740,
@@ -6016,27 +6215,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Gives the Paladin a chance to deal additional Holy damage equal to {0}% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts {1} sec. Unleashing this Seal's energy will judge an enemy, instantly causing {2} to {3} Holy damage, {4} to {5} if the target is stunned or Incapacitated.",
-        "ranks": [
-          [
-            70,
-            30,
-            68,
-            73,
-            137,
-            146
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "icon": "ability_warrior_innerrage",
       "icon_source": "classic",
@@ -6065,7 +6243,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed Increasing effects.",
+      "description_rank1": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed increasing effects.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -6076,7 +6254,7 @@
         "crop_path": "work/hovers/02-paladin-14320/retribution-r3c4.png",
         "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r3c4-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "02-paladin-14320",
         "hover_id": "retribution-r3c4",
@@ -6128,10 +6306,31 @@
             "description": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed increasing effects.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Pursuit of Justice",
+            "description": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed increasing effects.",
+            "maxRank": 2,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Pursuit of Justice",
+            "description": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed Increasing effects.",
+            "maxRank": 2,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -6139,44 +6338,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases movement speed and mounted movement speed by {0}%. This does not stack with other movement speed Increasing effects.",
-        "ranks": [
-          [
-            8
-          ],
-          [
-            16
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1634,
-          "classicSpellIds": [
-            26022,
-            26023
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic paladin/retribution/Pursuit of Justice (talent 1634): Classic 4/8 is proportional; Forever rank 1 is 8: scaled proportionally (8 x rank).",
-        "needsManual": false,
-        "confidence": "medium",
-        "review": true,
-        "rule": "proportional",
-        "match": {
-          "classicTalentId": 1634,
-          "name": "Pursuit of Justice",
-          "class": "paladin",
-          "tree": "retribution",
-          "maxRank": 2,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_holy_persuitofjustice",
       "icon_source": "classic",
@@ -6270,7 +6431,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -6409,7 +6576,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -6515,7 +6688,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -6638,7 +6817,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -6781,7 +6966,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -6947,7 +7138,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -7064,7 +7261,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -7195,7 +7398,13 @@
             "sharpness": 3778.8,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -7337,7 +7546,13 @@
             "sharpness": 1875.2,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 14320,
@@ -7441,7 +7656,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21510,

@@ -72,9 +72,14 @@ KEY_ORDER = {
     "source": ["kind", "video", "t", "frame", "crop", "confidence", "reader", "readings", "build",
                "talentId", "reviewed", "reviewedBy", "reviewedAt", "note"],
     "reading": ["reader", "name", "description", "maxRank", "confidence"],
-    "override": ["talent", "tree", "set", "rename", "delete", "add", "reason", "by", "at"],
+    "override": ["talent", "tree", "set", "unset", "rename", "delete", "add", "reason", "by", "at"],
     "overridesTop": ["$schema", "schemaVersion", "class", "overrides"],
 }
+
+# Fields an override may delete (DATA-SCHEMA.md section 6.2, "Deleting a field").
+# Required fields are absent by construction: dropping one would make the record invalid.
+UNSETTABLE = {"requires", "ranksNote", "ranksPrior", "capstone", "tags", "spellIds", "iconCrop",
+              "source.note", "source.readings"}
 
 
 # ----------------------------------------------------------------------------
@@ -904,6 +909,62 @@ def rule_18_tree_totals(ctx: Ctx, doc: dict) -> None:
             ctx.warn("R18-TREE-TOO-LARGE", f"{cls}/{tree['id']}", f"sum(maxRank) = {total} > 3 * maxPoints")
 
 
+# Rule 20: anticipated ranks that cannot be real numbers (data audit 2026-09-13, work package B6).
+# Only ranks 2+ are ever flagged: rank 1 was read off a tooltip, the rest is arithmetic.
+PERCENT_SLOT_RE = r"\{{{i}}}\s*%"
+# A threshold is a condition, not a magnitude: "below 35% health" does not become "below 70%"
+# at rank 2. Classic never scales these, and the extrapolator has no way to know.
+THRESHOLD_RE = re.compile(
+    r"(?:below|under|less than|beneath|at or below|above|over|more than|greater than|at least)\s+"
+    r"(?:\w+\s+){0,2}?\{(\d+)\}\s*%", re.I)
+CLASSIC_HEADROOM = 1.6          # Forever rank N above this multiple of Classic's max is worth a look
+
+
+def _percent_slot(description: str, i: int) -> bool:
+    return re.search(PERCENT_SLOT_RE.format(i=i), description) is not None
+
+
+def rule_20_rank_sanity(ctx: Ctx, doc: dict) -> None:
+    """Flag anticipated rank values that cannot be right: impossible percentages, scaled
+    thresholds, and values far above the Classic talent they were derived from."""
+    cls = doc["class"]
+    for tree in doc["trees"]:
+        for t in tree["talents"]:
+            ranks = t["ranks"]
+            desc = t["description"]
+            path = f"{cls}/{tree['id']}/{t['id']}"
+            if t["maxRank"] < 2 or not all(isinstance(r, list) for r in ranks):
+                continue
+            observed = set(t.get("ranksObserved") or [1])
+            thresholds = {int(m.group(1)) for m in THRESHOLD_RE.finditer(desc)}
+            for i in placeholders(desc):
+                col = [(n, r[i]) for n, r in enumerate(ranks, 1) if i < len(r) and is_number(r[i])]
+                if len(col) != len(ranks):
+                    continue
+                vals = [v for _, v in col]
+                if i in thresholds and len(set(vals)) > 1:
+                    ctx.warn("R20-THRESHOLD-SCALED", path,
+                             f"slot {{{i}}} reads as a threshold in the text but changes per rank {vals}; "
+                             f"a condition like 'below {vals[0]}% health' does not scale")
+                if _percent_slot(desc, i):
+                    over = [(n, v) for n, v in col if v > 100 and n not in observed]
+                    if over and vals[0] <= 100:
+                        ctx.warn("R20-PERCENT-OVER-100", path,
+                                 f"slot {{{i}}} is a percentage and the anticipated value exceeds 100 % at rank(s) "
+                                 f"{[n for n, _ in over]} ({vals}); rank 1 was read, the rest is arithmetic")
+                prior = t.get("ranksPrior") or {}
+                rec = ctx.prior.by_id.get(prior.get("classicTalentId")) if ctx.prior is not None else None
+                # the prior's slots are indexed [rank][placeholder]; take this placeholder's column
+                slots = (rec or {}).get("slots") or []
+                classic_col = [row[i] for row in slots if isinstance(row, list) and i < len(row) and is_number(row[i])]
+                if classic_col:
+                    classic_max = max(float(x) for x in classic_col)
+                    if classic_max > 0 and max(vals) > CLASSIC_HEADROOM * classic_max:
+                        ctx.warn("R20-ABOVE-CLASSIC", path,
+                                 f"slot {{{i}}} reaches {max(vals)} against the Classic talent's {classic_max:g} "
+                                 f"({max(vals) / classic_max:.1f}x); the match or the scaling may be wrong")
+
+
 def rule_19_row_occupancy(ctx: Ctx, doc: dict) -> None:
     cls = doc["class"]
     for tree in doc["trees"]:
@@ -948,11 +1009,28 @@ def build_review_queue(ctx: Ctx, doc: dict) -> list[dict]:
 # Overrides files (--overrides)
 # ----------------------------------------------------------------------------
 
+def _without_required(node: Any) -> Any:
+    """Same schema with every ``required`` list dropped (recursively through $ref-free branches)."""
+    if isinstance(node, dict):
+        return {k: _without_required(v) for k, v in node.items() if k != "required"}
+    if isinstance(node, list):
+        return [_without_required(v) for v in node]
+    return node
+
+
 def overrides_schema(class_schema: dict) -> dict:
     """Schema for data/overrides/<class>.json (section 6.2), reusing the class schema's $defs."""
     defs = json.loads(json.dumps(class_schema["$defs"]))
     talent = defs["talent"]
-    partial = {"type": "object", "additionalProperties": False, "properties": talent["properties"],
+    # `set` is a shallow merge, and section 6.2 says source sub-fields merge shallowly too, so a
+    # `set.source` that names only the field being corrected must validate. Strip the required
+    # lists from the source variants used inside `set` (the merged result is validated in full
+    # when the class file itself is validated).
+    # the talent's `source` is a $ref; point `set.source` at a required-less copy of that $def
+    defs["sourcePartial"] = _without_required(defs["source"])
+    props = json.loads(json.dumps(talent["properties"]))
+    props["source"] = {"$ref": "#/$defs/sourcePartial"}
+    partial = {"type": "object", "additionalProperties": False, "properties": props,
                "allOf": talent.get("allOf", [])}
     return {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -973,6 +1051,8 @@ def overrides_schema(class_schema: dict) -> dict:
                         "talent": {"$ref": "#/$defs/talentId"},
                         "tree": {"$ref": "#/$defs/treeId"},
                         "set": partial,
+                        "unset": {"type": "array", "minItems": 1, "uniqueItems": True,
+                                  "items": {"type": "string", "enum": sorted(UNSETTABLE)}},
                         "rename": {"$ref": "#/$defs/talentId"},
                         "delete": {"const": True},
                         "add": {"$ref": "#/$defs/talent"},
@@ -980,11 +1060,21 @@ def overrides_schema(class_schema: dict) -> dict:
                         "by": {"type": "string", "minLength": 1},
                         "at": {"$ref": "#/$defs/rfc3339"},
                     },
-                    "oneOf": [
+                    "anyOf": [
                         {"required": ["set"]},
+                        {"required": ["unset"]},
                         {"required": ["rename"]},
                         {"required": ["delete"]},
                         {"required": ["add"]},
+                    ],
+                    # delete and add own the whole record; nothing else may ride along
+                    "allOf": [
+                        {"if": {"required": ["delete"]},
+                         "then": {"not": {"anyOf": [{"required": ["set"]}, {"required": ["unset"]},
+                                                    {"required": ["rename"]}, {"required": ["add"]}]}}},
+                        {"if": {"required": ["add"]},
+                         "then": {"not": {"anyOf": [{"required": ["set"]}, {"required": ["unset"]},
+                                                    {"required": ["rename"]}, {"required": ["delete"]}]}}},
                     ],
                 },
             },
@@ -1099,6 +1189,7 @@ def validate_path(path: Path, opts: argparse.Namespace, schema_cache: dict[Path,
     rule_17_hygiene(ctx, doc)
     rule_18_tree_totals(ctx, doc)
     rule_19_row_occupancy(ctx, doc)
+    rule_20_rank_sanity(ctx, doc)
     if opts.strict:
         for f in ctx.result.findings:
             if f.level == "WARNING":

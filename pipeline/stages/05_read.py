@@ -38,6 +38,7 @@ import typer
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import reader as RD  # noqa: E402
 from wowtalents import ui  # noqa: E402
+from wowtalents.fsio import write_json_atomic  # noqa: E402
 
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 
@@ -135,11 +136,27 @@ def copy_review(cls: str, rec: dict, hover: dict, tree_strip: Path | None) -> in
 
 
 def record_key(rec: dict, tree_index: dict[str, int]) -> tuple[str, int, int, int] | None:
-    """A candidate record's (page, tree index, 1-based row, 1-based col), the key ``merge_hovers`` uses."""
-    idx = tree_index.get(str(rec.get("tree") or ""))
-    if idx is None:
+    """A candidate record's (page, tree index, 1-based row, 1-based col), the key ``merge_hovers`` uses.
+
+    ``source.cell`` is authoritative: stage 5 writes the hover's own ``(tree, row, col)``
+    there, so a record keys correctly even when the ``trees`` block is absent or the
+    segment read the tree name differently. Only when it is missing does this fall back
+    to the display name, and that comparison is by slug, so ``"Beast  Mastery"`` and
+    ``"Beast Mastery"`` are the same tree. Returning ``None`` means the record cannot be
+    placed at all; ``--add`` refuses the run rather than re-reading and appending it twice.
+    """
+    page = str(rec.get("page") or "Primary")
+    cell = (rec.get("source") or {}).get("cell")
+    if isinstance(cell, (list, tuple)) and len(cell) == 3:
+        try:
+            return (page, int(cell[0]), int(cell[1]), int(cell[2]))
+        except (TypeError, ValueError):
+            pass
+    by_slug = {ui.slug(str(k)): v for k, v in (tree_index or {}).items()}
+    idx = by_slug.get(ui.slug(str(rec.get("tree") or "")))
+    if idx is None or rec.get("row") is None or rec.get("col") is None:
         return None
-    return (str(rec.get("page") or "Primary"), int(idx), int(rec["row"]) + 1, int(rec["col"]) + 1)
+    return (page, int(idx), int(rec["row"]) + 1, int(rec["col"]) + 1)
 
 
 def additive_merge(existing: dict, records: list[dict], segments: list[dict], trees: dict[str, str],
@@ -152,18 +169,20 @@ def additive_merge(existing: dict, records: list[dict], segments: list[dict], tr
     grown file stays legible.
     """
     doc = dict(existing)
-    doc["generated_at"] = at
+    if records:
+        doc["generated_at"] = at   # a run that appended nothing leaves the file's own timestamp alone
     have = {s.get("segment_id") for s in existing.get("segments") or []}
     doc["segments"] = list(existing.get("segments") or []) + [s for s in segments if s.get("segment_id") not in have]
     doc["trees"] = {**{str(k): v for k, v in trees.items()}, **(existing.get("trees") or {})}
     doc["missing_cells"] = missing
     doc["stats"] = stats
     doc["candidates"] = list(existing.get("candidates") or []) + list(records)
-    doc["additions"] = list(existing.get("additions") or []) + [{
-        "at": at, "source": source, "reader": stats.get("reader"),
-        "segments": [s.get("segment_id") for s in segments],
-        "added": [r["id"] for r in records],
-    }]
+    if records:   # no addition entry for a no-op run: it would claim provenance for nothing
+        doc["additions"] = list(existing.get("additions") or []) + [{
+            "at": at, "source": source, "reader": stats.get("reader"),
+            "segments": [s.get("segment_id") for s in segments],
+            "added": [r["id"] for r in records],
+        }]
     return doc
 
 
@@ -205,7 +224,7 @@ def run(
     only = {s.strip() for s in segments.split(",")} if segments else None
     docs = hover_docs(cls, only)
     if not docs:
-        typer.echo(f"no hovers JSON for {cls} under {HOVERS_DIR}; run stages/04_hovers.py first")
+        typer.echo(f"no hovers JSON for {cls} under {HOVERS_DIR}; run stages/04_hovers.py first", err=True)
         raise typer.Exit(code=2)
     f1, f2 = (float(x) for x in passes.split(","))
     calibs = {sid: json.loads((CALIB_DIR / f"{sid}.json").read_text()) for sid, _ in docs}
@@ -226,11 +245,20 @@ def run(
     covered: dict[tuple, dict] = dict(best)      # cells with a crop (best) or an existing record
     if add:
         if not dest.is_file():
-            typer.echo(f"--add needs an existing candidates file at {dest}")
+            typer.echo(f"--add needs an existing candidates file at {dest}", err=True)
             raise typer.Exit(code=2)
         existing = json.loads(dest.read_text(encoding="utf-8"))
         tree_index = {v: int(k) for k, v in (existing.get("trees") or {}).items()}
-        have = {record_key(r, tree_index) for r in existing.get("candidates") or []} - {None}
+        have = set()
+        unkeyed = []
+        for r in existing.get("candidates") or []:
+            k = record_key(r, tree_index)
+            (have.add(k) if k is not None else unkeyed.append(str(r.get("id") or r.get("name") or "?")))
+        if unkeyed:
+            typer.echo(f"--add: {len(unkeyed)} existing record(s) carry neither source.cell nor a known tree "
+                       f"({', '.join(unkeyed[:5])}{', ...' if len(unkeyed) > 5 else ''}); they would be re-read and "
+                       f"appended a second time. Refusing.", err=True)
+            raise typer.Exit(code=2)
         for k in have:
             covered.setdefault(k, {})
         to_read = sorted(k for k in best if k not in have)
@@ -377,7 +405,7 @@ def run(
         doc = additive_merge(existing, records, doc["segments"], doc["trees"], missing, stats, doc["generated_at"])
         typer.echo(f"--add: appended {len(records)} records ({', '.join(r['id'] for r in records) or '-'})")
     dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    write_json_atomic(dest, doc)
     typer.echo(f"{len(all_records)} records, confidence {stats['confidence']}, {stats['cut_off']} cut off, "
                f"{len(missing)} cells missing; {reader.calls} VLM calls ({reader.seconds:.0f}s), "
                f"{reader.cache_hits} cache hits, {stats['wall_seconds']}s wall")

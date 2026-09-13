@@ -115,6 +115,25 @@ uv run stages/05_read.py run mage --segments 8,m07 --add    # read only the cell
 
 Helpers in `src/wowtalents/mkv.py` (`tests/test_mkv.py`).
 
+### Stage 5b: adjudicate the readings (`scripts/merge_readers.py`)
+
+`05_read.py` stores two Qwen passes, `scripts/second_opinion.py` adds a codex
+reading. The merge decides between them shape by shape (`src/wowtalents/merge.py`):
+the second reader wins on case, punctuation and `%`, wording goes to whichever
+variant the other readings back, then a capital-`I` normaliser and a spell-name
+repair against the Classic prior run over the result. It also re-derives
+`source.confidence` and `source.note` from the evidence, so it is idempotent.
+
+```bash
+uv run scripts/second_opinion.py mage                      # codex reading into the candidates file
+uv run scripts/merge_readers.py all --dry-run              # report, write nothing
+uv run scripts/merge_readers.py all                        # rewrite every candidates file
+uv run scripts/merge_readers.py all --reread               # one more VLM pass (4x) over the queue crops first
+```
+
+`--reread` needs llama-server: `LLAMA_PORT=8089 scripts/llama-server.sh 4b`.
+Records it rewrites lose their `ranks_anticipated` block, so re-run stage 6/8.
+
 ## Tests and validation
 
 ```bash
@@ -143,11 +162,21 @@ uv run stages/06_rankfill.py warrior --force --out /path/to/copy.json
 
 # candidates -> data/extracted/warrior.json (raw pipeline output, validated before writing)
 uv run stages/08_export.py extract warrior --update-encoding
-# extracted + data/overrides/warrior.json (optional; no class has one yet) + reviewed records
+# extracted + data/overrides/warrior.json (all nine classes have one) + reviewed records
 # -> data/talents/warrior.json
 uv run stages/08_export.py promote warrior
 uv run stages/08_export.py all warrior --update-encoding  # both; -v prints dedupe/encoding INFO lines
+
+# after promoting every class: delete data/review crops nothing references any more
+uv run stages/08_export.py prune --dry-run
+uv run stages/08_export.py prune
 ```
+
+`--update-encoding` refuses to rewrite a `data/encoding/v<N>.json` marked
+`"frozen": true` and forks `v<N+1>.json` instead (see `data/encoding/README.md`).
+`v1` is deliberately unfrozen until launch. `prune` needs all nine class files
+present and keeps everything `data/talents/*.json` and `data/examples/*.json`
+point at.
 
 Scaling rule (changed 2026-09-13, `docs/handover/2026-09-13-rank-scaling.md`):
 each Classic slot is classified as *proportional* (`c_k = a * k`, up to the

@@ -124,7 +124,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -257,7 +263,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -397,7 +409,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -540,7 +558,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -682,7 +706,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -821,7 +851,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -888,7 +924,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the damage done by your Entangling Roots spell by 25%, and its victims can take up to 25% more damage without Interrupting the effect.",
+      "description_rank1": "Increases the damage done by your Entangling Roots spell by 25%, and its victims can take up to 25% more damage without interrupting the effect.",
       "footer": "Click to learn",
       "cut_off": false,
       "source": {
@@ -899,7 +935,7 @@
         "crop_path": "work/hovers/22-druid-20650/balance-r3c1.png",
         "icon_crop_path": "work/hovers/22-druid-20650/balance-r3c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "22-druid-20650",
         "hover_id": "balance-r3c1",
@@ -951,10 +987,31 @@
             "description": "Increases the damage done by your Entangling Roots spell by 25%, and its victims can take up to 25% more damage without interrupting the effect.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Improved Entangling Roots",
+            "description": "Increases the damage done by your Entangling Roots spell by 25%, and its victims can take up to 25% more damage without Interrupting the effect.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Improved Entangling Roots",
+            "description": "Increases the damage done by your Entangling Roots spell by 25%, and its victims can take up to 25% more damage without Interrupting the effect.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -962,41 +1019,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases the damage done by your Entangling Roots spell by {0}%, and its victims can take up to {1}% more damage without Interrupting the effect.",
-        "ranks": [
-          [
-            25,
-            25
-          ],
-          [
-            50,
-            50
-          ],
-          [
-            75,
-            75
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "extrapolated",
-        "ranksNote": "Classic match druid/balance/Improved Entangling Roots (talent 787) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
-        "needsManual": false,
-        "confidence": "low",
-        "review": true,
-        "rule": "proportional",
-        "match": {
-          "classicTalentId": 787,
-          "name": "Improved Entangling Roots",
-          "class": "druid",
-          "tree": "balance",
-          "maxRank": 3,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_nature_stranglevines",
       "icon_source": "classic",
@@ -1092,7 +1114,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -1212,7 +1240,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -1366,7 +1400,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -1487,7 +1527,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -1650,7 +1696,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -1806,7 +1858,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -1862,7 +1920,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "All non-periodic spell criticals grace you with a blessing of nature. Increasing your spellcasting speed and reducing your global cooldown by 10% for 3 sec.",
+      "description_rank1": "All non-periodic spell criticals grace you with a blessing of nature, increasing your spellcasting speed and reducing your global cooldown by 10% for 3 sec.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -1873,7 +1931,7 @@
         "crop_path": "work/hovers/22-druid-20650/balance-r5c2.png",
         "icon_crop_path": "work/hovers/22-druid-20650/balance-r5c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "22-druid-20650",
         "hover_id": "balance-r5c2",
@@ -1925,10 +1983,32 @@
             "description": "All non-periodic spell criticals grace you with a blessing of nature, increasing your spellcasting speed and reducing your global cooldown by 10% for 3 sec.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Nature's Grace",
+            "description": "All non-periodic spell criticals grace you with a blessing of nature. Increasing your spellcasting speed and reducing your global cooldown by 10% for 3 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Nature's Grace",
+            "description": "All non-periodic spell criticals grace you with a blessing of nature. Increasing your spellcasting speed and reducing your global cooldown by 10% for 3 sec.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 1,
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -1936,23 +2016,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "All non-periodic spell criticals grace you with a blessing of nature. Increasing your spellcasting speed and reducing your global cooldown by {0}% for {1} sec.",
-        "ranks": [
-          [
-            10,
-            3
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "icon": "spell_nature_naturesblessing",
       "icon_source": "classic",
@@ -2046,7 +2109,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -2181,7 +2250,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -2270,7 +2345,7 @@
         "Instant"
       ],
       "requires": [],
-      "description_rank1": "Transforms the Druid into Moonkin Form. While in this form, the armor contribution from items is increased by 360% and all party members within 45 yards have their critical chance Increased by 3%, exclusive with Leader of the Pack. The Moonkin cannot cast healing spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
+      "description_rank1": "Transforms the Druid into Moonkin Form. While in this form, the armor contribution from items is increased by 360% and all party members within 45 yards have their critical chance increased by 3%, exclusive with Leader of the Pack. The Moonkin cannot cast healing spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement impairing effects.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -2281,7 +2356,7 @@
         "crop_path": "work/hovers/22-druid-20650/balance-r7c2.png",
         "icon_crop_path": "work/hovers/22-druid-20650/balance-r7c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "22-druid-20650",
         "hover_id": "balance-r7c2",
@@ -2339,10 +2414,31 @@
             "description": "Transforms the Druid into Moonkin Form. While in this form, the armor contribution from items is increased by 360% and all party members within 45 yards have their critical chance increased by 3%, exclusive with Leader of the Pack. The Moonkin cannot cast healing spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Moonkin Form",
+            "description": "Transforms the Druid into Moonkin Form. While in this form, the armor contribution from items is increased by 360% and all party members within 45 yards have their critical chance increased by 3%, exclusive with Leader of the Pack. The Moonkin cannot cast healing spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Moonkin Form",
+            "description": "Transforms the Druid into Moonkin Form. While in this form, the armor contribution from items is increased by 360% and all party members within 45 yards have their critical chance Increased by 3%, exclusive with Leader of the Pack. The Moonkin cannot cast healing spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 2
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -2350,24 +2446,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Transforms the Druid into Moonkin Form. While in this form, the armor contribution from items is increased by {0}% and all party members within {1} yards have their critical chance Increased by {2}%, exclusive with Leader of the Pack. The Moonkin cannot cast healing spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
-        "ranks": [
-          [
-            360,
-            45,
-            3
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "icon": "spell_nature_forceofnature",
       "icon_source": "classic",
@@ -2396,7 +2474,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Reduces the cost of your Maul, Mangle. Swipe. Claw, and Rake abilities by 1 Rage or Energy.",
+      "description_rank1": "Reduces the cost of your Maul, Mangle, Swipe, Claw, and Rake abilities by 1 Rage or Energy.",
       "footer": "Click to learn",
       "cut_off": false,
       "source": {
@@ -2407,7 +2485,7 @@
         "crop_path": "work/hovers/22-druid-20650/feral-combat-r1c2.png",
         "icon_crop_path": "work/hovers/22-druid-20650/feral-combat-r1c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "22-druid-20650",
         "hover_id": "feral-combat-r1c2",
@@ -2459,10 +2537,31 @@
             "description": "Reduces the cost of your Maul, Mangle, Swipe, Claw, and Rake abilities by 1 Rage or Energy.",
             "maxRank": 5,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Ferocity",
+            "description": "Reduces the cost of your Maul. Mangle. Swipe. Claw. and Rake abilities by 1 Rage or Energy.",
+            "maxRank": 5,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Ferocity",
+            "description": "Reduces the cost of your Maul, Mangle. Swipe. Claw, and Rake abilities by 1 Rage or Energy.",
+            "maxRank": 5,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 2
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -2470,56 +2569,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Reduces the cost of your Maul, Mangle. Swipe. Claw, and Rake abilities by {0} Rage or Energy.",
-        "ranks": [
-          [
-            1
-          ],
-          [
-            2
-          ],
-          [
-            3
-          ],
-          [
-            4
-          ],
-          [
-            5
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 796,
-          "classicSpellIds": [
-            16934,
-            16935,
-            16936,
-            16937,
-            16938
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic druid/feral-combat/Ferocity (talent 796): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 796,
-          "name": "Ferocity",
-          "class": "druid",
-          "tree": "feral-combat",
-          "maxRank": 5,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "ability_hunter_pet_hyena",
       "icon_source": "classic",
@@ -2613,7 +2662,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -2774,7 +2829,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -2915,7 +2976,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -3054,7 +3121,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -3186,7 +3259,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -3325,7 +3404,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -3391,20 +3476,26 @@
       "page": "Primary",
       "row": 2,
       "col": 2,
-      "name": "5 Rage",
+      "name": "Feral Charge",
       "rank": {
-        "current": 5,
-        "max": null
+        "current": 0,
+        "max": 1
       },
       "kind": null,
       "extra_lines": [
         "8-25 yd range",
-        "15 sec cooldown"
+        "Instant",
+        "15 sec cooldown",
+        "Feral Charge (Cat)",
+        "8-25 yd range",
+        "Instant",
+        "30 sec cooldown"
       ],
       "requires": [
-        "Requires Bear Form, Dire Bear Form"
+        "Requires Bear Form, Dire Bear Form",
+        "Requires Cat Form"
       ],
-      "description_rank1": "Charge an enemy, immobilizing them and interrupting any spell they are casting for 4 sec.",
+      "description_rank1": "Charge an enemy, immobilizing them and interrupting any spell they are casting for 4 sec. Feral Charge (Cat): Leap behind an enemy. Dazing them for 3 sec.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -3412,10 +3503,10 @@
         "t": 20800.0,
         "timestamp": "05:46:40.000",
         "frame_index": 1248000,
-        "crop_path": "work/hovers/22-druid-20650/feral-combat-r3c3.png",
+        "crop_path": "work/hovers/22-druid-20650/feral-combat-r3c3-recrop.png",
         "icon_crop_path": "work/hovers/22-druid-20650/feral-combat-r3c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.3,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "22-druid-20650",
         "hover_id": "feral-combat-r3c3",
@@ -3477,10 +3568,58 @@
             "description": "Charge an enemy, immobilizing them and interrupting any spell they are casting for 4 sec. Leap behind an enemy. Dazing them for 3 sec.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "5 Rage",
+            "description": "Charge an enemy, immobilizing them and interrupting any spell they are casting for 4 sec.",
+            "maxRank": null,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "5 Rage",
+            "description": "Charge an enemy, immobilizing them and interrupting any spell they are casting for 4 sec.",
+            "maxRank": null,
+            "confidence": 0.3
+          },
+          {
+            "reader": "recrop+Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x+codex-cli",
+            "name": "Feral Charge",
+            "description": "Charge an enemy, immobilizing them and interrupting any spell they are casting for 4 sec. Feral Charge (Cat): Leap behind an enemy, Dazing them for 3 sec.",
+            "maxRank": 1,
+            "confidence": 0.7
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Feral Charge",
+            "description": "Charge an enemy, immobilizing them and interrupting any spell they are casting for 4 sec. Feral Charge (Cat): Leap behind an enemy, Dazing them for 3 sec.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
-        "note": "every crop of this cell shows rank 5/None (points already spent); text may not be rank 1; second reader (codex) differs in name, rank_max, description",
-        "alternates": []
+        "note": "re-cropped from the merged mkv at stream t=20800.0 with headroom (2026-09-13): the tooltip has no name line at all in the footage, so the talent name comes from its own 'Feral Charge (Cat)' block; '5 Rage' was the Bear-form rage cost. No 'Rank x/y' line in the crop, so maxRank 1 is unverified.",
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        },
+        "recrop": {
+          "at": "2026-09-13T00:00:00Z",
+          "source": "mkv xaryu-blizzcon-day1.mkv",
+          "stream_t": 20800.0,
+          "bbox": [
+            1002,
+            162,
+            242,
+            196
+          ],
+          "reason": "audit 2026-09-13 section 4: name line above the crop's top edge"
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -3488,22 +3627,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Charge an enemy, immobilizing them and interrupting any spell they are casting for {0} sec.",
-        "ranks": [
-          [
-            4
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       }
     },
     {
@@ -3586,7 +3709,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -3726,7 +3855,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -3874,7 +4009,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -3999,7 +4140,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -4142,7 +4289,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -4288,7 +4441,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -4362,7 +4521,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack Increases the critical strike chance of all party members within 45 yards by 3%, exclusive with Moonkin Aura.",
+      "description_rank1": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the critical strike chance of all party members within 45 yards by 3%, exclusive with Moonkin Aura.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -4373,7 +4532,7 @@
         "crop_path": "work/hovers/22-druid-20650/feral-combat-r5c2.png",
         "icon_crop_path": "work/hovers/22-druid-20650/feral-combat-r5c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "22-druid-20650",
         "hover_id": "feral-combat-r5c2",
@@ -4425,10 +4584,31 @@
             "description": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the critical strike chance of all party members within 45 yards by 3%, exclusive with Moonkin Aura.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Leader of the Pack",
+            "description": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the critical strike chance of all party members within 45 yards by 3%, exclusive with Moonkin Aura.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Leader of the Pack",
+            "description": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack Increases the critical strike chance of all party members within 45 yards by 3%, exclusive with Moonkin Aura.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -4436,23 +4616,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack Increases the critical strike chance of all party members within {0} yards by {1}%, exclusive with Moonkin Aura.",
-        "ranks": [
-          [
-            45,
-            3
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "icon": "spell_nature_unyeildingstamina",
       "icon_source": "classic",
@@ -4548,7 +4711,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -4669,7 +4838,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -4811,7 +4986,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -4989,7 +5170,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -5120,7 +5307,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -5217,7 +5410,7 @@
         "crop_path": "work/hovers/22-druid-20650/restoration-r1c3.png",
         "icon_crop_path": "work/hovers/22-druid-20650/restoration-r1c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "22-druid-20650",
         "hover_id": "restoration-r1c3",
@@ -5269,10 +5462,22 @@
             "description": "Gives you a 20% chance to gain 10 Rage when you shapeshift into Bear Form or Dire Bear Form. When you shift into Cat Form, you will retain 20% of the Energy you had when you were last in Cat Form, plus 2 Energy for each second you spent not in Bear Form, Cat Form, or Dire Bear Form, up to a maximum of 20 Energy.",
             "maxRank": 5,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Furor",
+            "description": "Gives you a 20% chance to gain 10 Rage when you shapeshift into Bear Form or Dire Bear Form. When you shift into Cat Form, you will regain 20% of the Energy you had when you were last in Cat Form, plus 2 Energy for each second you spent not in Bear Form, Cat Form, or Dire Bear Form, up to a maximum of 20 Energy.",
+            "maxRank": 5,
+            "confidence": 1.0
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -5433,7 +5638,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -5577,7 +5788,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -5722,7 +5939,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -5865,7 +6088,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -6008,7 +6237,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -6159,7 +6394,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -6211,7 +6452,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Reduces the mana cost of your Healing Touch and Tranquillity spells by 2%.",
+      "description_rank1": "Reduces the mana cost of your Healing Touch and Tranquility spells by 2%.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -6222,7 +6463,7 @@
         "crop_path": "work/hovers/22-druid-20650/restoration-r4c2.png",
         "icon_crop_path": "work/hovers/22-druid-20650/restoration-r4c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "22-druid-20650",
         "hover_id": "restoration-r4c2",
@@ -6274,10 +6515,31 @@
             "description": "Reduces the mana cost of your Healing Touch and Tranquility spells by 2%.",
             "maxRank": 5,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Tranquil Spirit",
+            "description": "Reduces the mana cost of your Healing Touch and Tranquillity spells by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Tranquil Spirit",
+            "description": "Reduces the mana cost of your Healing Touch and Tranquillity spells by 2%.",
+            "maxRank": 5,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "spell-name": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -6285,56 +6547,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Reduces the mana cost of your Healing Touch and Tranquillity spells by {0}%.",
-        "ranks": [
-          [
-            2
-          ],
-          [
-            4
-          ],
-          [
-            6
-          ],
-          [
-            8
-          ],
-          [
-            10
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 843,
-          "classicSpellIds": [
-            24968,
-            24969,
-            24970,
-            24971,
-            24972
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic druid/restoration/Tranquil Spirit (talent 843): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 843,
-          "name": "Tranquil Spirit",
-          "class": "druid",
-          "tree": "restoration",
-          "maxRank": 5,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_holy_elunesgrace",
       "icon_source": "classic",
@@ -6428,7 +6640,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -6586,7 +6804,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -6639,7 +6863,7 @@
         "3 min cooldown"
       ],
       "requires": [],
-      "description_rank1": "When activated, your next Nature spell becomes an Instant cast spell.",
+      "description_rank1": "When activated, your next Nature spell becomes an instant cast spell.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -6650,7 +6874,7 @@
         "crop_path": "work/hovers/22-druid-20650/restoration-r5c1.png",
         "icon_crop_path": "work/hovers/22-druid-20650/restoration-r5c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "22-druid-20650",
         "hover_id": "restoration-r5c1",
@@ -6708,10 +6932,31 @@
             "description": "When activated, your next Nature spell becomes an instant cast spell.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Nature's Swiftness",
+            "description": "When activated, your next Nature spell becomes an Instant cast spell.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Nature's Swiftness",
+            "description": "When activated, your next Nature spell becomes an Instant cast spell.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -6719,20 +6964,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "When activated, your next Nature spell becomes an Instant cast spell.",
-        "ranks": [
-          []
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "requires_arrows": [
         {
@@ -6827,7 +7058,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -6970,7 +7207,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -7104,7 +7347,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20650,
@@ -7292,6 +7541,12 @@
             2
           ],
           "darkness": 0.8
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {

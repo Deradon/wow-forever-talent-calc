@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "class": "paladin",
+  "overrides": [
+    {
+      "talent": "consecrated-ground",
+      "tree": "holy",
+      "set": {
+        "description": "Gives your Holy spells {0}% increased damage against the first {1} enemies that enter your Consecration."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/paladin/holy/consecrated-ground.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "divine-precision",
+      "tree": "holy",
+      "set": {
+        "description": "Increases your chance to hit with Holy spells by {0}%."
+      },
+      "reason": "audit 2026-09-13: reader error (PCT); corrected against data/review/paladin/holy/divine-precision.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "guardians-favor",
+      "tree": "protection",
+      "set": {
+        "description": "Reduces the cooldown of your Blessing of Protection by {0} min and increases the duration of your Blessing of Freedom by {1} sec."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/paladin/protection/guardians-favor.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "sacred-duty",
+      "tree": "protection",
+      "set": {
+        "description": "Increases your total Stamina by {0}% and reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by {1} sec."
+      },
+      "reason": "audit 2026-09-13: reader error (PUNCT); corrected against data/review/paladin/protection/sacred-duty.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "pursuit-of-justice",
+      "tree": "retribution",
+      "set": {
+        "description": "Increases movement speed and mounted movement speed by {0}%. This does not stack with other movement speed increasing effects."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/paladin/retribution/pursuit-of-justice.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "seal-of-command",
+      "tree": "retribution",
+      "set": {
+        "description": "Gives the Paladin a chance to deal additional Holy damage equal to {0}% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts {1} sec. Unleashing this Seal's energy will judge an enemy, instantly causing {2} to {3} Holy damage, {4} to {5} if the target is stunned or incapacitated."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/paladin/retribution/seal-of-command.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    }
+  ]
+}

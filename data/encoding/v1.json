@@ -1,7 +1,8 @@
 {
   "version": 1,
   "createdAt": "2026-09-13T01:00:00Z",
-  "note": "Initial version. Only the fictional tinker example class (data/examples/tinker.json); real classes are added as they pass review, which bumps the version.",
+  "frozen": false,
+  "note": "Covers the fictional tinker example class (data/examples/tinker.json) and the nine real classes. frozen:false means 08_export --update-encoding may still rewrite this file: v1 stays mutable until launch is declared, at which point set frozen:true and every later id or order change forks v2 (data/encoding/README.md rule 1).",
   "classes": {
     "tinker": {
       "trees": [
@@ -459,7 +460,7 @@
           "brutal-impact",
           "thick-hide",
           "savage-fury",
-          "5-rage",
+          "feral-charge",
           "sharpened-claws",
           "shredding-attacks",
           "mangle",

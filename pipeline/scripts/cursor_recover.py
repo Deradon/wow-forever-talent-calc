@@ -46,6 +46,7 @@ import typer
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import fragments as fr  # noqa: E402
 from wowtalents import ui  # noqa: E402
+from wowtalents.fsio import write_json_atomic, write_text_atomic  # noqa: E402
 
 app = typer.Typer(add_completion=False)
 
@@ -361,7 +362,7 @@ def track_segment(sid: str, seg: dict, calib: dict, template: tuple[np.ndarray, 
         "track": frames, "seconds": round(time.time() - wall, 1),
     }
     ui.ensure_dir(out)
-    (out / f"{sid}.json").write_text(json.dumps(result, separators=(",", ":")) + "\n")
+    write_text_atomic(out / f"{sid}.json", json.dumps(result, separators=(",", ":")) + "\n")
     return result
 
 
@@ -653,7 +654,7 @@ def main(
         keep = {ui.find_segment(segs, k)[0] for k in segment}
         pairs = [(i, s) for i, s in pairs if i in keep]
     if not pairs:
-        typer.echo(f"no segments for class {cls!r}")
+        typer.echo(f"no segments for class {cls!r}", err=True)
         raise typer.Exit(code=2)
     ui.ensure_dir(cursor_dir)
     cache = fr.FragmentCache()
@@ -683,8 +684,8 @@ def main(
         tracks[sid] = tr
         events = track_to_events(tr)
         ui.ensure_dir(cursor_dir / "dwells")
-        (cursor_dir / "dwells" / f"{sid}.json").write_text(json.dumps(
-            {"segment_id": sid, "fps": tr["fps"], "events": [e.to_json(tr["fps"]) for e in events]}, indent=1) + "\n")
+        write_json_atomic(cursor_dir / "dwells" / f"{sid}.json",
+                          {"segment_id": sid, "fps": tr["fps"], "events": [e.to_json(tr["fps"]) for e in events]}, indent=1)
 
     # 2. missing cells (consensus over the class's stage-4 results and calibrations)
     hovers = {sid: load_json(HOVERS_DIR / f"{sid}.json") for sid in tracks}
@@ -720,7 +721,7 @@ def main(
         typer.echo(f"{sid}: {len(cands)} candidate frames for {len({k.cell_id for k in cands})} cells")
         all_cands.extend(cands)
     ui.ensure_dir(cand_dir)
-    (cand_dir / f"{cls}.json").write_text(json.dumps([k.to_json() for k in all_cands], indent=1) + "\n")
+    write_json_atomic(cand_dir / f"{cls}.json", [k.to_json() for k in all_cands], indent=1)
 
     # 5. recovery: cursor on the cell + a dark box in the generous crop
     best = choose_recoveries(all_cands)
@@ -753,7 +754,7 @@ def main(
             class_block["hovers"].append(rec)
     class_block["missing_cells"] = [cid for cid in missing if cid not in best]
     recovered_all[cls] = class_block
-    (cursor_dir / "recovered.json").write_text(json.dumps(recovered_all, indent=2) + "\n")
+    write_json_atomic(cursor_dir / "recovered.json", recovered_all)
 
     # 6. report rows (one per missing cell), merged into report.md per class
     fps = FPS / every
@@ -774,7 +775,7 @@ def main(
     validation = {sid: validate_against_stage4(tr, hovers[sid]) for sid, tr in tracks.items()}
     recovered_all[cls]["validation"] = validation
     recovered_all[cls]["median_tooltips"] = medians
-    (cursor_dir / "recovered.json").write_text(json.dumps(recovered_all, indent=2) + "\n")
+    write_json_atomic(cursor_dir / "recovered.json", recovered_all)
     write_report(cursor_dir / "report.md", cls, rows, dwelt_unrecorded, tracks, medians, validation)
     n_rec = sum(1 for r in rows if r["verdict"] == "tooltip present")
     n_never = sum(1 for r in rows if r["verdict"].startswith("cursor never"))
@@ -861,7 +862,7 @@ def write_report(path: Path, cls: str, rows: list[dict], dwelt: list[dict], trac
                 lines.append(f"| {sid} | {fr.hms(d['t'])} | {d['stage4_id'] or d['stage4_cell']} | {d['frames']} | "
                              f"{d['cursor_cell']} | {d['cursor_share']} |")
     section = "\n".join(lines) + "\n"
-    path.write_text(head + section + rest)
+    write_text_atomic(path, head + section + rest)
 
 
 if __name__ == "__main__":

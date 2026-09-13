@@ -69,7 +69,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the amount of Mana awarded by your Life Tap spell by 10.",
+      "description_rank1": "Increases the amount of Mana awarded by your Life Tap spell by 10%.",
       "footer": "Click to learn",
       "cut_off": false,
       "source": {
@@ -80,7 +80,7 @@
         "crop_path": "work/hovers/16-warlock-18980/affliction-r1c1.png",
         "icon_crop_path": "work/hovers/16-warlock-18980/affliction-r1c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "16-warlock-18980",
         "hover_id": "affliction-r1c1",
@@ -132,10 +132,31 @@
             "description": "Increases the amount of Mana awarded by your Life Tap spell by 10%.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Improved Life Tap",
+            "description": "Increases the amount of Mana awarded by your Life Tap spell by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Improved Life Tap",
+            "description": "Increases the amount of Mana awarded by your Life Tap spell by 10.",
+            "maxRank": 2,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "percent": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -143,44 +164,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases the amount of Mana awarded by your Life Tap spell by {0}.",
-        "ranks": [
-          [
-            10
-          ],
-          [
-            20
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1007,
-          "classicSpellIds": [
-            18182,
-            18183
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic warlock/affliction/Improved Life Tap (talent 1007): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 1007,
-          "name": "Improved Life Tap",
-          "class": "warlock",
-          "tree": "affliction",
-          "maxRank": 2,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_shadow_burningspirit",
       "icon_source": "classic",
@@ -209,7 +192,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases your chance to hit with all spells and attacks by 1% and reduces all threat you generate by 4.",
+      "description_rank1": "Increases your chance to hit with all spells and attacks by 1% and reduces all threat you generate by 4%.",
       "footer": "Click to learn",
       "cut_off": false,
       "source": {
@@ -220,7 +203,7 @@
         "crop_path": "work/hovers/16-warlock-18980/affliction-r1c2.png",
         "icon_crop_path": "work/hovers/16-warlock-18980/affliction-r1c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "16-warlock-18980",
         "hover_id": "affliction-r1c2",
@@ -274,10 +257,31 @@
             "description": "Increases your chance to hit with all spells and attacks by 1% and reduces all threat you generate by 4%.",
             "maxRank": 5,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Suppression",
+            "description": "Increases your chance to hit with all spells and attacks by 1% and reduces all threat you generate by 4%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Suppression",
+            "description": "Increases your chance to hit with all spells and attacks by 1% and reduces all threat you generate by 4.",
+            "maxRank": 5,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "percent": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -285,49 +289,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases your chance to hit with all spells and attacks by {0}% and reduces all threat you generate by {1}.",
-        "ranks": [
-          [
-            1,
-            4
-          ],
-          [
-            2,
-            8
-          ],
-          [
-            3,
-            12
-          ],
-          [
-            4,
-            16
-          ],
-          [
-            5,
-            20
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "extrapolated",
-        "ranksNote": "Classic match warlock/affliction/Suppression (talent 1005) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
-        "needsManual": false,
-        "confidence": "low",
-        "review": true,
-        "rule": "proportional",
-        "match": {
-          "classicTalentId": 1005,
-          "name": "Suppression",
-          "class": "warlock",
-          "tree": "affliction",
-          "maxRank": 5,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_shadow_unsummonbuilding",
       "icon_source": "classic",
@@ -421,7 +382,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -567,7 +534,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -718,7 +691,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -845,7 +824,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -994,7 +979,13 @@
             "sharpness": 3959.0,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -1050,7 +1041,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Gives you a 23% chance to avoid Interruption caused by damage while channeling or casting your Drain Life, Drain Mana, or Drain Soul spells.",
+      "description_rank1": "Gives you a 23% chance to avoid interruption caused by damage while channeling or casting your Drain Life, Drain Mana, or Drain Soul spells.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -1061,7 +1052,7 @@
         "crop_path": "work/hovers/17-warlock-19140/affliction-r3c2.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/affliction-r3c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "affliction-r3c2",
@@ -1113,6 +1104,20 @@
             "description": "Gives you a 23% chance to avoid interruption caused by damage while channeling or casting your Drain Life, Drain Mana, or Drain Soul spells.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Fel Concentration",
+            "description": "Gives you a 23% chance to avoid Interruption caused by damage while channeling or casting your Drain Life, Drain Mana, or Drain Soul spells.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Fel Concentration",
+            "description": "Gives you a 23% chance to avoid Interruption caused by damage while channeling or casting your Drain Life, Drain Mana, or Drain Soul spells.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -1123,7 +1128,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -1131,50 +1143,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Gives you a {0}% chance to avoid Interruption caused by damage while channeling or casting your Drain Life, Drain Mana, or Drain Soul spells.",
-        "ranks": [
-          [
-            23
-          ],
-          [
-            46
-          ],
-          [
-            69
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1001,
-          "classicSpellIds": [
-            17783,
-            17784,
-            17785,
-            17786,
-            17787
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic warlock/affliction/Fel Concentration (talent 1001): Classic 14/28/42/56/70 is proportional, Classic has 5 ranks; Forever rank 1 is 23: scaled proportionally (23 x rank). Rounding: rank 2 46 may read 45, rank 3 69 may read 70 (values above are the raw scaled numbers).",
-        "needsManual": false,
-        "confidence": "medium",
-        "review": true,
-        "rule": "proportional",
-        "match": {
-          "classicTalentId": 1001,
-          "name": "Fel Concentration",
-          "class": "warlock",
-          "tree": "affliction",
-          "maxRank": 5,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_shadow_fingerofdeath",
       "icon_source": "classic",
@@ -1284,7 +1252,13 @@
             "sharpness": 4558.4,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -1403,7 +1377,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -1553,7 +1533,13 @@
             "sharpness": 3293.6,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -1711,7 +1697,13 @@
             "sharpness": 4293.8,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -1869,7 +1861,13 @@
             "sharpness": 4057.2,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -2015,7 +2013,13 @@
             "sharpness": 3500.7,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -2069,7 +2073,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the rate at which your Drain Life and Drain Soul deal damage by 17%, but reduces your healing from Drain Life by 10.",
+      "description_rank1": "Increases the rate at which your Drain Life and Drain Soul deal damage by 17%, but reduces your healing from Drain Life by 10%.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -2080,7 +2084,7 @@
         "crop_path": "work/hovers/17-warlock-19140/affliction-r5c3.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/affliction-r5c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "affliction-r5c3",
@@ -2132,6 +2136,20 @@
             "description": "Increases the rate at which your Drain Life and Drain Soul deal damage by 17%, but reduces your healing from Drain Life by 10%.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Soul Siphon",
+            "description": "Increases the rate at which your Drain Life and Drain Soul deal damage by 17%, but reduces your healing from Drain Life by 10%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Soul Siphon",
+            "description": "Increases the rate at which your Drain Life and Drain Soul deal damage by 17%, but reduces your healing from Drain Life by 10.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -2142,7 +2160,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "percent": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -2150,32 +2175,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases the rate at which your Drain Life and Drain Soul deal damage by {0}%, but reduces your healing from Drain Life by {1}.",
-        "ranks": [
-          [
-            17,
-            10
-          ],
-          [
-            34,
-            20
-          ],
-          [
-            51,
-            30
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed. Rounding: {0} rank 2 34 may read 35, rank 3 51 may read 50 (values above are the raw scaled numbers).",
-        "needsManual": false,
-        "confidence": "low",
-        "review": true,
-        "rule": "proportional"
       },
       "icon": "spell_shadow_lifedrain02",
       "icon_source": "classic",
@@ -2271,7 +2270,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -2360,7 +2365,7 @@
         "Channeled"
       ],
       "requires": [],
-      "description_rank1": "Drains all hope from the target. dealing 52 Shadow damage every 1 sec and increasing all other Shadow damage over time you deal to that target by 10%. Lasts 6 sec.",
+      "description_rank1": "Drains all hope from the target, dealing 52 Shadow damage every 1 sec and increasing all other Shadow damage over time you deal to that target by 10%. Lasts 6 sec.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -2371,7 +2376,7 @@
         "crop_path": "work/hovers/17-warlock-19140/affliction-r7c2.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/affliction-r7c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "affliction-r7c2",
@@ -2431,6 +2436,20 @@
             "description": "Drains all hope from the target, dealing 52 Shadow damage every 1 sec and increasing all other Shadow damage over time you deal to that target by 10%. Lasts 6 sec.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Drain Hope",
+            "description": "Drains all hope from the target, dealing 52 Shadow damage every 1 sec and increasing all other Shadow damage over time you deal to that target by 10%. Lasts 6 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Drain Hope",
+            "description": "Drains all hope from the target. dealing 52 Shadow damage every 1 sec and increasing all other Shadow damage over time you deal to that target by 10%. Lasts 6 sec.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -2441,7 +2460,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -2449,25 +2475,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Drains all hope from the target. dealing {0} Shadow damage every {1} sec and increasing all other Shadow damage over time you deal to that target by {2}%. Lasts {3} sec.",
-        "ranks": [
-          [
-            52,
-            1,
-            10,
-            6
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "requires_arrows": [
         {
@@ -2497,7 +2504,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the amount of health transferred by your Health Funnel spell by 20%, reduces its health cost by .15%, and reduces all threat your Health Funnel generates by 50%. Allows Health Funnel to be used regardless of your demon's health.",
+      "description_rank1": "Increases the amount of health transferred by your Health Funnel spell by 20%, reduces its health cost by 15%, and reduces all threat your Health Funnel generates by 50%. Allows Health Funnel to be used regardless of your demon's health.",
       "footer": "Click to learn",
       "cut_off": false,
       "source": {
@@ -2508,7 +2515,7 @@
         "crop_path": "work/hovers/17-warlock-19140/demonology-r1c1.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/demonology-r1c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "demonology-r1c1",
@@ -2560,10 +2567,31 @@
             "description": "Increases the amount of health transferred by your Health Funnel spell by 20%, reduces its health cost by 15%, and reduces all threat your Health Funnel generates by 50%. Allows Health Funnel to be used regardless of your demon's health.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Improved Health Funnel",
+            "description": "Increases the amount of health transferred by your Health Funnel spell by 20%, reduces its health cost by 15%, and reduces all threat your Health Funnel generates by 50%. Allows Health Funnel to be used regardless of your demon's health.",
+            "maxRank": 2,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Improved Health Funnel",
+            "description": "Increases the amount of health transferred by your Health Funnel spell by 20%, reduces its health cost by .15%, and reduces all threat your Health Funnel generates by 50%. Allows Health Funnel to be used regardless of your demon's health.",
+            "maxRank": 2,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "word": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -2571,39 +2599,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases the amount of health transferred by your Health Funnel spell by {0}%, reduces its health cost by {1}%, and reduces all threat your Health Funnel generates by {2}%. Allows Health Funnel to be used regardless of your demon's health.",
-        "ranks": [
-          [
-            20,
-            0.15,
-            50
-          ],
-          [
-            20,
-            0.15,
-            50
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "manual",
-        "ranksNote": "needs manual ranks: Classic match warlock/demonology/Improved Health Funnel (talent 1224) has no alignable slots; rank 2 is a copy of rank 1.",
-        "needsManual": true,
-        "confidence": "low",
-        "review": true,
-        "rule": "none",
-        "match": {
-          "classicTalentId": 1224,
-          "name": "Improved Health Funnel",
-          "class": "warlock",
-          "tree": "demonology",
-          "maxRank": 2,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_shadow_lifedrain",
       "icon_source": "classic",
@@ -2697,7 +2692,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -2843,6 +2844,12 @@
             3
           ],
           "darkness": 0.9
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -2982,7 +2989,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -3122,7 +3135,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -3167,7 +3186,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the effectiveness of your Voidwalker's Torment. Consume Shadows, Sacrifice, and Suffering spells by 10%.",
+      "description_rank1": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, Sacrifice, and Suffering spells by 10%.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -3178,7 +3197,7 @@
         "crop_path": "work/hovers/17-warlock-19140/demonology-r2c2.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/demonology-r2c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "demonology-r2c2",
@@ -3230,10 +3249,31 @@
             "description": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, Sacrifice, and Suffering spells by 10%.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Improved Voidwalker",
+            "description": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, Sacrifice, and Suffering spells by 10%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Improved Voidwalker",
+            "description": "Increases the effectiveness of your Voidwalker's Torment. Consume Shadows, Sacrifice, and Suffering spells by 10%.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -3241,48 +3281,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases the effectiveness of your Voidwalker's Torment. Consume Shadows, Sacrifice, and Suffering spells by {0}%.",
-        "ranks": [
-          [
-            10
-          ],
-          [
-            20
-          ],
-          [
-            30
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1225,
-          "classicSpellIds": [
-            18705,
-            18706,
-            18707
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic warlock/demonology/Improved Voidwalker (talent 1225): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 1225,
-          "name": "Improved Voidwalker",
-          "class": "warlock",
-          "tree": "demonology",
-          "maxRank": 3,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_shadow_summonvoidwalker",
       "icon_source": "classic",
@@ -3311,7 +3309,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus. Incubus. and Felhunter by 5%, and increases your maximum Mana by 5%.",
+      "description_rank1": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by 5%, and increases your maximum Mana by 5%.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -3322,7 +3320,7 @@
         "crop_path": "work/hovers/17-warlock-19140/demonology-r2c3.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/demonology-r2c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "demonology-r2c3",
@@ -3374,10 +3372,31 @@
             "description": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by 5%, and increases your maximum Mana by 5%.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Fel Vitality",
+            "description": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus. Incubus. and Felhunter by 5%, and increases your maximum Mana by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Fel Vitality",
+            "description": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus. Incubus. and Felhunter by 5%, and increases your maximum Mana by 5%.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 2
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -3385,32 +3404,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus. Incubus. and Felhunter by {0}%, and increases your maximum Mana by {1}%.",
-        "ranks": [
-          [
-            5,
-            5
-          ],
-          [
-            10,
-            10
-          ],
-          [
-            15,
-            15
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed.",
-        "needsManual": false,
-        "confidence": "low",
-        "review": true,
-        "rule": "proportional"
       },
       "icon": "spell_shadow_demonictactics",
       "icon_source": "classic",
@@ -3504,7 +3497,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -3623,7 +3622,13 @@
             "sharpness": 4246.0,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -3767,7 +3772,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -3825,7 +3836,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Reduces the casting time of your Imp. Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by 2 sec and the Mana cost by 20%.",
+      "description_rank1": "Reduces the casting time of your Imp, Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by 2 sec and the Mana cost by 20%.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -3836,7 +3847,7 @@
         "crop_path": "work/hovers/17-warlock-19140/demonology-r3c3.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/demonology-r3c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "demonology-r3c3",
@@ -3888,10 +3899,31 @@
             "description": "Reduces the casting time of your Imp, Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by 2 sec and the Mana cost by 20%.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Master Summoner",
+            "description": "Reduces the casting time of your Imp, Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by 2 sec and the Mana cost by 20%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Master Summoner",
+            "description": "Reduces the casting time of your Imp. Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by 2 sec and the Mana cost by 20%.",
+            "maxRank": 2,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -3899,46 +3931,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Reduces the casting time of your Imp. Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by {0} sec and the Mana cost by {1}%.",
-        "ranks": [
-          [
-            2,
-            20
-          ],
-          [
-            4,
-            40
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1227,
-          "classicSpellIds": [
-            18709,
-            18710
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic warlock/demonology/Master Summoner (talent 1227): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 1227,
-          "name": "Master Summoner",
-          "class": "warlock",
-          "tree": "demonology",
-          "maxRank": 2,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_shadow_impphaseshift",
       "icon_source": "classic",
@@ -4032,7 +4024,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -4159,7 +4157,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -4289,7 +4293,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -4414,7 +4424,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -4553,7 +4569,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -4683,7 +4705,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -4742,7 +4770,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Increases Fire damage done by 2%. Voidwalker - Reduces Physical damage taken by 2%. Succubus/Incubus - Increases Shadow damage done by 2%. Felhunter - Reduces Magic damage taken by 2%.",
+      "description_rank1": "Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - increases Fire damage done by 2%. Voidwalker - Reduces Physical damage taken by 2%. Succubus/Incubus - increases Shadow damage done by 2%. Felhunter - Reduces Magic damage taken by 2%.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -4805,9 +4833,24 @@
             "description": "Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Increases Fire damage done by 2%. Voidwalker - Reduces Physical damage taken by 2%. Succubus/Incubus - Increases Shadow damage done by 2%. Felhunter - Reduces Magic damage taken by 2%.",
             "maxRank": 5,
             "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Master Demonologist",
+            "description": "Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Increases Fire damage done by 2%. Voidwalker - Reduces Physical damage taken by 2%. Succubus/Incubus - Increases Shadow damage done by 2%. Felhunter - Reduces Magic damage taken by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 2
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -4815,71 +4858,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Increases Fire damage done by {0}%. Voidwalker - Reduces Physical damage taken by {1}%. Succubus/Incubus - Increases Shadow damage done by {2}%. Felhunter - Reduces Magic damage taken by {3}%.",
-        "ranks": [
-          [
-            2,
-            2,
-            2,
-            2
-          ],
-          [
-            4,
-            4,
-            4,
-            4
-          ],
-          [
-            6,
-            6,
-            6,
-            6
-          ],
-          [
-            8,
-            8,
-            8,
-            8
-          ],
-          [
-            10,
-            10,
-            10,
-            10
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1244,
-          "classicSpellIds": [
-            23785,
-            23822,
-            23823,
-            23824,
-            23825
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic warlock/demonology/Master Demonologist (talent 1244): Classic 4/8/12/16/20 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank); Classic 0.2/0.4/0.6/0.8/1 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
-        "needsManual": false,
-        "confidence": "medium",
-        "review": true,
-        "rule": "proportional",
-        "match": {
-          "classicTalentId": 1244,
-          "name": "Master Demonologist",
-          "class": "warlock",
-          "tree": "demonology",
-          "maxRank": 5,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_shadow_shadowpact",
       "icon_source": "classic",
@@ -4975,7 +4953,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -5098,7 +5082,13 @@
             "sharpness": 2774.8,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -5244,7 +5234,13 @@
             "sharpness": 3262.1,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -5388,7 +5384,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -5551,7 +5553,13 @@
             "sharpness": 3463.0,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -5699,7 +5707,13 @@
             "sharpness": 3419.9,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -5779,7 +5793,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the initial damage of your Immolates spell by 10% and your Conflagrate spell has a 20% chance to Daze the target, reducing the target's movement speed by 50% for 5 sec.",
+      "description_rank1": "Increases the initial damage of your Immolate spell by 10% and your Conflagrate spell has a 20% chance to Daze the target, reducing the target's movement speed by 50% for 5 sec.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -5790,7 +5804,7 @@
         "crop_path": "work/hovers/17-warlock-19140/destruction-r2c3.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/destruction-r2c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "destruction-r2c3",
@@ -5844,10 +5858,31 @@
             "description": "Increases the initial damage of your Immolate spell by 10% and your Conflagrate spell has a 20% chance to Daze the target, reducing the target's movement speed by 50% for 5 sec.",
             "maxRank": 5,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Aftermath",
+            "description": "Increases the initial damage of your Immolates spell by 10% and your Conflagrate spell has a 20% chance to Daze the target, reducing the target's movement speed by 50% for 5 sec.",
+            "maxRank": 5,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Aftermath",
+            "description": "Increases the initial damage of your Immolates spell by 10% and your Conflagrate spell has a 20% chance to Daze the target, reducing the target's movement speed by 50% for 5 sec.",
+            "maxRank": 5,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "word": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -5855,59 +5890,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases the initial damage of your Immolates spell by {0}% and your Conflagrate spell has a {1}% chance to Daze the target, reducing the target's movement speed by {2}% for {3} sec.",
-        "ranks": [
-          [
-            10,
-            20,
-            50,
-            5
-          ],
-          [
-            10,
-            20,
-            50,
-            5
-          ],
-          [
-            10,
-            20,
-            50,
-            5
-          ],
-          [
-            10,
-            20,
-            50,
-            5
-          ],
-          [
-            10,
-            20,
-            50,
-            5
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "manual",
-        "ranksNote": "needs manual ranks: Classic match warlock/destruction/Aftermath (talent 982) has no alignable slots; ranks 2..5 are copies of rank 1.",
-        "needsManual": true,
-        "confidence": "low",
-        "review": true,
-        "rule": "none",
-        "match": {
-          "classicTalentId": 982,
-          "name": "Aftermath",
-          "class": "warlock",
-          "tree": "destruction",
-          "maxRank": 5,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_fire_fire",
       "icon_source": "classic",
@@ -6003,7 +5985,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -6157,7 +6145,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -6211,7 +6205,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Gives you a 23% chance to resist Interruption caused by damage while casting or channeling any Destruction spell.",
+      "description_rank1": "Gives you a 23% chance to resist interruption caused by damage while casting or channeling any Destruction spell.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -6222,7 +6216,7 @@
         "crop_path": "work/hovers/17-warlock-19140/destruction-r4c1.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/destruction-r4c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "destruction-r4c1",
@@ -6274,6 +6268,20 @@
             "description": "Gives you a 23% chance to resist interruption caused by damage while casting or channeling any Destruction spell.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Intensity",
+            "description": "Gives you a 23% chance to resist Interruption caused by damage while casting or channeling any Destruction spell.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Intensity",
+            "description": "Gives you a 23% chance to resist Interruption caused by damage while casting or channeling any Destruction spell.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -6284,7 +6292,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -6292,47 +6307,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Gives you a {0}% chance to resist Interruption caused by damage while casting or channeling any Destruction spell.",
-        "ranks": [
-          [
-            23
-          ],
-          [
-            46
-          ],
-          [
-            69
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 985,
-          "classicSpellIds": [
-            18135,
-            18136
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic warlock/destruction/Intensity (talent 985): Classic 35/70 is proportional, Classic has 2 ranks; Forever rank 1 is 23: scaled proportionally (23 x rank). Rounding: rank 2 46 may read 45, rank 3 69 may read 70 (values above are the raw scaled numbers).",
-        "needsManual": false,
-        "confidence": "medium",
-        "review": true,
-        "rule": "proportional",
-        "match": {
-          "classicTalentId": 985,
-          "name": "Intensity",
-          "class": "warlock",
-          "tree": "destruction",
-          "maxRank": 2,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_fire_lavaspawn",
       "icon_source": "classic",
@@ -6372,7 +6346,7 @@
         "crop_path": "work/hovers/17-warlock-19140/destruction-r4c2.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/destruction-r4c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "destruction-r4c2",
@@ -6426,9 +6400,22 @@
             "description": "Increases the critical strike chance of your Searing Pain spell by 3% and the damage done by all your Destruction spells by 3%.",
             "maxRank": 3,
             "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Agonizing Flames",
+            "description": "Increases the critical strike chance of your Searing Pain spell by 3% and the damage done by all your Destruction spells by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -6579,7 +6566,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -6655,7 +6648,7 @@
         "crop_path": "work/hovers/17-warlock-19140/destruction-r5c1.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/destruction-r5c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "destruction-r5c1",
@@ -6707,6 +6700,13 @@
             "description": "Gives your Soul Fire spell a 13% chance to Stun the target for 3 sec., and your Rain of Fire and Hellfire spells a 13% chance over their duration to Stun targets they damage for 3 sec.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Pyroclasm",
+            "description": "Gives your Soul Fire spell a 13% chance to Stun the target for 3 sec, and your Rain of Fire and Hellfire spells a 13% chance over their duration to Stun targets they damage for 3 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
           }
         ],
         "alternates": [
@@ -6717,7 +6717,12 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -6875,6 +6880,13 @@
             "description": "Afflicts the target for 5 min, causing 15% of all damage done by the Warlock to other targets to also be dealt to the cursed target. Bane of Havoc is limited to 1 target, and only one Bane per Warlock can be active on any one target.",
             "maxRank": 1,
             "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Bane of Havoc",
+            "description": "Afflicts the target for 5 min, causing 15% of all damage done by the Warlock to other targets to also be dealt to the cursed target. Bane of Havoc is limited to 1 target, and only one Bane per Warlock can be active on any one target.",
+            "maxRank": 1,
+            "confidence": 1.0
           }
         ],
         "alternates": [
@@ -6884,7 +6896,16 @@
             "sharpness": 4376.1,
             "cut_off": false
           }
-        ]
+        ],
+        "note": "readers differ in extra_lines, which the reader merge does not adjudicate",
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": [
+            "extra_lines"
+          ]
+        }
       },
       "tree_source": {
         "t": 18980,
@@ -7010,7 +7031,13 @@
             "sharpness": 3454.1,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -7100,7 +7127,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by 2% for 20 sec. and hitting an enemy with Shadowburn increases all Fire damage you deal by 2% for 20 sec. In addition, Conflagrate has a 20% chance not to consume Immolates. and Shadowburn has a 20% chance to instantly refund a Soul Shard.",
+      "description_rank1": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by 2% for 20 sec. and hitting an enemy with Shadowburn increases all Fire damage you deal by 2% for 20 sec. In addition, Conflagrate has a 20% chance not to consume Immolate, and Shadowburn has a 20% chance to instantly refund a Soul Shard.",
       "footer": "Click to learn",
       "cut_off": false,
       "source": {
@@ -7111,7 +7138,7 @@
         "crop_path": "work/hovers/17-warlock-19140/destruction-r6c3.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/destruction-r6c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "destruction-r6c3",
@@ -7166,10 +7193,31 @@
             "description": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by 2% for 20 sec. and hitting an enemy with Shadowburn increases all Fire damage you deal by 2% for 20 sec. In addition, Conflagrate has a 20% chance not to consume Immolate, and Shadowburn has a 20% chance to instantly refund a Soul Shard.",
             "maxRank": 5,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Shadow and Flame",
+            "description": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by 2% for 20 sec. and hitting an enemy with Shadowburn increases all Fire damage you deal by 2% for 20 sec. In addition, Conflagrate has a 20% chance not to consume Immolate, and Shadowburn has a 20% chance to instantly refund a Soul Shard.",
+            "maxRank": 5,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Shadow and Flame",
+            "description": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by 2% for 20 sec. and hitting an enemy with Shadowburn increases all Fire damage you deal by 2% for 20 sec. In addition, Conflagrate has a 20% chance not to consume Immolates. and Shadowburn has a 20% chance to instantly refund a Soul Shard.",
+            "maxRank": 5,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "word": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -7177,60 +7225,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by {0}% for {1} sec. and hitting an enemy with Shadowburn increases all Fire damage you deal by {2}% for {3} sec. In addition, Conflagrate has a {4}% chance not to consume Immolates. and Shadowburn has a {5}% chance to instantly refund a Soul Shard.",
-        "ranks": [
-          [
-            2,
-            20,
-            2,
-            20,
-            20,
-            20
-          ],
-          [
-            2,
-            20,
-            2,
-            20,
-            20,
-            20
-          ],
-          [
-            2,
-            20,
-            2,
-            20,
-            20,
-            20
-          ],
-          [
-            2,
-            20,
-            2,
-            20,
-            20,
-            20
-          ],
-          [
-            2,
-            20,
-            2,
-            20,
-            20,
-            20
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "manual",
-        "ranksNote": "needs manual ranks: duration slot (20 sec) is never extrapolated; ranks 2..5 are copies of rank 1.",
-        "needsManual": true,
-        "confidence": "low",
-        "review": true,
-        "rule": "none"
       },
       "icon": "spell_fire_playingwithfire",
       "icon_source": "classic",
@@ -7262,7 +7256,7 @@
         "2.5 sec cast"
       ],
       "requires": [],
-      "description_rank1": "Deals 125 to 140 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolates.",
+      "description_rank1": "Deals 125 to 140 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolate.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -7273,7 +7267,7 @@
         "crop_path": "work/hovers/17-warlock-19140/destruction-r7c2.png",
         "icon_crop_path": "work/hovers/17-warlock-19140/destruction-r7c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "17-warlock-19140",
         "hover_id": "destruction-r7c2",
@@ -7331,10 +7325,31 @@
             "description": "Deals 125 to 140 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolate.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Incinerate",
+            "description": "Deals 125 to 140 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolates.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Incinerate",
+            "description": "Deals 125 to 140 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolates.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "spell-name": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19140,
@@ -7342,24 +7357,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Deals {0} to {1} Fire damage to your target and an additional {2}% damage if the target is afflicted by Immolates.",
-        "ranks": [
-          [
-            125,
-            140,
-            25
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "requires_arrows": [
         {

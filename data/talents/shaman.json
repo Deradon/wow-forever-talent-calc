@@ -5,7 +5,7 @@
   "className": "Shaman",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T12:03:34Z",
+  "generatedAt": "2026-09-13T13:45:04Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -79,7 +79,7 @@
           "icon": "crop-concussion",
           "iconSource": "crop",
           "iconCrop": "data/review/shaman/elemental-combat/concussion.icon.png",
-          "description": "Increases the damage done by your Lightning Bolt. Chain Lightning, and Earth Shock spells by {0}%.",
+          "description": "Increases the damage done by your Lightning Bolt, Chain Lightning, and Earth Shock spells by {0}%.",
           "ranks": [[1], [2], [3], [4], [5]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -96,10 +96,11 @@
             "t": 20137.55,
             "frame": 1208253,
             "crop": "data/review/shaman/elemental-combat/concussion.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -201,7 +202,7 @@
           "icon": "crop-elemental-devastation",
           "iconSource": "crop",
           "iconCrop": "data/review/shaman/elemental-combat/elemental-devastation.icon.png",
-          "description": "Your offensive spell critical strikes will Increase your chance to get a critical strike with melee attacks by {0}% for 10 sec.",
+          "description": "Your offensive spell critical strikes will increase your chance to get a critical strike with melee attacks by {0}% for 10 sec.",
           "ranks": [[3], [6], [9]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -218,10 +219,11 @@
             "t": 20142.4,
             "frame": 1208544,
             "crop": "data/review/shaman/elemental-combat/elemental-devastation.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -412,7 +414,7 @@
           "maxRank": 1,
           "icon": "spell_nature_stranglevines",
           "iconSource": "classic",
-          "description": "Your Earthbind Totem Immobilizes nearby targets for {0} sec when cast.",
+          "description": "Your Earthbind Totem immobilizes nearby targets for {0} sec when cast.",
           "ranks": [[5]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -422,10 +424,11 @@
             "t": 20204.867,
             "frame": 1212292,
             "crop": "data/review/shaman/elemental-combat/earthbound.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -468,7 +471,7 @@
           "maxRank": 1,
           "icon": "spell_shaman_lavaburst",
           "iconSource": "classic",
-          "description": "You hurl molten lava at the target, dealing {0} to {1} Fire damage. If your Flame Shock is on the target, Lava Burst deals {2}% Increased damage.",
+          "description": "You hurl molten lava at the target, dealing {0} to {1} Fire damage. If your Flame Shock is on the target, Lava Burst deals {2}% increased damage.",
           "ranks": [[158, 187, 20]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -484,10 +487,12 @@
             "t": 20186.333,
             "frame": 1211180,
             "crop": "data/review/shaman/elemental-combat/lava-burst.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Lightning Overload at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z",
+            "note": "prerequisite from tree arrow (stage 7): Lightning Overload at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -665,7 +670,7 @@
           "icon": "spell_nature_spiritwolf",
           "iconSource": "classic",
           "description": "Reduces the cast time of your Ghost Wolf spell by {0} sec, and Ghost Wolf may be used indoors.",
-          "ranks": [[1], [2]],
+          "ranks": [[1.0], [2]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -681,10 +686,11 @@
             "t": 19866.8,
             "frame": 1192008,
             "crop": "data/review/shaman/enhancement/improved-ghost-wolf.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -887,10 +893,9 @@
             "t": 19892.867,
             "frame": 1193572,
             "crop": "data/review/shaman/enhancement/stormstrike.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -901,7 +906,7 @@
           "maxRank": 1,
           "icon": "ability_parry",
           "iconSource": "classic",
-          "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by {0}% while Rockbiter Weapon is not active, and Increases all threat generated by {1}% while Rockbiter Weapon is active.",
+          "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by {0}% while Rockbiter Weapon is not active, and increases all threat generated by {1}% while Rockbiter Weapon is active.",
           "ranks": [[30, 30]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -911,10 +916,11 @@
             "t": 19942.067,
             "frame": 1196524,
             "crop": "data/review/shaman/enhancement/spirit-weapons.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -1023,7 +1029,7 @@
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in name; prerequisite from tree arrow (stage 7): Mental Quickness at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "note": "readers still differ on name 'Rage of the Farseer' vs 'Rage of the Farseeer'; prerequisite from tree arrow (stage 7): Mental Quickness at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -1384,7 +1390,7 @@
           "maxRank": 3,
           "icon": "spell_nature_healingway",
           "iconSource": "classic",
-          "description": "Increases the amount healed by your Healing Wave spell by {0}.",
+          "description": "Increases the amount healed by your Healing Wave spell by {0}%.",
           "ranks": [[8], [16], [24]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -1401,10 +1407,11 @@
             "t": 20317.0,
             "frame": 1219020,
             "crop": "data/review/shaman/restoration/healing-way.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -1415,7 +1422,7 @@
           "maxRank": 1,
           "icon": "spell_nature_ravenform",
           "iconSource": "classic",
-          "description": "When activated, your next Nature spell with a casting time less than {0} sec. becomes an Instant cast spell.",
+          "description": "When activated, your next Nature spell with a casting time less than {0} sec becomes an instant cast spell.",
           "ranks": [[10]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -1425,10 +1432,11 @@
             "t": 20316.0,
             "frame": 1218960,
             "crop": "data/review/shaman/restoration/natures-swiftness.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {

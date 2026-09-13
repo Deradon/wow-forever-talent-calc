@@ -5,7 +5,7 @@
   "className": "Warlock",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T12:03:35Z",
+  "generatedAt": "2026-09-13T13:45:04Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -47,7 +47,7 @@
           "maxRank": 2,
           "icon": "spell_shadow_burningspirit",
           "iconSource": "classic",
-          "description": "Increases the amount of Mana awarded by your Life Tap spell by {0}.",
+          "description": "Increases the amount of Mana awarded by your Life Tap spell by {0}%.",
           "ranks": [[10], [20]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -64,10 +64,11 @@
             "t": 18990.0,
             "frame": 1139400,
             "crop": "data/review/warlock/affliction/improved-life-tap.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -78,7 +79,7 @@
           "maxRank": 5,
           "icon": "spell_shadow_unsummonbuilding",
           "iconSource": "classic",
-          "description": "Increases your chance to hit with all spells and attacks by {0}% and reduces all threat you generate by {1}.",
+          "description": "Increases your chance to hit with all spells and attacks by {0}% and reduces all threat you generate by {1}%.",
           "ranks": [[1, 4], [2, 8], [3, 12], [4, 16], [5, 20]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
@@ -89,10 +90,11 @@
             "t": 19006.917,
             "frame": 1140415,
             "crop": "data/review/warlock/affliction/suppression.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -229,7 +231,7 @@
           "maxRank": 3,
           "icon": "spell_shadow_fingerofdeath",
           "iconSource": "classic",
-          "description": "Gives you a {0}% chance to avoid Interruption caused by damage while channeling or casting your Drain Life, Drain Mana, or Drain Soul spells.",
+          "description": "Gives you a {0}% chance to avoid interruption caused by damage while channeling or casting your Drain Life, Drain Mana, or Drain Soul spells.",
           "ranks": [[23], [46], [69]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -246,10 +248,11 @@
             "t": 19144.8,
             "frame": 1148688,
             "crop": "data/review/warlock/affliction/fel-concentration.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -426,7 +429,7 @@
           "maxRank": 3,
           "icon": "spell_shadow_lifedrain02",
           "iconSource": "classic",
-          "description": "Increases the rate at which your Drain Life and Drain Soul deal damage by {0}%, but reduces your healing from Drain Life by {1}.",
+          "description": "Increases the rate at which your Drain Life and Drain Soul deal damage by {0}%, but reduces your healing from Drain Life by {1}%.",
           "ranks": [[17, 10], [34, 20], [51, 30]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
@@ -437,10 +440,11 @@
             "t": 19149.267,
             "frame": 1148956,
             "crop": "data/review/warlock/affliction/soul-siphon.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -482,7 +486,7 @@
           "icon": "crop-drain-hope",
           "iconSource": "crop",
           "iconCrop": "data/review/warlock/affliction/drain-hope.icon.png",
-          "description": "Drains all hope from the target. dealing {0} Shadow damage every {1} sec and increasing all other Shadow damage over time you deal to that target by {2}%. Lasts {3} sec.",
+          "description": "Drains all hope from the target, dealing {0} Shadow damage every {1} sec and increasing all other Shadow damage over time you deal to that target by {2}%. Lasts {3} sec.",
           "ranks": [[52, 1, 10, 6]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -498,10 +502,12 @@
             "t": 19180.467,
             "frame": 1150828,
             "crop": "data/review/warlock/affliction/drain-hope.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Siphon Life at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z",
+            "note": "prerequisite from tree arrow (stage 7): Siphon Life at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -534,7 +540,7 @@
           "icon": "spell_shadow_lifedrain",
           "iconSource": "classic",
           "description": "Increases the amount of health transferred by your Health Funnel spell by {0}%, reduces its health cost by {1}%, and reduces all threat your Health Funnel generates by {2}%. Allows Health Funnel to be used regardless of your demon's health.",
-          "ranks": [[20, 0.15, 50], [20, 0.15, 50]],
+          "ranks": [[20, 15, 50], [20, 15, 50]],
           "ranksObserved": [1],
           "ranksSource": "manual",
           "ranksNote": "needs manual ranks: Classic match warlock/demonology/Improved Health Funnel (talent 1224) has no alignable slots; rank 2 is a copy of rank 1.",
@@ -544,10 +550,9 @@
             "t": 19189.0,
             "frame": 1151340,
             "crop": "data/review/warlock/demonology/improved-health-funnel.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -662,7 +667,7 @@
           "maxRank": 3,
           "icon": "spell_shadow_summonvoidwalker",
           "iconSource": "classic",
-          "description": "Increases the effectiveness of your Voidwalker's Torment. Consume Shadows, Sacrifice, and Suffering spells by {0}%.",
+          "description": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, Sacrifice, and Suffering spells by {0}%.",
           "ranks": [[10], [20], [30]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -679,10 +684,11 @@
             "t": 19205.867,
             "frame": 1152352,
             "crop": "data/review/warlock/demonology/improved-voidwalker.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -693,7 +699,7 @@
           "maxRank": 3,
           "icon": "spell_shadow_demonictactics",
           "iconSource": "classic",
-          "description": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus. Incubus. and Felhunter by {0}%, and increases your maximum Mana by {1}%.",
+          "description": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by {0}%, and increases your maximum Mana by {1}%.",
           "ranks": [[5, 5], [10, 10], [15, 15]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
@@ -704,10 +710,11 @@
             "t": 19202.0,
             "frame": 1152120,
             "crop": "data/review/warlock/demonology/fel-vitality.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -797,7 +804,7 @@
           "maxRank": 2,
           "icon": "spell_shadow_impphaseshift",
           "iconSource": "classic",
-          "description": "Reduces the casting time of your Imp. Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by {0} sec and the Mana cost by {1}%.",
+          "description": "Reduces the casting time of your Imp, Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by {0} sec and the Mana cost by {1}%.",
           "ranks": [[2, 20], [4, 40]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -814,10 +821,11 @@
             "t": 19212.067,
             "frame": 1152724,
             "crop": "data/review/warlock/demonology/master-summoner.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -986,7 +994,7 @@
           "maxRank": 5,
           "icon": "spell_shadow_shadowpact",
           "iconSource": "classic",
-          "description": "Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Increases Fire damage done by {0}%. Voidwalker - Reduces Physical damage taken by {1}%. Succubus/Incubus - Increases Shadow damage done by {2}%. Felhunter - Reduces Magic damage taken by {3}%.",
+          "description": "Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - increases Fire damage done by {0}%. Voidwalker - Reduces Physical damage taken by {1}%. Succubus/Incubus - increases Shadow damage done by {2}%. Felhunter - Reduces Magic damage taken by {3}%.",
           "ranks": [[2, 2, 2, 2], [4, 4, 4, 4], [6, 6, 6, 6], [8, 8, 8, 8], [10, 10, 10, 10]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -1206,7 +1214,7 @@
           "maxRank": 5,
           "icon": "spell_fire_fire",
           "iconSource": "classic",
-          "description": "Increases the initial damage of your Immolates spell by {0}% and your Conflagrate spell has a {1}% chance to Daze the target, reducing the target's movement speed by {2}% for {3} sec.",
+          "description": "Increases the initial damage of your Immolate spell by {0}% and your Conflagrate spell has a {1}% chance to Daze the target, reducing the target's movement speed by {2}% for {3} sec.",
           "ranks": [[10, 20, 50, 5], [10, 20, 50, 5], [10, 20, 50, 5], [10, 20, 50, 5], [10, 20, 50, 5]],
           "ranksObserved": [1],
           "ranksSource": "manual",
@@ -1217,10 +1225,11 @@
             "t": 19346.0,
             "frame": 1160760,
             "crop": "data/review/warlock/destruction/aftermath.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -1278,7 +1287,7 @@
           "maxRank": 3,
           "icon": "spell_fire_lavaspawn",
           "iconSource": "classic",
-          "description": "Gives you a {0}% chance to resist Interruption caused by damage while casting or channeling any Destruction spell.",
+          "description": "Gives you a {0}% chance to resist interruption caused by damage while casting or channeling any Destruction spell.",
           "ranks": [[23], [46], [69]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -1295,10 +1304,11 @@
             "t": 19376.8,
             "frame": 1162608,
             "crop": "data/review/warlock/destruction/intensity.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -1320,7 +1330,7 @@
             "t": 19379.067,
             "frame": 1162744,
             "crop": "data/review/warlock/destruction/agonizing-flames.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false
           }
@@ -1337,12 +1347,6 @@
           "ranks": [[109, 132]],
           "ranksObserved": [1],
           "ranksSource": "observed",
-          "requires": [
-            {
-              "talent": "shadowburn",
-              "rank": 1
-            }
-          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1351,7 +1355,9 @@
             "crop": "data/review/warlock/destruction/conflagrate.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z",
             "note": "prerequisite from tree arrow (stage 7): Shadowburn at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
@@ -1380,10 +1386,10 @@
             "t": 19373.2,
             "frame": 1162392,
             "crop": "data/review/warlock/destruction/pyroclasm.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Intensity at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "note": "prerequisite from tree arrow (stage 7): Intensity at rank 3 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1406,7 +1412,8 @@
             "crop": "data/review/warlock/destruction/bane-of-havoc.png",
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false
+            "reviewed": false,
+            "note": "readers differ in extra_lines, which the reader merge does not adjudicate"
           }
         },
         {
@@ -1454,7 +1461,7 @@
           "maxRank": 5,
           "icon": "spell_fire_playingwithfire",
           "iconSource": "classic",
-          "description": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by {0}% for {1} sec. and hitting an enemy with Shadowburn increases all Fire damage you deal by {2}% for {3} sec. In addition, Conflagrate has a {4}% chance not to consume Immolates. and Shadowburn has a {5}% chance to instantly refund a Soul Shard.",
+          "description": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by {0}% for {1} sec. and hitting an enemy with Shadowburn increases all Fire damage you deal by {2}% for {3} sec. In addition, Conflagrate has a {4}% chance not to consume Immolate, and Shadowburn has a {5}% chance to instantly refund a Soul Shard.",
           "ranks": [
             [2, 20, 2, 20, 20, 20],
             [2, 20, 2, 20, 20, 20],
@@ -1471,10 +1478,11 @@
             "t": 19369.0,
             "frame": 1162140,
             "crop": "data/review/warlock/destruction/shadow-and-flame.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -1485,7 +1493,7 @@
           "maxRank": 1,
           "icon": "spell_fire_burnout",
           "iconSource": "classic",
-          "description": "Deals {0} to {1} Fire damage to your target and an additional {2}% damage if the target is afflicted by Immolates.",
+          "description": "Deals {0} to {1} Fire damage to your target and an additional {2}% damage if the target is afflicted by Immolate.",
           "ranks": [[125, 140, 25]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -1501,10 +1509,12 @@
             "t": 19350.133,
             "frame": 1161008,
             "crop": "data/review/warlock/destruction/incinerate.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Bane of Havoc at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z",
+            "note": "prerequisite from tree arrow (stage 7): Bane of Havoc at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]

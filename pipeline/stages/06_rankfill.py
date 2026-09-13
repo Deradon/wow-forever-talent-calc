@@ -36,6 +36,7 @@ import typer
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import ranks as R  # noqa: E402
+from wowtalents.fsio import write_candidates_atomic  # noqa: E402
 
 PIPELINE_DIR = Path(__file__).resolve().parents[1]
 REPO = PIPELINE_DIR.parent
@@ -93,9 +94,10 @@ def main(
 ) -> None:
     src = candidates or (EXTRACTED / f"{cls}.candidates.json")
     if not src.is_file():
-        typer.echo(f"no candidates file: {src}")
+        typer.echo(f"no candidates file: {src}", err=True)
         raise typer.Exit(code=2)
     records, wrapper = load_candidates(src)
+    n_before = len(records)
     prior = R.Prior.load(prior_path) if prior_path.is_file() else None
     if prior is None:
         typer.echo(f"warning: prior {prior_path} not found; only extrapolated/manual ranks will be produced")
@@ -108,7 +110,7 @@ def main(
         return
     dest = out or src
     payload = wrapper if wrapper is not None else records
-    dest.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    write_candidates_atomic(dest, payload, before=n_before if dest == src else 0)
     typer.echo(f"wrote {dest}")
 
 

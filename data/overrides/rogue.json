@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "class": "rogue",
+  "overrides": [
+    {
+      "talent": "remorseless-attacks",
+      "tree": "assassination",
+      "set": {
+        "description": "After killing a non-trivial enemy, gives you a {0}% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/rogue/assassination/remorseless-attacks.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "initiative",
+      "tree": "subtlety",
+      "set": {
+        "description": "Gives you a {0}% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability."
+      },
+      "reason": "audit 2026-09-13: reader error (PUNCT); corrected against data/review/rogue/subtlety/initiative.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    }
+  ]
+}

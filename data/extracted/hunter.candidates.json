@@ -133,7 +133,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21030,
@@ -286,7 +292,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21030,
@@ -426,7 +438,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21030,
@@ -493,7 +511,7 @@
         "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c2.png",
         "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "23-hunter-21030",
         "hover_id": "beast-mastery-r2c2",
@@ -545,10 +563,22 @@
             "description": "Increases the Dodge bonus of your Aspect of the Monkey by 2%. Additionally, your pet gains 5% of the effect of your Aspect of the Monkey ability.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Improved Aspect of the Monkey",
+            "description": "Increases the Dodge bonus of your Aspect of the Monkey by 2%. Additionally, your pet gains 50% of the effect of your Aspect of the Monkey ability.",
+            "maxRank": 3,
+            "confidence": 1.0
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21030,
@@ -684,7 +714,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21030,
@@ -758,7 +794,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Revive Pet's casting time is reduced by 3 sec. mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%.",
+      "description_rank1": "Revive Pet's casting time is reduced by 3 sec, mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -769,7 +805,7 @@
         "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c4.png",
         "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c4-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "23-hunter-21030",
         "hover_id": "beast-mastery-r2c4",
@@ -821,10 +857,31 @@
             "description": "Revive Pet's casting time is reduced by 3 sec, mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Improved Revive Pet",
+            "description": "Revive Pet's casting time is reduced by 3 sec. mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Improved Revive Pet",
+            "description": "Revive Pet's casting time is reduced by 3 sec. mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%.",
+            "maxRank": 2,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21030,
@@ -832,48 +889,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Revive Pet's casting time is reduced by {0} sec. mana cost is reduced by {1}%, and increases the health your pet returns with by an additional {2}%.",
-        "ranks": [
-          [
-            3,
-            20,
-            15
-          ],
-          [
-            6,
-            40,
-            30
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1625,
-          "classicSpellIds": [
-            24443,
-            19575
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic hunter/beast-mastery/Improved Revive Pet (talent 1625): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 1625,
-          "name": "Improved Revive Pet",
-          "class": "hunter",
-          "tree": "beast-mastery",
-          "maxRank": 2,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "ability_hunter_beastsoothe",
       "icon_source": "classic",
@@ -967,7 +982,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21030,
@@ -1084,7 +1105,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21030,
@@ -1242,7 +1269,13 @@
             "sharpness": 4038.5,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21030,
@@ -1383,7 +1416,13 @@
             "sharpness": 3007.3,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21030,
@@ -1556,7 +1595,13 @@
             "sharpness": 4984.0,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -1675,7 +1720,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -1754,7 +1805,7 @@
         "1 min cooldown"
       ],
       "requires": [],
-      "description_rank1": "Command your pet to Stun the target for 3 sec on its next successful attack, which also gains 100% Increased critical strike chance. Generates high threat.",
+      "description_rank1": "Command your pet to Stun the target for 3 sec on its next successful attack, which also gains 100% increased critical strike chance. Generates high threat.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -1765,7 +1816,7 @@
         "crop_path": "work/hovers/24-hunter-21060/beast-mastery-r5c2.png",
         "icon_crop_path": "work/hovers/24-hunter-21060/beast-mastery-r5c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "24-hunter-21060",
         "hover_id": "beast-mastery-r5c2",
@@ -1827,10 +1878,31 @@
             "description": "Command your pet to Stun the target for 3 sec on its next successful attack, which also gains 100% increased critical strike chance. Generates high threat.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Intimidation",
+            "description": "Command your pet to Stun the target for 3 sec on its next successful attack, which also gains 100% Increased critical strike chance. Generates high threat.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Intimidation",
+            "description": "Command your pet to Stun the target for 3 sec on its next successful attack, which also gains 100% Increased critical strike chance. Generates high threat.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -1838,23 +1910,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Command your pet to Stun the target for {0} sec on its next successful attack, which also gains {1}% Increased critical strike chance. Generates high threat.",
-        "ranks": [
-          [
-            3,
-            100
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "requires_arrows": [
         {
@@ -1967,7 +2022,13 @@
             "sharpness": 3848.1,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21030,
@@ -2099,7 +2160,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -2277,7 +2344,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -2407,7 +2480,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -2550,7 +2629,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -2701,7 +2786,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -2787,7 +2878,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increased the damage of your Serpent Sting ability by 6%, reduces the cooldown of your Viper Sting ability by 2 sec, and increases the duration of your Scorpion Sting ability by 15 sec.",
+      "description_rank1": "Increased the damage of your Serpent Sting ability by 6%, reduces the cooldown of your Viper Sting ability by 2 sec, and increases the duration of your Scorpid Sting ability by 15 sec.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -2798,7 +2889,7 @@
         "crop_path": "work/hovers/24-hunter-21060/marksmanship-r2c1.png",
         "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r2c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "24-hunter-21060",
         "hover_id": "marksmanship-r2c1",
@@ -2850,10 +2941,31 @@
             "description": "Increases the damage done by your Serpent Sting ability by 6%, reduces the cooldown of your Viper Sting ability by 2 sec, and increases the duration of your Scorpid Sting ability by 15 sec.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Improved Stings",
+            "description": "Increased the damage of your Serpent Sting ability by 6%, reduces the cooldown of your Viper Sting ability by 2 sec, and increases the duration of your Scorpion Sting ability by 15 sec.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Improved Stings",
+            "description": "Increased the damage of your Serpent Sting ability by 6%, reduces the cooldown of your Viper Sting ability by 2 sec, and increases the duration of your Scorpion Sting ability by 15 sec.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "spell-name": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -2861,35 +2973,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increased the damage of your Serpent Sting ability by {0}%, reduces the cooldown of your Viper Sting ability by {1} sec, and increases the duration of your Scorpion Sting ability by {2} sec.",
-        "ranks": [
-          [
-            6,
-            2,
-            15
-          ],
-          [
-            6,
-            2,
-            15
-          ],
-          [
-            6,
-            2,
-            15
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "manual",
-        "ranksNote": "needs manual ranks: duration slot (2 sec) is never extrapolated; ranks 2..3 are copies of rank 1.",
-        "needsManual": true,
-        "confidence": "low",
-        "review": true,
-        "rule": "none"
       }
     },
     {
@@ -2972,7 +3055,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -3123,7 +3212,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -3209,7 +3304,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Reduces the cooldown on your Rapid Fire ability by 1 min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next Shot ability within 20 sec by 10%.",
+      "description_rank1": "Reduces the cooldown on your Rapid Fire ability by 1 min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next shot ability within 20 sec by 10%.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -3220,7 +3315,7 @@
         "crop_path": "work/hovers/24-hunter-21060/marksmanship-r3c1.png",
         "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r3c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "24-hunter-21060",
         "hover_id": "marksmanship-r3c1",
@@ -3272,10 +3367,31 @@
             "description": "Reduces the cooldown on your Rapid Fire ability by 1 min. In addition, when you kill a non-trivial enemy or critters while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next shot ability within 20 sec by 10%.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Rapid Killing",
+            "description": "Reduces the cooldown on your Rapid Fire ability by 1 min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next Shot ability within 20 sec by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Rapid Killing",
+            "description": "Reduces the cooldown on your Rapid Fire ability by 1 min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next Shot ability within 20 sec by 10%.",
+            "maxRank": 2,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -3283,39 +3399,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Reduces the cooldown on your Rapid Fire ability by {0} min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next Shot ability within {1} sec by {2}%.",
-        "ranks": [
-          [
-            1,
-            20,
-            10
-          ],
-          [
-            1,
-            20,
-            10
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "manual",
-        "ranksNote": "needs manual ranks: Classic match warrior/protection/Improved Taunt (talent 143) has no alignable slots; rank 2 is a copy of rank 1.",
-        "needsManual": true,
-        "confidence": "low",
-        "review": true,
-        "rule": "none",
-        "match": {
-          "classicTalentId": 143,
-          "name": "Improved Taunt",
-          "class": "warrior",
-          "tree": "protection",
-          "maxRank": 2,
-          "match": "description",
-          "similarity": 0.88
-        }
       }
     },
     {
@@ -3398,7 +3481,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -3484,7 +3573,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "You deal 20% Increased damage with all attacks while you do not have an active pet.",
+      "description_rank1": "You deal 20% increased damage with all attacks while you do not have an active pet.",
       "footer": "Click to learn",
       "cut_off": false,
       "source": {
@@ -3495,7 +3584,7 @@
         "crop_path": "work/hovers/24-hunter-21060/marksmanship-r3c4.png",
         "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r3c4-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "24-hunter-21060",
         "hover_id": "marksmanship-r3c4",
@@ -3549,10 +3638,31 @@
             "description": "You deal 20% increased damage with all attacks while you do not have an active pet.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Lone Wolf",
+            "description": "You deal 20% Increased damage with all attacks while you do not have an active pet.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Lone Wolf",
+            "description": "You deal 20% Increased damage with all attacks while you do not have an active pet.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -3560,22 +3670,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "You deal {0}% Increased damage with all attacks while you do not have an active pet.",
-        "ranks": [
-          [
-            20
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "icon": "ability_mount_whitedirewolf",
       "icon_source": "classic",
@@ -3678,7 +3772,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -3797,7 +3897,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -3960,7 +4066,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -4097,7 +4209,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -4255,7 +4373,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -4373,7 +4497,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -4533,7 +4663,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -4651,7 +4787,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -4781,7 +4923,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -4934,7 +5082,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -5073,7 +5227,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -5214,7 +5374,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -5365,7 +5531,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -5434,7 +5606,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the duration of Freezing and Frost trap effects by 15% and the damage of Immolation and Explosive trap effects by 15.",
+      "description_rank1": "Increases the duration of Freezing and Frost trap effects by 15% and the damage of Immolation and Explosive trap effects by 15%.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -5445,7 +5617,7 @@
         "crop_path": "work/hovers/24-hunter-21060/survival-r3c1.png",
         "icon_crop_path": "work/hovers/24-hunter-21060/survival-r3c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "24-hunter-21060",
         "hover_id": "survival-r3c1",
@@ -5497,10 +5669,31 @@
             "description": "Increases the duration of Freezing and Frost trap effects by 15% and the damage of Immolation and Explosive trap effects by 15%.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Clever Traps",
+            "description": "Increases the duration of Freezing and Frost trap effects by 15% and the damage of Immolation and Explosive trap effects by 15%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Clever Traps",
+            "description": "Increases the duration of Freezing and Frost trap effects by 15% and the damage of Immolation and Explosive trap effects by 15.",
+            "maxRank": 2,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "percent": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -5508,46 +5701,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases the duration of Freezing and Frost trap effects by {0}% and the damage of Immolation and Explosive trap effects by {1}.",
-        "ranks": [
-          [
-            15,
-            15
-          ],
-          [
-            30,
-            30
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1306,
-          "classicSpellIds": [
-            19239,
-            19245
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic hunter/survival/Clever Traps (talent 1306): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 1306,
-          "name": "Clever Traps",
-          "class": "hunter",
-          "tree": "survival",
-          "maxRank": 2,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_nature_timestop",
       "icon_source": "classic",
@@ -5641,7 +5794,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -5796,7 +5955,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -5903,7 +6068,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -6015,7 +6186,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -6157,7 +6334,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -6277,7 +6460,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -6404,7 +6593,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -6527,7 +6722,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -6646,7 +6847,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -6752,7 +6959,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -6838,7 +7051,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Your Mongoose Bite also causes the target to Bleed for damage over 21 sec equal to 40% of the damage done by Mongoose Bite.",
+      "description_rank1": "Your Mongoose Bite also causes the target to bleed for damage over 21 sec equal to 40% of the damage done by Mongoose Bite.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -6849,7 +7062,7 @@
         "crop_path": "work/hovers/24-hunter-21060/survival-r7c2.png",
         "icon_crop_path": "work/hovers/24-hunter-21060/survival-r7c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "24-hunter-21060",
         "hover_id": "survival-r7c2",
@@ -6903,10 +7116,31 @@
             "description": "Your Mongoose Bite also causes the target to bleed for damage over 21 sec equal to 40% of the damage done by Mongoose Bite.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Lacerating Strikes",
+            "description": "Your Mongoose Bite also causes the target to Bleed for damage over 21 sec equal to 40% of the damage done by Mongoose Bite.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Lacerating Strikes",
+            "description": "Your Mongoose Bite also causes the target to Bleed for damage over 21 sec equal to 40% of the damage done by Mongoose Bite.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 21060,
@@ -6914,23 +7148,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Your Mongoose Bite also causes the target to Bleed for damage over {0} sec equal to {1}% of the damage done by Mongoose Bite.",
-        "ranks": [
-          [
-            21,
-            40
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "requires_arrows": [
         {

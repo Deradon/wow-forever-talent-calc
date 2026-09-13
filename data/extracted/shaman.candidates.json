@@ -145,7 +145,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -220,7 +226,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the damage done by your Lightning Bolt. Chain Lightning, and Earth Shock spells by 1%.",
+      "description_rank1": "Increases the damage done by your Lightning Bolt, Chain Lightning, and Earth Shock spells by 1%.",
       "footer": "Click to learn",
       "cut_off": false,
       "source": {
@@ -231,7 +237,7 @@
         "crop_path": "work/cursor/recovered/shaman/elemental-combat-r1c3.png",
         "icon_crop_path": "work/cursor/recovered/shaman/elemental-combat-r1c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "21-shaman-20130",
         "hover_id": "elemental-combat-r1c3",
@@ -283,6 +289,20 @@
             "description": "Increases the damage done by your Lightning Bolt, Chain Lightning, and Earth Shock spells by 1%.",
             "maxRank": 5,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Concussion",
+            "description": "Increases the damage done by your Lightning Bolt. Chain Lightning, and Earth Shock spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Concussion",
+            "description": "Increases the damage done by your Lightning Bolt. Chain Lightning, and Earth Shock spells by 1%.",
+            "maxRank": 5,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
@@ -296,7 +316,14 @@
           ],
           "darkness": 0.87
         },
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "punct": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -304,56 +331,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases the damage done by your Lightning Bolt. Chain Lightning, and Earth Shock spells by {0}%.",
-        "ranks": [
-          [
-            1
-          ],
-          [
-            2
-          ],
-          [
-            3
-          ],
-          [
-            4
-          ],
-          [
-            5
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 563,
-          "classicSpellIds": [
-            16035,
-            16105,
-            16106,
-            16107,
-            16108
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic shaman/elemental/Concussion (talent 563): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 563,
-          "name": "Concussion",
-          "class": "shaman",
-          "tree": "elemental",
-          "maxRank": 5,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       }
     },
     {
@@ -436,7 +413,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -589,6 +572,12 @@
             2
           ],
           "darkness": 0.88
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -752,6 +741,12 @@
             3
           ],
           "darkness": 0.84
+        },
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
         }
       },
       "tree_source": {
@@ -830,7 +825,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Your offensive spell critical strikes will Increase your chance to get a critical strike with melee attacks by 3% for 10 sec.",
+      "description_rank1": "Your offensive spell critical strikes will increase your chance to get a critical strike with melee attacks by 3% for 10 sec.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -841,7 +836,7 @@
         "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r2c4.png",
         "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r2c4-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "21-shaman-20130",
         "hover_id": "elemental-combat-r2c4",
@@ -893,10 +888,31 @@
             "description": "Your offensive spell critical strikes will increase your chance to get a critical strike with melee attacks by 3% for 10 sec.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Elemental Devastation",
+            "description": "Your offensive spell critical strikes will increase your chance to get a critical strike with melee attacks by 3% for 10 sec.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Elemental Devastation",
+            "description": "Your offensive spell critical strikes will Increase your chance to get a critical strike with melee attacks by 3% for 10 sec.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -904,48 +920,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Your offensive spell critical strikes will Increase your chance to get a critical strike with melee attacks by {0}% for 10 sec.",
-        "ranks": [
-          [
-            3
-          ],
-          [
-            6
-          ],
-          [
-            9
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1645,
-          "classicSpellIds": [
-            30160,
-            29179,
-            29180
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic shaman/elemental/Elemental Devastation (talent 1645): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 1645,
-          "name": "Elemental Devastation",
-          "class": "shaman",
-          "tree": "elemental",
-          "maxRank": 3,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       }
     },
     {
@@ -1028,7 +1002,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -1146,7 +1126,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -1285,7 +1271,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -1408,7 +1400,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -1551,7 +1549,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -1680,7 +1684,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -1801,7 +1811,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -1860,7 +1876,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Your Earthbind Totem Immobilizes nearby targets for 5 sec when cast.",
+      "description_rank1": "Your Earthbind Totem immobilizes nearby targets for 5 sec when cast.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -1871,7 +1887,7 @@
         "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r5c4.png",
         "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r5c4-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "21-shaman-20130",
         "hover_id": "elemental-combat-r5c4",
@@ -1925,10 +1941,31 @@
             "description": "Your Earthbind Totem immobilizes nearby targets for 5 sec when cast.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Earthbound",
+            "description": "Your Earthbind Totem Immobilizes nearby targets for 5 sec when cast.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Earthbound",
+            "description": "Your Earthbind Totem Immobilizes nearby targets for 5 sec when cast.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -1936,22 +1973,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Your Earthbind Totem Immobilizes nearby targets for {0} sec when cast.",
-        "ranks": [
-          [
-            5
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "icon": "spell_nature_stranglevines",
       "icon_source": "classic",
@@ -2045,7 +2066,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -2110,7 +2137,7 @@
         "10 sec cooldown"
       ],
       "requires": [],
-      "description_rank1": "You hurl molten lava at the target, dealing 158 to 187 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% Increased damage.",
+      "description_rank1": "You hurl molten lava at the target, dealing 158 to 187 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -2121,7 +2148,7 @@
         "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r7c2.png",
         "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r7c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "21-shaman-20130",
         "hover_id": "elemental-combat-r7c2",
@@ -2183,10 +2210,31 @@
             "description": "You hurl molten lava at the target, dealing 158 to 187 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Lava Burst",
+            "description": "You hurl molten lava at the target, dealing 158 to 187 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% Increased damage.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Lava Burst",
+            "description": "You hurl molten lava at the target, dealing 158 to 187 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% Increased damage.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -2194,24 +2242,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "You hurl molten lava at the target, dealing {0} to {1} Fire damage. If your Flame Shock is on the target, Lava Burst deals {2}% Increased damage.",
-        "ranks": [
-          [
-            158,
-            187,
-            20
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "requires_arrows": [
         {
@@ -2317,7 +2347,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -2458,7 +2494,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -2609,7 +2651,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -2760,7 +2808,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -2890,7 +2944,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -2960,7 +3020,7 @@
         "crop_path": "work/hovers/19-shaman-19830/enhancement-r2c3.png",
         "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r2c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "19-shaman-19830",
         "hover_id": "enhancement-r2c3",
@@ -3012,10 +3072,22 @@
             "description": "Reduces the cast time of your Ghost Wolf spell by 1.0 sec., and Ghost Wolf may be used indoors.",
             "maxRank": 2,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Improved Ghost Wolf",
+            "description": "Reduces the cast time of your Ghost Wolf spell by 1.0 sec, and Ghost Wolf may be used indoors.",
+            "maxRank": 2,
+            "confidence": 1.0
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -3154,7 +3226,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -3286,7 +3364,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -3435,7 +3519,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -3554,7 +3644,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -3695,7 +3791,13 @@
             "sharpness": 3599.5,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -3853,7 +3955,13 @@
             "sharpness": 3372.6,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -3967,7 +4075,7 @@
         "crop_path": "work/hovers/19-shaman-19830/enhancement-r4c3.png",
         "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r4c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "19-shaman-19830",
         "hover_id": "enhancement-r4c3",
@@ -4029,10 +4137,22 @@
             "description": "Instantly strike with both weapons and deal normal weapon damage and increase Nature damage you deal to the target by 20% for 12 sec.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Stormstrike",
+            "description": "Instantly strike for normal weapon damage and increase Nature damage you deal to the target by 20% for 12 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -4085,7 +4205,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and Increases all threat generated by 30% while Rockbiter Weapon is active.",
+      "description_rank1": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and increases all threat generated by 30% while Rockbiter Weapon is active.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -4096,7 +4216,7 @@
         "crop_path": "work/hovers/19-shaman-19830/enhancement-r5c1.png",
         "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r5c1-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "19-shaman-19830",
         "hover_id": "enhancement-r5c1",
@@ -4148,6 +4268,20 @@
             "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and increases all threat generated by 30% while Rockbiter Weapon is active.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Spirit Weapons",
+            "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and Increases all threat generated by 30% while Rockbiter Weapon is active.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Spirit Weapons",
+            "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and Increases all threat generated by 30% while Rockbiter Weapon is active.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [
@@ -4158,7 +4292,14 @@
             "cut_off": false
           }
         ],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -4166,23 +4307,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by {0}% while Rockbiter Weapon is not active, and Increases all threat generated by {1}% while Rockbiter Weapon is active.",
-        "ranks": [
-          [
-            30,
-            30
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "icon": "ability_parry",
       "icon_source": "classic",
@@ -4283,7 +4407,13 @@
             "sharpness": 3676.6,
             "cut_off": false
           }
-        ]
+        ],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20040,
@@ -4404,7 +4534,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -4543,7 +4679,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -4690,10 +4832,25 @@
             "description": "Increases your melee attack speed and spell casting speed by 30% for 25 sec.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Rage of the Farseer",
+            "description": "Increases your melee attack speed and spell casting speed by 30% for 25 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in name"
+        "note": "readers still differ on name 'Rage of the Farseer' vs 'Rage of the Farseeer'",
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [
+            "name 'Rage of the Farseer' vs 'Rage of the Farseeer'"
+          ],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 19830,
@@ -4823,7 +4980,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -4963,7 +5126,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -5114,7 +5283,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -5257,7 +5432,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -5400,7 +5581,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -5544,7 +5731,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -5678,7 +5871,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -5823,7 +6022,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -5977,7 +6182,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -6096,7 +6307,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -6249,7 +6466,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -6405,7 +6628,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -6461,7 +6690,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [],
-      "description_rank1": "Increases the amount healed by your Healing Wave spell by 8.",
+      "description_rank1": "Increases the amount healed by your Healing Wave spell by 8%.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -6472,7 +6701,7 @@
         "crop_path": "work/hovers/21-shaman-20130/restoration-r5c2.png",
         "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r5c2-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "21-shaman-20130",
         "hover_id": "restoration-r5c2",
@@ -6524,10 +6753,31 @@
             "description": "Increases the amount healed by your Healing Wave spell by 8%.",
             "maxRank": 3,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Healing Way",
+            "description": "Increases the amount healed by your Healing Wave spell by 8.",
+            "maxRank": 3,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Healing Way",
+            "description": "Increases the amount healed by your Healing Wave spell by 8.",
+            "maxRank": 3,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "percent": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -6535,48 +6785,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Increases the amount healed by your Healing Wave spell by {0}.",
-        "ranks": [
-          [
-            8
-          ],
-          [
-            16
-          ],
-          [
-            24
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1648,
-          "classicSpellIds": [
-            29206,
-            29205,
-            29202
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic shaman/restoration/Healing Way (talent 1648): Classic 33/66/100 is proportional; Forever rank 1 is 8: scaled proportionally (8 x rank). Rounding: rank 3 24 may read 25 (values above are the raw scaled numbers).",
-        "needsManual": false,
-        "confidence": "medium",
-        "review": true,
-        "rule": "proportional",
-        "match": {
-          "classicTalentId": 1648,
-          "name": "Healing Way",
-          "class": "shaman",
-          "tree": "restoration",
-          "maxRank": 3,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
       },
       "icon": "spell_nature_healingway",
       "icon_source": "classic",
@@ -6608,7 +6816,7 @@
         "3 min cooldown"
       ],
       "requires": [],
-      "description_rank1": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an Instant cast spell.",
+      "description_rank1": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an instant cast spell.",
       "footer": null,
       "cut_off": false,
       "source": {
@@ -6619,7 +6827,7 @@
         "crop_path": "work/hovers/21-shaman-20130/restoration-r5c3.png",
         "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r5c3-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "21-shaman-20130",
         "hover_id": "restoration-r5c3",
@@ -6677,10 +6885,31 @@
             "description": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an instant cast spell.",
             "maxRank": 1,
             "confidence": 0.7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+            "name": "Nature's Swiftness",
+            "description": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an Instant cast spell.",
+            "maxRank": 1,
+            "confidence": 1.0
+          },
+          {
+            "reader": "pre-merge",
+            "name": "Nature's Swiftness",
+            "description": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an Instant cast spell.",
+            "maxRank": 1,
+            "confidence": 0.7
           }
         ],
         "alternates": [],
-        "note": "second reader (codex) differs in description"
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {
+            "case": 1
+          },
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -6688,22 +6917,6 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "When activated, your next Nature spell with a casting time less than {0} sec. becomes an Instant cast spell.",
-        "ranks": [
-          [
-            10
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "observed",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "none"
       },
       "icon": "spell_nature_ravenform",
       "icon_source": "classic",
@@ -6799,7 +7012,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,
@@ -6965,7 +7184,13 @@
             "confidence": 1.0
           }
         ],
-        "alternates": []
+        "alternates": [],
+        "merge": {
+          "at": "2026-09-13T00:00:00Z",
+          "shapes": {},
+          "disputed": [],
+          "unadjudicated": []
+        }
       },
       "tree_source": {
         "t": 20130,

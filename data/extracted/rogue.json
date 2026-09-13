@@ -5,7 +5,7 @@
   "className": "Rogue",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T12:03:34Z",
+  "generatedAt": "2026-09-13T13:45:03Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -100,7 +100,7 @@
           "maxRank": 2,
           "icon": "ability_fiegndead",
           "iconSource": "classic",
-          "description": "After killing a non-trivial enemy, gives you a {0}% Increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
+          "description": "After killing a non-trivial enemy, gives you a {0}% increased Critical Strike Chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
           "ranks": [[20], [40]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -117,7 +117,7 @@
             "t": 18265.017,
             "frame": 1095901,
             "crop": "data/review/rogue/assassination/remorseless-attacks.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -140,10 +140,23 @@
                 "description": "After killing a non-trivial enemy, gives you a 20% increased Critical Strike Chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
                 "maxRank": 2,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Remorseless Attacks",
+                "description": "After killing a non-trivial enemy, gives you a 20% Increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
+                "maxRank": 2,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Remorseless Attacks",
+                "description": "After killing a non-trivial enemy, gives you a 20% Increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
+                "maxRank": 2,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -2204,7 +2217,7 @@
           "maxRank": 3,
           "icon": "spell_shadow_fumble",
           "iconSource": "classic",
-          "description": "Gives you a {0}% chance to add an additional combo point to your target when using your Ambush. Garrote, or Cheap Shot ability.",
+          "description": "Gives you a {0}% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
           "ranks": [[33], [66], [99]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -2221,7 +2234,7 @@
             "t": 18510.133,
             "frame": 1110608,
             "crop": "data/review/rogue/subtlety/initiative.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -2244,10 +2257,23 @@
                 "description": "Gives you a 33% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
                 "maxRank": 3,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Initiative",
+                "description": "Gives you a 33% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
+                "maxRank": 3,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Initiative",
+                "description": "Gives you a 33% chance to add an additional combo point to your target when using your Ambush. Garrote, or Cheap Shot ability.",
+                "maxRank": 3,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -2766,7 +2792,7 @@
             "t": 18560.0,
             "frame": 1113600,
             "crop": "data/review/rogue/subtlety/thousand-cuts.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -2789,10 +2815,17 @@
                 "description": "When your Rupture ability deals periodic damage, the Energy cost of your next Hemorrhage or Backstab ability within 10 secs is reduced by 3, stacking up to 5 times.",
                 "maxRank": 1,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Thousand Cuts",
+                "description": "When your Rupture ability deals periodic damage, the Energy cost of your next Hemorrhage or Backstab ability within 10 sec is reduced by 3, stacking up to 5 times.",
+                "maxRank": 1,
+                "confidence": 1.0
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Preparation at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "note": "prerequisite from tree arrow (stage 7): Preparation at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]

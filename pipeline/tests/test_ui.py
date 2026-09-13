@@ -1,3 +1,4 @@
+import pytest
 import numpy as np
 
 from wowtalents import ui
@@ -234,3 +235,27 @@ def test_ghost_repair_from_a_donor_when_every_frame_shows_a_tooltip():
     other = donor.copy()
     other[400:500, :] = 0
     assert ui.repair_ghosts(bg, frames, [other], (0, 0, 800, 500))[1][0]["repaired"] is False
+
+
+# --------------------------------------------------------------------------- decode_frames
+
+def test_decode_frames_raises_on_a_non_zero_ffmpeg_exit():
+    """Silence here is what let stage 4 write a hovers file with zero hovers and exit 0."""
+    with pytest.raises(ui.DecodeError) as e:
+        list(ui.decode_frames(b"not a video fragment at all", width=16, height=16))
+    assert "ffmpeg exited" in str(e.value)
+
+
+def test_decode_frames_yields_frames_and_exits_cleanly_on_real_video():
+    import subprocess
+    cmd = ["ffmpeg", "-v", "error", "-nostdin", "-f", "lavfi", "-i", "testsrc=size=16x16:rate=5:duration=1",
+           "-c:v", "libx264", "-pix_fmt", "yuv420p", "-f", "mp4", "-movflags", "frag_keyframe+empty_moov", "pipe:1"]
+    data = subprocess.run(cmd, capture_output=True).stdout
+    if not data:
+        pytest.skip("ffmpeg cannot produce an in-memory fragment here")
+    frames = list(ui.decode_frames(data, width=16, height=16))
+    assert len(frames) == 5
+    assert [off for off, _ in frames] == [0, 1, 2, 3, 4]
+    assert frames[0][1].shape == (16, 16, 3)
+    every2 = list(ui.decode_frames(data, every=2, width=16, height=16))
+    assert [off for off, _ in every2] == [0, 2, 4]

@@ -29,6 +29,7 @@ import typer
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import fragments as fr  # noqa: E402
 from wowtalents import ui  # noqa: E402
+from wowtalents.fsio import write_json_atomic  # noqa: E402
 
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 
@@ -58,6 +59,9 @@ def median_background(cache: fr.FragmentCache, sqs: list[int], roi=ui.WORK_ROI,
             used.append(sq)
         log(f"sq={sq} ({fr.hms(sq)}) frame ok" + ("" if cache.path(sq).exists() else " (fetched)"))
     if not stack:
+        typer.echo(f"no frame decoded from any of the {len(sqs)} sampled fragments "
+                   f"({', '.join(fr.hms(sq) for sq in sqs[:5])}{', ...' if len(sqs) > 5 else ''}); "
+                   f"cannot build a median", err=True)
         raise typer.Exit(code=2)
     med = np.median(np.stack(stack), axis=0).astype(np.uint8)
     bg = np.zeros((ui.FRAME_H, ui.FRAME_W, 3), np.uint8)
@@ -179,7 +183,7 @@ def run(
             "tree_names": [f"{sid}-tree{t}.png" for t in (1, 2, 3)],
         },
     }
-    (out_dir / f"{sid}.json").write_text(json.dumps(calib, indent=2) + "\n")
+    write_json_atomic(out_dir / f"{sid}.json", calib)
     typer.echo(f"tab: {tabs['active']}  cells per tree: {per_tree}  total {len(cells)}")
     for c in cells:
         if c.w < ui.ICON - 1:

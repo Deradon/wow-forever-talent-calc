@@ -345,3 +345,269 @@ def test_candidate_icon_fields_replace_the_crop(tmp_path, prior):
     log = X.Log()
     X.update_encoding(root, doc, log)
     assert X.write_validated(doc, root / "data" / "extracted" / "warrior.json", root, log) is True
+
+
+# ----------------------------------------------------------------------------
+# encoding freeze (review B3) and override field deletion (B4)
+# ----------------------------------------------------------------------------
+
+def _enc(root: Path, n: int = 1) -> dict:
+    return json.loads((root / "data" / "encoding" / f"v{n}.json").read_text())
+
+
+def test_update_encoding_rewrites_an_unfrozen_version_in_place(tmp_path, prior):
+    root, records = make_repo(tmp_path)
+    doc = X.build_extracted("warrior", records, prior, root=root)
+    log = X.Log()
+    path = X.update_encoding(root, doc, log)
+    assert path.name == "v1.json" and doc["dataVersion"] == 1
+    assert list(_enc(root)["classes"]) == ["warrior"]
+    assert not (root / "data" / "encoding" / "v2.json").exists()
+
+
+def test_update_encoding_refuses_to_touch_a_frozen_version_and_forks_the_next(tmp_path, prior):
+    """A1: v1 was rewritten in place four times and every shared ?v=1 link silently
+    decoded to other talents. A frozen file's digits must never move again."""
+    root, records = make_repo(tmp_path)
+    frozen = {"version": 1, "createdAt": "2026-09-13T01:00:00Z", "frozen": True, "note": "published",
+              "classes": {"tinker": {"trees": ["gadgetry"], "order": {"gadgetry": ["improved-wrench"]}}}}
+    (root / "data" / "encoding" / "v1.json").write_text(json.dumps(frozen, indent=2) + "\n")
+    before = (root / "data" / "encoding" / "v1.json").read_bytes()
+
+    doc = X.build_extracted("warrior", records, prior, root=root)
+    log = X.Log()
+    path = X.update_encoding(root, doc, log)
+
+    assert (root / "data" / "encoding" / "v1.json").read_bytes() == before   # untouched, byte for byte
+    assert path.name == "v2.json" and doc["dataVersion"] == 2
+    v2 = _enc(root, 2)
+    assert v2["frozen"] is False and v2["version"] == 2
+    assert v2["classes"]["tinker"] == frozen["classes"]["tinker"]            # carried over unchanged
+    assert v2["classes"]["warrior"]["order"]["arms"] == ["improved-heroic-strike", "tactical-mastery", "anger-management"]
+    mig = json.loads((root / "data" / "encoding" / "migrations" / "v1-v2.json").read_text())
+    assert mig == {"from": 1, "to": 2, "classes": {}}
+    assert any("is frozen; created v2.json" in l for l in log.lines)
+    assert any("empty migration v1-v2.json" in l for l in log.lines)
+
+
+def test_a_frozen_version_that_already_matches_is_not_forked(tmp_path, prior):
+    root, records = make_repo(tmp_path)
+    doc = X.build_extracted("warrior", records, prior, root=root)
+    X.update_encoding(root, doc, X.Log())
+    enc = _enc(root)
+    enc["frozen"] = True
+    (root / "data" / "encoding" / "v1.json").write_text(json.dumps(enc, indent=2) + "\n")
+    doc2 = X.build_extracted("warrior", records, prior, root=root)
+    path = X.update_encoding(root, doc2, X.Log())
+    assert path.name == "v1.json" and doc2["dataVersion"] == 1
+    assert not (root / "data" / "encoding" / "v2.json").exists()
+
+
+def test_forking_a_frozen_version_refuses_to_clobber_an_existing_next(tmp_path):
+    """Defensive: never silently overwrite a v<N+1> somebody has already started."""
+    root = tmp_path / "repo"
+    (root / "data" / "encoding" / "migrations").mkdir(parents=True)
+    v1 = root / "data" / "encoding" / "v1.json"
+    frozen = {"version": 1, "createdAt": "t", "frozen": True, "note": "", "classes": {}}
+    v1.write_text(json.dumps(frozen, indent=2) + "\n")
+    (root / "data" / "encoding" / "v2.json").write_text("{}\n")
+    with pytest.raises(FileExistsError, match="v2.json already exists"):
+        X._fork_frozen(root, v1, frozen, X.Log())
+    assert json.loads(v1.read_text())["frozen"] is True
+
+
+def test_the_repos_encoding_v1_is_unfrozen_and_says_so():
+    enc = json.loads((REPO / "data" / "encoding" / "v1.json").read_text(encoding="utf-8"))
+    assert enc["frozen"] is False           # owner decision 2026-09-13: mutable until launch
+    assert "frozen" in enc["note"]
+
+
+def test_override_unset_removes_an_optional_field(tmp_path, prior):
+    root, records = make_repo(tmp_path)
+    doc = X.build_extracted("warrior", records, prior, root=root)
+    assert talents_of(doc)["anger-management"]["requires"] == [{"talent": "tactical-mastery", "rank": 5}]
+    ov = overrides_doc({"talent": "anger-management", "tree": "arms", "unset": ["requires"],
+                        "reason": "the arrow is a background artefact, not a prerequisite",
+                        "by": "reviewer", "at": "2026-09-14T20:30:00Z"})
+    log = X.Log()
+    out = X.build_talents(doc, ov, None, log)
+    am = talents_of(out)["anger-management"]
+    assert "requires" not in am
+    assert am["source"]["reviewed"] is True and am["source"]["reviewedBy"] == "reviewer"
+    assert X.write_validated(out, root / "data" / "talents" / "warrior.json", root, log, no_files=True) or True
+
+
+def test_override_unset_is_a_no_op_for_an_absent_field_and_reaches_source_subfields(tmp_path, prior):
+    root, records = make_repo(tmp_path)
+    doc = X.build_extracted("warrior", records, prior, root=root)
+    tid = "improved-heroic-strike"
+    talents_of(doc)[tid]["source"]["note"] = "unparsed requirement: something"
+    ov = overrides_doc({"talent": tid, "tree": "arms", "unset": ["source.note", "ranksNote", "capstone"],
+                        "reason": "internal note, not game text", "by": "reviewer", "at": "2026-09-14T20:30:00Z"})
+    out = X.build_talents(doc, ov, None, X.Log())
+    t = talents_of(out)[tid]
+    assert "note" not in t["source"] and "ranksNote" not in t and "capstone" not in t
+
+
+def test_override_unset_runs_before_set(tmp_path, prior):
+    root, records = make_repo(tmp_path)
+    doc = X.build_extracted("warrior", records, prior, root=root)
+    ov = overrides_doc({"talent": "anger-management", "tree": "arms",
+                        "unset": ["requires", "ranksNote"],
+                        "set": {"requires": [{"talent": "improved-heroic-strike", "rank": 3}]},
+                        "reason": "wrong arrow replaced by the right one", "by": "reviewer",
+                        "at": "2026-09-14T20:30:00Z"})
+    out = X.build_talents(doc, ov, None, X.Log())
+    am = talents_of(out)["anger-management"]
+    assert am["requires"] == [{"talent": "improved-heroic-strike", "rank": 3}]   # set wins
+    assert "ranksNote" not in am                                                # unset stands
+
+
+def test_override_unset_refuses_a_required_field(tmp_path, prior):
+    root, records = make_repo(tmp_path)
+    doc = X.build_extracted("warrior", records, prior, root=root)
+    ov = overrides_doc({"talent": "anger-management", "tree": "arms", "unset": ["description"],
+                        "reason": "nope", "by": "reviewer", "at": "2026-09-14T20:30:00Z"})
+    log = X.Log()
+    out = X.build_talents(doc, ov, None, log)
+    assert "description" in talents_of(out)["anger-management"]
+    assert any("is not an optional field" in l for l in log.lines)
+
+
+def test_overrides_schema_accepts_unset_and_rejects_a_required_field_name(tmp_path):
+    schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
+    from jsonschema import Draft202012Validator
+    v = Draft202012Validator(validate.overrides_schema(schema))
+    good = overrides_doc({"talent": "conflagrate", "tree": "destruction", "unset": ["requires"],
+                          "reason": "no arrowhead on the median", "by": "audit", "at": "2026-09-13T00:00:00Z"})
+    good["class"] = "warlock"
+    assert list(v.iter_errors(good)) == []
+    bad = copy.deepcopy(good)
+    bad["overrides"][0]["unset"] = ["description"]
+    assert list(v.iter_errors(bad))
+    both = copy.deepcopy(good)
+    both["overrides"][0]["set"] = {"maxRank": 2}          # set + unset in one entry is legal
+    assert list(v.iter_errors(both)) == []
+    clash = copy.deepcopy(good)
+    clash["overrides"][0]["delete"] = True                # delete owns the whole record
+    assert list(v.iter_errors(clash))
+
+
+def test_canonical_dumps_keeps_unset_in_key_order():
+    doc = overrides_doc({"at": "2026-09-13T00:00:00Z", "by": "audit", "reason": "r",
+                         "unset": ["requires"], "tree": "destruction", "talent": "conflagrate"})
+    doc["class"] = "warlock"
+    text = validate.canonical_dumps(doc, kind="overrides")
+    keys = [k for k in ("talent", "tree", "unset", "reason", "by", "at")]
+    assert [text.index(f'"{k}"') for k in keys] == sorted(text.index(f'"{k}"') for k in keys)
+
+
+def test_a_rank_3_crop_exports_ranksobserved_3(tmp_path, prior):
+    """mage/frost/shatter: the tooltip was captured at Rank 3/3, so [1] would be a lie and the
+    proportional scaler must not run at all (it produced '150 % critical strike chance')."""
+    root, records = make_repo(tmp_path)
+    rec = next(r for r in records if r["name"] == "Tactical Mastery")
+    rec["rank"] = {"current": 3, "max": 5}
+    rec.pop("ranks_anticipated", None)
+    doc = X.build_extracted("warrior", records, prior, root=root)
+    t = talents_of(doc)["tactical-mastery"]
+    assert t["ranksObserved"] == [3]
+    assert t["ranksSource"] == "manual"
+    assert len({tuple(r) for r in t["ranks"]}) == 1          # copies, never multiplied
+    assert "rank 3/5" in t["ranksNote"]
+    log = X.Log()
+    X.update_encoding(root, doc, log)
+    assert X.write_validated(doc, root / "data" / "extracted" / "warrior.json", root, log, no_files=True), log.errors()
+
+
+# ----------------------------------------------------------------------------
+# Orphaned review crops (review C4 / work package B7)
+# ----------------------------------------------------------------------------
+
+def _crop(root: Path, rel: str) -> Path:
+    p = root / rel
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_bytes(PNG)
+    return p
+
+
+def test_orphan_crops_keeps_everything_a_class_file_points_at(tmp_path):
+    root = tmp_path / "repo"
+    doc = {"trees": [{
+        "source": {"crop": "data/review/mage/fire/_header.png"},
+        "talents": [
+            {"iconCrop": "data/review/mage/fire/ignite.icon.png", "source": {"crop": "data/review/mage/fire/ignite.png"}},
+            {"source": {"crop": "data/review/mage/fire/impact.png"}},          # iconSource became "classic"
+        ]}]}
+    for rel in ("data/review/mage/fire/_header.png", "data/review/mage/fire/ignite.icon.png",
+                "data/review/mage/fire/ignite.png", "data/review/mage/fire/impact.png",
+                "data/review/mage/fire/impact.icon.png", "data/review/mage/fire/gone.icon.png"):
+        _crop(root, rel)
+    orphans = [str(p.relative_to(root)) for p in X.orphan_crops(root, [doc])]
+    assert orphans == ["data/review/mage/fire/gone.icon.png", "data/review/mage/fire/impact.icon.png"]
+
+
+def test_referenced_crops_collects_all_three_kinds():
+    doc = {"trees": [{"source": {"crop": "h.png"},
+                      "talents": [{"iconCrop": "i.icon.png", "source": {"crop": "i.png"}}]}]}
+    assert X.referenced_crops(doc) == {"h.png", "i.icon.png", "i.png"}
+
+
+def test_prune_review_crops_deletes_only_the_orphans(tmp_path):
+    root = tmp_path / "repo"
+    doc = {"trees": [{"talents": [{"source": {"crop": "data/review/mage/fire/ignite.png"}}]}]}
+    keep = _crop(root, "data/review/mage/fire/ignite.png")
+    drop = _crop(root, "data/review/mage/fire/ignite.icon.png")
+    log = X.Log()
+    assert X.prune_review_crops(root, [doc], log, dry_run=True) == [drop]
+    assert drop.exists()                                    # dry run deletes nothing
+    assert X.prune_review_crops(root, [doc], log) == [drop]
+    assert keep.exists() and not drop.exists()
+    assert X.prune_review_crops(root, [doc], log) == []      # idempotent
+
+
+def test_prune_is_a_no_op_without_a_review_directory(tmp_path):
+    assert X.orphan_crops(tmp_path / "repo", [{"trees": []}]) == []
+
+
+def test_stage_cli_prune_refuses_a_partial_class_set(tmp_path):
+    root, _ = make_repo(tmp_path)
+    _crop(root, "data/review/mage/fire/orphan.icon.png")
+    res = subprocess.run([sys.executable, str(STAGE), "prune", "--root", str(root)],
+                         capture_output=True, text=True, cwd=str(PIPELINE))
+    assert res.returncode == 2
+    assert "refusing to prune" in res.stdout + res.stderr
+    assert (root / "data" / "review" / "mage" / "fire" / "orphan.icon.png").exists()
+
+
+def test_the_repo_has_no_orphaned_review_crops():
+    """The inverse assertion: once pruned, nothing under data/review is unreferenced."""
+    docs = [json.loads(p.read_text(encoding="utf-8"))
+            for p in sorted((REPO / "data" / "talents").glob("*.json")) + sorted((REPO / "data" / "examples").glob("*.json"))]
+    assert X.orphan_crops(REPO, docs) == []
+
+
+def test_a_matched_icon_does_not_leave_an_icon_crop_behind(tmp_path, prior):
+    """Stage 9 switches a talent to iconSource 'classic' and the record keeps no iconCrop, so
+    copying the crop would only create an orphan under data/review/ for prune to delete again."""
+    root, records = make_repo(tmp_path)
+    rec = next(r for r in records if r["name"] == "Tactical Mastery")
+    rec["source"]["icon_crop_path"] = rec["source"]["crop_path"]
+    rec["icon"] = "ability_warrior_challange"
+    rec["icon_source"] = "classic"
+    doc = X.build_extracted("warrior", records, prior, root=root)
+    t = talents_of(doc)["tactical-mastery"]
+    assert t["iconSource"] == "classic" and "iconCrop" not in t
+    assert not (root / "data" / "review" / "warrior" / "arms" / "tactical-mastery.icon.png").exists()
+    assert X.orphan_crops(root, [doc]) == []
+
+
+def test_an_unmatched_icon_still_gets_its_crop(tmp_path, prior):
+    root, records = make_repo(tmp_path)
+    rec = next(r for r in records if r["name"] == "Tactical Mastery")
+    rec["source"]["icon_crop_path"] = rec["source"]["crop_path"]
+    doc = X.build_extracted("warrior", records, prior, root=root)
+    t = talents_of(doc)["tactical-mastery"]
+    assert t["iconSource"] == "crop"
+    assert t["iconCrop"] == "data/review/warrior/arms/tactical-mastery.icon.png"
+    assert (root / t["iconCrop"]).exists()

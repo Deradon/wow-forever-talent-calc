@@ -27,6 +27,9 @@ import cv2
 import numpy as np
 import requests
 
+from . import fsio as _fsio
+from . import text as _text
+
 PIPELINE_DIR = Path(__file__).resolve().parents[2]
 DEFAULT_SERVER = "http://127.0.0.1:8089"
 VIDEO_ID = "DxtVEhjyROU"
@@ -274,7 +277,7 @@ def assemble_record(cls: str, hover: dict, segment_id: str, tree_name: str, page
     conf = confidence(p, s)
     row1, col1 = int(hover["row"]), int(hover["col"])
     row, col = row1 - 1, col1 - 1
-    tree_slug = "".join(ch.lower() if ch.isalnum() else "-" for ch in tree_name).strip("-")
+    tree_slug = _text.slug(tree_name)
     files = hover.get("files") or {}
     t = float(hover["t"])
     rec: dict[str, Any] = {
@@ -455,7 +458,7 @@ class Reader:
             raise ValueError(f"reader returned invalid JSON: {content[:200]!r}") from e
         if cp is not None:
             cp.parent.mkdir(parents=True, exist_ok=True)
-            cp.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+            _fsio.write_json_atomic(cp, out, indent=1)
         return out
 
     def read_tooltip(self, crop: np.ndarray, factor: float = 3.0) -> dict:

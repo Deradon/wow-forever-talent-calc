@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "class": "warlock",
+  "overrides": [
+    {
+      "talent": "drain-hope",
+      "tree": "affliction",
+      "set": {
+        "description": "Drains all hope from the target, dealing {0} Shadow damage every {1} sec and increasing all other Shadow damage over time you deal to that target by {2}%. Lasts {3} sec."
+      },
+      "reason": "audit 2026-09-13: reader error (PUNCT); corrected against data/review/warlock/affliction/drain-hope.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "fel-concentration",
+      "tree": "affliction",
+      "set": {
+        "description": "Gives you a {0}% chance to avoid interruption caused by damage while channeling or casting your Drain Life, Drain Mana, or Drain Soul spells."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/warlock/affliction/fel-concentration.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "improved-life-tap",
+      "tree": "affliction",
+      "set": {
+        "description": "Increases the amount of Mana awarded by your Life Tap spell by {0}%."
+      },
+      "reason": "audit 2026-09-13: reader error (PCT); corrected against data/review/warlock/affliction/improved-life-tap.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "soul-siphon",
+      "tree": "affliction",
+      "set": {
+        "description": "Increases the rate at which your Drain Life and Drain Soul deal damage by {0}%, but reduces your healing from Drain Life by {1}%."
+      },
+      "reason": "audit 2026-09-13: reader error (PCT); corrected against data/review/warlock/affliction/soul-siphon.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "suppression",
+      "tree": "affliction",
+      "set": {
+        "description": "Increases your chance to hit with all spells and attacks by {0}% and reduces all threat you generate by {1}%."
+      },
+      "reason": "audit 2026-09-13: reader error (PCT); corrected against data/review/warlock/affliction/suppression.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "fel-vitality",
+      "tree": "demonology",
+      "set": {
+        "description": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by {0}%, and increases your maximum Mana by {1}%."
+      },
+      "reason": "audit 2026-09-13: reader error (PUNCT); corrected against data/review/warlock/demonology/fel-vitality.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "improved-voidwalker",
+      "tree": "demonology",
+      "set": {
+        "description": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, Sacrifice, and Suffering spells by {0}%."
+      },
+      "reason": "audit 2026-09-13: reader error (PUNCT); corrected against data/review/warlock/demonology/improved-voidwalker.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "master-summoner",
+      "tree": "demonology",
+      "set": {
+        "description": "Reduces the casting time of your Imp, Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by {0} sec and the Mana cost by {1}%."
+      },
+      "reason": "audit 2026-09-13: reader error (PUNCT); corrected against data/review/warlock/demonology/master-summoner.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "aftermath",
+      "tree": "destruction",
+      "set": {
+        "description": "Increases the initial damage of your Immolate spell by {0}% and your Conflagrate spell has a {1}% chance to Daze the target, reducing the target's movement speed by {2}% for {3} sec."
+      },
+      "reason": "audit 2026-09-13: reader error (WORD); corrected against data/review/warlock/destruction/aftermath.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "incinerate",
+      "tree": "destruction",
+      "set": {
+        "description": "Deals {0} to {1} Fire damage to your target and an additional {2}% damage if the target is afflicted by Immolate."
+      },
+      "reason": "audit 2026-09-13: reader error (WORD); corrected against data/review/warlock/destruction/incinerate.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "intensity",
+      "tree": "destruction",
+      "set": {
+        "description": "Gives you a {0}% chance to resist interruption caused by damage while casting or channeling any Destruction spell."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/warlock/destruction/intensity.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "shadow-and-flame",
+      "tree": "destruction",
+      "set": {
+        "description": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by {0}% for {1} sec. and hitting an enemy with Shadowburn increases all Fire damage you deal by {2}% for {3} sec. In addition, Conflagrate has a {4}% chance not to consume Immolate, and Shadowburn has a {5}% chance to instantly refund a Soul Shard."
+      },
+      "reason": "audit 2026-09-13: reader error (PUNCT+WORD); corrected against data/review/warlock/destruction/shadow-and-flame.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "conflagrate",
+      "tree": "destruction",
+      "unset": ["requires"],
+      "reason": "audit 2026-09-13 decision 4: the arrow detector fired on a stripe of tree art. At 5x on 17-warlock-19140-median.png the segment between Shadowburn and Conflagrate shows no arrowhead, while the very next pair in the same column (Conflagrate -> Fire and Brimstone) shows an unmistakable filled triangle. Shadowburn is not a prerequisite.",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    }
+  ]
+}

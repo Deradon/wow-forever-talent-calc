@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "class": "druid",
+  "overrides": [
+    {
+      "talent": "improved-entangling-roots",
+      "tree": "balance",
+      "set": {
+        "description": "Increases the damage done by your Entangling Roots spell by {0}%, and its victims can take up to {1}% more damage without interrupting the effect."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/druid/balance/improved-entangling-roots.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "moonkin-form",
+      "tree": "balance",
+      "set": {
+        "description": "Transforms the Druid into Moonkin Form. While in this form, the armor contribution from items is increased by {0}% and all party members within {1} yards have their critical chance increased by {2}%, exclusive with Leader of the Pack. The Moonkin cannot cast healing spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/druid/balance/moonkin-form.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "natures-grace",
+      "tree": "balance",
+      "set": {
+        "description": "All non-periodic spell criticals grace you with a blessing of nature, increasing your spellcasting speed and reducing your global cooldown by {0}% for {1} sec."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I+PUNCT); corrected against data/review/druid/balance/natures-grace.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "ferocity",
+      "tree": "feral-combat",
+      "set": {
+        "description": "Reduces the cost of your Maul, Mangle, Swipe, Claw, and Rake abilities by {0} Rage or Energy."
+      },
+      "reason": "audit 2026-09-13: reader error (PUNCT); corrected against data/review/druid/feral-combat/ferocity.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "leader-of-the-pack",
+      "tree": "feral-combat",
+      "set": {
+        "description": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the critical strike chance of all party members within {0} yards by {1}%, exclusive with Moonkin Aura."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/druid/feral-combat/leader-of-the-pack.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "natures-swiftness",
+      "tree": "restoration",
+      "set": {
+        "description": "When activated, your next Nature spell becomes an instant cast spell."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/druid/restoration/natures-swiftness.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "tranquil-spirit",
+      "tree": "restoration",
+      "set": {
+        "description": "Reduces the mana cost of your Healing Touch and Tranquility spells by {0}%."
+      },
+      "reason": "audit 2026-09-13: reader error (WORD); corrected against data/review/druid/restoration/tranquil-spirit.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "feral-charge",
+      "tree": "feral-combat",
+      "set": {
+        "description": "Charge an enemy, immobilizing them and interrupting any spell they are casting for {0} sec. Feral Charge (Cat): Leap behind an enemy, Dazing them for {1} sec."
+      },
+      "reason": "audit 2026-09-13 decision 1: the crop was re-taken from the merged mkv at stream t=20800.0 with headroom. The tooltip carries no name line at all in the footage; the talent is named by its own 'Feral Charge (Cat)' block, and '5 Rage' was the Bear-form rage cost. Both clauses are now in the description. maxRank 1 is unverified: the crop has no 'Rank x/y' line.",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    }
+  ]
+}

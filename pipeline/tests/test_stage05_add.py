@@ -62,3 +62,54 @@ def test_additive_merge_accumulates_additions():
     doc = st5.additive_merge(base, [_rec("Fire", 1, 1, "Ignite")], [], {}, [], {}, at="t1")
     assert [a["at"] for a in doc["additions"]] == ["t0", "t1"]
     assert len(base["additions"]) == 1
+
+
+def _rec_with_cell(tree: str, tree_idx: int, row0: int, col0: int, name: str) -> dict:
+    rec = _rec(tree, row0, col0, name)
+    rec["source"]["cell"] = [tree_idx, row0 + 1, col0 + 1]
+    return rec
+
+
+def test_record_key_prefers_source_cell_over_the_tree_name():
+    """The dedupe bug: a record whose tree display name is not in ``trees`` keyed as None,
+    dropped out of ``have``, and its cell was read and appended a second time."""
+    rec = _rec_with_cell("Fire", 2, 3, 2, "Hot Streak")
+    assert st5.record_key(rec, {}) == ("Primary", 2, 4, 3)                  # no trees block at all
+    assert st5.record_key(rec, {"Arcane": 1, "Frost": 3}) == ("Primary", 2, 4, 3)   # tree absent from the map
+    assert st5.record_key(rec, {"Arcane": 1, "Fire": 2, "Frost": 3}) == ("Primary", 2, 4, 3)
+
+
+def test_record_key_falls_back_to_the_tree_name_by_slug():
+    idx = {"Beast Mastery": 1}
+    assert st5.record_key(_rec("Beast  Mastery", 1, 1, "Endurance Training"), idx) == ("Primary", 1, 2, 2)
+    assert st5.record_key(_rec("beast-mastery", 1, 1, "Endurance Training"), idx) == ("Primary", 1, 2, 2)
+
+
+def test_record_key_is_none_only_when_nothing_can_place_the_record():
+    assert st5.record_key(_rec("Shadow", 0, 0, "x"), {"Arcane": 1}) is None
+    rec = _rec("Fire", 0, 0, "x")
+    rec["source"]["cell"] = ["not", "a", "cell"]
+    assert st5.record_key(rec, {}) is None
+    rec2 = _rec("Fire", 0, 0, "x")
+    rec2["row"] = None
+    assert st5.record_key(rec2, {"Fire": 2}) is None
+
+
+def test_record_key_agrees_with_the_hover_key_for_every_shape():
+    """source.cell and the (tree index, row+1, col+1) fallback must produce the same key."""
+    idx = {"Arcane": 1, "Fire": 2, "Frost": 3}
+    for tree, ti in idx.items():
+        for row0, col0 in ((0, 0), (3, 2), (6, 3)):
+            with_cell = st5.record_key(_rec_with_cell(tree, ti, row0, col0, "x"), {})
+            without = st5.record_key(_rec(tree, row0, col0, "x"), idx)
+            assert with_cell == without == ("Primary", ti, row0 + 1, col0 + 1)
+
+
+def test_additive_merge_no_op_run_keeps_the_timestamp_and_logs_no_addition():
+    existing = {"class": "mage", "generated_at": "old", "candidates": [_rec("Fire", 1, 1, "Ignite")],
+                "segments": [{"segment_id": "s1"}], "trees": {"2": "Fire"}}
+    doc = st5.additive_merge(existing, [], [], {"2": "Fire"}, [{"cell": "fire-r1c3"}], {"read": 0}, at="2026-09-13T12:00:00Z")
+    assert doc["generated_at"] == "old"
+    assert "additions" not in doc
+    assert doc["missing_cells"] == [{"cell": "fire-r1c3"}] and doc["stats"] == {"read": 0}   # still refreshed
+    assert len(doc["candidates"]) == 1

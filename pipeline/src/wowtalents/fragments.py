@@ -18,6 +18,8 @@ from pathlib import Path
 
 import requests
 
+from .fsio import write_text_atomic
+
 VIDEO_ID = "DxtVEhjyROU"
 VIDEO_URL = f"https://www.youtube.com/watch?v={VIDEO_ID}"
 
@@ -101,8 +103,7 @@ def refresh_info(dest: Path = REFRESHED_INFO_JSON, timeout: int = 300) -> dict:
     if proc.returncode != 0:
         raise FragmentError(f"yt-dlp refresh failed ({proc.returncode}): {proc.stderr[-800:]}")
     info = json.loads(proc.stdout)
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(proc.stdout)
+    write_text_atomic(dest, proc.stdout)   # the URLs expire; a half-written info.json is worse than none
     return info
 
 

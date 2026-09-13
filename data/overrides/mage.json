@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "class": "mage",
+  "overrides": [
+    {
+      "talent": "presence-of-mind",
+      "tree": "arcane",
+      "set": {
+        "description": "When activated, your next Mage spell with a casting time less than {0} sec becomes an instant cast spell."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/mage/arcane/presence-of-mind.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "incineration",
+      "tree": "fire",
+      "set": {
+        "description": "Increases the critical strike chance of your Fire Blast, Ice Lance, Arcane Blast, and Scorch spells by {0}%."
+      },
+      "reason": "audit 2026-09-13: reader error (PUNCT); corrected against data/review/mage/fire/incineration.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "pyroblast",
+      "tree": "fire",
+      "set": {
+        "description": "Hurls an immense fiery boulder that causes {0} to {1} Fire damage and an additional {2} Fire damage over {3} sec."
+      },
+      "reason": "audit 2026-09-13: reader error (WORD); corrected against data/review/mage/fire/pyroblast.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "ice-block",
+      "tree": "frost",
+      "set": {
+        "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for {0} sec, but during that time you cannot attack, move, or cast spells."
+      },
+      "reason": "audit 2026-09-13: reader error (PUNCT); corrected against data/review/mage/frost/ice-block.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "shatter",
+      "tree": "frost",
+      "set": {
+        "description": "Increases the critical strike chance of all your spells against Frozen targets by {0}%."
+      },
+      "reason": "audit 2026-09-13: reader error (PCT); corrected against data/review/mage/frost/shatter.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "shatter",
+      "tree": "frost",
+      "set": {},
+      "reason": "audit 2026-09-13 decision 2: every crop of this cell shows Rank 3/3, so the 50% is the rank-3 value. The pipeline now refuses to extrapolate from a rank > 0 reading (ranks are copies of the observed rank-3 value, ranksSource manual, ranksObserved [3]) instead of the old 50/100/150 = 150% critical strike chance. Ranks 1 and 2 stay unknown until a rank-0 crop of this cell exists.",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    }
+  ]
+}

@@ -229,3 +229,142 @@ def test_json_output(tmp_path, example, capsys):
     assert code == 0 and out["ok"] is True
     assert out["files"][0]["errors"] == 0
     assert any(q["talent"] == "steady-hands" for q in out["files"][0]["reviewQueue"])
+
+
+# ----------------------------------------------------------------------------
+# Rule 20: rank anticipation sanity (data audit 2026-09-13, work package B6)
+# ----------------------------------------------------------------------------
+
+def _first_multirank(doc: dict) -> dict:
+    return next(t for tree in doc["trees"] for t in tree["talents"] if t["maxRank"] >= 3)
+
+
+def test_r20_flags_an_anticipated_percentage_above_100(tmp_path, example):
+    """warrior/enrage reads 30/60/90/120/150 %: rank 1 was read off a tooltip, the rest is
+    arithmetic, and 150 % damage is not a number the game prints."""
+    doc = copy.deepcopy(example)
+    t = _first_multirank(doc)
+    t["maxRank"] = 3
+    t["description"] = "Increases your damage by {0}%."
+    t["ranks"] = [[50], [100], [150]]
+    t["ranksObserved"] = [1]
+    t["ranksSource"] = "extrapolated"
+    t.pop("ranksPrior", None)
+    _, findings = run(make_repo(tmp_path, doc))
+    assert "R20-PERCENT-OVER-100" in codes(findings, "WARNING")
+
+
+def test_r20_does_not_flag_a_percentage_that_was_actually_observed(tmp_path, example):
+    doc = copy.deepcopy(example)
+    t = _first_multirank(doc)
+    t["maxRank"] = 3
+    t["description"] = "Increases your damage by {0}%."
+    t["ranks"] = [[50], [100], [150]]
+    t["ranksObserved"] = [1, 2, 3]
+    t["ranksSource"] = "observed"
+    t.pop("ranksPrior", None)
+    _, findings = run(make_repo(tmp_path, doc))
+    assert "R20-PERCENT-OVER-100" not in codes(findings, "WARNING")
+
+
+def test_r20_does_not_flag_a_value_that_is_not_a_percentage(tmp_path, example):
+    doc = copy.deepcopy(example)
+    t = _first_multirank(doc)
+    t["maxRank"] = 3
+    t["description"] = "Deals {0} additional damage."
+    t["ranks"] = [[50], [100], [150]]
+    t["ranksObserved"] = [1]
+    t["ranksSource"] = "extrapolated"
+    t.pop("ranksPrior", None)
+    _, findings = run(make_repo(tmp_path, doc))
+    assert "R20-PERCENT-OVER-100" not in codes(findings, "WARNING")
+
+
+@pytest.mark.parametrize("text", [
+    "Your attacks deal double damage against targets below {0}% health.",
+    "Usable only on enemies with less than {0}% health.",
+    "Triggers when the target is at or below {0}% health.",
+])
+def test_r20_flags_a_threshold_that_was_scaled(tmp_path, example, text):
+    """rogue/quietus: 'below 35% health' became 'below 175% health' at rank 5. A condition is
+    not a magnitude and the extrapolator cannot tell the difference from the numbers alone."""
+    doc = copy.deepcopy(example)
+    t = _first_multirank(doc)
+    t["maxRank"] = 3
+    t["description"] = text
+    t["ranks"] = [[35], [70], [105]]
+    t["ranksObserved"] = [1]
+    t["ranksSource"] = "extrapolated"
+    t.pop("ranksPrior", None)
+    _, findings = run(make_repo(tmp_path, doc))
+    assert "R20-THRESHOLD-SCALED" in codes(findings, "WARNING")
+
+
+def test_r20_leaves_a_constant_threshold_alone(tmp_path, example):
+    doc = copy.deepcopy(example)
+    t = _first_multirank(doc)
+    t["maxRank"] = 3
+    t["description"] = "Deals double damage against targets below {0}% health, for {1} sec."
+    t["ranks"] = [[35, 5], [35, 10], [35, 15]]
+    t["ranksObserved"] = [1]
+    t["ranksSource"] = "extrapolated"
+    t.pop("ranksPrior", None)
+    _, findings = run(make_repo(tmp_path, doc))
+    assert "R20-THRESHOLD-SCALED" not in codes(findings, "WARNING")
+
+
+def test_r20_is_silent_on_a_single_rank_talent(tmp_path, example):
+    doc = copy.deepcopy(example)
+    for tree in doc["trees"]:
+        for t in tree["talents"]:
+            t["maxRank"] = 1
+            t["ranks"] = t["ranks"][:1]
+            t["ranksObserved"] = [1]
+            t["ranksSource"] = "observed"
+            t.pop("ranksPrior", None)
+            t.pop("ranksNote", None)
+    _, findings = run(make_repo(tmp_path, doc))
+    assert not {c for c in codes(findings, "WARNING") if c.startswith("R20-")}
+
+
+def test_the_repo_data_has_no_rank_sanity_errors():
+    """R20 findings are warnings by design - they are review prompts, not gate failures."""
+    for cls in ("mage", "warrior"):
+        p = REPO / "data" / "talents" / f"{cls}.json"
+        assert validate.main([str(p), "--check", "--root", str(REPO)]) == 0
+
+
+def _overrides_in_repo(tmp_path: Path, example: dict, doc: dict) -> Path:
+    root = make_repo(tmp_path, example).parents[2]
+    p = root / "data" / "overrides" / f"{doc['class']}.json"
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(validate.canonical_dumps(doc, kind="overrides"), encoding="utf-8")
+    return p
+
+
+def test_overrides_set_source_may_be_partial(tmp_path, example):
+    """Section 6.2: `set` is a shallow merge and source sub-fields merge shallowly too, so an
+    override that corrects only `source.note` must validate."""
+    doc = {"schemaVersion": 1, "class": "tinker", "overrides": [{
+        "talent": "improved-wrench", "tree": "gadgetry",
+        "set": {"requires": [{"talent": "steady-hands", "rank": 2}],
+                "source": {"note": "prerequisite added by hand from the tree arrow"}},
+        "reason": "arrow the detector missed", "by": "reviewer", "at": "2026-09-13T00:00:00Z"}]}
+    p = _overrides_in_repo(tmp_path, example, doc)
+    code, findings = run(p, "--overrides", "--check")
+    assert code == 0, codes(findings, "ERROR")
+
+
+def test_overrides_set_source_still_rejects_an_unknown_field(tmp_path, example):
+    doc = {"schemaVersion": 1, "class": "tinker", "overrides": [{
+        "talent": "improved-wrench", "tree": "gadgetry",
+        "set": {"source": {"nonsense": 1}},
+        "reason": "r", "by": "reviewer", "at": "2026-09-13T00:00:00Z"}]}
+    p = _overrides_in_repo(tmp_path, example, doc)
+    code, findings = run(p, "--overrides")
+    assert code == 1 and "R01-SCHEMA" in codes(findings, "ERROR")
+
+
+def test_the_repo_override_files_validate():
+    for p in sorted((REPO / "data" / "overrides").glob("*.json")):
+        assert validate.main([str(p), "--overrides", "--check", "--root", str(REPO)]) == 0, p.name

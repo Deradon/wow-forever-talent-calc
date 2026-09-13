@@ -5,7 +5,7 @@
   "className": "Hunter",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T12:03:32Z",
+  "generatedAt": "2026-09-13T13:45:02Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -144,10 +144,9 @@
             "t": 21036.4,
             "frame": 1262184,
             "crop": "data/review/hunter/beast-mastery/improved-aspect-of-the-monkey.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -188,7 +187,7 @@
           "maxRank": 2,
           "icon": "ability_hunter_beastsoothe",
           "iconSource": "classic",
-          "description": "Revive Pet's casting time is reduced by {0} sec. mana cost is reduced by {1}%, and increases the health your pet returns with by an additional {2}%.",
+          "description": "Revive Pet's casting time is reduced by {0} sec, mana cost is reduced by {1}%, and increases the health your pet returns with by an additional {2}%.",
           "ranks": [[3, 20, 15], [6, 40, 30]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -205,10 +204,11 @@
             "t": 21039.0,
             "frame": 1262340,
             "crop": "data/review/hunter/beast-mastery/improved-revive-pet.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -379,7 +379,7 @@
           "maxRank": 1,
           "icon": "ability_devour",
           "iconSource": "classic",
-          "description": "Command your pet to Stun the target for {0} sec on its next successful attack, which also gains {1}% Increased critical strike chance. Generates high threat.",
+          "description": "Command your pet to Stun the target for {0} sec on its next successful attack, which also gains {1}% increased critical strike chance. Generates high threat.",
           "ranks": [[3, 100]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -395,10 +395,12 @@
             "t": 21064.467,
             "frame": 1263868,
             "crop": "data/review/hunter/beast-mastery/intimidation.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Bestial Swiftness at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z",
+            "note": "prerequisite from tree arrow (stage 7): Bestial Swiftness at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -612,7 +614,7 @@
           "icon": "crop-improved-stings",
           "iconSource": "crop",
           "iconCrop": "data/review/hunter/marksmanship/improved-stings.icon.png",
-          "description": "Increased the damage of your Serpent Sting ability by {0}%, reduces the cooldown of your Viper Sting ability by {1} sec, and increases the duration of your Scorpion Sting ability by {2} sec.",
+          "description": "Increased the damage of your Serpent Sting ability by {0}%, reduces the cooldown of your Viper Sting ability by {1} sec, and increases the duration of your Scorpid Sting ability by {2} sec.",
           "ranks": [[6, 2, 15], [6, 2, 15], [6, 2, 15]],
           "ranksObserved": [1],
           "ranksSource": "manual",
@@ -623,10 +625,11 @@
             "t": 21108.333,
             "frame": 1266500,
             "crop": "data/review/hunter/marksmanship/improved-stings.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -698,7 +701,7 @@
           "icon": "crop-rapid-killing",
           "iconSource": "crop",
           "iconCrop": "data/review/hunter/marksmanship/rapid-killing.icon.png",
-          "description": "Reduces the cooldown on your Rapid Fire ability by {0} min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next Shot ability within {1} sec by {2}%.",
+          "description": "Reduces the cooldown on your Rapid Fire ability by {0} min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next shot ability within {1} sec by {2}%.",
           "ranks": [[1, 20, 10], [1, 20, 10]],
           "ranksObserved": [1],
           "ranksSource": "manual",
@@ -709,10 +712,9 @@
             "t": 21109.267,
             "frame": 1266556,
             "crop": "data/review/hunter/marksmanship/rapid-killing.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -753,7 +755,7 @@
           "maxRank": 1,
           "icon": "ability_mount_whitedirewolf",
           "iconSource": "classic",
-          "description": "You deal {0}% Increased damage with all attacks while you do not have an active pet.",
+          "description": "You deal {0}% increased damage with all attacks while you do not have an active pet.",
           "ranks": [[20]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -763,10 +765,11 @@
             "t": 21312.133,
             "frame": 1278728,
             "crop": "data/review/hunter/marksmanship/lone-wolf.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -1172,7 +1175,7 @@
           "maxRank": 2,
           "icon": "spell_nature_timestop",
           "iconSource": "classic",
-          "description": "Increases the duration of Freezing and Frost trap effects by {0}% and the damage of Immolation and Explosive trap effects by {1}.",
+          "description": "Increases the duration of Freezing and Frost trap effects by {0}% and the damage of Immolation and Explosive trap effects by {1}%.",
           "ranks": [[15, 15], [30, 30]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -1189,10 +1192,11 @@
             "t": 21188.067,
             "frame": 1271284,
             "crop": "data/review/hunter/survival/clever-traps.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -1466,7 +1470,7 @@
           "icon": "crop-lacerating-strikes",
           "iconSource": "crop",
           "iconCrop": "data/review/hunter/survival/lacerating-strikes.icon.png",
-          "description": "Your Mongoose Bite also causes the target to Bleed for damage over {0} sec equal to {1}% of the damage done by Mongoose Bite.",
+          "description": "Your Mongoose Bite also causes the target to bleed for damage over {0} sec equal to {1}% of the damage done by Mongoose Bite.",
           "ranks": [[21, 40]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -1482,10 +1486,10 @@
             "t": 21304.6,
             "frame": 1278276,
             "crop": "data/review/hunter/survival/lacerating-strikes.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Expose Prey at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "note": "prerequisite from tree arrow (stage 7): Expose Prey at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]

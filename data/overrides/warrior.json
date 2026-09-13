@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "class": "warrior",
+  "overrides": [
+    {
+      "talent": "death-wish",
+      "tree": "fury",
+      "set": {
+        "description": "When activated, increases your Physical damage done by {0}% and makes you immune to Fear effects, but increases all damage you take by {1}%. Lasts {2} sec."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/warrior/fury/death-wish.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "enrage",
+      "tree": "fury",
+      "set": {
+        "description": "Gives you a {0}% chance to deal 2% increased Physical damage for 12 sec after being the victim of any damaging attack."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/warrior/fury/enrage.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "shield-slam",
+      "tree": "protection",
+      "set": {
+        "description": "Slam the target with your shield, causing {0} to {1} damage, increased by your Block Value, and has a {2}% chance of dispelling {3} magic effect on the target. Causes a very high amount of threat."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/warrior/protection/shield-slam.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "last-stand",
+      "tree": "protection",
+      "set": {
+        "requires": [
+          {
+            "talent": "improved-bloodrage",
+            "rank": 2
+          }
+        ],
+        "source": {
+          "note": "prerequisite from tree arrow (stage 7): Improved Bloodrage at rank 2 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); added by hand, data audit 2026-09-13"
+        }
+      },
+      "reason": "audit 2026-09-13 decision 5: a genuine arrow the detector missed (strong arrowhead, ridge coverage 0.08 because the stroke lies on a hard art edge). 28-warrior-22600-median.png shows stroke and arrowhead from Improved Bloodrage (r1c0) to Last Stand (r2c0).",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    }
+  ]
+}

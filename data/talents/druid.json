@@ -5,7 +5,7 @@
   "className": "Druid",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T12:03:32Z",
+  "generatedAt": "2026-09-13T13:45:02Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -217,7 +217,7 @@
           "maxRank": 3,
           "icon": "spell_nature_stranglevines",
           "iconSource": "classic",
-          "description": "Increases the damage done by your Entangling Roots spell by {0}%, and its victims can take up to {1}% more damage without Interrupting the effect.",
+          "description": "Increases the damage done by your Entangling Roots spell by {0}%, and its victims can take up to {1}% more damage without interrupting the effect.",
           "ranks": [[25, 25], [50, 50], [75, 75]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
@@ -228,10 +228,11 @@
             "t": 20690.683,
             "frame": 1241441,
             "crop": "data/review/druid/balance/improved-entangling-roots.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -411,7 +412,7 @@
           "maxRank": 1,
           "icon": "spell_nature_naturesblessing",
           "iconSource": "classic",
-          "description": "All non-periodic spell criticals grace you with a blessing of nature. Increasing your spellcasting speed and reducing your global cooldown by {0}% for {1} sec.",
+          "description": "All non-periodic spell criticals grace you with a blessing of nature, increasing your spellcasting speed and reducing your global cooldown by {0}% for {1} sec.",
           "ranks": [[10, 3]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -421,10 +422,11 @@
             "t": 20736.0,
             "frame": 1244160,
             "crop": "data/review/druid/balance/natures-grace.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -489,7 +491,7 @@
           "maxRank": 1,
           "icon": "spell_nature_forceofnature",
           "iconSource": "classic",
-          "description": "Transforms the Druid into Moonkin Form. While in this form, the armor contribution from items is increased by {0}% and all party members within {1} yards have their critical chance Increased by {2}%, exclusive with Leader of the Pack. The Moonkin cannot cast healing spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
+          "description": "Transforms the Druid into Moonkin Form. While in this form, the armor contribution from items is increased by {0}% and all party members within {1} yards have their critical chance increased by {2}%, exclusive with Leader of the Pack. The Moonkin cannot cast healing spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
           "ranks": [[360, 45, 3]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -499,10 +501,11 @@
             "t": 20750.883,
             "frame": 1245053,
             "crop": "data/review/druid/balance/moonkin-form.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         }
       ]
@@ -534,7 +537,7 @@
           "maxRank": 5,
           "icon": "ability_hunter_pet_hyena",
           "iconSource": "classic",
-          "description": "Reduces the cost of your Maul, Mangle. Swipe. Claw, and Rake abilities by {0} Rage or Energy.",
+          "description": "Reduces the cost of your Maul, Mangle, Swipe, Claw, and Rake abilities by {0} Rage or Energy.",
           "ranks": [[1], [2], [3], [4], [5]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -551,10 +554,11 @@
             "t": 20790.017,
             "frame": 1247401,
             "crop": "data/review/druid/feral-combat/ferocity.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -720,16 +724,16 @@
           }
         },
         {
-          "id": "5-rage",
-          "name": "5 Rage",
+          "id": "feral-charge",
+          "name": "Feral Charge",
           "row": 2,
           "col": 2,
           "maxRank": 1,
-          "icon": "crop-5-rage",
+          "icon": "crop-feral-charge",
           "iconSource": "crop",
-          "iconCrop": "data/review/druid/feral-combat/5-rage.icon.png",
-          "description": "Charge an enemy, immobilizing them and interrupting any spell they are casting for {0} sec.",
-          "ranks": [[4]],
+          "iconCrop": "data/review/druid/feral-combat/feral-charge.icon.png",
+          "description": "Charge an enemy, immobilizing them and interrupting any spell they are casting for {0} sec. Feral Charge (Cat): Leap behind an enemy, Dazing them for {1} sec.",
+          "ranks": [[4, 3]],
           "ranksObserved": [1],
           "ranksSource": "observed",
           "source": {
@@ -737,11 +741,13 @@
             "video": "DxtVEhjyROU",
             "t": 20800.0,
             "frame": 1248000,
-            "crop": "data/review/druid/feral-combat/5-rage.png",
-            "confidence": 0.3,
+            "crop": "data/review/druid/feral-combat/feral-charge.png",
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "every crop of this cell shows rank 5/None (points already spent); text may not be rank 1; second reader (codex) differs in name, rank_max, description; unparsed requirement: Requires Bear Form, Dire Bear Form"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z",
+            "note": "re-cropped from the merged mkv at stream t=20800.0 with headroom (2026-09-13): the tooltip has no name line at all in the footage, so the talent name comes from its own 'Feral Charge (Cat)' block; '5 Rage' was the Bear-form rage cost. No 'Rank x/y' line in the crop, so maxRank 1 is unverified.; unparsed requirement: Requires Bear Form, Dire Bear Form; unparsed requirement: Requires Cat Form"
           }
         },
         {
@@ -929,7 +935,7 @@
           "maxRank": 1,
           "icon": "spell_nature_unyeildingstamina",
           "iconSource": "classic",
-          "description": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack Increases the critical strike chance of all party members within {0} yards by {1}%, exclusive with Moonkin Aura.",
+          "description": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the critical strike chance of all party members within {0} yards by {1}%, exclusive with Moonkin Aura.",
           "ranks": [[45, 3]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -939,10 +945,11 @@
             "t": 20818.0,
             "frame": 1249080,
             "crop": "data/review/druid/feral-combat/leader-of-the-pack.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -1138,10 +1145,9 @@
             "t": 20884.0,
             "frame": 1253040,
             "crop": "data/review/druid/restoration/furor.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -1319,7 +1325,7 @@
           "maxRank": 5,
           "icon": "spell_holy_elunesgrace",
           "iconSource": "classic",
-          "description": "Reduces the mana cost of your Healing Touch and Tranquillity spells by {0}%.",
+          "description": "Reduces the mana cost of your Healing Touch and Tranquility spells by {0}%.",
           "ranks": [[2], [4], [6], [8], [10]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -1336,10 +1342,11 @@
             "t": 20899.0,
             "frame": 1253940,
             "crop": "data/review/druid/restoration/tranquil-spirit.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -1404,7 +1411,7 @@
           "icon": "crop-natures-swiftness",
           "iconSource": "crop",
           "iconCrop": "data/review/druid/restoration/natures-swiftness.icon.png",
-          "description": "When activated, your next Nature spell becomes an Instant cast spell.",
+          "description": "When activated, your next Nature spell becomes an instant cast spell.",
           "ranks": [[]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -1420,10 +1427,12 @@
             "t": 20903.0,
             "frame": 1254180,
             "crop": "data/review/druid/restoration/natures-swiftness.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Naturalist at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z",
+            "note": "prerequisite from tree arrow (stage 7): Naturalist at rank 5 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.70"
           }
         },
         {

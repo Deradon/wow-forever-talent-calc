@@ -23,6 +23,10 @@ import typer
 PIPELINE = Path(__file__).resolve().parents[1]
 REPO = PIPELINE.parent
 CACHE = PIPELINE / "work" / "read" / "codex"
+
+sys.path.insert(0, str(PIPELINE / "src"))
+from wowtalents.fsio import write_json_atomic, write_text_atomic  # noqa: E402
+
 PROMPT = (
     'Transcribe this World of Warcraft talent tooltip exactly. Return only JSON with keys: name (string), '
     'rank_max (integer from the "Rank N/M" line), description (all gold paragraphs only, line breaks joined with '
@@ -57,7 +61,7 @@ def codex_read(crop: Path, timeout: int = 180) -> dict | None:
         res = json.loads(m.group(0))
     except json.JSONDecodeError:
         return None
-    cp.write_text(json.dumps(res, ensure_ascii=False) + "\n", encoding="utf-8")
+    write_text_atomic(cp, json.dumps(res, ensure_ascii=False) + "\n")
     out.unlink(missing_ok=True)
     return res
 
@@ -115,7 +119,7 @@ def main(
     typer.echo(f"{len(records)} records: {n_diff} disagreements (confidence -> {SECOND_CONFIDENCE}), "
                f"{n_missing} without a second reading, {n_done} already had one")
     if not dry_run:
-        src.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        write_json_atomic(src, doc)
         typer.echo(f"wrote {src}")
 
 

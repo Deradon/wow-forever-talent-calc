@@ -36,6 +36,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import fragments as fr  # noqa: E402
 from wowtalents import mkv as MK  # noqa: E402
 from wowtalents import ui  # noqa: E402
+from wowtalents.fsio import write_json_atomic  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location("stage4", Path(__file__).resolve().with_name("04_hovers.py"))
 st4 = importlib.util.module_from_spec(_spec)
@@ -116,23 +117,27 @@ def run(
     segs = json.loads(SEGMENTS_JSON.read_text())
     idx, seg = ui.find_segment(segs, calib)
     if seg["class"] != cls:
-        typer.echo(f"segment {calib} is {seg['class']}, not {cls}")
+        typer.echo(f"segment {calib} is {seg['class']}, not {cls}", err=True)
         raise typer.Exit(code=2)
     donor_sid = ui.segment_id(seg, idx)
     calib_path = calib_dir / f"{donor_sid}.json"
     if not calib_path.exists():
-        typer.echo(f"no calibration at {calib_path}; run stages/03_calibrate.py first")
+        typer.echo(f"no calibration at {calib_path}; run stages/03_calibrate.py first", err=True)
         raise typer.Exit(code=2)
     if not mkv.is_file():
-        typer.echo(f"no mkv at {mkv}")
+        typer.echo(f"no mkv at {mkv}", err=True)
         raise typer.Exit(code=2)
     cal = json.loads(calib_path.read_text())
     cells = [ui.Cell.from_json(c) for c in cal["cells"]]
-    bg = cv2.imread(str(calib_dir / cal["files"]["median"]))
+    median_path = calib_dir / cal["files"]["median"]
+    bg = cv2.imread(str(median_path))
+    if bg is None:
+        typer.echo(f"cannot read the calibration median {median_path}; re-run stages/03_calibrate.py", err=True)
+        raise typer.Exit(code=2)
     slugs = st4.tree_slugs(cal)
     t0, t1 = fr.parse_hms(start), fr.parse_hms(end)
     if t1 <= t0:
-        typer.echo("end must be after start")
+        typer.echo("end must be after start", err=True)
         raise typer.Exit(code=2)
     sid = mkv_segment_id(idx, cls, t0)
     typer.echo(f"{sid}: {fr.hms(t0)}-{fr.hms(t1)} at {fps} fps from {mkv.name} (offset {offset:+.3f} s), "
@@ -173,7 +178,7 @@ def run(
     if done:
         runs.append(done)
     if n_frames == 0:
-        typer.echo("ffmpeg produced no frames (range outside the file?)")
+        typer.echo("ffmpeg produced no frames (range outside the file?)", err=True)
         raise typer.Exit(code=1)
 
     meta = {"t_start": t0, "t_end": t1, "every": MK.STREAM_FPS // fps, "fps": fps,
@@ -182,7 +187,7 @@ def run(
     finish = getattr(st4, "finish")
     finish(sid, cls, cal, bg, cells, slugs, runs, infos, tracker, rejected_frames, out_dir, meta)
     cpath = calib_dir / f"{sid}.json"
-    cpath.write_text(json.dumps(borrowed_calib(cal, sid, t0, t1, f"mkv {fr.hms(t0)}-{fr.hms(t1)}"), indent=2) + "\n")
+    write_json_atomic(cpath, borrowed_calib(cal, sid, t0, t1, f"mkv {fr.hms(t0)}-{fr.hms(t1)}"))
     typer.echo(f"wrote {out_dir / (sid + '.json')}, crops in {out_dir / sid}, calibration copy {cpath.name}; "
                f"{time.time() - wall:.0f}s")
 

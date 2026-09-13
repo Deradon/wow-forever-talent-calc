@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "class": "hunter",
+  "overrides": [
+    {
+      "talent": "improved-revive-pet",
+      "tree": "beast-mastery",
+      "set": {
+        "description": "Revive Pet's casting time is reduced by {0} sec, mana cost is reduced by {1}%, and increases the health your pet returns with by an additional {2}%."
+      },
+      "reason": "audit 2026-09-13: reader error (PUNCT); corrected against data/review/hunter/beast-mastery/improved-revive-pet.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "intimidation",
+      "tree": "beast-mastery",
+      "set": {
+        "description": "Command your pet to Stun the target for {0} sec on its next successful attack, which also gains {1}% increased critical strike chance. Generates high threat."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/hunter/beast-mastery/intimidation.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "improved-stings",
+      "tree": "marksmanship",
+      "set": {
+        "description": "Increased the damage of your Serpent Sting ability by {0}%, reduces the cooldown of your Viper Sting ability by {1} sec, and increases the duration of your Scorpid Sting ability by {2} sec."
+      },
+      "reason": "audit 2026-09-13: reader error (WORD); corrected against data/review/hunter/marksmanship/improved-stings.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "lone-wolf",
+      "tree": "marksmanship",
+      "set": {
+        "description": "You deal {0}% increased damage with all attacks while you do not have an active pet."
+      },
+      "reason": "audit 2026-09-13: reader error (CAP-I); corrected against data/review/hunter/marksmanship/lone-wolf.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    },
+    {
+      "talent": "clever-traps",
+      "tree": "survival",
+      "set": {
+        "description": "Increases the duration of Freezing and Frost trap effects by {0}% and the damage of Immolation and Explosive trap effects by {1}%."
+      },
+      "reason": "audit 2026-09-13: reader error (PCT); corrected against data/review/hunter/survival/clever-traps.png",
+      "by": "data-audit",
+      "at": "2026-09-13T00:00:00Z"
+    }
+  ]
+}

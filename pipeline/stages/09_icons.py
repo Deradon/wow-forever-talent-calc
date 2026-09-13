@@ -36,6 +36,7 @@ from PIL import Image, ImageDraw
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import icons as I  # noqa: E402
+from wowtalents.fsio import write_candidates_atomic, write_text_atomic  # noqa: E402
 
 PIPELINE_DIR = Path(__file__).resolve().parents[1]
 REPO_ROOT = PIPELINE_DIR.parent
@@ -162,13 +163,13 @@ def refs(root: Path = ROOT_OPT,
                 _get(f"https://nether.wowhead.com/{g}/data/talents-classic", lists / f"talents-{g}.js", log)
             _get(f"https://wago.tools/db2/ManifestInterfaceData/csv?build={ERA_BUILD}", lists / f"mid-{ERA_BUILD}.csv", log)
         ref_list = build_reference_list(root, lists)
-        (lists / "reference.tsv").write_text("".join(f"{n}\t{t}\n" for n, t in ref_list), encoding="utf-8")
+        write_text_atomic(lists / "reference.tsv", "".join(f"{n}\t{t}\n" for n, t in ref_list))
         typer.echo(f"reference list: {len(ref_list)} icons ({', '.join(f'{t}={sum(1 for _, x in ref_list if x == t)}' for t in dict.fromkeys(x for _, x in ref_list))})")
         names = [n for n, _ in ref_list][: limit or None]
         ok, miss = _download_icons(names, "medium", WORK / "ref", log)
         typer.echo(f"downloaded {ok}, missing {miss}, present {sum(1 for _ in (WORK / 'ref').glob('*.jpg'))}")
     except Stop as e:
-        typer.echo(str(e))
+        typer.echo(str(e), err=True)
         raise typer.Exit(code=3)
     finally:
         if log:
@@ -302,7 +303,7 @@ def match(cls: str = typer.Argument(..., help="class id or 'all'"), root: Path =
     tiers = I.load_list(lists) if lists.is_file() else {}
     ref = I.load_reference(WORK / "ref", tiers)
     if len(ref) == 0:
-        typer.echo(f"no reference icons under {WORK / 'ref'}; run `refs` first")
+        typer.echo(f"no reference icons under {WORK / 'ref'}; run `refs` first", err=True)
         raise typer.Exit(code=2)
     prior_doc = _load_json(root / "data" / "prior" / "classic-era" / "talents.json")
     vpath = root / "data" / "icons" / "verified.json"
@@ -333,7 +334,7 @@ def match(cls: str = typer.Argument(..., help="class id or 'all'"), root: Path =
         return
     dest = _matches_path(root)
     dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(I.dumps(matches), encoding="utf-8")
+    write_text_atomic(dest, I.dumps(matches))
     typer.echo(f"wrote {dest}")
 
 
@@ -364,7 +365,7 @@ def fetch(root: Path = ROOT_OPT,
     try:
         ok, miss = _download_icons(names, size, dest, log)
     except Stop as e:
-        typer.echo(str(e))
+        typer.echo(str(e), err=True)
         raise typer.Exit(code=3)
     for line in log:
         typer.echo(line)
@@ -394,7 +395,7 @@ def apply(cls: str = typer.Argument(..., help="class id or 'all'"), root: Path =
             typer.echo(f"  {c}/{k}: no candidate record for cell {per[k]['candidate']}")
         typer.echo(f"{c}: {len(per)} icons, {n} records {'would change' if dry_run else 'changed'}")
         if not dry_run and n:
-            path.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            write_candidates_atomic(path, doc, before=len(records))
     if not dry_run:
         typer.echo("now re-run: uv run stages/08_export.py extract <class> && uv run stages/08_export.py promote <class>")
 

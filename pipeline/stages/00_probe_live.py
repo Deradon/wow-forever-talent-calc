@@ -26,6 +26,7 @@ import typer
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import fragments as fr  # noqa: E402
+from wowtalents.fsio import write_json_atomic, write_text_atomic  # noqa: E402
 
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 
@@ -52,7 +53,7 @@ def _guard_download(label: str) -> None:
     try:
         warn = _HEALTH.check()
     except fr.FragmentError as e:
-        typer.echo(f"ABORT ({label}): {e}")
+        typer.echo(f"ABORT ({label}): {e}", err=True)
         raise typer.Exit(code=3) from e
     if warn:
         typer.echo(f"  warn ({label}): {warn}")
@@ -84,13 +85,13 @@ def _fetch_loop(client: fr.FragmentClient, ns: list[int], dest_for, width: int |
             typer.echo(f"sq={n} ({fr.hms(n)}) FAIL {failures}/{max_failures}: {e}")
             if failures >= max_failures:
                 if refreshed_in_streak:
-                    typer.echo("ABORT: still failing after a URL refresh.")
+                    typer.echo("ABORT: still failing after a URL refresh.", err=True)
                     raise typer.Exit(code=2)
                 typer.echo("refreshing fragment URL via yt-dlp -j ...")
                 try:
                     client.refresh()
                 except Exception as re_:  # noqa: BLE001
-                    typer.echo(f"ABORT: refresh failed: {re_}")
+                    typer.echo(f"ABORT: refresh failed: {re_}", err=True)
                     raise typer.Exit(code=2)
                 typer.echo(f"new url expires {client.expiry:%Y-%m-%d %H:%M:%S} UTC")
                 refreshed_in_streak = True
@@ -161,7 +162,7 @@ def sheets(
         (int(p.stem), p) for p in frames.glob("*.jpg") if p.stem.isdigit() and start <= int(p.stem) <= end
     )
     if not paths:
-        typer.echo("no frames")
+        typer.echo("no frames", err=True)
         raise typer.Exit(code=1)
     out.mkdir(parents=True, exist_ok=True)
     if clean:
@@ -206,7 +207,7 @@ def segments(
     """Collapse per-frame observations into talent segments (JSON + Markdown)."""
     obs = sorted(json.loads(labels.read_text()), key=lambda o: o["t"])
     if not obs:
-        typer.echo("no observations")
+        typer.echo("no observations", err=True)
         raise typer.Exit(code=1)
 
     def key(o):
@@ -242,7 +243,7 @@ def segments(
         })
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "segments.json").write_text(json.dumps(segs, indent=2) + "\n")
+    write_json_atomic(out_dir / "segments.json", segs)
     total = sum(s["t_end"] - s["t_start"] for s in segs)
     lines = [
         "# Talent segments in DxtVEhjyROU (stage 0 probe)",
@@ -259,7 +260,7 @@ def segments(
             f"| {i} | {s['start']} | {s['end']} | {s['t_end'] - s['t_start']} | {s['class']} | {s['page']} | "
             f"{', '.join(s['trees_visible'])} | {s['notes']} |"
         )
-    (out_dir / "segments.md").write_text("\n".join(lines) + "\n")
+    write_text_atomic(out_dir / "segments.md", "\n".join(lines) + "\n")
     typer.echo(f"{len(segs)} segments, {total} s total -> {out_dir}")
 
 

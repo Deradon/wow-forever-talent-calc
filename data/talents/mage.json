@@ -5,7 +5,7 @@
   "className": "Mage",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T12:03:32Z",
+  "generatedAt": "2026-09-13T13:45:02Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -438,7 +438,7 @@
           "maxRank": 1,
           "icon": "spell_nature_enchantarmor",
           "iconSource": "classic",
-          "description": "When activated, your next Mage spell with a casting time less than {0} sec becomes an Instant cast spell.",
+          "description": "When activated, your next Mage spell with a casting time less than {0} sec becomes an instant cast spell.",
           "ranks": [[10]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -448,10 +448,11 @@
             "t": 14800.233,
             "frame": 888014,
             "crop": "data/review/mage/arcane/presence-of-mind.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -587,7 +588,7 @@
           "icon": "crop-incineration",
           "iconSource": "crop",
           "iconCrop": "data/review/mage/fire/incineration.icon.png",
-          "description": "Increases the critical strike chance of your Fire Blast. Ice Lance, Arcane Blast, and Scorch spells by {0}%.",
+          "description": "Increases the critical strike chance of your Fire Blast, Ice Lance, Arcane Blast, and Scorch spells by {0}%.",
           "ranks": [[2], [4], [6]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -604,10 +605,11 @@
             "t": 14818.183,
             "frame": 889091,
             "crop": "data/review/mage/fire/incineration.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -769,7 +771,7 @@
           "maxRank": 1,
           "icon": "spell_fire_fireball02",
           "iconSource": "classic",
-          "description": "Hurts an immense fiery boulder that causes {0} to {1} Fire damage and an additional {2} Fire damage over {3} sec.",
+          "description": "Hurls an immense fiery boulder that causes {0} to {1} Fire damage and an additional {2} Fire damage over {3} sec.",
           "ranks": [[155, 185, 76, 12]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -779,10 +781,11 @@
             "t": 14970.4,
             "frame": 898224,
             "crop": "data/review/mage/fire/pyroblast.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -793,7 +796,7 @@
           "maxRank": 3,
           "icon": "spell_fire_windsofwoe",
           "iconSource": "classic",
-          "description": "Your Scorch spell has a {0}% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all Fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
+          "description": "Your Scorch spell has a {0}% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
           "ranks": [[33], [66], [100]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -810,10 +813,9 @@
             "t": 14975.683,
             "frame": 898541,
             "crop": "data/review/mage/fire/improved-scorch.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -1277,7 +1279,7 @@
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "crop is 181 px wide and missing a tooltip border, so the tooltip is cut off and the reading cannot be verified from it - re-crop the cell"
           }
         },
         {
@@ -1395,7 +1397,7 @@
           "maxRank": 1,
           "icon": "spell_frost_frost",
           "iconSource": "classic",
-          "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for {0} sec. but during that time you cannot attack, move, or cast spells.",
+          "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for {0} sec, but during that time you cannot attack, move, or cast spells.",
           "ranks": [[10]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -1405,10 +1407,11 @@
             "t": 15070.0,
             "frame": 904200,
             "crop": "data/review/mage/frost/ice-block.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z"
           }
         },
         {
@@ -1420,27 +1423,23 @@
           "icon": "crop-shatter",
           "iconSource": "crop",
           "iconCrop": "data/review/mage/frost/shatter.icon.png",
-          "description": "Increases the critical strike chance of all your spells against Frozen targets by {0}.",
-          "ranks": [[50], [100], [150]],
-          "ranksObserved": [1],
-          "ranksSource": "classic-prior",
-          "ranksPrior": {
-            "classicTalentId": 67,
-            "classicSpellIds": [11170, 12982, 12983, 12984, 12985],
-            "match": "exact-name",
-            "similarity": 1.0
-          },
-          "ranksNote": "Classic mage/frost/Shatter (talent 67): Classic 10/20/30/40/50 is proportional, Classic has 5 ranks; Forever rank 1 is 50: scaled proportionally (50 x rank).",
+          "description": "Increases the critical strike chance of all your spells against Frozen targets by {0}%.",
+          "ranks": [[50], [50], [50]],
+          "ranksObserved": [3],
+          "ranksSource": "manual",
+          "ranksNote": "needs manual ranks: tooltip shows rank 3/3, so its numbers are not rank 1; ranks 2..3 are copies of rank 1.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
             "t": 17594.267,
             "frame": 1055656,
             "crop": "data/review/mage/frost/shatter.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "every crop of this cell shows rank 3/3 (points already spent); text may not be rank 1; second reader (codex) differs in description"
+            "reviewed": true,
+            "reviewedBy": "data-audit",
+            "reviewedAt": "2026-09-13T00:00:00Z",
+            "note": "every crop of this cell shows rank 3/3 (points already spent); text may not be rank 1"
           }
         },
         {
@@ -1504,7 +1503,7 @@
           "maxRank": 2,
           "icon": "ability_mage_wintersgrasp",
           "iconSource": "classic",
-          "description": "Gives your Chill effects a {0}% chance to grant you the Fingers of Frost effect, which treats your next {1} spell cast as if the target were Frozen. Lasts {2} sec.",
+          "description": "Gives your Chill effects a {0}% chance to grant you the Fingers of Frost effect, which treats your next {1} spell cast as if the target were frozen. Lasts {2} sec.",
           "ranks": [[15, 1, 15], [15, 1, 15]],
           "ranksObserved": [1],
           "ranksSource": "manual",
@@ -1521,10 +1520,10 @@
             "t": 15073.0,
             "frame": 904380,
             "crop": "data/review/mage/frost/fingers-of-frost.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in description; prerequisite from tree arrow (stage 7): Ice Lance at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "note": "prerequisite from tree arrow (stage 7): Ice Lance at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {
@@ -1535,7 +1534,7 @@
           "maxRank": 5,
           "icon": "spell_frost_chillingblast",
           "iconSource": "classic",
-          "description": "Gives your Frost damage spells a {0}% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
+          "description": "Gives your frost damage spells a {0}% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
           "ranks": [[20], [40], [60], [80], [100]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -1552,10 +1551,9 @@
             "t": 15074.0,
             "frame": 904440,
             "crop": "data/review/mage/frost/winters-chill.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {

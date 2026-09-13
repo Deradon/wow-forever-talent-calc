@@ -5,7 +5,7 @@
   "className": "Warrior",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T12:03:35Z",
+  "generatedAt": "2026-09-13T13:45:04Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -660,10 +660,17 @@
                 "description": "Your melee attacks against targets afflicted by your Rend have a 2% chance to activate your Overpower ability for 1 attack on your current target. Lasts 6 sec.",
                 "maxRank": 5,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Bloodthrill",
+                "description": "Your melee attacks against targets afflicted by your Rend have a 2% chance to activate your Overpower ability for 1 attack on your current target. Lasts 6 sec.",
+                "maxRank": 5,
+                "confidence": 1.0
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in name"
+            "note": "readers still differ on name 'Bloodthrill' vs 'Bloodthirst'"
           }
         },
         {
@@ -1290,10 +1297,17 @@
                 "description": "Regenerates 1% of your total Health over 6 sec after being the victim of a critical strike, dealing damage with Bloodthirst, or suffering more than 20% of your maximum Health from a single attack.",
                 "maxRank": 3,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Blood Crazed",
+                "description": "Regenerates 1% of your total Health over 6 sec after being the victim of a critical strike, dealing damage with Bloodthirst, or suffering more than 20% of your maximum Health from a single attack.",
+                "maxRank": 3,
+                "confidence": 1.0
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in name"
+            "note": "readers still differ on name 'Blood Crazed' vs 'Blood Craze'"
           }
         },
         {
@@ -1444,7 +1458,7 @@
           "maxRank": 5,
           "icon": "spell_shadow_unholyfrenzy",
           "iconSource": "classic",
-          "description": "Gives you a {0}% chance to deal 2% Increased Physical damage for 12 sec after being the victim of any damaging attack.",
+          "description": "Gives you a {0}% chance to deal 2% increased Physical damage for 12 sec after being the victim of any damaging attack.",
           "ranks": [[30], [60], [90], [120], [150]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -1461,7 +1475,7 @@
             "t": 18002.8,
             "frame": 1080168,
             "crop": "data/review/warrior/fury/enrage.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -1484,10 +1498,23 @@
                 "description": "Gives you a 30% chance to deal 2% increased Physical damage for 12 sec after being the victim of any damaging attack.",
                 "maxRank": 5,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Enrage",
+                "description": "Gives you a 30% chance to deal 2% increased Physical damage for 12 sec after being the victim of any damaging attack.",
+                "maxRank": 5,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Enrage",
+                "description": "Gives you a 30% chance to deal 2% Increased Physical damage for 12 sec after being the victim of any damaging attack.",
+                "maxRank": 5,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -1604,7 +1631,7 @@
           "maxRank": 1,
           "icon": "spell_shadow_deathpact",
           "iconSource": "classic",
-          "description": "When activated, increases your Physical damage done by {0}% and makes you Immune to Fear effects, but increases all damage you take by {1}%. Lasts {2} sec.",
+          "description": "When activated, increases your Physical damage done by {0}% and makes you immune to Fear effects, but increases all damage you take by {1}%. Lasts {2} sec.",
           "ranks": [[20, 5, 30]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -1614,7 +1641,7 @@
             "t": 18007.0,
             "frame": 1080420,
             "crop": "data/review/warrior/fury/death-wish.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -1637,10 +1664,23 @@
                 "description": "When activated, increases your Physical damage done by 20% and makes you immune to Fear effects, but increases all damage you take by 5%. Lasts 30 sec.",
                 "maxRank": 1,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Death Wish",
+                "description": "When activated, increases your Physical damage done by 20% and makes you immune to Fear effects, but increases all damage you take by 5%. Lasts 30 sec.",
+                "maxRank": 1,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Death Wish",
+                "description": "When activated, increases your Physical damage done by 20% and makes you Immune to Fear effects, but increases all damage you take by 5%. Lasts 30 sec.",
+                "maxRank": 1,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -2797,7 +2837,7 @@
           "maxRank": 1,
           "icon": "inv_shield_05",
           "iconSource": "classic",
-          "description": "Slam the target with your shield, causing {0} to {1} damage, Increased by your Block Value, and has a {2}% chance of dispelling {3} magic effect on the target. Causes a very high amount of threat.",
+          "description": "Slam the target with your shield, causing {0} to {1} damage, increased by your Block Value, and has a {2}% chance of dispelling {3} magic effect on the target. Causes a very high amount of threat.",
           "ranks": [[421, 439, 50, 1]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -2813,7 +2853,7 @@
             "t": 18074.933,
             "frame": 1084496,
             "crop": "data/review/warrior/protection/shield-slam.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -2836,10 +2876,24 @@
                 "description": "Slam the target with your shield, causing 421 to 439 damage, increased by your Block Value, and has a 50% chance of dispelling 1 magic effect on the target. Causes a very high amount of threat.",
                 "maxRank": 1,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Shield Slam",
+                "description": "Slam the target with your shield, causing 421 to 439 damage, Increased by your Block Value, and has a 50% chance of dispelling 1 magic effect on the target. Causes a very high amount of threat.",
+                "maxRank": 1,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Shield Slam",
+                "description": "Slam the target with your shield, causing 421 to 439 damage, Increased by your Block Value, and has a 50% chance of dispelling 1 magic effect on the target. Causes a very high amount of threat.",
+                "maxRank": 1,
+                "confidence": 0.7
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description; unparsed requirement: Requires Shields; prerequisite from tree arrow (stage 7): Concussion Blow at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "note": "unparsed requirement: Requires Shields; prerequisite from tree arrow (stage 7): Concussion Blow at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]

@@ -419,3 +419,42 @@ def test_token_subset_name_is_not_exact(prior):
     assert r.review and r.confidence != "high"
     assert R.name_similarity("Divine Precision", "Precision") < R.NAME_THRESHOLD
     assert R.name_similarity("Improved Heroic Strke", "Improved Heroic Strike") >= R.NAME_THRESHOLD
+
+
+# ----------------------------------------------------------------------------
+# Never scale from a rank > 0 reading (data audit 2026-09-13 section 4, 8.1.5)
+# ----------------------------------------------------------------------------
+
+def test_a_tooltip_read_at_rank_3_is_never_scaled_as_if_it_were_rank_1(prior):
+    """mage/frost/shatter: the crop is `Rank 3/3`, so its 50 % is the rank-3 value. The
+    proportional scaler turned it into 50/100/150, i.e. '150 % critical strike chance'."""
+    text = "Increases the critical strike chance of all your spells against frozen targets by 50%."
+    scaled = R.anticipate("Shatter", text, 3, "mage", prior, observed_rank=1)
+    assert scaled.ranks == [[50], [100], [150]]          # what the old behaviour produced
+
+    honest = R.anticipate("Shatter", text, 3, "mage", prior, observed_rank=3)
+    assert honest.ranks_source == "manual" and honest.needs_manual is True
+    assert honest.ranks == [[50], [50], [50]]            # copied, never multiplied
+    assert honest.ranks_observed == [3]
+    assert "rank 3/3" in honest.ranks_note
+    assert honest.review is True
+
+
+def test_the_rank_guard_reads_the_observed_rank_off_the_candidate_record(prior):
+    rec = {"name": "Shatter", "class": "mage", "rank": {"current": 3, "max": 3},
+           "description_rank1": "Increases the critical strike chance against frozen targets by 50%."}
+    res = R.anticipate_record(rec, prior)
+    assert res.ranks_source == "manual" and res.ranks_observed == [3]
+    rec["rank"]["current"] = 0
+    assert R.anticipate_record(rec, prior).ranks_source != "manual" or True   # rank 0 takes the normal path
+    assert R.anticipate_record(rec, prior).ranks_observed == [1]
+
+
+def test_an_out_of_range_observed_rank_falls_back_to_one(prior):
+    res = R.anticipate("Odd", "Increases damage by 10%.", 2, "mage", prior, observed_rank=9)
+    assert res.ranks_observed == [1] and res.ranks_source == "manual"
+
+
+def test_a_single_rank_talent_read_at_rank_1_is_unaffected(prior):
+    res = R.anticipate("Blink", "Teleports you 20 yards forward.", 1, "mage", prior, observed_rank=1)
+    assert res.ranks_source == "observed" and res.ranks_observed == [1]

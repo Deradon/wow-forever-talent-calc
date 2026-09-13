@@ -5,7 +5,7 @@
   "className": "Paladin",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T12:03:33Z",
+  "generatedAt": "2026-09-13T13:45:03Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -600,10 +600,17 @@
                 "description": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within 15 sec. by 0.5 sec.",
                 "maxRank": 2,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Infusion of Light",
+                "description": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within 15 sec by 0.5 sec.",
+                "maxRank": 2,
+                "confidence": 1.0
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "note": "readers still differ on 'sec' vs 'sec.'"
           }
         },
         {
@@ -716,24 +723,24 @@
           "icon": "crop-divine-precision",
           "iconSource": "crop",
           "iconCrop": "data/review/paladin/holy/divine-precision.icon.png",
-          "description": "Increases your chance to hit with Holy spells by {0}.",
+          "description": "Increases your chance to hit with Holy spells by {0}%.",
           "ranks": [[6], [12], [18]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
-            "classicTalentId": 583,
-            "classicSpellIds": [16180, 16196, 16198],
+            "classicTalentId": 1630,
+            "classicSpellIds": [20189, 20192, 20193],
             "match": "description",
-            "similarity": 0.91
+            "similarity": 0.87
           },
-          "ranksNote": "Classic shaman/restoration/Nature's Guidance (talent 583) (cross-class), matched on description (0.91): Classic 1/2/3 is proportional; Forever rank 1 is 6: scaled proportionally (6 x rank).",
+          "ranksNote": "Classic paladin/protection/Precision (talent 1630), matched on description (0.87): Classic 1/2/3 is proportional; Forever rank 1 is 6: scaled proportionally (6 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
             "t": 21580.267,
             "frame": 1294816,
             "crop": "data/review/paladin/holy/divine-precision.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -756,10 +763,24 @@
                 "description": "Increases your chance to hit with Holy spells by 6%.",
                 "maxRank": 3,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Divine Precision",
+                "description": "Increases your chance to hit with Holy spells by 6%.",
+                "maxRank": 3,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Divine Precision",
+                "description": "Increases your chance to hit with Holy spells by 6.",
+                "maxRank": 3,
+                "confidence": 0.7
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description; same-row prerequisite arrow from Holy Shock (rank 1); not representable, the schema needs an earlier row"
+            "note": "same-row prerequisite arrow from Holy Shock (rank 1); not representable, the schema needs an earlier row"
           }
         },
         {
@@ -816,7 +837,7 @@
           "maxRank": 2,
           "icon": "spell_holy_innerfire",
           "iconSource": "classic",
-          "description": "Gives your Holy spells {0}% Increased damage against the first {1} enemies that enter your Consecration.",
+          "description": "Gives your Holy spells {0}% increased damage against the first {1} enemies that enter your Consecration.",
           "ranks": [[5, 4], [10, 8]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
@@ -827,7 +848,7 @@
             "t": 21586.133,
             "frame": 1295168,
             "crop": "data/review/paladin/holy/consecrated-ground.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -850,10 +871,23 @@
                 "description": "Gives your Holy spells 5% increased damage against the first 4 enemies that enter your Consecration.",
                 "maxRank": 2,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Consecrated Ground",
+                "description": "Gives your Holy spells 5% Increased damage against the first 4 enemies that enter your Consecration.",
+                "maxRank": 2,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Consecrated Ground",
+                "description": "Gives your Holy spells 5% Increased damage against the first 4 enemies that enter your Consecration.",
+                "maxRank": 2,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -1138,7 +1172,7 @@
           "maxRank": 2,
           "icon": "spell_holy_sealofprotection",
           "iconSource": "classic",
-          "description": "Reduces the cooldown of your Blessing of Protection by {0} min and Increases the duration of your Blessing of Freedom by {1} sec.",
+          "description": "Reduces the cooldown of your Blessing of Protection by {0} min and increases the duration of your Blessing of Freedom by {1} sec.",
           "ranks": [[1, 3], [2, 6]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -1155,7 +1189,7 @@
             "t": 21632.933,
             "frame": 1297976,
             "crop": "data/review/paladin/protection/guardians-favor.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -1178,10 +1212,23 @@
                 "description": "Reduces the cooldown of your Blessing of Protection by 1 min and increases the duration of your Blessing of Freedom by 3 sec.",
                 "maxRank": 2,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Guardian's Favor",
+                "description": "Reduces the cooldown of your Blessing of Protection by 1 min and increases the duration of your Blessing of Freedom by 3 sec.",
+                "maxRank": 2,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Guardian's Favor",
+                "description": "Reduces the cooldown of your Blessing of Protection by 1 min and Increases the duration of your Blessing of Freedom by 3 sec.",
+                "maxRank": 2,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -1400,7 +1447,7 @@
           "icon": "crop-sacred-duty",
           "iconSource": "crop",
           "iconCrop": "data/review/paladin/protection/sacred-duty.icon.png",
-          "description": "Increases your total Stamina by {0}% and reduces the cooldown of your Divine Shield. Divine Protection, and Templar's Bulwark spells by {1} sec.",
+          "description": "Increases your total Stamina by {0}% and reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by {1} sec.",
           "ranks": [[2, 30], [2, 30]],
           "ranksObserved": [1],
           "ranksSource": "manual",
@@ -1411,7 +1458,7 @@
             "t": 14335.05,
             "frame": 860103,
             "crop": "data/review/paladin/protection/sacred-duty.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -1434,10 +1481,23 @@
                 "description": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by 30 sec.",
                 "maxRank": 2,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Sacred Duty",
+                "description": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield. Divine Protection, and Templar's Bulwark spells by 30 sec.",
+                "maxRank": 2,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Sacred Duty",
+                "description": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield. Divine Protection, and Templar's Bulwark spells by 30 sec.",
+                "maxRank": 2,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -1749,7 +1809,7 @@
           "maxRank": 1,
           "icon": "classic_spell_holy_blessingofprotection",
           "iconSource": "classic",
-          "description": "Increases chance to block by {0}% for {1} sec, and deals {2} Holy damage for each attack blocked while active. Damage caused by Holy Shield causes {3}% additional threat. Each block expends a charge. {4} charges.",
+          "description": "Increases chance to block by {0}% for {1} sec. and deals {2} Holy damage for each attack blocked while active. Damage caused by Holy Shield causes {3}% additional threat. Each block expends a charge. {4} charges.",
           "ranks": [[20, 10, 110, 20, 4]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -1765,7 +1825,7 @@
             "t": 21682.133,
             "frame": 1300928,
             "crop": "data/review/paladin/protection/holy-shield.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -1788,10 +1848,24 @@
                 "description": "Increases chance to block by 20% for 10 sec. and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
                 "maxRank": 1,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Holy Shield",
+                "description": "Increases chance to block by 20% for 10 sec, and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+                "maxRank": 1,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Holy Shield",
+                "description": "Increases chance to block by 20% for 10 sec, and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+                "maxRank": 1,
+                "confidence": 0.7
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description; unparsed requirement: Requires Shields; prerequisite from tree arrow (stage 7): Templar's Bulwark at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
+            "note": "unparsed requirement: Requires Shields; prerequisite from tree arrow (stage 7): Templar's Bulwark at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         }
       ]
@@ -2178,7 +2252,7 @@
           "maxRank": 1,
           "icon": "ability_warrior_innerrage",
           "iconSource": "classic",
-          "description": "Gives the Paladin a chance to deal additional Holy damage equal to {0}% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts {1} sec. Unleashing this Seal's energy will judge an enemy, instantly causing {2} to {3} Holy damage, {4} to {5} if the target is stunned or Incapacitated.",
+          "description": "Gives the Paladin a chance to deal additional Holy damage equal to {0}% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts {1} sec. Unleashing this Seal's energy will judge an enemy, instantly causing {2} to {3} Holy damage, {4} to {5} if the target is stunned or incapacitated.",
           "ranks": [[70, 30, 68, 73, 137, 146]],
           "ranksObserved": [1],
           "ranksSource": "observed",
@@ -2188,7 +2262,7 @@
             "t": 21748.333,
             "frame": 1304900,
             "crop": "data/review/paladin/retribution/seal-of-command.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -2211,10 +2285,23 @@
                 "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or incapacitated.",
                 "maxRank": 1,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Seal of Command",
+                "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, Instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or incapacitated.",
+                "maxRank": 1,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Seal of Command",
+                "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or Incapacitated.",
+                "maxRank": 1,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {
@@ -2225,7 +2312,7 @@
           "maxRank": 2,
           "icon": "spell_holy_persuitofjustice",
           "iconSource": "classic",
-          "description": "Increases movement speed and mounted movement speed by {0}%. This does not stack with other movement speed Increasing effects.",
+          "description": "Increases movement speed and mounted movement speed by {0}%. This does not stack with other movement speed increasing effects.",
           "ranks": [[8], [16]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
@@ -2242,7 +2329,7 @@
             "t": 14328.383,
             "frame": 859703,
             "crop": "data/review/paladin/retribution/pursuit-of-justice.png",
-            "confidence": 0.7,
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -2265,10 +2352,23 @@
                 "description": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed increasing effects.",
                 "maxRank": 2,
                 "confidence": 0.7
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/4x",
+                "name": "Pursuit of Justice",
+                "description": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed increasing effects.",
+                "maxRank": 2,
+                "confidence": 1.0
+              },
+              {
+                "reader": "pre-merge",
+                "name": "Pursuit of Justice",
+                "description": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed Increasing effects.",
+                "maxRank": 2,
+                "confidence": 0.7
               }
             ],
-            "reviewed": false,
-            "note": "second reader (codex) differs in description"
+            "reviewed": false
           }
         },
         {

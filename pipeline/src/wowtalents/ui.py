@@ -16,6 +16,12 @@ from typing import Iterator
 import cv2
 import numpy as np
 
+from . import text as _text
+
+
+class DecodeError(RuntimeError):
+    """ffmpeg failed while decoding a fragment (non-zero exit)."""
+
 FRAME_W, FRAME_H = 1920, 1080
 ICON = 36
 PITCH = 54
@@ -118,7 +124,7 @@ def decode_frames(data: bytes, every: int = 1, width: int = FRAME_W, height: int
     if max_frames:
         cmd += ["-frames:v", str(max_frames)]
     cmd += ["-f", "rawvideo", "-pix_fmt", "bgr24", "pipe:1"]
-    proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+    proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     assert proc.stdin is not None and proc.stdout is not None
 
     def feed(stdin=proc.stdin):
@@ -127,6 +133,21 @@ def decode_frames(data: bytes, every: int = 1, width: int = FRAME_W, height: int
             stdin.close()
         except (BrokenPipeError, OSError):
             pass
+
+    # stderr is a pipe so a failure can be reported, and it is drained by its own thread:
+    # with -v error ffmpeg says little, but a corrupt fragment can still fill a 64 KiB pipe
+    # and deadlock a decoder that only ever reads stdout.
+    errbuf: list[bytes] = []
+
+    def drain(stderr=proc.stderr):
+        try:
+            errbuf.append(stderr.read())
+        except (BrokenPipeError, OSError):
+            pass
+        finally:
+            stderr.close()
+
+    threading.Thread(target=drain, daemon=True).start()
 
     # Feed stdin from a thread: ffmpeg blocks on its (6 MB per frame) stdout
     # pipe long before it has consumed a whole fragment, so a serial
@@ -142,6 +163,11 @@ def decode_frames(data: bytes, every: int = 1, width: int = FRAME_W, height: int
         k += 1
     proc.stdout.close()
     proc.wait()
+    if proc.returncode:
+        # Silence here is what let stage 4 write a hovers file with zero hovers and exit 0.
+        err = b"".join(errbuf).decode("utf-8", "replace").strip()
+        raise DecodeError(f"ffmpeg exited {proc.returncode} while decoding {len(data)} bytes"
+                          + (f": {err.splitlines()[-1]}" if err else ""))
 
 
 # --------------------------------------------------------------------------- grid
@@ -798,8 +824,9 @@ def draw_cells(frame: np.ndarray, cells: list[Cell]) -> np.ndarray:
     return out
 
 
-def slug(name: str) -> str:
-    return "".join(ch.lower() if ch.isalnum() else "-" for ch in name).strip("-")
+# one slug rule for the whole pipeline (wowtalents.text); stage 4/5 crop names and export ids
+# used to disagree on any name with an apostrophe, a colon or a double space
+slug = _text.slug
 
 
 def ensure_dir(p: Path) -> Path:
