@@ -80,6 +80,515 @@
           "twist-of-light"
         ]
       }
+    },
+    "warrior": {
+      "trees": [
+        "arms",
+        "fury",
+        "protection"
+      ],
+      "order": {
+        "arms": [
+          "improved-heroic-strike",
+          "deflection",
+          "improved-rend",
+          "improved-charge",
+          "improved-tactical-mastery",
+          "improved-overpower",
+          "anger-management",
+          "deep-wounds",
+          "spearing-strike",
+          "two-handed-weapon-specialization",
+          "impale",
+          "bloodthrill",
+          "sweeping-strikes",
+          "weaponmaster",
+          "improved-slam",
+          "improved-hamstring",
+          "mortal-strike"
+        ],
+        "fury": [
+          "booming-voice",
+          "cruelty",
+          "iron-will",
+          "unbridled-wrath",
+          "improved-cleave",
+          "piercing-howl",
+          "blood-crazed",
+          "dual-wield-specialization",
+          "raging-blows",
+          "enrage",
+          "improved-execute",
+          "precision",
+          "death-wish",
+          "improved-berserker-rage",
+          "flurry",
+          "bloodthirst"
+        ],
+        "protection": [
+          "shield-specialization",
+          "anticipation",
+          "improved-bloodrage",
+          "toughness",
+          "improved-thunder-clap",
+          "last-stand",
+          "master-of-defense",
+          "improved-revenge",
+          "defiance",
+          "improved-sunder-armor",
+          "improved-disarm",
+          "vanguard",
+          "improved-shield-wall",
+          "concussion-blow",
+          "improved-shield-bash",
+          "vitality",
+          "focused-rage",
+          "bastion",
+          "shield-slam"
+        ]
+      }
+    },
+    "rogue": {
+      "trees": [
+        "assassination",
+        "combat",
+        "subtlety"
+      ],
+      "order": {
+        "assassination": [
+          "improved-gouge",
+          "remorseless-attacks",
+          "malice",
+          "ruthlessness",
+          "murder",
+          "improved-slice-and-dice",
+          "relentless-strikes",
+          "improved-expose-armor",
+          "lethality",
+          "vile-poisons",
+          "cold-blood",
+          "improved-poisons",
+          "mutilate",
+          "seal-fate",
+          "venom"
+        ],
+        "combat": [
+          "improved-eviscerate",
+          "improved-sinister-strike",
+          "puncturing-wounds",
+          "riposte",
+          "improved-sprint",
+          "restless-blades",
+          "blade-flurry",
+          "hack-and-slash",
+          "aggression"
+        ],
+        "subtlety": [
+          "camouflage",
+          "master-of-deception",
+          "opportunity",
+          "setup",
+          "elusiveness",
+          "dirty-tricks",
+          "improved-ambush",
+          "initiative",
+          "ghostly-strike",
+          "improved-distract",
+          "heightened-senses",
+          "premeditation",
+          "serrated-blades",
+          "dirty-deeds",
+          "preparation",
+          "hemorrhage",
+          "quietus",
+          "cutthroat",
+          "thousand-cuts"
+        ]
+      }
+    },
+    "warlock": {
+      "trees": [
+        "affliction",
+        "demonology",
+        "destruction"
+      ],
+      "order": {
+        "affliction": [
+          "improved-life-tap",
+          "suppression",
+          "improved-corruption",
+          "malediction",
+          "soul-harvesting",
+          "improved-drains",
+          "improved-bane-of-agony",
+          "fel-concentration",
+          "amplify-curse",
+          "pandemic",
+          "malevolence",
+          "nightfall",
+          "curse-of-exhaustion",
+          "siphon-life",
+          "soul-siphon",
+          "shadow-mastery",
+          "drain-hope"
+        ],
+        "demonology": [
+          "improved-health-funnel",
+          "improved-imp",
+          "unholy-power",
+          "demonic-aegis",
+          "improved-voidwalker",
+          "fel-vitality",
+          "demonic-energies",
+          "improved-sayaad",
+          "demonic-sacrifice",
+          "master-summoner",
+          "decimation",
+          "fel-domination",
+          "demonic-brand",
+          "improved-felhunter",
+          "soul-link",
+          "demonic-knowledge",
+          "master-demonologist",
+          "demonic-pact"
+        ],
+        "destruction": [
+          "destructive-reach",
+          "improved-shadow-bolt",
+          "bane",
+          "molten-skin",
+          "cataclysm",
+          "aftermath",
+          "ruin",
+          "shadowburn",
+          "intensity",
+          "agonizing-flames",
+          "conflagrate",
+          "pyroclasm",
+          "bane-of-havoc",
+          "fire-and-brimstone",
+          "shadow-and-flame",
+          "incinerate"
+        ]
+      }
+    },
+    "priest": {
+      "trees": [
+        "discipline",
+        "holy",
+        "shadow-magic"
+      ],
+      "order": {
+        "discipline": [
+          "power-in-light",
+          "wand-specialization",
+          "twin-disciplines",
+          "silent-resolve",
+          "holy-precision",
+          "improved-power-word-shield",
+          "martyrdom",
+          "mental-agility",
+          "inner-focus",
+          "meditation",
+          "improved-inner-fire",
+          "mental-strength",
+          "soul-warding",
+          "improved-mana-burn",
+          "penance",
+          "renewed-hope",
+          "divine-aegis",
+          "power-infusion"
+        ],
+        "holy": [
+          "twilight-focus",
+          "improved-renew",
+          "holy-specialization",
+          "spell-warding",
+          "divine-fury",
+          "holy-nova",
+          "blessed-recovery",
+          "inspiration",
+          "holy-reach",
+          "improved-healing",
+          "searing-light",
+          "binding-heal",
+          "litany-of-light",
+          "spirit-of-redemption",
+          "spiritual-guidance",
+          "spiritual-healing",
+          "prayer-of-mending"
+        ],
+        "shadow-magic": [
+          "shadow-focus",
+          "blackout",
+          "spirit-tap",
+          "shadow-affinity",
+          "improved-shadow-word-pain",
+          "shadow-reach",
+          "improved-mind-blast",
+          "improved-psychic-scream",
+          "mind-flay",
+          "improved-mind-flay",
+          "improved-fade",
+          "vampiric-embrace",
+          "shadow-weaving",
+          "silence",
+          "devouring-contagion",
+          "early-demise",
+          "darkness",
+          "shadowform"
+        ]
+      }
+    },
+    "shaman": {
+      "trees": [
+        "elemental-combat",
+        "enhancement",
+        "restoration"
+      ],
+      "order": {
+        "elemental-combat": [
+          "convection",
+          "elemental-warding",
+          "elemental-devastation",
+          "elemental-focus",
+          "elemental-fury",
+          "improved-fire-nova",
+          "eye-of-the-storm",
+          "call-of-thunder",
+          "elemental-reach",
+          "lightning-overload",
+          "earthbound",
+          "elemental-alacrity",
+          "lava-burst"
+        ],
+        "enhancement": [
+          "earths-grasp",
+          "thundering-strikes",
+          "ancestral-knowledge",
+          "guardian-totems",
+          "mental-dexterity",
+          "improved-ghost-wolf",
+          "improved-lightning-shield",
+          "elemental-weapons",
+          "shamanistic-focus",
+          "anticipation",
+          "toughness",
+          "flurry",
+          "stormstrike",
+          "spirit-weapons",
+          "mental-quickness",
+          "improved-stormstrike",
+          "maelstrom-weapon",
+          "rage-of-the-farseer"
+        ],
+        "restoration": [
+          "improved-healing-wave",
+          "tidal-mastery",
+          "mindfulness",
+          "natural-grace",
+          "tidal-focus",
+          "improved-reincarnation",
+          "ancestral-healing",
+          "healing-focus",
+          "water-shield",
+          "totemic-focus",
+          "restorative-totems",
+          "mana-tide-totem",
+          "healing-way",
+          "natures-swiftness",
+          "purification",
+          "riptide"
+        ]
+      }
+    },
+    "druid": {
+      "trees": [
+        "balance",
+        "feral-combat",
+        "restoration"
+      ],
+      "order": {
+        "balance": [
+          "improved-wrath",
+          "genesis",
+          "moonglow",
+          "improved-moonfire",
+          "natures-majesty",
+          "natures-reach",
+          "improved-entangling-roots",
+          "natures-splendor",
+          "balance-of-nature",
+          "insect-swarm",
+          "vengeance",
+          "improved-starfire",
+          "overgrowth",
+          "natures-grace",
+          "eclipse",
+          "moonfury",
+          "moonkin-form"
+        ],
+        "feral-combat": [
+          "ferocity",
+          "heart-of-the-wild",
+          "feral-swiftness",
+          "feral-instinct",
+          "brutal-impact",
+          "thick-hide",
+          "savage-fury",
+          "5-rage",
+          "sharpened-claws",
+          "shredding-attacks",
+          "mangle",
+          "predatory-strikes",
+          "primal-fury",
+          "predatory-instincts",
+          "leader-of-the-pack",
+          "king-of-the-jungle",
+          "natural-reaction",
+          "rend-and-tear",
+          "berserk"
+        ],
+        "restoration": [
+          "natures-focus",
+          "furor",
+          "naturalist",
+          "subtlety",
+          "natural-shapeshifter",
+          "reflection",
+          "gift-of-nature",
+          "gift-of-the-earthmother",
+          "tranquil-spirit",
+          "improved-rejuvenation",
+          "swiftmend",
+          "natures-swiftness",
+          "living-spirit",
+          "improved-tranquility",
+          "improved-regrowth"
+        ]
+      }
+    },
+    "hunter": {
+      "trees": [
+        "beast-mastery",
+        "marksmanship",
+        "survival"
+      ],
+      "order": {
+        "beast-mastery": [
+          "deadly-aspects",
+          "endurance-training",
+          "focused-fire",
+          "improved-aspect-of-the-monkey",
+          "pathfinding",
+          "improved-revive-pet",
+          "bestial-swiftness",
+          "unleashed-fury",
+          "improved-mend-pet",
+          "ferocity",
+          "summon-hawk",
+          "spirit-bond",
+          "intimidation",
+          "bestial-discipline",
+          "frenzy",
+          "bestial-wrath"
+        ],
+        "marksmanship": [
+          "hawk-eye",
+          "improved-concussive-shot",
+          "lethal-attacks",
+          "improved-stings",
+          "efficiency",
+          "careful-aim",
+          "rapid-killing",
+          "improved-arcane-shot",
+          "lone-wolf",
+          "trueshot-aura",
+          "mortal-shots",
+          "rapid-recuperation",
+          "barrage",
+          "scatter-shot",
+          "ranged-weapon-specialization",
+          "sniper-shot"
+        ],
+        "survival": [
+          "improved-tracking",
+          "deflection",
+          "entrapment",
+          "savage-strikes",
+          "survivalist",
+          "improved-wing-clip",
+          "clever-traps",
+          "surefooted",
+          "deterrence",
+          "survival-tactics",
+          "predators-edge",
+          "counterattack",
+          "resourcefulness",
+          "expose-prey",
+          "survivalists-discipline",
+          "strider-kick",
+          "lightning-reflexes",
+          "lacerating-strikes"
+        ]
+      }
+    },
+    "mage": {
+      "trees": [
+        "arcane",
+        "fire",
+        "frost"
+      ],
+      "order": {
+        "arcane": [
+          "wand-specialization",
+          "improved-channeling",
+          "arcane-subtlety",
+          "magic-absorption",
+          "arcane-concentration",
+          "arcane-resilience",
+          "arcane-geometry",
+          "arcane-blast",
+          "arcane-shielding",
+          "improved-counterspell",
+          "arcane-meditation",
+          "missile-barrage",
+          "presence-of-mind",
+          "arcane-mind",
+          "arcane-instability",
+          "arcane-power"
+        ],
+        "fire": [
+          "wake-of-fire",
+          "incineration",
+          "ignite",
+          "flame-throwing",
+          "master-of-elements",
+          "blast-wave",
+          "combustion"
+        ],
+        "frost": [
+          "frost-warding",
+          "improved-frostbolt",
+          "elemental-precision",
+          "ice-shards",
+          "permafrost",
+          "improved-frost-nova",
+          "frostbite",
+          "piercing-ice",
+          "frost-channeling",
+          "ice-lance",
+          "improved-blizzard",
+          "arctic-reach",
+          "ice-block",
+          "shatter",
+          "improved-cone-of-cold",
+          "cold-snap",
+          "fingers-of-frost",
+          "winters-chill",
+          "ice-barrier"
+        ]
+      }
     }
   }
 }
