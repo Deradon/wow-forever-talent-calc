@@ -75,10 +75,15 @@ describe('validate-data', () => {
             expect(t.ranksSource === 'observed').toBe(t.ranksObserved.length === t.maxRank)
             expect(t.ranksPrior !== undefined).toBe(t.ranksSource === 'classic-prior')
             expect(t.iconCrop !== undefined).toBe(t.iconSource === 'crop')
+            // DATA-SCHEMA.md section 10.8: same tree, same row or an earlier
+            // one, a different cell. Forever has same-row prerequisites
+            // (priest Improved Mind Flay requires Mind Flay next to it), so
+            // only a later row and the talent's own cell are wrong.
             for (const req of t.requires ?? []) {
               const target = tree.talents.find((x) => x.id === req.talent)
               expect(target, `${t.id} requires unknown ${req.talent}`).toBeDefined()
-              expect(target!.row).toBeLessThan(t.row)
+              expect(target!.row, `${t.id} requires ${req.talent} from a later row`).toBeLessThanOrEqual(t.row)
+              expect(`${target!.row},${target!.col}`, `${t.id} requires its own cell`).not.toBe(`${t.row},${t.col}`)
               expect(req.rank).toBeLessThanOrEqual(target!.maxRank)
             }
           }

@@ -1,0 +1,130 @@
+{
+  "$schema": "../../../data/schema/class.schema.json",
+  "schemaVersion": 1,
+  "class": "fixture-arrows",
+  "className": "Arrow Fixture",
+  "dataVersion": 1,
+  "dataSource": "manual",
+  "generatedAt": "2026-09-13T00:00:00Z",
+  "notes": [
+    "Not game data. Test fixture for the prerequisite arrows, loaded only when VITE_INCLUDE_EXAMPLES=1 (dev server and the e2e build).",
+    "Forever has same-row prerequisites - priest Improved Mind Flay requires Mind Flay in the same row - so this tree carries one of each shape: left-to-right adjacent, right-to-left adjacent, left-to-right across an empty-looking gap, and the Classic vertical arrow for comparison."
+  ],
+  "rules": {
+    "pointsPerRow": 5,
+    "maxPoints": 51,
+    "firstPointLevel": 10,
+    "maxLevel": 60,
+    "rulesSource": "assumed"
+  },
+  "pages": [{ "id": "primary", "name": "Primary" }],
+  "trees": [
+    {
+      "id": "sideways",
+      "name": "Sideways",
+      "page": "primary",
+      "order": 0,
+      "icon": "spell_shadow_charm",
+      "rows": 3,
+      "cols": 4,
+      "role": "dps",
+      "talents": [
+        {
+          "id": "warm-up",
+          "name": "Warm Up",
+          "row": 0, "col": 0,
+          "maxRank": 5,
+          "icon": "spell_shadow_antishadow",
+          "iconSource": "manual",
+          "description": "Opens row 1 for {0} of the tests below.",
+          "ranks": [["one"], ["two"], ["three"], ["four"], ["five"]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "source": { "kind": "manual", "reviewed": true, "reviewedBy": "fixture", "reviewedAt": "2026-09-13T00:00:00Z" }
+        },
+        {
+          "id": "spare",
+          "name": "Spare Points",
+          "row": 0, "col": 1,
+          "maxRank": 5,
+          "icon": "spell_shadow_blackplague",
+          "iconSource": "manual",
+          "description": "Somewhere to put {0} more point(s).",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "source": { "kind": "manual", "reviewed": true, "reviewedBy": "fixture", "reviewedAt": "2026-09-13T00:00:00Z" }
+        },
+        {
+          "id": "echo",
+          "name": "Echo",
+          "row": 1, "col": 0,
+          "maxRank": 2,
+          "icon": "spell_shadow_chilltouch",
+          "iconSource": "manual",
+          "description": "Right-to-left arrow: requires the talent {0} cell to its right.",
+          "ranks": [["one"], ["one"]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "requires": [{ "talent": "flay", "rank": 3 }],
+          "source": { "kind": "manual", "reviewed": true, "reviewedBy": "fixture", "reviewedAt": "2026-09-13T00:00:00Z" }
+        },
+        {
+          "id": "flay",
+          "name": "Flay",
+          "row": 1, "col": 1,
+          "maxRank": 3,
+          "icon": "spell_shadow_curse",
+          "iconSource": "manual",
+          "description": "The prerequisite of the three talents around it. Rank {0}.",
+          "ranks": [[1], [2], [3]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "source": { "kind": "manual", "reviewed": true, "reviewedBy": "fixture", "reviewedAt": "2026-09-13T00:00:00Z" }
+        },
+        {
+          "id": "improved-flay",
+          "name": "Improved Flay",
+          "row": 1, "col": 2,
+          "maxRank": 3,
+          "icon": "spell_shadow_contagion",
+          "iconSource": "manual",
+          "description": "Left-to-right arrow from the cell next to it. Rank {0}.",
+          "ranks": [[1], [2], [3]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "requires": [{ "talent": "flay", "rank": 3 }],
+          "source": { "kind": "manual", "reviewed": true, "reviewedBy": "fixture", "reviewedAt": "2026-09-13T00:00:00Z" }
+        },
+        {
+          "id": "distant-flay",
+          "name": "Distant Flay",
+          "row": 1, "col": 3,
+          "maxRank": 1,
+          "icon": "spell_shadow_darkritual",
+          "iconSource": "manual",
+          "description": "Left-to-right arrow across two cells.",
+          "ranks": ["Left-to-right arrow across two cells."],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [{ "talent": "flay", "rank": 3 }],
+          "source": { "kind": "manual", "reviewed": true, "reviewedBy": "fixture", "reviewedAt": "2026-09-13T00:00:00Z" }
+        },
+        {
+          "id": "deep-flay",
+          "name": "Deep Flay",
+          "row": 2, "col": 1,
+          "maxRank": 1,
+          "icon": "spell_shadow_deathpact",
+          "iconSource": "manual",
+          "description": "The Classic vertical arrow, for comparison.",
+          "ranks": ["The Classic vertical arrow, for comparison."],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [{ "talent": "flay", "rank": 3 }],
+          "source": { "kind": "manual", "reviewed": true, "reviewedBy": "fixture", "reviewedAt": "2026-09-13T00:00:00Z" }
+        }
+      ]
+    }
+  ]
+}

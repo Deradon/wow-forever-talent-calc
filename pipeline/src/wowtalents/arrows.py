@@ -38,6 +38,14 @@ HEAD_HALF = 4            # arrowhead energy is the mean |Laplacian| over a 9 px 
 HEAD_WINDOW = 8          # ... taken as the top-3 mean of the 8 px next to the dependent's cell ...
 HEAD_SKIP = 3            # ... skipping the cell's own border and glow
 HEAD_MIN = 9.5           # an arrowhead scores at least this (measured 9.6-22; tree art in the gaps 2-8.4)
+# Horizontal arrows between neighbouring cells are a short stub ending in a small round
+# head rather than the tall triangle a vertical arrow gets, so they score lower: the two
+# real ones in the footage measure 8.3 (priest Mind Flay -> Improved Mind Flay) and 15.9
+# (paladin Holy Shock -> Divine Precision). Of the twelve same-row candidates that clear
+# LEG_MIN_COVER across the nine classes, the strongest piece of art scores 6.8 (paladin
+# Retribution r5c1-c2, a diagonal highlight, checked by eye), so the floor sits between.
+# See docs/handover/2026-09-13-cell-attribution-audit.md.
+HEAD_MIN_ROW = 7.5
 HEAD_GOOD = 11.0         # below this, or below HEAD_GAIN x the stroke, confidence is capped at 0.7
 HEAD_GAIN = 1.3
 ROW_MIN_RATIO = 1.15     # same-row arrows: the head end must beat the tail end by this factor to fix the direction
@@ -125,6 +133,38 @@ def leg_coverage(mask_v: np.ndarray, mask_h: np.ndarray, leg: Leg, jitter: int =
     else:
         band = mask_h[max(0, pos - jitter):pos + jitter + 1, a:b].any(axis=0)
     return float(band.mean()) if band.size else 0.0
+
+
+STROKE_BAND = 9          # px sampled either side of a row leg when measuring the stroke's own darkness
+STROKE_REL = 0.18        # a stroke pixel is at least this much darker than the local background
+STROKE_MIN = 0.6         # share of a same-row leg that must sit on one connected dark stroke
+
+
+def stroke_cover(gray: np.ndarray, leg: Leg, band: int = STROKE_BAND, rel: float = STROKE_REL) -> float:
+    """Share of a horizontal leg whose own pixel is darker than the art around it.
+
+    :func:`ridge_masks` answers "is there *a* line here", and it says yes to a bright
+    diagonal highlight crossing the gap as readily as to an arrow (paladin Retribution
+    r5c1-c2 is exactly that, and its head energy alone does not rule it out). A
+    prerequisite arrow, by contrast, physically connects the two cells with an unlit -
+    that is, dark - stroke: every hover in the footage is at rank 0, so no arrow in any
+    median is the gold "satisfied" variant. Measured over the twelve same-row candidates
+    of the nine classes: 1.00 and 0.78 for the two real arrows, 0.06 or less for every
+    piece of art that survived the head test.
+
+    Vertical legs return 1.0 - straight arrows are judged by ``HEAD_MIN`` alone, which
+    separates them cleanly, and this test is not calibrated for them.
+    """
+    kind, pos, a, b = leg
+    if kind != "h" or b <= a:
+        return 1.0 if kind != "h" else 0.0
+    y0, y1 = max(0, pos - band), min(gray.shape[0], pos + band + 1)
+    strip = gray[y0:y1, a:b].astype(np.float32)
+    if strip.size == 0 or pos - y0 >= strip.shape[0]:
+        return 0.0
+    bg = np.median(strip, axis=0)
+    line = strip[pos - y0]
+    return float((line <= bg - rel * np.maximum(bg, 1.0)).mean())
 
 
 def energy_profile(lap: np.ndarray, leg: Leg, half: int = HEAD_HALF) -> np.ndarray:
@@ -264,8 +304,9 @@ def detect_frame(gray: np.ndarray, cells: dict[Key, Rect], min_cover: float = LE
 
     One entry per (required, dependent, shape) whose every leg is covered at least
     ``min_cover``: ``cover`` (length-weighted), ``legs`` (per-leg coverage), ``tail`` and
-    ``head`` edge energies (:func:`end_energies`). Same-row arrows point at the wider end. The
-    arrowhead itself is judged in :func:`detect_class` after voting.
+    ``head`` edge energies (:func:`end_energies`), and for a same-row path ``stroke``
+    (:func:`stroke_cover`). Same-row arrows point at the end with the stronger edge energy.
+    The arrowhead itself is judged in :func:`detect_class` after voting.
     """
     mask_v, mask_h = ridge_masks(gray)
     lap = laplacian(gray)
@@ -279,14 +320,16 @@ def detect_frame(gray: np.ndarray, cells: dict[Key, Rect], min_cover: float = LE
             lengths = [max(1, leg[3] - leg[2]) for leg in legs]
             cover = float(sum(c * n for c, n in zip(covers, lengths)) / sum(lengths))
             tail, mid, head = end_energies(lap, legs_full, tail_high, head_high)
-            src, dst, ambiguous = a, b, False
+            src, dst, ambiguous, stroke = a, b, False, 1.0
             if shape == "row":
+                stroke = stroke_cover(gray, legs_full[0])
                 if tail > head:
                     src, dst, tail, head = b, a, head, tail   # the arrowhead sits at the left cell
                 ambiguous = head < ROW_MIN_RATIO * tail
             found.append({"from": src, "to": dst, "shape": shape, "cover": round(cover, 3),
                           "legs": [round(c, 3) for c in covers], "tail": round(tail, 1), "mid": round(mid, 1),
-                          "head": round(head, 1), "ambiguous": ambiguous, "path": [list(leg) for leg in legs]})
+                          "head": round(head, 1), "stroke": round(stroke, 3), "ambiguous": ambiguous,
+                          "path": [list(leg) for leg in legs]})
     return found
 
 
@@ -294,8 +337,11 @@ def detect_class(calibs: list[dict], cells: dict[Key, Rect], min_cover: float = 
     """Run :func:`detect_frame` on every calibration median and vote.
 
     An arrow is kept when it is seen in more than half of the medians (or in the only
-    one) and the median of its per-frame head energies reaches ``HEAD_MIN``: a dark line
-    of the tree art between two cells has no arrowhead. ``segments`` lists the per-median
+    one) and the median of its per-frame head energies reaches ``HEAD_MIN`` (``HEAD_MIN_ROW``
+    for a horizontal one, whose head is a smaller shape): a dark line of the tree art
+    between two cells has no arrowhead. A same-row path must additionally sit on a dark
+    stroke (``stroke_cover`` >= ``STROKE_MIN``), which is what tells an arrow from the
+    bright art diagonals that cross a gap. ``segments`` lists the per-median
     coverage; ``confidence`` is the mean coverage times the share of medians that saw it,
     capped at 0.7 when the arrowhead is weak (below ``HEAD_GOOD`` or not ``HEAD_GAIN`` x
     the stroke's energy) and at 0.5 for a same-row arrow whose direction could not be read.
@@ -317,7 +363,10 @@ def detect_class(calibs: list[dict], cells: dict[Key, Rect], min_cover: float = 
         head = float(np.median([h["head"] for _, h in hits]))
         mid = float(np.median([h["mid"] for _, h in hits]))
         tail = float(np.median([h["tail"] for _, h in hits]))
-        if head < HEAD_MIN:
+        if head < (HEAD_MIN_ROW if shape == "row" else HEAD_MIN):
+            continue
+        stroke = float(np.median([h.get("stroke", 1.0) for _, h in hits]))
+        if shape == "row" and stroke < STROKE_MIN:
             continue
         conf = float(np.mean(covers)) * (len(hits) / n)
         if head < HEAD_GOOD or (mid > 0 and head < HEAD_GAIN * mid):
@@ -327,6 +376,7 @@ def detect_class(calibs: list[dict], cells: dict[Key, Rect], min_cover: float = 
             conf = min(conf, 0.5)
         out.append({"from": list(src), "to": list(dst), "shape": shape, "confidence": round(conf, 3),
                     "head_energy": round(head, 1), "mid_energy": round(mid, 1), "tail_energy": round(tail, 1),
+                    "stroke": round(stroke, 3),
                     "ambiguous": ambiguous, "path": hits[0][1]["path"],
                     "segments": {sid: h["cover"] for sid, h in hits}})
     return resolve_overlaps(out)

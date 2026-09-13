@@ -36,6 +36,14 @@ export interface PriorCell {
   maxRank: number
   /** Set only when the talent really changed tree, i.e. after `matchTrees`. */
   movedTree?: boolean
+  /** Set when the row changed. A move is a change of tree or row, never of column alone. */
+  movedRow?: boolean
+  /**
+   * Set when only the column inside the same row changed. Such a talent keeps its real
+   * status (`same`, `text-changed`, ...); the flag is here so the review route can still
+   * show where it used to sit.
+   */
+  movedCol?: boolean
 }
 
 export interface ChangeEntry {
@@ -46,6 +54,8 @@ export interface ChangeEntry {
   textChange?: TextChange
   /** Present with `textChange: "values"`: only the numbers that differ. */
   values?: ValuePair[]
+  /** The Forever row, 0-based. Written for a row move only, so the change line can name both ends. */
+  row?: number
 }
 
 /** The lazily fetched half, one entry per talent whose sentence differs. */

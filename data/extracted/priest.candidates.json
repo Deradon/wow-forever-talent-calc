@@ -1929,6 +1929,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_holy_pureofheart",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.945,
+        "margin": 0.053,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Discipline",
@@ -1940,18 +1951,7 @@
           "confidence": 0.7,
           "medians": 1
         }
-      ],
-      "icon": "spell_holy_pureofheart",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.945,
-        "margin": 0.053,
-        "phash": 10,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "priest/discipline/r3c3",
@@ -2353,18 +2353,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
       },
-      "requires_arrows": [
-        {
-          "tree": "Discipline",
-          "row": 3,
-          "col": 2,
-          "name": "Soul Warding",
-          "rank": 1,
-          "shape": "straight",
-          "confidence": 1.0,
-          "medians": 1
-        }
-      ],
       "icon": "spell_holy_holyprotection",
       "icon_source": "classic",
       "icon_match": {
@@ -2409,7 +2397,19 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Discipline",
+          "row": 3,
+          "col": 2,
+          "name": "Soul Warding",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "priest/discipline/r5c2",
@@ -2673,6 +2673,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_holy_powerinfusion",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.864,
+        "margin": 0.227,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Discipline",
@@ -2684,18 +2695,7 @@
           "confidence": 0.7,
           "medians": 1
         }
-      ],
-      "icon": "spell_holy_powerinfusion",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.864,
-        "margin": 0.227,
-        "phash": 14,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "priest/holy/r0c0",
@@ -4313,6 +4313,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "spell_holy_searinglightpriest",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.95,
+        "margin": 0.296,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Holy",
@@ -4324,18 +4335,7 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ],
-      "icon": "spell_holy_searinglightpriest",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.95,
-        "margin": 0.296,
-        "phash": 4,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "priest/holy/r3c3",
@@ -5166,6 +5166,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_holy_prayerofmendingtga",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.873,
+        "margin": 0.189,
+        "phash": 20,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Holy",
@@ -5177,18 +5188,7 @@
           "confidence": 0.879,
           "medians": 1
         }
-      ],
-      "icon": "spell_holy_prayerofmendingtga",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.873,
-        "margin": 0.189,
-        "phash": 20,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "priest/shadow-magic/r0c0",
@@ -6393,6 +6393,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "spell_shadow_psychicscream",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.97,
+        "margin": 0.262,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Shadow Magic",
@@ -6404,18 +6415,7 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ],
-      "icon": "spell_shadow_psychicscream",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.97,
-        "margin": 0.262,
-        "phash": 10,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "priest/shadow-magic/r2c2",
@@ -6696,7 +6696,19 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Shadow Magic",
+          "row": 2,
+          "col": 2,
+          "name": "Mind Flay",
+          "rank": 1,
+          "shape": "row",
+          "confidence": 0.5,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "priest/shadow-magic/r3c0",
@@ -7808,18 +7820,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
       },
-      "requires_arrows": [
-        {
-          "tree": "Shadow Magic",
-          "row": 3,
-          "col": 1,
-          "name": "Vampiric Embrace",
-          "rank": 1,
-          "shape": "straight",
-          "confidence": 1.0,
-          "medians": 1
-        }
-      ],
       "icon": "spell_shadow_shadowform",
       "icon_source": "classic",
       "icon_match": {
@@ -7849,17 +7849,29 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Shadow Magic",
+          "row": 3,
+          "col": 1,
+          "name": "Vampiric Embrace",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 1
+        }
+      ]
     }
   ],
   "arrows": {
-    "generated_at": "2026-09-13T11:17:12Z",
+    "generated_at": "2026-09-13T16:23:48Z",
     "source": "work/arrows/priest.json",
     "calibrations": [
       "18-priest-19460"
     ],
-    "arrows": 7,
-    "merged": 7,
+    "arrows": 8,
+    "merged": 8,
     "unmatched": [],
     "conflicts": []
   }

@@ -532,11 +532,16 @@ def rule_8_requires(ctx: Ctx, doc: dict) -> None:
                     where = f" (it is in tree {all_ids[target_id]!r})" if target_id in all_ids else ""
                     ctx.error("R08-TARGET", path, f"requires target {target_id!r} does not exist in tree {tree['id']!r}{where}")
                     continue
-                if target["row"] >= t["row"]:
-                    ctx.error("R08-ROW", path, f"requires target {target_id!r} is in row {target['row']}, must be above row {t['row']}")
+                if target["row"] > t["row"]:
+                    ctx.error("R08-ROW", path, f"requires target {target_id!r} is in row {target['row']}, must be in row {t['row']} or above")
+                elif target["row"] == t["row"] and target["col"] == t["col"]:
+                    ctx.error("R08-CELL", path, f"requires target {target_id!r} occupies the same cell")
                 if req["rank"] > target["maxRank"]:
                     ctx.error("R08-RANK", path, f"requires rank {req['rank']} exceeds {target_id!r} maxRank {target['maxRank']}")
-        # cycles (only possible together with row violations, but the doc asks for it explicitly)
+        # cycles. Same-row prerequisites are legal (Forever has them, see
+        # docs/handover/2026-09-13-cell-attribution-audit.md), so two talents in
+        # one row can now require each other without breaking R08-ROW: this walk
+        # is the only thing that catches it.
         WHITE, GREY, BLACK = 0, 1, 2
         colour = {tid: WHITE for tid in by_id}
 

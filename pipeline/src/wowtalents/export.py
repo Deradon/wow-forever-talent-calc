@@ -333,8 +333,10 @@ def merge_arrow_requires(rec: dict, path: str, requires: list[dict], rows_of: di
     A tooltip-derived requirement is never overwritten: when the tooltip names the same
     target with another rank the tooltip's rank stays, and when the tooltip names other
     targets only, the arrow is dropped; both are logged as ``ARROW-CONFLICT`` and noted.
-    An arrow whose target is not in an earlier row (same-row arrows, which the schema
-    cannot express) or whose target cell has no record goes to ``source.note`` only.
+    Same-row (horizontal) arrows are real in Forever and are stored like any other
+    (schema rule 8: the target must be in the same row or above, and in another cell).
+    An arrow from a *later* row, or one whose target cell has no record, goes to
+    ``source.note`` only.
     """
     tooltip_targets = {r["talent"] for r in requires}
     for arrow in rec.get("requires_arrows") or []:
@@ -346,9 +348,9 @@ def merge_arrow_requires(rec: dict, path: str, requires: list[dict], rows_of: di
             log.warn(f"{path}: arrow from cell r{row}c{col} has no talent record; kept as a note")
             notes.append(f"unresolved prerequisite arrow from r{row}c{col} ({name})")
             continue
-        if rows_of.get(target, 0) >= int(rec.get("row", 0)):
-            log.warn(f"{path}: arrow from {target!r} is not from an earlier row (same-row prerequisite); kept as a note")
-            notes.append(f"same-row prerequisite arrow from {name} (rank {rank}); not representable, the schema needs an earlier row")
+        if rows_of.get(target, 0) > int(rec.get("row", 0)):
+            log.warn(f"{path}: arrow from {target!r} points up from a later row; kept as a note")
+            notes.append(f"prerequisite arrow from {name} (rank {rank}) in a later row; not representable")
             continue
         if tooltip_targets and target not in tooltip_targets:
             log.warn(f"{path}: ARROW-CONFLICT arrow from {target!r} but the tooltip requires {sorted(tooltip_targets)}; tooltip kept")

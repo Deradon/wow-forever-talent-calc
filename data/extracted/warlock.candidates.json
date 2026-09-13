@@ -2018,6 +2018,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_shadow_grimward",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.836,
+        "margin": 0.085,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Affliction",
@@ -2029,18 +2040,7 @@
           "confidence": 0.929,
           "medians": 2
         }
-      ],
-      "icon": "spell_shadow_grimward",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.836,
-        "margin": 0.085,
-        "phash": 12,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warlock/affliction/r4c1",
@@ -2627,18 +2627,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
       },
-      "requires_arrows": [
-        {
-          "tree": "Affliction",
-          "row": 4,
-          "col": 1,
-          "name": "Siphon Life",
-          "rank": 1,
-          "shape": "straight",
-          "confidence": 1.0,
-          "medians": 2
-        }
-      ],
       "ranks_anticipated": {
         "description": "Drains all hope from the target, dealing {0} Shadow damage every {1} sec and increasing all other Shadow damage over time you deal to that target by {2}%. Lasts {3} sec.",
         "ranks": [
@@ -2657,7 +2645,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Affliction",
+          "row": 4,
+          "col": 1,
+          "name": "Siphon Life",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "warlock/demonology/r0c0",
@@ -4500,6 +4500,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_nature_removecurse",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.92,
+        "margin": 0.458,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Demonology",
@@ -4511,18 +4522,7 @@
           "confidence": 0.959,
           "medians": 2
         }
-      ],
-      "icon": "spell_nature_removecurse",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.92,
-        "margin": 0.458,
-        "phash": 10,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warlock/demonology/r3c3",
@@ -4912,6 +4912,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_shadow_gathershadows",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.765,
+        "margin": 0.125,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Demonology",
@@ -4923,18 +4934,7 @@
           "confidence": 0.7,
           "medians": 2
         }
-      ],
-      "icon": "spell_shadow_gathershadows",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.765,
-        "margin": 0.125,
-        "phash": 14,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warlock/demonology/r4c2",
@@ -7068,6 +7068,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_fire_fireball",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.979,
+        "margin": 0.107,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Destruction",
@@ -7079,18 +7090,7 @@
           "confidence": 0.7,
           "medians": 2
         }
-      ],
-      "icon": "spell_fire_fireball",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.979,
-        "margin": 0.107,
-        "phash": 6,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warlock/destruction/r4c0",
@@ -7236,6 +7236,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "spell_fire_volcano",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.958,
+        "margin": 0.196,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Destruction",
@@ -7247,18 +7258,7 @@
           "confidence": 0.923,
           "medians": 2
         }
-      ],
-      "icon": "spell_fire_volcano",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.958,
-        "margin": 0.196,
-        "phash": 6,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warlock/destruction/r4c1",
@@ -7558,6 +7558,17 @@
           "similarity": 0.91
         }
       },
+      "icon": "spell_fire_meteorstorm",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.944,
+        "margin": 0.21,
+        "phash": 4,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Destruction",
@@ -7569,18 +7580,7 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ],
-      "icon": "spell_fire_meteorstorm",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.944,
-        "margin": 0.21,
-        "phash": 4,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warlock/destruction/r5c2",
@@ -7882,18 +7882,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
       },
-      "requires_arrows": [
-        {
-          "tree": "Destruction",
-          "row": 4,
-          "col": 1,
-          "name": "Bane of Havoc",
-          "rank": 1,
-          "shape": "straight",
-          "confidence": 1.0,
-          "medians": 2
-        }
-      ],
       "icon": "spell_fire_burnout",
       "icon_source": "classic",
       "icon_match": {
@@ -7922,7 +7910,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Destruction",
+          "row": 4,
+          "col": 1,
+          "name": "Bane of Havoc",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     }
   ],
   "recovery": {
@@ -7939,7 +7939,7 @@
     "duplicate_names": []
   },
   "arrows": {
-    "generated_at": "2026-09-13T11:17:13Z",
+    "generated_at": "2026-09-13T16:23:48Z",
     "source": "work/arrows/warlock.json",
     "calibrations": [
       "16-warlock-18980",

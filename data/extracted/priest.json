@@ -5,7 +5,7 @@
   "className": "Priest",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T15:14:51Z",
+  "generatedAt": "2026-09-13T16:24:14Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -2433,6 +2433,12 @@
           "ranksObserved": [1],
           "ranksSource": "manual",
           "ranksNote": "needs manual ranks: 3 numeric slots; rank 2 is a copy of rank 1.",
+          "requires": [
+            {
+              "talent": "mind-flay",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2478,7 +2484,8 @@
                 "confidence": 0.7
               }
             ],
-            "reviewed": false
+            "reviewed": false,
+            "note": "prerequisite from tree arrow (stage 7): Mind Flay at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites); arrow confidence 0.50"
           }
         },
         {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import fc from 'fast-check'
-import { makeClass } from './fixture'
+import { makeClass, makeHorizontalClass } from './fixture'
 import {
   add,
   canAdd,
@@ -14,6 +14,7 @@ import {
   totalPoints,
   validate,
   type Build,
+  type Reason,
 } from './index'
 
 const cls = makeClass()
@@ -161,6 +162,127 @@ describe('rules engine (brief section 4 table)', () => {
         }
       }),
       { numRuns: 200 },
+    )
+  })
+})
+
+/**
+ * Same-row (horizontal) prerequisites: Forever lets a talent require another
+ * one in the same row of the same tree - priest Improved Mind Flay requires
+ * Mind Flay next to it. The rules engine never looked at rows for `requires`,
+ * so these are regression tests: what changed is the data contract, and the
+ * table below pins the behaviour the UI relies on.
+ *
+ * The fixture (fixture.ts, `makeHorizontalClass`) puts `mid` (3 ranks) in row 1
+ * col 1 with three dependents in the same row: `early` left of it, `near` right
+ * of it and `far` two cells right of it, each requiring `mid` at 3.
+ */
+const hcls = makeHorizontalClass()
+const F = 'flay'
+/** 5 points in row 0, so row 1 is open and only the prerequisite is in play. */
+const openRow1 = { 'top-one': 5 }
+
+describe('same-row prerequisites', () => {
+  const addCases: { name: string; spent: Record<string, number>; talent: string; want: 'ok' | Reason }[] = [
+    { name: 'left-to-right, adjacent, prereq below rank', spent: { ...openRow1, mid: 2 }, talent: 'near', want: 'prereq' },
+    { name: 'left-to-right, adjacent, prereq at rank', spent: { ...openRow1, mid: 3 }, talent: 'near', want: 'ok' },
+    { name: 'right-to-left, adjacent, prereq below rank', spent: { ...openRow1, mid: 2 }, talent: 'early', want: 'prereq' },
+    { name: 'right-to-left, adjacent, prereq at rank', spent: { ...openRow1, mid: 3 }, talent: 'early', want: 'ok' },
+    { name: 'left-to-right, two cells apart, prereq below rank', spent: { ...openRow1, mid: 2 }, talent: 'far', want: 'prereq' },
+    { name: 'left-to-right, two cells apart, prereq at rank', spent: { ...openRow1, mid: 3 }, talent: 'far', want: 'ok' },
+    { name: 'no prerequisite of its own', spent: { ...openRow1 }, talent: 'mid', want: 'ok' },
+    // The prerequisite sits in the dependent's own row, so its points do not
+    // pay for that row: row gating still asks for 5 points in the rows above.
+    { name: 'prereq met but the shared row is still locked', spent: { mid: 3 }, talent: 'near', want: 'row-locked' },
+  ]
+
+  for (const { name, spent, talent, want } of addCases) {
+    it(`canAdd: ${name}`, () => {
+      const verdict = canAdd(hcls, build({ [F]: spent }), F, talent)
+      if (want === 'ok') expect(verdict).toEqual({ ok: true })
+      else expect(verdict).toMatchObject({ ok: false, reason: want })
+    })
+  }
+
+  it('canAdd names the prerequisite it is waiting for', () => {
+    expect(canAdd(hcls, build({ [F]: { ...openRow1, mid: 2 } }), F, 'near')).toMatchObject({
+      ok: false,
+      reason: 'prereq',
+      detail: '3 points in mid',
+    })
+  })
+
+  const removeCases: { name: string; spent: Record<string, number>; talent: string; want: 'ok' | Reason; detail?: string }[] = [
+    { name: 'prereq blocked while the talent right of it holds points', spent: { ...openRow1, mid: 3, near: 1 }, talent: 'mid', want: 'prereq', detail: 'near' },
+    { name: 'prereq blocked while the talent left of it holds points', spent: { ...openRow1, mid: 3, early: 1 }, talent: 'mid', want: 'prereq', detail: 'early' },
+    { name: 'prereq blocked while a non-adjacent dependent holds points', spent: { ...openRow1, mid: 3, far: 1 }, talent: 'mid', want: 'prereq', detail: 'far' },
+    { name: 'the dependent itself always comes off', spent: { ...openRow1, mid: 3, near: 1 }, talent: 'near', want: 'ok' },
+    { name: 'prereq free again once the dependent is empty', spent: { ...openRow1, mid: 3 }, talent: 'mid', want: 'ok' },
+    // Row 2 lives off rows 0 and 1 together, so pulling a point out of the
+    // shared row can orphan what sits below it.
+    { name: 'prereq blocked when the row below would lose its support', spent: { 'top-one': 5, 'top-two': 2, mid: 3, below: 1 }, talent: 'mid', want: 'would-orphan', detail: 'below' },
+  ]
+
+  for (const { name, spent, talent, want, detail } of removeCases) {
+    it(`canRemove: ${name}`, () => {
+      const verdict = canRemove(hcls, build({ [F]: spent }), F, talent)
+      if (want === 'ok') expect(verdict).toEqual({ ok: true })
+      else expect(verdict).toMatchObject({ ok: false, reason: want, ...(detail ? { detail } : {}) })
+    })
+  }
+
+  it('rank 3 of the prerequisite can be refunded down to, but not through, the requirement', () => {
+    let b = build({ [F]: { ...openRow1, mid: 3, near: 1 } })
+    expect(canRemove(hcls, b, F, 'mid')).toMatchObject({ ok: false, reason: 'prereq' })
+    b = remove(hcls, b, F, 'near')
+    b = remove(hcls, b, F, 'mid')
+    expect(b[F]!.mid).toBe(2)
+    expect(canAdd(hcls, b, F, 'near')).toMatchObject({ ok: false, reason: 'prereq' })
+  })
+
+  it('points in the shared row do unlock the row below it', () => {
+    const b = build({ [F]: { 'top-one': 5, mid: 3, near: 2 } })
+    expect(canAdd(hcls, b, F, 'below')).toEqual({ ok: true })
+    const short = build({ [F]: { 'top-one': 4 } })
+    expect(canAdd(hcls, short, F, 'below')).toMatchObject({ ok: false, reason: 'row-locked' })
+  })
+
+  const sanitizeCases: { name: string; spent: Record<string, number>; keep: Record<string, number>; drop: string }[] = [
+    { name: 'drops the dependent right of the prerequisite', spent: { ...openRow1, mid: 2, near: 1 }, keep: { ...openRow1, mid: 2 }, drop: 'near' },
+    { name: 'drops the dependent left of the prerequisite', spent: { ...openRow1, mid: 2, early: 1 }, keep: { ...openRow1, mid: 2 }, drop: 'early' },
+    { name: 'drops the non-adjacent dependent', spent: { ...openRow1, mid: 2, far: 1 }, keep: { ...openRow1, mid: 2 }, drop: 'far' },
+  ]
+
+  for (const { name, spent, keep, drop } of sanitizeCases) {
+    it(`sanitize ${name}, never the prerequisite`, () => {
+      const b = build({ [F]: spent })
+      expect(validate(hcls, b)).toMatchObject([{ treeId: F, talentId: drop, reason: 'prereq' }])
+      const { build: fixed, dropped } = sanitize(hcls, b)
+      expect(fixed).toEqual({ [F]: keep })
+      expect(dropped).toMatchObject([{ treeId: F, talentId: drop, reason: 'prereq' }])
+      expect(validate(hcls, fixed)).toEqual([])
+    })
+  }
+
+  it('sanitize drops every dependent of a prerequisite that lost the whole row', () => {
+    const b = build({ [F]: { mid: 3, early: 2, near: 3, far: 1 } })
+    const { build: fixed } = sanitize(hcls, b)
+    expect(fixed).toEqual({})
+    expect(validate(hcls, fixed)).toEqual([])
+  })
+
+  it('random click sequences on a horizontal tree never violate (property)', () => {
+    const talents = hcls.trees.flatMap((t) => t.talents.map((tal) => [t.id, tal.id] as const))
+    const click = fc.tuple(fc.constantFrom(...talents), fc.boolean())
+    fc.assert(
+      fc.property(fc.array(click, { maxLength: 120 }), (clicks) => {
+        let b: Build = {}
+        for (const [[treeId, talentId], isAdd] of clicks) {
+          b = isAdd ? add(hcls, b, treeId, talentId) : remove(hcls, b, treeId, talentId)
+          expect(validate(hcls, b)).toEqual([])
+        }
+      }),
+      { numRuns: 150 },
     )
   })
 })

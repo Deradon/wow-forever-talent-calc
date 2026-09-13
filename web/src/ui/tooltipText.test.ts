@@ -471,17 +471,34 @@ describe('changeLine', () => {
     expect(changeLine({ status: 'new' }, current)).toBe('New in Forever.')
   })
 
-  it('counts rows the way a player does, from one', () => {
+  it('counts rows the way a player does, from one, and names both ends', () => {
+    const moved = { status: 'moved', prior: { ...prior, movedRow: true }, row: 4 } as const
+    expect(changeLine(moved, current)).toBe('Moved from row 3 to row 5.')
+    // the caller's own row wins over the one the generator wrote
+    expect(changeLine(moved, { ...current, row: 6 })).toBe('Moved from row 3 to row 7.')
+    // neither available: still true, just vaguer
     expect(changeLine({ status: 'moved', prior }, current)).toBe('Moved from row 3.')
   })
 
   // The reported bug: a tree Forever only renamed is not a move at all, and the
   // generator never sets `movedTree` for one, so the old tree is never named.
   it('names the old tree only when the talent actually changed tree', () => {
-    expect(changeLine({ status: 'moved', prior: { ...prior, movedTree: true } }, { tree: 'fury', maxRank: 5 })).toBe(
-      'Moved from Arms, row 3.',
+    const moved = { status: 'moved', prior: { ...prior, movedTree: true } } as const
+    // same row in the new tree: naming a row would only invite "but it is in row 3"
+    expect(changeLine(moved, { tree: 'fury', maxRank: 5, row: 2 })).toBe('Moved from Arms.')
+    expect(changeLine({ ...moved, row: 4 }, { tree: 'fury', maxRank: 5 })).toBe('Moved from Arms, row 3 to row 5.')
+    expect(changeLine({ status: 'moved', prior }, { tree: 'shadow-magic', maxRank: 5, row: 2 })).toBe(
+      'Moved from row 3.',
     )
-    expect(changeLine({ status: 'moved', prior }, { tree: 'shadow-magic', maxRank: 5 })).toBe('Moved from row 3.')
+  })
+
+  // Round 3, the owner's call: a talent that only changed column inside its row
+  // never reaches this function as `moved`, and nothing else may claim it moved.
+  it('never says moved for a column-only change', () => {
+    const colOnly = { status: 'same', prior: { ...prior, movedCol: true } } as const
+    expect(changeLine(colOnly, { ...current, row: 2 })).toBeUndefined()
+    const reworked = { status: 'text-changed', prior: { ...prior, movedCol: true }, textChange: 'text' } as const
+    expect(changeLine(reworked, { ...current, row: 2 })).toBe('Reworked.')
   })
 
   it('reports a rank change in both directions, with the plural right', () => {

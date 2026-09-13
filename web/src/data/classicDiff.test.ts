@@ -70,9 +70,24 @@ describe('classifyTalent', () => {
     expect(classifyTalent(cell(), cell()).status).toBe('same')
   })
 
-  it('reports a move for a different row or column', () => {
-    expect(classifyTalent(cell(), cell({ row: 4 })).status).toBe('moved')
-    expect(classifyTalent(cell(), cell({ col: 3 })).status).toBe('moved')
+  it('reports a move for a different row, and records where it went', () => {
+    const entry = classifyTalent(cell(), cell({ row: 4 }))
+    expect(entry.status).toBe('moved')
+    expect(entry.prior?.movedRow).toBe(true)
+    expect(entry.row).toBe(cell().row)
+  })
+
+  // Round 3, the owner's call: rows gate points, columns are ordering, and Forever
+  // reshuffled the order in most trees. A column-only change is not news.
+  it('does not report a move when only the column changed', () => {
+    const entry = classifyTalent(cell(), cell({ col: 3 }))
+    expect(entry.status).toBe('same')
+    expect(entry.prior?.movedCol).toBe(true)
+    expect(entry.prior?.movedRow).toBeUndefined()
+    expect(entry).not.toHaveProperty('row')
+    // the losing categories still decide the status, and the old cell stays on record
+    expect(classifyTalent(cell({ col: 3, maxRank: 3 }), cell({ maxRank: 5 })).status).toBe('rank-changed')
+    expect(classifyTalent(cell({ col: 3 }), cell()).prior?.col).toBe(cell().col)
   })
 
   it('reports a move for a different tree, and says so on the entry', () => {
@@ -104,7 +119,7 @@ describe('classifyTalent', () => {
   it('keeps the Classic cell on every matched entry', () => {
     const { text, ...expectedCell } = cell()
     void text
-    expect(classifyTalent(cell({ row: 4 }), cell()).prior).toEqual(expectedCell)
+    expect(classifyTalent(cell({ row: 4 }), cell()).prior).toEqual({ ...expectedCell, movedRow: true })
   })
 
   it('reports a rewrite when the words moved, with the word diff attached', () => {
@@ -396,7 +411,8 @@ describe('diffClass', () => {
     // The one that really did move says so, and does not blame the tree.
     expect(renamed.talents['mind-flay']).toEqual({
       status: 'moved',
-      prior: { tree: 'shadow', treeName: 'Shadow', row: 2, col: 2, maxRank: 1 },
+      row: 5,
+      prior: { tree: 'shadow', treeName: 'Shadow', row: 2, col: 2, maxRank: 1, movedRow: true },
     })
   })
 })
@@ -489,7 +505,12 @@ describe('the generated classic-diff.json', () => {
   it('gives every listed entry the prior cell it needs, and new talents none', () => {
     for (const cls of Object.values(diff.classes)) {
       for (const [id, entry] of Object.entries(cls.talents)) {
-        expect(entry.status, id).not.toBe('same')
+        // `same` is normally left out; the one exception is a column-only move,
+        // which is not news to a player but keeps its Classic cell on record.
+        if (entry.status === 'same') {
+          expect((entry as { prior?: { movedCol?: boolean } }).prior?.movedCol, id).toBe(true)
+          continue
+        }
         if (entry.status === 'new') expect(entry).not.toHaveProperty('prior')
         else expect(entry, id).toHaveProperty('prior')
       }

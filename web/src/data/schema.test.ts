@@ -9,7 +9,7 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import { z } from 'zod'
-import { ClassSchema, TalentSchema, parseClass } from './schema.zod'
+import { ClassSchema, TalentSchema, TreeSchema, parseClass } from './schema.zod'
 import { renderDescription } from './schema'
 import tinker from '../../tests/fixtures/tinker.json'
 
@@ -55,6 +55,54 @@ describe('Zod schema', () => {
     const base = tinker.trees[0]!.talents[2]!
     expect(TalentSchema.safeParse({ ...base, requires: { talent: 'x', rank: 1 } }).success).toBe(false)
     expect(TalentSchema.safeParse({ ...base, requires: [] }).success).toBe(false)
+  })
+
+  /**
+   * Forever has same-row prerequisites (priest Improved Mind Flay requires
+   * Mind Flay in its own row), so the mirror checks the relaxed rule from
+   * DATA-SCHEMA.md section 10.8: same tree, same row or earlier, other cell.
+   */
+  describe('same-row prerequisites', () => {
+    const tree = tinker.trees[0]!
+    const [wrench, hands] = [tree.talents[0]!, tree.talents[1]!]
+    /** A tree whose row-0 `steady-hands` requires row-0 `improved-wrench`. */
+    function withRequires(requires: unknown, on = hands): unknown {
+      return { ...tree, talents: tree.talents.map((t) => (t.id === on.id ? { ...t, requires } : t)) }
+    }
+
+    it('accepts a prerequisite in the same row and a different cell', () => {
+      expect(TreeSchema.safeParse(withRequires([{ talent: wrench.id, rank: 3 }])).success).toBe(true)
+      expect(parseClass({ ...tinker, trees: [withRequires([{ talent: wrench.id, rank: 3 }]), tinker.trees[1]!] })).toBeTruthy()
+    })
+
+    it('rejects a prerequisite in a later row', () => {
+      const boots = tree.talents[2]! // row 2
+      const bad = TreeSchema.safeParse(withRequires([{ talent: boots.id, rank: 1 }]))
+      expect(bad.success).toBe(false)
+      expect(JSON.stringify(bad.error?.issues)).toContain('sits lower at row 2')
+    })
+
+    it('rejects a talent that requires its own cell, an unknown id or too high a rank', () => {
+      expect(TreeSchema.safeParse(withRequires([{ talent: hands.id, rank: 1 }])).success).toBe(false)
+      expect(TreeSchema.safeParse(withRequires([{ talent: 'not-a-talent', rank: 1 }])).success).toBe(false)
+      expect(TreeSchema.safeParse(withRequires([{ talent: wrench.id, rank: 4 }])).success).toBe(false)
+    })
+
+    it('rejects a cycle between two talents in the same row', () => {
+      const cyclic = {
+        ...tree,
+        talents: tree.talents.map((t) =>
+          t.id === hands.id
+            ? { ...t, requires: [{ talent: wrench.id, rank: 3 }] }
+            : t.id === wrench.id
+              ? { ...t, requires: [{ talent: hands.id, rank: 5 }] }
+              : t,
+        ),
+      }
+      const bad = TreeSchema.safeParse(cyclic)
+      expect(bad.success).toBe(false)
+      expect(JSON.stringify(bad.error?.issues)).toContain('cycle')
+    })
   })
 
   it('renders description templates and string-form ranks', () => {

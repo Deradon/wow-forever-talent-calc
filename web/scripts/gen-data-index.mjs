@@ -121,6 +121,12 @@ ${entries}
 //   - trees are matched before cells are compared (`matchTrees`), and rows and
 //     columns are rebased per class (`cellBase`), so a `moved` verdict means
 //     the talent really sits somewhere else;
+//   - round 3: a *column*-only change inside the same row is not reported at
+//     all. A talent's row is what gates it (5 points per tier); its column is
+//     cosmetic ordering that Forever reshuffled in almost every tree, and the
+//     attribution audit in docs/handover/2026-09-13-cell-attribution-audit.md
+//     confirmed those column changes are real, not a pipeline artefact. The
+//     prior cell is still recorded (`prior.movedCol`) for the review route;
 //   - descriptions are rendered at rank 1 on both sides and compared through a
 //     normaliser that forgives whitespace, punctuation, case and unit spelling
 //     ("15 sec" == "15 seconds"). What survives that is either a pure value
@@ -406,6 +412,13 @@ export const STATUSES = ['new', 'moved', 'rank-changed', 'text-changed', 'values
  * what `prior.sameTree` records. `prior.tree` stays the Classic id, because
  * that is what `removed[]` and the later `#/changes` page speak.
  *
+ * A move is a change of **tree or row**. A different column inside the same row
+ * is not: rows gate points, columns are ordering, and Forever reshuffled the
+ * order in most trees without moving anything a player has to plan around. Such
+ * a talent keeps its real status (`same`, `text-changed`, ...) and records
+ * `prior.movedCol` so the review route can still show where it used to sit;
+ * nothing in the player-facing UI says "moved" for it.
+ *
  * `prior` is undefined when no Classic talent of that name exists in the class.
  */
 export function classifyTalent(current, prior) {
@@ -422,6 +435,14 @@ export function classifyTalent(current, prior) {
     },
   }
   if (!sameTree) entry.prior.movedTree = true
+  if (prior.row !== current.row) {
+    entry.prior.movedRow = true
+    // Where it went. The change line names both ends of a row move, and the
+    // tooltip should not have to look the talent up a second time to say so.
+    entry.row = current.row
+  } else if (sameTree && prior.col !== current.col) {
+    entry.prior.movedCol = true
+  }
 
   const text = compareDescriptions(prior.text, current.text)
   if (text) {
@@ -439,7 +460,7 @@ export function classifyTalent(current, prior) {
     }
   }
 
-  if (!sameTree || prior.row !== current.row || prior.col !== current.col) entry.status = 'moved'
+  if (!sameTree || prior.row !== current.row) entry.status = 'moved'
   else if (prior.maxRank !== current.maxRank) entry.status = 'rank-changed'
   else if (text?.kind === 'text') entry.status = 'text-changed'
   else if (text?.kind === 'values') entry.status = 'values-changed'
@@ -503,8 +524,10 @@ export function diffClass(cls, priorClass) {
     counts[entry.status] += 1
     const { classic, ...light } = entry
     if (classic) text[t.id] = classic
-    // `same` is the default: leaving it out keeps the shipped file small.
-    if (light.status !== 'same') talents[t.id] = light
+    // `same` is the default: leaving it out keeps the shipped file small. The
+    // one exception is a column-only move, which is `same` to a player but
+    // still carries the Classic cell the review route wants to see.
+    if (light.status !== 'same' || light.prior?.movedCol) talents[t.id] = light
   }
 
   const removed = pool

@@ -161,14 +161,25 @@ def test_arrow_requires_merge_and_conflicts(tmp_path, prior):
     am = talents_of(doc)["anger-management"]
     assert am["requires"] == [{"talent": "improved-heroic-strike", "rank": 3}]
     assert any("ARROW-CONFLICT" in l for l in log.lines)
-    # 4. same-row arrow: note only, no requires entry (schema rule 8)
+    # 4. same-row arrow: a real prerequisite in Forever, stored like any other (rule 8
+    #    allows target.row <= talent.row as long as it is another cell)
     records[2]["requires"] = []
-    records[1]["requires_arrows"] = [{"tree": "Arms", "row": 2, "col": 1, "name": "Anger Management", "rank": 1,
-                                      "shape": "row", "confidence": 1.0, "medians": 2}]
     records[2]["requires_arrows"] = []
+    same_row = copy.deepcopy(records[2])
+    same_row.update({"row": 1, "col": 2, "name": "Deep Wounds"})
+    same_row["source"]["t"] = 17998.0
+    same_row["requires_arrows"] = [{"tree": "Arms", "row": 1, "col": 1, "name": "Tactical Mastery", "rank": 5,
+                                    "shape": "row", "confidence": 1.0, "medians": 2}]
+    doc = X.build_extracted("warrior", copy.deepcopy(records) + [same_row], prior, root=root)
+    dw = talents_of(doc)["deep-wounds"]
+    assert dw["requires"] == [{"talent": "tactical-mastery", "rank": 5}]
+    assert "prerequisite from tree arrow (stage 7): Tactical Mastery" in dw["source"]["note"]
+    # 5. an arrow pointing up from a *later* row stays a note: it cannot be represented
+    records[1]["requires_arrows"] = [{"tree": "Arms", "row": 2, "col": 1, "name": "Anger Management", "rank": 1,
+                                      "shape": "straight", "confidence": 1.0, "medians": 2}]
     doc = X.build_extracted("warrior", copy.deepcopy(records), prior, root=root)
     tm = talents_of(doc)["tactical-mastery"]
-    assert "requires" not in tm and "same-row prerequisite arrow from Anger Management" in tm["source"]["note"]
+    assert "requires" not in tm and "in a later row" in tm["source"]["note"]
 
 
 def test_id_collision_across_trees_gets_tree_suffix(tmp_path, prior):

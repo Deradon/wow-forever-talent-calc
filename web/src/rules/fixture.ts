@@ -1,5 +1,7 @@
 /**
- * Synthetic class used by the rules and codec tests. Not game data.
+ * Synthetic classes used by the rules and codec tests. Not game data.
+ * `makeClass` is the original vertical-prerequisite fixture; the same-row
+ * fixture is `makeHorizontalClass` at the bottom of this file.
  *
  * alpha (rows 7):          beta (rows 7):
  *   row0  a-one(5) a-two(5)   row0 x-one(5)
@@ -97,4 +99,51 @@ export const TEST_MIGRATION_V1_V2 = {
   from: 1,
   to: 2,
   classes: { testclass: { renamed: { 'a-uno': 'a-one' } } },
+}
+
+/**
+ * Second synthetic class for the same-row (horizontal) prerequisites Forever
+ * added - priest Improved Mind Flay requires Mind Flay in the same row. Kept
+ * apart from `makeClass` so the codec fixtures (TEST_ORDER_V2 and the digit
+ * strings in codec.test.ts) stay untouched.
+ *
+ * flay (rows 4, cols 4), pointsPerRow 5:
+ *   row0  top-one(5) c0   top-two(5) c1
+ *   row1  early(2) c0*    mid(3) c1    near(3) c2**   far(1) c3***
+ *   row2  below(1) c1
+ * *   early requires mid 3   (right-to-left, adjacent)
+ * **  near  requires mid 3   (left-to-right, adjacent)
+ * *** far   requires mid 3   (left-to-right, two cells apart)
+ */
+export function makeHorizontalClass(overrides: Partial<ClassData['rules']> = {}): ClassData {
+  return parseClass({
+    schemaVersion: 1,
+    class: 'testhorizontal',
+    className: 'Test Horizontal',
+    dataVersion: 1,
+    dataSource: 'manual',
+    generatedAt: '2026-09-13T00:00:00Z',
+    rules: { pointsPerRow: 5, maxPoints: 51, firstPointLevel: 10, maxLevel: 60, rulesSource: 'assumed', ...overrides },
+    pages: [{ id: 'primary', name: 'Primary' }],
+    trees: [
+      {
+        id: 'flay',
+        name: 'Flay',
+        page: 'primary',
+        order: 0,
+        icon: 'inv_misc_gear_01',
+        rows: 4,
+        cols: 4,
+        talents: [
+          talent('top-one', 0, 0, 5),
+          talent('top-two', 0, 1, 5),
+          talent('early', 1, 0, 2, { requires: [{ talent: 'mid', rank: 3 }] }),
+          talent('mid', 1, 1, 3),
+          talent('near', 1, 2, 3, { requires: [{ talent: 'mid', rank: 3 }] }),
+          talent('far', 1, 3, 1, { requires: [{ talent: 'mid', rank: 3 }] }),
+          talent('below', 2, 1, 1),
+        ],
+      },
+    ],
+  })
 }

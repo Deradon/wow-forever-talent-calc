@@ -1627,6 +1627,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "spell_nature_purge",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.948,
+        "margin": 0.077,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Balance",
@@ -1638,18 +1649,7 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ],
-      "icon": "spell_nature_purge",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.948,
-        "margin": 0.077,
-        "phash": 6,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "druid/balance/r3c2",
@@ -4474,6 +4474,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "ability_racial_cannibalize",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.839,
+        "margin": 0.332,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Feral Combat",
@@ -4485,18 +4496,7 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ],
-      "icon": "ability_racial_cannibalize",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.839,
-        "margin": 0.332,
-        "phash": 10,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "druid/feral-combat/r4c0",
@@ -5205,6 +5205,17 @@
           "similarity": 0.88
         }
       },
+      "icon": "ability_druid_primalagression",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.9,
+        "margin": 0.263,
+        "phash": 16,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Feral Combat",
@@ -5216,18 +5227,7 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ],
-      "icon": "ability_druid_primalagression",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.9,
-        "margin": 0.263,
-        "phash": 16,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "druid/feral-combat/r6c1",
@@ -5357,6 +5357,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "ability_druid_berserk",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.877,
+        "margin": 0.246,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Feral Combat",
@@ -5368,18 +5379,7 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ],
-      "icon": "ability_druid_berserk",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.877,
-        "margin": 0.246,
-        "phash": 10,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "druid/restoration/r0c1",
@@ -7169,18 +7169,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
       },
-      "requires_arrows": [
-        {
-          "tree": "Restoration",
-          "row": 1,
-          "col": 0,
-          "name": "Naturalist",
-          "rank": 5,
-          "shape": "straight",
-          "confidence": 0.7,
-          "medians": 1
-        }
-      ],
       "ranks_anticipated": {
         "description": "When activated, your next Nature spell becomes an instant cast spell.",
         "ranks": [
@@ -7194,7 +7182,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Restoration",
+          "row": 1,
+          "col": 0,
+          "name": "Naturalist",
+          "rank": 5,
+          "shape": "straight",
+          "confidence": 0.7,
+          "medians": 1
+        }
+      ]
     },
     {
       "id": "druid/restoration/r4c1",
@@ -7630,6 +7630,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "spell_nature_resistnature",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.962,
+        "margin": 0.088,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Restoration",
@@ -7641,18 +7652,7 @@
           "confidence": 0.7,
           "medians": 1
         }
-      ],
-      "icon": "spell_nature_resistnature",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.962,
-        "margin": 0.088,
-        "phash": 6,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "druid/restoration/r6c1",
@@ -7792,6 +7792,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "ability_druid_flourish",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.857,
+        "margin": 0.302,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Restoration",
@@ -7803,18 +7814,7 @@
           "confidence": 0.7,
           "medians": 1
         }
-      ],
-      "icon": "ability_druid_flourish",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.857,
-        "margin": 0.302,
-        "phash": 8,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     }
   ],
   "recovery": {
@@ -7831,7 +7831,7 @@
     "duplicate_names": []
   },
   "arrows": {
-    "generated_at": "2026-09-13T11:17:09Z",
+    "generated_at": "2026-09-13T16:23:48Z",
     "source": "work/arrows/druid.json",
     "calibrations": [
       "22-druid-20650"

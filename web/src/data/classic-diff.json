@@ -2,33 +2,34 @@
   "prior": "Classic Era (data/prior/classic-era/talents.json)",
   "totals": {
     "new": 145,
-    "moved": 123,
-    "rank-changed": 18,
-    "text-changed": 111,
-    "values-changed": 16,
-    "same": 56,
+    "moved": 81,
+    "rank-changed": 26,
+    "text-changed": 127,
+    "values-changed": 22,
+    "same": 68,
     "removed": 108
   },
   "classes": {
     "druid": {
       "counts": {
         "new": 18,
-        "moved": 20,
-        "rank-changed": 1,
-        "text-changed": 9,
+        "moved": 12,
+        "rank-changed": 4,
+        "text-changed": 13,
         "values-changed": 1,
-        "same": 3,
+        "same": 4,
         "removed": 13
       },
       "talents": {
         "improved-wrath": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "balance",
             "treeName": "Balance",
             "row": 0,
             "col": 0,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -42,8 +43,10 @@
             "treeName": "Balance",
             "row": 4,
             "col": 2,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "improved-moonfire": {
@@ -73,8 +76,10 @@
             "treeName": "Balance",
             "row": 2,
             "col": 3,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "improved-entangling-roots": {
@@ -84,8 +89,10 @@
             "treeName": "Balance",
             "row": 1,
             "col": 0,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedRow": true
           },
+          "row": 2,
           "textChange": "text"
         },
         "natures-splendor": {
@@ -102,8 +109,10 @@
             "row": 2,
             "col": 2,
             "maxRank": 1,
-            "movedTree": true
+            "movedTree": true,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "values",
           "values": [
             [
@@ -191,43 +200,48 @@
             "treeName": "Feral Combat",
             "row": 5,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 0,
           "textChange": "text"
         },
         "feral-swiftness": {
           "status": "new"
         },
         "feral-instinct": {
-          "status": "moved",
+          "status": "rank-changed",
           "prior": {
             "tree": "feral-combat",
             "treeName": "Feral Combat",
             "row": 1,
             "col": 0,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           },
           "textChange": "text"
         },
         "brutal-impact": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "feral-combat",
             "treeName": "Feral Combat",
             "row": 1,
             "col": 1,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedCol": true
           },
           "textChange": "text"
         },
         "thick-hide": {
-          "status": "moved",
+          "status": "rank-changed",
           "prior": {
             "tree": "feral-combat",
             "treeName": "Feral Combat",
             "row": 1,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -238,29 +252,33 @@
             "treeName": "Feral Combat",
             "row": 4,
             "col": 0,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedRow": true
           },
+          "row": 2,
           "textChange": "text"
         },
         "feral-charge": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "feral-combat",
             "treeName": "Feral Combat",
             "row": 2,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedCol": true
           },
           "textChange": "text"
         },
         "sharpened-claws": {
-          "status": "moved",
+          "status": "rank-changed",
           "prior": {
             "tree": "feral-combat",
             "treeName": "Feral Combat",
             "row": 2,
             "col": 2,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -271,13 +289,14 @@
           "status": "new"
         },
         "predatory-strikes": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "feral-combat",
             "treeName": "Feral Combat",
             "row": 3,
             "col": 1,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -302,8 +321,10 @@
             "treeName": "Feral Combat",
             "row": 6,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 4,
           "textChange": "text"
         },
         "king-of-the-jungle": {
@@ -325,8 +346,10 @@
             "treeName": "Restoration",
             "row": 1,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 0,
           "textChange": "text"
         },
         "furor": {
@@ -350,8 +373,10 @@
             "treeName": "Restoration",
             "row": 2,
             "col": 3,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "natural-shapeshifter": {
@@ -389,21 +414,24 @@
             "treeName": "Restoration",
             "row": 4,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 2,
           "textChange": "text"
         },
         "gift-of-the-earthmother": {
           "status": "new"
         },
         "improved-rejuvenation": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "restoration",
             "treeName": "Restoration",
             "row": 3,
             "col": 3,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           }
         },
         "swiftmend": {
@@ -413,8 +441,10 @@
             "treeName": "Restoration",
             "row": 6,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "living-spirit": {
@@ -558,11 +588,11 @@
     "hunter": {
       "counts": {
         "new": 18,
-        "moved": 11,
-        "rank-changed": 1,
-        "text-changed": 10,
+        "moved": 7,
+        "rank-changed": 2,
+        "text-changed": 12,
         "values-changed": 2,
-        "same": 8,
+        "same": 9,
         "removed": 14
       },
       "talents": {
@@ -601,8 +631,10 @@
             "treeName": "Beast Mastery",
             "row": 2,
             "col": 0,
-            "maxRank": 2
-          }
+            "maxRank": 2,
+            "movedRow": true
+          },
+          "row": 1
         },
         "bestial-swiftness": {
           "status": "text-changed",
@@ -627,13 +659,14 @@
           "textChange": "text"
         },
         "improved-mend-pet": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "beast-mastery",
             "treeName": "Beast Mastery",
             "row": 3,
             "col": 1,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -680,8 +713,10 @@
             "treeName": "Marksmanship",
             "row": 2,
             "col": 3,
-            "maxRank": 3
-          }
+            "maxRank": 3,
+            "movedRow": true
+          },
+          "row": 0
         },
         "lethal-attacks": {
           "status": "new"
@@ -696,8 +731,10 @@
             "treeName": "Marksmanship",
             "row": 0,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "careful-aim": {
@@ -727,8 +764,10 @@
             "treeName": "Marksmanship",
             "row": 6,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "mortal-shots": {
@@ -746,24 +785,26 @@
           "status": "new"
         },
         "barrage": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "marksmanship",
             "treeName": "Marksmanship",
             "row": 4,
             "col": 1,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           },
           "textChange": "text"
         },
         "scatter-shot": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "marksmanship",
             "treeName": "Marksmanship",
             "row": 4,
             "col": 0,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedCol": true
           }
         },
         "sniper-shot": {
@@ -818,18 +859,21 @@
             "treeName": "Survival",
             "row": 2,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "improved-wing-clip": {
-          "status": "moved",
+          "status": "rank-changed",
           "prior": {
             "tree": "survival",
             "treeName": "Survival",
             "row": 1,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           },
           "textChange": "values",
           "values": [
@@ -846,8 +890,10 @@
             "treeName": "Survival",
             "row": 3,
             "col": 1,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedRow": true
           },
+          "row": 2,
           "textChange": "text"
         },
         "survival-tactics": {
@@ -863,8 +909,10 @@
             "treeName": "Survival",
             "row": 4,
             "col": 2,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "resourcefulness": {
@@ -1032,11 +1080,11 @@
     "mage": {
       "counts": {
         "new": 11,
-        "moved": 14,
-        "rank-changed": 2,
-        "text-changed": 13,
-        "values-changed": 1,
-        "same": 12,
+        "moved": 7,
+        "rank-changed": 4,
+        "text-changed": 15,
+        "values-changed": 3,
+        "same": 13,
         "removed": 7
       },
       "talents": {
@@ -1047,8 +1095,10 @@
             "treeName": "Arcane",
             "row": 1,
             "col": 0,
-            "maxRank": 2
-          }
+            "maxRank": 2,
+            "movedRow": true
+          },
+          "row": 0
         },
         "arcane-focus": {
           "status": "text-changed",
@@ -1071,8 +1121,10 @@
             "treeName": "Arcane",
             "row": 0,
             "col": 0,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "values",
           "values": [
             [
@@ -1103,8 +1155,10 @@
             "treeName": "Arcane",
             "row": 2,
             "col": 2,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "values",
           "values": [
             [
@@ -1137,13 +1191,14 @@
           "textChange": "text"
         },
         "arcane-meditation": {
-          "status": "moved",
+          "status": "values-changed",
           "prior": {
             "tree": "arcane",
             "treeName": "Arcane",
             "row": 3,
             "col": 3,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           },
           "textChange": "values",
           "values": [
@@ -1168,13 +1223,14 @@
           "textChange": "text"
         },
         "arcane-instability": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "arcane",
             "treeName": "Arcane",
             "row": 5,
             "col": 1,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -1202,8 +1258,10 @@
             "treeName": "Fire",
             "row": 0,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "values",
           "values": [
             [
@@ -1213,13 +1271,14 @@
           ]
         },
         "burning-soul": {
-          "status": "moved",
+          "status": "rank-changed",
           "prior": {
             "tree": "fire",
             "treeName": "Fire",
             "row": 2,
             "col": 3,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedCol": true
           },
           "textChange": "values",
           "values": [
@@ -1328,24 +1387,26 @@
           "textChange": "text"
         },
         "permafrost": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "frost",
             "treeName": "Frost",
             "row": 1,
             "col": 3,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           },
           "textChange": "text"
         },
         "frostbite": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "frost",
             "treeName": "Frost",
             "row": 1,
             "col": 1,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           }
         },
         "piercing-ice": {
@@ -1366,8 +1427,10 @@
             "treeName": "Frost",
             "row": 3,
             "col": 1,
-            "maxRank": 3
-          }
+            "maxRank": 3,
+            "movedRow": true
+          },
+          "row": 2
         },
         "ice-lance": {
           "status": "new"
@@ -1390,17 +1453,20 @@
             "treeName": "Frost",
             "row": 4,
             "col": 1,
-            "maxRank": 1
-          }
+            "maxRank": 1,
+            "movedRow": true
+          },
+          "row": 3
         },
         "shatter": {
-          "status": "moved",
+          "status": "rank-changed",
           "prior": {
             "tree": "frost",
             "treeName": "Frost",
             "row": 3,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           },
           "textChange": "values",
           "values": [
@@ -1411,13 +1477,14 @@
           ]
         },
         "improved-cone-of-cold": {
-          "status": "moved",
+          "status": "values-changed",
           "prior": {
             "tree": "frost",
             "treeName": "Frost",
             "row": 4,
             "col": 2,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           },
           "textChange": "values",
           "values": [
@@ -1434,8 +1501,10 @@
             "treeName": "Frost",
             "row": 2,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 4,
           "textChange": "text"
         },
         "fingers-of-frost": {
@@ -1533,11 +1602,11 @@
     "paladin": {
       "counts": {
         "new": 21,
-        "moved": 12,
+        "moved": 11,
         "rank-changed": 1,
         "text-changed": 13,
         "values-changed": 3,
-        "same": 2,
+        "same": 3,
         "removed": 13
       },
       "talents": {
@@ -1551,8 +1620,10 @@
             "treeName": "Holy",
             "row": 2,
             "col": 0,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "spiritual-focus": {
@@ -1576,8 +1647,10 @@
             "treeName": "Holy",
             "row": 2,
             "col": 3,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "voice-of-truth": {
@@ -1610,8 +1683,10 @@
             "treeName": "Holy",
             "row": 4,
             "col": 1,
-            "maxRank": 1
-          }
+            "maxRank": 1,
+            "movedRow": true
+          },
+          "row": 3
         },
         "divine-precision": {
           "status": "new"
@@ -1623,8 +1698,10 @@
             "treeName": "Holy",
             "row": 6,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 4,
           "textChange": "values",
           "values": [
             [
@@ -1669,8 +1746,10 @@
             "treeName": "Protection",
             "row": 1,
             "col": 3,
-            "maxRank": 5
-          }
+            "maxRank": 5,
+            "movedRow": true
+          },
+          "row": 0
         },
         "redoubt": {
           "status": "text-changed",
@@ -1712,8 +1791,10 @@
             "treeName": "Protection",
             "row": 2,
             "col": 3,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "values",
           "values": [
             [
@@ -1760,8 +1841,10 @@
             "treeName": "Protection",
             "row": 5,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "values",
           "values": [
             [
@@ -1771,13 +1854,14 @@
           ]
         },
         "improved-hammer-of-justice": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "protection",
             "treeName": "Protection",
             "row": 3,
             "col": 1,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           }
         },
         "templars-bulwark": {
@@ -1825,8 +1909,10 @@
             "treeName": "Retribution",
             "row": 1,
             "col": 2,
-            "maxRank": 5
-          }
+            "maxRank": 5,
+            "movedRow": true
+          },
+          "row": 0
         },
         "benediction": {
           "status": "text-changed",
@@ -1860,8 +1946,10 @@
             "treeName": "Retribution",
             "row": 2,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "vindication": {
@@ -1951,8 +2039,10 @@
             "treeName": "Retribution",
             "row": 5,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 4,
           "textChange": "text"
         },
         "repentance": {
@@ -1962,8 +2052,10 @@
             "treeName": "Retribution",
             "row": 6,
             "col": 1,
-            "maxRank": 1
-          }
+            "maxRank": 1,
+            "movedRow": true
+          },
+          "row": 4
         },
         "champion-of-the-light": {
           "status": "new"
@@ -2098,11 +2190,11 @@
     "priest": {
       "counts": {
         "new": 14,
-        "moved": 14,
-        "rank-changed": 2,
-        "text-changed": 11,
-        "values-changed": 6,
-        "same": 6,
+        "moved": 5,
+        "rank-changed": 4,
+        "text-changed": 12,
+        "values-changed": 7,
+        "same": 11,
         "removed": 8
       },
       "talents": {
@@ -2110,13 +2202,14 @@
           "status": "new"
         },
         "wand-specialization": {
-          "status": "moved",
+          "status": "rank-changed",
           "prior": {
             "tree": "discipline",
             "treeName": "Discipline",
             "row": 0,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           },
           "textChange": "values",
           "values": [
@@ -2178,18 +2271,21 @@
             "treeName": "Discipline",
             "row": 3,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 2,
           "textChange": "text"
         },
         "meditation": {
-          "status": "moved",
+          "status": "values-changed",
           "prior": {
             "tree": "discipline",
             "treeName": "Discipline",
             "row": 2,
             "col": 2,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           },
           "textChange": "values",
           "values": [
@@ -2217,8 +2313,10 @@
             "treeName": "Discipline",
             "row": 4,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "soul-warding": {
@@ -2392,28 +2490,32 @@
             "treeName": "Shadow",
             "row": 1,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 0,
           "textChange": "text"
         },
         "blackout": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "shadow",
             "treeName": "Shadow",
             "row": 0,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           }
         },
         "spirit-tap": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "shadow",
             "treeName": "Shadow",
             "row": 0,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -2435,13 +2537,14 @@
           ]
         },
         "improved-shadow-word-pain": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "shadow",
             "treeName": "Shadow",
             "row": 1,
             "col": 1,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedCol": true
           }
         },
         "shadow-reach": {
@@ -2451,28 +2554,32 @@
             "treeName": "Shadow",
             "row": 3,
             "col": 2,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "improved-mind-blast": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "shadow",
             "treeName": "Shadow",
             "row": 2,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           }
         },
         "improved-psychic-scream": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "shadow",
             "treeName": "Shadow",
             "row": 2,
             "col": 0,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedCol": true
           }
         },
         "mind-flay": {
@@ -2496,13 +2603,14 @@
           "status": "new"
         },
         "improved-fade": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "shadow",
             "treeName": "Shadow",
             "row": 3,
             "col": 1,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedCol": true
           }
         },
         "vampiric-embrace": {
@@ -2512,18 +2620,21 @@
             "treeName": "Shadow",
             "row": 4,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "shadow-weaving": {
-          "status": "moved",
+          "status": "rank-changed",
           "prior": {
             "tree": "shadow",
             "treeName": "Shadow",
             "row": 3,
             "col": 3,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -2645,11 +2756,11 @@
     "rogue": {
       "counts": {
         "new": 10,
-        "moved": 13,
+        "moved": 9,
         "rank-changed": 5,
-        "text-changed": 13,
+        "text-changed": 15,
         "values-changed": 1,
-        "same": 11,
+        "same": 13,
         "removed": 8
       },
       "talents": {
@@ -2721,13 +2832,14 @@
           "textChange": "text"
         },
         "vile-poisons": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "assassination",
             "treeName": "Assassination",
             "row": 3,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           }
         },
         "cold-blood": {
@@ -2737,8 +2849,10 @@
             "treeName": "Assassination",
             "row": 4,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "improved-poisons": {
@@ -2759,8 +2873,10 @@
             "treeName": "Assassination",
             "row": 6,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 4,
           "textChange": "values",
           "values": [
             [
@@ -2784,13 +2900,14 @@
           "textChange": "text"
         },
         "seal-fate": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "assassination",
             "treeName": "Assassination",
             "row": 5,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           }
         },
         "venom": {
@@ -2913,8 +3030,10 @@
             "treeName": "Subtlety",
             "row": 1,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 0,
           "textChange": "text"
         },
         "master-of-deception": {
@@ -2946,8 +3065,10 @@
             "treeName": "Subtlety",
             "row": 3,
             "col": 0,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "dirty-tricks": {
@@ -2960,8 +3081,10 @@
             "treeName": "Subtlety",
             "row": 2,
             "col": 2,
-            "maxRank": 3
-          }
+            "maxRank": 3,
+            "movedRow": true
+          },
+          "row": 1
         },
         "initiative": {
           "status": "values-changed",
@@ -3001,8 +3124,10 @@
             "treeName": "Subtlety",
             "row": 4,
             "col": 0,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "premeditation": {
@@ -3012,8 +3137,10 @@
             "treeName": "Subtlety",
             "row": 6,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "serrated-blades": {
@@ -3028,24 +3155,26 @@
           "textChange": "text"
         },
         "dirty-deeds": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "subtlety",
             "treeName": "Subtlety",
             "row": 4,
             "col": 2,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedCol": true
           },
           "textChange": "text"
         },
         "hemorrhage": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "subtlety",
             "treeName": "Subtlety",
             "row": 4,
             "col": 3,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -3137,11 +3266,11 @@
     "shaman": {
       "counts": {
         "new": 17,
-        "moved": 19,
+        "moved": 13,
         "rank-changed": 2,
-        "text-changed": 7,
-        "values-changed": 0,
-        "same": 5,
+        "text-changed": 11,
+        "values-changed": 1,
+        "same": 6,
         "removed": 13
       },
       "talents": {
@@ -3168,13 +3297,14 @@
           "textChange": "text"
         },
         "elemental-warding": {
-          "status": "moved",
+          "status": "values-changed",
           "prior": {
             "tree": "elemental",
             "treeName": "Elemental",
             "row": 1,
             "col": 1,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           },
           "textChange": "values",
           "values": [
@@ -3191,8 +3321,10 @@
             "treeName": "Elemental",
             "row": 2,
             "col": 1,
-            "maxRank": 5
-          }
+            "maxRank": 5,
+            "movedRow": true
+          },
+          "row": 1
         },
         "call-of-flame": {
           "status": "text-changed",
@@ -3212,18 +3344,21 @@
             "treeName": "Elemental",
             "row": 3,
             "col": 3,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "elemental-focus": {
-          "status": "moved",
+          "status": "same",
           "prior": {
             "tree": "elemental",
             "treeName": "Elemental",
             "row": 2,
             "col": 0,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedCol": true
           }
         },
         "elemental-fury": {
@@ -3233,8 +3368,10 @@
             "treeName": "Elemental",
             "row": 4,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 2,
           "textChange": "text"
         },
         "improved-fire-nova": {
@@ -3258,8 +3395,10 @@
             "treeName": "Elemental",
             "row": 2,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "elemental-reach": {
@@ -3285,8 +3424,10 @@
             "row": 1,
             "col": 0,
             "maxRank": 2,
-            "movedTree": true
-          }
+            "movedTree": true,
+            "movedRow": true
+          },
+          "row": 0
         },
         "thundering-strikes": {
           "status": "moved",
@@ -3295,18 +3436,21 @@
             "treeName": "Enhancement",
             "row": 1,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 0,
           "textChange": "text"
         },
         "ancestral-knowledge": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "enhancement",
             "treeName": "Enhancement",
             "row": 0,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -3331,8 +3475,10 @@
             "treeName": "Enhancement",
             "row": 4,
             "col": 1,
-            "maxRank": 3
-          }
+            "maxRank": 3,
+            "movedRow": true
+          },
+          "row": 2
         },
         "shamanistic-focus": {
           "status": "new"
@@ -3355,13 +3501,14 @@
           ]
         },
         "toughness": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "enhancement",
             "treeName": "Enhancement",
             "row": 3,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -3383,8 +3530,10 @@
             "treeName": "Enhancement",
             "row": 6,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "spirit-weapons": {
@@ -3409,8 +3558,10 @@
             "treeName": "Restoration",
             "row": 3,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 0,
           "textChange": "text"
         },
         "mindfulness": {
@@ -3426,18 +3577,21 @@
             "treeName": "Restoration",
             "row": 0,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "text"
         },
         "improved-reincarnation": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "restoration",
             "treeName": "Restoration",
             "row": 1,
             "col": 0,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -3448,8 +3602,10 @@
             "treeName": "Restoration",
             "row": 1,
             "col": 1,
-            "maxRank": 3
-          }
+            "maxRank": 3,
+            "movedRow": true
+          },
+          "row": 2
         },
         "healing-focus": {
           "status": "rank-changed",
@@ -3478,8 +3634,10 @@
             "treeName": "Restoration",
             "row": 1,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "restorative-totems": {
@@ -3500,8 +3658,10 @@
             "treeName": "Restoration",
             "row": 6,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "values",
           "values": [
             [
@@ -3515,13 +3675,14 @@
           ]
         },
         "healing-way": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "restoration",
             "treeName": "Restoration",
             "row": 4,
             "col": 0,
-            "maxRank": 3
+            "maxRank": 3,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -3652,10 +3813,10 @@
     "warlock": {
       "counts": {
         "new": 23,
-        "moved": 15,
+        "moved": 13,
         "rank-changed": 2,
-        "text-changed": 10,
-        "values-changed": 0,
+        "text-changed": 11,
+        "values-changed": 1,
         "same": 2,
         "removed": 21
       },
@@ -3667,8 +3828,10 @@
             "treeName": "Affliction",
             "row": 1,
             "col": 2,
-            "maxRank": 2
-          }
+            "maxRank": 2,
+            "movedRow": true
+          },
+          "row": 0
         },
         "suppression": {
           "status": "text-changed",
@@ -3750,8 +3913,10 @@
             "treeName": "Affliction",
             "row": 4,
             "col": 2,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "values",
           "values": [
             [
@@ -3764,13 +3929,14 @@
           "status": "new"
         },
         "shadow-mastery": {
-          "status": "moved",
+          "status": "values-changed",
           "prior": {
             "tree": "affliction",
             "treeName": "Affliction",
             "row": 5,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedCol": true
           },
           "textChange": "values",
           "values": [
@@ -3790,8 +3956,10 @@
             "treeName": "Demonology",
             "row": 1,
             "col": 0,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedRow": true
           },
+          "row": 0,
           "textChange": "text"
         },
         "improved-imp": {
@@ -3823,8 +3991,10 @@
             "treeName": "Demonology",
             "row": 3,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 0,
           "textChange": "text"
         },
         "demonic-aegis": {
@@ -3846,8 +4016,10 @@
             "treeName": "Demonology",
             "row": 4,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 2,
           "textChange": "text"
         },
         "master-summoner": {
@@ -3857,8 +4029,10 @@
             "treeName": "Demonology",
             "row": 3,
             "col": 1,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedRow": true
           },
+          "row": 2,
           "textChange": "text"
         },
         "decimation": {
@@ -3871,8 +4045,10 @@
             "treeName": "Demonology",
             "row": 2,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "demonic-brand": {
@@ -3888,8 +4064,10 @@
             "treeName": "Demonology",
             "row": 6,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 4,
           "textChange": "text"
         },
         "demonic-knowledge": {
@@ -3916,8 +4094,10 @@
             "treeName": "Destruction",
             "row": 3,
             "col": 1,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedRow": true
           },
+          "row": 0,
           "textChange": "text"
         },
         "improved-shadow-bolt": {
@@ -3938,8 +4118,10 @@
             "treeName": "Destruction",
             "row": 1,
             "col": 1,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 0,
           "textChange": "text"
         },
         "molten-skin": {
@@ -3952,8 +4134,10 @@
             "treeName": "Destruction",
             "row": 0,
             "col": 2,
-            "maxRank": 5
+            "maxRank": 5,
+            "movedRow": true
           },
+          "row": 1,
           "textChange": "values",
           "values": [
             [
@@ -3980,8 +4164,10 @@
             "treeName": "Destruction",
             "row": 4,
             "col": 2,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 2,
           "textChange": "values",
           "values": [
             [
@@ -3991,13 +4177,14 @@
           ]
         },
         "shadowburn": {
-          "status": "moved",
+          "status": "text-changed",
           "prior": {
             "tree": "destruction",
             "treeName": "Destruction",
             "row": 2,
             "col": 3,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedCol": true
           },
           "textChange": "text"
         },
@@ -4022,8 +4209,10 @@
             "treeName": "Destruction",
             "row": 6,
             "col": 1,
-            "maxRank": 1
+            "maxRank": 1,
+            "movedRow": true
           },
+          "row": 3,
           "textChange": "text"
         },
         "pyroclasm": {
@@ -4245,10 +4434,10 @@
     "warrior": {
       "counts": {
         "new": 13,
-        "moved": 5,
+        "moved": 4,
         "rank-changed": 2,
         "text-changed": 25,
-        "values-changed": 2,
+        "values-changed": 3,
         "same": 7,
         "removed": 11
       },
@@ -4302,8 +4491,10 @@
             "treeName": "Arms",
             "row": 2,
             "col": 0,
-            "maxRank": 2
-          }
+            "maxRank": 2,
+            "movedRow": true
+          },
+          "row": 1
         },
         "anger-management": {
           "status": "text-changed",
@@ -4365,8 +4556,10 @@
             "row": 4,
             "col": 0,
             "maxRank": 5,
-            "movedTree": true
+            "movedTree": true,
+            "movedRow": true
           },
+          "row": 5,
           "textChange": "text"
         },
         "booming-voice": {
@@ -4468,13 +4661,14 @@
           "textChange": "text"
         },
         "improved-execute": {
-          "status": "moved",
+          "status": "values-changed",
           "prior": {
             "tree": "fury",
             "treeName": "Fury",
             "row": 3,
             "col": 1,
-            "maxRank": 2
+            "maxRank": 2,
+            "movedCol": true
           },
           "textChange": "values",
           "values": [

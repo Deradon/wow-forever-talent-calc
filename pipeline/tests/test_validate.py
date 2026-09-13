@@ -99,6 +99,36 @@ def test_prerequisite_in_later_row(tmp_path, example):
     assert "R08-ROW" in codes(findings, "ERROR")
 
 
+def test_prerequisite_in_the_same_row_is_allowed(tmp_path, example):
+    """Forever draws horizontal arrows (priest Mind Flay -> Improved Mind Flay)."""
+    doc = copy.deepcopy(example)
+    tree = doc["trees"][0]
+    talents = {t["id"]: t for t in tree["talents"]}
+    target, dependent = talents["improved-wrench"], talents["rocket-boots"]
+    free = max(t["col"] for t in tree["talents"] if t["row"] == target["row"]) + 1
+    dependent["row"], dependent["col"] = target["row"], free
+    dependent["requires"] = [{"talent": target["id"], "rank": 1}]
+    code, findings = run(make_repo(tmp_path, doc))
+    assert "R08-ROW" not in codes(findings, "ERROR")
+    assert "R08-CELL" not in codes(findings, "ERROR")
+    assert code == 0
+
+
+def test_same_row_prerequisites_may_not_form_a_cycle(tmp_path, example):
+    """Same-row targets make a two-talent cycle expressible; the cycle walk must catch it."""
+    doc = copy.deepcopy(example)
+    tree = doc["trees"][0]
+    talents = {t["id"]: t for t in tree["talents"]}
+    a, b = talents["improved-wrench"], talents["rocket-boots"]
+    free = max(t["col"] for t in tree["talents"] if t["row"] == a["row"]) + 1
+    b["row"], b["col"] = a["row"], free
+    a["requires"] = [{"talent": b["id"], "rank": 1}]
+    b["requires"] = [{"talent": a["id"], "rank": 1}]
+    code, findings = run(make_repo(tmp_path, doc))
+    assert code == 1
+    assert "R08-CYCLE" in codes(findings, "ERROR")
+
+
 def test_prerequisite_unknown_and_rank_too_high(tmp_path, example):
     doc = copy.deepcopy(example)
     talents = {t["id"]: t for t in doc["trees"][0]["talents"]}

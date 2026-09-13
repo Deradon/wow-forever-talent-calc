@@ -169,7 +169,7 @@ Requirement:
 
 | Field | Type | Req | Description |
 |---|---|---|---|
-| `talent` | talent id | yes | Must exist in the same tree and in a strictly smaller `row`. |
+| `talent` | talent id | yes | Must exist in the same tree, in the same `row` or an earlier one, and in a different cell. Forever has same-row (horizontal) prerequisites — priest Improved Mind Flay requires Mind Flay beside it — which Classic never had, so the rule is `target.row <= talent.row`, not `<`. |
 | `rank` | integer >= 1 | yes | Points that must already be spent **in the prerequisite talent** before this talent can be trained — not points in the tree, and not the rank being trained here. `rank: 5` on a `maxRank: 5` prerequisite means "maxed". Validation requires `1 <= rank <= target.maxRank`; extraction writes the target's `maxRank`, since a Classic arrow always means "maxed". |
 
 ### 4.5 Source (provenance)
@@ -319,8 +319,9 @@ prerequisite arrow or a stale `ranksNote`. `unset` lists field names to drop:
 - Unsetting a field that is not present is a no-op, not an error.
 - `unset` may be combined with `set` in the same entry; `unset` is applied
   first, so `set` wins on any field named in both.
-- Removing a `requires` entry can orphan nothing (arrows only point upwards),
-  but it changes the rules the app enforces — validate afterwards.
+- Removing a `requires` entry can orphan nothing (arrows point upwards or
+  sideways, never downwards), but it changes the rules the app enforces —
+  validate afterwards.
 
 ### 6.3 `data/talents/<class>.json` (canonical)
 
@@ -492,9 +493,11 @@ Schema (errors):
 7. `ranksObserved` is sorted, unique, each `1..maxRank`; `ranksSource ==
    "observed"` iff `ranksObserved` covers all ranks; `ranksPrior` present iff
    `ranksSource == "classic-prior"`; `ranksNote` present if `manual`.
-8. `requires[]`: target exists in the same tree, `target.row < talent.row`,
+8. `requires[]`: target exists in the same tree, `target.row <= talent.row`
+   (same row allowed: Forever draws horizontal arrows) and in a different cell,
    `rank <= target.maxRank`, no self-reference, no cycles, at most 3 entries
-   (Talent.db2 width).
+   (Talent.db2 width). Same-row arrows make a two-talent cycle expressible, so
+   the cycle check is load-bearing, not decorative.
 9. `iconCrop` present iff `iconSource == "crop"` and the file exists;
    `source.crop` file exists (both checked relative to repo root).
 10. `source` conditional fields per section 4.5; `reviewedBy`/`reviewedAt`

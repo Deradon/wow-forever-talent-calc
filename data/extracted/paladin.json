@@ -5,7 +5,7 @@
   "className": "Paladin",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T15:14:50Z",
+  "generatedAt": "2026-09-13T16:24:13Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -734,6 +734,12 @@
             "similarity": 0.87
           },
           "ranksNote": "Classic paladin/protection/Precision (talent 1630), matched on description (0.87): Classic 1/2/3 is proportional; Forever rank 1 is 6: scaled proportionally (6 x rank).",
+          "requires": [
+            {
+              "talent": "holy-shock",
+              "rank": 1
+            }
+          ],
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -780,7 +786,7 @@
               }
             ],
             "reviewed": false,
-            "note": "same-row prerequisite arrow from Holy Shock (rank 1); not representable, the schema needs an earlier row"
+            "note": "prerequisite from tree arrow (stage 7): Holy Shock at rank 1 = its max rank (Classic rule; rank-0 tooltips do not list talent prerequisites)"
           }
         },
         {

@@ -1746,6 +1746,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "spell_holy_greaterheal",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.903,
+        "margin": 0.043,
+        "phash": 24,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Holy",
@@ -1757,18 +1768,7 @@
           "confidence": 0.7,
           "medians": 7
         }
-      ],
-      "icon": "spell_holy_greaterheal",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.903,
-        "margin": 0.043,
-        "phash": 24,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "paladin/holy/r3c2",
@@ -2015,18 +2015,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
       },
-      "requires_arrows": [
-        {
-          "tree": "Holy",
-          "row": 4,
-          "col": 1,
-          "name": "Holy Shock",
-          "rank": 1,
-          "shape": "row",
-          "confidence": 1.0,
-          "medians": 7
-        }
-      ],
       "ranks_anticipated": {
         "description": "Increases your chance to hit with Holy spells by {0}%.",
         "ranks": [
@@ -2068,7 +2056,19 @@
           "match": "description",
           "similarity": 0.87
         }
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Holy",
+          "row": 4,
+          "col": 1,
+          "name": "Holy Shock",
+          "rank": 1,
+          "shape": "row",
+          "confidence": 1.0,
+          "medians": 7
+        }
+      ]
     },
     {
       "id": "paladin/holy/r4c1",
@@ -2649,6 +2649,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "ability_paladin_judgementofthepure",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.886,
+        "margin": 0.218,
+        "phash": 16,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Holy",
@@ -2660,18 +2671,7 @@
           "confidence": 1.0,
           "medians": 7
         }
-      ],
-      "icon": "ability_paladin_judgementofthepure",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.886,
-        "margin": 0.218,
-        "phash": 16,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "paladin/protection/r0c1",
@@ -4235,6 +4235,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "ability_paladin_judgementred",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.909,
+        "margin": 0.292,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Protection",
@@ -4246,18 +4257,7 @@
           "confidence": 0.988,
           "medians": 7
         }
-      ],
-      "icon": "ability_paladin_judgementred",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.909,
-        "margin": 0.292,
-        "phash": 10,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "paladin/protection/r3c1",
@@ -5150,18 +5150,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
       },
-      "requires_arrows": [
-        {
-          "tree": "Protection",
-          "row": 4,
-          "col": 1,
-          "name": "Templar's Bulwark",
-          "rank": 1,
-          "shape": "straight",
-          "confidence": 0.902,
-          "medians": 7
-        }
-      ],
       "icon": "classic_spell_holy_blessingofprotection",
       "icon_source": "classic",
       "icon_match": {
@@ -5192,7 +5180,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Protection",
+          "row": 4,
+          "col": 1,
+          "name": "Templar's Bulwark",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 0.902,
+          "medians": 7
+        }
+      ]
     },
     {
       "id": "paladin/retribution/r0c1",
@@ -7224,6 +7224,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "ability_racial_avatar",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.919,
+        "margin": 0.232,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Retribution",
@@ -7235,18 +7246,7 @@
           "confidence": 0.7,
           "medians": 7
         }
-      ],
-      "icon": "ability_racial_avatar",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.919,
-        "margin": 0.232,
-        "phash": 10,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "paladin/retribution/r4c2",
@@ -7968,7 +7968,7 @@
     }
   ],
   "arrows": {
-    "generated_at": "2026-09-13T11:17:11Z",
+    "generated_at": "2026-09-13T16:23:48Z",
     "source": "work/arrows/paladin.json",
     "calibrations": [
       "01-paladin-13640",

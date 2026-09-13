@@ -27,6 +27,23 @@
     ]
   },
   {
+    "id": "fixture-arrows",
+    "origin": "fixtures",
+    "className": "Arrow Fixture",
+    "dataSource": "manual",
+    "maxPoints": 51,
+    "talents": 7,
+    "reviewed": 7,
+    "needsReview": 0,
+    "trees": [
+      {
+        "id": "sideways",
+        "name": "Sideways",
+        "talents": 7
+      }
+    ]
+  },
+  {
     "id": "hunter",
     "origin": "talents",
     "className": "Hunter",

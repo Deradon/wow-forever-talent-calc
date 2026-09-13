@@ -523,7 +523,7 @@
 .class-layout {
   /* --cell and --gap are read by .tree-grid and by the tier gutter, so setting
      them here scales the whole tree, gutter included. --arrow-scale exists
-     because Arrows.tsx computes its geometry from a constant 44+12 pitch;
+     because arrows.ts computes its geometry from a constant 44+12 pitch;
      scaling the SVG keeps the lines on the cells at every size. Drop this rule
      the day the arrows read --cell themselves. */
   --cell: 44px;

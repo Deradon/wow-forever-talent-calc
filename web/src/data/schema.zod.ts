@@ -84,7 +84,7 @@ export const TalentSchema = z.looseObject({
   source: SourceSchema,
 })
 
-export const TreeSchema = z.looseObject({
+const TreeObject = z.looseObject({
   id: slug,
   name: z.string().min(1),
   page: PageIdSchema,
@@ -98,6 +98,73 @@ export const TreeSchema = z.looseObject({
   source: SourceSchema.optional(),
   talents: z.array(TalentSchema).min(1),
 })
+
+/**
+ * `requires` is the one cross-talent rule the object shapes cannot express
+ * (DATA-SCHEMA.md section 10.8). Forever has same-row prerequisites - priest
+ * Improved Mind Flay requires Mind Flay in the same row - so the prerequisite
+ * must live in the same tree, in the same row or an earlier one, and in a
+ * different cell. A later row, the talent's own cell and a cycle stay errors:
+ * all three describe an arrow no player could ever satisfy.
+ */
+export const TreeSchema = TreeObject.superRefine((tree, ctx) => {
+  const byId = new Map(tree.talents.map((t) => [t.id, t]))
+  tree.talents.forEach((t, i) => {
+    (t.requires ?? []).forEach((req, r) => {
+      const path = ['talents', i, 'requires', r, 'talent']
+      const target = byId.get(req.talent)
+      if (!target) {
+        ctx.addIssue({ code: 'custom', path, message: `${t.id} requires ${req.talent}, which is not in tree ${tree.id}` })
+        return
+      }
+      if (target.id === t.id || (target.row === t.row && target.col === t.col)) {
+        ctx.addIssue({ code: 'custom', path, message: `${t.id} requires its own cell` })
+        return
+      }
+      if (target.row > t.row) {
+        ctx.addIssue({
+          code: 'custom',
+          path,
+          message: `${t.id} (row ${t.row}) requires ${req.talent}, which sits lower at row ${target.row}`,
+        })
+      }
+      if (req.rank > target.maxRank) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['talents', i, 'requires', r, 'rank'],
+          message: `${t.id} requires ${req.talent} at rank ${req.rank} > maxRank ${target.maxRank}`,
+        })
+      }
+    })
+  })
+  for (const t of cycleOf(tree.talents)) {
+    ctx.addIssue({ code: 'custom', path: ['talents'], message: `prerequisite cycle through ${t}` })
+  }
+})
+
+/**
+ * Ids on a `requires` cycle. Rows alone no longer rule cycles out: two talents
+ * in the same row may point at each other, and the calculator would offer a
+ * pair nothing can ever unlock.
+ */
+function cycleOf(talents: { id: string; requires?: { talent: string }[] }[]): string[] {
+  const edges = new Map(talents.map((t) => [t.id, (t.requires ?? []).map((r) => r.talent)]))
+  const state = new Map<string, 'open' | 'done'>()
+  const found: string[] = []
+  const walk = (id: string) => {
+    const seen = state.get(id)
+    if (seen === 'done') return
+    if (seen === 'open') {
+      found.push(id)
+      return
+    }
+    state.set(id, 'open')
+    for (const next of edges.get(id) ?? []) if (edges.has(next)) walk(next)
+    state.set(id, 'done')
+  }
+  for (const t of talents) walk(t.id)
+  return [...new Set(found)]
+}
 
 export const PageSchema = z.looseObject({
   id: PageIdSchema,

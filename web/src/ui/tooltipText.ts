@@ -431,9 +431,22 @@ export interface ChangeFacts {
     maxRank: number
     /** Set only when the talent really changed tree (renames are not moves). */
     movedTree?: boolean
+    /** Set when the row changed. A move is a change of tree or row, never of column alone. */
+    movedRow?: boolean
+    /**
+     * Set when only the column inside the same row changed. Recorded for the
+     * review route; the player-facing line deliberately says nothing about it.
+     */
+    movedCol?: boolean
   }
   textChange?: 'text' | 'values'
   values?: ValuePair[]
+  /**
+   * The Forever row, 0-based, written by the generator for `moved` entries only
+   * so that the line can say where the talent went without the caller having to
+   * look the talent up. `current.row` overrides it when a caller does pass one.
+   */
+  row?: number
 }
 
 /**
@@ -457,10 +470,17 @@ export const CHANGE_MAX = 60
  * generator matches trees before it compares cells, and only a genuine change
  * of tree sets `prior.movedTree`. Rows are stored 0-based and spoken 1-based,
  * the way the tier gutter counts.
+ *
+ * Neither is a different **column** inside the same row: the row is what gates
+ * a talent (five points per tier), the column is ordering, and Forever
+ * reshuffled the order in most trees. The generator never gives such a talent
+ * the `moved` status, so this function only ever has to name a tree or a row -
+ * and it names the new row too, because "Moved from row 5" alone was read as
+ * "this talent changed" by a player who was looking straight at row 5.
  */
 export function changeLine(
   change: ChangeFacts | undefined,
-  current: { tree: string; maxRank: number },
+  current: { tree: string; maxRank: number; row?: number },
 ): string | undefined {
   if (!change || change.status === 'same') return undefined
   if (change.status === 'new') return 'New in Forever.'
@@ -468,7 +488,7 @@ export function changeLine(
   if (!prior) return undefined
   switch (change.status) {
     case 'moved':
-      return prior.movedTree ? `Moved from ${prior.treeName}, row ${prior.row + 1}.` : `Moved from row ${prior.row + 1}.`
+      return movedLine(prior, current.row ?? change.row)
     case 'rank-changed':
       return `Now ${ranksWord(current.maxRank)}, was ${prior.maxRank}.`
     case 'text-changed':
@@ -478,6 +498,28 @@ export function changeLine(
     default:
       return undefined
   }
+}
+
+/**
+ * The `moved` line. Four shapes, and every one of them is only reachable for a
+ * talent whose tree or row really changed:
+ *
+ *   same tree, other row   `Moved from row 3 to row 5.`
+ *   other tree, same row   `Moved from Arms.`
+ *   other tree, other row  `Moved from Arms, row 3 to row 5.`
+ *   row unknown            `Moved from row 3.` (the caller did not pass a row)
+ *
+ * `current` is the Forever row, 0-based like the stored one. It comes from the
+ * caller or, failing that, from `change.row` in the generated diff; it stays
+ * optional so a caller that has neither still gets a true, if vaguer, sentence.
+ */
+function movedLine(prior: NonNullable<ChangeFacts['prior']>, current: number | undefined): string {
+  const from = prior.movedTree ? `Moved from ${prior.treeName}` : 'Moved from row ' + (prior.row + 1)
+  if (current === undefined || current === prior.row) return `${from}.`
+  const rows = prior.movedTree
+    ? `, row ${prior.row + 1} to row ${current + 1}`
+    : ` to row ${current + 1}`
+  return `${from}${rows}.`
 }
 
 /** `Values changed: 15% -> 20%.`, collapsed when it would run past one line. */

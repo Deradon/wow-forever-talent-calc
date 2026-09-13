@@ -1672,6 +1672,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_nature_callstorm",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.641,
+        "margin": 0.007,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Elemental Combat",
@@ -1683,18 +1694,7 @@
           "confidence": 0.7,
           "medians": 3
         }
-      ],
-      "icon": "spell_nature_callstorm",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.641,
-        "margin": 0.007,
-        "phash": 12,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "shaman/elemental-combat/r4c0",
@@ -2351,18 +2351,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
       },
-      "requires_arrows": [
-        {
-          "tree": "Elemental Combat",
-          "row": 4,
-          "col": 1,
-          "name": "Lightning Overload",
-          "rank": 3,
-          "shape": "straight",
-          "confidence": 0.929,
-          "medians": 3
-        }
-      ],
       "icon": "spell_shaman_lavaburst",
       "icon_source": "classic",
       "icon_match": {
@@ -2391,7 +2379,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Elemental Combat",
+          "row": 4,
+          "col": 1,
+          "name": "Lightning Overload",
+          "rank": 3,
+          "shape": "straight",
+          "confidence": 0.929,
+          "medians": 3
+        }
+      ]
     },
     {
       "id": "shaman/enhancement/r0c0",
@@ -4146,6 +4146,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "ability_ghoulfrenzy",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.925,
+        "margin": 0.323,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Enhancement",
@@ -4157,18 +4168,7 @@
           "confidence": 1.0,
           "medians": 3
         }
-      ],
-      "icon": "ability_ghoulfrenzy",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.925,
-        "margin": 0.323,
-        "phash": 6,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "shaman/enhancement/r3c2",
@@ -4718,6 +4718,17 @@
         "review": true,
         "rule": "none"
       },
+      "icon": "spell_shaman_improvedstormstrike",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.885,
+        "margin": 0.168,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Enhancement",
@@ -4729,18 +4740,7 @@
           "confidence": 1.0,
           "medians": 3
         }
-      ],
-      "icon": "spell_shaman_improvedstormstrike",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.885,
-        "margin": 0.168,
-        "phash": 8,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "shaman/enhancement/r5c2",
@@ -5019,6 +5019,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_nature_bloodlust",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.896,
+        "margin": 0.126,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Enhancement",
@@ -5030,18 +5041,7 @@
           "confidence": 1.0,
           "medians": 3
         }
-      ],
-      "icon": "spell_nature_bloodlust",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.896,
-        "margin": 0.126,
-        "phash": 6,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "shaman/restoration/r0c1",
@@ -7452,7 +7452,7 @@
     "duplicate_names": []
   },
   "arrows": {
-    "generated_at": "2026-09-13T11:17:12Z",
+    "generated_at": "2026-09-13T16:23:48Z",
     "source": "work/arrows/shaman.json",
     "calibrations": [
       "19-shaman-19830",

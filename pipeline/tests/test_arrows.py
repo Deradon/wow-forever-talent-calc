@@ -146,3 +146,55 @@ def test_consensus_rects_majority_and_median():
     ]
     rects = A.consensus_rects(calibs)
     assert rects == {(1, 1, 1): (501, 236, 36, 36)}       # r2c1 seen once of three: out
+
+
+def bright_diagonal_scene() -> tuple[np.ndarray, dict[A.Key, A.Rect]]:
+    """Two neighbouring cells with a *bright* art highlight crossing the gap diagonally.
+
+    This is the shape that made paladin Retribution r5c1-c2 look like a horizontal arrow:
+    `ridge_masks` reports a line (it accepts bright ridges too, because a satisfied arrow
+    is gold) and the highlight's sharp edge scores above `HEAD_MIN_ROW`. Only
+    `stroke_cover` tells it apart - the gap holds no dark stroke.
+    """
+    cells = {k: cell(*k) for k in [(1, 1, 1), (1, 1, 2)]}
+    img = background()
+    draw_cells(img, cells)
+    x0 = cells[(1, 1, 1)][0] + ICON
+    y = cells[(1, 1, 1)][1] + ICON // 2
+    cv2.line(img, (x0 - 30, y + 24), (x0 + 48, y - 24), 180, 7)
+    cv2.line(img, (x0 - 30, y + 24), (x0 + 48, y - 24), 230, 2)
+    return cv2.GaussianBlur(img, (0, 0), 0.9), cells
+
+
+def test_stroke_cover_separates_an_arrow_from_a_bright_art_line():
+    img, cells = scene()
+    leg = A.templates(cells, (1, 5, 2), (1, 5, 3), margin=0)[0][1][0]
+    assert A.stroke_cover(img, leg) >= A.STROKE_MIN
+
+    art, art_cells = bright_diagonal_scene()
+    art_leg = A.templates(art_cells, (1, 1, 1), (1, 1, 2), margin=0)[0][1][0]
+    assert A.stroke_cover(art, art_leg) < A.STROKE_MIN
+    # a vertical leg is not judged by this test at all
+    vleg = A.templates(cells, (1, 5, 2), (1, 7, 2), margin=0)[0][1][0]
+    assert A.stroke_cover(img, vleg) == 1.0
+
+
+def test_bright_art_line_is_not_a_same_row_arrow(tmp_path):
+    art, art_cells = bright_diagonal_scene()
+    p = tmp_path / "art.png"
+    cv2.imwrite(str(p), cv2.cvtColor(art, cv2.COLOR_GRAY2BGR))
+    arrows = A.detect_class([{"segment_id": "s1", "_median_path": p}], art_cells)
+    assert [a for a in arrows if a["shape"] == "row"] == []
+
+
+def test_same_row_arrow_head_floor_is_lower_than_the_vertical_one(tmp_path):
+    # A horizontal head is a smaller shape; the gate must be HEAD_MIN_ROW, not HEAD_MIN.
+    assert A.HEAD_MIN_ROW < A.HEAD_MIN
+    img, cells = scene()
+    p = tmp_path / "a.png"
+    cv2.imwrite(str(p), cv2.cvtColor(img, cv2.COLOR_GRAY2BGR))
+    arrows = A.detect_class([{"segment_id": "s1", "_median_path": p}], cells)
+    row = [a for a in arrows if a["shape"] == "row"]
+    assert len(row) == 1
+    assert tuple(row[0]["from"]) == (1, 5, 3) and tuple(row[0]["to"]) == (1, 5, 2)
+    assert row[0]["stroke"] >= A.STROKE_MIN

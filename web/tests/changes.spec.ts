@@ -97,7 +97,9 @@ test('new talents carry a marker and say so in the tooltip', async ({ page }) =>
   await expect(moved).toHaveAttribute('data-change', 'moved')
   await expect(page.getByTestId('new-flag-toughness')).toHaveCount(0)
   await moved.hover()
-  await expect(page.getByTestId('changed-toughness')).toHaveText('Moved from row 2.')
+  // Both ends of the row move: "Moved from row 2." alone read as "this changed" to a
+  // player looking straight at the row it is in (docs/handover/2026-09-13-cell-attribution-audit.md).
+  await expect(page.getByTestId('changed-toughness')).toHaveText('Moved from row 2 to row 1.')
 
   // And an unchanged talent says nothing at all.
   const same = page.getByTestId('talent-divine-strength')

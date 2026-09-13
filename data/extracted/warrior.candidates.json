@@ -1044,6 +1044,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_holy_blessingofstamina",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.881,
+        "margin": 0.16,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Arms",
@@ -1055,18 +1066,7 @@
           "confidence": 0.917,
           "medians": 2
         }
-      ],
-      "icon": "spell_holy_blessingofstamina",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.881,
-        "margin": 0.16,
-        "phash": 12,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warrior/arms/r2c2",
@@ -1207,6 +1207,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "ability_backstab",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.844,
+        "margin": 0.162,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Arms",
@@ -1218,18 +1229,7 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ],
-      "icon": "ability_backstab",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.844,
-        "margin": 0.162,
-        "phash": 10,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warrior/arms/r3c0",
@@ -2563,6 +2563,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "ability_warrior_savageblow",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.944,
+        "margin": 0.194,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Arms",
@@ -2574,18 +2585,7 @@
           "confidence": 0.985,
           "medians": 2
         }
-      ],
-      "icon": "ability_warrior_savageblow",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.944,
-        "margin": 0.194,
-        "phash": 8,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warrior/fury/r0c1",
@@ -5149,6 +5149,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "ability_ghoulfrenzy",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.816,
+        "margin": 0.207,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Fury",
@@ -5160,18 +5171,7 @@
           "confidence": 0.879,
           "medians": 2
         }
-      ],
-      "icon": "ability_ghoulfrenzy",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.816,
-        "margin": 0.207,
-        "phash": 14,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warrior/fury/r6c1",
@@ -5309,6 +5309,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_nature_bloodlust",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.832,
+        "margin": 0.097,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Fury",
@@ -5320,18 +5331,7 @@
           "confidence": 0.962,
           "medians": 2
         }
-      ],
-      "icon": "spell_nature_bloodlust",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.832,
-        "margin": 0.097,
-        "phash": 12,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warrior/protection/r0c1",
@@ -6404,6 +6404,17 @@
         "review": true,
         "rule": "proportional"
       },
+      "icon": "ability_warrior_shieldguard",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.926,
+        "margin": 0.176,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Protection",
@@ -6415,18 +6426,7 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ],
-      "icon": "ability_warrior_shieldguard",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.926,
-        "margin": 0.176,
-        "phash": 8,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "warrior/protection/r2c2",
@@ -8184,18 +8184,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
       },
-      "requires_arrows": [
-        {
-          "tree": "Protection",
-          "row": 4,
-          "col": 1,
-          "name": "Concussion Blow",
-          "rank": 1,
-          "shape": "straight",
-          "confidence": 1.0,
-          "medians": 2
-        }
-      ],
       "icon": "inv_shield_05",
       "icon_source": "classic",
       "icon_match": {
@@ -8225,7 +8213,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Protection",
+          "row": 4,
+          "col": 1,
+          "name": "Concussion Blow",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     }
   ],
   "recovery": {
@@ -8244,7 +8244,7 @@
     "duplicate_names": []
   },
   "arrows": {
-    "generated_at": "2026-09-13T11:17:13Z",
+    "generated_at": "2026-09-13T16:23:48Z",
     "source": "work/arrows/warrior.json",
     "calibrations": [
       "13-warrior-17850",

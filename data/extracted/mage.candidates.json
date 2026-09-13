@@ -2053,6 +2053,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "spell_shadow_siphonmana",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.862,
+        "margin": 0.21,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Arcane",
@@ -2064,18 +2075,7 @@
           "confidence": 0.985,
           "medians": 5
         }
-      ],
-      "icon": "spell_shadow_siphonmana",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.862,
-        "margin": 0.21,
-        "phash": 6,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "mage/arcane/r3c3",
@@ -2766,6 +2766,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_nature_lightning",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.959,
+        "margin": 0.323,
+        "phash": 2,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Arcane",
@@ -2777,18 +2788,7 @@
           "confidence": 0.776,
           "medians": 5
         }
-      ],
-      "icon": "spell_nature_lightning",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.959,
-        "margin": 0.323,
-        "phash": 2,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "mage/fire/r0c0",
@@ -5056,6 +5056,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_fire_sealoffire",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.734,
+        "margin": 0.071,
+        "phash": 22,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Fire",
@@ -5067,18 +5078,7 @@
           "confidence": 0.7,
           "medians": 5
         }
-      ],
-      "icon": "spell_fire_sealoffire",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.734,
-        "margin": 0.071,
-        "phash": 22,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "mage/frost/r0c0",
@@ -7618,18 +7618,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 0.7
       },
-      "requires_arrows": [
-        {
-          "tree": "Frost",
-          "row": 2,
-          "col": 2,
-          "name": "Ice Lance",
-          "rank": 1,
-          "shape": "straight",
-          "confidence": 1.0,
-          "medians": 5
-        }
-      ],
       "icon": "ability_mage_wintersgrasp",
       "icon_source": "classic",
       "icon_match": {
@@ -7664,7 +7652,19 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Frost",
+          "row": 2,
+          "col": 2,
+          "name": "Ice Lance",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 5
+        }
+      ]
     },
     {
       "id": "mage/frost/r5c2",
@@ -7977,6 +7977,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_ice_lament",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.947,
+        "margin": 0.108,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Frost",
@@ -7988,18 +7999,7 @@
           "confidence": 0.7,
           "medians": 5
         }
-      ],
-      "icon": "spell_ice_lament",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.947,
-        "margin": 0.108,
-        "phash": 14,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "mage/fire/r3c2",
@@ -8206,7 +8206,7 @@
     }
   ],
   "arrows": {
-    "generated_at": "2026-09-13T11:17:10Z",
+    "generated_at": "2026-09-13T16:23:48Z",
     "source": "work/arrows/mage.json",
     "calibrations": [
       "06-mage-14760",

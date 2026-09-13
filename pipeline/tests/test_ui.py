@@ -45,6 +45,35 @@ def test_cell_for_tooltip_clamped_box_falls_back_to_column():
     assert none is None and method == "none"
 
 
+def test_corner_rule_cannot_reach_a_neighbouring_cell():
+    """The audit's geometric argument, pinned.
+
+    The owner suspected that a "moved" verdict for priest Blackout came from the
+    attribution landing on the cell next door. It cannot: at the real grid pitch the
+    top-right corners of two neighbouring cells are 52-56 px apart, `max_dist` is 40, and
+    the accepted hovers of all 28 segments matched within 6.7 px at the 99th percentile.
+    See docs/handover/2026-09-13-cell-attribution-audit.md.
+    """
+    cells = _cells()
+    gaps = []
+    for tree, xs in ui.PRIOR_COLS.items():
+        gaps += [b - a for a, b in zip(xs, xs[1:])]
+    gaps += [b - a for a, b in zip(ui.PRIOR_ROWS, ui.PRIOR_ROWS[1:])]
+    assert min(gaps) > ui.nearest_cell.__defaults__[0]          # every neighbour is past max_dist
+
+    target = next(c for c in cells if (c.tree, c.row, c.col) == (2, 3, 2))
+    x, y = target.top_right
+    for dx, dy in [(0, 0), (5, 0), (0, 5), (-5, 0), (0, -5), (4, 4)]:
+        cell, dist, method = ui.cell_for_tooltip(cells, (x + dx, y + dy - 120, 220, 120))
+        assert method == "corner" and (cell.tree, cell.row, cell.col) == (2, 3, 2)
+        assert dist <= 8                                         # CORNER_STRICT in stage 4
+    # only a gross offset reaches the neighbour, and then the distance is far past
+    # CORNER_STRICT, which is exactly where stage 4 asks the cursor before it believes it
+    east = next(c for c in cells if (c.tree, c.row, c.col) == (2, 3, 3))
+    cell, dist, _ = ui.cell_for_tooltip(cells, (east.top_right[0], east.top_right[1] - 120, 220, 120))
+    assert (cell.tree, cell.row, cell.col) == (2, 3, 3) and dist < 1
+
+
 def test_nearest_cell_prefers_x_alignment_on_ties():
     cells = [ui.Cell(1, 1, 1, 100, 100, 36, 36), ui.Cell(1, 1, 2, 110, 110, 36, 36)]
     # point equidistant (10 px) from both top-right corners: (136,100) and (146,110)

@@ -1953,18 +1953,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
       },
-      "requires_arrows": [
-        {
-          "tree": "Beast Mastery",
-          "row": 2,
-          "col": 1,
-          "name": "Bestial Swiftness",
-          "rank": 1,
-          "shape": "straight",
-          "confidence": 1.0,
-          "medians": 2
-        }
-      ],
       "icon": "ability_devour",
       "icon_source": "classic",
       "icon_match": {
@@ -1992,7 +1980,19 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Beast Mastery",
+          "row": 2,
+          "col": 1,
+          "name": "Bestial Swiftness",
+          "rank": 1,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     },
     {
       "id": "hunter/beast-mastery/r4c3",
@@ -2284,6 +2284,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "inv_misc_monsterclaw_03",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.873,
+        "margin": 0.326,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Beast Mastery",
@@ -2295,18 +2306,7 @@
           "confidence": 0.894,
           "medians": 2
         }
-      ],
-      "icon": "inv_misc_monsterclaw_03",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.873,
-        "margin": 0.326,
-        "phash": 8,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "hunter/beast-mastery/r6c1",
@@ -2435,6 +2435,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "ability_druid_ferociousbite",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.798,
+        "margin": 0.311,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Beast Mastery",
@@ -2446,18 +2457,7 @@
           "confidence": 0.962,
           "medians": 2
         }
-      ],
-      "icon": "ability_druid_ferociousbite",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.798,
-        "margin": 0.311,
-        "phash": 10,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "hunter/marksmanship/r0c0",
@@ -4099,6 +4099,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "ability_piercedamage",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.962,
+        "margin": 0.135,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Marksmanship",
@@ -4110,18 +4121,7 @@
           "confidence": 0.992,
           "medians": 2
         }
-      ],
-      "icon": "ability_piercedamage",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.962,
-        "margin": 0.135,
-        "phash": 4,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "hunter/marksmanship/r4c0",
@@ -4242,6 +4242,17 @@
         "review": true,
         "rule": "none"
       },
+      "icon": "ability_hunter_rapidregeneration",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.908,
+        "margin": 0.366,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Marksmanship",
@@ -4253,18 +4264,7 @@
           "confidence": 0.7,
           "medians": 2
         }
-      ],
-      "icon": "ability_hunter_rapidregeneration",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.908,
-        "margin": 0.366,
-        "phash": 10,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "hunter/marksmanship/r4c2",
@@ -7326,18 +7326,6 @@
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
       },
-      "requires_arrows": [
-        {
-          "tree": "Survival",
-          "row": 4,
-          "col": 1,
-          "name": "Expose Prey",
-          "rank": 2,
-          "shape": "straight",
-          "confidence": 1.0,
-          "medians": 2
-        }
-      ],
       "ranks_anticipated": {
         "description": "Your Mongoose Bite also causes the target to bleed for damage over {0} sec equal to {1}% of the damage done by Mongoose Bite.",
         "ranks": [
@@ -7354,11 +7342,23 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
-      }
+      },
+      "requires_arrows": [
+        {
+          "tree": "Survival",
+          "row": 4,
+          "col": 1,
+          "name": "Expose Prey",
+          "rank": 2,
+          "shape": "straight",
+          "confidence": 1.0,
+          "medians": 2
+        }
+      ]
     }
   ],
   "arrows": {
-    "generated_at": "2026-09-13T11:17:10Z",
+    "generated_at": "2026-09-13T16:23:48Z",
     "source": "work/arrows/hunter.json",
     "calibrations": [
       "23-hunter-21030",

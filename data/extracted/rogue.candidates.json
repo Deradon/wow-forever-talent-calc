@@ -1387,6 +1387,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "ability_criticalstrike",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.805,
+        "margin": 0.133,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Assassination",
@@ -1398,18 +1409,7 @@
           "confidence": 0.7,
           "medians": 2
         }
-      ],
-      "icon": "ability_criticalstrike",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.805,
-        "margin": 0.133,
-        "phash": 10,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "rogue/assassination/r3c0",
@@ -2583,6 +2583,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "inv_sword_31",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.934,
+        "margin": 0.107,
+        "phash": 16,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "classic-era-client",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Assassination",
@@ -2594,18 +2605,7 @@
           "confidence": 0.924,
           "medians": 2
         }
-      ],
-      "icon": "inv_sword_31",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.934,
-        "margin": 0.107,
-        "phash": 16,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "classic-era-client",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "rogue/combat/r0c0",
@@ -3810,6 +3810,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "ability_warrior_challange",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.889,
+        "margin": 0.276,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Combat",
@@ -3821,18 +3832,7 @@
           "confidence": 0.909,
           "medians": 2
         }
-      ],
-      "icon": "ability_warrior_challange",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.889,
-        "margin": 0.276,
-        "phash": 10,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "rogue/combat/r2c3",
@@ -4416,6 +4416,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "ability_dualwield",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.925,
+        "margin": 0.075,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Combat",
@@ -4427,18 +4438,7 @@
           "confidence": 0.773,
           "medians": 2
         }
-      ],
-      "icon": "ability_dualwield",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.925,
-        "margin": 0.075,
-        "phash": 14,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "rogue/combat/r4c1",
@@ -4874,6 +4874,17 @@
           "similarity": 1.0
         }
       },
+      "icon": "spell_holy_blessingofstrength",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.768,
+        "margin": 0.347,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Combat",
@@ -4885,18 +4896,7 @@
           "confidence": 0.666,
           "medians": 2
         }
-      ],
-      "icon": "spell_holy_blessingofstrength",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.768,
-        "margin": 0.347,
-        "phash": 10,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "rogue/combat/r5c2",
@@ -7487,6 +7487,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "spell_shadow_lifedrain",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.929,
+        "margin": 0.205,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Subtlety",
@@ -7498,18 +7509,7 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ],
-      "icon": "spell_shadow_lifedrain",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.929,
-        "margin": 0.205,
-        "phash": 8,
-        "method": "classic-prior",
-        "confidence": "high",
-        "tier": "prior",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "rogue/subtlety/r5c0",
@@ -7642,6 +7642,17 @@
         "review": true,
         "rule": "proportional"
       },
+      "icon": "ability_rogue_garrote",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.855,
+        "margin": 0.261,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Subtlety",
@@ -7653,18 +7664,7 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ],
-      "icon": "ability_rogue_garrote",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.855,
-        "margin": 0.261,
-        "phash": 8,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     },
     {
       "id": "rogue/subtlety/r5c2",
@@ -7927,6 +7927,17 @@
         "review": false,
         "rule": "none"
       },
+      "icon": "ability_rogue_rupture",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.896,
+        "margin": 0.136,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      },
       "requires_arrows": [
         {
           "tree": "Subtlety",
@@ -7938,18 +7949,7 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ],
-      "icon": "ability_rogue_rupture",
-      "icon_source": "classic",
-      "icon_match": {
-        "score": 0.896,
-        "margin": 0.136,
-        "phash": 8,
-        "method": "visual",
-        "confidence": "high",
-        "tier": "later-talents",
-        "verified": false
-      }
+      ]
     }
   ],
   "recovery": {
@@ -7984,7 +7984,7 @@
     "duplicate_names": []
   },
   "arrows": {
-    "generated_at": "2026-09-13T11:17:12Z",
+    "generated_at": "2026-09-13T16:23:48Z",
     "source": "work/arrows/rogue.json",
     "calibrations": [
       "14-rogue-18260",
