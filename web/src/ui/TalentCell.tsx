@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from 'react'
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type MouseEvent } from 'react'
 import {
   autoUpdate,
   flip,
@@ -19,6 +19,8 @@ import type { ClassData, Talent, Tree } from '../data/schema'
 import type { Verdict } from '../rules'
 import { iconCropUrl } from '../data/iconCrop'
 import { cellState } from './cellState'
+import './cells.css'
+import { changeOf } from './classicDiff'
 import { needsReview } from './review'
 import {
   APPROACH_TICKS,
@@ -42,6 +44,12 @@ interface Props {
   removeVerdict: Verdict
   onAdd: () => void
   onRemove: () => void
+  /** Shift-click / Shift-Enter: add points until `canAdd` refuses. */
+  onMax: () => void
+  /** Ctrl- or Alt-click, Shift-Backspace: refund until `canRemove` refuses. */
+  onClear: () => void
+  /** "Highlight what's new" is on, so unchanged talents dim (brief idea 3). */
+  highlight: boolean
   /** Points still unspent; 0 puts the cell in the dimmed "nothing left" state. */
   pointsLeft: number
   maxPoints: number
@@ -61,6 +69,9 @@ interface Props {
 
 /**
  * One talent. Mouse: click adds, right click refunds, hover shows the tooltip.
+ * Shift-click adds until the rules refuse (a 5/5 talent in one click) and
+ * Ctrl- or Alt-click refunds the whole talent; both walk the same `canAdd` /
+ * `canRemove` verdicts one point at a time, never a special case (brief idea 4).
  * Keyboard: Enter/Space add, Backspace/Delete/- refund, arrows move within the
  * tree (the handlers go through getReferenceProps so floating-ui's own
  * onKeyDown cannot swallow them - a11y review A-1), `d` opens the derivation.
@@ -84,6 +95,9 @@ export function TalentCell({
   removeVerdict,
   onAdd,
   onRemove,
+  onMax,
+  onClear,
+  highlight,
   pointsLeft,
   maxPoints,
   coarse,
@@ -219,6 +233,8 @@ export function TalentCell({
   const state = cellState(rank, talent.maxRank, addVerdict)
   const outOfPoints = !addVerdict.ok && addVerdict.reason === 'no-points'
   const flagged = needsReview(talent)
+  const change = changeOf(cls.class, talent.id)
+  const isNew = change?.status === 'new'
   // Unmatched icons render their frame crop; matched ones the fetched icon file.
   const iconUrl =
     talent.iconSource === 'crop' ? iconCropUrl(talent.iconCrop) : `${import.meta.env.BASE_URL}icons/${talent.icon}.jpg`
@@ -233,7 +249,8 @@ export function TalentCell({
   function keyDown(e: KeyboardEvent<HTMLButtonElement>) {
     if (e.key === 'Backspace' || e.key === 'Delete' || e.key === '-') {
       e.preventDefault()
-      onRemove()
+      if (e.shiftKey) onClear()
+      else onRemove()
       return
     }
     if (e.key === 'd' || e.key === 'D') return // handled on the document, once
@@ -259,13 +276,22 @@ export function TalentCell({
         data-removable={removeVerdict.ok}
         data-icon={iconKind}
         data-match={match === undefined ? undefined : String(match)}
+        data-change={change?.status}
+        data-highlight={highlight ? 'true' : undefined}
         tabIndex={tabIndex}
-        aria-label={cellLabel(talent, rank, state, addVerdict, flagged)}
+        aria-label={cellLabel(talent, rank, state, addVerdict, flagged, isNew)}
         aria-describedby={open ? tooltipId : undefined}
         aria-disabled={state === 'locked' || outOfPoints ? true : undefined}
         onFocus={onGridFocus}
         {...getReferenceProps({
-          onClick: coarse ? undefined : onAdd,
+          onClick: coarse
+            ? undefined
+            : (e: MouseEvent<HTMLButtonElement>) => {
+                // metaKey is left alone: cmd-click is the browser's own gesture.
+                if (e.shiftKey) onMax()
+                else if (e.ctrlKey || e.altKey) onClear()
+                else onAdd()
+              },
           onContextMenu: (e) => {
             e.preventDefault()
             onRemove()
@@ -294,6 +320,13 @@ export function TalentCell({
         {flagged && (
           <span className="review-flag" aria-hidden="true">
             ?
+          </span>
+        )}
+        {/* Three markers, three slots that cannot collide: `?` top-left, the
+            new-in-Forever star top-right, the rank badge bottom-right. */}
+        {isNew && (
+          <span className="new-flag" data-testid={`new-flag-${talent.id}`} aria-hidden="true">
+            &#9733;
           </span>
         )}
         {/* Remounting on every refusal replays the flash; honours prefers-reduced-motion. */}
@@ -380,6 +413,7 @@ function cellLabel(
   state: string,
   addVerdict: Verdict,
   flagged: boolean,
+  isNew: boolean,
 ): string {
   const parts = [`${talent.name}, rank ${rank} of ${talent.maxRank}`]
   if (state === 'maxed') parts.push('maxed')
@@ -389,6 +423,7 @@ function cellLabel(
     } else if (addVerdict.reason === 'no-points') parts.push('no talent points left')
     else if (addVerdict.reason === 'page-full') parts.push(`page full: ${addVerdict.detail ?? 'budget reached'}`)
   }
+  if (isNew) parts.push('new in Forever')
   if (flagged) parts.push('uncertain reading, check it')
   return parts.join(', ')
 }

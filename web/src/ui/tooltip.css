@@ -224,3 +224,12 @@
   color: #e4707a;
   text-decoration: line-through;
 }
+
+/* --- what changed against Classic Era (brief idea 3) ---------------------
+   Exactly one line, in the same blue as the cell's new-in-Forever star, so the
+   marker and the sentence that explains it are recognisably the same claim. */
+.tooltip .changed {
+  margin-top: 4px;
+  color: #8ec6ff;
+  font-size: 12px;
+}

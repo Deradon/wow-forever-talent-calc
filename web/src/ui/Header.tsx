@@ -1,32 +1,29 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import type { ClassData } from '../data/schema'
 import { pointsInTree, requiredLevel, totalPoints, type Build } from '../rules'
+import { ClassSwitcher } from './ClassSwitcher'
 import { matchesTalent } from './interaction'
 
 interface Props {
   cls: ClassData
+  classId: string
   build: Build
-  link: string
   query: string
   onQuery: (q: string) => void
   onJump: (treeId: string, talentId: string) => void
   onReset: () => void
+  /** Set when Reset was just pressed; the button becomes "Build reset - Undo". */
+  resetUndoAt?: number
+  onUndoReset: () => void
 }
 
 const MAX_RESULTS = 8
 
-export function Header({ cls, build, link, query, onQuery, onJump, onReset }: Props) {
+export function Header({ cls, classId, build, query, onQuery, onJump, onReset, resetUndoAt, onUndoReset }: Props) {
   const total = totalPoints(build)
   const left = cls.rules.maxPoints - total
   const level = requiredLevel(total, cls.rules)
-  const [copied, setCopied] = useState<'idle' | 'copied' | 'failed'>('idle')
   const search = useRef<HTMLInputElement>(null)
-
-  useEffect(() => {
-    if (copied === 'idle') return
-    const t = window.setTimeout(() => setCopied('idle'), 2000)
-    return () => window.clearTimeout(t)
-  }, [copied])
 
   // `/` focuses the search box, as on Wowhead (usability 1).
   useEffect(() => {
@@ -49,18 +46,10 @@ export function Header({ cls, build, link, query, onQuery, onJump, onReset }: Pr
     )
   }, [cls, query])
 
-  async function copy() {
-    try {
-      await navigator.clipboard.writeText(link)
-      setCopied('copied')
-    } catch {
-      setCopied('failed')
-    }
-  }
-
   return (
     <header className="panel mb-3 flex flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3">
       <h1 className="serif text-xl text-[var(--gold)]">{cls.className}</h1>
+      <ClassSwitcher current={classId} />
       <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm">
         <span>
           Points left:{' '}
@@ -87,16 +76,19 @@ export function Header({ cls, build, link, query, onQuery, onJump, onReset }: Pr
         </span>
       </div>
       <div className="ml-auto flex items-center gap-2">
-        <button className="btn" onClick={onReset} data-testid="reset-all" disabled={total === 0}>
-          Reset
-        </button>
-        <button className="btn" onClick={copy} data-testid="copy-link" data-link={link}>
-          {copied === 'copied' ? 'Copied!' : copied === 'failed' ? 'Copy failed' : 'Copy link'}
-        </button>
+        {/* A Reset used to destroy a 51-point build silently (usability 10). It
+            is an ordinary commit now, so Ctrl+Z takes it back - and for the
+            eight seconds after the click, so does the button itself. */}
+        {resetUndoAt !== undefined ? (
+          <button className="btn reset-undo" onClick={onUndoReset} data-testid="reset-undo">
+            Build reset - Undo
+          </button>
+        ) : (
+          <button className="btn" onClick={onReset} data-testid="reset-all" disabled={total === 0}>
+            Reset
+          </button>
+        )}
       </div>
-      {copied === 'failed' && (
-        <input className="w-full bg-black/40 px-2 py-1 text-xs" readOnly value={link} onFocus={(e) => e.currentTarget.select()} />
-      )}
 
       <div className="flex w-full flex-wrap items-start gap-x-4 gap-y-2">
         <div className="flex items-center gap-2">

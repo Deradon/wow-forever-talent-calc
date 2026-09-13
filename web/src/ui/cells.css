@@ -1,0 +1,59 @@
+/*
+ * Cell markers and the "what's new" view. Separate from talents.css because
+ * this is the second badge slot on a cell and the rules it has to keep are
+ * worth stating in one place:
+ *
+ *   top-left      the review `?` (uncertain reading)
+ *   top-right     the new-in-Forever star
+ *   bottom-right  the rank badge (22x22, covering the game's own counter)
+ *
+ * Three fixed slots, so no two markers can ever land on the same corner. The
+ * star is 14px and the badge 22px on a 44px cell, which leaves 8px of vertical
+ * clearance between them on the right-hand edge.
+ */
+
+.cell .new-flag {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  line-height: 13px;
+  text-align: center;
+  font-size: 10px;
+  color: #041024;
+  background: #4ea3ff;
+  border: 1px solid #04223f;
+  border-radius: 0 2px 0 3px;
+  pointer-events: none;
+}
+
+/* --- highlight what's new (brief idea 3) ---------------------------------
+   The switch dims what is unchanged rather than hiding it: the tree keeps its
+   shape, the eye just stops at the talents Forever added or moved. Cells with
+   no diff data at all (the example classes) are left alone, and a talent the
+   player has actually put points into is never dimmed - the build stays
+   readable whatever the switch is doing. */
+.cell[data-highlight='true'][data-change='same'][data-rank='0'] {
+  opacity: 0.28;
+}
+.cell[data-highlight='true'][data-change='moved'],
+.cell[data-highlight='true'][data-change='rank-changed'] {
+  box-shadow: 0 0 0 2px rgba(78, 163, 255, 0.55);
+}
+.cell[data-highlight='true'][data-change='new'] {
+  box-shadow: 0 0 0 2px #4ea3ff;
+}
+/* Search wins over the highlight view: it is the more specific question. */
+.cell[data-match='true'] {
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+/* --- locked cells (brief idea 6c) ----------------------------------------
+   grayscale(.75) brightness(.72) instead of near-black: the border already
+   carries "locked", so the icon only has to step back, not disappear. The
+   selector is deliberately more specific than the base rule in talents.css so
+   it wins regardless of the order the two sheets are loaded in. */
+.tree-grid .cell[data-state='locked'] .icon-clip {
+  filter: grayscale(0.75) brightness(0.72);
+}

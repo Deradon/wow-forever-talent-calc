@@ -25,7 +25,9 @@ import type { Verdict } from '../rules'
 import './tooltip.css'
 import { nestedPlacement, placementFallbacks, type TipPlacement } from './tooltipPlacement'
 import { needsReview } from './review'
+import { changeOf } from './classicDiff'
 import {
+  changeLine,
   DETAILS_LABEL,
   detailLines,
   fitTrustLine,
@@ -127,6 +129,9 @@ export function TooltipContent({
     prereqs: prereqs.map((p) => ({ name: p.talent?.name ?? 'an earlier talent', rank: p.rank })),
   })
   const gameReq = gameRequirement(talent.source.note)
+  // Exactly one line, and it is part of the card's line budget rather than an
+  // extra appended to it (brief idea 3).
+  const changed = changeLine(changeOf(cls.class, talent.id), { tree: tree.id, maxRank: talent.maxRank })
 
   const details = detailLines(talent)
   const trust = fitTrustLine(talent, current, details.length > 0)
@@ -171,6 +176,11 @@ export function TooltipContent({
           )}
         </div>
         {talent.capstone && <div className="text-xs text-[var(--gold-dim)]">Capstone</div>}
+        {changed && (
+          <div className="changed" data-testid={`changed-${talent.id}`}>
+            {changed}
+          </div>
+        )}
         {gameReq && <div className="req-game">{gameReq}</div>}
         <div className="desc">{current}</div>
         {hasNext && (

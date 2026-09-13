@@ -12,6 +12,12 @@
  *                       calculator renders (`iconSource: "crop"`), so the
  *                       class route no longer carries the review-only registry
  *                       of every crop in data/review/.
+ *   classic-diff.json   what changed against Classic Era (brief idea 3): per
+ *                       class, the talents that are new, moved or have a
+ *                       different rank count, plus the Classic talents with no
+ *                       counterpart. Unchanged talents are *not* listed - a
+ *                       missing entry in a class that has a diff means "same",
+ *                       which keeps the file to a few kB on the class route.
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -30,6 +36,9 @@ const SOURCES = [
   ['examples', join(repoRoot, 'data/examples')],
   ['fixtures', join(webRoot, 'tests/fixtures')],
 ]
+
+/** The Classic Era prior the diff compares against (data/prior/classic-era). */
+const PRIOR = join(repoRoot, 'data/prior/classic-era/talents.json')
 
 function readClasses() {
   const seen = new Map()
@@ -100,6 +109,147 @@ ${entries}
 `
 }
 
+// --- Classic Era diff (brief docs/briefs/ui-improvements.md, idea 3) --------
+
+/**
+ * Talent names are the only stable join between the Classic prior and the
+ * Forever data (talent ids are per class and were re-slugged). Normalising
+ * drops apostrophes, punctuation and case so "Nature's Grasp" matches
+ * "Natures Grasp" and "Shield Specialization" matches "Shield specialization".
+ */
+export function normalizeName(name) {
+  return String(name ?? '')
+    .toLowerCase()
+    .replace(/[‘’']/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+}
+
+/**
+ * One talent against its Classic counterpart. Precedence is worst news first:
+ * a talent that both moved and changed rank count reports `moved`, because the
+ * cell is what the player is looking at; the prior record carries the rank
+ * count either way, so the UI can still say both if it ever wants to.
+ *
+ * `prior` is undefined when no Classic talent of that name exists in the class.
+ */
+export function classifyTalent(current, prior) {
+  if (!prior) return { status: 'new' }
+  const entry = {
+    status: 'same',
+    prior: {
+      tree: prior.tree,
+      treeName: prior.treeName,
+      row: prior.row,
+      col: prior.col,
+      maxRank: prior.maxRank,
+    },
+  }
+  if (prior.tree !== current.tree || prior.row !== current.row || prior.col !== current.col) {
+    entry.status = 'moved'
+  } else if (prior.maxRank !== current.maxRank) {
+    entry.status = 'rank-changed'
+  }
+  return entry
+}
+
+/** Flattens one prior class entry into `{ id, name, tree, treeName, row, col, maxRank }`. */
+function priorTalents(priorClass) {
+  const out = []
+  for (const tree of priorClass?.trees ?? []) {
+    for (const t of tree.talents ?? []) {
+      out.push({
+        id: t.id,
+        name: t.name,
+        tree: tree.id,
+        treeName: tree.name,
+        row: t.row,
+        col: t.col,
+        maxRank: t.maxRank,
+      })
+    }
+  }
+  return out
+}
+
+/**
+ * Diffs one class. Matching is exclusive and two-pass: same tree first, then
+ * anywhere in the class, so a talent that merely moved between trees is
+ * `moved` rather than `new` plus a phantom removal.
+ */
+export function diffClass(cls, priorClass) {
+  const pool = priorTalents(priorClass)
+  const used = new Set()
+  const byName = new Map()
+  for (const [i, p] of pool.entries()) {
+    const key = normalizeName(p.name)
+    if (!byName.has(key)) byName.set(key, [])
+    byName.get(key).push(i)
+  }
+
+  const current = []
+  for (const tree of cls.trees) {
+    for (const t of tree.talents) {
+      current.push({ id: t.id, name: t.name, tree: tree.id, row: t.row, col: t.col, maxRank: t.maxRank })
+    }
+  }
+  current.sort((a, b) => a.tree.localeCompare(b.tree) || a.row - b.row || a.col - b.col)
+
+  const matched = new Map()
+  const take = (t, sameTreeOnly) => {
+    const candidates = byName.get(normalizeName(t.name)) ?? []
+    for (const i of candidates) {
+      if (used.has(i)) continue
+      if (sameTreeOnly && pool[i].tree !== t.tree) continue
+      used.add(i)
+      matched.set(t.id, pool[i])
+      return true
+    }
+    return false
+  }
+  const rest = current.filter((t) => !take(t, true))
+  for (const t of rest) take(t, false)
+
+  const talents = {}
+  const counts = { new: 0, moved: 0, 'rank-changed': 0, same: 0 }
+  for (const t of current) {
+    const entry = classifyTalent(t, matched.get(t.id))
+    counts[entry.status] += 1
+    // `same` is the default: leaving it out keeps the shipped file small.
+    if (entry.status !== 'same') talents[t.id] = entry
+  }
+
+  const removed = pool
+    .filter((_, i) => !used.has(i))
+    .map((p) => ({ id: p.id, name: p.name, tree: p.tree, treeName: p.treeName, row: p.row, col: p.col, maxRank: p.maxRank }))
+
+  return { counts: { ...counts, removed: removed.length }, talents, removed }
+}
+
+/**
+ * The whole index: only classes that have a Classic counterpart appear, so the
+ * example classes (tinker) simply carry no diff and the UI shows no markers
+ * for them rather than claiming every talent is new.
+ */
+export function buildClassicDiff(classes, prior) {
+  const out = {}
+  for (const { id, data } of classes) {
+    const priorClass = prior?.classes?.[id]
+    if (!priorClass) continue
+    out[id] = diffClass(data, priorClass)
+  }
+  const totals = { new: 0, moved: 0, 'rank-changed': 0, same: 0, removed: 0 }
+  for (const entry of Object.values(out)) {
+    for (const key of Object.keys(totals)) totals[key] += entry.counts[key] ?? 0
+  }
+  return { prior: 'Classic Era (data/prior/classic-era/talents.json)', totals, classes: out }
+}
+
+function readPrior() {
+  if (!existsSync(PRIOR)) return undefined
+  return JSON.parse(readFileSync(PRIOR, 'utf8'))
+}
+
 function writeIfChanged(path, content) {
   if (existsSync(path) && readFileSync(path, 'utf8') === content) return false
   mkdirSync(dirname(path), { recursive: true })
@@ -109,12 +259,11 @@ function writeIfChanged(path, content) {
 
 /** Regenerates both files; returns true when anything changed on disk. */
 export function generate(root = webRoot) {
-  const classes = readClasses()
-  const index = `${JSON.stringify(buildClassesIndex(classes), null, 2)}\n`
-  const crops = renderIconCrops(collectIconCrops(classes))
-  const a = writeIfChanged(join(root, 'src/data/classes-index.json'), index)
-  const b = writeIfChanged(join(root, 'src/data/iconCrops.ts'), crops)
-  return a || b
+  const out = expected()
+  const a = writeIfChanged(join(root, 'src/data/classes-index.json'), out.index)
+  const b = writeIfChanged(join(root, 'src/data/iconCrops.ts'), out.crops)
+  const c = writeIfChanged(join(root, 'src/data/classic-diff.json'), out.classicDiff)
+  return a || b || c
 }
 
 export function expected() {
@@ -122,6 +271,7 @@ export function expected() {
   return {
     index: `${JSON.stringify(buildClassesIndex(classes), null, 2)}\n`,
     crops: renderIconCrops(collectIconCrops(classes)),
+    classicDiff: `${JSON.stringify(buildClassicDiff(classes, readPrior()), null, 2)}\n`,
   }
 }
 

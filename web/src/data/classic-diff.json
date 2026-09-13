@@ -1,0 +1,3036 @@
+{
+  "prior": "Classic Era (data/prior/classic-era/talents.json)",
+  "totals": {
+    "new": 145,
+    "moved": 132,
+    "rank-changed": 18,
+    "same": 174,
+    "removed": 108
+  },
+  "classes": {
+    "druid": {
+      "counts": {
+        "new": 18,
+        "moved": 20,
+        "rank-changed": 1,
+        "same": 13,
+        "removed": 13
+      },
+      "talents": {
+        "improved-wrath": {
+          "status": "moved",
+          "prior": {
+            "tree": "balance",
+            "treeName": "Balance",
+            "row": 0,
+            "col": 0,
+            "maxRank": 5
+          }
+        },
+        "genesis": {
+          "status": "new"
+        },
+        "moonglow": {
+          "status": "moved",
+          "prior": {
+            "tree": "balance",
+            "treeName": "Balance",
+            "row": 4,
+            "col": 2,
+            "maxRank": 3
+          }
+        },
+        "improved-moonfire": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "balance",
+            "treeName": "Balance",
+            "row": 1,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "natures-majesty": {
+          "status": "new"
+        },
+        "natures-reach": {
+          "status": "moved",
+          "prior": {
+            "tree": "balance",
+            "treeName": "Balance",
+            "row": 2,
+            "col": 3,
+            "maxRank": 2
+          }
+        },
+        "improved-entangling-roots": {
+          "status": "moved",
+          "prior": {
+            "tree": "balance",
+            "treeName": "Balance",
+            "row": 1,
+            "col": 0,
+            "maxRank": 3
+          }
+        },
+        "natures-splendor": {
+          "status": "new"
+        },
+        "balance-of-nature": {
+          "status": "new"
+        },
+        "insect-swarm": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 2,
+            "col": 2,
+            "maxRank": 1
+          }
+        },
+        "overgrowth": {
+          "status": "new"
+        },
+        "eclipse": {
+          "status": "new"
+        },
+        "heart-of-the-wild": {
+          "status": "moved",
+          "prior": {
+            "tree": "feral-combat",
+            "treeName": "Feral Combat",
+            "row": 5,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "feral-swiftness": {
+          "status": "new"
+        },
+        "feral-instinct": {
+          "status": "moved",
+          "prior": {
+            "tree": "feral-combat",
+            "treeName": "Feral Combat",
+            "row": 1,
+            "col": 0,
+            "maxRank": 5
+          }
+        },
+        "brutal-impact": {
+          "status": "moved",
+          "prior": {
+            "tree": "feral-combat",
+            "treeName": "Feral Combat",
+            "row": 1,
+            "col": 1,
+            "maxRank": 2
+          }
+        },
+        "thick-hide": {
+          "status": "moved",
+          "prior": {
+            "tree": "feral-combat",
+            "treeName": "Feral Combat",
+            "row": 1,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "savage-fury": {
+          "status": "moved",
+          "prior": {
+            "tree": "feral-combat",
+            "treeName": "Feral Combat",
+            "row": 4,
+            "col": 0,
+            "maxRank": 2
+          }
+        },
+        "feral-charge": {
+          "status": "moved",
+          "prior": {
+            "tree": "feral-combat",
+            "treeName": "Feral Combat",
+            "row": 2,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "sharpened-claws": {
+          "status": "moved",
+          "prior": {
+            "tree": "feral-combat",
+            "treeName": "Feral Combat",
+            "row": 2,
+            "col": 2,
+            "maxRank": 3
+          }
+        },
+        "shredding-attacks": {
+          "status": "new"
+        },
+        "mangle": {
+          "status": "new"
+        },
+        "predatory-strikes": {
+          "status": "moved",
+          "prior": {
+            "tree": "feral-combat",
+            "treeName": "Feral Combat",
+            "row": 3,
+            "col": 1,
+            "maxRank": 3
+          }
+        },
+        "predatory-instincts": {
+          "status": "new"
+        },
+        "leader-of-the-pack": {
+          "status": "moved",
+          "prior": {
+            "tree": "feral-combat",
+            "treeName": "Feral Combat",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "king-of-the-jungle": {
+          "status": "new"
+        },
+        "natural-reaction": {
+          "status": "new"
+        },
+        "rend-and-tear": {
+          "status": "new"
+        },
+        "berserk": {
+          "status": "new"
+        },
+        "natures-focus": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 1,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "naturalist": {
+          "status": "new"
+        },
+        "subtlety": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 2,
+            "col": 3,
+            "maxRank": 5
+          }
+        },
+        "natural-shapeshifter": {
+          "status": "moved",
+          "prior": {
+            "tree": "balance",
+            "treeName": "Balance",
+            "row": 1,
+            "col": 3,
+            "maxRank": 3
+          }
+        },
+        "gift-of-nature": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 4,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "gift-of-the-earthmother": {
+          "status": "new"
+        },
+        "improved-rejuvenation": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 3,
+            "col": 3,
+            "maxRank": 3
+          }
+        },
+        "swiftmend": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "living-spirit": {
+          "status": "new"
+        },
+        "wild-growth": {
+          "status": "new"
+        }
+      },
+      "removed": [
+        {
+          "id": "natures-grasp",
+          "name": "Nature's Grasp",
+          "tree": "balance",
+          "treeName": "Balance",
+          "row": 0,
+          "col": 1,
+          "maxRank": 1
+        },
+        {
+          "id": "improved-natures-grasp",
+          "name": "Improved Nature's Grasp",
+          "tree": "balance",
+          "treeName": "Balance",
+          "row": 0,
+          "col": 2,
+          "maxRank": 4
+        },
+        {
+          "id": "natural-weapons",
+          "name": "Natural Weapons",
+          "tree": "balance",
+          "treeName": "Balance",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-thorns",
+          "name": "Improved Thorns",
+          "tree": "balance",
+          "treeName": "Balance",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3
+        },
+        {
+          "id": "omen-of-clarity",
+          "name": "Omen of Clarity",
+          "tree": "balance",
+          "treeName": "Balance",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1
+        },
+        {
+          "id": "feral-aggression",
+          "name": "Feral Aggression",
+          "tree": "feral-combat",
+          "treeName": "Feral Combat",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "feline-swiftness",
+          "name": "Feline Swiftness",
+          "tree": "feral-combat",
+          "treeName": "Feral Combat",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-shred",
+          "name": "Improved Shred",
+          "tree": "feral-combat",
+          "treeName": "Feral Combat",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "blood-frenzy",
+          "name": "Blood Frenzy",
+          "tree": "feral-combat",
+          "treeName": "Feral Combat",
+          "row": 3,
+          "col": 2,
+          "maxRank": 2
+        },
+        {
+          "id": "faerie-fire-feral",
+          "name": "Faerie Fire (Feral)",
+          "tree": "feral-combat",
+          "treeName": "Feral Combat",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1
+        },
+        {
+          "id": "improved-mark-of-the-wild",
+          "name": "Improved Mark of the Wild",
+          "tree": "restoration",
+          "treeName": "Restoration",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-healing-touch",
+          "name": "Improved Healing Touch",
+          "tree": "restoration",
+          "treeName": "Restoration",
+          "row": 1,
+          "col": 0,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-enrage",
+          "name": "Improved Enrage",
+          "tree": "restoration",
+          "treeName": "Restoration",
+          "row": 1,
+          "col": 2,
+          "maxRank": 2
+        }
+      ]
+    },
+    "hunter": {
+      "counts": {
+        "new": 18,
+        "moved": 11,
+        "rank-changed": 1,
+        "same": 20,
+        "removed": 14
+      },
+      "talents": {
+        "deadly-aspects": {
+          "status": "new"
+        },
+        "focused-fire": {
+          "status": "new"
+        },
+        "improved-aspect-of-the-monkey": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "beast-mastery",
+            "treeName": "Beast Mastery",
+            "row": 1,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "pathfinding": {
+          "status": "moved",
+          "prior": {
+            "tree": "beast-mastery",
+            "treeName": "Beast Mastery",
+            "row": 2,
+            "col": 0,
+            "maxRank": 2
+          }
+        },
+        "improved-mend-pet": {
+          "status": "moved",
+          "prior": {
+            "tree": "beast-mastery",
+            "treeName": "Beast Mastery",
+            "row": 3,
+            "col": 1,
+            "maxRank": 2
+          }
+        },
+        "summon-hawk": {
+          "status": "new"
+        },
+        "hawk-eye": {
+          "status": "moved",
+          "prior": {
+            "tree": "marksmanship",
+            "treeName": "Marksmanship",
+            "row": 2,
+            "col": 3,
+            "maxRank": 3
+          }
+        },
+        "lethal-attacks": {
+          "status": "new"
+        },
+        "improved-stings": {
+          "status": "new"
+        },
+        "efficiency": {
+          "status": "moved",
+          "prior": {
+            "tree": "marksmanship",
+            "treeName": "Marksmanship",
+            "row": 0,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "careful-aim": {
+          "status": "new"
+        },
+        "rapid-killing": {
+          "status": "new"
+        },
+        "lone-wolf": {
+          "status": "new"
+        },
+        "trueshot-aura": {
+          "status": "moved",
+          "prior": {
+            "tree": "marksmanship",
+            "treeName": "Marksmanship",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "rapid-recuperation": {
+          "status": "new"
+        },
+        "barrage": {
+          "status": "moved",
+          "prior": {
+            "tree": "marksmanship",
+            "treeName": "Marksmanship",
+            "row": 4,
+            "col": 1,
+            "maxRank": 3
+          }
+        },
+        "scatter-shot": {
+          "status": "moved",
+          "prior": {
+            "tree": "marksmanship",
+            "treeName": "Marksmanship",
+            "row": 4,
+            "col": 0,
+            "maxRank": 1
+          }
+        },
+        "sniper-shot": {
+          "status": "new"
+        },
+        "improved-tracking": {
+          "status": "new"
+        },
+        "survivalist": {
+          "status": "moved",
+          "prior": {
+            "tree": "survival",
+            "treeName": "Survival",
+            "row": 2,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "improved-wing-clip": {
+          "status": "moved",
+          "prior": {
+            "tree": "survival",
+            "treeName": "Survival",
+            "row": 1,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "surefooted": {
+          "status": "moved",
+          "prior": {
+            "tree": "survival",
+            "treeName": "Survival",
+            "row": 3,
+            "col": 1,
+            "maxRank": 3
+          }
+        },
+        "survival-tactics": {
+          "status": "new"
+        },
+        "predators-edge": {
+          "status": "new"
+        },
+        "counterattack": {
+          "status": "moved",
+          "prior": {
+            "tree": "survival",
+            "treeName": "Survival",
+            "row": 4,
+            "col": 2,
+            "maxRank": 1
+          }
+        },
+        "resourcefulness": {
+          "status": "new"
+        },
+        "expose-prey": {
+          "status": "new"
+        },
+        "survivalists-discipline": {
+          "status": "new"
+        },
+        "strider-kick": {
+          "status": "new"
+        },
+        "lacerating-strikes": {
+          "status": "new"
+        }
+      },
+      "removed": [
+        {
+          "id": "improved-aspect-of-the-hawk",
+          "name": "Improved Aspect of the Hawk",
+          "tree": "beast-mastery",
+          "treeName": "Beast Mastery",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-eyes-of-the-beast",
+          "name": "Improved Eyes of the Beast",
+          "tree": "beast-mastery",
+          "treeName": "Beast Mastery",
+          "row": 1,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "thick-hide",
+          "name": "Thick Hide",
+          "tree": "beast-mastery",
+          "treeName": "Beast Mastery",
+          "row": 1,
+          "col": 2,
+          "maxRank": 3
+        },
+        {
+          "id": "improved-hunters-mark",
+          "name": "Improved Hunter's Mark",
+          "tree": "marksmanship",
+          "treeName": "Marksmanship",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "lethal-shots",
+          "name": "Lethal Shots",
+          "tree": "marksmanship",
+          "treeName": "Marksmanship",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "aimed-shot",
+          "name": "Aimed Shot",
+          "tree": "marksmanship",
+          "treeName": "Marksmanship",
+          "row": 2,
+          "col": 0,
+          "maxRank": 1
+        },
+        {
+          "id": "improved-serpent-sting",
+          "name": "Improved Serpent Sting",
+          "tree": "marksmanship",
+          "treeName": "Marksmanship",
+          "row": 3,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-scorpid-sting",
+          "name": "Improved Scorpid Sting",
+          "tree": "marksmanship",
+          "treeName": "Marksmanship",
+          "row": 4,
+          "col": 2,
+          "maxRank": 3
+        },
+        {
+          "id": "monster-slaying",
+          "name": "Monster Slaying",
+          "tree": "survival",
+          "treeName": "Survival",
+          "row": 0,
+          "col": 0,
+          "maxRank": 3
+        },
+        {
+          "id": "humanoid-slaying",
+          "name": "Humanoid Slaying",
+          "tree": "survival",
+          "treeName": "Survival",
+          "row": 0,
+          "col": 1,
+          "maxRank": 3
+        },
+        {
+          "id": "trap-mastery",
+          "name": "Trap Mastery",
+          "tree": "survival",
+          "treeName": "Survival",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-feign-death",
+          "name": "Improved Feign Death",
+          "tree": "survival",
+          "treeName": "Survival",
+          "row": 3,
+          "col": 3,
+          "maxRank": 2
+        },
+        {
+          "id": "killer-instinct",
+          "name": "Killer Instinct",
+          "tree": "survival",
+          "treeName": "Survival",
+          "row": 4,
+          "col": 1,
+          "maxRank": 3
+        },
+        {
+          "id": "wyvern-sting",
+          "name": "Wyvern Sting",
+          "tree": "survival",
+          "treeName": "Survival",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1
+        }
+      ]
+    },
+    "mage": {
+      "counts": {
+        "new": 11,
+        "moved": 14,
+        "rank-changed": 2,
+        "same": 26,
+        "removed": 7
+      },
+      "talents": {
+        "wand-specialization": {
+          "status": "moved",
+          "prior": {
+            "tree": "arcane",
+            "treeName": "Arcane",
+            "row": 1,
+            "col": 0,
+            "maxRank": 2
+          }
+        },
+        "improved-channeling": {
+          "status": "new"
+        },
+        "arcane-subtlety": {
+          "status": "moved",
+          "prior": {
+            "tree": "arcane",
+            "treeName": "Arcane",
+            "row": 0,
+            "col": 0,
+            "maxRank": 2
+          }
+        },
+        "magic-absorption": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "arcane",
+            "treeName": "Arcane",
+            "row": 1,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "arcane-resilience": {
+          "status": "moved",
+          "prior": {
+            "tree": "arcane",
+            "treeName": "Arcane",
+            "row": 2,
+            "col": 2,
+            "maxRank": 1
+          }
+        },
+        "arcane-geometry": {
+          "status": "new"
+        },
+        "arcane-impact": {
+          "status": "new"
+        },
+        "arcane-blast": {
+          "status": "new"
+        },
+        "arcane-shielding": {
+          "status": "new"
+        },
+        "arcane-meditation": {
+          "status": "moved",
+          "prior": {
+            "tree": "arcane",
+            "treeName": "Arcane",
+            "row": 3,
+            "col": 3,
+            "maxRank": 3
+          }
+        },
+        "missile-barrage": {
+          "status": "new"
+        },
+        "arcane-instability": {
+          "status": "moved",
+          "prior": {
+            "tree": "arcane",
+            "treeName": "Arcane",
+            "row": 5,
+            "col": 1,
+            "maxRank": 3
+          }
+        },
+        "wake-of-fire": {
+          "status": "new"
+        },
+        "incineration": {
+          "status": "new"
+        },
+        "impact": {
+          "status": "moved",
+          "prior": {
+            "tree": "fire",
+            "treeName": "Fire",
+            "row": 0,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "burning-soul": {
+          "status": "moved",
+          "prior": {
+            "tree": "fire",
+            "treeName": "Fire",
+            "row": 2,
+            "col": 3,
+            "maxRank": 2
+          }
+        },
+        "hot-streak": {
+          "status": "new"
+        },
+        "elemental-precision": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "frost",
+            "treeName": "Frost",
+            "row": 0,
+            "col": 2,
+            "maxRank": 3
+          }
+        },
+        "permafrost": {
+          "status": "moved",
+          "prior": {
+            "tree": "frost",
+            "treeName": "Frost",
+            "row": 1,
+            "col": 3,
+            "maxRank": 3
+          }
+        },
+        "frostbite": {
+          "status": "moved",
+          "prior": {
+            "tree": "frost",
+            "treeName": "Frost",
+            "row": 1,
+            "col": 1,
+            "maxRank": 3
+          }
+        },
+        "frost-channeling": {
+          "status": "moved",
+          "prior": {
+            "tree": "frost",
+            "treeName": "Frost",
+            "row": 3,
+            "col": 1,
+            "maxRank": 3
+          }
+        },
+        "ice-lance": {
+          "status": "new"
+        },
+        "ice-block": {
+          "status": "moved",
+          "prior": {
+            "tree": "frost",
+            "treeName": "Frost",
+            "row": 4,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "shatter": {
+          "status": "moved",
+          "prior": {
+            "tree": "frost",
+            "treeName": "Frost",
+            "row": 3,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "improved-cone-of-cold": {
+          "status": "moved",
+          "prior": {
+            "tree": "frost",
+            "treeName": "Frost",
+            "row": 4,
+            "col": 2,
+            "maxRank": 3
+          }
+        },
+        "cold-snap": {
+          "status": "moved",
+          "prior": {
+            "tree": "frost",
+            "treeName": "Frost",
+            "row": 2,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "fingers-of-frost": {
+          "status": "new"
+        }
+      },
+      "removed": [
+        {
+          "id": "improved-arcane-missiles",
+          "name": "Improved Arcane Missiles",
+          "tree": "arcane",
+          "treeName": "Arcane",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "magic-attunement",
+          "name": "Magic Attunement",
+          "tree": "arcane",
+          "treeName": "Arcane",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-arcane-explosion",
+          "name": "Improved Arcane Explosion",
+          "tree": "arcane",
+          "treeName": "Arcane",
+          "row": 2,
+          "col": 1,
+          "maxRank": 3
+        },
+        {
+          "id": "improved-mana-shield",
+          "name": "Improved Mana Shield",
+          "tree": "arcane",
+          "treeName": "Arcane",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-fireball",
+          "name": "Improved Fireball",
+          "tree": "fire",
+          "treeName": "Fire",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-fire-blast",
+          "name": "Improved Fire Blast",
+          "tree": "fire",
+          "treeName": "Fire",
+          "row": 1,
+          "col": 2,
+          "maxRank": 3
+        },
+        {
+          "id": "incinerate",
+          "name": "Incinerate",
+          "tree": "fire",
+          "treeName": "Fire",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2
+        }
+      ]
+    },
+    "paladin": {
+      "counts": {
+        "new": 21,
+        "moved": 12,
+        "rank-changed": 1,
+        "same": 18,
+        "removed": 13
+      },
+      "talents": {
+        "improved-holy-strike": {
+          "status": "new"
+        },
+        "healing-light": {
+          "status": "moved",
+          "prior": {
+            "tree": "holy",
+            "treeName": "Holy",
+            "row": 2,
+            "col": 0,
+            "maxRank": 3
+          }
+        },
+        "spiritual-focus": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "holy",
+            "treeName": "Holy",
+            "row": 1,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "improved-seals": {
+          "status": "new"
+        },
+        "unyielding-faith": {
+          "status": "moved",
+          "prior": {
+            "tree": "holy",
+            "treeName": "Holy",
+            "row": 2,
+            "col": 3,
+            "maxRank": 2
+          }
+        },
+        "voice-of-truth": {
+          "status": "new"
+        },
+        "reverence": {
+          "status": "new"
+        },
+        "purifying-power": {
+          "status": "new"
+        },
+        "infusion-of-light": {
+          "status": "new"
+        },
+        "divine-favor": {
+          "status": "moved",
+          "prior": {
+            "tree": "holy",
+            "treeName": "Holy",
+            "row": 4,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "divine-precision": {
+          "status": "new"
+        },
+        "holy-shock": {
+          "status": "moved",
+          "prior": {
+            "tree": "holy",
+            "treeName": "Holy",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "consecrated-ground": {
+          "status": "new"
+        },
+        "lights-vigil": {
+          "status": "new"
+        },
+        "toughness": {
+          "status": "moved",
+          "prior": {
+            "tree": "protection",
+            "treeName": "Protection",
+            "row": 1,
+            "col": 3,
+            "maxRank": 5
+          }
+        },
+        "anticipation": {
+          "status": "moved",
+          "prior": {
+            "tree": "protection",
+            "treeName": "Protection",
+            "row": 2,
+            "col": 3,
+            "maxRank": 5
+          }
+        },
+        "improved-seal-of-fury": {
+          "status": "new"
+        },
+        "sacred-duty": {
+          "status": "new"
+        },
+        "swift-judgement": {
+          "status": "new"
+        },
+        "one-handed-weapon-specialization": {
+          "status": "moved",
+          "prior": {
+            "tree": "protection",
+            "treeName": "Protection",
+            "row": 5,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "improved-hammer-of-justice": {
+          "status": "moved",
+          "prior": {
+            "tree": "protection",
+            "treeName": "Protection",
+            "row": 3,
+            "col": 1,
+            "maxRank": 3
+          }
+        },
+        "templars-bulwark": {
+          "status": "new"
+        },
+        "iron-creed": {
+          "status": "new"
+        },
+        "deflection": {
+          "status": "moved",
+          "prior": {
+            "tree": "retribution",
+            "treeName": "Retribution",
+            "row": 1,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "holy-conduit": {
+          "status": "new"
+        },
+        "conviction": {
+          "status": "moved",
+          "prior": {
+            "tree": "retribution",
+            "treeName": "Retribution",
+            "row": 2,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "sanctified-judgement": {
+          "status": "new"
+        },
+        "sacred-arbiter": {
+          "status": "new"
+        },
+        "crusade": {
+          "status": "new"
+        },
+        "vengeance": {
+          "status": "moved",
+          "prior": {
+            "tree": "retribution",
+            "treeName": "Retribution",
+            "row": 5,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "repentance": {
+          "status": "moved",
+          "prior": {
+            "tree": "retribution",
+            "treeName": "Retribution",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "champion-of-the-light": {
+          "status": "new"
+        },
+        "instrument-of-law": {
+          "status": "new"
+        },
+        "twist-of-light": {
+          "status": "new"
+        }
+      },
+      "removed": [
+        {
+          "id": "improved-seal-of-righteousness",
+          "name": "Improved Seal of Righteousness",
+          "tree": "holy",
+          "treeName": "Holy",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "consecration",
+          "name": "Consecration",
+          "tree": "holy",
+          "treeName": "Holy",
+          "row": 2,
+          "col": 1,
+          "maxRank": 1
+        },
+        {
+          "id": "improved-lay-on-hands",
+          "name": "Improved Lay on Hands",
+          "tree": "holy",
+          "treeName": "Holy",
+          "row": 2,
+          "col": 2,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-blessing-of-wisdom",
+          "name": "Improved Blessing of Wisdom",
+          "tree": "holy",
+          "treeName": "Holy",
+          "row": 3,
+          "col": 2,
+          "maxRank": 2
+        },
+        {
+          "id": "lasting-judgement",
+          "name": "Lasting Judgement",
+          "tree": "holy",
+          "treeName": "Holy",
+          "row": 4,
+          "col": 2,
+          "maxRank": 3
+        },
+        {
+          "id": "improved-devotion-aura",
+          "name": "Improved Devotion Aura",
+          "tree": "protection",
+          "treeName": "Protection",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "blessing-of-kings",
+          "name": "Blessing of Kings",
+          "tree": "protection",
+          "treeName": "Protection",
+          "row": 2,
+          "col": 0,
+          "maxRank": 1
+        },
+        {
+          "id": "improved-concentration-aura",
+          "name": "Improved Concentration Aura",
+          "tree": "protection",
+          "treeName": "Protection",
+          "row": 3,
+          "col": 2,
+          "maxRank": 3
+        },
+        {
+          "id": "blessing-of-sanctuary",
+          "name": "Blessing of Sanctuary",
+          "tree": "protection",
+          "treeName": "Protection",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1
+        },
+        {
+          "id": "improved-blessing-of-might",
+          "name": "Improved Blessing of Might",
+          "tree": "retribution",
+          "treeName": "Retribution",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-seal-of-the-crusader",
+          "name": "Improved Seal of the Crusader",
+          "tree": "retribution",
+          "treeName": "Retribution",
+          "row": 1,
+          "col": 1,
+          "maxRank": 3
+        },
+        {
+          "id": "improved-retribution-aura",
+          "name": "Improved Retribution Aura",
+          "tree": "retribution",
+          "treeName": "Retribution",
+          "row": 3,
+          "col": 2,
+          "maxRank": 2
+        },
+        {
+          "id": "sanctity-aura",
+          "name": "Sanctity Aura",
+          "tree": "retribution",
+          "treeName": "Retribution",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1
+        }
+      ]
+    },
+    "priest": {
+      "counts": {
+        "new": 14,
+        "moved": 19,
+        "rank-changed": 2,
+        "same": 18,
+        "removed": 8
+      },
+      "talents": {
+        "power-in-light": {
+          "status": "new"
+        },
+        "wand-specialization": {
+          "status": "moved",
+          "prior": {
+            "tree": "discipline",
+            "treeName": "Discipline",
+            "row": 0,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "twin-disciplines": {
+          "status": "new"
+        },
+        "silent-resolve": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "discipline",
+            "treeName": "Discipline",
+            "row": 1,
+            "col": 0,
+            "maxRank": 5
+          }
+        },
+        "holy-precision": {
+          "status": "new"
+        },
+        "mental-agility": {
+          "status": "moved",
+          "prior": {
+            "tree": "discipline",
+            "treeName": "Discipline",
+            "row": 3,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "meditation": {
+          "status": "moved",
+          "prior": {
+            "tree": "discipline",
+            "treeName": "Discipline",
+            "row": 2,
+            "col": 2,
+            "maxRank": 3
+          }
+        },
+        "mental-strength": {
+          "status": "moved",
+          "prior": {
+            "tree": "discipline",
+            "treeName": "Discipline",
+            "row": 4,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "soul-warding": {
+          "status": "new"
+        },
+        "penance": {
+          "status": "new"
+        },
+        "renewed-hope": {
+          "status": "new"
+        },
+        "divine-aegis": {
+          "status": "new"
+        },
+        "twilight-focus": {
+          "status": "new"
+        },
+        "binding-heal": {
+          "status": "new"
+        },
+        "litany-of-light": {
+          "status": "new"
+        },
+        "spiritual-healing": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "holy",
+            "treeName": "Holy",
+            "row": 5,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "prayer-of-mending": {
+          "status": "new"
+        },
+        "shadow-focus": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 1,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "blackout": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 0,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "spirit-tap": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 0,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "shadow-affinity": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 1,
+            "col": 0,
+            "maxRank": 3
+          }
+        },
+        "improved-shadow-word-pain": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 1,
+            "col": 1,
+            "maxRank": 2
+          }
+        },
+        "shadow-reach": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 3,
+            "col": 2,
+            "maxRank": 3
+          }
+        },
+        "improved-mind-blast": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 2,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "improved-psychic-scream": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 2,
+            "col": 0,
+            "maxRank": 2
+          }
+        },
+        "mind-flay": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 2,
+            "col": 2,
+            "maxRank": 1
+          }
+        },
+        "improved-mind-flay": {
+          "status": "new"
+        },
+        "improved-fade": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 3,
+            "col": 1,
+            "maxRank": 2
+          }
+        },
+        "vampiric-embrace": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 4,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "shadow-weaving": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 3,
+            "col": 3,
+            "maxRank": 5
+          }
+        },
+        "silence": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 4,
+            "col": 0,
+            "maxRank": 1
+          }
+        },
+        "devouring-contagion": {
+          "status": "new"
+        },
+        "early-demise": {
+          "status": "new"
+        },
+        "darkness": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 5,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "shadowform": {
+          "status": "moved",
+          "prior": {
+            "tree": "shadow",
+            "treeName": "Shadow",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        }
+      },
+      "removed": [
+        {
+          "id": "unbreakable-will",
+          "name": "Unbreakable Will",
+          "tree": "discipline",
+          "treeName": "Discipline",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-power-word-fortitude",
+          "name": "Improved Power Word: Fortitude",
+          "tree": "discipline",
+          "treeName": "Discipline",
+          "row": 1,
+          "col": 1,
+          "maxRank": 2
+        },
+        {
+          "id": "divine-spirit",
+          "name": "Divine Spirit",
+          "tree": "discipline",
+          "treeName": "Discipline",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1
+        },
+        {
+          "id": "force-of-will",
+          "name": "Force of Will",
+          "tree": "discipline",
+          "treeName": "Discipline",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "healing-focus",
+          "name": "Healing Focus",
+          "tree": "holy",
+          "treeName": "Holy",
+          "row": 0,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-prayer-of-healing",
+          "name": "Improved Prayer of Healing",
+          "tree": "holy",
+          "treeName": "Holy",
+          "row": 4,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "lightwell",
+          "name": "Lightwell",
+          "tree": "holy",
+          "treeName": "Holy",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1
+        },
+        {
+          "id": "improved-vampiric-embrace",
+          "name": "Improved Vampiric Embrace",
+          "tree": "shadow",
+          "treeName": "Shadow",
+          "row": 4,
+          "col": 2,
+          "maxRank": 2
+        }
+      ]
+    },
+    "rogue": {
+      "counts": {
+        "new": 10,
+        "moved": 13,
+        "rank-changed": 5,
+        "same": 25,
+        "removed": 8
+      },
+      "talents": {
+        "improved-gouge": {
+          "status": "moved",
+          "prior": {
+            "tree": "combat",
+            "treeName": "Combat",
+            "row": 0,
+            "col": 0,
+            "maxRank": 3
+          }
+        },
+        "vile-poisons": {
+          "status": "moved",
+          "prior": {
+            "tree": "assassination",
+            "treeName": "Assassination",
+            "row": 3,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "cold-blood": {
+          "status": "moved",
+          "prior": {
+            "tree": "assassination",
+            "treeName": "Assassination",
+            "row": 4,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "vigor": {
+          "status": "moved",
+          "prior": {
+            "tree": "assassination",
+            "treeName": "Assassination",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "mutilate": {
+          "status": "new"
+        },
+        "improved-kidney-shot": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "assassination",
+            "treeName": "Assassination",
+            "row": 4,
+            "col": 2,
+            "maxRank": 3
+          }
+        },
+        "seal-fate": {
+          "status": "moved",
+          "prior": {
+            "tree": "assassination",
+            "treeName": "Assassination",
+            "row": 5,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "venom": {
+          "status": "new"
+        },
+        "improved-eviscerate": {
+          "status": "moved",
+          "prior": {
+            "tree": "assassination",
+            "treeName": "Assassination",
+            "row": 0,
+            "col": 0,
+            "maxRank": 3
+          }
+        },
+        "puncturing-wounds": {
+          "status": "new"
+        },
+        "deflection": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "combat",
+            "treeName": "Combat",
+            "row": 1,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "precision": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "combat",
+            "treeName": "Combat",
+            "row": 1,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "restless-blades": {
+          "status": "new"
+        },
+        "hack-and-slash": {
+          "status": "new"
+        },
+        "camouflage": {
+          "status": "moved",
+          "prior": {
+            "tree": "subtlety",
+            "treeName": "Subtlety",
+            "row": 1,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "master-of-deception": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "subtlety",
+            "treeName": "Subtlety",
+            "row": 0,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "opportunity": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "subtlety",
+            "treeName": "Subtlety",
+            "row": 0,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "setup": {
+          "status": "moved",
+          "prior": {
+            "tree": "subtlety",
+            "treeName": "Subtlety",
+            "row": 3,
+            "col": 0,
+            "maxRank": 3
+          }
+        },
+        "dirty-tricks": {
+          "status": "new"
+        },
+        "improved-ambush": {
+          "status": "moved",
+          "prior": {
+            "tree": "subtlety",
+            "treeName": "Subtlety",
+            "row": 2,
+            "col": 2,
+            "maxRank": 3
+          }
+        },
+        "improved-distract": {
+          "status": "new"
+        },
+        "heightened-senses": {
+          "status": "moved",
+          "prior": {
+            "tree": "subtlety",
+            "treeName": "Subtlety",
+            "row": 4,
+            "col": 0,
+            "maxRank": 2
+          }
+        },
+        "premeditation": {
+          "status": "moved",
+          "prior": {
+            "tree": "subtlety",
+            "treeName": "Subtlety",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "dirty-deeds": {
+          "status": "moved",
+          "prior": {
+            "tree": "subtlety",
+            "treeName": "Subtlety",
+            "row": 4,
+            "col": 2,
+            "maxRank": 2
+          }
+        },
+        "hemorrhage": {
+          "status": "moved",
+          "prior": {
+            "tree": "subtlety",
+            "treeName": "Subtlety",
+            "row": 4,
+            "col": 3,
+            "maxRank": 1
+          }
+        },
+        "quietus": {
+          "status": "new"
+        },
+        "cutthroat": {
+          "status": "new"
+        },
+        "thousand-cuts": {
+          "status": "new"
+        }
+      },
+      "removed": [
+        {
+          "id": "improved-backstab",
+          "name": "Improved Backstab",
+          "tree": "combat",
+          "treeName": "Combat",
+          "row": 1,
+          "col": 0,
+          "maxRank": 3
+        },
+        {
+          "id": "dagger-specialization",
+          "name": "Dagger Specialization",
+          "tree": "combat",
+          "treeName": "Combat",
+          "row": 3,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "mace-specialization",
+          "name": "Mace Specialization",
+          "tree": "combat",
+          "treeName": "Combat",
+          "row": 4,
+          "col": 0,
+          "maxRank": 5
+        },
+        {
+          "id": "sword-specialization",
+          "name": "Sword Specialization",
+          "tree": "combat",
+          "treeName": "Combat",
+          "row": 4,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "fist-weapon-specialization",
+          "name": "Fist Weapon Specialization",
+          "tree": "combat",
+          "treeName": "Combat",
+          "row": 4,
+          "col": 3,
+          "maxRank": 5
+        },
+        {
+          "id": "sleight-of-hand",
+          "name": "Sleight of Hand",
+          "tree": "subtlety",
+          "treeName": "Subtlety",
+          "row": 1,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-sap",
+          "name": "Improved Sap",
+          "tree": "subtlety",
+          "treeName": "Subtlety",
+          "row": 3,
+          "col": 1,
+          "maxRank": 3
+        },
+        {
+          "id": "deadliness",
+          "name": "Deadliness",
+          "tree": "subtlety",
+          "treeName": "Subtlety",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5
+        }
+      ]
+    },
+    "shaman": {
+      "counts": {
+        "new": 17,
+        "moved": 23,
+        "rank-changed": 2,
+        "same": 8,
+        "removed": 13
+      },
+      "talents": {
+        "convection": {
+          "status": "moved",
+          "prior": {
+            "tree": "elemental",
+            "treeName": "Elemental",
+            "row": 0,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "concussion": {
+          "status": "moved",
+          "prior": {
+            "tree": "elemental",
+            "treeName": "Elemental",
+            "row": 0,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "elemental-warding": {
+          "status": "moved",
+          "prior": {
+            "tree": "elemental",
+            "treeName": "Elemental",
+            "row": 1,
+            "col": 1,
+            "maxRank": 3
+          }
+        },
+        "reverberation": {
+          "status": "moved",
+          "prior": {
+            "tree": "elemental",
+            "treeName": "Elemental",
+            "row": 2,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "call-of-flame": {
+          "status": "moved",
+          "prior": {
+            "tree": "elemental",
+            "treeName": "Elemental",
+            "row": 1,
+            "col": 2,
+            "maxRank": 3
+          }
+        },
+        "elemental-devastation": {
+          "status": "moved",
+          "prior": {
+            "tree": "elemental",
+            "treeName": "Elemental",
+            "row": 3,
+            "col": 3,
+            "maxRank": 3
+          }
+        },
+        "elemental-focus": {
+          "status": "moved",
+          "prior": {
+            "tree": "elemental",
+            "treeName": "Elemental",
+            "row": 2,
+            "col": 0,
+            "maxRank": 1
+          }
+        },
+        "elemental-fury": {
+          "status": "moved",
+          "prior": {
+            "tree": "elemental",
+            "treeName": "Elemental",
+            "row": 4,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "improved-fire-nova": {
+          "status": "new"
+        },
+        "eye-of-the-storm": {
+          "status": "moved",
+          "prior": {
+            "tree": "elemental",
+            "treeName": "Elemental",
+            "row": 3,
+            "col": 1,
+            "maxRank": 3
+          }
+        },
+        "call-of-thunder": {
+          "status": "moved",
+          "prior": {
+            "tree": "elemental",
+            "treeName": "Elemental",
+            "row": 2,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "elemental-reach": {
+          "status": "new"
+        },
+        "lightning-overload": {
+          "status": "new"
+        },
+        "earthbound": {
+          "status": "new"
+        },
+        "elemental-alacrity": {
+          "status": "new"
+        },
+        "lava-burst": {
+          "status": "new"
+        },
+        "earths-grasp": {
+          "status": "moved",
+          "prior": {
+            "tree": "elemental",
+            "treeName": "Elemental",
+            "row": 1,
+            "col": 0,
+            "maxRank": 2
+          }
+        },
+        "thundering-strikes": {
+          "status": "moved",
+          "prior": {
+            "tree": "enhancement",
+            "treeName": "Enhancement",
+            "row": 1,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "ancestral-knowledge": {
+          "status": "moved",
+          "prior": {
+            "tree": "enhancement",
+            "treeName": "Enhancement",
+            "row": 0,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "mental-dexterity": {
+          "status": "new"
+        },
+        "elemental-weapons": {
+          "status": "moved",
+          "prior": {
+            "tree": "enhancement",
+            "treeName": "Enhancement",
+            "row": 4,
+            "col": 1,
+            "maxRank": 3
+          }
+        },
+        "shamanistic-focus": {
+          "status": "new"
+        },
+        "anticipation": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "enhancement",
+            "treeName": "Enhancement",
+            "row": 2,
+            "col": 3,
+            "maxRank": 5
+          }
+        },
+        "toughness": {
+          "status": "moved",
+          "prior": {
+            "tree": "enhancement",
+            "treeName": "Enhancement",
+            "row": 3,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "stormstrike": {
+          "status": "moved",
+          "prior": {
+            "tree": "enhancement",
+            "treeName": "Enhancement",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "spirit-weapons": {
+          "status": "new"
+        },
+        "mental-quickness": {
+          "status": "new"
+        },
+        "improved-stormstrike": {
+          "status": "new"
+        },
+        "maelstrom-weapon": {
+          "status": "new"
+        },
+        "rage-of-the-farseer": {
+          "status": "new"
+        },
+        "tidal-mastery": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 3,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "mindfulness": {
+          "status": "new"
+        },
+        "natural-grace": {
+          "status": "new"
+        },
+        "tidal-focus": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 0,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "improved-reincarnation": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 1,
+            "col": 0,
+            "maxRank": 2
+          }
+        },
+        "ancestral-healing": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 1,
+            "col": 1,
+            "maxRank": 3
+          }
+        },
+        "healing-focus": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 2,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "water-shield": {
+          "status": "new"
+        },
+        "totemic-focus": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 1,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "mana-tide-totem": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "healing-way": {
+          "status": "moved",
+          "prior": {
+            "tree": "restoration",
+            "treeName": "Restoration",
+            "row": 4,
+            "col": 0,
+            "maxRank": 3
+          }
+        },
+        "riptide": {
+          "status": "new"
+        }
+      },
+      "removed": [
+        {
+          "id": "improved-fire-totems",
+          "name": "Improved Fire Totems",
+          "tree": "elemental",
+          "treeName": "Elemental",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "storm-reach",
+          "name": "Storm Reach",
+          "tree": "elemental",
+          "treeName": "Elemental",
+          "row": 4,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "lightning-mastery",
+          "name": "Lightning Mastery",
+          "tree": "elemental",
+          "treeName": "Elemental",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "elemental-mastery",
+          "name": "Elemental Mastery",
+          "tree": "elemental",
+          "treeName": "Elemental",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1
+        },
+        {
+          "id": "shield-specialization",
+          "name": "Shield Specialization",
+          "tree": "enhancement",
+          "treeName": "Enhancement",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "enhancing-totems",
+          "name": "Enhancing Totems",
+          "tree": "enhancement",
+          "treeName": "Enhancement",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "two-handed-axes-and-maces",
+          "name": "Two-Handed Axes and Maces",
+          "tree": "enhancement",
+          "treeName": "Enhancement",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1
+        },
+        {
+          "id": "improved-weapon-totems",
+          "name": "Improved Weapon Totems",
+          "tree": "enhancement",
+          "treeName": "Enhancement",
+          "row": 4,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "parry",
+          "name": "Parry",
+          "tree": "enhancement",
+          "treeName": "Enhancement",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1
+        },
+        {
+          "id": "weapon-mastery",
+          "name": "Weapon Mastery",
+          "tree": "enhancement",
+          "treeName": "Enhancement",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "natures-guidance",
+          "name": "Nature's Guidance",
+          "tree": "restoration",
+          "treeName": "Restoration",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3
+        },
+        {
+          "id": "totemic-mastery",
+          "name": "Totemic Mastery",
+          "tree": "restoration",
+          "treeName": "Restoration",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1
+        },
+        {
+          "id": "healing-grace",
+          "name": "Healing Grace",
+          "tree": "restoration",
+          "treeName": "Restoration",
+          "row": 2,
+          "col": 3,
+          "maxRank": 3
+        }
+      ]
+    },
+    "warlock": {
+      "counts": {
+        "new": 23,
+        "moved": 15,
+        "rank-changed": 2,
+        "same": 12,
+        "removed": 21
+      },
+      "talents": {
+        "improved-life-tap": {
+          "status": "moved",
+          "prior": {
+            "tree": "affliction",
+            "treeName": "Affliction",
+            "row": 1,
+            "col": 2,
+            "maxRank": 2
+          }
+        },
+        "malediction": {
+          "status": "new"
+        },
+        "soul-harvesting": {
+          "status": "new"
+        },
+        "improved-drains": {
+          "status": "new"
+        },
+        "improved-bane-of-agony": {
+          "status": "new"
+        },
+        "fel-concentration": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "affliction",
+            "treeName": "Affliction",
+            "row": 2,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "pandemic": {
+          "status": "new"
+        },
+        "malevolence": {
+          "status": "new"
+        },
+        "curse-of-exhaustion": {
+          "status": "moved",
+          "prior": {
+            "tree": "affliction",
+            "treeName": "Affliction",
+            "row": 4,
+            "col": 2,
+            "maxRank": 1
+          }
+        },
+        "soul-siphon": {
+          "status": "new"
+        },
+        "shadow-mastery": {
+          "status": "moved",
+          "prior": {
+            "tree": "affliction",
+            "treeName": "Affliction",
+            "row": 5,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "drain-hope": {
+          "status": "new"
+        },
+        "improved-health-funnel": {
+          "status": "moved",
+          "prior": {
+            "tree": "demonology",
+            "treeName": "Demonology",
+            "row": 1,
+            "col": 0,
+            "maxRank": 2
+          }
+        },
+        "unholy-power": {
+          "status": "moved",
+          "prior": {
+            "tree": "demonology",
+            "treeName": "Demonology",
+            "row": 3,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "demonic-aegis": {
+          "status": "new"
+        },
+        "fel-vitality": {
+          "status": "new"
+        },
+        "demonic-energies": {
+          "status": "new"
+        },
+        "improved-sayaad": {
+          "status": "new"
+        },
+        "demonic-sacrifice": {
+          "status": "moved",
+          "prior": {
+            "tree": "demonology",
+            "treeName": "Demonology",
+            "row": 4,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "master-summoner": {
+          "status": "moved",
+          "prior": {
+            "tree": "demonology",
+            "treeName": "Demonology",
+            "row": 3,
+            "col": 1,
+            "maxRank": 2
+          }
+        },
+        "decimation": {
+          "status": "new"
+        },
+        "fel-domination": {
+          "status": "moved",
+          "prior": {
+            "tree": "demonology",
+            "treeName": "Demonology",
+            "row": 2,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "demonic-brand": {
+          "status": "new"
+        },
+        "improved-felhunter": {
+          "status": "new"
+        },
+        "soul-link": {
+          "status": "moved",
+          "prior": {
+            "tree": "demonology",
+            "treeName": "Demonology",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "demonic-knowledge": {
+          "status": "new"
+        },
+        "demonic-pact": {
+          "status": "new"
+        },
+        "destructive-reach": {
+          "status": "moved",
+          "prior": {
+            "tree": "destruction",
+            "treeName": "Destruction",
+            "row": 3,
+            "col": 1,
+            "maxRank": 2
+          }
+        },
+        "bane": {
+          "status": "moved",
+          "prior": {
+            "tree": "destruction",
+            "treeName": "Destruction",
+            "row": 1,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "molten-skin": {
+          "status": "new"
+        },
+        "cataclysm": {
+          "status": "moved",
+          "prior": {
+            "tree": "destruction",
+            "treeName": "Destruction",
+            "row": 0,
+            "col": 2,
+            "maxRank": 5
+          }
+        },
+        "ruin": {
+          "status": "moved",
+          "prior": {
+            "tree": "destruction",
+            "treeName": "Destruction",
+            "row": 4,
+            "col": 2,
+            "maxRank": 1
+          }
+        },
+        "shadowburn": {
+          "status": "moved",
+          "prior": {
+            "tree": "destruction",
+            "treeName": "Destruction",
+            "row": 2,
+            "col": 3,
+            "maxRank": 1
+          }
+        },
+        "intensity": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "destruction",
+            "treeName": "Destruction",
+            "row": 3,
+            "col": 0,
+            "maxRank": 2
+          }
+        },
+        "agonizing-flames": {
+          "status": "new"
+        },
+        "conflagrate": {
+          "status": "moved",
+          "prior": {
+            "tree": "destruction",
+            "treeName": "Destruction",
+            "row": 6,
+            "col": 1,
+            "maxRank": 1
+          }
+        },
+        "bane-of-havoc": {
+          "status": "new"
+        },
+        "fire-and-brimstone": {
+          "status": "new"
+        },
+        "shadow-and-flame": {
+          "status": "new"
+        },
+        "incinerate": {
+          "status": "new"
+        }
+      },
+      "removed": [
+        {
+          "id": "improved-curse-of-weakness",
+          "name": "Improved Curse of Weakness",
+          "tree": "affliction",
+          "treeName": "Affliction",
+          "row": 1,
+          "col": 0,
+          "maxRank": 3
+        },
+        {
+          "id": "improved-drain-soul",
+          "name": "Improved Drain Soul",
+          "tree": "affliction",
+          "treeName": "Affliction",
+          "row": 1,
+          "col": 1,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-drain-life",
+          "name": "Improved Drain Life",
+          "tree": "affliction",
+          "treeName": "Affliction",
+          "row": 1,
+          "col": 3,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-curse-of-agony",
+          "name": "Improved Curse of Agony",
+          "tree": "affliction",
+          "treeName": "Affliction",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3
+        },
+        {
+          "id": "grim-reach",
+          "name": "Grim Reach",
+          "tree": "affliction",
+          "treeName": "Affliction",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-drain-mana",
+          "name": "Improved Drain Mana",
+          "tree": "affliction",
+          "treeName": "Affliction",
+          "row": 3,
+          "col": 3,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-curse-of-exhaustion",
+          "name": "Improved Curse of Exhaustion",
+          "tree": "affliction",
+          "treeName": "Affliction",
+          "row": 4,
+          "col": 3,
+          "maxRank": 4
+        },
+        {
+          "id": "dark-pact",
+          "name": "Dark Pact",
+          "tree": "affliction",
+          "treeName": "Affliction",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1
+        },
+        {
+          "id": "improved-healthstone",
+          "name": "Improved Healthstone",
+          "tree": "demonology",
+          "treeName": "Demonology",
+          "row": 0,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "fel-intellect",
+          "name": "Fel Intellect",
+          "tree": "demonology",
+          "treeName": "Demonology",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-succubus",
+          "name": "Improved Succubus",
+          "tree": "demonology",
+          "treeName": "Demonology",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3
+        },
+        {
+          "id": "fel-stamina",
+          "name": "Fel Stamina",
+          "tree": "demonology",
+          "treeName": "Demonology",
+          "row": 2,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-enslave-demon",
+          "name": "Improved Enslave Demon",
+          "tree": "demonology",
+          "treeName": "Demonology",
+          "row": 4,
+          "col": 0,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-firestone",
+          "name": "Improved Firestone",
+          "tree": "demonology",
+          "treeName": "Demonology",
+          "row": 4,
+          "col": 3,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-spellstone",
+          "name": "Improved Spellstone",
+          "tree": "demonology",
+          "treeName": "Demonology",
+          "row": 6,
+          "col": 2,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-firebolt",
+          "name": "Improved Firebolt",
+          "tree": "destruction",
+          "treeName": "Destruction",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2
+        },
+        {
+          "id": "improved-lash-of-pain",
+          "name": "Improved Lash of Pain",
+          "tree": "destruction",
+          "treeName": "Destruction",
+          "row": 2,
+          "col": 1,
+          "maxRank": 2
+        },
+        {
+          "id": "devastation",
+          "name": "Devastation",
+          "tree": "destruction",
+          "treeName": "Destruction",
+          "row": 2,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-searing-pain",
+          "name": "Improved Searing Pain",
+          "tree": "destruction",
+          "treeName": "Destruction",
+          "row": 3,
+          "col": 3,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-immolate",
+          "name": "Improved Immolate",
+          "tree": "destruction",
+          "treeName": "Destruction",
+          "row": 4,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "emberstorm",
+          "name": "Emberstorm",
+          "tree": "destruction",
+          "treeName": "Destruction",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5
+        }
+      ]
+    },
+    "warrior": {
+      "counts": {
+        "new": 13,
+        "moved": 5,
+        "rank-changed": 2,
+        "same": 34,
+        "removed": 11
+      },
+      "talents": {
+        "improved-tactical-mastery": {
+          "status": "new"
+        },
+        "improved-overpower": {
+          "status": "moved",
+          "prior": {
+            "tree": "arms",
+            "treeName": "Arms",
+            "row": 2,
+            "col": 0,
+            "maxRank": 2
+          }
+        },
+        "spearing-strike": {
+          "status": "new"
+        },
+        "two-handed-weapon-specialization": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "arms",
+            "treeName": "Arms",
+            "row": 3,
+            "col": 1,
+            "maxRank": 5
+          }
+        },
+        "bloodthrill": {
+          "status": "new"
+        },
+        "weaponmaster": {
+          "status": "new"
+        },
+        "improved-slam": {
+          "status": "moved",
+          "prior": {
+            "tree": "fury",
+            "treeName": "Fury",
+            "row": 4,
+            "col": 0,
+            "maxRank": 5
+          }
+        },
+        "iron-will": {
+          "status": "moved",
+          "prior": {
+            "tree": "protection",
+            "treeName": "Protection",
+            "row": 1,
+            "col": 3,
+            "maxRank": 5
+          }
+        },
+        "blood-crazed": {
+          "status": "new"
+        },
+        "boundless-rage": {
+          "status": "new"
+        },
+        "raging-blows": {
+          "status": "new"
+        },
+        "improved-execute": {
+          "status": "moved",
+          "prior": {
+            "tree": "fury",
+            "treeName": "Fury",
+            "row": 3,
+            "col": 1,
+            "maxRank": 2
+          }
+        },
+        "precision": {
+          "status": "new"
+        },
+        "improved-thunder-clap": {
+          "status": "moved",
+          "prior": {
+            "tree": "arms",
+            "treeName": "Arms",
+            "row": 1,
+            "col": 3,
+            "maxRank": 3
+          }
+        },
+        "master-of-defense": {
+          "status": "new"
+        },
+        "defiance": {
+          "status": "rank-changed",
+          "prior": {
+            "tree": "protection",
+            "treeName": "Protection",
+            "row": 2,
+            "col": 3,
+            "maxRank": 5
+          }
+        },
+        "vanguard": {
+          "status": "new"
+        },
+        "vitality": {
+          "status": "new"
+        },
+        "focused-rage": {
+          "status": "new"
+        },
+        "bastion": {
+          "status": "new"
+        }
+      },
+      "removed": [
+        {
+          "id": "tactical-mastery",
+          "name": "Tactical Mastery",
+          "tree": "arms",
+          "treeName": "Arms",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "axe-specialization",
+          "name": "Axe Specialization",
+          "tree": "arms",
+          "treeName": "Arms",
+          "row": 4,
+          "col": 0,
+          "maxRank": 5
+        },
+        {
+          "id": "mace-specialization",
+          "name": "Mace Specialization",
+          "tree": "arms",
+          "treeName": "Arms",
+          "row": 4,
+          "col": 2,
+          "maxRank": 5
+        },
+        {
+          "id": "sword-specialization",
+          "name": "Sword Specialization",
+          "tree": "arms",
+          "treeName": "Arms",
+          "row": 4,
+          "col": 3,
+          "maxRank": 5
+        },
+        {
+          "id": "polearm-specialization",
+          "name": "Polearm Specialization",
+          "tree": "arms",
+          "treeName": "Arms",
+          "row": 5,
+          "col": 0,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-demoralizing-shout",
+          "name": "Improved Demoralizing Shout",
+          "tree": "fury",
+          "treeName": "Fury",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5
+        },
+        {
+          "id": "blood-craze",
+          "name": "Blood Craze",
+          "tree": "fury",
+          "treeName": "Fury",
+          "row": 2,
+          "col": 2,
+          "maxRank": 3
+        },
+        {
+          "id": "improved-battle-shout",
+          "name": "Improved Battle Shout",
+          "tree": "fury",
+          "treeName": "Fury",
+          "row": 2,
+          "col": 3,
+          "maxRank": 5
+        },
+        {
+          "id": "improved-shield-block",
+          "name": "Improved Shield Block",
+          "tree": "protection",
+          "treeName": "Protection",
+          "row": 2,
+          "col": 1,
+          "maxRank": 3
+        },
+        {
+          "id": "improved-taunt",
+          "name": "Improved Taunt",
+          "tree": "protection",
+          "treeName": "Protection",
+          "row": 3,
+          "col": 2,
+          "maxRank": 2
+        },
+        {
+          "id": "one-handed-weapon-specialization",
+          "name": "One-Handed Weapon Specialization",
+          "tree": "protection",
+          "treeName": "Protection",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5
+        }
+      ]
+    }
+  }
+}

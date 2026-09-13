@@ -13,6 +13,7 @@ import { parseClass } from '../data/schema.zod'
 import {
   DETAILS_LABEL,
   TRUST_MAX,
+  changeLine,
   derivationLine,
   detailLines,
   fitTrustLine,
@@ -448,6 +449,45 @@ describe(`tooltip text over ${files.length} class file(s)`, () => {
       const line = gameRequirement(talent.source.note)
       expect(line, talent.id).toBeDefined()
       expect(line!.startsWith('Requires '), `${talent.id}: ${line}`).toBe(true)
+    }
+  })
+})
+
+describe('changeLine', () => {
+  const prior = { tree: 'arms', treeName: 'Arms', row: 2, col: 1, maxRank: 5 }
+  const current = { tree: 'arms', maxRank: 5 }
+
+  it('says nothing for a talent that is unchanged or not comparable', () => {
+    expect(changeLine(undefined, current)).toBeUndefined()
+    expect(changeLine({ status: 'same' }, current)).toBeUndefined()
+  })
+
+  it('announces a new talent without naming Classic at all', () => {
+    expect(changeLine({ status: 'new' }, current)).toBe('New in Forever.')
+  })
+
+  it('counts rows the way a player does, from one', () => {
+    expect(changeLine({ status: 'moved', prior }, current)).toBe('Moved from row 3.')
+  })
+
+  it('names the old tree only when the talent actually changed tree', () => {
+    expect(changeLine({ status: 'moved', prior }, { tree: 'fury', maxRank: 5 })).toBe('Moved from Arms, row 3.')
+  })
+
+  it('reports a rank change in both directions, with the plural right', () => {
+    expect(changeLine({ status: 'rank-changed', prior }, { tree: 'arms', maxRank: 3 })).toBe('Now 3 ranks, was 5.')
+    expect(changeLine({ status: 'rank-changed', prior }, { tree: 'arms', maxRank: 1 })).toBe('Now 1 rank, was 5.')
+    expect(changeLine({ status: 'rank-changed', prior: { ...prior, maxRank: 2 } }, { tree: 'arms', maxRank: 5 })).toBe(
+      'Now 5 ranks, was 2.',
+    )
+  })
+
+  it('is one line, always, and carries nothing internal', () => {
+    for (const status of ['new', 'moved', 'rank-changed'] as const) {
+      const line = changeLine({ status, prior }, { tree: 'fury', maxRank: 3 })!
+      expect(line.split('\n')).toHaveLength(1)
+      expect(line.endsWith('.')).toBe(true)
+      expect(internalId(line)).toBe(false)
     }
   })
 })

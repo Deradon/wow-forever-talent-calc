@@ -5,9 +5,11 @@ import tailwindcss from '@tailwindcss/vite'
 import { generate } from './scripts/gen-data-index.mjs'
 
 /**
- * Regenerates src/data/classes-index.json and src/data/iconCrops.ts from
- * data/talents|examples and web/tests/fixtures before anything is resolved, so
- * dev, build and vitest always see the current data. Both files are committed
+ * Regenerates src/data/classes-index.json, src/data/iconCrops.ts and
+ * src/data/classic-diff.json (the Classic Era comparison) from
+ * data/talents|examples, data/prior/classic-era and web/tests/fixtures before
+ * anything is resolved, so dev, build and vitest always see the current data.
+ * The generated files are committed
  * (tsc runs before vite in `npm run build`); src/data/generated.test.ts fails
  * if a commit forgets to refresh them.
  */

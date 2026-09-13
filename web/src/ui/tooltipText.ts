@@ -415,6 +415,39 @@ export function splitOnNames(line: string, names: { id: string; name: string }[]
   return out
 }
 
+// --- what changed against Classic Era --------------------------------------
+
+/** A talent's standing against the Classic prior; mirrors src/ui/classicDiff.ts. */
+export interface ChangeFacts {
+  status: 'new' | 'moved' | 'rank-changed' | 'same'
+  prior?: { tree: string; treeName: string; row: number; col: number; maxRank: number }
+}
+
+/**
+ * The single "what changed" line (brief idea 3). Exactly one line, always, so
+ * it fits the tooltip's line budget instead of being appended to it: a talent
+ * that both moved and changed rank count reports the move, because the cell is
+ * what the player is looking at.
+ *
+ * Rows are stored 0-based and spoken 1-based, the way the tier gutter counts.
+ */
+export function changeLine(change: ChangeFacts | undefined, current: { tree: string; maxRank: number }): string | undefined {
+  if (!change || change.status === 'same') return undefined
+  if (change.status === 'new') return 'New in Forever.'
+  const prior = change.prior
+  if (!prior) return undefined
+  if (change.status === 'moved') {
+    return prior.tree === current.tree
+      ? `Moved from row ${prior.row + 1}.`
+      : `Moved from ${prior.treeName}, row ${prior.row + 1}.`
+  }
+  return `Now ${ranksWord(current.maxRank)}, was ${prior.maxRank}.`
+}
+
+function ranksWord(n: number): string {
+  return `${n} rank${n === 1 ? '' : 's'}`
+}
+
 // --- guards ----------------------------------------------------------------
 
 const INTERNAL = [

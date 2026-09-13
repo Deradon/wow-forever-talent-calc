@@ -1,0 +1,68 @@
+/*
+ * The tier gutter (brief idea 6a) and the "what's new" switch that sits in the
+ * tree panel header. The gutter answers the question a dark lower tree always
+ * raises - "why can I not click these?" - with the number of points the row
+ * needs, gold on the first row that is still out of reach.
+ */
+
+.tree-body {
+  display: flex;
+  align-items: flex-start;
+}
+
+.tier-gutter {
+  display: grid;
+  grid-template-rows: repeat(var(--rows), var(--cell));
+  gap: var(--gap);
+  /* Same 14px top padding as .tree-grid, so row N of the gutter lines up with
+     row N of the grid without any magic offsets. */
+  padding: 14px 6px 14px 0;
+  width: 28px;
+  box-sizing: content-box;
+  user-select: none;
+}
+
+.tier {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: #5c6478;
+}
+/* Already paid for: present, but out of the way. */
+.tier[data-state='unlocked'] {
+  color: #7f8fa6;
+}
+/* The next thing the player has to earn - the one number worth reading. */
+.tier[data-state='next'] {
+  color: var(--gold);
+  font-weight: 700;
+}
+.tier[data-state='locked'] {
+  color: #4a5164;
+}
+
+/* --- the "what's new" switch --------------------------------------------- */
+.new-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  border: 1px solid var(--gold-border);
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--text-dim);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.new-toggle:hover {
+  border-color: var(--gold-dim);
+}
+.new-toggle[aria-pressed='true'] {
+  border-color: #4ea3ff;
+  background: rgba(78, 163, 255, 0.16);
+  color: #cfe6ff;
+}

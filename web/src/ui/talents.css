@@ -503,3 +503,311 @@
 .search-result:hover {
   border-color: var(--gold-dim);
 }
+
+/* =========================================================================
+   Wide-desktop layout (brief idea 5) and the summary column (brief idea 1).
+
+   Before this, the calculator used about half of a 1440px window: three 44px
+   trees pinned to the upper left and 360-400px of empty container beside them.
+   The two ideas share that horizontal budget, so they are one grid: the trees
+   take what they need, the summary takes a fixed 320px from 1320px upward, and
+   below that it drops under the trees (still inside one wrapping container, so
+   the narrow layout is no worse than it was).
+   ========================================================================= */
+
+.app-shell {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.class-layout {
+  /* --cell and --gap are read by .tree-grid and by the tier gutter, so setting
+     them here scales the whole tree, gutter included. --arrow-scale exists
+     because Arrows.tsx computes its geometry from a constant 44+12 pitch;
+     scaling the SVG keeps the lines on the cells at every size. Drop this rule
+     the day the arrows read --cell themselves. */
+  --cell: 44px;
+  --gap: 12px;
+  --arrow-scale: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.class-main {
+  min-width: 0;
+}
+/* The interaction hint is one long sentence, and a grid track sized on
+   max-content would size itself on *it* rather than on the trees, pushing the
+   summary column away and re-opening the dead space this layout closed. */
+.class-help {
+  max-width: 90ch;
+}
+
+/* One row of tree panels that all end at the same y (brief idea 5): before,
+   three trees of different depth ended at three different heights.
+   Named `tree-columns`, not `tree-row`: `.tree-row` is already the
+   `role="row"` element inside a grid (display: contents). */
+.tree-columns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 16px;
+}
+.tree-columns > section {
+  display: flex;
+  flex-direction: column;
+}
+.tree-columns .tree-body {
+  flex: 1;
+  align-items: stretch;
+}
+.tree-columns .tree-grid {
+  flex: 1;
+}
+
+.tree-grid > svg.arrows {
+  transform-origin: 0 0;
+  scale: var(--arrow-scale, 1);
+}
+
+/* 1320px, not the brief's 1180px: the tier gutter added in round 1b costs
+   each tree 34px, so three trees plus a 320px summary need ~1244px of content
+   before anything wraps. Below this the summary sits under the trees, inside
+   the same wrapping container, so the narrow layout is no worse than before. */
+@media (min-width: 1320px) {
+  .app-shell {
+    max-width: 1440px;
+  }
+  .class-layout {
+    grid-template-columns: minmax(0, max-content) 320px;
+    justify-content: center;
+  }
+}
+
+/* 56px is close to the in-game frame and a far easier click target than 44px;
+   it is only taken where the viewport can hold three trees plus the summary. */
+@media (min-width: 1500px) {
+  .app-shell {
+    max-width: 1560px;
+  }
+  .class-layout {
+    --cell: 50px;
+    --gap: 13px;
+    --arrow-scale: 1.125; /* (50 + 13) / (44 + 12) */
+  }
+}
+@media (min-width: 1800px) {
+  .app-shell {
+    max-width: 1720px;
+  }
+  .class-layout {
+    --cell: 56px;
+    --gap: 14px;
+    --arrow-scale: 1.25; /* (56 + 14) / (44 + 12) */
+  }
+}
+
+/* --- summary column --- */
+.summary-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px;
+  align-self: stretch;
+}
+.summary-head h2 {
+  margin: 0;
+}
+.summary-empty {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin: 0;
+}
+.summary-trees,
+.summary-talents {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.summary-trees > li + li {
+  margin-top: 10px;
+}
+.summary-tree-name {
+  margin: 0 0 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px solid var(--gold-border);
+  padding-bottom: 2px;
+}
+.summary-talent {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  padding: 1px 2px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.summary-talent:hover,
+.summary-talent:focus-visible {
+  background: rgba(255, 209, 0, 0.12);
+  outline: none;
+}
+.summary-talent-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.summary-talent-rank {
+  color: var(--gold-dim);
+  font-variant-numeric: tabular-nums;
+}
+/* Hovering a summary row outlines its cell, so the list and the grid are
+   visibly the same build. Set from BuildSummary, see the note there. */
+.cell-linked {
+  box-shadow: 0 0 0 2px var(--gold-dim);
+}
+.summary-actions,
+.summary-history,
+.import-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.summary-actions .btn,
+.import-actions .btn {
+  font-size: 13px;
+}
+.summary-fallback {
+  width: 100%;
+  border: 1px solid var(--gold-border);
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text);
+  font-size: 12px;
+  padding: 4px 6px;
+}
+
+/* --- import (brief idea 9) --- */
+.import-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid var(--gold-border);
+  padding-top: 8px;
+}
+.import-input {
+  width: 100%;
+  border: 1px solid var(--gold-border);
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text);
+  font-size: 12px;
+  padding: 4px 6px;
+  resize: vertical;
+}
+.import-error {
+  margin: 0;
+  color: #ffc9c9;
+  font-size: 12px;
+}
+.import-report {
+  font-size: 12px;
+  color: var(--text);
+}
+.import-report p {
+  margin: 0;
+}
+.import-unplaced {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  max-height: 160px;
+  overflow-y: auto;
+  color: var(--text-dim);
+}
+.import-unplaced li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* --- class switcher (brief idea 2) --- */
+.class-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.class-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #1b2136 0%, #0b0f1c 100%);
+  text-decoration: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+.class-chip:hover {
+  border-color: var(--class-colour);
+}
+.class-chip:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+}
+.class-chip-initial {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--class-colour);
+}
+.class-chip[data-active='true'] {
+  border-color: var(--class-colour);
+  box-shadow: 0 0 0 1px var(--class-colour);
+  background: linear-gradient(180deg, #2a3350 0%, #141a2c 100%);
+}
+
+/* --- reset undo, continue card (brief ideas 7 and 8) --- */
+.reset-undo {
+  border-color: var(--red);
+  color: #ffc9c9;
+}
+.continue-line {
+  margin: 0 0 12px;
+  padding: 6px 10px;
+  border: 1px solid var(--gold-border);
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+}
+.continue-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  border: 1px solid var(--gold-border);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+}
+.continue-forget {
+  border: 0;
+  background: none;
+  color: var(--text-dim);
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}

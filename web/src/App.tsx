@@ -23,7 +23,7 @@ function useRoute(): Route {
 export default function App() {
   const route = useRoute()
   return (
-    <div className="mx-auto max-w-[1200px] px-4 py-4">
+    <div className="app-shell px-4 py-4">
       {/* preventDefault: the app routes on the hash, so #main must not land in it. */}
       <a
         className="skip-link"

@@ -1,0 +1,1940 @@
+{
+ "source": "data/prior/classic-era/talents.json",
+ "classes": {
+  "druid": {
+   "className": "Druid",
+   "trees": [
+    {
+     "id": "balance",
+     "name": "Balance",
+     "talents": [
+      [
+       "Improved Wrath",
+       5
+      ],
+      [
+       "Nature's Grasp",
+       1
+      ],
+      [
+       "Improved Nature's Grasp",
+       4
+      ],
+      [
+       "Improved Entangling Roots",
+       3
+      ],
+      [
+       "Improved Moonfire",
+       5
+      ],
+      [
+       "Natural Weapons",
+       5
+      ],
+      [
+       "Natural Shapeshifter",
+       3
+      ],
+      [
+       "Improved Thorns",
+       3
+      ],
+      [
+       "Omen of Clarity",
+       1
+      ],
+      [
+       "Nature's Reach",
+       2
+      ],
+      [
+       "Vengeance",
+       5
+      ],
+      [
+       "Improved Starfire",
+       5
+      ],
+      [
+       "Nature's Grace",
+       1
+      ],
+      [
+       "Moonglow",
+       3
+      ],
+      [
+       "Moonfury",
+       5
+      ],
+      [
+       "Moonkin Form",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "feral-combat",
+     "name": "Feral Combat",
+     "talents": [
+      [
+       "Ferocity",
+       5
+      ],
+      [
+       "Feral Aggression",
+       5
+      ],
+      [
+       "Feral Instinct",
+       5
+      ],
+      [
+       "Brutal Impact",
+       2
+      ],
+      [
+       "Thick Hide",
+       5
+      ],
+      [
+       "Feline Swiftness",
+       2
+      ],
+      [
+       "Feral Charge",
+       1
+      ],
+      [
+       "Sharpened Claws",
+       3
+      ],
+      [
+       "Improved Shred",
+       2
+      ],
+      [
+       "Predatory Strikes",
+       3
+      ],
+      [
+       "Blood Frenzy",
+       2
+      ],
+      [
+       "Primal Fury",
+       2
+      ],
+      [
+       "Savage Fury",
+       2
+      ],
+      [
+       "Faerie Fire (Feral)",
+       1
+      ],
+      [
+       "Heart of the Wild",
+       5
+      ],
+      [
+       "Leader of the Pack",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "restoration",
+     "name": "Restoration",
+     "talents": [
+      [
+       "Improved Mark of the Wild",
+       5
+      ],
+      [
+       "Furor",
+       5
+      ],
+      [
+       "Improved Healing Touch",
+       5
+      ],
+      [
+       "Nature's Focus",
+       5
+      ],
+      [
+       "Improved Enrage",
+       2
+      ],
+      [
+       "Reflection",
+       3
+      ],
+      [
+       "Insect Swarm",
+       1
+      ],
+      [
+       "Subtlety",
+       5
+      ],
+      [
+       "Tranquil Spirit",
+       5
+      ],
+      [
+       "Improved Rejuvenation",
+       3
+      ],
+      [
+       "Nature's Swiftness",
+       1
+      ],
+      [
+       "Gift of Nature",
+       5
+      ],
+      [
+       "Improved Tranquility",
+       2
+      ],
+      [
+       "Improved Regrowth",
+       5
+      ],
+      [
+       "Swiftmend",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  "hunter": {
+   "className": "Hunter",
+   "trees": [
+    {
+     "id": "beast-mastery",
+     "name": "Beast Mastery",
+     "talents": [
+      [
+       "Improved Aspect of the Hawk",
+       5
+      ],
+      [
+       "Endurance Training",
+       5
+      ],
+      [
+       "Improved Eyes of the Beast",
+       2
+      ],
+      [
+       "Improved Aspect of the Monkey",
+       5
+      ],
+      [
+       "Thick Hide",
+       3
+      ],
+      [
+       "Improved Revive Pet",
+       2
+      ],
+      [
+       "Pathfinding",
+       2
+      ],
+      [
+       "Bestial Swiftness",
+       1
+      ],
+      [
+       "Unleashed Fury",
+       5
+      ],
+      [
+       "Improved Mend Pet",
+       2
+      ],
+      [
+       "Ferocity",
+       5
+      ],
+      [
+       "Spirit Bond",
+       2
+      ],
+      [
+       "Intimidation",
+       1
+      ],
+      [
+       "Bestial Discipline",
+       2
+      ],
+      [
+       "Frenzy",
+       5
+      ],
+      [
+       "Bestial Wrath",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "marksmanship",
+     "name": "Marksmanship",
+     "talents": [
+      [
+       "Improved Concussive Shot",
+       5
+      ],
+      [
+       "Efficiency",
+       5
+      ],
+      [
+       "Improved Hunter's Mark",
+       5
+      ],
+      [
+       "Lethal Shots",
+       5
+      ],
+      [
+       "Aimed Shot",
+       1
+      ],
+      [
+       "Improved Arcane Shot",
+       5
+      ],
+      [
+       "Hawk Eye",
+       3
+      ],
+      [
+       "Improved Serpent Sting",
+       5
+      ],
+      [
+       "Mortal Shots",
+       5
+      ],
+      [
+       "Scatter Shot",
+       1
+      ],
+      [
+       "Barrage",
+       3
+      ],
+      [
+       "Improved Scorpid Sting",
+       3
+      ],
+      [
+       "Ranged Weapon Specialization",
+       5
+      ],
+      [
+       "Trueshot Aura",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "survival",
+     "name": "Survival",
+     "talents": [
+      [
+       "Monster Slaying",
+       3
+      ],
+      [
+       "Humanoid Slaying",
+       3
+      ],
+      [
+       "Deflection",
+       5
+      ],
+      [
+       "Entrapment",
+       5
+      ],
+      [
+       "Savage Strikes",
+       2
+      ],
+      [
+       "Improved Wing Clip",
+       5
+      ],
+      [
+       "Clever Traps",
+       2
+      ],
+      [
+       "Survivalist",
+       5
+      ],
+      [
+       "Deterrence",
+       1
+      ],
+      [
+       "Trap Mastery",
+       2
+      ],
+      [
+       "Surefooted",
+       3
+      ],
+      [
+       "Improved Feign Death",
+       2
+      ],
+      [
+       "Killer Instinct",
+       3
+      ],
+      [
+       "Counterattack",
+       1
+      ],
+      [
+       "Lightning Reflexes",
+       5
+      ],
+      [
+       "Wyvern Sting",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  "mage": {
+   "className": "Mage",
+   "trees": [
+    {
+     "id": "arcane",
+     "name": "Arcane",
+     "talents": [
+      [
+       "Arcane Subtlety",
+       2
+      ],
+      [
+       "Arcane Focus",
+       5
+      ],
+      [
+       "Improved Arcane Missiles",
+       5
+      ],
+      [
+       "Wand Specialization",
+       2
+      ],
+      [
+       "Magic Absorption",
+       5
+      ],
+      [
+       "Arcane Concentration",
+       5
+      ],
+      [
+       "Magic Attunement",
+       2
+      ],
+      [
+       "Improved Arcane Explosion",
+       3
+      ],
+      [
+       "Arcane Resilience",
+       1
+      ],
+      [
+       "Improved Mana Shield",
+       2
+      ],
+      [
+       "Improved Counterspell",
+       2
+      ],
+      [
+       "Arcane Meditation",
+       3
+      ],
+      [
+       "Presence of Mind",
+       1
+      ],
+      [
+       "Arcane Mind",
+       5
+      ],
+      [
+       "Arcane Instability",
+       3
+      ],
+      [
+       "Arcane Power",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "fire",
+     "name": "Fire",
+     "talents": [
+      [
+       "Improved Fireball",
+       5
+      ],
+      [
+       "Impact",
+       5
+      ],
+      [
+       "Ignite",
+       5
+      ],
+      [
+       "Flame Throwing",
+       2
+      ],
+      [
+       "Improved Fire Blast",
+       3
+      ],
+      [
+       "Incinerate",
+       2
+      ],
+      [
+       "Improved Flamestrike",
+       3
+      ],
+      [
+       "Pyroblast",
+       1
+      ],
+      [
+       "Burning Soul",
+       2
+      ],
+      [
+       "Improved Scorch",
+       3
+      ],
+      [
+       "Improved Fire Ward",
+       2
+      ],
+      [
+       "Master of Elements",
+       3
+      ],
+      [
+       "Critical Mass",
+       3
+      ],
+      [
+       "Blast Wave",
+       1
+      ],
+      [
+       "Fire Power",
+       5
+      ],
+      [
+       "Combustion",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "frost",
+     "name": "Frost",
+     "talents": [
+      [
+       "Frost Warding",
+       2
+      ],
+      [
+       "Improved Frostbolt",
+       5
+      ],
+      [
+       "Elemental Precision",
+       3
+      ],
+      [
+       "Ice Shards",
+       5
+      ],
+      [
+       "Frostbite",
+       3
+      ],
+      [
+       "Improved Frost Nova",
+       2
+      ],
+      [
+       "Permafrost",
+       3
+      ],
+      [
+       "Piercing Ice",
+       3
+      ],
+      [
+       "Cold Snap",
+       1
+      ],
+      [
+       "Improved Blizzard",
+       3
+      ],
+      [
+       "Arctic Reach",
+       2
+      ],
+      [
+       "Frost Channeling",
+       3
+      ],
+      [
+       "Shatter",
+       5
+      ],
+      [
+       "Ice Block",
+       1
+      ],
+      [
+       "Improved Cone of Cold",
+       3
+      ],
+      [
+       "Winter's Chill",
+       5
+      ],
+      [
+       "Ice Barrier",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  "paladin": {
+   "className": "Paladin",
+   "trees": [
+    {
+     "id": "holy",
+     "name": "Holy",
+     "talents": [
+      [
+       "Divine Strength",
+       5
+      ],
+      [
+       "Divine Intellect",
+       5
+      ],
+      [
+       "Spiritual Focus",
+       5
+      ],
+      [
+       "Improved Seal of Righteousness",
+       5
+      ],
+      [
+       "Healing Light",
+       3
+      ],
+      [
+       "Consecration",
+       1
+      ],
+      [
+       "Improved Lay on Hands",
+       2
+      ],
+      [
+       "Unyielding Faith",
+       2
+      ],
+      [
+       "Illumination",
+       5
+      ],
+      [
+       "Improved Blessing of Wisdom",
+       2
+      ],
+      [
+       "Divine Favor",
+       1
+      ],
+      [
+       "Lasting Judgement",
+       3
+      ],
+      [
+       "Holy Power",
+       5
+      ],
+      [
+       "Holy Shock",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "protection",
+     "name": "Protection",
+     "talents": [
+      [
+       "Improved Devotion Aura",
+       5
+      ],
+      [
+       "Redoubt",
+       5
+      ],
+      [
+       "Precision",
+       3
+      ],
+      [
+       "Guardian's Favor",
+       2
+      ],
+      [
+       "Toughness",
+       5
+      ],
+      [
+       "Blessing of Kings",
+       1
+      ],
+      [
+       "Improved Righteous Fury",
+       3
+      ],
+      [
+       "Shield Specialization",
+       3
+      ],
+      [
+       "Anticipation",
+       5
+      ],
+      [
+       "Improved Hammer of Justice",
+       3
+      ],
+      [
+       "Improved Concentration Aura",
+       3
+      ],
+      [
+       "Blessing of Sanctuary",
+       1
+      ],
+      [
+       "Reckoning",
+       5
+      ],
+      [
+       "One-Handed Weapon Specialization",
+       5
+      ],
+      [
+       "Holy Shield",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "retribution",
+     "name": "Retribution",
+     "talents": [
+      [
+       "Improved Blessing of Might",
+       5
+      ],
+      [
+       "Benediction",
+       5
+      ],
+      [
+       "Improved Judgement",
+       2
+      ],
+      [
+       "Improved Seal of the Crusader",
+       3
+      ],
+      [
+       "Deflection",
+       5
+      ],
+      [
+       "Vindication",
+       3
+      ],
+      [
+       "Conviction",
+       5
+      ],
+      [
+       "Seal of Command",
+       1
+      ],
+      [
+       "Pursuit of Justice",
+       2
+      ],
+      [
+       "Eye for an Eye",
+       2
+      ],
+      [
+       "Improved Retribution Aura",
+       2
+      ],
+      [
+       "Two-Handed Weapon Specialization",
+       3
+      ],
+      [
+       "Sanctity Aura",
+       1
+      ],
+      [
+       "Vengeance",
+       5
+      ],
+      [
+       "Repentance",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  "priest": {
+   "className": "Priest",
+   "trees": [
+    {
+     "id": "discipline",
+     "name": "Discipline",
+     "talents": [
+      [
+       "Unbreakable Will",
+       5
+      ],
+      [
+       "Wand Specialization",
+       5
+      ],
+      [
+       "Silent Resolve",
+       5
+      ],
+      [
+       "Improved Power Word: Fortitude",
+       2
+      ],
+      [
+       "Improved Power Word: Shield",
+       3
+      ],
+      [
+       "Martyrdom",
+       2
+      ],
+      [
+       "Inner Focus",
+       1
+      ],
+      [
+       "Meditation",
+       3
+      ],
+      [
+       "Improved Inner Fire",
+       3
+      ],
+      [
+       "Mental Agility",
+       5
+      ],
+      [
+       "Improved Mana Burn",
+       2
+      ],
+      [
+       "Mental Strength",
+       5
+      ],
+      [
+       "Divine Spirit",
+       1
+      ],
+      [
+       "Force of Will",
+       5
+      ],
+      [
+       "Power Infusion",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "holy",
+     "name": "Holy",
+     "talents": [
+      [
+       "Healing Focus",
+       2
+      ],
+      [
+       "Improved Renew",
+       3
+      ],
+      [
+       "Holy Specialization",
+       5
+      ],
+      [
+       "Spell Warding",
+       5
+      ],
+      [
+       "Divine Fury",
+       5
+      ],
+      [
+       "Holy Nova",
+       1
+      ],
+      [
+       "Blessed Recovery",
+       3
+      ],
+      [
+       "Inspiration",
+       3
+      ],
+      [
+       "Holy Reach",
+       2
+      ],
+      [
+       "Improved Healing",
+       3
+      ],
+      [
+       "Searing Light",
+       2
+      ],
+      [
+       "Improved Prayer of Healing",
+       2
+      ],
+      [
+       "Spirit of Redemption",
+       1
+      ],
+      [
+       "Spiritual Guidance",
+       5
+      ],
+      [
+       "Spiritual Healing",
+       5
+      ],
+      [
+       "Lightwell",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "shadow",
+     "name": "Shadow",
+     "talents": [
+      [
+       "Spirit Tap",
+       5
+      ],
+      [
+       "Blackout",
+       5
+      ],
+      [
+       "Shadow Affinity",
+       3
+      ],
+      [
+       "Improved Shadow Word: Pain",
+       2
+      ],
+      [
+       "Shadow Focus",
+       5
+      ],
+      [
+       "Improved Psychic Scream",
+       2
+      ],
+      [
+       "Improved Mind Blast",
+       5
+      ],
+      [
+       "Mind Flay",
+       1
+      ],
+      [
+       "Improved Fade",
+       2
+      ],
+      [
+       "Shadow Reach",
+       3
+      ],
+      [
+       "Shadow Weaving",
+       5
+      ],
+      [
+       "Silence",
+       1
+      ],
+      [
+       "Vampiric Embrace",
+       1
+      ],
+      [
+       "Improved Vampiric Embrace",
+       2
+      ],
+      [
+       "Darkness",
+       5
+      ],
+      [
+       "Shadowform",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  "rogue": {
+   "className": "Rogue",
+   "trees": [
+    {
+     "id": "assassination",
+     "name": "Assassination",
+     "talents": [
+      [
+       "Improved Eviscerate",
+       3
+      ],
+      [
+       "Remorseless Attacks",
+       2
+      ],
+      [
+       "Malice",
+       5
+      ],
+      [
+       "Ruthlessness",
+       3
+      ],
+      [
+       "Murder",
+       2
+      ],
+      [
+       "Improved Slice and Dice",
+       3
+      ],
+      [
+       "Relentless Strikes",
+       1
+      ],
+      [
+       "Improved Expose Armor",
+       2
+      ],
+      [
+       "Lethality",
+       5
+      ],
+      [
+       "Vile Poisons",
+       5
+      ],
+      [
+       "Improved Poisons",
+       5
+      ],
+      [
+       "Cold Blood",
+       1
+      ],
+      [
+       "Improved Kidney Shot",
+       3
+      ],
+      [
+       "Seal Fate",
+       5
+      ],
+      [
+       "Vigor",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "combat",
+     "name": "Combat",
+     "talents": [
+      [
+       "Improved Gouge",
+       3
+      ],
+      [
+       "Improved Sinister Strike",
+       2
+      ],
+      [
+       "Lightning Reflexes",
+       5
+      ],
+      [
+       "Improved Backstab",
+       3
+      ],
+      [
+       "Deflection",
+       5
+      ],
+      [
+       "Precision",
+       5
+      ],
+      [
+       "Endurance",
+       2
+      ],
+      [
+       "Riposte",
+       1
+      ],
+      [
+       "Improved Sprint",
+       2
+      ],
+      [
+       "Improved Kick",
+       2
+      ],
+      [
+       "Dagger Specialization",
+       5
+      ],
+      [
+       "Dual Wield Specialization",
+       5
+      ],
+      [
+       "Mace Specialization",
+       5
+      ],
+      [
+       "Blade Flurry",
+       1
+      ],
+      [
+       "Sword Specialization",
+       5
+      ],
+      [
+       "Fist Weapon Specialization",
+       5
+      ],
+      [
+       "Weapon Expertise",
+       2
+      ],
+      [
+       "Aggression",
+       3
+      ],
+      [
+       "Adrenaline Rush",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "subtlety",
+     "name": "Subtlety",
+     "talents": [
+      [
+       "Master of Deception",
+       5
+      ],
+      [
+       "Opportunity",
+       5
+      ],
+      [
+       "Sleight of Hand",
+       2
+      ],
+      [
+       "Elusiveness",
+       2
+      ],
+      [
+       "Camouflage",
+       5
+      ],
+      [
+       "Initiative",
+       3
+      ],
+      [
+       "Ghostly Strike",
+       1
+      ],
+      [
+       "Improved Ambush",
+       3
+      ],
+      [
+       "Setup",
+       3
+      ],
+      [
+       "Improved Sap",
+       3
+      ],
+      [
+       "Serrated Blades",
+       3
+      ],
+      [
+       "Heightened Senses",
+       2
+      ],
+      [
+       "Preparation",
+       1
+      ],
+      [
+       "Dirty Deeds",
+       2
+      ],
+      [
+       "Hemorrhage",
+       1
+      ],
+      [
+       "Deadliness",
+       5
+      ],
+      [
+       "Premeditation",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  "shaman": {
+   "className": "Shaman",
+   "trees": [
+    {
+     "id": "elemental",
+     "name": "Elemental",
+     "talents": [
+      [
+       "Convection",
+       5
+      ],
+      [
+       "Concussion",
+       5
+      ],
+      [
+       "Earth's Grasp",
+       2
+      ],
+      [
+       "Elemental Warding",
+       3
+      ],
+      [
+       "Call of Flame",
+       3
+      ],
+      [
+       "Elemental Focus",
+       1
+      ],
+      [
+       "Reverberation",
+       5
+      ],
+      [
+       "Call of Thunder",
+       5
+      ],
+      [
+       "Improved Fire Totems",
+       2
+      ],
+      [
+       "Eye of the Storm",
+       3
+      ],
+      [
+       "Elemental Devastation",
+       3
+      ],
+      [
+       "Storm Reach",
+       2
+      ],
+      [
+       "Elemental Fury",
+       1
+      ],
+      [
+       "Lightning Mastery",
+       5
+      ],
+      [
+       "Elemental Mastery",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "enhancement",
+     "name": "Enhancement",
+     "talents": [
+      [
+       "Ancestral Knowledge",
+       5
+      ],
+      [
+       "Shield Specialization",
+       5
+      ],
+      [
+       "Guardian Totems",
+       2
+      ],
+      [
+       "Thundering Strikes",
+       5
+      ],
+      [
+       "Improved Ghost Wolf",
+       2
+      ],
+      [
+       "Improved Lightning Shield",
+       3
+      ],
+      [
+       "Enhancing Totems",
+       2
+      ],
+      [
+       "Two-Handed Axes and Maces",
+       1
+      ],
+      [
+       "Anticipation",
+       5
+      ],
+      [
+       "Flurry",
+       5
+      ],
+      [
+       "Toughness",
+       5
+      ],
+      [
+       "Improved Weapon Totems",
+       2
+      ],
+      [
+       "Elemental Weapons",
+       3
+      ],
+      [
+       "Parry",
+       1
+      ],
+      [
+       "Weapon Mastery",
+       5
+      ],
+      [
+       "Stormstrike",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "restoration",
+     "name": "Restoration",
+     "talents": [
+      [
+       "Improved Healing Wave",
+       5
+      ],
+      [
+       "Tidal Focus",
+       5
+      ],
+      [
+       "Improved Reincarnation",
+       2
+      ],
+      [
+       "Ancestral Healing",
+       3
+      ],
+      [
+       "Totemic Focus",
+       5
+      ],
+      [
+       "Nature's Guidance",
+       3
+      ],
+      [
+       "Healing Focus",
+       5
+      ],
+      [
+       "Totemic Mastery",
+       1
+      ],
+      [
+       "Healing Grace",
+       3
+      ],
+      [
+       "Restorative Totems",
+       5
+      ],
+      [
+       "Tidal Mastery",
+       5
+      ],
+      [
+       "Healing Way",
+       3
+      ],
+      [
+       "Nature's Swiftness",
+       1
+      ],
+      [
+       "Purification",
+       5
+      ],
+      [
+       "Mana Tide Totem",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  "warlock": {
+   "className": "Warlock",
+   "trees": [
+    {
+     "id": "affliction",
+     "name": "Affliction",
+     "talents": [
+      [
+       "Suppression",
+       5
+      ],
+      [
+       "Improved Corruption",
+       5
+      ],
+      [
+       "Improved Curse of Weakness",
+       3
+      ],
+      [
+       "Improved Drain Soul",
+       2
+      ],
+      [
+       "Improved Life Tap",
+       2
+      ],
+      [
+       "Improved Drain Life",
+       5
+      ],
+      [
+       "Improved Curse of Agony",
+       3
+      ],
+      [
+       "Fel Concentration",
+       5
+      ],
+      [
+       "Amplify Curse",
+       1
+      ],
+      [
+       "Grim Reach",
+       2
+      ],
+      [
+       "Nightfall",
+       2
+      ],
+      [
+       "Improved Drain Mana",
+       2
+      ],
+      [
+       "Siphon Life",
+       1
+      ],
+      [
+       "Curse of Exhaustion",
+       1
+      ],
+      [
+       "Improved Curse of Exhaustion",
+       4
+      ],
+      [
+       "Shadow Mastery",
+       5
+      ],
+      [
+       "Dark Pact",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "demonology",
+     "name": "Demonology",
+     "talents": [
+      [
+       "Improved Healthstone",
+       2
+      ],
+      [
+       "Improved Imp",
+       3
+      ],
+      [
+       "Demonic Embrace",
+       5
+      ],
+      [
+       "Improved Health Funnel",
+       2
+      ],
+      [
+       "Improved Voidwalker",
+       3
+      ],
+      [
+       "Fel Intellect",
+       5
+      ],
+      [
+       "Improved Succubus",
+       3
+      ],
+      [
+       "Fel Domination",
+       1
+      ],
+      [
+       "Fel Stamina",
+       5
+      ],
+      [
+       "Master Summoner",
+       2
+      ],
+      [
+       "Unholy Power",
+       5
+      ],
+      [
+       "Improved Enslave Demon",
+       5
+      ],
+      [
+       "Demonic Sacrifice",
+       1
+      ],
+      [
+       "Improved Firestone",
+       2
+      ],
+      [
+       "Master Demonologist",
+       5
+      ],
+      [
+       "Soul Link",
+       1
+      ],
+      [
+       "Improved Spellstone",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "destruction",
+     "name": "Destruction",
+     "talents": [
+      [
+       "Improved Shadow Bolt",
+       5
+      ],
+      [
+       "Cataclysm",
+       5
+      ],
+      [
+       "Bane",
+       5
+      ],
+      [
+       "Aftermath",
+       5
+      ],
+      [
+       "Improved Firebolt",
+       2
+      ],
+      [
+       "Improved Lash of Pain",
+       2
+      ],
+      [
+       "Devastation",
+       5
+      ],
+      [
+       "Shadowburn",
+       1
+      ],
+      [
+       "Intensity",
+       2
+      ],
+      [
+       "Destructive Reach",
+       2
+      ],
+      [
+       "Improved Searing Pain",
+       5
+      ],
+      [
+       "Pyroclasm",
+       2
+      ],
+      [
+       "Improved Immolate",
+       5
+      ],
+      [
+       "Ruin",
+       1
+      ],
+      [
+       "Emberstorm",
+       5
+      ],
+      [
+       "Conflagrate",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  "warrior": {
+   "className": "Warrior",
+   "trees": [
+    {
+     "id": "arms",
+     "name": "Arms",
+     "talents": [
+      [
+       "Improved Heroic Strike",
+       3
+      ],
+      [
+       "Deflection",
+       5
+      ],
+      [
+       "Improved Rend",
+       3
+      ],
+      [
+       "Improved Charge",
+       2
+      ],
+      [
+       "Tactical Mastery",
+       5
+      ],
+      [
+       "Improved Thunder Clap",
+       3
+      ],
+      [
+       "Improved Overpower",
+       2
+      ],
+      [
+       "Anger Management",
+       1
+      ],
+      [
+       "Deep Wounds",
+       3
+      ],
+      [
+       "Two-Handed Weapon Specialization",
+       5
+      ],
+      [
+       "Impale",
+       2
+      ],
+      [
+       "Axe Specialization",
+       5
+      ],
+      [
+       "Sweeping Strikes",
+       1
+      ],
+      [
+       "Mace Specialization",
+       5
+      ],
+      [
+       "Sword Specialization",
+       5
+      ],
+      [
+       "Polearm Specialization",
+       5
+      ],
+      [
+       "Improved Hamstring",
+       3
+      ],
+      [
+       "Mortal Strike",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "fury",
+     "name": "Fury",
+     "talents": [
+      [
+       "Booming Voice",
+       5
+      ],
+      [
+       "Cruelty",
+       5
+      ],
+      [
+       "Improved Demoralizing Shout",
+       5
+      ],
+      [
+       "Unbridled Wrath",
+       5
+      ],
+      [
+       "Improved Cleave",
+       3
+      ],
+      [
+       "Piercing Howl",
+       1
+      ],
+      [
+       "Blood Craze",
+       3
+      ],
+      [
+       "Improved Battle Shout",
+       5
+      ],
+      [
+       "Dual Wield Specialization",
+       5
+      ],
+      [
+       "Improved Execute",
+       2
+      ],
+      [
+       "Enrage",
+       5
+      ],
+      [
+       "Improved Slam",
+       5
+      ],
+      [
+       "Death Wish",
+       1
+      ],
+      [
+       "Improved Intercept",
+       2
+      ],
+      [
+       "Improved Berserker Rage",
+       2
+      ],
+      [
+       "Flurry",
+       5
+      ],
+      [
+       "Bloodthirst",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "protection",
+     "name": "Protection",
+     "talents": [
+      [
+       "Shield Specialization",
+       5
+      ],
+      [
+       "Anticipation",
+       5
+      ],
+      [
+       "Improved Bloodrage",
+       2
+      ],
+      [
+       "Toughness",
+       5
+      ],
+      [
+       "Iron Will",
+       5
+      ],
+      [
+       "Last Stand",
+       1
+      ],
+      [
+       "Improved Shield Block",
+       3
+      ],
+      [
+       "Improved Revenge",
+       3
+      ],
+      [
+       "Defiance",
+       5
+      ],
+      [
+       "Improved Sunder Armor",
+       3
+      ],
+      [
+       "Improved Disarm",
+       3
+      ],
+      [
+       "Improved Taunt",
+       2
+      ],
+      [
+       "Improved Shield Wall",
+       2
+      ],
+      [
+       "Concussion Blow",
+       1
+      ],
+      [
+       "Improved Shield Bash",
+       2
+      ],
+      [
+       "One-Handed Weapon Specialization",
+       5
+      ],
+      [
+       "Shield Slam",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ }
+}

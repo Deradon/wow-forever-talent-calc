@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import classesIndex from '../data/classes-index.json'
 import { includeExamples } from '../data/load'
+import { classHash } from '../url/route'
+import { continueLabel, forgetLastBuild, readLastBuild } from './storage'
 import { SITE_TITLE, useTitle } from './title'
 
 export const REPO_URL = 'https://github.com/Deradon/wow-forever-talent-calc'
@@ -28,9 +31,29 @@ const classes: IndexEntry[] = (classesIndex as IndexEntry[]).filter((c) => inclu
 /** Landing page: one card per class file with its trees and talent counts. */
 export function ClassPicker() {
   useTitle(SITE_TITLE)
+  const [last, setLast] = useState(() => readLastBuild())
 
   return (
     <div>
+      {last && (
+        <div className="continue-card" data-testid="continue-card">
+          <a className="serif text-base" href={classHash(last.classId, last.v, last.t)} data-testid="continue-link">
+            {continueLabel(last)}
+          </a>
+          <span className="text-xs text-[var(--text-dim)]">your last build on this browser, not shared anywhere</span>
+          <button
+            type="button"
+            className="continue-forget ml-auto"
+            data-testid="continue-forget"
+            onClick={() => {
+              forgetLastBuild()
+              setLast(undefined)
+            }}
+          >
+            forget
+          </button>
+        </div>
+      )}
       <div className="panel p-5">
         <h1 className="serif mb-2 text-lg text-[var(--gold)]">Choose a class</h1>
         {/* The one place the caveat is stated: tooltips and class pages must not repeat it. */}
