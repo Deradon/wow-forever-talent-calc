@@ -23,7 +23,7 @@ day-1 stream, in which every talent tooltip is hovered at rank 0.
   configurable per class file.
 - Tooltips show rank-1 text only. Higher ranks are anticipated from Classic
   Era scaling patterns, marked as such in the data.
-- Text reading: local Qwen3-VL via llama.cpp on a local 8 GB NVIDIA GPU. Positions,
+- Text reading: local Qwen3-VL via llama.cpp on a local GPU. Positions,
   crops and icon matching: OpenCV. No cloud APIs.
 - Web: Vite + React + TypeScript, static, GitHub Pages. MIT.
 - Wowhead already has a Forever calculator page with Classic placeholder
@@ -98,8 +98,11 @@ Skyborne starting zone and a new character sheet. Inventory with timestamps:
   route `#/races`. Cheapest, complete, highest news value.
 - 2c "What changed vs Classic" view (done 2026-09-13): route `#/changes`, generated
   `data/changes/index.json`; stays valuable after datamining.
-- 2d Spellbook lists and hover tooltips (~1 day) only if talents are done;
-  Legacy and lore as a hand-written notes page (2-3 h).
+- 2d Spellbook lists and hover tooltips (data half done 2026-09-13):
+  `data/spells/<class>.json`, 327 entries and 112 tooltips over eight classes
+  (priest never on screen), route `#/spells/<class>` not built yet -- see the
+  recommendation in `docs/handover/2026-09-13-spells-data.md` section 6.
+  Legacy and lore still open, as a hand-written notes page (2-3 h).
 
 ### Phase 3: harden and prepare for datamined data (from 2026-09-17)
 - Importer path from DB2/Wowhead data into the same schema; data version bump
@@ -200,6 +203,18 @@ workflow then publishes to https://deradon.github.io/wow-forever-talent-calc/
 on every push to `main`.
 
 ## Status log
+
+- 2026-09-14 ~02:30: Phase 2d data half done. Stage 11 (`11_spellbook.py`,
+  `spells.py`, `validate_spells.py`, `data/schema/spell.schema.json`) read the
+  spellbook: **327 list entries and 112 full hover tooltips over eight classes**
+  with crops and provenance, an explicit coverage record per class, and 16 names
+  with no Classic Era counterpart (Holy Strike, Seal of Fury, Call of the
+  Ancestors/Elements, Totemic Recall/Projection, Fire Nova, Arcane Blast, Bane
+  of Agony, Victory Rush, ...). Priest is the only class the stream never shows;
+  rogue and warlock *were* shown, contrary to the survey. Pipeline 461 tests, CI
+  validates `data/spells/`. Next: the `#/spells/<class>` route (scoped as
+  "spells seen on stream"), an overrides mechanism for races and spells, and a
+  sourced Classic spell prior with tooltip text.
 
 - 2026-09-14 ~01:00: UI round 2 live (`#/changes` page with inline diffs,
   `sel=` deep links pinning a tooltip, level control, `?` shortcuts overlay,

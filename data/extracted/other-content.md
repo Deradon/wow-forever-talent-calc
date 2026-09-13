@@ -32,6 +32,36 @@ Troll has **Rapid Regeneration** (not seen here), and every race has exactly
 four traits except Skyborne, which has five across its two variants — so the
 "~45-55 traits" estimate below is really 37.
 
+## Corrections (2026-09-13, after the stage-11 extraction)
+
+Section 3 was read by eye from 10 s samples and undercounts the spellbook badly.
+`data/spells/*.json` and `data/extracted/spells.md` supersede it; this survey is
+kept as written so the corrections are visible.
+
+1. **Rogue and Warlock pages were both on screen.** The Rogue General page is at
+   06:13:45 (the spellbook is open on the right half of the screen, beside the
+   Map & Quest Log, which is why the fixed-position eyeball pass missed it), and
+   a **Warlock** searched "Bane of Agony" at **05:18:40-05:19:10** — a window
+   the survey does not list at all. **Priest is the only class never shown.**
+2. **Almost every "page not seen" was seen.** Paladin Protection (04:00:16),
+   Mage Frost (06:08:54), Warrior Arms and Protection, Shaman Enhancement and
+   Restoration, Druid Balance and Feral Combat, Hunter Beast Mastery and
+   Survival all appear. What is genuinely missing: the Druid General page, the
+   three Rogue tree pages and the three Warlock tree pages.
+3. **The hunter has a Pet page** (05:56:17) listing the pet's own abilities.
+4. **The counts are three times the estimate**: 213 page states over 2463
+   spellbook frames, 90 distinct pages, **327 list entries** and **112 full
+   hover tooltips**, not "~14 pages, ~110 entries, 10-20 tooltips".
+5. **"Show all spell ranks" was confirmed on for paladin, hunter, shaman and
+   warlock**, and the toggle itself is visible being flipped at 04:00:11 (the
+   options dropdown is open over the Retribution page). For mage, druid, warrior
+   and rogue no page listed a spell twice, so the setting is "not observed".
+6. **The spellbook window moves.** It sits at its default position most of the
+   time but is dragged to x 1013 at 06:14 and x 813 at 06:20, which is why stage
+   11 locates it by its title bar instead of assuming a fixed rectangle.
+7. One window in the survey list is really two characters: the shaman window at
+   05:41:30-05:42:40 ends on a **druid** Feral Combat page (05:42:34).
+
 ## Summary table
 
 | # | Content | Where (stream time) | Footage | Rough count | Differs from Classic Era | Priority |

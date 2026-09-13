@@ -1,0 +1,3594 @@
+{
+  "$schema": "../schema/spell.schema.json",
+  "schemaVersion": 1,
+  "class": "hunter",
+  "className": "Hunter",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T20:40:16Z",
+  "observedLevel": 38,
+  "tabs": [
+    {
+      "id": "general",
+      "name": "General",
+      "order": 0
+    },
+    {
+      "id": "beast-mastery",
+      "name": "Beast Mastery",
+      "order": 1
+    },
+    {
+      "id": "marksmanship",
+      "name": "Marksmanship",
+      "order": 2
+    },
+    {
+      "id": "pet",
+      "name": "Pet",
+      "order": 3
+    },
+    {
+      "id": "survival",
+      "name": "Survival",
+      "order": 4
+    }
+  ],
+  "spells": [
+    {
+      "id": "aspect-of-the-hawk",
+      "name": "Aspect of the Hawk",
+      "kind": "active",
+      "tab": "beast-mastery",
+      "ranksSeen": [4],
+      "icon": "crop-aspect-of-the-hawk",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/aspect-of-the-hawk.icon.png",
+      "tooltips": [
+        {
+          "rank": 4,
+          "cost": "70 Mana",
+          "castTime": "Instant",
+          "description": "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 70. Only one Aspect can be active at a time.",
+          "footer": "You've added this to an action bar that is hidden or disabled",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21329.0,
+            "frame": 1279740,
+            "crop": "data/review/spells/hunter/aspect-of-the-hawk.r4.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Aspect of the Hawk",
+                "description": "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 70. Only one Aspect can be active at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Aspect of the Hawk",
+                "description": "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 70. Only one Aspect can be active at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Aspect of the Hawk",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21328.5,
+        "frame": 1279710,
+        "crop": "data/review/spells/hunter/aspect-of-the-hawk.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Aspect of the Hawk",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Aspect of the Hawk",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Aspect of the Hawk",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "beast-lore",
+      "name": "Beast Lore",
+      "kind": "active",
+      "tab": "beast-mastery",
+      "icon": "crop-beast-lore",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/beast-lore.icon.png",
+      "tooltips": [
+        {
+          "cost": "40 Mana",
+          "range": "40 yd range",
+          "castTime": "Instant",
+          "description": "Gather information about the target beast. The tooltip will display damage, health, armor, any special resistances, and diet.",
+          "footer": "You've added this to an action bar that is hidden or disabled",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21333.5,
+            "frame": 1280010,
+            "crop": "data/review/spells/hunter/beast-lore.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Beast Lore",
+                "description": "Gather information about the target beast. The tooltip will display damage, health, armor, any special resistances, and diet."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Beast Lore",
+                "description": "Gather information about the target beast. The tooltip will display damage, health, armor, any special resistances, and diet."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Beast Lore",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21328.5,
+        "frame": 1279710,
+        "crop": "data/review/spells/hunter/beast-lore.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Beast Lore"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Beast Lore"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Beast Lore"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dismiss-pet",
+      "name": "Dismiss Pet",
+      "kind": "active",
+      "tab": "beast-mastery",
+      "icon": "crop-dismiss-pet",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/dismiss-pet.icon.png",
+      "tooltips": [
+        {
+          "range": "10 yd range",
+          "castTime": "5 sec cast",
+          "description": "Dismiss your pet. Dismissing your pet will reduce its happiness by 50.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21327.75,
+            "frame": 1279665,
+            "crop": "data/review/spells/hunter/dismiss-pet.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Dismiss Pet",
+                "description": "Dismiss your pet. Dismissing your pet will reduce its happiness by 50."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Dismiss Pet",
+                "description": "Dismiss your pet. Dismissing your pet will reduce its happiness by 50."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dismiss Pet",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21328.5,
+        "frame": 1279710,
+        "crop": "data/review/spells/hunter/dismiss-pet.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dismiss Pet"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dismiss Pet"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "eagle-eye",
+      "name": "Eagle Eye",
+      "kind": "active",
+      "tab": "beast-mastery",
+      "icon": "crop-eagle-eye",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/eagle-eye.icon.png",
+      "tooltips": [
+        {
+          "cost": "25 Mana",
+          "range": "Unlimited range",
+          "castTime": "Channeled",
+          "description": "Zooms in the hunter's vision. Only usable outdoors. Lasts 1 min.",
+          "footer": "You've added this to an action bar that is hidden or disabled",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21329.5,
+            "frame": 1279770,
+            "crop": "data/review/spells/hunter/eagle-eye.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Eagle Eye",
+                "description": "Zooms in the hunter's vision. Only usable outdoors. Lasts 1 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Eagle Eye",
+                "description": "Zooms in the hunter's vision. Only usable outdoors. Lasts 1 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Eagle Eye",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21328.5,
+        "frame": 1279710,
+        "crop": "data/review/spells/hunter/eagle-eye.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Eagle Eye"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Eagle Eye"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "eyes-of-the-beast",
+      "name": "Eyes of the Beast",
+      "kind": "active",
+      "tab": "beast-mastery",
+      "icon": "crop-eyes-of-the-beast",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/eyes-of-the-beast.icon.png",
+      "tooltips": [
+        {
+          "cost": "20 Mana",
+          "range": "Unlimited range",
+          "castTime": "2 sec cast",
+          "description": "Take direct control of your pet and see through its eyes for 2 min.",
+          "footer": "You've added this to an action bar that is hidden or disabled",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21332.0,
+            "frame": 1279920,
+            "crop": "data/review/spells/hunter/eyes-of-the-beast.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Eyes of the Beast",
+                "description": "Take direct control of your pet and see through its eyes for 2 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Eyes of the Beast",
+                "description": "Take direct control of your pet and see through its eyes for 2 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Eyes of the Beast",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21328.5,
+        "frame": 1279710,
+        "crop": "data/review/spells/hunter/eyes-of-the-beast.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Eyes of the Beast"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Eyes of the Beast"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "feed-pet",
+      "name": "Feed Pet",
+      "kind": "active",
+      "tab": "beast-mastery",
+      "icon": "crop-feed-pet",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/feed-pet.icon.png",
+      "tooltips": [
+        {
+          "range": "10 yd range",
+          "castTime": "Instant",
+          "description": "Feed your pet the selected item. Feeding your pet increases happiness. Using food close to the pet's level will have a better result.",
+          "footer": "You've added this to an action bar that is hidden or disabled",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21334.0,
+            "frame": 1280040,
+            "crop": "data/review/spells/hunter/feed-pet.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Feed Pet",
+                "description": "Feed your pet the selected item. Feeding your pet increases happiness. Using food close to the pet's level will have a better result."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Feed Pet",
+                "description": "Feed your pet the selected item. Feeding your pet increases happiness. Using food close to the pet's level will have a better result."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Feed Pet",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21328.5,
+        "frame": 1279710,
+        "crop": "data/review/spells/hunter/feed-pet.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Feed Pet"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Feed Pet"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "mend-pet",
+      "name": "Mend Pet",
+      "kind": "active",
+      "tab": "beast-mastery",
+      "ranksSeen": [4],
+      "icon": "crop-mend-pet",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/mend-pet.icon.png",
+      "tooltips": [
+        {
+          "cost": "225 Mana",
+          "range": "20 yd range",
+          "castTime": "Channeled",
+          "description": "Heals your pet 103 health every second while you focus. Lasts 5 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21326.0,
+            "frame": 1279560,
+            "crop": "data/review/spells/hunter/mend-pet.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Mend Pet",
+                "description": "Heals your pet 103 health every second while you focus. Lasts 5 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Mend Pet",
+                "description": "Heals your pet 103 health every second while you focus. Lasts 5 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Mend Pet",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21328.5,
+        "frame": 1279710,
+        "crop": "data/review/spells/hunter/mend-pet.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Mend Pet",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Mend Pet",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "revive-pet",
+      "name": "Revive Pet",
+      "kind": "active",
+      "tab": "beast-mastery",
+      "icon": "crop-revive-pet",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/revive-pet.icon.png",
+      "tooltips": [
+        {
+          "cost": "1,045 Mana",
+          "castTime": "10 sec cast",
+          "description": "Revive your pet, returning it to life with 15% of its health.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21327.0,
+            "frame": 1279620,
+            "crop": "data/review/spells/hunter/revive-pet.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Revive Pet",
+                "description": "Revive your pet, returning it to life with 15% of its health."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Revive Pet",
+                "description": "Revive your pet, returning it to life with 15% of its health."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Revive Pet",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21328.5,
+        "frame": 1279710,
+        "crop": "data/review/spells/hunter/revive-pet.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Revive Pet"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Revive Pet"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "scare-beast",
+      "name": "Scare Beast",
+      "kind": "active",
+      "tab": "beast-mastery",
+      "ranksSeen": [2],
+      "icon": "crop-scare-beast",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/scare-beast.icon.png",
+      "tooltips": [
+        {
+          "rank": 2,
+          "cost": "50 Mana",
+          "range": "10 yd range",
+          "castTime": "1.5 sec cast",
+          "cooldown": "30 sec cooldown",
+          "description": "Scares a beast. causing it to run in fear for up to 15 sec. Damage caused may interrupt the effect. Only one beast can be feared at a time.",
+          "footer": "You've added this to an action bar that is hidden or disabled",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21330.75,
+            "frame": 1279845,
+            "crop": "data/review/spells/hunter/scare-beast.r2.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Scare Beast",
+                "description": "Scares a beast. causing it to run in fear for up to 15 sec. Damage caused may interrupt the effect. Only one beast can be feared at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Scare Beast",
+                "description": "Scares a beast. causing it to run in fear for up to 15 sec. Damage caused may interrupt the effect. Only one beast can be feared at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Scare Beast",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21328.5,
+        "frame": 1279710,
+        "crop": "data/review/spells/hunter/scare-beast.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Scare Beast",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Scare Beast",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "tame-beast",
+      "name": "Tame Beast",
+      "kind": "active",
+      "tab": "beast-mastery",
+      "icon": "crop-tame-beast",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/tame-beast.icon.png",
+      "tooltips": [
+        {
+          "cost": "627 Mana",
+          "range": "30 yd range",
+          "castTime": "Channeled",
+          "description": "Begins taming a beast to be your companion. Your armor is reduced by 100% while you focus on taming the beast for 20 sec. If you lose the beast's attention for any reason, the taming process will fall. Once tamed, the beast will be very unhappy and disloyal. Try feeding the pet immediately to make it happy.",
+          "footer": "You've added this to an action bar that is hidden or disabled",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21331.5,
+            "frame": 1279890,
+            "crop": "data/review/spells/hunter/tame-beast.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Tame Beast",
+                "description": "Begins taming a beast to be your companion. Your armor is reduced by 100% while you focus on taming the beast for 20 sec. If you lose the beast's attention for any reason, the taming process will fall. Once tamed, the beast will be very unhappy and disloyal. Try feeding the pet immediately to make it happy."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Tame Beast",
+                "description": "Begins taming a beast to be your companion. Your armor is reduced by 100% while you focus on taming the beast for 20 sec. If you lose the beast's attention for any reason, the taming process will fall. Once tamed, the beast will be very unhappy and disloyal. Try feeding the pet immediately to make it happy."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Tame Beast",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21328.5,
+        "frame": 1279710,
+        "crop": "data/review/spells/hunter/tame-beast.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Tame Beast"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Tame Beast"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "armor-proficiency",
+      "name": "Armor Proficiency",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-armor-proficiency",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/armor-proficiency.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Armor Proficiency",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21320.5,
+        "frame": 1279230,
+        "crop": "data/review/spells/hunter/armor-proficiency.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Armor Proficiency"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Armor Proficiency"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "beast-training",
+      "name": "Beast Training",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-beast-training",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/beast-training.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Beast Training",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21320.5,
+        "frame": 1279230,
+        "crop": "data/review/spells/hunter/beast-training.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Beast Training"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Beast Training"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Beast Training"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dodge",
+      "name": "Dodge",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-dodge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/dodge.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dodge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21320.5,
+        "frame": 1279230,
+        "crop": "data/review/spells/hunter/dodge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dodge"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dodge"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dual-wield",
+      "name": "Dual Wield",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-dual-wield",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/dual-wield.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dual Wield",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21320.5,
+        "frame": 1279230,
+        "crop": "data/review/spells/hunter/dual-wield.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dual Wield"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dual Wield"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "languages",
+      "name": "Languages",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-languages",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/languages.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Languages",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21320.5,
+        "frame": 1279230,
+        "crop": "data/review/spells/hunter/languages.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Languages"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Languages"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "parry",
+      "name": "Parry",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-parry",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/parry.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Parry",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21320.5,
+        "frame": 1279230,
+        "crop": "data/review/spells/hunter/parry.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Parry"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Parry"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "perception",
+      "name": "Perception",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-perception",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/perception.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/human.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21320.5,
+        "frame": 1279230,
+        "crop": "data/review/spells/hunter/perception.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Perception"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Perception"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Perception"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "sword-specialization",
+      "name": "Sword Specialization",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-sword-specialization",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/sword-specialization.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/human.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21320.5,
+        "frame": 1279230,
+        "crop": "data/review/spells/hunter/sword-specialization.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Sword Specialization"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sword Specialization"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "the-human-spirit",
+      "name": "The Human Spirit",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-the-human-spirit",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/the-human-spirit.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/human.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21320.5,
+        "frame": 1279230,
+        "crop": "data/review/spells/hunter/the-human-spirit.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "The Human Spirit"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "The Human Spirit"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "throw",
+      "name": "Throw",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-throw",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/throw.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Throw",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21320.5,
+        "frame": 1279230,
+        "crop": "data/review/spells/hunter/throw.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Throw"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Throw"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Throw"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "will-to-survive",
+      "name": "Will to Survive",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-will-to-survive",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/will-to-survive.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/human.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21320.5,
+        "frame": 1279230,
+        "crop": "data/review/spells/hunter/will-to-survive.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Will to Survive"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Will to Survive"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "aimed-shot",
+      "name": "Aimed Shot",
+      "kind": "active",
+      "tab": "marksmanship",
+      "ranksSeen": [3],
+      "icon": "crop-aimed-shot",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/aimed-shot.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Aimed Shot",
+        "note": "not a Classic Era trainer spell, but a Classic Era Marksmanship talent of the same name exists; the demo character may simply have spent a point on it, so this is not evidence that Forever made it baseline. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/aimed-shot.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Aimed Shot",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Aimed Shot",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Aimed Shot",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "arcane-shot",
+      "name": "Arcane Shot",
+      "kind": "active",
+      "tab": "marksmanship",
+      "ranksSeen": [5],
+      "icon": "crop-arcane-shot",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/arcane-shot.icon.png",
+      "tooltips": [
+        {
+          "cost": "105 Mana",
+          "range": "8-35 yd range",
+          "castTime": "Instant",
+          "cooldown": "6 sec cooldown",
+          "description": "An instant shot that causes 94 Arcane damage.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21347.0,
+            "frame": 1280820,
+            "crop": "data/review/spells/hunter/arcane-shot.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Arcane Shot",
+                "description": "An instant shot that causes 94 Arcane damage."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Arcane Shot",
+                "description": "An instant shot that causes 94 Arcane damage."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Arcane Shot",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/arcane-shot.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Arcane Shot",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Arcane Shot",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Arcane Shot",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "auto-shot",
+      "name": "Auto Shot",
+      "kind": "active",
+      "tab": "marksmanship",
+      "icon": "crop-auto-shot",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/auto-shot.icon.png",
+      "tooltips": [
+        {
+          "range": "8-35 yd range",
+          "castTime": "Instant",
+          "cooldown": "2.1 sec cooldown",
+          "description": "Automatically shoots the target until cancelled.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21347.5,
+            "frame": 1280850,
+            "crop": "data/review/spells/hunter/auto-shot.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Auto Shot",
+                "description": "Automatically shoots the target until cancelled."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Auto Shot",
+                "description": "Automatically shoots the target until cancelled."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Auto Shot",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/auto-shot.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Auto Shot"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Auto Shot"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Auto Shot"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "concussive-shot",
+      "name": "Concussive Shot",
+      "kind": "active",
+      "tab": "marksmanship",
+      "icon": "crop-concussive-shot",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/concussive-shot.icon.png",
+      "tooltips": [
+        {
+          "cost": "84 Mana",
+          "range": "8-35 yd range",
+          "castTime": "Instant",
+          "cooldown": "12 sec cooldown",
+          "description": "Dazes the target, slowing movement speed by 50% for 4 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21348.0,
+            "frame": 1280880,
+            "crop": "data/review/spells/hunter/concussive-shot.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Concussive Shot",
+                "description": "Dazes the target, slowing movement speed by 50% for 4 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Concussive Shot",
+                "description": "Dazes the target, slowing movement speed by 50% for 4 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Concussive Shot",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/concussive-shot.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Concussive Shot"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Concussive Shot"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Concussive Shot"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "distracting-shot",
+      "name": "Distracting Shot",
+      "kind": "active",
+      "tab": "marksmanship",
+      "ranksSeen": [3],
+      "icon": "crop-distracting-shot",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/distracting-shot.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Distracting Shot",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/distracting-shot.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Distracting Shot",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Distracting Shot",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "flare",
+      "name": "Flare",
+      "kind": "active",
+      "tab": "marksmanship",
+      "icon": "crop-flare",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/flare.icon.png",
+      "tooltips": [
+        {
+          "cost": "50 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "cooldown": "15 sec cooldown",
+          "description": "Exposes all hidden and invisible enemies within 10 yards of the targeted area for 30 sec.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21350.25,
+            "frame": 1281015,
+            "crop": "data/review/spells/hunter/flare.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Flare",
+                "description": "Exposes all hidden and invisible enemies within 10 yards of the targeted area for 30 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Flare",
+                "description": "Exposes all hidden and invisible enemies within 10 yards of the targeted area for 30 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Flare",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/flare.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Flare"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Flare"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "hunters-mark",
+      "name": "Hunter's Mark",
+      "kind": "active",
+      "tab": "marksmanship",
+      "ranksSeen": [2],
+      "icon": "crop-hunters-mark",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/hunters-mark.icon.png",
+      "tooltips": [
+        {
+          "rank": 2,
+          "cost": "30 Mana",
+          "range": "100 yd range",
+          "castTime": "Instant",
+          "description": "Places the Hunter's Mark on the target. Increasing the Ranged Attack Power of all attackers against that target by 59. In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible. The target also appears on the mini-map. Lasts for 2 min.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21350.75,
+            "frame": 1281045,
+            "crop": "data/review/spells/hunter/hunters-mark.r2.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Hunter's Mark",
+                "description": "Places the Hunter's Mark on the target. Increasing the Ranged Attack Power of all attackers against that target by 59. In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible. The target also appears on the mini-map. Lasts for 2 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Hunter's Mark",
+                "description": "Places the Hunter's Mark on the target. Increasing the Ranged Attack Power of all attackers against that target by 59. In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible. The target also appears on the mini-map. Lasts for 2 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Hunter's Mark",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/hunters-mark.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Hunter's Mark",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Hunter's Mark",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "multi-shot",
+      "name": "Multi-Shot",
+      "kind": "active",
+      "tab": "marksmanship",
+      "ranksSeen": [1],
+      "icon": "crop-multi-shot",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/multi-shot.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Multi-Shot",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/multi-shot.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Multi-Shot",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Multi-Shot",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "rapid-fire",
+      "name": "Rapid Fire",
+      "kind": "active",
+      "tab": "marksmanship",
+      "icon": "crop-rapid-fire",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/rapid-fire.icon.png",
+      "tooltips": [
+        {
+          "cost": "100 Mana",
+          "castTime": "Instant",
+          "cooldown": "5 min cooldown",
+          "description": "Increases ranged and melee attack speed by 40% for 15 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21352.75,
+            "frame": 1281165,
+            "crop": "data/review/spells/hunter/rapid-fire.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Rapid Fire",
+                "description": "Increases ranged and melee attack speed by 40% for 15 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Rapid Fire",
+                "description": "Increases ranged and melee attack speed by 40% for 15 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Rapid Fire",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/rapid-fire.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Rapid Fire"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Rapid Fire"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "scorpid-sting",
+      "name": "Scorpid Sting",
+      "kind": "active",
+      "tab": "marksmanship",
+      "ranksSeen": [1],
+      "icon": "crop-scorpid-sting",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/scorpid-sting.icon.png",
+      "tooltips": [
+        {
+          "rank": 1,
+          "cost": "94 Mana",
+          "range": "8-35 yd range",
+          "castTime": "Instant",
+          "description": "Stings the target, reducing the target's chance to hit with all attacks by 2% for 20 sec. Only one Sting per Hunter can be active on any one target.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21352.5,
+            "frame": 1281150,
+            "crop": "data/review/spells/hunter/scorpid-sting.r1.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Scorpid Sting",
+                "description": "Stings the target, reducing the target's chance to hit with all attacks by 2% for 20 sec. Only one Sting per Hunter can be active on any one target."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Scorpid Sting",
+                "description": "Stings the target, reducing the target's chance to hit with all attacks by 2% for 20 sec. Only one Sting per Hunter can be active on any one target."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Scorpid Sting",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/scorpid-sting.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Scorpid Sting",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Scorpid Sting",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "serpent-sting",
+      "name": "Serpent Sting",
+      "kind": "active",
+      "tab": "marksmanship",
+      "ranksSeen": [5],
+      "icon": "crop-serpent-sting",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/serpent-sting.icon.png",
+      "tooltips": [
+        {
+          "rank": 5,
+          "cost": "115 Mana",
+          "range": "8-35 yd range",
+          "castTime": "Instant",
+          "description": "Stings the target, causing 170 Nature damage over 15 sec. Only one Sting per Hunter can be active on any one target.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21352.0,
+            "frame": 1281120,
+            "crop": "data/review/spells/hunter/serpent-sting.r5.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Serpent Sting",
+                "description": "Stings the target, causing 170 Nature damage over 15 sec. Only one Sting per Hunter can be active on any one target."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Serpent Sting",
+                "description": "Stings the target, causing 170 Nature damage over 15 sec. Only one Sting per Hunter can be active on any one target."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Serpent Sting",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/serpent-sting.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Serpent Sting",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Serpent Sting",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "viper-sting",
+      "name": "Viper Sting",
+      "kind": "active",
+      "tab": "marksmanship",
+      "ranksSeen": [1],
+      "icon": "crop-viper-sting",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/viper-sting.icon.png",
+      "tooltips": [
+        {
+          "rank": 1,
+          "cost": "135 Mana",
+          "range": "8-35 yd range",
+          "castTime": "Instant",
+          "cooldown": "15 sec cooldown",
+          "description": "Stings the target, draining 616 mana over 8 sec. Only one Sting per Hunter can be active on any one target.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21360.75,
+            "frame": 1281645,
+            "crop": "data/review/spells/hunter/viper-sting.r1.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Viper Sting",
+                "description": "Stings the target, draining 616 mana over 8 sec. Only one Sting per Hunter can be active on any one target."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Viper Sting",
+                "description": "Stings the target, draining 616 mana over 8 sec. Only one Sting per Hunter can be active on any one target."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Viper Sting",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21349.5,
+        "frame": 1280970,
+        "crop": "data/review/spells/hunter/viper-sting.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Viper Sting",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Viper Sting",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "assist",
+      "name": "Assist",
+      "kind": "active",
+      "tab": "pet",
+      "icon": "crop-assist",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/assist.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Assist",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21377.0,
+        "frame": 1282620,
+        "crop": "data/review/spells/hunter/assist.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Assist"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Assist"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Assist"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "attack",
+      "name": "Attack",
+      "kind": "active",
+      "tab": "pet",
+      "icon": "crop-attack",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/attack.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Attack",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21377.0,
+        "frame": 1282620,
+        "crop": "data/review/spells/hunter/attack.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Attack"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "claw",
+      "name": "Claw",
+      "kind": "active",
+      "tab": "pet",
+      "ranksSeen": [5],
+      "icon": "crop-claw",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/claw.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Claw",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21377.0,
+        "frame": 1282620,
+        "crop": "data/review/spells/hunter/claw.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Claw",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Claw",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Claw",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "defensive",
+      "name": "Defensive",
+      "kind": "active",
+      "tab": "pet",
+      "icon": "crop-defensive",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/defensive.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Defensive",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21377.0,
+        "frame": 1282620,
+        "crop": "data/review/spells/hunter/defensive.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Defensive"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Defensive"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Defensive"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dive",
+      "name": "Dive",
+      "kind": "active",
+      "tab": "pet",
+      "ranksSeen": [1],
+      "icon": "crop-dive",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/dive.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dive",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21377.0,
+        "frame": 1282620,
+        "crop": "data/review/spells/hunter/dive.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dive",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dive",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Dive",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "follow",
+      "name": "Follow",
+      "kind": "active",
+      "tab": "pet",
+      "icon": "crop-follow",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/follow.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Follow",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21377.0,
+        "frame": 1282620,
+        "crop": "data/review/spells/hunter/follow.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Follow"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Follow"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "great-stamina",
+      "name": "Great Stamina",
+      "kind": "active",
+      "tab": "pet",
+      "ranksSeen": [6],
+      "icon": "crop-great-stamina",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/great-stamina.icon.png",
+      "tooltips": [
+        {
+          "rank": 6,
+          "description": "Stamina increased by 17.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21381.25,
+            "frame": 1282875,
+            "crop": "data/review/spells/hunter/great-stamina.r6.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Great Stamina",
+                "description": "Stamina increased by 17."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Great Stamina",
+                "description": "Stamina increased by 17."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Great Stamina",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21377.0,
+        "frame": 1282620,
+        "crop": "data/review/spells/hunter/great-stamina.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Great Stamina",
+            "rank": 6
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Great Stamina",
+            "rank": 6
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "mine",
+      "name": "Mine!",
+      "kind": "active",
+      "tab": "pet",
+      "ranksSeen": [3, 4],
+      "icon": "crop-mine",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/mine.icon.png",
+      "tooltips": [
+        {
+          "rank": 3,
+          "cost": "20 Focus",
+          "range": "Melee Range",
+          "castTime": "Instant",
+          "cooldown": "1 min cooldown",
+          "description": "Grabs an enemy's weapon with Its talons, causing 20 to 24 damage and disarming them for 4 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21378.25,
+            "frame": 1282695,
+            "crop": "data/review/spells/hunter/mine.r3.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Mine!",
+                "description": "Grabs an enemy's weapon with Its talons, causing 20 to 24 damage and disarming them for 4 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Mine!",
+                "description": "Grabs an enemy's weapon with Its talons, causing 20 to 24 damage and disarming them for 4 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Mine!",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21377.0,
+        "frame": 1282620,
+        "crop": "data/review/spells/hunter/mine.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Mine!",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Mine!",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "move-to",
+      "name": "Move To",
+      "kind": "active",
+      "tab": "pet",
+      "icon": "crop-move-to",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/move-to.icon.png",
+      "tooltips": [
+        {
+          "description": "Orders your pet to move to a target location.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21376.0,
+            "frame": 1282560,
+            "crop": "data/review/spells/hunter/move-to.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Move To",
+                "description": "Orders your pet to move to a target location."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Move To",
+                "description": "Orders your pet to move to a target location."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Move To",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21377.0,
+        "frame": 1282620,
+        "crop": "data/review/spells/hunter/move-to.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Move To"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Move To"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "natural-armor",
+      "name": "Natural Armor",
+      "kind": "active",
+      "tab": "pet",
+      "ranksSeen": [6],
+      "icon": "crop-natural-armor",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/natural-armor.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Natural Armor",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21377.0,
+        "frame": 1282620,
+        "crop": "data/review/spells/hunter/natural-armor.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Natural Armor",
+            "rank": 6
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Natural Armor",
+            "rank": 6
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "stay",
+      "name": "Stay",
+      "kind": "active",
+      "tab": "pet",
+      "icon": "crop-stay",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/stay.icon.png",
+      "tooltips": [
+        {
+          "description": "Orders your pet to stay at its current location.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21372.25,
+            "frame": 1282335,
+            "crop": "data/review/spells/hunter/stay.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Stay",
+                "description": "Orders your pet to stay at its current location."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Stay",
+                "description": "Orders your pet to stay at its current location."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Stay",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21377.0,
+        "frame": 1282620,
+        "crop": "data/review/spells/hunter/stay.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Stay"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Stay"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "disengage",
+      "name": "Disengage",
+      "kind": "active",
+      "tab": "survival",
+      "ranksSeen": [2],
+      "icon": "crop-disengage",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/disengage.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Disengage",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21342.0,
+        "frame": 1280520,
+        "crop": "data/review/spells/hunter/disengage.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Disengage",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Disengage",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "explosive-trap",
+      "name": "Explosive Trap",
+      "kind": "active",
+      "tab": "survival",
+      "ranksSeen": [1],
+      "icon": "crop-explosive-trap",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/explosive-trap.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Explosive Trap",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21336.25,
+        "frame": 1280175,
+        "crop": "data/review/spells/hunter/explosive-trap.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Explosive Trap",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Explosive Trap",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Explosive Trap",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "feign-death",
+      "name": "Feign Death",
+      "kind": "active",
+      "tab": "survival",
+      "icon": "crop-feign-death",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/feign-death.icon.png",
+      "tooltips": [
+        {
+          "cost": "80 Mana",
+          "castTime": "Instant",
+          "cooldown": "30 sec cooldown",
+          "description": "Feign death which may trick enemies into ignoring you. Lasts 6 min. If not cancelled, after 6 min you will actually die.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21337.0,
+            "frame": 1280220,
+            "crop": "data/review/spells/hunter/feign-death.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Feign Death",
+                "description": "Feign death which may trick enemies into ignoring you. Lasts 6 min. If not cancelled, after 6 min you will actually die."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Feign Death",
+                "description": "Feign death which may trick enemies into ignoring you. Lasts 6 min. If not cancelled, after 6 min you will actually die."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Feign Death",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21336.25,
+        "frame": 1280175,
+        "crop": "data/review/spells/hunter/feign-death.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Feign Death"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Feign Death"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Feign Death"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "freezing-trap",
+      "name": "Freezing Trap",
+      "kind": "active",
+      "tab": "survival",
+      "ranksSeen": [1],
+      "icon": "crop-freezing-trap",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/freezing-trap.icon.png",
+      "tooltips": [
+        {
+          "cost": "50 Mana",
+          "castTime": "Instant",
+          "cooldown": "30 sec cooldown",
+          "description": "Place a Frost trap that freezes the first enemy that approaches, preventing all action for up to 10 sec. Any damage caused will break the ice. Trap will exist for 1 min. Only one Frost trap can be active at a time.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21337.75,
+            "frame": 1280265,
+            "crop": "data/review/spells/hunter/freezing-trap.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Freezing Trap",
+                "description": "Place a Frost trap that freezes the first enemy that approaches, preventing all action for up to 10 sec. Any damage caused will break the ice. Trap will exist for 1 min. Only one Frost trap can be active at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Freezing Trap",
+                "description": "Place a Frost trap that freezes the first enemy that approaches, preventing all action for up to 10 sec. Any damage caused will break the ice. Trap will exist for 1 min. Only one Frost trap can be active at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Freezing Trap",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21336.25,
+        "frame": 1280175,
+        "crop": "data/review/spells/hunter/freezing-trap.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Freezing Trap",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Freezing Trap",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Freezing Trap",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "frost-trap",
+      "name": "Frost Trap",
+      "kind": "active",
+      "tab": "survival",
+      "icon": "crop-frost-trap",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/frost-trap.icon.png",
+      "tooltips": [
+        {
+          "cost": "60 Mana",
+          "castTime": "Instant",
+          "cooldown": "30 sec cooldown",
+          "description": "Place a Frost trap that creates an Ice slick around itself for 30 sec when the first enemy approaches it. All enemies within 10 yards will be slowed by 60% while in the area of effect. Trap will exist for 1 min. Only one Frost trap can be active at a time.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21338.25,
+            "frame": 1280295,
+            "crop": "data/review/spells/hunter/frost-trap.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Frost Trap",
+                "description": "Place a Frost trap that creates an Ice slick around itself for 30 sec when the first enemy approaches it. All enemies within 10 yards will be slowed by 60% while in the area of effect. Trap will exist for 1 min. Only one Frost trap can be active at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Frost Trap",
+                "description": "Place a Frost trap that creates an Ice slick around itself for 30 sec when the first enemy approaches it. All enemies within 10 yards will be slowed by 60% while in the area of effect. Trap will exist for 1 min. Only one Frost trap can be active at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Frost Trap",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21336.25,
+        "frame": 1280175,
+        "crop": "data/review/spells/hunter/frost-trap.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Frost Trap"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Frost Trap"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Frost Trap"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "immolation-trap",
+      "name": "Immolation Trap",
+      "kind": "active",
+      "tab": "survival",
+      "ranksSeen": [3],
+      "icon": "crop-immolation-trap",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/immolation-trap.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Immolation Trap",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21342.0,
+        "frame": 1280520,
+        "crop": "data/review/spells/hunter/immolation-trap.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Immolation Trap",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Immolation Trap",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "mongoose-bite",
+      "name": "MongOOSE Bite",
+      "kind": "active",
+      "tab": "survival",
+      "ranksSeen": [2],
+      "icon": "crop-mongoose-bite",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/mongoose-bite.icon.png",
+      "tooltips": [
+        {
+          "cost": "40 Mana",
+          "range": "Melee Range",
+          "castTime": "Instant",
+          "cooldown": "5 sec cooldown",
+          "description": "Counterattack the enemy for melee weapon damage plus 22. Can only be performed after you dodge.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21341.5,
+            "frame": 1280490,
+            "crop": "data/review/spells/hunter/mongoose-bite.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Mongoose Bite",
+                "description": "Counterattack the enemy for melee weapon damage plus 22. Can only be performed after you dodge."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Mongoose Bite",
+                "description": "Counterattack the enemy for melee weapon damage plus 22. Can only be performed after you dodge."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Mongoose Bite",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21336.25,
+        "frame": 1280175,
+        "crop": "data/review/spells/hunter/mongoose-bite.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "MongOOSE Bite",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Mongoose Bite",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "raptor-strike",
+      "name": "Raptor Strike",
+      "kind": "active",
+      "tab": "survival",
+      "ranksSeen": [5],
+      "icon": "crop-raptor-strike",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/raptor-strike.icon.png",
+      "tooltips": [
+        {
+          "cost": "55 Mana",
+          "castTime": "Next melee",
+          "cooldown": "6 sec cooldown",
+          "description": "A strong attack that deals melee weapon damage plus 35.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21341.0,
+            "frame": 1280460,
+            "crop": "data/review/spells/hunter/raptor-strike.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Raptor Strike",
+                "description": "A strong attack that deals melee weapon damage plus 35."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Raptor Strike",
+                "description": "A strong attack that deals melee weapon damage plus 35."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Raptor Strike",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21336.25,
+        "frame": 1280175,
+        "crop": "data/review/spells/hunter/raptor-strike.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Raptor Strike",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Raptor Strike",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "track-beasts",
+      "name": "Track Beasts",
+      "kind": "active",
+      "tab": "survival",
+      "icon": "crop-track-beasts",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/track-beasts.icon.png",
+      "tooltips": [
+        {
+          "castTime": "Instant",
+          "description": "Shows the location of all nearby beasts on the minimap. Only one form of tracking can be active at a time.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21340.0,
+            "frame": 1280400,
+            "crop": "data/review/spells/hunter/track-beasts.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Track Beasts",
+                "description": "Shows the location of all nearby beasts on the minimap. Only one form of tracking can be active at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Track Beasts",
+                "description": "Shows the location of all nearby beasts on the minimap. Only one form of tracking can be active at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Track Beasts",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21336.25,
+        "frame": 1280175,
+        "crop": "data/review/spells/hunter/track-beasts.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Track Beasts"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Track Beasts"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "track-demons",
+      "name": "Track Demons",
+      "kind": "active",
+      "tab": "survival",
+      "icon": "crop-track-demons",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/track-demons.icon.png",
+      "tooltips": [
+        {
+          "castTime": "Instant",
+          "description": "Shows the location of all nearby demons on the minimap. Only one form of tracking can be active at a time.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21339.25,
+            "frame": 1280355,
+            "crop": "data/review/spells/hunter/track-demons.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Track Demons",
+                "description": "Shows the location of all nearby demons on the minimap. Only one form of tracking can be active at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Track Demons",
+                "description": "Shows the location of all nearby demons on the minimap. Only one form of tracking can be active at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Track Demons",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21336.25,
+        "frame": 1280175,
+        "crop": "data/review/spells/hunter/track-demons.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Track Demons"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Track Demons"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "track-elementals",
+      "name": "Track Elementals",
+      "kind": "active",
+      "tab": "survival",
+      "icon": "crop-track-elementals",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/track-elementals.icon.png",
+      "tooltips": [
+        {
+          "castTime": "Instant",
+          "description": "Shows the location of all nearby elementals on the minimap. Only one form of tracking can be active at a time.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21343.0,
+            "frame": 1280580,
+            "crop": "data/review/spells/hunter/track-elementals.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Track Elementals",
+                "description": "Shows the location of all nearby elementals on the minimap. Only one form of tracking can be active at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Track Elementals",
+                "description": "Shows the location of all nearby elementals on the minimap. Only one form of tracking can be active at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Track Elementals",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21344.25,
+        "frame": 1280655,
+        "crop": "data/review/spells/hunter/track-elementals.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Track Elementals"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Track Elementals"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "track-hidden",
+      "name": "Track Hidden",
+      "kind": "passive",
+      "tab": "survival",
+      "icon": "crop-track-hidden",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/track-hidden.icon.png",
+      "tooltips": [
+        {
+          "castTime": "Instant",
+          "description": "Increases stealth detection and shows hidden units within detection range on the minimap. Only one form of tracking can be active at a time.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21343.25,
+            "frame": 1280595,
+            "crop": "data/review/spells/hunter/track-hidden.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Track Hidden",
+                "description": "Increases stealth detection and shows hidden units within detection range on the minimap. Only one form of tracking can be active at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Track Hidden",
+                "description": "Increases stealth detection and shows hidden units within detection range on the minimap. Only one form of tracking can be active at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Track Hidden",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21344.25,
+        "frame": 1280655,
+        "crop": "data/review/spells/hunter/track-hidden.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Track Hidden"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Track Hidden"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "track-humanoids",
+      "name": "Track Humanoids",
+      "kind": "passive",
+      "tab": "survival",
+      "icon": "crop-track-humanoids",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/track-humanoids.icon.png",
+      "tooltips": [
+        {
+          "castTime": "Instant",
+          "description": "Shows the location of all nearby humanoids on the minimap. Only one form of tracking can be active at a time.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21344.0,
+            "frame": 1280640,
+            "crop": "data/review/spells/hunter/track-humanoids.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Track Humanoids",
+                "description": "Shows the location of all nearby humanoids on the minimap. Only one form of tracking can be active at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Track Humanoids",
+                "description": "Shows the location of all nearby humanoids on the minimap. Only one form of tracking can be active at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Track Humanoids",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21344.25,
+        "frame": 1280655,
+        "crop": "data/review/spells/hunter/track-humanoids.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Track Humanoids"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Track Humanoids"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "track-undead",
+      "name": "Track Undead",
+      "kind": "passive",
+      "tab": "survival",
+      "icon": "crop-track-undead",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/track-undead.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Track Undead",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21344.25,
+        "frame": 1280655,
+        "crop": "data/review/spells/hunter/track-undead.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Track Undead"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Track Undead"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "wing-clip",
+      "name": "Wing Clip",
+      "kind": "active",
+      "tab": "survival",
+      "ranksSeen": [2],
+      "icon": "crop-wing-clip",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/wing-clip.icon.png",
+      "tooltips": [
+        {
+          "rank": 2,
+          "cost": "60 Mana",
+          "range": "Melee Range",
+          "castTime": "Instant",
+          "description": "Inflicts 25 damage and reduces the enemy target's movement speed by 55% for 10 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21345.25,
+            "frame": 1280715,
+            "crop": "data/review/spells/hunter/wing-clip.r2.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Wing Clip",
+                "description": "Inflicts 25 damage and reduces the enemy target's movement speed by 55% for 10 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Wing Clip",
+                "description": "Inflicts 25 damage and reduces the enemy target's movement speed by 55% for 10 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Wing Clip",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21336.25,
+        "frame": 1280175,
+        "crop": "data/review/spells/hunter/wing-clip.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Wing Clip",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Wing Clip",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "aspect-of-the-beast",
+      "name": "Aspect of the Beast",
+      "kind": "active",
+      "ranksSeen": [1],
+      "icon": "crop-aspect-of-the-beast",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/aspect-of-the-beast.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Aspect of the Beast",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21323.0,
+        "frame": 1279380,
+        "crop": "data/review/spells/hunter/aspect-of-the-beast.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Aspect of the Beast",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Aspect of the Beast",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Aspect of the Beast",
+            "rank": 1
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Beast), so it has no tab"
+      }
+    },
+    {
+      "id": "aspect-of-the-cheetah",
+      "name": "Aspect of the Cheetah",
+      "kind": "active",
+      "icon": "crop-aspect-of-the-cheetah",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/aspect-of-the-cheetah.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Aspect of the Cheetah",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21323.0,
+        "frame": 1279380,
+        "crop": "data/review/spells/hunter/aspect-of-the-cheetah.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Aspect of the Cheetah"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Aspect of the Cheetah"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Aspect of the Cheetah"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Beast), so it has no tab"
+      }
+    },
+    {
+      "id": "aspect-of-the-monkey",
+      "name": "Aspect of the Monkey",
+      "kind": "active",
+      "icon": "crop-aspect-of-the-monkey",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/aspect-of-the-monkey.icon.png",
+      "tooltips": [
+        {
+          "cost": "20 Mana",
+          "range": "100 yd range",
+          "castTime": "Instant",
+          "description": "The hunter takes on the aspects of a monkey, increasing chance to dodge by 8%. Only one Aspect can be active at a time.",
+          "footer": "You've added this to an action bar that is hidden or disabled",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21333.0,
+            "frame": 1279980,
+            "crop": "data/review/spells/hunter/aspect-of-the-monkey.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Aspect of the Monkey",
+                "description": "The hunter takes on the aspects of a monkey, increasing chance to dodge by 8%. Only one Aspect can be active at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Aspect of the Monkey",
+                "description": "The hunter takes on the aspects of a monkey, increasing chance to dodge by 8%. Only one Aspect can be active at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Aspect of the Monkey",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21323.0,
+        "frame": 1279380,
+        "crop": "data/review/spells/hunter/aspect-of-the-monkey.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Aspect of the Monkey"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Aspect of the Monkey"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Aspect of the Monkey"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Beast), so it has no tab"
+      }
+    },
+    {
+      "id": "call-owl",
+      "name": "Call Owl",
+      "kind": "active",
+      "icon": "crop-call-owl",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/hunter/call-owl.icon.png",
+      "tooltips": [
+        {
+          "castTime": "Instant",
+          "description": "Summons your pet to you.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21325.25,
+            "frame": 1279515,
+            "crop": "data/review/spells/hunter/call-owl.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Call Owl",
+                "description": "Summons your pet to you."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Call Owl",
+                "description": "Summons your pet to you."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Call Owl",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21323.0,
+        "frame": 1279380,
+        "crop": "data/review/spells/hunter/call-owl.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Call Owl"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Call Owl"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Beast), so it has no tab"
+      }
+    }
+  ],
+  "coverage": {
+    "pagesSeen": ["Beast Mastery", "General", "Marksmanship", "Pet", "Survival"],
+    "tabsSeen": ["beast-mastery", "general", "marksmanship", "pet", "survival"],
+    "tabsMissing": [],
+    "states": 10,
+    "entriesRead": 63,
+    "tooltipsRead": 36,
+    "tooltipsUnmatched": 0,
+    "showAllSpellRanks": "on",
+    "observedLevel": 38,
+    "windows": [
+      "05:55:20",
+      "05:55:23",
+      "05:55:28",
+      "05:55:31",
+      "05:55:36",
+      "05:55:42",
+      "05:55:44",
+      "05:55:49",
+      "05:56:00",
+      "05:56:17"
+    ]
+  },
+  "complete": false,
+  "notes": [
+    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
+    "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
+    "Page headings the reader could not resolve to a tab, because a hover tooltip stood over them: Beast. Their entries are in this file without a tab and say so in source.note.",
+    "Entries with a source note were read from a clipped row or a search page; check the crop before quoting them."
+  ]
+}

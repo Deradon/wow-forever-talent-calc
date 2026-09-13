@@ -201,6 +201,128 @@ RACIAL_LIST_SCHEMA: dict = {
     },
 }
 
+# Stage 11 (spellbook): one column of the spell list, the page heading, and the hover
+# tooltip. The list contract is the racial list's, plus the "Rank N" subtitle and a
+# cut_off flag; the tooltip contract is the talent tooltip's with the spellbook's own
+# lines (cost, cast time, range, cooldown, reagents/tools) instead of "Rank N/M".
+SPELL_LIST_SCHEMA: dict = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["entries"],
+    "properties": {
+        "entries": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["name", "subtitle", "cut_off"],
+                "properties": {
+                    "name": {"type": "string"},
+                    "subtitle": {"type": "string"},
+                    "cut_off": {"type": "boolean"},
+                },
+            },
+        },
+    },
+}
+
+SPELL_LIST_SYSTEM = (
+    "You transcribe one column of the World of Warcraft spellbook. Copy the text exactly, including "
+    "punctuation, capitalisation and numbers. Never paraphrase and never add words that are not in the "
+    "image.\n"
+    "The image is a vertical strip of the parchment page holding up to seven entries, one under the other. "
+    "Each entry is a square icon on the left, the spell name in dark brown text beside it, and under the "
+    "name a smaller grey subtitle which reads 'Rank N', 'Passive', 'Racial', 'Racial Passive' or is absent. "
+    "A long name wraps onto a second line and is still one entry.\n"
+    "Fill the JSON fields as follows. entries: one object per icon, top to bottom, none left out and none "
+    "invented. name: the dark text, joined with single spaces when it wraps, without the subtitle. "
+    "subtitle: the grey line under the name exactly as written, or an empty string when there is none. "
+    "cut_off: true when that entry's icon or text is clipped by the edge of the image or hidden behind "
+    "something drawn over it, false otherwise. Return JSON only."
+)
+
+SPELL_LIST_USER = (
+    "Example: a strip showing an entry 'Blessing of Might' with 'Rank 4' under it, an entry 'Judgement' "
+    "with no subtitle and an entry 'Armor Proficiency' with 'Passive' under it becomes\n"
+    '{"entries":[{"name":"Blessing of Might","subtitle":"Rank 4","cut_off":false},'
+    '{"name":"Judgement","subtitle":"","cut_off":false},'
+    '{"name":"Armor Proficiency","subtitle":"Passive","cut_off":false}]}\n'
+    "Now return the entries of this column as JSON."
+)
+
+PAGE_HEAD_SCHEMA: dict = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["title", "page_current", "page_max"],
+    "properties": {
+        "title": {"type": ["string", "null"]},
+        "page_current": {"type": ["integer", "null"]},
+        "page_max": {"type": ["integer", "null"]},
+    },
+}
+
+PAGE_HEAD_SYSTEM = (
+    "You read two strips of the World of Warcraft spellbook page: the heading in large dark text at the top "
+    "(a tab name such as 'General', 'Retribution' or 'Elemental Combat', or a search result heading such as "
+    "'Name Matches'), and the 'Page N / M' line at the bottom. Copy the heading exactly. page_current and "
+    "page_max: the two integers of the page line, or null when it is not legible. Return JSON only."
+)
+PAGE_HEAD_USER = "Return the page heading and page number as JSON."
+
+SPELL_TOOLTIP_SCHEMA: dict = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["name", "cost", "range", "cast_time", "cooldown", "tools", "requires",
+                 "description", "footer", "cut_off"],
+    "properties": {
+        "name": {"type": "string"},
+        "cost": {"type": ["string", "null"]},
+        "range": {"type": ["string", "null"]},
+        "cast_time": {"type": ["string", "null"]},
+        "cooldown": {"type": ["string", "null"]},
+        "tools": {"type": ["string", "null"]},
+        "requires": {"type": "array", "items": {"type": "string"}},
+        "description": {"type": "string"},
+        "footer": {"type": ["string", "null"]},
+        "cut_off": {"type": "boolean"},
+    },
+}
+
+SPELL_TOOLTIP_SYSTEM = (
+    "You transcribe World of Warcraft spellbook tooltips from screenshots. Copy the text exactly, including "
+    "punctuation, capitalisation and numbers. Never paraphrase and never add words that are not in the "
+    "image. Icons or colours bleeding through the dark box are artefacts; ignore them.\n"
+    "A spellbook tooltip has these lines, top to bottom:\n"
+    "1. the spell name (large white text);\n"
+    "2. optional white lines: the cost on the left ('75 Mana', '30 Energy', '15 Rage'), the range on the "
+    "right ('8-35 yd range'), then the cast time on the left ('Instant', '2.5 sec cast', 'Channeled') and "
+    "the cooldown on the right ('30 sec cooldown', '5 min cooldown');\n"
+    "3. an optional white 'Tools:' or 'Reagents:' line;\n"
+    "4. optional red lines starting with 'Requires';\n"
+    "5. the gold description, one or more paragraphs;\n"
+    "6. an optional blue or green footer such as 'You haven't added this to your action bars'.\n"
+    "Fill the JSON fields as follows. name: line 1. cost, range, cast_time, cooldown: those values exactly "
+    "as written, each null when the tooltip does not show it. tools: the 'Tools:' or 'Reagents:' line "
+    "without its label, else null. requires: only lines that start with 'Requires', one string each. "
+    "description: every gold paragraph in order, line breaks joined with single spaces, nothing left out "
+    "and nothing from the other fields. footer: the blue or green bottom line, else null. cut_off: true "
+    "only when a text line is visibly truncated or runs into the image border so that words are missing. "
+    "Return JSON only."
+)
+
+SPELL_TOOLTIP_USER = (
+    "Example: a tooltip whose lines read 'Stoneclaw Totem', '75 Mana', 'Instant' and '30 sec cooldown', "
+    "'Tools: Earth Totem', 'Summons a Stoneclaw Totem with 280 health at the feet of the caster for 15 sec "
+    "that taunts creatures within 8 yards to attack it.', \"You haven't added this to your action bars\" "
+    "becomes\n"
+    '{"name":"Stoneclaw Totem","cost":"75 Mana","range":null,"cast_time":"Instant",'
+    '"cooldown":"30 sec cooldown","tools":"Earth Totem","requires":[],'
+    '"description":"Summons a Stoneclaw Totem with 280 health at the feet of the caster for 15 sec that '
+    'taunts creatures within 8 yards to attack it.","footer":"You haven\'t added this to your action bars",'
+    '"cut_off":false}\n'
+    "Now return the content of this tooltip as JSON."
+)
+
 RACIAL_LIST_SYSTEM = (
     "You read entries of the General page of the World of Warcraft spellbook: a parchment list where each entry "
     "is a square icon, a name in dark text and a smaller grey subtitle under it ('Racial', 'Racial Passive', "
@@ -559,3 +681,13 @@ class Reader:
 
     def read_racial_list(self, crop: np.ndarray, factor: float = 3.0) -> dict:
         return self.ask(upscale(crop, factor), RACIAL_LIST_SYSTEM, RACIAL_LIST_USER, RACIAL_LIST_SCHEMA, "racial_list")
+
+    def read_spell_list(self, column: np.ndarray, factor: float = 3.0) -> dict:
+        return self.ask(upscale(column, factor), SPELL_LIST_SYSTEM, SPELL_LIST_USER, SPELL_LIST_SCHEMA, "spell_list")
+
+    def read_page_head(self, strip: np.ndarray, factor: float = 2.0) -> dict:
+        return self.ask(upscale(strip, factor), PAGE_HEAD_SYSTEM, PAGE_HEAD_USER, PAGE_HEAD_SCHEMA, "page_head")
+
+    def read_spell_tooltip(self, crop: np.ndarray, factor: float = 3.0) -> dict:
+        return self.ask(upscale(crop, factor), SPELL_TOOLTIP_SYSTEM, SPELL_TOOLTIP_USER,
+                        SPELL_TOOLTIP_SCHEMA, "spell_tooltip")

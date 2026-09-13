@@ -385,6 +385,58 @@ Tests: `tests/test_reader.py` (confidence levels, re-filing of misplaced
 lines, record shape and 0-based indices, cross-segment merge, consensus
 grid, cache keys) and `tests/test_ui.py::test_darkness_*`.
 
+<!-- stage 11 (spellbook); independent of stages 3-9, shares only reader.py, ui.py and the serializer -->
+## Stage 11: spell lists and spellbook tooltips
+
+Phase 2d of `docs/PLAN.md`. Shared code: `src/wowtalents/spells.py` (window
+locator, page geometry, page-state comparison, tooltip detection and anchoring,
+list text, merging and dedupe — all pure), the spellbook prompts in
+`src/wowtalents/reader.py`, the stage `stages/11_spellbook.py` and the validator
+`validate_spells.py`. Normative data contract:
+`data/schema/spell.schema.json` plus section 5 of
+`docs/handover/2026-09-13-spells-data.md`. Needs the mkv and, for `read`,
+llama-server.
+
+```bash
+uv run stages/11_spellbook.py scan                   # -> work/spells/states.json + native crops
+uv run stages/11_spellbook.py scan --window 03:59:00-04:02:00 --fps 4
+uv run stages/11_spellbook.py read                   # -> work/spells/readings.json
+uv run stages/11_spellbook.py read --codex page      # + one codex opinion per class and tab
+uv run stages/11_spellbook.py build                  # -> data/spells/, data/review/spells/, data/extracted/spells.{json,md}
+uv run python validate_spells.py --check ../data/spells/*.json
+uv run python validate_spells.py --report ../data/spells/*.json   # review queue
+```
+
+`scan` decodes the fifteen spellbook windows (the minutes whose stage-0 probe
+frame matches the title bar, padded either side) at 4 fps by frame index and
+**locates the window in every frame**: unlike the character-creation screen it
+moves, so all geometry is relative to a normalised cross-correlation match of
+`assets/spellbook-title.png` (>= 0.85 on every spellbook frame seen, <= 0.82 on
+everything else in the 541 probe minutes). Frames are grouped into *page states*
+by three changed-pixel tests — heading, search text, and the median of the 21
+per-cell list changes — because a dHash of flat parchment is noise and because a
+hover tooltip must not end a state. Each state's page is the per-pixel 85th
+percentile of its frames (`spells.composite`), which erases a tooltip even when
+it covers most of the state; the tooltip is then what differs from that page,
+is dark (grey under 95, not the talent tooltip's near-black), and anchors to a
+list cell. Hovers are grouped by that cell, not by image similarity, because the
+box fades in over two or three frames.
+
+`read` deduplicates pages across windows (213 states -> 90), reads each of the
+three list columns twice (3x and 2x) with `reader.SPELL_LIST_SCHEMA`, reads the
+heading and `Page N/M`, and reads every deduplicated tooltip twice with
+`reader.SPELL_TOOLTIP_SCHEMA`. Agreement is scored as in stage 5.
+`--codex page|all` adds a third opinion from the `codex` CLI. A misread heading
+is snapped onto the class's own tab names (`Marksmananship` -> `Marksmanship`),
+and a heading that belongs to exactly one *other* class reassigns the state to
+it, which is how the druid page inside the shaman window is filed correctly.
+
+`build` merges the entries per class (one record per spell, with every rank it
+was listed at), drops readings the column has no icon for, attaches tooltips by
+name, diffs the names against `data/prior/classic-era/spells-baseline.json`
+(racials go to `data/races/` instead, hunter pet rows to the prior's `_pet`
+bucket), and writes the class files, the review crops and the inventory.
+
 <!-- stage 12 (races); independent of stages 3-9, shares only reader.py and the serializer -->
 ## Stage 12: racial traits and the race/class matrix
 

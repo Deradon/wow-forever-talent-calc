@@ -1,0 +1,2565 @@
+{
+  "$schema": "../schema/spell.schema.json",
+  "schemaVersion": 1,
+  "class": "shaman",
+  "className": "Shaman",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T20:40:16Z",
+  "observedLevel": 38,
+  "tabs": [
+    {
+      "id": "general",
+      "name": "General",
+      "order": 0
+    },
+    {
+      "id": "elemental-combat",
+      "name": "Elemental Combat",
+      "order": 1
+    },
+    {
+      "id": "enhancement",
+      "name": "Enhancement",
+      "order": 2
+    },
+    {
+      "id": "restoration",
+      "name": "Restoration",
+      "order": 3
+    }
+  ],
+  "spells": [
+    {
+      "id": "call-of-the-ancestors",
+      "name": "Call of the Ancestors",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "icon": "crop-call-of-the-ancestors",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/call-of-the-ancestors.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Call of the Ancestors for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/call-of-the-ancestors.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Call of the Ancestors"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Call of the Ancestors"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Call of the Ancestors"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "call-of-the-elements",
+      "name": "Call of the Elements",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "icon": "crop-call-of-the-elements",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/call-of-the-elements.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Call of the Elements for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/call-of-the-elements.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Call of the Elements"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Call of the Elements"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Call of the Elements"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chain-lightning",
+      "name": "Chain Lightning",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "ranksSeen": [1],
+      "icon": "crop-chain-lightning",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/chain-lightning.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Chain Lightning",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/chain-lightning.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Chain Lightning",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Chain Lightning",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Chain Lightning",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "earth-shock",
+      "name": "Earth Shock",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "ranksSeen": [5],
+      "icon": "crop-earth-shock",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/earth-shock.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Earth Shock",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/earth-shock.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Earth Shock",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Earth Shock",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Earth Shock",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "earthbind-totem",
+      "name": "Earthbind Totem",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "icon": "crop-earthbind-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/earthbind-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Earthbind Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/earthbind-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Earthbind Totem"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Earthbind Totem"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Earthbind Totem"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "fire-nova",
+      "name": "Fire Nova",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "ranksSeen": [3],
+      "icon": "crop-fire-nova",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/fire-nova.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Fire Nova for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/fire-nova.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Fire Nova",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Fire Nova",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "flame-shock",
+      "name": "Flame Shock",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "ranksSeen": [3],
+      "icon": "crop-flame-shock",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/flame-shock.icon.png",
+      "tooltips": [
+        {
+          "cost": "160 Mana",
+          "range": "20 yd range",
+          "castTime": "Instant",
+          "cooldown": "6 sec cooldown",
+          "description": "Instantly sears the target with fire, causing 66 Fire damage immediately and 89 Fire damage over 12 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20049.5,
+            "frame": 1202970,
+            "crop": "data/review/spells/shaman/flame-shock.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Flame Shock",
+                "description": "Instantly sears the target with fire, causing 66 Fire damage immediately and 89 Fire damage over 12 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Flame Shock",
+                "description": "Instantly sears the target with fire, causing 66 Fire damage immediately and 89 Fire damage over 12 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        },
+        {
+          "rank": 3,
+          "cost": "160 Mana",
+          "range": "20 yd range",
+          "castTime": "Instant",
+          "cooldown": "6 sec cooldown",
+          "description": "Instantly sears the target with fire, causing 66 Fire damage immediately and 89 Fire damage over 12 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20017.0,
+            "frame": 1201020,
+            "crop": "data/review/spells/shaman/flame-shock.r3.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Flame Shock",
+                "description": "Instantly sears the target with fire, causing 66 Fire damage immediately and 89 Fire damage over 12 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Flame Shock",
+                "description": "Instantly sears the target with fire, causing 66 Fire damage immediately and 89 Fire damage over 12 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Flame Shock",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/flame-shock.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Flame Shock",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Flame Shock",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "frost-shock",
+      "name": "Frost Shock",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "ranksSeen": [2],
+      "icon": "crop-frost-shock",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/frost-shock.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Frost Shock",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/frost-shock.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Frost Shock",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Frost Shock",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "lightning-bolt",
+      "name": "Lightning Bolt",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "ranksSeen": [7],
+      "icon": "crop-lightning-bolt",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/lightning-bolt.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Lightning Bolt",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/lightning-bolt.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Lightning Bolt",
+            "rank": 7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Lightning Bolt",
+            "rank": 7
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "magma-totem",
+      "name": "Magma Totem",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "ranksSeen": [2],
+      "icon": "crop-magma-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/magma-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Magma Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/magma-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Magma Totem",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Magma Totem",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "purge",
+      "name": "Purge",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "ranksSeen": [2],
+      "icon": "crop-purge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/purge.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Purge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/purge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Purge",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Purge",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "searing-totem",
+      "name": "Searing Totem",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "ranksSeen": [3],
+      "icon": "crop-searing-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/searing-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Searing Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/searing-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Searing Totem",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Searing Totem",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "stoneclaw-totem",
+      "name": "Stoneclaw Totem",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "ranksSeen": [4],
+      "icon": "crop-stoneclaw-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/stoneclaw-totem.icon.png",
+      "tooltips": [
+        {
+          "cost": "75 Mana",
+          "castTime": "Instant",
+          "cooldown": "30 sec cooldown",
+          "tools": "Earth Totem",
+          "description": "Summons a Stoneclaw Totem with 280 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20101.0,
+            "frame": 1206060,
+            "crop": "data/review/spells/shaman/stoneclaw-totem.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Stoneclaw Totem",
+                "description": "Summons a Stoneclaw Totem with 280 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Stoneclaw Totem",
+                "description": "Summons a Stoneclaw Totem with 280 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Stoneclaw Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/stoneclaw-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Stoneclaw Totem",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Stoneclaw Totem",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "totemic-recall",
+      "name": "Totemic Recall",
+      "kind": "active",
+      "tab": "elemental-combat",
+      "icon": "crop-totemic-recall",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/totemic-recall.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Totemic Recall for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20015.5,
+        "frame": 1200930,
+        "crop": "data/review/spells/shaman/totemic-recall.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Totemic Recall"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Totemic Recall"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "astral-recall",
+      "name": "Astral Recall",
+      "kind": "active",
+      "tab": "enhancement",
+      "icon": "crop-astral-recall",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/astral-recall.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Astral Recall",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20061.5,
+        "frame": 1203690,
+        "crop": "data/review/spells/shaman/astral-recall.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Astral Recall"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Astral Recall"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Astral Recall"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "far-sight",
+      "name": "Far Sight",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [1],
+      "icon": "crop-far-sight",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/far-sight.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Far Sight",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/far-sight.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Far Sight",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Far Sight",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "fire-resistance-totem",
+      "name": "Fire Resistance Totem",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [1],
+      "icon": "crop-fire-resistance-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/fire-resistance-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Fire Resistance Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20061.5,
+        "frame": 1203690,
+        "crop": "data/review/spells/shaman/fire-resistance-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Fire Resistance Totem",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Fire Resistance Totem",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Fire Resistance Totem",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "flametongue-totem",
+      "name": "Flametongue Totem",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [2],
+      "icon": "crop-flametongue-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/flametongue-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Flametongue Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/flametongue-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Flametongue Totem",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Flametongue Totem",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "flametongue-weapon",
+      "name": "Flametongue Weapon",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [4],
+      "icon": "crop-flametongue-weapon",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/flametongue-weapon.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Flametongue Weapon",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/flametongue-weapon.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Flametongue Weapon",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Flametongue Weapon",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "frost-resistance-totem",
+      "name": "Frost Resistance Totem",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [2],
+      "icon": "crop-frost-resistance-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/frost-resistance-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Frost Resistance Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/frost-resistance-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Frost Resistance Totem",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Frost Resistance Totem",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "frostbrand-weapon",
+      "name": "Frostbrand Weapon",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [3],
+      "icon": "crop-frostbrand-weapon",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/frostbrand-weapon.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Frostbrand Weapon",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/frostbrand-weapon.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Frostbrand Weapon"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Frostbrand Weapon"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "ghost-wolf",
+      "name": "Ghost Wolf",
+      "kind": "active",
+      "tab": "enhancement",
+      "icon": "crop-ghost-wolf",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/ghost-wolf.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Ghost Wolf",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20061.5,
+        "frame": 1203690,
+        "crop": "data/review/spells/shaman/ghost-wolf.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Ghost Wolf"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Ghost Wolf"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "grounding-totem",
+      "name": "Grounding Totem",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [4],
+      "icon": "crop-grounding-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/grounding-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Grounding Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20061.5,
+        "frame": 1203690,
+        "crop": "data/review/spells/shaman/grounding-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Grounding Totem"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Grounding Totem"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "lightning-shield",
+      "name": "Lightning Shield",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [4],
+      "icon": "crop-lightning-shield",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/lightning-shield.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Lightning Shield",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/lightning-shield.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Lightning Shield",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Lightning Shield",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "nature-resistance-totem",
+      "name": "Nature Resistance Totem",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [1, 4],
+      "icon": "crop-nature-resistance-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/nature-resistance-totem.icon.png",
+      "tooltips": [
+        {
+          "rank": 1,
+          "cost": "75 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "cooldown": "5 min cooldown",
+          "tools": "Air Totem",
+          "description": "Summons a Nature Resistance Totem with 5 health at the feet of the caster for 5 min that increases the nature resistance of party and raid members within 30 yards by 30.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20088.25,
+            "frame": 1205295,
+            "crop": "data/review/spells/shaman/nature-resistance-totem.r1.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Nature Resistance Totem",
+                "description": "Summons a Nature Resistance Totem with 5 health at the feet of the caster for 5 min that increases the nature resistance of party and raid members within 30 yards by 30."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Nature Resistance Totem",
+                "description": "Summons a Nature Resistance Totem with 5 health at the feet of the caster for 5 min that increases the nature resistance of party and raid members within 30 yards by 30."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Nature Resistance Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/nature-resistance-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Nature Resistance Totem",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Nature Resistance Totem",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "rockbiter-weapon",
+      "name": "Rockbiter Weapon",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [5],
+      "icon": "crop-rockbiter-weapon",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/rockbiter-weapon.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Rockbiter Weapon",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/rockbiter-weapon.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Rockbiter Weapon",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Rockbiter Weapon",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "sentry-totem",
+      "name": "Sentry Totem",
+      "kind": "active",
+      "tab": "enhancement",
+      "icon": "crop-sentry-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/sentry-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Sentry Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/sentry-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Sentry Totem"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sentry Totem"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "stoneskin-totem",
+      "name": "Stoneskin Totem",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [4],
+      "icon": "crop-stoneskin-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/stoneskin-totem.icon.png",
+      "tooltips": [
+        {
+          "cost": "115 Mana",
+          "castTime": "Instant",
+          "tools": "Earth Totem",
+          "description": "Summons a Stoneskin Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing Physical damage taken by 16. Lasts 5 min.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20084.25,
+            "frame": 1205055,
+            "crop": "data/review/spells/shaman/stoneskin-totem.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Stoneskin Totem",
+                "description": "Summons a Stoneskin Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing Physical damage taken by 16. Lasts 5 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Stoneskin Totem",
+                "description": "Summons a Stoneskin Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing Physical damage taken by 16. Lasts 5 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Stoneskin Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/stoneskin-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Stoneskin Totem",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Stoneskin Totem",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "strength-of-earth-totem",
+      "name": "Strength of Earth Totem",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [3],
+      "icon": "crop-strength-of-earth-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/strength-of-earth-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Strength of Earth Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/strength-of-earth-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Strength of Earth Totem",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Strength of Earth Totem",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "totemic-projection",
+      "name": "Totemic Projection",
+      "kind": "active",
+      "tab": "enhancement",
+      "icon": "crop-totemic-projection",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/totemic-projection.icon.png",
+      "tooltips": [
+        {
+          "cost": "230 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "cooldown": "1 min cooldown",
+          "description": "Relocates your active totems to the specified location.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20087.5,
+            "frame": 1205250,
+            "crop": "data/review/spells/shaman/totemic-projection.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Totemic Projection",
+                "description": "Relocates your active totems to the specified location."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Totemic Projection",
+                "description": "Relocates your active totems to the specified location."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Totemic Projection for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/totemic-projection.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Totemic Projection"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Totemic Projection"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "water-breathing",
+      "name": "Water Breathing",
+      "kind": "active",
+      "tab": "enhancement",
+      "icon": "crop-water-breathing",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/water-breathing.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Water Breathing",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/water-breathing.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Water Breathing"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Water Breathing"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "water-walking",
+      "name": "Water Walking",
+      "kind": "active",
+      "tab": "enhancement",
+      "icon": "crop-water-walking",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/water-walking.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Water Walking",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/water-walking.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Water Walking"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Water Walking"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "windfury-totem",
+      "name": "Windfury Totem",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [1],
+      "icon": "crop-windfury-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/windfury-totem.icon.png",
+      "tooltips": [
+        {
+          "cost": "115 Mana",
+          "castTime": "Instant",
+          "tools": "Air Totem",
+          "description": "Summons a Windfury Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party members within 0 yards. Each main hand hit has a 20% chance of granting the attacker 1 extra attack with 95 extra melee attack power. Lasts 5 min.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20090.5,
+            "frame": 1205430,
+            "crop": "data/review/spells/shaman/windfury-totem.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Windfury Totem",
+                "description": "Summons a Windfury Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party members within 0 yards. Each main hand hit has a 20% chance of granting the attacker 1 extra attack with 95 extra melee attack power. Lasts 5 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Windfury Totem",
+                "description": "Summons a Windfury Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party members within 0 yards. Each main hand hit has a 20% chance of granting the attacker 1 extra attack with 95 extra melee attack power. Lasts 5 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Windfury Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/windfury-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Windfury Totem",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Windfury Totem",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "windfury-weapon",
+      "name": "Windfury Weapon",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [1],
+      "icon": "crop-windfury-weapon",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/windfury-weapon.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Windfury Weapon",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/windfury-weapon.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Windfury Weapon",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Windfury Weapon",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "windwall-totem",
+      "name": "Windwall Totem",
+      "kind": "active",
+      "tab": "enhancement",
+      "ranksSeen": [1],
+      "icon": "crop-windwall-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/windwall-totem.icon.png",
+      "tooltips": [
+        {
+          "cost": "115 Mana",
+          "castTime": "Instant",
+          "tools": "Air Totem",
+          "description": "Summons a Windwall Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing ranged damage taken by 32. Lasts 5 min.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20092.25,
+            "frame": 1205535,
+            "crop": "data/review/spells/shaman/windwall-totem.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Windwall Totem",
+                "description": "Summons a Windwall Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing ranged damage taken by 32. Lasts 5 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Windwall Totem",
+                "description": "Summons a Windwall Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing ranged damage taken by 32. Lasts 5 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Windwall Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20432.0,
+        "frame": 1225920,
+        "crop": "data/review/spells/shaman/windwall-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Windwall Totem",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Windwall Totem",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "armor-proficiency",
+      "name": "Armor Proficiency",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-armor-proficiency",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/armor-proficiency.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Armor Proficiency",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20331.75,
+        "frame": 1219905,
+        "crop": "data/review/spells/shaman/armor-proficiency.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Armor Proficiency"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Armor Proficiency"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "attack",
+      "name": "Attack",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-attack",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/attack.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Attack",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20331.75,
+        "frame": 1219905,
+        "crop": "data/review/spells/shaman/attack.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Attack"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "axe-specialization",
+      "name": "Axe Specialization",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-axe-specialization",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/axe-specialization.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/orc.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20331.75,
+        "frame": 1219905,
+        "crop": "data/review/spells/shaman/axe-specialization.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Axe Specialization"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Axe Specialization"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "block",
+      "name": "Block",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-block",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/block.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Block",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20331.75,
+        "frame": 1219905,
+        "crop": "data/review/spells/shaman/block.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Block"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Block"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "blood-fury",
+      "name": "Blood Fury",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-blood-fury",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/blood-fury.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/orc.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20331.75,
+        "frame": 1219905,
+        "crop": "data/review/spells/shaman/blood-fury.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blood Fury"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blood Fury"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Blood Fury"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "cultivation",
+      "name": "Cultivation",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-cultivation",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/cultivation.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/tauren.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20515.5,
+        "frame": 1230930,
+        "crop": "data/review/spells/shaman/cultivation.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Cultivation"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cultivation"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dodge",
+      "name": "Dodge",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-dodge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/dodge.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dodge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20331.75,
+        "frame": 1219905,
+        "crop": "data/review/spells/shaman/dodge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dodge"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dodge"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "endurance",
+      "name": "Endurance",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-endurance",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/endurance.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/tauren.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20515.5,
+        "frame": 1230930,
+        "crop": "data/review/spells/shaman/endurance.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Endurance"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Endurance"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "hardiness",
+      "name": "Hardiness",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-hardiness",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/hardiness.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/orc.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20331.75,
+        "frame": 1219905,
+        "crop": "data/review/spells/shaman/hardiness.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Hardiness"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Hardiness"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "languages",
+      "name": "Languages",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-languages",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/languages.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Languages",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20331.75,
+        "frame": 1219905,
+        "crop": "data/review/spells/shaman/languages.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Languages"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Languages"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "plainsrunning",
+      "name": "Plainsrunning",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-plainsrunning",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/plainsrunning.icon.png",
+      "tooltips": [
+        {
+          "description": "Gain 1% increased movement speed every 5 sec spent moving, up to a maximum of 30% Increase. Taking damage or standing still will reduce this effect.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20515.75,
+            "frame": 1230945,
+            "crop": "data/review/spells/shaman/plainsrunning.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Plainsrunning",
+                "description": "Gain 1% increased movement speed every 5 sec spent moving, up to a maximum of 30% Increase. Taking damage or standing still will reduce this effect."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Plainsrunning",
+                "description": "Gain 1% increased movement speed every 5 sec spent moving, up to a maximum of 30% Increase. Taking damage or standing still will reduce this effect."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/tauren.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20515.5,
+        "frame": 1230930,
+        "crop": "data/review/spells/shaman/plainsrunning.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Plainsrunning"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Plainsrunning"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shatter-curse",
+      "name": "Shatter Curse",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-shatter-curse",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/shatter-curse.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/orc.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20331.75,
+        "frame": 1219905,
+        "crop": "data/review/spells/shaman/shatter-curse.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shatter Curse"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shatter Curse"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Shatter Curse"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "war-stomp",
+      "name": "War Stomp",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-war-stomp",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/war-stomp.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/tauren.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20515.5,
+        "frame": 1230930,
+        "crop": "data/review/spells/shaman/war-stomp.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "War Stomp"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "War Stomp"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "ancestral-spirit",
+      "name": "Ancestral Spirit",
+      "kind": "active",
+      "tab": "restoration",
+      "ranksSeen": [3],
+      "icon": "crop-ancestral-spirit",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/ancestral-spirit.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Ancestral Spirit",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/ancestral-spirit.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Ancestral Spirit",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Ancestral Spirit",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Ancestral Spirit",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "cure-disease",
+      "name": "Cure Disease",
+      "kind": "active",
+      "tab": "restoration",
+      "icon": "crop-cure-disease",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/cure-disease.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Cure Disease",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/cure-disease.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Cure Disease"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cure Disease"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Cure Disease"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "cure-poison",
+      "name": "Cure Poison",
+      "kind": "active",
+      "tab": "restoration",
+      "icon": "crop-cure-poison",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/cure-poison.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Cure Poison",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/cure-poison.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Cure Poison"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cure Poison"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Cure Poison"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "disease-cleansing-totem",
+      "name": "Disease Cleansing Totem",
+      "kind": "active",
+      "tab": "restoration",
+      "icon": "crop-disease-cleansing-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/disease-cleansing-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Disease Cleansing Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/disease-cleansing-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Disease Cleansing Totem"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Disease Cleansing Totem"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Disease Cleansing Totem"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "healing-stream-totem",
+      "name": "Healing Stream Totem",
+      "kind": "active",
+      "tab": "restoration",
+      "ranksSeen": [2],
+      "icon": "crop-healing-stream-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/healing-stream-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Healing Stream Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/healing-stream-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Healing Stream Totem",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Healing Stream Totem",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "healing-wave",
+      "name": "Healing Wave",
+      "kind": "active",
+      "tab": "restoration",
+      "ranksSeen": [6],
+      "icon": "crop-healing-wave",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/healing-wave.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Healing Wave",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/healing-wave.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Healing Wave",
+            "rank": 6
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Healing Wave",
+            "rank": 6
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "lesser-healing-wave",
+      "name": "Lesser Healing Wave",
+      "kind": "active",
+      "tab": "restoration",
+      "ranksSeen": [3],
+      "icon": "crop-lesser-healing-wave",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/lesser-healing-wave.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Lesser Healing Wave",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/lesser-healing-wave.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Lesser Healing Wave",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Lesser Healing Wave",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "mana-spring-totem",
+      "name": "Mana Spring Totem",
+      "kind": "active",
+      "tab": "restoration",
+      "ranksSeen": [2],
+      "icon": "crop-mana-spring-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/mana-spring-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Mana Spring Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/mana-spring-totem.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Mana Spring Totem",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Mana Spring Totem",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "poison-cleansing-totem",
+      "name": "Poison Cleansing Totem",
+      "kind": "passive",
+      "tab": "restoration",
+      "icon": "crop-poison-cleansing-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/poison-cleansing-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Poison Cleansing Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/poison-cleansing-totem.png",
+        "panel": "spell-list",
+        "confidence": 0.7,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Poison Cleansing Totem"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Poison Cleansing Totem",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "reincarnation-passive",
+      "name": "Reincarnation Passive",
+      "kind": "passive",
+      "tab": "restoration",
+      "icon": "crop-reincarnation-passive",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/reincarnation-passive.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Reincarnation Passive for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/reincarnation-passive.png",
+        "panel": "spell-list",
+        "confidence": 0.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Reincarnation Passive"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "tremor-totem",
+      "name": "Tremor Totem",
+      "kind": "passive",
+      "tab": "restoration",
+      "icon": "crop-tremor-totem",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/tremor-totem.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Tremor Totem",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/tremor-totem.png",
+        "panel": "spell-list",
+        "confidence": 0.7,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Tremor Totem"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Tremor Totem",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    }
+  ],
+  "coverage": {
+    "pagesSeen": ["Elemental Combat", "Enhancement", "General", "Name Matches", "Restoration"],
+    "tabsSeen": ["elemental-combat", "enhancement", "general", "restoration"],
+    "tabsMissing": [],
+    "states": 16,
+    "entriesRead": 59,
+    "tooltipsRead": 9,
+    "tooltipsUnmatched": 0,
+    "showAllSpellRanks": "on",
+    "observedLevel": 38,
+    "windows": [
+      "05:33:35",
+      "05:33:43",
+      "05:34:12",
+      "05:34:21",
+      "05:34:48",
+      "05:35:19",
+      "05:35:23",
+      "05:38:51",
+      "05:39:10",
+      "05:39:28",
+      "05:39:58",
+      "05:40:01",
+      "05:40:04",
+      "05:40:32",
+      "05:41:55"
+    ]
+  },
+  "complete": false,
+  "notes": [
+    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
+    "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed."
+  ]
+}

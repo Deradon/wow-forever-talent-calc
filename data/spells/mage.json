@@ -1,0 +1,2752 @@
+{
+  "$schema": "../schema/spell.schema.json",
+  "schemaVersion": 1,
+  "class": "mage",
+  "className": "Mage",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T20:40:16Z",
+  "observedLevel": 38,
+  "tabs": [
+    {
+      "id": "general",
+      "name": "General",
+      "order": 0
+    },
+    {
+      "id": "arcane",
+      "name": "Arcane",
+      "order": 1
+    },
+    {
+      "id": "fire",
+      "name": "Fire",
+      "order": 2
+    },
+    {
+      "id": "frost",
+      "name": "Frost",
+      "order": 3
+    }
+  ],
+  "spells": [
+    {
+      "id": "amplify-magic",
+      "name": "Amplify Magic",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [2],
+      "icon": "crop-amplify-magic",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/amplify-magic.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Amplify Magic",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/amplify-magic.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Amplify Magic",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Amplify Magic",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "arcane-blast",
+      "name": "Arcane Blast",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [5],
+      "icon": "crop-arcane-blast",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/arcane-blast.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Arcane Blast for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 15476.5,
+        "frame": 928590,
+        "crop": "data/review/spells/mage/arcane-blast.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Arcane Blast",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Arcane Blast",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Arcane Blast",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "arcane-explosion",
+      "name": "Arcane Explosion",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [4],
+      "icon": "crop-arcane-explosion",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/arcane-explosion.icon.png",
+      "tooltips": [
+        {
+          "cost": "250 Mana",
+          "castTime": "Instant",
+          "description": "Causes an explosion of arcane magic around the caster, causing 143 to 156 Arcane damage to all targets within 10 yards.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 15304.75,
+            "frame": 918285,
+            "crop": "data/review/spells/mage/arcane-explosion.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Arcane Explosion",
+                "description": "Causes an explosion of arcane magic around the caster, causing 143 to 156 Arcane damage to all targets within 10 yards."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Arcane Explosion",
+                "description": "Causes an explosion of arcane magic around the caster, causing 143 to 156 Arcane damage to all targets within 10 yards."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        },
+        {
+          "cost": "250 Mana",
+          "castTime": "Instant",
+          "cooldown": "1 sec",
+          "description": "Causes an explosion of arcane magic around the caster, causing 143 to 156 Arcane damage to all targets within 10 yards.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 15473.0,
+            "frame": 928380,
+            "crop": "data/review/spells/mage/arcane-explosion.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Arcane Explosion",
+                "description": "Causes an explosion of arcane magic around the caster, causing 143 to 156 Arcane damage to all targets within 10 yards."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Arcane Explosion",
+                "description": "Causes an explosion of arcane magic around the caster, causing 143 to 156 Arcane damage to all targets within 10 yards."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Arcane Explosion",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/arcane-explosion.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Arcane Explosion",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Arcane Explosion",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "arcane-intellect",
+      "name": "Arcane Intellect",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [3],
+      "icon": "crop-arcane-intellect",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/arcane-intellect.icon.png",
+      "tooltips": [
+        {
+          "cost": "520 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "description": "Increases the target's Intellect by 15 for 1 hour.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22147.5,
+            "frame": 1328850,
+            "crop": "data/review/spells/mage/arcane-intellect.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Arcane Intellect",
+                "description": "Increases the target's Intellect by 15 for 1 hour."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Arcane Intellect",
+                "description": "Increases the target's Intellect by 15 for 1 hour."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Arcane Intellect",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/arcane-intellect.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Arcane Intellect",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Arcane Intellect",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "arcane-missiles",
+      "name": "Arcane Missiles",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [4],
+      "icon": "crop-arcane-missiles",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/arcane-missiles.icon.png",
+      "tooltips": [
+        {
+          "cost": "320 Mana",
+          "range": "30 yd range",
+          "castTime": "Channeled",
+          "description": "Launches Arcane Missiles at the enemy, causing 83 Arcane damage each second for 5 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22150.75,
+            "frame": 1329045,
+            "crop": "data/review/spells/mage/arcane-missiles.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Arcane Missiles",
+                "description": "Launches Arcane Missiles at the enemy, causing 83 Arcane damage each second for 5 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Arcane Missiles",
+                "description": "Launches Arcane Missiles at the enemy, causing 83 Arcane damage each second for 5 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Arcane Missiles",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/arcane-missiles.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Arcane Missiles",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Arcane Missiles",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "blink",
+      "name": "Blink",
+      "kind": "active",
+      "tab": "arcane",
+      "icon": "crop-blink",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/blink.icon.png",
+      "tooltips": [
+        {
+          "cost": "284 Mana",
+          "castTime": "Instant",
+          "cooldown": "15 sec cooldown",
+          "description": "Teleports the caster 20 yards forward. unless something is in the way. Also frees the caster from Stuns and Immobilizes.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22151.0,
+            "frame": 1329060,
+            "crop": "data/review/spells/mage/blink.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.3,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Blink",
+                "description": "Teleports the caster 20 yards forward. unless something is in the way. Also frees the caster from Stuns and Immobilizes."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Blink",
+                "description": "Teleports the caster 20 yards forward, unless something is in the way. Also frees the caster from Stuns and Immobilizes."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Blink",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/blink.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blink"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blink"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "conjure-food",
+      "name": "Conjure Food",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [4],
+      "icon": "crop-conjure-food",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/conjure-food.icon.png",
+      "tooltips": [
+        {
+          "cost": "285 Mana",
+          "castTime": "3 sec cast",
+          "description": "Conjures 14 loaves of pumpernickel, providing the mage and his allies with something to eat. Conjured items disappear if logged out for more than 15 minutes.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22153.5,
+            "frame": 1329210,
+            "crop": "data/review/spells/mage/conjure-food.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Conjure Food",
+                "description": "Conjures 14 loaves of pumpernickel, providing the mage and his allies with something to eat. Conjured items disappear if logged out for more than 15 minutes."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Conjure Food",
+                "description": "Conjures 14 loaves of pumpernickel, providing the mage and his allies with something to eat. Conjured items disappear if logged out for more than 15 minutes."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        },
+        {
+          "cost": "265 Mana",
+          "range": "6 yd range",
+          "castTime": "3 sec cast",
+          "description": "Conjures 14 loaves of pumpkinickel, providing the mage and his allies with something to eat: Conjured items disappear if logged out for more than 15 minutes.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 15473.5,
+            "frame": 928410,
+            "crop": "data/review/spells/mage/conjure-food.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.3,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Conjure food",
+                "description": "Conjures 14 loaves of pumpkinickel, providing the mage and his allies with something to eat: Conjured items disappear if logged out for more than 15 minutes."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Conjure food",
+                "description": "Conjures 14 loaves of pumpkinnickel, providing the mage and his allies with something to eat: Conjured items disappear if logged out for more than 15 minutes."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Conjure Food",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/conjure-food.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Conjure Food",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Conjure Food",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "conjure-mana-agate",
+      "name": "Conjure Mana Agate",
+      "kind": "active",
+      "tab": "arcane",
+      "icon": "crop-conjure-mana-agate",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/conjure-mana-agate.icon.png",
+      "tooltips": [
+        {
+          "cost": "530 Mana",
+          "castTime": "3 sec cast",
+          "description": "Conjures a mana agate that can be used to instantly restore 375 to 425 mana. Conjured items disappear if logged out for more than 15 minutes.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22154.0,
+            "frame": 1329240,
+            "crop": "data/review/spells/mage/conjure-mana-agate.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Conjure Mana Agate",
+                "description": "Conjures a mana agate that can be used to instantly restore 375 to 425 mana. Conjured items disappear if logged out for more than 15 minutes."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Conjure Mana Agate",
+                "description": "Conjures a mana agate that can be used to instantly restore 375 to 425 mana. Conjured items disappear if logged out for more than 15 minutes."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Conjure Mana Agate",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 15476.5,
+        "frame": 928590,
+        "crop": "data/review/spells/mage/conjure-mana-agate.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Conjure Mana Agate"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Conjure Mana Agate"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "conjure-mana-jade",
+      "name": "Conjure Mana Jade",
+      "kind": "active",
+      "tab": "arcane",
+      "icon": "crop-conjure-mana-jade",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/conjure-mana-jade.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Conjure Mana Jade",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/conjure-mana-jade.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Conjure Mana Jade"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Conjure Mana Jade"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "conjure-water",
+      "name": "Conjure Water",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [4],
+      "icon": "crop-conjure-water",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/conjure-water.icon.png",
+      "tooltips": [
+        {
+          "cost": "285 Mana",
+          "range": "6 yd range",
+          "castTime": "3 sec cast",
+          "description": "Conjures 18 bottles of spring water, providing the mage and his allies with something to drink. Conjured Items disappear if logged out for more than 15 minutes.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 15477.0,
+            "frame": 928620,
+            "crop": "data/review/spells/mage/conjure-water.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Conjure Water",
+                "description": "Conjures 18 bottles of spring water, providing the mage and his allies with something to drink. Conjured Items disappear if logged out for more than 15 minutes."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Conjure Water",
+                "description": "Conjures 18 bottles of spring water, providing the mage and his allies with something to drink. Conjured Items disappear if logged out for more than 15 minutes."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Conjure Water",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/conjure-water.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Conjure Water",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Conjure Water",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "counterspell",
+      "name": "Counterspell",
+      "kind": "active",
+      "tab": "arcane",
+      "icon": "crop-counterspell",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/counterspell.icon.png",
+      "tooltips": [
+        {
+          "cost": "100 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "cooldown": "30 sec cooldown",
+          "description": "Counters the enemy's spellcast, preventing any spell from that school of magic from being cast for 10 sec. Generates a high amount of threat.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22148.0,
+            "frame": 1328880,
+            "crop": "data/review/spells/mage/counterspell.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Counterspell",
+                "description": "Counters the enemy's spellcast, preventing any spell from that school of magic from being cast for 10 sec. Generates a high amount of threat."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Counterspell",
+                "description": "Counters the enemy's spellcast, preventing any spell from that school of magic from being cast for 10 sec. Generates a high amount of threat."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Counterspell",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/counterspell.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Counterspell"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Counterspell"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dampen-magic",
+      "name": "Dampen Magic",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [3],
+      "icon": "crop-dampen-magic",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/dampen-magic.icon.png",
+      "tooltips": [
+        {
+          "cost": "300 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "description": "Dampons magic used against the targeted party member. decreasing damage taken from spells by up to 60 and healing spells by up to 120. Lasts 10 min.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22150.5,
+            "frame": 1329030,
+            "crop": "data/review/spells/mage/dampen-magic.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Dampen Magic",
+                "description": "Dampons magic used against the targeted party member. decreasing damage taken from spells by up to 60 and healing spells by up to 120. Lasts 10 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Dampen Magic",
+                "description": "Dampons magic used against the targeted party member. decreasing damage taken from spells by up to 60 and healing spells by up to 120. Lasts 10 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dampen Magic",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/dampen-magic.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dampen Magic",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dampen Magic",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "evocation",
+      "name": "Evocation",
+      "kind": "active",
+      "tab": "arcane",
+      "icon": "crop-evocation",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/evocation.icon.png",
+      "tooltips": [
+        {
+          "castTime": "Channeled",
+          "cooldown": "8 min cooldown",
+          "description": "While channeling this spell, your mana regeneration is active and increased by 1,500%. Lasts 8 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22152.0,
+            "frame": 1329120,
+            "crop": "data/review/spells/mage/evocation.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Evocation",
+                "description": "While channeling this spell, your mana regeneration is active and increased by 1,500%. Lasts 8 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Evocation",
+                "description": "While channeling this spell, your mana regeneration is active and increased by 1,500%. Lasts 8 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Evocation",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/evocation.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Evocation"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Evocation"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "evocation-dampen-magic",
+      "name": "Evocation Dampen Magic",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [3],
+      "icon": "crop-evocation-dampen-magic",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/evocation-dampen-magic.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Evocation Dampen Magic for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22151.75,
+        "frame": 1329105,
+        "crop": "data/review/spells/mage/evocation-dampen-magic.png",
+        "panel": "spell-list",
+        "confidence": 0.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Evocation Dampen Magic",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "mage-armor",
+      "name": "Mage Armor",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [1],
+      "icon": "crop-mage-armor",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/mage-armor.icon.png",
+      "tooltips": [
+        {
+          "cost": "270 Mana",
+          "castTime": "Instant",
+          "description": "Increases your resistance to all magic by 5 and allows 50% of your mana regeneration to continue while casting. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22152.75,
+            "frame": 1329165,
+            "crop": "data/review/spells/mage/mage-armor.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Mage Armor",
+                "description": "Increases your resistance to all magic by 5 and allows 50% of your mana regeneration to continue while casting. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Mage Armor",
+                "description": "Increases your resistance to all magic by 5 and allows 50% of your mana regeneration to continue while casting. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Mage Armor",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/mage-armor.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Mage Armor",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Mage Armor",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "mana-shield",
+      "name": "Mana Shield",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [3],
+      "icon": "crop-mana-shield",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/mana-shield.icon.png",
+      "tooltips": [
+        {
+          "cost": "80 Mana",
+          "castTime": "Instant",
+          "description": "Absorbs 300 physical damage, draining mana instead. Drains 2.0 mana per damage absorbed. Lasts 1 min.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22156.5,
+            "frame": 1329390,
+            "crop": "data/review/spells/mage/mana-shield.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Mana Shield",
+                "description": "Absorbs 300 physical damage, draining mana instead. Drains 2.0 mana per damage absorbed. Lasts 1 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Mana Shield",
+                "description": "Absorbs 300 physical damage, draining mana instead. Drains 2.0 mana per damage absorbed. Lasts 1 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Mana Shield",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/mana-shield.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Mana Shield",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Mana Shield",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "polymorph",
+      "name": "Polymorph",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [2],
+      "icon": "crop-polymorph",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/polymorph.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Polymorph",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/polymorph.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Polymorph",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Polymorph",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "presence-of-mind",
+      "name": "Presence of Mind",
+      "kind": "active",
+      "tab": "arcane",
+      "icon": "crop-presence-of-mind",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/presence-of-mind.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Presence of Mind",
+        "note": "not a Classic Era trainer spell, but a Classic Era Arcane talent of the same name exists; the demo character may simply have spent a point on it, so this is not evidence that Forever made it baseline. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 15476.5,
+        "frame": 928590,
+        "crop": "data/review/spells/mage/presence-of-mind.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Presence of Mind"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Presence of Mind"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "remove-lesser-curse",
+      "name": "Remove Lesser Curse",
+      "kind": "active",
+      "tab": "arcane",
+      "ranksSeen": [3],
+      "icon": "crop-remove-lesser-curse",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/remove-lesser-curse.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Remove Lesser Curse",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/remove-lesser-curse.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Remove Lesser Curse"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Remove Lesser Curse"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "slow-fall",
+      "name": "Slow Fall",
+      "kind": "active",
+      "tab": "arcane",
+      "icon": "crop-slow-fall",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/slow-fall.icon.png",
+      "tooltips": [
+        {
+          "cost": "40 Mana",
+          "castTime": "Instant",
+          "tools": "Light Feather",
+          "description": "Slows falling speed for 30 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22148.75,
+            "frame": 1328925,
+            "crop": "data/review/spells/mage/slow-fall.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Slow Fall",
+                "description": "Slows falling speed for 30 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Slow Fall",
+                "description": "Slows falling speed for 30 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Slow Fall",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/slow-fall.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Slow Fall"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Slow Fall"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "teleport-darnassus",
+      "name": "Teleport: Darnassus",
+      "kind": "active",
+      "tab": "arcane",
+      "icon": "crop-teleport-darnassus",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/teleport-darnassus.icon.png",
+      "tooltips": [
+        {
+          "cost": "120 Mana",
+          "castTime": "10 sec cast",
+          "description": "Teleports the caster to Darnassus.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22149.0,
+            "frame": 1328940,
+            "crop": "data/review/spells/mage/teleport-darnassus.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Teleport: Darnassus",
+                "description": "Teleports the caster to Darnassus."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Teleport: Darnassus",
+                "description": "Teleports the caster to Darnassus."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Teleport: Darnassus",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/teleport-darnassus.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Teleport: Darnassus"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Teleport: Darnassus"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "teleport-ironforge",
+      "name": "Teleport: Ironforge",
+      "kind": "active",
+      "tab": "arcane",
+      "icon": "crop-teleport-ironforge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/teleport-ironforge.icon.png",
+      "tooltips": [
+        {
+          "cost": "120 Mana",
+          "castTime": "10 sec cast",
+          "description": "Teleports the caster to Ironforge.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22169.0,
+            "frame": 1330140,
+            "crop": "data/review/spells/mage/teleport-ironforge.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Teleport: Ironforge",
+                "description": "Teleports the caster to Ironforge."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Teleport: Ironforge",
+                "description": "Teleports the caster to Ironforge."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Teleport: Ironforge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/teleport-ironforge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Teleport: Ironforge"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Teleport: Ironforge"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "teleport-stormwind",
+      "name": "Teleport: Stormwind",
+      "kind": "active",
+      "tab": "arcane",
+      "icon": "crop-teleport-stormwind",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/teleport-stormwind.icon.png",
+      "tooltips": [
+        {
+          "cost": "120 Mana",
+          "castTime": "10 sec cast",
+          "tools": "Rune of Teleportation",
+          "description": "Teleports the caster to Stormwind.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22150.0,
+            "frame": 1329000,
+            "crop": "data/review/spells/mage/teleport-stormwind.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Teleport: Stormwind",
+                "description": "Teleports the caster to Stormwind."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Teleport: Stormwind",
+                "description": "Teleports the caster to Stormwind."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        },
+        {
+          "cost": "120 Mana",
+          "castTime": "10 sec cast",
+          "tools": "Rune of Teleportation",
+          "description": "Teleports the caster to Stormwind.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22170.25,
+            "frame": 1330215,
+            "crop": "data/review/spells/mage/teleport-stormwind.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Teleport: Stormwind",
+                "description": "Teleports the caster to Stormwind."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Teleport: Stormwind",
+                "description": "Teleports the caster to Stormwind."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Teleport: Stormwind",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22145.25,
+        "frame": 1328715,
+        "crop": "data/review/spells/mage/teleport-stormwind.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Teleport: Stormwind"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Teleport: Stormwind"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "fire-blast",
+      "name": "Fire Blast",
+      "kind": "active",
+      "tab": "fire",
+      "ranksSeen": [5],
+      "icon": "crop-fire-blast",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/fire-blast.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Fire Blast",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22141.0,
+        "frame": 1328460,
+        "crop": "data/review/spells/mage/fire-blast.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Fire Blast",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Fire Blast",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "fire-ward",
+      "name": "Fire Ward",
+      "kind": "active",
+      "tab": "fire",
+      "ranksSeen": [2],
+      "icon": "crop-fire-ward",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/fire-ward.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Fire Ward",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22141.0,
+        "frame": 1328460,
+        "crop": "data/review/spells/mage/fire-ward.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Fire Ward",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Fire Ward",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "fireball",
+      "name": "Fireball",
+      "kind": "active",
+      "tab": "fire",
+      "ranksSeen": [7],
+      "icon": "crop-fireball",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/fireball.icon.png",
+      "tooltips": [
+        {
+          "rank": 7,
+          "cost": "220 Mana",
+          "range": "35 yd range",
+          "castTime": "3.5 sec cast",
+          "description": "Hurts a fiery ball that causes 220 to 271 Fire damage and an additional 24 Fire damage over 8 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22141.25,
+            "frame": 1328475,
+            "crop": "data/review/spells/mage/fireball.r7.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Fireball",
+                "description": "Hurts a fiery ball that causes 220 to 271 Fire damage and an additional 24 Fire damage over 8 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Fireball",
+                "description": "Hurts a fiery ball that causes 220 to 271 Fire damage and an additional 24 Fire damage over 8 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Fireball",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22141.0,
+        "frame": 1328460,
+        "crop": "data/review/spells/mage/fireball.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Fireball",
+            "rank": 7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Fireball",
+            "rank": 7
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "flamestrike",
+      "name": "Flamestrike",
+      "kind": "active",
+      "tab": "fire",
+      "ranksSeen": [3],
+      "icon": "crop-flamestrike",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/flamestrike.icon.png",
+      "tooltips": [
+        {
+          "rank": 3,
+          "cost": "490 Mana",
+          "range": "30 yd range",
+          "castTime": "3 sec cast",
+          "description": "Calls down a pillar of fire, burning all enemies within the area for 167 to 206 Fire damage and an additional 139 Fire damage over 8 sec. Only one Flamestrike can be active per Mage at a time.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22140.5,
+            "frame": 1328430,
+            "crop": "data/review/spells/mage/flamestrike.r3.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Flamestrike",
+                "description": "Calls down a pillar of fire, burning all enemies within the area for 167 to 206 Fire damage and an additional 139 Fire damage over 8 sec. Only one Flamestrike can be active per Mage at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Flamestrike",
+                "description": "Calls down a pillar of fire, burning all enemies within the area for 167 to 206 Fire damage and an additional 139 Fire damage over 8 sec. Only one Flamestrike can be active per Mage at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Flamestrike",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22141.0,
+        "frame": 1328460,
+        "crop": "data/review/spells/mage/flamestrike.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Flamestrike",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Flamestrike",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "scorch",
+      "name": "Scorch",
+      "kind": "active",
+      "tab": "fire",
+      "ranksSeen": [3],
+      "icon": "crop-scorch",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/scorch.icon.png",
+      "tooltips": [
+        {
+          "rank": 3,
+          "cost": "80 Mana",
+          "range": "30 yd range",
+          "castTime": "1.5 sec cast",
+          "description": "Scorch the enemy for 90 to 103 Fire damage.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22141.75,
+            "frame": 1328505,
+            "crop": "data/review/spells/mage/scorch.r3.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Scorch",
+                "description": "Scorch the enemy for 90 to 103 Fire damage."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Scorch",
+                "description": "Scorch the enemy for 90 to 103 Fire damage."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Scorch",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22141.0,
+        "frame": 1328460,
+        "crop": "data/review/spells/mage/scorch.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Scorch",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Scorch",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "kind": "active",
+      "tab": "frost",
+      "ranksSeen": [3],
+      "icon": "crop-blizzard",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/blizzard.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Blizzard",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22138.0,
+        "frame": 1328280,
+        "crop": "data/review/spells/mage/blizzard.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blizzard",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blizzard",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Blizzard",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "cone-of-cold",
+      "name": "Cone of Cold",
+      "kind": "active",
+      "tab": "frost",
+      "ranksSeen": [2],
+      "icon": "crop-cone-of-cold",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/cone-of-cold.icon.png",
+      "tooltips": [
+        {
+          "cost": "145 Mana",
+          "castTime": "Instant",
+          "cooldown": "10 sec cooldown",
+          "description": "Targets In a cone In front of the caster take 169 to 185 Frost damage and are slowed by 40% for 6 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22134.75,
+            "frame": 1328085,
+            "crop": "data/review/spells/mage/cone-of-cold.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.3,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Cone of Cold",
+                "description": "Targets In a cone In front of the caster take 169 to 185 Frost damage and are slowed by 40% for 6 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Cone of Cold",
+                "description": "Targets in a cone in front of the caster take 169 to 185 Frost damage and are slowed by 40% for 6 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Cone of Cold",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22138.0,
+        "frame": 1328280,
+        "crop": "data/review/spells/mage/cone-of-cold.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Cone of Cold",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cone of Cold",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Cone of Cold",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "frost-armor",
+      "name": "Frost Armor",
+      "kind": "active",
+      "tab": "frost",
+      "ranksSeen": [3],
+      "icon": "crop-frost-armor",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/frost-armor.icon.png",
+      "tooltips": [
+        {
+          "cost": "170 Mana",
+          "castTime": "Instant",
+          "description": "Increases Armor by 200. If an enemy strikes the caster, they may have their movement slowed by 30% and the time between their attacks increased by 25% for 5 sec. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22136.0,
+            "frame": 1328160,
+            "crop": "data/review/spells/mage/frost-armor.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Frost Armor",
+                "description": "Increases Armor by 200. If an enemy strikes the caster, they may have their movement slowed by 30% and the time between their attacks increased by 25% for 5 sec. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Frost Armor",
+                "description": "Increases Armor by 200. If an enemy strikes the caster, they may have their movement slowed by 30% and the time between their attacks increased by 25% for 5 sec. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Frost Armor",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22138.0,
+        "frame": 1328280,
+        "crop": "data/review/spells/mage/frost-armor.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Frost Armor",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Frost Armor",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Frost Armor",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "frost-nova",
+      "name": "Frost Nova",
+      "kind": "active",
+      "tab": "frost",
+      "ranksSeen": [2],
+      "icon": "crop-frost-nova",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/frost-nova.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Frost Nova",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22138.0,
+        "frame": 1328280,
+        "crop": "data/review/spells/mage/frost-nova.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Frost Nova",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Frost Nova",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "frost-ward",
+      "name": "Frost Ward",
+      "kind": "active",
+      "tab": "frost",
+      "ranksSeen": [2],
+      "icon": "crop-frost-ward",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/frost-ward.icon.png",
+      "tooltips": [
+        {
+          "rank": 2,
+          "cost": "135 Mana",
+          "castTime": "Instant",
+          "cooldown": "30 sec cooldown",
+          "description": "Absorbs 284 Frost damage. Lasts 30 sec.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22133.75,
+            "frame": 1328025,
+            "crop": "data/review/spells/mage/frost-ward.r2.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Frost Ward",
+                "description": "Absorbs 284 Frost damage. Lasts 30 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Frost Ward",
+                "description": "Absorbs 284 Frost damage. Lasts 30 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Frost Ward",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22138.0,
+        "frame": 1328280,
+        "crop": "data/review/spells/mage/frost-ward.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Frost Ward",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Frost Ward",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "frostbolt",
+      "name": "Frostbolt",
+      "kind": "active",
+      "tab": "frost",
+      "ranksSeen": [7],
+      "icon": "crop-frostbolt",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/frostbolt.icon.png",
+      "tooltips": [
+        {
+          "cost": "80 Mana",
+          "range": "30 yd range",
+          "castTime": "3 sec cast",
+          "description": "Launches a bolt of frost at the enemy, causing 280 to 297 Frost damage and slowing movement speed by 40% for 8 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22137.0,
+            "frame": 1328220,
+            "crop": "data/review/spells/mage/frostbolt.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Frostbolt",
+                "description": "Launches a bolt of frost at the enemy, causing 280 to 297 Frost damage and slowing movement speed by 40% for 8 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Frostbolt",
+                "description": "Launches a bolt of frost at the enemy, causing 280 to 297 Frost damage and slowing movement speed by 40% for 8 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Frostbolt",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22138.0,
+        "frame": 1328280,
+        "crop": "data/review/spells/mage/frostbolt.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Frostbolt",
+            "rank": 7
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Frostbolt",
+            "rank": 7
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "ice-armor",
+      "name": "Ice Armor",
+      "kind": "active",
+      "tab": "frost",
+      "ranksSeen": [1],
+      "icon": "crop-ice-armor",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/ice-armor.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Ice Armor",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22138.0,
+        "frame": 1328280,
+        "crop": "data/review/spells/mage/ice-armor.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Ice Armor",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Ice Armor",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "armor-proficiency",
+      "name": "Armor Proficiency",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-armor-proficiency",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/armor-proficiency.icon.png",
+      "tooltips": [
+        {
+          "description": "You are proficient In the use of the following armor types: Cloth",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22122.25,
+            "frame": 1327335,
+            "crop": "data/review/spells/mage/armor-proficiency.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Armor Proficiency",
+                "description": "You are proficient In the use of the following armor types: Cloth"
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Armor Proficiency",
+                "description": "You are proficient In the use of the following armor types: Cloth"
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Armor Proficiency",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22119.75,
+        "frame": 1327185,
+        "crop": "data/review/spells/mage/armor-proficiency.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Armor Proficiency"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Armor Proficiency"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "attack",
+      "name": "Attack",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-attack",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/attack.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Attack",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22119.75,
+        "frame": 1327185,
+        "crop": "data/review/spells/mage/attack.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Attack"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "comprehend-scroll",
+      "name": "Comprehend Scroll",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-comprehend-scroll",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/comprehend-scroll.icon.png",
+      "tooltips": [
+        {
+          "range": "5 yd range",
+          "castTime": "Instant",
+          "description": "Decipher an untranslating scroll.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22122.0,
+            "frame": 1327320,
+            "crop": "data/review/spells/mage/comprehend-scroll.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Comprehend Scroll",
+                "description": "Decipher an untranslating scroll."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Comprehend Scroll",
+                "description": "Decipher an untranslating scroll."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Comprehend Scroll for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22119.75,
+        "frame": 1327185,
+        "crop": "data/review/spells/mage/comprehend-scroll.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Comprehend Scroll"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Comprehend Scroll"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Comprehend Scroll"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dodge",
+      "name": "Dodge",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-dodge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/dodge.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dodge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22119.75,
+        "frame": 1327185,
+        "crop": "data/review/spells/mage/dodge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dodge"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dodge"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "engineering-specialization",
+      "name": "Engineering Specialization",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-engineering-specialization",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/engineering-specialization.icon.png",
+      "tooltips": [
+        {
+          "description": "Your gnomish ingenuity reduces the rate of engineering devices failing or backfiring when you use them by 20%.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22124.25,
+            "frame": 1327455,
+            "crop": "data/review/spells/mage/engineering-specialization.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Engineering Specialization",
+                "description": "Your gnomish ingenuity reduces the rate of engineering devices failing or backfiring when you use them by 20%."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Engineering Specialization",
+                "description": "Your gnomish ingenuity reduces the rate of engineering devices failing or backfiring when you use them by 20%."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/gnome.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22119.75,
+        "frame": 1327185,
+        "crop": "data/review/spells/mage/engineering-specialization.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Engineering Specialization"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Engineering Specialization"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "escape-artist",
+      "name": "Escape Artist",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-escape-artist",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/escape-artist.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/gnome.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22119.75,
+        "frame": 1327185,
+        "crop": "data/review/spells/mage/escape-artist.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Escape Artist"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Escape Artist"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Escape Artist"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "eureka",
+      "name": "Eureka!",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-eureka",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/eureka.icon.png",
+      "tooltips": [
+        {
+          "castTime": "Instant",
+          "cooldown": "2 min cooldown",
+          "description": "Your next 3 damaging abilities have their Mana cost reduced by 50% and deal 10% more damage.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22125.25,
+            "frame": 1327515,
+            "crop": "data/review/spells/mage/eureka.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Eureka!",
+                "description": "Your next 3 damaging abilities have their Mana cost reduced by 50% and deal 10% more damage."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Eureka!",
+                "description": "Your next 3 damaging abilities have their Mana cost reduced by 50% and deal 10% more damage."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/gnome.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22119.75,
+        "frame": 1327185,
+        "crop": "data/review/spells/mage/eureka.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Eureka!"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Eureka!"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Eureka!"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "expansive-mind",
+      "name": "Expansive Mind",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-expansive-mind",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/expansive-mind.icon.png",
+      "tooltips": [
+        {
+          "description": "Maximum Mana Increased by 5%.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22120.25,
+            "frame": 1327215,
+            "crop": "data/review/spells/mage/expansive-mind.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Expansive Mind",
+                "description": "Maximum Mana Increased by 5%."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Expansive Mind",
+                "description": "Maximum Mana Increased by 5%."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/gnome.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22119.75,
+        "frame": 1327185,
+        "crop": "data/review/spells/mage/expansive-mind.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Expansive Mind"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Expansive Mind"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "languages",
+      "name": "Languages",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-languages",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/languages.icon.png",
+      "tooltips": [
+        {
+          "description": "You are fluent in the following languages: Common Gnomish",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22122.75,
+            "frame": 1327365,
+            "crop": "data/review/spells/mage/languages.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Languages",
+                "description": "You are fluent in the following languages: Common Gnomish"
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Languages",
+                "description": "You are fluent in the following languages: Common Gnomish"
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Languages",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22119.75,
+        "frame": 1327185,
+        "crop": "data/review/spells/mage/languages.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Languages"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Languages"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shoot",
+      "name": "Shoot",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-shoot",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/shoot.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Shoot",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22119.75,
+        "frame": 1327185,
+        "crop": "data/review/spells/mage/shoot.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shoot"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shoot"
+          }
+        ],
+        "reviewed": false
+      }
+    }
+  ],
+  "coverage": {
+    "pagesSeen": ["Arcane", "Fire", "Frost", "General"],
+    "tabsSeen": ["arcane", "fire", "frost", "general"],
+    "tabsMissing": [],
+    "states": 12,
+    "entriesRead": 45,
+    "tooltipsRead": 32,
+    "tooltipsUnmatched": 1,
+    "showAllSpellRanks": "not observed",
+    "observedLevel": 38,
+    "windows": [
+      "04:17:56",
+      "06:08:39",
+      "06:08:54",
+      "06:08:58",
+      "06:08:59",
+      "06:09:00",
+      "06:09:01",
+      "06:09:02",
+      "06:09:05",
+      "06:09:06",
+      "06:09:07",
+      "06:09:11"
+    ]
+  },
+  "complete": false,
+  "notes": [
+    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
+    "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
+    "No page listed one spell at two ranks, so 'Show all spell ranks' was off or the character knew one rank; ranksSeen is the highest rank known, not the full set.",
+    "Page headings the reader could not resolve to a tab, because a hover tooltip stood over them: Blizzard. Their entries are in this file without a tab and say so in source.note.",
+    "Hover tooltips whose header matched no list entry, so they are not in this file: Dodge Proficiency. Most are a half-drawn box caught during the fade-in; the crops are in pipeline/work/spells/crops/."
+  ]
+}

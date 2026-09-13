@@ -1,0 +1,404 @@
+{
+  "$schema": "../schema/spell.schema.json",
+  "schemaVersion": 1,
+  "class": "warlock",
+  "className": "Warlock",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T20:40:16Z",
+  "observedLevel": 38,
+  "tabs": [
+    {
+      "id": "general",
+      "name": "General",
+      "order": 0
+    }
+  ],
+  "spells": [
+    {
+      "id": "armor-proficiency",
+      "name": "Armor Proficiency",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-armor-proficiency",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/armor-proficiency.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Armor Proficiency",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19118.25,
+        "frame": 1147095,
+        "crop": "data/review/spells/warlock/armor-proficiency.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Armor Proficiency"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Armor Proficiency"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "attack",
+      "name": "Attack",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-attack",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/attack.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Attack",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19118.25,
+        "frame": 1147095,
+        "crop": "data/review/spells/warlock/attack.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Attack"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "axe-specialization",
+      "name": "Axe Specialization",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-axe-specialization",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/axe-specialization.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/orc.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19118.25,
+        "frame": 1147095,
+        "crop": "data/review/spells/warlock/axe-specialization.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Axe Specialization"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Axe Specialization"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "blood-fury",
+      "name": "Blood Fury",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-blood-fury",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/blood-fury.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/orc.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19118.25,
+        "frame": 1147095,
+        "crop": "data/review/spells/warlock/blood-fury.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blood Fury"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blood Fury"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Blood Fury"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dodge",
+      "name": "Dodge",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-dodge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/dodge.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dodge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19118.25,
+        "frame": 1147095,
+        "crop": "data/review/spells/warlock/dodge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dodge"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dodge"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "hardiness",
+      "name": "Hardiness",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-hardiness",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/hardiness.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/orc.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19118.25,
+        "frame": 1147095,
+        "crop": "data/review/spells/warlock/hardiness.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Hardiness"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Hardiness"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "languages",
+      "name": "Languages",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-languages",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/languages.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Languages",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19118.25,
+        "frame": 1147095,
+        "crop": "data/review/spells/warlock/languages.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Languages"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Languages"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shatter-curse",
+      "name": "Shatter Curse",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-shatter-curse",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/shatter-curse.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/orc.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19118.25,
+        "frame": 1147095,
+        "crop": "data/review/spells/warlock/shatter-curse.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shatter Curse"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shatter Curse"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Shatter Curse"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shoot",
+      "name": "Shoot",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-shoot",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/shoot.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Shoot",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19118.25,
+        "frame": 1147095,
+        "crop": "data/review/spells/warlock/shoot.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shoot"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shoot"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bane-of-agony",
+      "name": "Bane of Agony",
+      "kind": "active",
+      "ranksSeen": [1, 2, 3, 4],
+      "icon": "crop-bane-of-agony",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/bane-of-agony.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Bane of Agony for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19121.0,
+        "frame": 1147260,
+        "crop": "data/review/spells/warlock/bane-of-agony.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Bane of Agony",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Bane of Agony",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Bane of Agony",
+            "rank": 1
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Exact), so it has no tab"
+      }
+    }
+  ],
+  "coverage": {
+    "pagesSeen": ["Exact Matches", "General"],
+    "tabsSeen": ["general"],
+    "tabsMissing": ["affliction", "demonology", "destruction"],
+    "states": 4,
+    "entriesRead": 10,
+    "tooltipsRead": 0,
+    "tooltipsUnmatched": 0,
+    "showAllSpellRanks": "on",
+    "observedLevel": 38,
+    "windows": ["05:18:38", "05:18:41", "05:18:42", "05:18:43"]
+  },
+  "complete": false,
+  "notes": [
+    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
+    "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
+    "Page headings the reader could not resolve to a tab, because a hover tooltip stood over them: Exact. Their entries are in this file without a tab and say so in source.note.",
+    "Entries with a source note were read from a clipped row or a search page; check the crop before quoting them."
+  ]
+}

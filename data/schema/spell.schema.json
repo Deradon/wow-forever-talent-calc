@@ -1,0 +1,279 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/deradon/wow-forever-talent-calc/data/schema/spell.schema.json",
+  "title": "WoW Forever spellbook file",
+  "description": "One class's spellbook as the stream showed it: the tabs that were opened, the list entries read from them, the full tooltips of the spells that were hovered, and an explicit coverage record. Bounded by the demo character's level and by what was on screen; never a complete spell list. Normative prose: docs/handover/2026-09-13-spells-data.md section 5.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "class",
+    "className",
+    "dataSource",
+    "generatedAt",
+    "observedLevel",
+    "tabs",
+    "spells",
+    "coverage",
+    "complete"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "class": {
+      "enum": ["druid", "hunter", "mage", "paladin", "priest", "rogue", "shaman", "warlock", "warrior"],
+      "description": "Equals the file name stem."
+    },
+    "className": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "dataSource": {
+      "enum": ["video", "datamined", "mixed", "manual"]
+    },
+    "generatedAt": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "observedLevel": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 60,
+      "description": "Level of the demo character whose spellbook this is. Lists are complete only up to here."
+    },
+    "tabs": {
+      "type": "array",
+      "description": "The spellbook tabs that were actually opened, in display order. A tab the stream never showed is absent and listed in coverage.tabsMissing.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "order"],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/slug"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "tree": {
+            "$ref": "#/$defs/slug",
+            "description": "Matching talent tree id in data/talents/<class>.json, when the tab is a tree."
+          }
+        }
+      }
+    },
+    "spells": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/spell"
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pagesSeen", "tabsSeen", "tabsMissing", "states", "entriesRead", "tooltipsRead",
+                   "tooltipsUnmatched", "showAllSpellRanks", "observedLevel", "windows"],
+      "properties": {
+        "pagesSeen": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Every page heading seen, tab names and search-result headings alike."
+        },
+        "tabsSeen": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/slug"},
+          "uniqueItems": true
+        },
+        "tabsMissing": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/slug"},
+          "uniqueItems": true,
+          "description": "General plus every talent tree that was never opened. Their spells are absent from this file, not absent from the game."
+        },
+        "states": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Distinct page states read for this class."
+        },
+        "entriesRead": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tooltipsRead": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tooltipsUnmatched": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Hover tooltips detected for this class whose header matched no list entry, so they are not in spells[]. Mostly boxes caught half-drawn during the fade-in; notes[] names them."
+        },
+        "showAllSpellRanks": {
+          "enum": ["on", "off", "not observed"],
+          "description": "'on' when some page listed one spell at two ranks, which is the only visible effect of the option."
+        },
+        "observedLevel": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "windows": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^\\d{2}:\\d{2}:\\d{2}$"},
+          "description": "Stream times of the page states, HH:MM:SS."
+        }
+      }
+    },
+    "complete": {
+      "type": "boolean",
+      "description": "true only when every tab was seen and every list was fully legible. False for every class read from this stream."
+    },
+    "notes": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 64
+    },
+    "spell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "kind", "classic", "source"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "kind": {
+          "enum": ["active", "passive", "racial", "racial-passive"],
+          "description": "From the grey subtitle under the name; a row with a rank is active."
+        },
+        "tab": {
+          "$ref": "#/$defs/slug",
+          "description": "Absent when the entry was only ever seen on a search-results page."
+        },
+        "ranksSeen": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 1, "maximum": 20},
+          "description": "The 'Rank N' labels seen. With 'Show all spell ranks' off this is the one highest rank the character knew, not the spell's full range."
+        },
+        "icon": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "iconSource": {
+          "enum": ["classic", "crop", "datamined", "manual"]
+        },
+        "iconCrop": {
+          "type": "string",
+          "pattern": "^data/review/spells/"
+        },
+        "tooltips": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["description", "source"],
+            "properties": {
+              "rank": {"type": "integer", "minimum": 1, "maximum": 20,
+                       "description": "Rank of the list row the tooltip was anchored to, when it could be anchored."},
+              "cost": {"type": "string", "maxLength": 60},
+              "range": {"type": "string", "maxLength": 60},
+              "castTime": {"type": "string", "maxLength": 60},
+              "cooldown": {"type": "string", "maxLength": 60},
+              "tools": {"type": "string", "maxLength": 120},
+              "requires": {"type": "array", "items": {"type": "string"}},
+              "description": {"type": "string", "minLength": 1, "maxLength": 1200},
+              "footer": {"type": "string", "maxLength": 120},
+              "source": {"$ref": "#/$defs/source"}
+            }
+          }
+        },
+        "classic": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status"],
+          "properties": {
+            "status": {
+              "enum": ["new", "changed", "same", "unknown"],
+              "description": "Name-level only: 'new' means the name is not in the Classic Era baseline, 'unknown' means it is and nothing more is claimed."
+            },
+            "classicName": {"type": "string"},
+            "classicText": {"type": "string"},
+            "note": {"type": "string"}
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "reviewed"],
+      "properties": {
+        "kind": {"enum": ["video", "datamined", "manual"]},
+        "video": {"type": "string"},
+        "t": {"type": "number", "minimum": 0},
+        "frame": {"type": "integer", "minimum": 0},
+        "crop": {"type": "string"},
+        "panel": {
+          "enum": ["spell-list", "tooltip", "page-head"],
+          "description": "Which piece of the spellbook the reading comes from."
+        },
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "reader": {"type": "string"},
+        "readings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["reader"],
+            "properties": {
+              "reader": {"type": "string"},
+              "name": {"type": "string"},
+              "rank": {"type": ["integer", "null"]},
+              "description": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+            }
+          }
+        },
+        "build": {"type": "string"},
+        "reviewed": {"type": "boolean"},
+        "reviewedBy": {"type": "string"},
+        "reviewedAt": {"type": "string"},
+        "note": {"type": "string"}
+      }
+    }
+  }
+}

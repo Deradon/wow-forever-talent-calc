@@ -17,16 +17,18 @@ ranks the findings and assigns the work packages. Next: owner review via
 
 ## Layout
 
-- `pipeline/` – Python (uv). Stages `00, 03, 04, 04b, 05..09` in
-  `pipeline/stages/` (the numbering has gaps; there is no stage 1, 2 or 10),
-  shared code in `pipeline/src/wowtalents/`, one-off scripts in
-  `pipeline/scripts/`, the standalone validator at `pipeline/validate.py`,
-  tests in `pipeline/tests/`. Large artefacts stay under `pipeline/work/`
-  (git-ignored).
+- `pipeline/` – Python (uv). Stages `00, 03, 04, 04b, 05..09, 11, 12` in
+  `pipeline/stages/` (the numbering has gaps; there is no stage 1, 2, 10 or 13;
+  11 is the spellbook and 12 the races, both independent of 3-9), shared code
+  in `pipeline/src/wowtalents/`, one-off scripts in `pipeline/scripts/`, the
+  standalone validators `validate.py`, `validate_races.py` and
+  `validate_spells.py`, tests in `pipeline/tests/`. Large artefacts stay under
+  `pipeline/work/` (git-ignored).
 - `data/` – `talents/<class>.json` canonical, `extracted/` raw pipeline
   output, `overrides/` hand corrections, `review/` tooltip and icon crops,
   `encoding/` build-link orders, `prior/classic-era/` the Classic prior,
-  `schema/class.schema.json`, `examples/` the fictional tinker class.
+  `schema/` (`class`, `race`, `race-matrix`, `spell`), `examples/` the
+  fictional tinker class, plus the non-talent datasets `races/` and `spells/`.
 - `web/` – Static calculator, no backend. `src/rules/` pure rules,
   `src/url/` build-link codec and hash routing, `src/data/` schema, loading
   and encoding registry, `src/ui/` React, `tests/` Playwright.
@@ -43,7 +45,10 @@ ranks the findings and assigns the work packages. Next: owner review via
   mirror it. Where a brief disagrees, the schema wins.
 - Run the validator before committing any data change, from `pipeline/`:
   `uv run python validate.py --check ../data/talents/*.json`
-  (about a second, must exit 0). CI runs the same command.
+  (about a second, must exit 0). CI runs the same command, plus
+  `validate_races.py --check ../data/races/*.json` and
+  `validate_spells.py --check ../data/spells/*.json` for the two non-talent
+  datasets.
 - Every talent record keeps `source` (video id, timestamp, frame path,
   confidence). Data corrected by hand keeps `source.reviewed: true`.
 - The pipeline owns `data/extracted/`, `data/review/`, `data/icons/` and

@@ -703,7 +703,7 @@ def referenced_crops(doc: dict) -> set[str]:
 #: Subtrees of ``data/review/`` that belong to another pipeline and are therefore not
 #: this one's to prune. ``races/`` is stage 12's, validated by ``validate_races.py``
 #: (rule R9), which checks those crops against ``data/races/*.json`` instead.
-FOREIGN_REVIEW_DIRS = ("races",)
+FOREIGN_REVIEW_DIRS = ("races", "spells")
 
 
 def orphan_crops(root: Path, docs: Iterable[dict]) -> list[Path]:

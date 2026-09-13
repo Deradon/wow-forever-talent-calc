@@ -1,0 +1,1817 @@
+{
+  "$schema": "../schema/spell.schema.json",
+  "schemaVersion": 1,
+  "class": "warrior",
+  "className": "Warrior",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T20:40:16Z",
+  "observedLevel": 38,
+  "tabs": [
+    {
+      "id": "general",
+      "name": "General",
+      "order": 0
+    },
+    {
+      "id": "arms",
+      "name": "Arms",
+      "order": 1
+    },
+    {
+      "id": "fury",
+      "name": "Fury",
+      "order": 2
+    },
+    {
+      "id": "protection",
+      "name": "Protection",
+      "order": 3
+    }
+  ],
+  "spells": [
+    {
+      "id": "battle-stance",
+      "name": "Battle Stance",
+      "kind": "active",
+      "tab": "arms",
+      "icon": "crop-battle-stance",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/battle-stance.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Battle Stance",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18088.25,
+        "frame": 1085295,
+        "crop": "data/review/spells/warrior/battle-stance.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Battle Stance"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Battle Stance"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Battle Stance"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "charge",
+      "name": "Charge",
+      "kind": "active",
+      "tab": "arms",
+      "ranksSeen": [2],
+      "icon": "crop-charge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/charge.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Charge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18088.25,
+        "frame": 1085295,
+        "crop": "data/review/spells/warrior/charge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Charge",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Charge",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Charge",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "hamstring",
+      "name": "Hamstring",
+      "kind": "active",
+      "tab": "arms",
+      "ranksSeen": [2],
+      "icon": "crop-hamstring",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/hamstring.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Hamstring",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18088.25,
+        "frame": 1085295,
+        "crop": "data/review/spells/warrior/hamstring.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Hamstring",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Hamstring",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Hamstring",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "heroic-strike",
+      "name": "Heroic Strike",
+      "kind": "active",
+      "tab": "arms",
+      "ranksSeen": [5],
+      "icon": "crop-heroic-strike",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/heroic-strike.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Heroic Strike",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18088.25,
+        "frame": 1085295,
+        "crop": "data/review/spells/warrior/heroic-strike.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Heroic Strike",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Heroic Strike",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Heroic Strike",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "mocking-blow",
+      "name": "Mocking Blow",
+      "kind": "active",
+      "tab": "arms",
+      "ranksSeen": [3],
+      "icon": "crop-mocking-blow",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/mocking-blow.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Mocking Blow",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18088.25,
+        "frame": 1085295,
+        "crop": "data/review/spells/warrior/mocking-blow.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Mocking Blow",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Mocking Blow",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "overpower",
+      "name": "Overpower",
+      "kind": "active",
+      "tab": "arms",
+      "ranksSeen": [2],
+      "icon": "crop-overpower",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/overpower.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Overpower",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18088.25,
+        "frame": 1085295,
+        "crop": "data/review/spells/warrior/overpower.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Overpower",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Overpower",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "rend",
+      "name": "Rend",
+      "kind": "active",
+      "tab": "arms",
+      "ranksSeen": [4],
+      "icon": "crop-rend",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/rend.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Rend",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18088.25,
+        "frame": 1085295,
+        "crop": "data/review/spells/warrior/rend.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Rend",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Rend",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "retaliation",
+      "name": "Retaliation",
+      "kind": "active",
+      "tab": "arms",
+      "icon": "crop-retaliation",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/retaliation.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Retaliation",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18088.25,
+        "frame": 1085295,
+        "crop": "data/review/spells/warrior/retaliation.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Retaliation"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Retaliation"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "tactical-mastery",
+      "name": "Tactical Mastery",
+      "kind": "passive",
+      "tab": "arms",
+      "icon": "crop-tactical-mastery",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/tactical-mastery.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Tactical Mastery",
+        "note": "not a Classic Era trainer spell, but a Classic Era Arms talent of the same name exists; the demo character may simply have spent a point on it, so this is not evidence that Forever made it baseline. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18088.25,
+        "frame": 1085295,
+        "crop": "data/review/spells/warrior/tactical-mastery.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Tactical Mastery"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Tactical Mastery"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "victory-rush",
+      "name": "Victory Rush",
+      "kind": "active",
+      "tab": "arms",
+      "icon": "crop-victory-rush",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/victory-rush.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Victory Rush for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18088.25,
+        "frame": 1085295,
+        "crop": "data/review/spells/warrior/victory-rush.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Victory Rush"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Victory Rush"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "battle-shout",
+      "name": "Battle Shout",
+      "kind": "active",
+      "tab": "fury",
+      "ranksSeen": [4],
+      "icon": "crop-battle-shout",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/battle-shout.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Battle Shout",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18089.75,
+        "frame": 1085385,
+        "crop": "data/review/spells/warrior/battle-shout.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Battle Shout",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Battle Shout",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Battle Shout",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "berserker-rage",
+      "name": "Berserker Rage",
+      "kind": "active",
+      "tab": "fury",
+      "icon": "crop-berserker-rage",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/berserker-rage.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Berserker Rage",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18089.75,
+        "frame": 1085385,
+        "crop": "data/review/spells/warrior/berserker-rage.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Berserker Rage"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Berserker Rage"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Berserker Rage"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "berserker-stance",
+      "name": "Berserker Stance",
+      "kind": "active",
+      "tab": "fury",
+      "icon": "crop-berserker-stance",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/berserker-stance.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Berserker Stance",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18089.75,
+        "frame": 1085385,
+        "crop": "data/review/spells/warrior/berserker-stance.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Berserker Stance"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Berserker Stance"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Berserker Stance"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "challenging-shout",
+      "name": "Challenging Shout",
+      "kind": "active",
+      "tab": "fury",
+      "icon": "crop-challenging-shout",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/challenging-shout.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Challenging Shout",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18089.75,
+        "frame": 1085385,
+        "crop": "data/review/spells/warrior/challenging-shout.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Challenging Shout"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Challenging Shout"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Challenging Shout"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "cleave",
+      "name": "Cleave",
+      "kind": "active",
+      "tab": "fury",
+      "ranksSeen": [2],
+      "icon": "crop-cleave",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/cleave.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Cleave",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18089.75,
+        "frame": 1085385,
+        "crop": "data/review/spells/warrior/cleave.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Cleave",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cleave",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "demoralizing-shout",
+      "name": "Demoralizing Shout",
+      "kind": "active",
+      "tab": "fury",
+      "ranksSeen": [3],
+      "icon": "crop-demoralizing-shout",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/demoralizing-shout.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Demoralizing Shout",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18089.75,
+        "frame": 1085385,
+        "crop": "data/review/spells/warrior/demoralizing-shout.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Demoralizing Shout",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Demoralizing Shout",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "execute",
+      "name": "Execute",
+      "kind": "active",
+      "tab": "fury",
+      "ranksSeen": [2],
+      "icon": "crop-execute",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/execute.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Execute",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18089.75,
+        "frame": 1085385,
+        "crop": "data/review/spells/warrior/execute.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Execute",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Execute",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "intimidating-shout",
+      "name": "Intimidating Shout",
+      "kind": "active",
+      "tab": "fury",
+      "icon": "crop-intimidating-shout",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/intimidating-shout.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Intimidating Shout",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18089.75,
+        "frame": 1085385,
+        "crop": "data/review/spells/warrior/intimidating-shout.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Intimidating Shout"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Intimidating Shout"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "rummel-whirlwind",
+      "name": "Rummel Whirlwind",
+      "kind": "active",
+      "tab": "fury",
+      "ranksSeen": [1],
+      "icon": "crop-rummel-whirlwind",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/rummel-whirlwind.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Rummel Whirlwind for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18089.75,
+        "frame": 1085385,
+        "crop": "data/review/spells/warrior/rummel-whirlwind.png",
+        "panel": "spell-list",
+        "confidence": 0.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Rummel Whirlwind",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "slam",
+      "name": "Slam",
+      "kind": "active",
+      "tab": "fury",
+      "ranksSeen": [3],
+      "icon": "crop-slam",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/slam.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Slam",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18089.75,
+        "frame": 1085385,
+        "crop": "data/review/spells/warrior/slam.png",
+        "panel": "spell-list",
+        "confidence": 0.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Slam",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "whirlwind",
+      "name": "Whirlwind",
+      "kind": "active",
+      "tab": "fury",
+      "icon": "crop-whirlwind",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/whirlwind.icon.png",
+      "tooltips": [
+        {
+          "cost": "25 Rage",
+          "castTime": "Instant",
+          "cooldown": "10 sec cooldown",
+          "requires": ["Berserker Stance"],
+          "description": "In a whirlwind of steel you attack up to 4 enemies within 8 yards, causing weapon damage to each enemy.",
+          "footer": "You've added this to your action bar, but on a different stance",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 18089.75,
+            "frame": 1085385,
+            "crop": "data/review/spells/warrior/whirlwind.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Whirlwind",
+                "description": "In a whirlwind of steel you attack up to 4 enemies within 8 yards, causing weapon damage to each enemy."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Whirlwind",
+                "description": "In a whirlwind of steel you attack up to 4 enemies within 8 yards, causing weapon damage to each enemy."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Whirlwind",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18089.75,
+        "frame": 1085385,
+        "crop": "data/review/spells/warrior/whirlwind.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Whirlwind"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Whirlwind"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "armor-proficiency",
+      "name": "Armor Proficiency",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-armor-proficiency",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/armor-proficiency.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Armor Proficiency",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/armor-proficiency.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Armor Proficiency"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Armor Proficiency"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "block",
+      "name": "Block",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-block",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/block.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Block",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/block.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Block"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Block"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dodge",
+      "name": "Dodge",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-dodge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/dodge.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dodge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/dodge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dodge"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dodge"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dual-wield",
+      "name": "Dual Wield",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-dual-wield",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/dual-wield.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dual Wield",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/dual-wield.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dual Wield"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dual Wield"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "elemental-insight",
+      "name": "Elemental Insight",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-elemental-insight",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/elemental-insight.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/elemental-insight.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Elemental Insight"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Elemental Insight"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "languages",
+      "name": "Languages",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-languages",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/languages.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Languages",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/languages.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Languages"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Languages"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "parry",
+      "name": "Parry",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-parry",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/parry.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Parry",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/parry.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Parry"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Parry"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "read-ley-line",
+      "name": "Read Ley Line",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-read-ley-line",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/read-ley-line.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/read-ley-line.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Read Ley Line"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Read Ley Line"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Read Ley Line"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shoot-bow",
+      "name": "Shoot Bow",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-shoot-bow",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/shoot-bow.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Shoot Bow",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/shoot-bow.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shoot Bow"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shoot Bow"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Shoot Bow"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shoot-crossbow",
+      "name": "Shoot Crossbow",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-shoot-crossbow",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/shoot-crossbow.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Shoot Crossbow",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/shoot-crossbow.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shoot Crossbow"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shoot Crossbow"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Shoot Crossbow"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shoot-gun",
+      "name": "Shoot Gun",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-shoot-gun",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/shoot-gun.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Shoot Gun",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/shoot-gun.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shoot Gun"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shoot Gun"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Shoot Gun"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "throw",
+      "name": "Throw",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-throw",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/throw.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Throw",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/throw.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Throw"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Throw"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "walk-on-air",
+      "name": "Walk on Air",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-walk-on-air",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/walk-on-air.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/walk-on-air.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Walk on Air"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Walk on Air"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "wind-blessed",
+      "name": "Wind Blessed",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-wind-blessed",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/wind-blessed.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18087.25,
+        "frame": 1085235,
+        "crop": "data/review/spells/warrior/wind-blessed.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Wind Blessed"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Wind Blessed"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bloodrage",
+      "name": "Bloodrage",
+      "kind": "active",
+      "tab": "protection",
+      "icon": "crop-bloodrage",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/bloodrage.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Bloodrage",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18185.5,
+        "frame": 1091130,
+        "crop": "data/review/spells/warrior/bloodrage.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Bloodrage"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Bloodrage"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Bloodrage"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "defensive-stance",
+      "name": "Defensive Stance",
+      "kind": "active",
+      "tab": "protection",
+      "icon": "crop-defensive-stance",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/defensive-stance.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Defensive Stance",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18185.5,
+        "frame": 1091130,
+        "crop": "data/review/spells/warrior/defensive-stance.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Defensive Stance"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Defensive Stance"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Defensive Stance"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "disarm",
+      "name": "Disarm",
+      "kind": "active",
+      "tab": "protection",
+      "icon": "crop-disarm",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/disarm.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Disarm",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18185.5,
+        "frame": 1091130,
+        "crop": "data/review/spells/warrior/disarm.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Disarm"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Disarm"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Disarm"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "revenge",
+      "name": "Revenge",
+      "kind": "active",
+      "tab": "protection",
+      "ranksSeen": [3],
+      "icon": "crop-revenge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/revenge.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Revenge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18185.5,
+        "frame": 1091130,
+        "crop": "data/review/spells/warrior/revenge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Revenge",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Revenge",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shield-bash",
+      "name": "Shield Bash",
+      "kind": "active",
+      "tab": "protection",
+      "ranksSeen": [2],
+      "icon": "crop-shield-bash",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/shield-bash.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Shield Bash",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18185.5,
+        "frame": 1091130,
+        "crop": "data/review/spells/warrior/shield-bash.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shield Bash",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shield Bash",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shield-block",
+      "name": "Shield Block",
+      "kind": "active",
+      "tab": "protection",
+      "icon": "crop-shield-block",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/shield-block.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Shield Block",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18185.5,
+        "frame": 1091130,
+        "crop": "data/review/spells/warrior/shield-block.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shield Block"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shield Block"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shield-wall",
+      "name": "Shield Wall",
+      "kind": "active",
+      "tab": "protection",
+      "icon": "crop-shield-wall",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/shield-wall.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Shield Wall",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18185.5,
+        "frame": 1091130,
+        "crop": "data/review/spells/warrior/shield-wall.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shield Wall"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shield Wall"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "sunder-armor",
+      "name": "Sunder Armor",
+      "kind": "active",
+      "tab": "protection",
+      "ranksSeen": [3],
+      "icon": "crop-sunder-armor",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/sunder-armor.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Sunder Armor",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18185.5,
+        "frame": 1091130,
+        "crop": "data/review/spells/warrior/sunder-armor.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Sunder Armor",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sunder Armor",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "taunt",
+      "name": "Taunt",
+      "kind": "active",
+      "tab": "protection",
+      "icon": "crop-taunt",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/taunt.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Taunt",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 18185.5,
+        "frame": 1091130,
+        "crop": "data/review/spells/warrior/taunt.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Taunt"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Taunt"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "attack",
+      "name": "Attack",
+      "kind": "active",
+      "icon": "crop-attack",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/attack.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Attack",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22676.5,
+        "frame": 1360590,
+        "crop": "data/review/spells/warrior/attack.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Attack"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Exac), so it has no tab"
+      }
+    },
+    {
+      "id": "thunder-clap",
+      "name": "Thunder Clap",
+      "kind": "active",
+      "ranksSeen": [4],
+      "icon": "crop-thunder-clap",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/thunder-clap.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Thunder Clap",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22676.5,
+        "frame": 1360590,
+        "crop": "data/review/spells/warrior/thunder-clap.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Thunder Clap",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Thunder Clap",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Thunder Clap",
+            "rank": 4
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Exac), so it has no tab"
+      }
+    }
+  ],
+  "coverage": {
+    "pagesSeen": ["Arms", "Exact Matches", "Fury", "General", "Name Matches", "Protection"],
+    "tabsSeen": ["arms", "fury", "general", "protection"],
+    "tabsMissing": [],
+    "states": 11,
+    "entriesRead": 46,
+    "tooltipsRead": 1,
+    "tooltipsUnmatched": 0,
+    "showAllSpellRanks": "not observed",
+    "observedLevel": 38,
+    "windows": [
+      "05:01:27",
+      "05:01:28",
+      "05:01:29",
+      "05:03:05",
+      "06:17:37",
+      "06:17:51",
+      "06:17:56",
+      "06:18:01",
+      "06:18:20",
+      "06:19:25",
+      "06:19:46"
+    ]
+  },
+  "complete": false,
+  "notes": [
+    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
+    "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
+    "No page listed one spell at two ranks, so 'Show all spell ranks' was off or the character knew one rank; ranksSeen is the highest rank known, not the full set.",
+    "Page headings the reader could not resolve to a tab, because a hover tooltip stood over them: Exac, Instant. Their entries are in this file without a tab and say so in source.note.",
+    "Entries with a source note were read from a clipped row or a search page; check the crop before quoting them."
+  ]
+}

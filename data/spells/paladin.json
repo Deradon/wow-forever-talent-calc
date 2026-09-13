@@ -1,0 +1,2045 @@
+{
+  "$schema": "../schema/spell.schema.json",
+  "schemaVersion": 1,
+  "class": "paladin",
+  "className": "Paladin",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T20:40:16Z",
+  "observedLevel": 38,
+  "tabs": [
+    {
+      "id": "general",
+      "name": "General",
+      "order": 0
+    },
+    {
+      "id": "holy",
+      "name": "Holy",
+      "order": 1
+    },
+    {
+      "id": "protection",
+      "name": "Protection",
+      "order": 2
+    },
+    {
+      "id": "retribution",
+      "name": "Retribution",
+      "order": 3
+    }
+  ],
+  "spells": [
+    {
+      "id": "armor-proficiency",
+      "name": "Armor Proficiency",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-armor-proficiency",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/armor-proficiency.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Armor Proficiency",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21620.0,
+        "frame": 1297200,
+        "crop": "data/review/spells/paladin/armor-proficiency.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Armor Proficiency"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Armor Proficiency"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "block",
+      "name": "Block",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-block",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/block.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Block",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21620.0,
+        "frame": 1297200,
+        "crop": "data/review/spells/paladin/block.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Block"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Block"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "cannibalize",
+      "name": "Cannibalize",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-cannibalize",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/cannibalize.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/undead.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14373.75,
+        "frame": 862425,
+        "crop": "data/review/spells/paladin/cannibalize.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Cannibalize"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cannibalize"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Cannibalize"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dodge",
+      "name": "Dodge",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-dodge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/dodge.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dodge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21620.0,
+        "frame": 1297200,
+        "crop": "data/review/spells/paladin/dodge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dodge"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dodge"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "languages",
+      "name": "Languages",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-languages",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/languages.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Languages",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21620.0,
+        "frame": 1297200,
+        "crop": "data/review/spells/paladin/languages.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Languages"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Languages"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "parry",
+      "name": "Parry",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-parry",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/parry.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Parry",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21620.0,
+        "frame": 1297200,
+        "crop": "data/review/spells/paladin/parry.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Parry"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Parry"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "perception",
+      "name": "Perception",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-perception",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/perception.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/human.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21620.0,
+        "frame": 1297200,
+        "crop": "data/review/spells/paladin/perception.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Perception"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Perception"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "sword-specialization",
+      "name": "Sword Specialization",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-sword-specialization",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/sword-specialization.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/human.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21620.0,
+        "frame": 1297200,
+        "crop": "data/review/spells/paladin/sword-specialization.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Sword Specialization"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sword Specialization"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "the-human-spirit",
+      "name": "The Human Spirit",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-the-human-spirit",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/the-human-spirit.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/human.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21620.0,
+        "frame": 1297200,
+        "crop": "data/review/spells/paladin/the-human-spirit.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "The Human Spirit"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "The Human Spirit"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "touch-of-the-grave",
+      "name": "Touch of the Grave",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-touch-of-the-grave",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/touch-of-the-grave.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/undead.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14373.75,
+        "frame": 862425,
+        "crop": "data/review/spells/paladin/touch-of-the-grave.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Touch of the Grave"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Touch of the Grave"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "underwater-breathing",
+      "name": "Underwater Breathing",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-underwater-breathing",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/underwater-breathing.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/undead.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14373.75,
+        "frame": 862425,
+        "crop": "data/review/spells/paladin/underwater-breathing.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Underwater Breathing"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Underwater Breathing"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "will-of-the-forsaken",
+      "name": "Will of the Forsaken",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-will-of-the-forsaken",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/will-of-the-forsaken.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/undead.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14373.75,
+        "frame": 862425,
+        "crop": "data/review/spells/paladin/will-of-the-forsaken.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Will of the Forsaken"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Will of the Forsaken"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Will of the Forsaken"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "will-to-survive",
+      "name": "Will to Survive",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-will-to-survive",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/will-to-survive.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/human.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21620.0,
+        "frame": 1297200,
+        "crop": "data/review/spells/paladin/will-to-survive.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Will to Survive"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Will to Survive"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "consecration",
+      "name": "Consecration",
+      "kind": "active",
+      "tab": "holy",
+      "ranksSeen": [2],
+      "icon": "crop-consecration",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/consecration.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Consecration",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/consecration.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Consecration",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Consecration",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Consecration",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "exorcism",
+      "name": "Exorcism",
+      "kind": "active",
+      "tab": "holy",
+      "ranksSeen": [1, 2, 3],
+      "icon": "crop-exorcism",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/exorcism.icon.png",
+      "tooltips": [
+        {
+          "rank": 3,
+          "cost": "180 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "cooldown": "15 sec cooldown",
+          "description": "Causes 194 to 218 Holy damage to an Undead or Demon target.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21624.25,
+            "frame": 1297455,
+            "crop": "data/review/spells/paladin/exorcism.r3.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Exorcism",
+                "description": "Causes 194 to 218 Holy damage to an Undead or Demon target."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Exorcism",
+                "description": "Causes 194 to 218 Holy damage to an Undead or Demon target."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Exorcism",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/exorcism.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Exorcism",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Exorcism",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Exorcism",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "flash-of-light",
+      "name": "Flash of Light",
+      "kind": "active",
+      "tab": "holy",
+      "ranksSeen": [3],
+      "icon": "crop-flash-of-light",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/flash-of-light.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Flash of Light",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/flash-of-light.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Flash of Light",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Flash of Light",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Flash of Light",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "holy-light",
+      "name": "Holy Light",
+      "kind": "active",
+      "tab": "holy",
+      "ranksSeen": [6],
+      "icon": "crop-holy-light",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/holy-light.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Holy Light",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/holy-light.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Holy Light",
+            "rank": 6
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Holy Light",
+            "rank": 6
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Holy Light",
+            "rank": 6
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "lay-on-hands",
+      "name": "Lay on Hands",
+      "kind": "active",
+      "tab": "holy",
+      "ranksSeen": [2],
+      "icon": "crop-lay-on-hands",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/lay-on-hands.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Lay on Hands",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/lay-on-hands.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Lay on Hands",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Lay on Hands",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "purify",
+      "name": "Purify",
+      "kind": "active",
+      "tab": "holy",
+      "icon": "crop-purify",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/purify.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Purify",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/purify.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Purify"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Purify"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "redemption",
+      "name": "Redemption",
+      "kind": "active",
+      "tab": "holy",
+      "ranksSeen": [3],
+      "icon": "crop-redemption",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/redemption.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Redemption",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/redemption.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Redemption",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Redemption",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "seal-of-light",
+      "name": "Seal of Light",
+      "kind": "active",
+      "tab": "holy",
+      "ranksSeen": [1],
+      "icon": "crop-seal-of-light",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/seal-of-light.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Seal of Light",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/seal-of-light.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Seal of Light",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Seal of Light",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "seal-of-righteousness",
+      "name": "Seal of Righteousness",
+      "kind": "active",
+      "tab": "holy",
+      "ranksSeen": [5],
+      "icon": "crop-seal-of-righteousness",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/seal-of-righteousness.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Seal of Righteousness",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/seal-of-righteousness.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Seal of Righteousness",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Seal of Righteousness",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "seal-of-wisdom",
+      "name": "Seal of Wisdom",
+      "kind": "active",
+      "tab": "holy",
+      "ranksSeen": [1],
+      "icon": "crop-seal-of-wisdom",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/seal-of-wisdom.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Seal of Wisdom",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/seal-of-wisdom.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Seal of Wisdom",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Seal of Wisdom",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "sense-undead",
+      "name": "Sense Undead",
+      "kind": "active",
+      "tab": "holy",
+      "icon": "crop-sense-undead",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/sense-undead.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Sense Undead",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/sense-undead.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Sense Undead"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sense Undead"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "turn-undead",
+      "name": "Turn Undead",
+      "kind": "active",
+      "tab": "holy",
+      "ranksSeen": [2],
+      "icon": "crop-turn-undead",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/turn-undead.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Turn Undead",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14378.75,
+        "frame": 862725,
+        "crop": "data/review/spells/paladin/turn-undead.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Turn Undead",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Turn Undead",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "concentration-aura",
+      "name": "Concentration Aura",
+      "kind": "active",
+      "tab": "protection",
+      "icon": "crop-concentration-aura",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/concentration-aura.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Concentration Aura",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/concentration-aura.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Concentration Aura"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Concentration Aura"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "devotion-aura",
+      "name": "Devotion Aura",
+      "kind": "active",
+      "tab": "protection",
+      "ranksSeen": [4],
+      "icon": "crop-devotion-aura",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/devotion-aura.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Devotion Aura",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/devotion-aura.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Devotion Aura",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Devotion Aura",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "divine-intervention",
+      "name": "Divine Intervention",
+      "kind": "active",
+      "tab": "protection",
+      "icon": "crop-divine-intervention",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/divine-intervention.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Divine Intervention",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/divine-intervention.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Divine Intervention"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Divine Intervention"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "divine-protection",
+      "name": "Divine Protection",
+      "kind": "active",
+      "tab": "protection",
+      "ranksSeen": [2],
+      "icon": "crop-divine-protection",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/divine-protection.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Divine Protection",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/divine-protection.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Divine Protection",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Divine Protection",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "divine-shield",
+      "name": "Divine Shield",
+      "kind": "active",
+      "tab": "protection",
+      "ranksSeen": [1],
+      "icon": "crop-divine-shield",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/divine-shield.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Divine Shield",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/divine-shield.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Divine Shield",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Divine Shield",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "fire-resistance-aura",
+      "name": "Fire Resistance Aura",
+      "kind": "active",
+      "tab": "protection",
+      "ranksSeen": [1],
+      "icon": "crop-fire-resistance-aura",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/fire-resistance-aura.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Fire Resistance Aura",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/fire-resistance-aura.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Fire Resistance Aura",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Fire Resistance Aura",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "frost-resistance-aura",
+      "name": "Frost Resistance Aura",
+      "kind": "active",
+      "tab": "protection",
+      "ranksSeen": [1],
+      "icon": "crop-frost-resistance-aura",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/frost-resistance-aura.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Frost Resistance Aura",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/frost-resistance-aura.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Frost Resistance Aura",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Frost Resistance Aura",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "hammer-of-justice",
+      "name": "Hammer of Justice",
+      "kind": "active",
+      "tab": "protection",
+      "ranksSeen": [2],
+      "icon": "crop-hammer-of-justice",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/hammer-of-justice.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Hammer of Justice",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/hammer-of-justice.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Hammer of Justice",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Hammer of Justice",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "righteous-fury",
+      "name": "Righteous Fury",
+      "kind": "active",
+      "tab": "protection",
+      "icon": "crop-righteous-fury",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/righteous-fury.icon.png",
+      "tooltips": [
+        {
+          "cost": "280 Mana",
+          "castTime": "Instant",
+          "description": "Increases the threat generated by your Holy attacks by 90%. Lasts 30 min.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14375.0,
+            "frame": 862500,
+            "crop": "data/review/spells/paladin/righteous-fury.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Righteous Fury",
+                "description": "Increases the threat generated by your Holy attacks by 90%. Lasts 30 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Righteous Fury",
+                "description": "Increases the threat generated by your Holy attacks by 90%. Lasts 30 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Righteous Fury",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/righteous-fury.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Righteous Fury"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Righteous Fury"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "seal-of-fury",
+      "name": "Seal of Fury",
+      "kind": "active",
+      "tab": "protection",
+      "ranksSeen": [1, 2, 3, 4],
+      "icon": "crop-seal-of-fury",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/seal-of-fury.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Seal of Fury for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/seal-of-fury.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Seal of Fury",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Seal of Fury",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "seal-of-justice",
+      "name": "Seal of Justice",
+      "kind": "active",
+      "tab": "protection",
+      "icon": "crop-seal-of-justice",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/seal-of-justice.icon.png",
+      "tooltips": [
+        {
+          "cost": "121 Mana",
+          "castTime": "Instant",
+          "description": "Fills the Paladin with the spirit of justice for 30 sec, giving each melee attack a chance to stun for 2 sec. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 10 sec, preventing them from fleeing. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14416.75,
+            "frame": 865005,
+            "crop": "data/review/spells/paladin/seal-of-justice.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Seal of Justice",
+                "description": "Fills the Paladin with the spirit of justice for 30 sec, giving each melee attack a chance to stun for 2 sec. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 10 sec, preventing them from fleeing. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Seal of Justice",
+                "description": "Fills the Paladin with the spirit of justice for 30 sec, giving each melee attack a chance to stun for 2 sec. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 10 sec, preventing them from fleeing. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Seal of Justice",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/seal-of-justice.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Seal of Justice"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Seal of Justice"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shadow-resistance-aura",
+      "name": "Shadow Resistance Aura",
+      "kind": "active",
+      "tab": "protection",
+      "ranksSeen": [1],
+      "icon": "crop-shadow-resistance-aura",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/shadow-resistance-aura.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Shadow Resistance Aura",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14443.25,
+        "frame": 866595,
+        "crop": "data/review/spells/paladin/shadow-resistance-aura.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shadow Resistance Aura",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shadow Resistance Aura",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "holy-strike",
+      "name": "Holy Strike",
+      "kind": "active",
+      "tab": "retribution",
+      "ranksSeen": [1, 2, 3, 4, 5],
+      "icon": "crop-holy-strike",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/holy-strike.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Holy Strike for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14411.0,
+        "frame": 864660,
+        "crop": "data/review/spells/paladin/holy-strike.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Holy Strike",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Holy Strike",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Holy Strike",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "judgement",
+      "name": "Judgement",
+      "kind": "active",
+      "tab": "retribution",
+      "icon": "crop-judgement",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/judgement.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Judgement",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14411.0,
+        "frame": 864660,
+        "crop": "data/review/spells/paladin/judgement.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Judgement"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Judgement"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "retribution-aura",
+      "name": "Retribution Aura",
+      "kind": "active",
+      "tab": "retribution",
+      "ranksSeen": [3],
+      "icon": "crop-retribution-aura",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/retribution-aura.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Retribution Aura",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14411.0,
+        "frame": 864660,
+        "crop": "data/review/spells/paladin/retribution-aura.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Retribution Aura",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Retribution Aura",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "seal-of-the-crusader",
+      "name": "Seal of the Crusader",
+      "kind": "active",
+      "tab": "retribution",
+      "ranksSeen": [1, 2, 3, 4],
+      "icon": "crop-seal-of-the-crusader",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/seal-of-the-crusader.icon.png",
+      "tooltips": [
+        {
+          "rank": 3,
+          "cost": "65 Mana",
+          "castTime": "Instant",
+          "description": "Fills the Paladin with the spirit of a crusader for 30 sec, granting 107 melee attack power. The Paladin also attacks 40% faster, but deals less damage with each attack. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 40 sec. Increasing Holy damage taken by up to 58. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14410.0,
+            "frame": 864600,
+            "crop": "data/review/spells/paladin/seal-of-the-crusader.r3.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Seal of the Crusader",
+                "description": "Fills the Paladin with the spirit of a crusader for 30 sec, granting 107 melee attack power. The Paladin also attacks 40% faster, but deals less damage with each attack. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 40 sec. Increasing Holy damage taken by up to 58. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Seal of the Crusader",
+                "description": "Fills the Paladin with the spirit of a crusader for 30 sec, granting 107 melee attack power. The Paladin also attacks 40% faster, but deals less damage with each attack. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 40 sec. Increasing Holy damage taken by up to 58. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Seal of the Crusader",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 14411.0,
+        "frame": 864660,
+        "crop": "data/review/spells/paladin/seal-of-the-crusader.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Seal of the Crusader",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Seal of the Crusader",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "attack",
+      "name": "Attack",
+      "kind": "active",
+      "icon": "crop-attack",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/attack.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Attack",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21711.75,
+        "frame": 1302705,
+        "crop": "data/review/spells/paladin/attack.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Attack"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a search-results page (Exact Matches), so it has no tab"
+      }
+    },
+    {
+      "id": "blessing-of-freedom",
+      "name": "Blessing of Freedom",
+      "kind": "active",
+      "icon": "crop-blessing-of-freedom",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/blessing-of-freedom.icon.png",
+      "tooltips": [
+        {
+          "cost": "93 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "cooldown": "20 sec cooldown",
+          "description": "Places a Blessing on the friendly target, granting immunity to movement impairing effects for 10 sec. Players may only have one Blessing on them per Paladin at any one time.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21734.75,
+            "frame": 1304085,
+            "crop": "data/review/spells/paladin/blessing-of-freedom.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Blessing of Freedom",
+                "description": "Places a Blessing on the friendly target, granting immunity to movement impairing effects for 10 sec. Players may only have one Blessing on them per Paladin at any one time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Blessing of Freedom",
+                "description": "Places a Blessing on the friendly target, granting immunity to movement impairing effects for 10 sec. Players may only have one Blessing on them per Paladin at any one time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Blessing of Freedom",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21725.0,
+        "frame": 1303500,
+        "crop": "data/review/spells/paladin/blessing-of-freedom.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blessing of Freedom"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blessing of Freedom"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a search-results page (Name Matches), so it has no tab"
+      }
+    },
+    {
+      "id": "blessing-of-kings",
+      "name": "Blessing of Kings",
+      "kind": "active",
+      "icon": "crop-blessing-of-kings",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/blessing-of-kings.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Blessing of Kings",
+        "note": "not a Classic Era trainer spell, but a Classic Era Protection talent of the same name exists; the demo character may simply have spent a point on it, so this is not evidence that Forever made it baseline. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21725.0,
+        "frame": 1303500,
+        "crop": "data/review/spells/paladin/blessing-of-kings.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blessing of Kings"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blessing of Kings"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a search-results page (Name Matches), so it has no tab"
+      }
+    },
+    {
+      "id": "blessing-of-might",
+      "name": "Blessing of Might",
+      "kind": "active",
+      "ranksSeen": [1, 2, 3, 4],
+      "icon": "crop-blessing-of-might",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/blessing-of-might.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Blessing of Might",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21725.0,
+        "frame": 1303500,
+        "crop": "data/review/spells/paladin/blessing-of-might.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blessing of Might",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blessing of Might",
+            "rank": 1
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a search-results page (Name Matches), so it has no tab"
+      }
+    },
+    {
+      "id": "blessing-of-protection",
+      "name": "Blessing of Protection",
+      "kind": "active",
+      "ranksSeen": [1, 2, 3],
+      "icon": "crop-blessing-of-protection",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/blessing-of-protection.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Blessing of Protection",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21725.0,
+        "frame": 1303500,
+        "crop": "data/review/spells/paladin/blessing-of-protection.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blessing of Protection",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blessing of Protection",
+            "rank": 1
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a search-results page (Name Matches), so it has no tab"
+      }
+    },
+    {
+      "id": "blessing-of-salvation",
+      "name": "Blessing of Salvation",
+      "kind": "active",
+      "icon": "crop-blessing-of-salvation",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/blessing-of-salvation.icon.png",
+      "tooltips": [
+        {
+          "cost": "75 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "description": "Places a Blessing on the party member, reducing the amount of all threat generated by 30% for 1 hour. Players may only have one Blessing on them per Paladin at any one time.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14376.25,
+            "frame": 862575,
+            "crop": "data/review/spells/paladin/blessing-of-salvation.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Blessing of Salvation",
+                "description": "Places a Blessing on the party member, reducing the amount of all threat generated by 30% for 1 hour. Players may only have one Blessing on them per Paladin at any one time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Blessing of Salvation",
+                "description": "Places a Blessing on the party member, reducing the amount of all threat generated by 30% for 1 hour. Players may only have one Blessing on them per Paladin at any one time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Blessing of Salvation",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21725.0,
+        "frame": 1303500,
+        "crop": "data/review/spells/paladin/blessing-of-salvation.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blessing of Salvation"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blessing of Salvation"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a search-results page (Name Matches), so it has no tab"
+      }
+    },
+    {
+      "id": "blessing-of-wisdom",
+      "name": "Blessing of Wisdom",
+      "kind": "active",
+      "ranksSeen": [1, 2, 3],
+      "icon": "crop-blessing-of-wisdom",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/paladin/blessing-of-wisdom.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Blessing of Wisdom",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21725.0,
+        "frame": 1303500,
+        "crop": "data/review/spells/paladin/blessing-of-wisdom.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blessing of Wisdom",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blessing of Wisdom",
+            "rank": 1
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a search-results page (Name Matches), so it has no tab"
+      }
+    }
+  ],
+  "coverage": {
+    "pagesSeen": ["Exact Matches", "General", "Holy", "Name Matches", "Protection", "Retribution"],
+    "tabsSeen": ["general", "holy", "protection", "retribution"],
+    "tabsMissing": [],
+    "states": 20,
+    "entriesRead": 48,
+    "tooltipsRead": 6,
+    "tooltipsUnmatched": 0,
+    "showAllSpellRanks": "on",
+    "observedLevel": 38,
+    "windows": [
+      "03:59:33",
+      "03:59:36",
+      "03:59:38",
+      "04:00:11",
+      "04:00:13",
+      "04:00:43",
+      "04:01:18",
+      "06:00:20",
+      "06:00:22",
+      "06:00:23",
+      "06:01:41",
+      "06:01:42",
+      "06:01:43",
+      "06:01:51",
+      "06:02:01",
+      "06:02:05",
+      "06:02:13",
+      "06:02:15",
+      "06:02:17",
+      "06:02:18"
+    ]
+  },
+  "complete": false,
+  "notes": [
+    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
+    "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
+    "Entries with a source note were read from a clipped row or a search page; check the crop before quoting them."
+  ]
+}
