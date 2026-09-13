@@ -201,6 +201,17 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-13 ~16:00: review round done. Five role reviews consolidated in
+  `docs/reviews/2026-09-13-consolidated.md`; fix packages A1 (tooltip meta
+  text: median meta/description ratio 1.80 -> 0.26), A2 (keyboard grid, touch,
+  blocked-action feedback, zero-points state, search, a11y, bundle -25 %),
+  B (atomic writes, one slug rule, encoding freeze flag, override `unset`,
+  shape-aware reader merge: review queue 77 -> 6, 57 records marked reviewed)
+  and C (CI check job gates deploy, CLAUDE.md rewrite, schema/plan refresh)
+  are live. Pipeline 308 tests, web 131 unit + 18 browser tests. UI
+  improvement brief at `docs/briefs/ui-improvements.md`; nested sticky
+  tooltips in progress.
+
 - 2026-09-13 ~15:00: prerequisites (67 arrows from tree backgrounds),
   proportional rank scaling (63 talents corrected, e.g. Meditation 17/34/51),
   and clean icons for 397 talents matched against a 6,631-icon reference set
