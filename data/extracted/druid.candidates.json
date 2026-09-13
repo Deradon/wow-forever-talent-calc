@@ -25,23 +25,16 @@
     "2": "Feral Combat",
     "3": "Restoration"
   },
-  "missing_cells": [
-    {
-      "tree": "Restoration",
-      "row": 6,
-      "col": 1,
-      "cell": "restoration-r7c2",
-      "reason": "never hovered in any segment"
-    }
-  ],
+  "missing_cells": [],
   "stats": {
     "cells": 52,
-    "hovered": 51,
-    "read": 51,
-    "missing": 1,
+    "hovered": 52,
+    "read": 52,
+    "missing": 0,
     "confidence": {
       "0.3": 1,
-      "1.0": 50
+      "0.7": 8,
+      "1.0": 43
     },
     "cut_off": 0,
     "duplicate_names": 0,
@@ -6613,6 +6606,152 @@
           "similarity": 1.0
         }
       }
+    },
+    {
+      "id": "druid/restoration/r6c1",
+      "class": "druid",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Wild Growth",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "550 Mana",
+        "Instant",
+        "40 yd range",
+        "6 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Heals the target and their party for 285 over 7 sec. Party members must be within 43 yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20913.25,
+        "timestamp": "05:48:33.250",
+        "frame_index": 1254795,
+        "crop_path": "work/cursor/recovered/druid/restoration-r7c2.png",
+        "icon_crop_path": "work/cursor/recovered/druid/restoration-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "22-druid-20650",
+        "hover_id": "restoration-r7c2",
+        "cell": [
+          3,
+          7,
+          2
+        ],
+        "bbox": [
+          1313,
+          416,
+          227,
+          146
+        ],
+        "sharpness": 4512.4,
+        "frames": 55,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Wild Growth",
+            "description": "Heals the target and their party for 285 over 7 sec. Party members must be within 43 yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "550 Mana",
+              "Instant",
+              "40 yd range",
+              "6 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Wild Growth",
+            "description": "Heals the target and their party for 285 over 7 sec. Party members must be within 43 yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "550 Mana",
+              "Instant",
+              "40 yd range",
+              "6 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Wild Growth",
+            "description": "Heals the target and their party for 285 over 7 sec. Party members must be within 43 yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 916.7,
+          "cursor_cell": [
+            3,
+            7,
+            2
+          ],
+          "darkness": 0.8
+        }
+      },
+      "tree_source": {
+        "t": 20650,
+        "frame_index": 1239000,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Heals the target and their party for {0} over {1} sec. Party members must be within {2} yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.",
+        "ranks": [
+          [
+            285,
+            7,
+            43
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
     }
-  ]
+  ],
+  "recovery": {
+    "at": "2026-09-13T10:03:50Z",
+    "source": "work/cursor/recovered.json (cursor-track recovery, pipeline/work/cursor/report.md)",
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+    "added": [
+      "druid/restoration/r6c1"
+    ],
+    "recovered_cells": [
+      "restoration-r7c2"
+    ],
+    "collisions": [],
+    "duplicate_names": []
+  }
 }

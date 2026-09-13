@@ -5,7 +5,7 @@
   "className": "Shaman",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T02:04:39Z",
+  "generatedAt": "2026-09-13T10:04:06Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -71,6 +71,38 @@
           }
         },
         {
+          "id": "concussion",
+          "name": "Concussion",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "crop-concussion",
+          "iconSource": "crop",
+          "iconCrop": "data/review/shaman/elemental-combat/concussion.icon.png",
+          "description": "Increases the damage done by your Lightning Bolt. Chain Lightning, and Earth Shock spells by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 563,
+            "classicSpellIds": [16035, 16105, 16106, 16107, 16108],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic shaman/elemental/Concussion (talent 563): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20137.55,
+            "frame": 1208253,
+            "crop": "data/review/shaman/elemental-combat/concussion.png",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false,
+            "note": "second reader (codex) differs in description"
+          }
+        },
+        {
           "id": "elemental-warding",
           "name": "Elemental Warding",
           "row": 1,
@@ -96,6 +128,68 @@
             "t": 20150.267,
             "frame": 1209016,
             "crop": "data/review/shaman/elemental-combat/elemental-warding.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "reverberation",
+          "name": "Reverberation",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "crop-reverberation",
+          "iconSource": "crop",
+          "iconCrop": "data/review/shaman/elemental-combat/reverberation.icon.png",
+          "description": "Reduces the cooldown of your Shock spells by {0} sec.",
+          "ranks": [[0.2], [0.4], [0.6], [0.8], [1]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 575,
+            "classicSpellIds": [16040, 16113, 16114, 16115, 16116],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic shaman/elemental/Reverberation (talent 575): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20224.517,
+            "frame": 1213471,
+            "crop": "data/review/shaman/elemental-combat/reverberation.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "call-of-flame",
+          "name": "Call of Flame",
+          "row": 1,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "crop-call-of-flame",
+          "iconSource": "crop",
+          "iconCrop": "data/review/shaman/elemental-combat/call-of-flame.icon.png",
+          "description": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by {0}%.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 561,
+            "classicSpellIds": [16038, 16160, 16161],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic shaman/elemental/Call of Flame (talent 561): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20143.167,
+            "frame": 1208590,
+            "crop": "data/review/shaman/elemental-combat/call-of-flame.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false

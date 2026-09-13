@@ -36,23 +36,15 @@
     "2": "Demonology",
     "3": "Destruction"
   },
-  "missing_cells": [
-    {
-      "tree": "Demonology",
-      "row": 0,
-      "col": 2,
-      "cell": "demonology-r1c3",
-      "reason": "never hovered in any segment"
-    }
-  ],
+  "missing_cells": [],
   "stats": {
     "cells": 52,
-    "hovered": 51,
-    "read": 51,
-    "missing": 1,
+    "hovered": 52,
+    "read": 52,
+    "missing": 0,
     "confidence": {
-      "0.7": 5,
-      "1.0": 46
+      "0.7": 16,
+      "1.0": 36
     },
     "cut_off": 0,
     "duplicate_names": 0,
@@ -2534,6 +2526,144 @@
           "class": "warlock",
           "tree": "demonology",
           "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "warlock/demonology/r0c2",
+      "class": "warlock",
+      "tree": "Demonology",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Demonic Embrace",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your total Stamina by 3%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19193.0,
+        "timestamp": "05:19:53.000",
+        "frame_index": 1151580,
+        "crop_path": "work/cursor/recovered/warlock/demonology-r1c3.png",
+        "icon_crop_path": "work/cursor/recovered/warlock/demonology-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "17-warlock-19140",
+        "hover_id": "demonology-r1c3",
+        "cell": [
+          2,
+          1,
+          3
+        ],
+        "bbox": [
+          1002,
+          132,
+          204,
+          106
+        ],
+        "sharpness": 2748.3,
+        "frames": 67,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Demonic Embrace",
+            "description": "Increases your total Stamina by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Demonic Embrace",
+            "description": "Increases your total Stamina by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Demonic Embrace",
+            "description": "Increases your total Stamina by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 1116.7,
+          "cursor_cell": [
+            2,
+            1,
+            3
+          ],
+          "darkness": 0.9
+        }
+      },
+      "tree_source": {
+        "t": 19140,
+        "frame_index": 1148400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your total Stamina by {0}%.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ],
+          [
+            12
+          ],
+          [
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match warlock/demonology/Demonic Embrace (talent 1223) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 1223,
+          "name": "Demonic Embrace",
+          "class": "warlock",
+          "tree": "demonology",
+          "maxRank": 5,
           "match": "exact-name",
           "similarity": 1.0
         }
@@ -6663,5 +6793,18 @@
         "rule": "none"
       }
     }
-  ]
+  ],
+  "recovery": {
+    "at": "2026-09-13T10:03:50Z",
+    "source": "work/cursor/recovered.json (cursor-track recovery, pipeline/work/cursor/report.md)",
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+    "added": [
+      "warlock/demonology/r0c2"
+    ],
+    "recovered_cells": [
+      "demonology-r1c3"
+    ],
+    "collisions": [],
+    "duplicate_names": []
+  }
 }

@@ -109,57 +109,16 @@
       "col": 0,
       "cell": "holy-r2c1",
       "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Holy",
-      "row": 3,
-      "col": 0,
-      "cell": "holy-r4c1",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Holy",
-      "row": 3,
-      "col": 2,
-      "cell": "holy-r4c3",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Retribution",
-      "row": 0,
-      "col": 2,
-      "cell": "retribution-r1c3",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Retribution",
-      "row": 1,
-      "col": 0,
-      "cell": "retribution-r2c1",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Retribution",
-      "row": 1,
-      "col": 1,
-      "cell": "retribution-r2c2",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Retribution",
-      "row": 1,
-      "col": 2,
-      "cell": "retribution-r2c3",
-      "reason": "never hovered in any segment"
     }
   ],
   "stats": {
     "cells": 52,
-    "hovered": 45,
-    "read": 45,
-    "missing": 7,
+    "hovered": 51,
+    "read": 51,
+    "missing": 1,
     "confidence": {
-      "1.0": 45
+      "0.7": 8,
+      "1.0": 43
     },
     "cut_off": 0,
     "duplicate_names": 0,
@@ -1366,6 +1325,129 @@
       }
     },
     {
+      "id": "paladin/holy/r3c0",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Infusion of Light",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within 15 sec by 0.5 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21577.583,
+        "timestamp": "05:59:37.583",
+        "frame_index": 1294655,
+        "crop_path": "work/cursor/recovered/paladin/holy-r4c1.png",
+        "icon_crop_path": "work/cursor/recovered/paladin/holy-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "25-paladin-21570",
+        "hover_id": "holy-r4c1",
+        "cell": [
+          1,
+          4,
+          1
+        ],
+        "bbox": [
+          534,
+          287,
+          227,
+          113
+        ],
+        "sharpness": 3425.5,
+        "frames": 51,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Infusion of Light",
+            "description": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within 15 sec by 0.5 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Infusion of Light",
+            "description": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within 15 sec by 0.5 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Infusion of Light",
+            "description": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within 15 sec. by 0.5 sec.",
+            "maxRank": 2,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 850.0,
+          "cursor_cell": [
+            1,
+            4,
+            1
+          ],
+          "darkness": 0.85
+        },
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21570,
+        "frame_index": 1294200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within {0} sec by {1} sec.",
+        "ranks": [
+          [
+            15,
+            0.5
+          ],
+          [
+            15,
+            0.5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (15 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
       "id": "paladin/holy/r3c1",
       "class": "paladin",
       "tree": "Holy",
@@ -1496,6 +1578,134 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      }
+    },
+    {
+      "id": "paladin/holy/r3c2",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Divine Favor",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "37 Mana",
+        "Instant",
+        "2 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "When activated, gives your next Flash of Light, Holy Light, or Holy Shock spell a 100% critical effect chance.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21576.017,
+        "timestamp": "05:59:36.017",
+        "frame_index": 1294561,
+        "crop_path": "work/cursor/recovered/paladin/holy-r4c3.png",
+        "icon_crop_path": "work/cursor/recovered/paladin/holy-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "25-paladin-21570",
+        "hover_id": "holy-r4c3",
+        "cell": [
+          1,
+          4,
+          3
+        ],
+        "bbox": [
+          642,
+          286,
+          227,
+          114
+        ],
+        "sharpness": 3914.9,
+        "frames": 53,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Divine Favor",
+            "description": "When activated, gives your next Flash of Light, Holy Light, or Holy Shock spell a 100% critical effect chance.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "37 Mana",
+              "Instant",
+              "2 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Divine Favor",
+            "description": "When activated, gives your next Flash of Light, Holy Light, or Holy Shock spell a 100% critical effect chance.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "37 Mana",
+              "Instant",
+              "2 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Divine Favor",
+            "description": "When activated, gives your next Flash of Light, Holy Light, or Holy Shock spell a 100% critical effect chance.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 883.4,
+          "cursor_cell": [
+            1,
+            4,
+            3
+          ],
+          "darkness": 0.85
+        }
+      },
+      "tree_source": {
+        "t": 21570,
+        "frame_index": 1294200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When activated, gives your next Flash of Light, Holy Light, or Holy Shock spell a {0}% critical effect chance.",
+        "ranks": [
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -4492,6 +4702,566 @@
       }
     },
     {
+      "id": "paladin/retribution/r0c2",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Benediction",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the Mana cost of all instant cast spells and abilities by 2%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21741.55,
+        "timestamp": "06:02:21.550",
+        "frame_index": 1304493,
+        "crop_path": "work/cursor/recovered/paladin/retribution-r1c3.png",
+        "icon_crop_path": "work/cursor/recovered/paladin/retribution-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "27-paladin-21740",
+        "hover_id": "retribution-r1c3",
+        "cell": [
+          3,
+          1,
+          3
+        ],
+        "bbox": [
+          1367,
+          122,
+          212,
+          116
+        ],
+        "sharpness": 2623.3,
+        "frames": 102,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Benediction",
+            "description": "Reduces the Mana cost of all instant cast spells and abilities by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Benediction",
+            "description": "Reduces the Mana cost of all instant cast spells and abilities by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Benediction",
+            "description": "Reduces the Mana cost of all instant cast spells and abilities by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 1716.7,
+          "cursor_cell": [
+            3,
+            1,
+            3
+          ],
+          "darkness": 0.89
+        }
+      },
+      "tree_source": {
+        "t": 21740,
+        "frame_index": 1304400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the Mana cost of all instant cast spells and abilities by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            5
+          ],
+          [
+            8
+          ],
+          [
+            11
+          ],
+          [
+            14
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1407,
+          "classicSpellIds": [
+            20101,
+            20102,
+            20103,
+            20104,
+            20105
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/retribution/Benediction (talent 1407): Classic 3/6/9/12/15, Forever rank 1 is 2: applied +3/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1407,
+          "name": "Benediction",
+          "class": "paladin",
+          "tree": "retribution",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/retribution/r1c0",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Improved Judgement",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Decreases the cooldown of your Judgement ability by 1 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21745.0,
+        "timestamp": "06:02:25.000",
+        "frame_index": 1304700,
+        "crop_path": "work/cursor/recovered/paladin/retribution-r2c1.png",
+        "icon_crop_path": "work/cursor/recovered/paladin/retribution-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "27-paladin-21740",
+        "hover_id": "retribution-r2c1",
+        "cell": [
+          3,
+          2,
+          1
+        ],
+        "bbox": [
+          1259,
+          200,
+          192,
+          92
+        ],
+        "sharpness": 3925.0,
+        "frames": 46,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Judgement",
+            "description": "Decreases the cooldown of your Judgement ability by 1 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Judgement",
+            "description": "Decreases the cooldown of your Judgement ability by 1 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Judgement",
+            "description": "Decreases the cooldown of your Judgement ability by 1 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 766.7,
+          "cursor_cell": [
+            3,
+            2,
+            1
+          ],
+          "darkness": 0.84
+        }
+      },
+      "tree_source": {
+        "t": 21740,
+        "frame_index": 1304400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Decreases the cooldown of your Judgement ability by {0} sec.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1631,
+          "classicSpellIds": [
+            25956,
+            25957
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/retribution/Improved Judgement (talent 1631): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1631,
+          "name": "Improved Judgement",
+          "class": "paladin",
+          "tree": "retribution",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/retribution/r1c1",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Holy Conduit",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the mana cost of your Consecration, Holy Wrath, Exorcism, and Hammer of Wrath spells by 20%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21744.2,
+        "timestamp": "06:02:24.200",
+        "frame_index": 1304652,
+        "crop_path": "work/cursor/recovered/paladin/retribution-r2c2.png",
+        "icon_crop_path": "work/cursor/recovered/paladin/retribution-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "27-paladin-21740",
+        "hover_id": "retribution-r2c2",
+        "cell": [
+          3,
+          2,
+          2
+        ],
+        "bbox": [
+          1313,
+          190,
+          212,
+          102
+        ],
+        "sharpness": 3554.6,
+        "frames": 53,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Holy Conduit",
+            "description": "Reduces the mana cost of your Consecration, Holy Wrath, Exorcism, and Hammer of Wrath spells by 20%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Holy Conduit",
+            "description": "Reduces the mana cost of your Consecration, Holy Wrath, Exorcism, and Hammer of Wrath spells by 20%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Holy Conduit",
+            "description": "Reduces the mana cost of your Consecration, Holy Wrath, Exorcism, and Hammer of Wrath spells by 20%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 883.4,
+          "cursor_cell": [
+            3,
+            2,
+            2
+          ],
+          "darkness": 0.84
+        }
+      },
+      "tree_source": {
+        "t": 21740,
+        "frame_index": 1304400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the mana cost of your Consecration, Holy Wrath, Exorcism, and Hammer of Wrath spells by {0}%.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            40
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "paladin/retribution/r1c2",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Conviction",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your chance to get a critical strike with melee attacks by 1%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21743.283,
+        "timestamp": "06:02:23.283",
+        "frame_index": 1304597,
+        "crop_path": "work/cursor/recovered/paladin/retribution-r2c3.png",
+        "icon_crop_path": "work/cursor/recovered/paladin/retribution-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "27-paladin-21740",
+        "hover_id": "retribution-r2c3",
+        "cell": [
+          3,
+          2,
+          3
+        ],
+        "bbox": [
+          1367,
+          200,
+          221,
+          92
+        ],
+        "sharpness": 2825.9,
+        "frames": 44,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Conviction",
+            "description": "Increases your chance to get a critical strike with melee attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Conviction",
+            "description": "Increases your chance to get a critical strike with melee attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Conviction",
+            "description": "Increases your chance to get a critical strike with melee attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 733.4,
+          "cursor_cell": [
+            3,
+            2,
+            3
+          ],
+          "darkness": 0.88
+        }
+      },
+      "tree_source": {
+        "t": 21740,
+        "frame_index": 1304400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your chance to get a critical strike with melee attacks by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1411,
+          "classicSpellIds": [
+            20117,
+            20118,
+            20119,
+            20120,
+            20121
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/retribution/Conviction (talent 1411): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1411,
+          "name": "Conviction",
+          "class": "paladin",
+          "tree": "retribution",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
       "id": "paladin/retribution/r2c0",
       "class": "paladin",
       "tree": "Retribution",
@@ -6074,5 +6844,28 @@
         "rule": "none"
       }
     }
-  ]
+  ],
+  "recovery": {
+    "at": "2026-09-13T10:03:50Z",
+    "source": "work/cursor/recovered.json (cursor-track recovery, pipeline/work/cursor/report.md)",
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+    "added": [
+      "paladin/holy/r3c0",
+      "paladin/holy/r3c2",
+      "paladin/retribution/r0c2",
+      "paladin/retribution/r1c0",
+      "paladin/retribution/r1c1",
+      "paladin/retribution/r1c2"
+    ],
+    "recovered_cells": [
+      "holy-r4c1",
+      "holy-r4c3",
+      "retribution-r1c3",
+      "retribution-r2c1",
+      "retribution-r2c2",
+      "retribution-r2c3"
+    ],
+    "collisions": [],
+    "duplicate_names": []
+  }
 }

@@ -5,7 +5,7 @@
   "className": "Warrior",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T02:04:38Z",
+  "generatedAt": "2026-09-13T10:04:05Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -743,6 +743,31 @@
           }
         },
         {
+          "id": "boundless-rage",
+          "name": "Boundless Rage",
+          "row": 2,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "crop-boundless-rage",
+          "iconSource": "crop",
+          "iconCrop": "data/review/warrior/fury/boundless-rage.icon.png",
+          "description": "Increases your maximum Rage by {0}.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1],
+          "ranksSource": "extrapolated",
+          "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 17969.367,
+            "frame": 1078162,
+            "crop": "data/review/warrior/fury/boundless-rage.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
           "id": "dual-wield-specialization",
           "name": "Dual Wield Specialization",
           "row": 3,
@@ -908,6 +933,37 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
             "note": "second reader (codex) differs in description"
+          }
+        },
+        {
+          "id": "improved-intercept",
+          "name": "Improved Intercept",
+          "row": 4,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "crop-improved-intercept",
+          "iconSource": "crop",
+          "iconCrop": "data/review/warrior/fury/improved-intercept.icon.png",
+          "description": "Reduces the cooldown of your Intercept ability by {0} sec.",
+          "ranks": [[5], [10]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 1543,
+            "classicSpellIds": [20504, 20505],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic warrior/fury/Improved Intercept (talent 1543): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 18003.067,
+            "frame": 1080184,
+            "crop": "data/review/warrior/fury/improved-intercept.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
           }
         },
         {

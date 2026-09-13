@@ -5,7 +5,7 @@
   "className": "Druid",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T02:04:39Z",
+  "generatedAt": "2026-09-13T10:04:07Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -1503,6 +1503,30 @@
             "t": 20903.633,
             "frame": 1254218,
             "crop": "data/review/druid/restoration/improved-regrowth.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "wild-growth",
+          "name": "Wild Growth",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "crop-wild-growth",
+          "iconSource": "crop",
+          "iconCrop": "data/review/druid/restoration/wild-growth.icon.png",
+          "description": "Heals the target and their party for {0} over {1} sec. Party members must be within {2} yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.",
+          "ranks": [[285, 7, 43]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 20913.25,
+            "frame": 1254795,
+            "crop": "data/review/druid/restoration/wild-growth.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false

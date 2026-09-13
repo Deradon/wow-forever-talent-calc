@@ -5,7 +5,7 @@
   "className": "Mage",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T02:04:39Z",
+  "generatedAt": "2026-09-13T10:04:04Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -65,6 +65,37 @@
             "t": 14810.0,
             "frame": 888600,
             "crop": "data/review/mage/arcane/wand-specialization.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "arcane-focus",
+          "name": "Arcane Focus",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "crop-arcane-focus",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/arcane/arcane-focus.icon.png",
+          "description": "Increases your chance to hit with your Arcane spells by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 76,
+            "classicSpellIds": [11222, 12839, 12840, 12841, 12842],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic mage/arcane/Arcane Focus (talent 76): Classic 2/4/6/8/10 scaled by 0.5.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14808.167,
+            "frame": 888490,
+            "crop": "data/review/mage/arcane/arcane-focus.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false
@@ -239,6 +270,37 @@
             "t": 14774.433,
             "frame": 886466,
             "crop": "data/review/mage/arcane/arcane-geometry.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "arcane-impact",
+          "name": "Arcane Impact",
+          "row": 2,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "crop-arcane-impact",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/arcane/arcane-impact.icon.png",
+          "description": "Increases the critical strike chance of your Arcane spells by {0}%.",
+          "ranks": [[2], [4], [6]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 33,
+            "classicSpellIds": [11115, 11367, 11368],
+            "match": "description",
+            "similarity": 0.96
+          },
+          "ranksNote": "Classic mage/fire/Critical Mass (talent 33), matched on description (0.96): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14776.067,
+            "frame": 886564,
+            "crop": "data/review/mage/arcane/arcane-impact.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false
@@ -613,6 +675,187 @@
           }
         },
         {
+          "id": "impact",
+          "name": "Impact",
+          "row": 1,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "crop-impact",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/fire/impact.icon.png",
+          "description": "Gives your Fire spells a {0}% chance to stun the target for 2 sec.",
+          "ranks": [[3], [5], [7]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 30,
+            "classicSpellIds": [11103, 12357, 12358, 12359, 12360],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic mage/fire/Impact (talent 30): Classic has 5 ranks, step +2 applied over 3 ranks from 3.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14971.0,
+            "frame": 898260,
+            "crop": "data/review/mage/fire/impact.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "burning-soul",
+          "name": "Burning Soul",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "crop-burning-soul",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/fire/burning-soul.icon.png",
+          "description": "Gives your Fire spells a {0}% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by {1}%.",
+          "ranks": [[23, 10], [58, 25], [93, 40]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 23,
+            "classicSpellIds": [11083, 12351],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic mage/fire/Burning Soul (talent 23): Classic has 2 ranks, step +35 applied over 3 ranks from 23; Classic has 2 ranks, step +15 applied over 3 ranks from 10.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14973.017,
+            "frame": 898381,
+            "crop": "data/review/mage/fire/burning-soul.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-flamestrike",
+          "name": "Improved Flamestrike",
+          "row": 2,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "crop-improved-flamestrike",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/fire/improved-flamestrike.icon.png",
+          "description": "Increases the critical strike chance of your Flamestrike spell by {0}%.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 31,
+            "classicSpellIds": [11108, 12349, 12350],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic mage/fire/Improved Flamestrike (talent 31): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14972.283,
+            "frame": 898337,
+            "crop": "data/review/mage/fire/improved-flamestrike.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "pyroblast",
+          "name": "Pyroblast",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "crop-pyroblast",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/fire/pyroblast.icon.png",
+          "description": "Hurts an immense fiery boulder that causes {0} to {1} Fire damage and an additional {2} Fire damage over {3} sec.",
+          "ranks": [[155, 185, 76, 12]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14970.4,
+            "frame": 898224,
+            "crop": "data/review/mage/fire/pyroblast.png",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false,
+            "note": "second reader (codex) differs in description"
+          }
+        },
+        {
+          "id": "improved-scorch",
+          "name": "Improved Scorch",
+          "row": 3,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "crop-improved-scorch",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/fire/improved-scorch.icon.png",
+          "description": "Your Scorch spell has a {0}% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all Fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
+          "ranks": [[33], [66], [100]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 25,
+            "classicSpellIds": [11095, 12872, 12873],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic mage/fire/Improved Scorch (talent 25): non-linear Classic progression copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14975.683,
+            "frame": 898541,
+            "crop": "data/review/mage/fire/improved-scorch.png",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false,
+            "note": "second reader (codex) differs in description"
+          }
+        },
+        {
+          "id": "improved-fire-ward",
+          "name": "Improved Fire Ward",
+          "row": 3,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "crop-improved-fire-ward",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/fire/improved-fire-ward.icon.png",
+          "description": "Causes your Fire Ward to have a {0}% chance to reflect Fire spells while active.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 24,
+            "classicSpellIds": [11094, 13043],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic mage/fire/Improved Fire Ward (talent 24): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 14977.033,
+            "frame": 898622,
+            "crop": "data/review/mage/fire/improved-fire-ward.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
           "id": "master-of-elements",
           "name": "Master of Elements",
           "row": 3,
@@ -638,6 +881,70 @@
             "t": 15003.733,
             "frame": 900224,
             "crop": "data/review/mage/fire/master-of-elements.png",
+            "confidence": 0.3,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false,
+            "note": "name also read at r4c3@08-mage-14970, r4c4@08-mage-14970; cell attribution needs review"
+          }
+        },
+        {
+          "id": "master-of-elements-r3c3",
+          "name": "Master of Elements",
+          "row": 3,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "crop-master-of-elements-r3c3",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/fire/master-of-elements-r3c3.icon.png",
+          "description": "Your Fire and Frost critical strikes will refund {0}% of their base mana cost.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 1639,
+            "classicSpellIds": [29074, 29075, 29076],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic mage/fire/Master of Elements (talent 1639): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 15003.15,
+            "frame": 900189,
+            "crop": "data/review/mage/fire/master-of-elements-r3c3.png",
+            "confidence": 0.3,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false,
+            "note": "name also read at r4c3@08-mage-14970, r4c4@08-mage-14970; cell attribution needs review"
+          }
+        },
+        {
+          "id": "critical-mass",
+          "name": "Critical Mass",
+          "row": 4,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "crop-critical-mass",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/fire/critical-mass.icon.png",
+          "description": "Increases the critical strike chance of your Fire spells by {0}%.",
+          "ranks": [[2], [4], [6]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 33,
+            "classicSpellIds": [11115, 11367, 11368],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic mage/fire/Critical Mass (talent 33): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 15004.133,
+            "frame": 900248,
+            "crop": "data/review/mage/fire/critical-mass.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false
@@ -662,6 +969,37 @@
             "t": 15005.733,
             "frame": 900344,
             "crop": "data/review/mage/fire/blast-wave.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "fire-power",
+          "name": "Fire Power",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "crop-fire-power",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/fire/fire-power.icon.png",
+          "description": "Increases the damage done by your Fire spells by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 35,
+            "classicSpellIds": [11124, 12378, 12398, 12399, 12400],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic mage/fire/Fire Power (talent 35): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 15006.0,
+            "frame": 900360,
+            "crop": "data/review/mage/fire/fire-power.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false

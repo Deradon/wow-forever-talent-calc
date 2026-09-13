@@ -38,7 +38,9 @@
           "voice-of-truth",
           "reverence",
           "purifying-power",
+          "infusion-of-light",
           "illumination",
+          "divine-favor",
           "divine-precision",
           "holy-shock",
           "consecrated-ground",
@@ -65,6 +67,10 @@
         ],
         "retribution": [
           "deflection",
+          "benediction",
+          "improved-judgement",
+          "holy-conduit",
+          "conviction",
           "vindication",
           "sanctified-judgement",
           "seal-of-command",
@@ -115,12 +121,14 @@
           "improved-cleave",
           "piercing-howl",
           "blood-crazed",
+          "boundless-rage",
           "dual-wield-specialization",
           "raging-blows",
           "enrage",
           "improved-execute",
           "precision",
           "death-wish",
+          "improved-intercept",
           "improved-berserker-rage",
           "flurry",
           "bloodthirst"
@@ -168,20 +176,30 @@
           "vile-poisons",
           "cold-blood",
           "improved-poisons",
+          "vigor",
           "mutilate",
+          "improved-kidney-shot",
           "seal-fate",
           "venom"
         ],
         "combat": [
           "improved-eviscerate",
           "improved-sinister-strike",
+          "lightning-reflexes",
           "puncturing-wounds",
+          "deflection",
+          "precision",
+          "endurance",
           "riposte",
           "improved-sprint",
+          "improved-kick",
           "restless-blades",
+          "dual-wield-specialization",
           "blade-flurry",
           "hack-and-slash",
-          "aggression"
+          "weapon-expertise",
+          "aggression",
+          "adrenaline-rush"
         ],
         "subtlety": [
           "camouflage",
@@ -235,6 +253,7 @@
         "demonology": [
           "improved-health-funnel",
           "improved-imp",
+          "demonic-embrace",
           "unholy-power",
           "demonic-aegis",
           "improved-voidwalker",
@@ -349,7 +368,10 @@
       "order": {
         "elemental-combat": [
           "convection",
+          "concussion",
           "elemental-warding",
+          "reverberation",
+          "call-of-flame",
           "elemental-devastation",
           "elemental-focus",
           "elemental-fury",
@@ -464,7 +486,8 @@
           "natures-swiftness",
           "living-spirit",
           "improved-tranquility",
-          "improved-regrowth"
+          "improved-regrowth",
+          "wild-growth"
         ]
       }
     },
@@ -542,12 +565,14 @@
       "order": {
         "arcane": [
           "wand-specialization",
+          "arcane-focus",
           "improved-channeling",
           "arcane-subtlety",
           "magic-absorption",
           "arcane-concentration",
           "arcane-resilience",
           "arcane-geometry",
+          "arcane-impact",
           "arcane-blast",
           "arcane-shielding",
           "improved-counterspell",
@@ -563,8 +588,17 @@
           "incineration",
           "ignite",
           "flame-throwing",
+          "impact",
+          "burning-soul",
+          "improved-flamestrike",
+          "pyroblast",
+          "improved-scorch",
+          "improved-fire-ward",
           "master-of-elements",
+          "master-of-elements-r3c3",
+          "critical-mass",
           "blast-wave",
+          "fire-power",
           "combustion"
         ],
         "frost": [

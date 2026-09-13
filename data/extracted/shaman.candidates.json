@@ -47,36 +47,15 @@
     "2": "Enhancement",
     "3": "Restoration"
   },
-  "missing_cells": [
-    {
-      "tree": "Elemental Combat",
-      "row": 0,
-      "col": 2,
-      "cell": "elemental-combat-r1c3",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Elemental Combat",
-      "row": 1,
-      "col": 1,
-      "cell": "elemental-combat-r2c2",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Elemental Combat",
-      "row": 1,
-      "col": 2,
-      "cell": "elemental-combat-r2c3",
-      "reason": "never hovered in any segment"
-    }
-  ],
+  "missing_cells": [],
   "stats": {
     "cells": 50,
-    "hovered": 47,
-    "read": 47,
-    "missing": 3,
+    "hovered": 50,
+    "read": 50,
+    "missing": 0,
     "confidence": {
-      "1.0": 47
+      "0.7": 10,
+      "1.0": 40
     },
     "cut_off": 0,
     "duplicate_names": 0,
@@ -227,6 +206,157 @@
       }
     },
     {
+      "id": "shaman/elemental-combat/r0c2",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Concussion",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage done by your Lightning Bolt. Chain Lightning, and Earth Shock spells by 1%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20137.55,
+        "timestamp": "05:35:37.550",
+        "frame_index": 1208253,
+        "crop_path": "work/cursor/recovered/shaman/elemental-combat-r1c3.png",
+        "icon_crop_path": "work/cursor/recovered/shaman/elemental-combat-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r1c3",
+        "cell": [
+          1,
+          1,
+          3
+        ],
+        "bbox": [
+          642,
+          111,
+          210,
+          127
+        ],
+        "sharpness": 3008.8,
+        "frames": 173,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Concussion",
+            "description": "Increases the damage done by your Lightning Bolt. Chain Lightning, and Earth Shock spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Concussion",
+            "description": "Increases the damage done by your Lightning Bolt. Chain Lightning, and Earth Shock spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Concussion",
+            "description": "Increases the damage done by your Lightning Bolt, Chain Lightning, and Earth Shock spells by 1%.",
+            "maxRank": 5,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 2883.4,
+          "cursor_cell": [
+            1,
+            1,
+            3
+          ],
+          "darkness": 0.87
+        },
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by your Lightning Bolt. Chain Lightning, and Earth Shock spells by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 563,
+          "classicSpellIds": [
+            16035,
+            16105,
+            16106,
+            16107,
+            16108
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/elemental/Concussion (talent 563): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 563,
+          "name": "Concussion",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
       "id": "shaman/elemental-combat/r1c0",
       "class": "shaman",
       "tree": "Elemental Combat",
@@ -350,6 +480,300 @@
         "match": {
           "classicTalentId": 1640,
           "name": "Elemental Warding",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r1c1",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Reverberation",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown of your Shock spells by 0.2 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20224.517,
+        "timestamp": "05:37:04.517",
+        "frame_index": 1213471,
+        "crop_path": "work/cursor/recovered/shaman/elemental-combat-r2c2.png",
+        "icon_crop_path": "work/cursor/recovered/shaman/elemental-combat-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r2c2",
+        "cell": [
+          1,
+          2,
+          2
+        ],
+        "bbox": [
+          588,
+          200,
+          217,
+          92
+        ],
+        "sharpness": 2927.2,
+        "frames": 9,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Reverberation",
+            "description": "Reduces the cooldown of your Shock spells by 0.2 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Reverberation",
+            "description": "Reduces the cooldown of your Shock spells by 0.2 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Reverberation",
+            "description": "Reduces the cooldown of your Shock spells by 0.2 sec.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 150.0,
+          "cursor_cell": [
+            1,
+            2,
+            2
+          ],
+          "darkness": 0.88
+        }
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Shock spells by {0} sec.",
+        "ranks": [
+          [
+            0.2
+          ],
+          [
+            0.4
+          ],
+          [
+            0.6
+          ],
+          [
+            0.8
+          ],
+          [
+            1
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 575,
+          "classicSpellIds": [
+            16040,
+            16113,
+            16114,
+            16115,
+            16116
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/elemental/Reverberation (talent 575): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 575,
+          "name": "Reverberation",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r1c2",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Call of Flame",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 5%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20143.167,
+        "timestamp": "05:35:43.167",
+        "frame_index": 1208590,
+        "crop_path": "work/cursor/recovered/shaman/elemental-combat-r2c3.png",
+        "icon_crop_path": "work/cursor/recovered/shaman/elemental-combat-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r2c3",
+        "cell": [
+          1,
+          2,
+          3
+        ],
+        "bbox": [
+          642,
+          190,
+          220,
+          102
+        ],
+        "sharpness": 3577.4,
+        "frames": 117,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Call of Flame",
+            "description": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Call of Flame",
+            "description": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Call of Flame",
+            "description": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 1950.0,
+          "cursor_cell": [
+            1,
+            2,
+            3
+          ],
+          "darkness": 0.84
+        }
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by {0}%.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ],
+          [
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 561,
+          "classicSpellIds": [
+            16038,
+            16160,
+            16161
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/elemental/Call of Flame (talent 561): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 561,
+          "name": "Call of Flame",
           "class": "shaman",
           "tree": "elemental",
           "maxRank": 3,
@@ -6039,5 +6463,22 @@
         "rule": "none"
       }
     }
-  ]
+  ],
+  "recovery": {
+    "at": "2026-09-13T10:03:50Z",
+    "source": "work/cursor/recovered.json (cursor-track recovery, pipeline/work/cursor/report.md)",
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+    "added": [
+      "shaman/elemental-combat/r0c2",
+      "shaman/elemental-combat/r1c1",
+      "shaman/elemental-combat/r1c2"
+    ],
+    "recovered_cells": [
+      "elemental-combat-r1c3",
+      "elemental-combat-r2c2",
+      "elemental-combat-r2c3"
+    ],
+    "collisions": [],
+    "duplicate_names": []
+  }
 }

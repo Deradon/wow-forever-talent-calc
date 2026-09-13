@@ -5,7 +5,7 @@
   "className": "Paladin",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T00:06:40Z",
+  "generatedAt": "2026-09-13T10:04:04Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -266,9 +266,9 @@
             "classicTalentId": 829,
             "classicSpellIds": [17106, 17107, 17108],
             "match": "description",
-            "similarity": 1.0
+            "similarity": 0.99
           },
-          "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (1.00): Classic 5/10/15 scaled by 2.",
+          "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (0.99): Classic 5/10/15 scaled by 2.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -306,6 +306,32 @@
           }
         },
         {
+          "id": "infusion-of-light",
+          "name": "Infusion of Light",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "crop-infusion-of-light",
+          "iconSource": "crop",
+          "iconCrop": "data/review/paladin/holy/infusion-of-light.icon.png",
+          "description": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within {0} sec by {1} sec.",
+          "ranks": [[15, 0.5], [15, 0.5]],
+          "ranksObserved": [1],
+          "ranksSource": "manual",
+          "ranksNote": "needs manual ranks: duration slot (15 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21577.583,
+            "frame": 1294655,
+            "crop": "data/review/paladin/holy/infusion-of-light.png",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false,
+            "note": "second reader (codex) differs in description"
+          }
+        },
+        {
           "id": "illumination",
           "name": "Illumination",
           "row": 3,
@@ -331,6 +357,30 @@
           }
         },
         {
+          "id": "divine-favor",
+          "name": "Divine Favor",
+          "row": 3,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "crop-divine-favor",
+          "iconSource": "crop",
+          "iconCrop": "data/review/paladin/holy/divine-favor.icon.png",
+          "description": "When activated, gives your next Flash of Light, Holy Light, or Holy Shock spell a {0}% critical effect chance.",
+          "ranks": [[100]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21576.017,
+            "frame": 1294561,
+            "crop": "data/review/paladin/holy/divine-favor.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
           "id": "divine-precision",
           "name": "Divine Precision",
           "row": 4,
@@ -344,12 +394,12 @@
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
-            "classicTalentId": 1630,
-            "classicSpellIds": [20189, 20192, 20193],
-            "match": "fuzzy-name",
-            "similarity": 1.0
+            "classicTalentId": 583,
+            "classicSpellIds": [16180, 16196, 16198],
+            "match": "description",
+            "similarity": 0.91
           },
-          "ranksNote": "Classic paladin/protection/Precision (talent 1630), matched on name (1.00): Classic 1/2/3, Forever rank 1 is 6: applied +1/rank.",
+          "ranksNote": "Classic shaman/restoration/Nature's Guidance (talent 583) (cross-class), matched on description (0.91): Classic 1/2/3, Forever rank 1 is 6: applied +1/rank.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -579,7 +629,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/paladin/protection/guardians-favor.icon.png",
           "description": "Reduces the cooldown of your Blessing of Protection by {0} min and Increases the duration of your Blessing of Freedom by {1} sec.",
-          "ranks": [[1, 3], [61, 6]],
+          "ranks": [[1, 3], [2, 6]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -588,7 +638,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic paladin/protection/Guardian's Favor (talent 1425): Classic 60/120, Forever rank 1 is 1: applied +60/rank.",
+          "ranksNote": "Classic paladin/protection/Guardian's Favor (talent 1425): Classic 60/120 sec taken as 1/2 min.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -920,7 +970,7 @@
             "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "second reader (codex) differs in description; unparsed requirement: Shields"
+            "note": "second reader (codex) differs in description; unparsed requirement: Requires Shields"
           }
         }
       ]
@@ -970,6 +1020,124 @@
             "t": 13658.65,
             "frame": 819519,
             "crop": "data/review/paladin/retribution/deflection.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "benediction",
+          "name": "Benediction",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "crop-benediction",
+          "iconSource": "crop",
+          "iconCrop": "data/review/paladin/retribution/benediction.icon.png",
+          "description": "Reduces the Mana cost of all instant cast spells and abilities by {0}%.",
+          "ranks": [[2], [5], [8], [11], [14]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 1407,
+            "classicSpellIds": [20101, 20102, 20103, 20104, 20105],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic paladin/retribution/Benediction (talent 1407): Classic 3/6/9/12/15, Forever rank 1 is 2: applied +3/rank.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21741.55,
+            "frame": 1304493,
+            "crop": "data/review/paladin/retribution/benediction.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-judgement",
+          "name": "Improved Judgement",
+          "row": 1,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "crop-improved-judgement",
+          "iconSource": "crop",
+          "iconCrop": "data/review/paladin/retribution/improved-judgement.icon.png",
+          "description": "Decreases the cooldown of your Judgement ability by {0} sec.",
+          "ranks": [[1], [2]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 1631,
+            "classicSpellIds": [25956, 25957],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic paladin/retribution/Improved Judgement (talent 1631): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21745.0,
+            "frame": 1304700,
+            "crop": "data/review/paladin/retribution/improved-judgement.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "holy-conduit",
+          "name": "Holy Conduit",
+          "row": 1,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "crop-holy-conduit",
+          "iconSource": "crop",
+          "iconCrop": "data/review/paladin/retribution/holy-conduit.icon.png",
+          "description": "Reduces the mana cost of your Consecration, Holy Wrath, Exorcism, and Hammer of Wrath spells by {0}%.",
+          "ranks": [[20], [40]],
+          "ranksObserved": [1],
+          "ranksSource": "extrapolated",
+          "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21744.2,
+            "frame": 1304652,
+            "crop": "data/review/paladin/retribution/holy-conduit.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "reviewed": false
+          }
+        },
+        {
+          "id": "conviction",
+          "name": "Conviction",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "crop-conviction",
+          "iconSource": "crop",
+          "iconCrop": "data/review/paladin/retribution/conviction.icon.png",
+          "description": "Increases your chance to get a critical strike with melee attacks by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 1411,
+            "classicSpellIds": [20117, 20118, 20119, 20120, 20121],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic paladin/retribution/Conviction (talent 1411): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21743.283,
+            "frame": 1304597,
+            "crop": "data/review/paladin/retribution/conviction.png",
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false
@@ -1314,7 +1482,7 @@
             "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "reviewed": false,
-            "note": "unparsed requirement: Level 40"
+            "note": "unparsed requirement: Requires Level 40"
           }
         }
       ]

@@ -47,29 +47,15 @@
     "2": "Fury",
     "3": "Protection"
   },
-  "missing_cells": [
-    {
-      "tree": "Fury",
-      "row": 2,
-      "col": 3,
-      "cell": "fury-r3c4",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Fury",
-      "row": 4,
-      "col": 3,
-      "cell": "fury-r5c4",
-      "reason": "never hovered in any segment"
-    }
-  ],
+  "missing_cells": [],
   "stats": {
     "cells": 54,
-    "hovered": 52,
-    "read": 52,
-    "missing": 2,
+    "hovered": 54,
+    "read": 54,
+    "missing": 0,
     "confidence": {
-      "1.0": 52
+      "0.7": 5,
+      "1.0": 49
     },
     "cut_off": 0,
     "duplicate_names": 0,
@@ -3242,6 +3228,129 @@
       }
     },
     {
+      "id": "warrior/fury/r2c3",
+      "class": "warrior",
+      "tree": "Fury",
+      "page": "Primary",
+      "row": 2,
+      "col": 3,
+      "name": "Boundless Rage",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your maximum Rage by 10.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 17969.367,
+        "timestamp": "04:59:29.367",
+        "frame_index": 1078162,
+        "crop_path": "work/cursor/recovered/warrior/fury-r3c4.png",
+        "icon_crop_path": "work/cursor/recovered/warrior/fury-r3c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "13-warrior-17850",
+        "hover_id": "fury-r3c4",
+        "cell": [
+          2,
+          3,
+          4
+        ],
+        "bbox": [
+          1056,
+          265,
+          213,
+          81
+        ],
+        "sharpness": 3174.0,
+        "frames": 45,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Boundless Rage",
+            "description": "Increases your maximum Rage by 10.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Boundless Rage",
+            "description": "Increases your maximum Rage by 10.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Boundless Rage",
+            "description": "Increases your maximum Rage by 10.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 750.0,
+          "cursor_cell": [
+            2,
+            3,
+            4
+          ],
+          "darkness": 0.89
+        }
+      },
+      "tree_source": {
+        "t": 17850,
+        "frame_index": 1071000,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your maximum Rage by {0}.",
+        "ranks": [
+          [
+            10
+          ],
+          [
+            20
+          ],
+          [
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
       "id": "warrior/fury/r3c0",
       "class": "warrior",
       "tree": "Fury",
@@ -4023,6 +4132,151 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      }
+    },
+    {
+      "id": "warrior/fury/r4c3",
+      "class": "warrior",
+      "tree": "Fury",
+      "page": "Primary",
+      "row": 4,
+      "col": 3,
+      "name": "Improved Intercept",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown of your Intercept ability by 5 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18003.067,
+        "timestamp": "05:00:03.067",
+        "frame_index": 1080184,
+        "crop_path": "work/cursor/recovered/warrior/fury-r5c4.png",
+        "icon_crop_path": "work/cursor/recovered/warrior/fury-r5c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "13-warrior-17850",
+        "hover_id": "fury-r5c4",
+        "cell": [
+          2,
+          5,
+          4
+        ],
+        "bbox": [
+          1056,
+          362,
+          182,
+          92
+        ],
+        "sharpness": 4010.8,
+        "frames": 180,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Intercept",
+            "description": "Reduces the cooldown of your Intercept ability by 5 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Intercept",
+            "description": "Reduces the cooldown of your Intercept ability by 5 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Intercept",
+            "description": "Reduces the cooldown of your Intercept ability by 5 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "28-warrior-22600",
+            "t": 22604.15,
+            "sharpness": 4062.4,
+            "cut_off": false
+          }
+        ],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 3000.0,
+          "cursor_cell": [
+            2,
+            5,
+            4
+          ],
+          "darkness": 0.85
+        }
+      },
+      "tree_source": {
+        "t": 17850,
+        "frame_index": 1071000,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Intercept ability by {0} sec.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1543,
+          "classicSpellIds": [
+            20504,
+            20505
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic warrior/fury/Improved Intercept (talent 1543): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1543,
+          "name": "Improved Intercept",
+          "class": "warrior",
+          "tree": "fury",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -6964,5 +7218,20 @@
         "rule": "none"
       }
     }
-  ]
+  ],
+  "recovery": {
+    "at": "2026-09-13T10:03:50Z",
+    "source": "work/cursor/recovered.json (cursor-track recovery, pipeline/work/cursor/report.md)",
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+    "added": [
+      "warrior/fury/r2c3",
+      "warrior/fury/r4c3"
+    ],
+    "recovered_cells": [
+      "fury-r3c4",
+      "fury-r5c4"
+    ],
+    "collisions": [],
+    "duplicate_names": []
+  }
 }

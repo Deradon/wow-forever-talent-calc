@@ -167,3 +167,82 @@ are footage, not pipeline: mage Fire (10 of 17 never hovered), rogue Combat
   scale pass for descriptions ending in a bare number.
 - The live-edge skip decision (item 6 above).
 - `data/review/` is 19 MB for nine classes (crops + icons).
+
+## Recovery (2026-09-13, cursor-track pass)
+
+The cursor-track forensics (`pipeline/work/cursor/report.md`) found that 34
+of the 36 "never hovered" cells did have a tooltip on screen and wrote one
+hovers-shaped record per cell and segment to `pipeline/work/cursor/recovered.json`
+with tight crops under `work/cursor/recovered/<class>/`. Those were folded
+into the class data as follows; nothing committed, no hand edits to `data/`.
+
+1. **Read** with stage 5's reader (`wowtalents.reader`: prompt `tooltip-v3`,
+   3x/2x passes, temperature 0, JSON schema, `work/read/cache/`) through a
+   scratch driver, because `stages/05_read.py run` only takes
+   `work/hovers/*.json` (a `--hovers` option would make this repeatable).
+   Page and tree names per segment came from the class's existing
+   `candidates.json` (`segments[]`, `trees`), `tree_source` confidence from
+   the same tree-name votes. The primary (rank-0) segment's crop was read
+   first, `rank0_order` as in stage 5; all 34 read at rank 0. Every name
+   matches the by-eye list in the cursor report. Qwen pass agreement 1.0 on
+   33 of 34 (Pyroblast differed in the description).
+2. **Codex second opinion** (`scripts/second_opinion.py --candidates`) on all
+   34: 4 disagreements, all one-character and routed to 0.7: mage Pyroblast
+   "Hurts"/"Hurls" (codex right), Improved Scorch "fire"/"Fire", paladin
+   Infusion of Light "15 sec."/"15 sec", shaman Concussion "Bolt."/"Bolt,".
+3. **Merge** into `data/extracted/<class>.candidates.json`: new cells appended
+   in (page, tree, row, col) order; existing records untouched except where
+   stage 5's duplicate-name rule fires (below). `missing_cells` and `stats`
+   updated; a `recovery` block lists the added ids. Candidate records carry
+   `source.crop_path` under `work/cursor/recovered/` and a `source.recovered`
+   block (dwell, cursor cell); export drops the latter as usual.
+4. **06 rankfill without `--force`** (fills only the 34 new records, keeps
+   every existing `ranks_anticipated`), then `08_export.py all <class>
+   --update-encoding` (extract + promote, crops and icons placed under
+   `data/review/<class>/<tree>/<id>.png`), validator on `data/talents/` and
+   `data/extracted/`: **0 errors** for all seven classes. `web`: 81 vitest
+   tests pass (validate-data included), `npm run build` OK.
+
+Read counts (records exported), before -> after:
+
+| class | before | after | cells | still missing |
+|---|---|---|---|---|
+| mage | 42 | 53 | 54 | fire-r1c3 |
+| paladin | 45 | 51 | 52 | holy-r2c1 |
+| warrior | 52 | 54 | 54 | - |
+| rogue | 43 | 53 | 53 | - |
+| shaman | 47 | 50 | 50 | - |
+| warlock | 51 | 52 | 52 | - |
+| druid | 51 | 52 | 52 | - |
+
+Total 434 -> 468 of 470. The two remaining cells were fly-overs (pointer on
+the icon for 1-2 frames, no tooltip rendered) and need another source.
+Needs-review 73 -> 79 (+4 codex, +2 below); ranks manual/extrapolated
+128 -> 134 (Infusion of Light manual; Holy Conduit, Boundless Rage, Vigor,
+Endurance, Demonic Embrace extrapolated). Of the other 28: 18 `classic-prior`
+(11 copied, 7 re-based/extended, medium) and 4 `observed` (1-rank talents).
+`R19-EMPTY-ROWS` no longer fires for rogue Combat r7, druid Restoration r7,
+warlock Demonology.
+
+**Collisions.** None by cell (no recovered cell had an existing record). One
+by name: mage Fire **Master of Elements** was already recorded at r4c3
+(`08-mage-14970` @ 04:10:03.7) and the cursor track recovers the same
+tooltip at r4c4 with the pointer on r4c4 for 100 % of that run (the r4c3
+record is the ghost-blob mis-attribution described in the cursor report,
+item 1). Stage 5's duplicate-name rule was applied: both records at
+confidence 0.3 with the note "name also read at r4c3@..., r4c4@...; cell
+attribution needs review"; export ids `mage/fire/master-of-elements` (r4c3)
+and `mage/fire/master-of-elements-r3c3` (r4c4). Review should keep the r4c4
+record and treat r4c3 as unread: its true tooltip is the one baked into
+segment 08's median ("Hot Streak" per the report) and has no clean crop, so
+mage Fire effectively still lacks two cells (r1c3, r4c3).
+
+**Odd readings.** "Arcane Impact" (Arcane r3c2, 0/3) reads cleanly in both
+readers, but the Classic prior has no such talent: the validator's fuzzy
+match pairs it with Classic "Impact" (`MAXRANK-DIFFERS-FROM-CLASSIC`, 5
+ranks) while stage 6 copied its ranks from Classic Fire "Critical Mass" by
+description match (`classic-prior` medium, review queue); the real Fire
+"Impact" (r2c3, 0/3) is now also present. Check the crop before accepting
+either pairing. New names with no same-class Classic counterpart: Boundless
+Rage (warrior), Infusion of Light, Holy Conduit (paladin), Wild Growth
+(druid). `data/review/` is now 20 MB.

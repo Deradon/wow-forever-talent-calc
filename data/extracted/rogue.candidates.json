@@ -36,86 +36,15 @@
     "2": "Combat",
     "3": "Subtlety"
   },
-  "missing_cells": [
-    {
-      "tree": "Assassination",
-      "row": 4,
-      "col": 0,
-      "cell": "assassination-r5c1",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Assassination",
-      "row": 4,
-      "col": 2,
-      "cell": "assassination-r5c3",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Combat",
-      "row": 0,
-      "col": 2,
-      "cell": "combat-r1c3",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Combat",
-      "row": 1,
-      "col": 1,
-      "cell": "combat-r2c2",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Combat",
-      "row": 1,
-      "col": 2,
-      "cell": "combat-r2c3",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Combat",
-      "row": 2,
-      "col": 0,
-      "cell": "combat-r3c1",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Combat",
-      "row": 3,
-      "col": 0,
-      "cell": "combat-r4c1",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Combat",
-      "row": 3,
-      "col": 2,
-      "cell": "combat-r4c3",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Combat",
-      "row": 5,
-      "col": 1,
-      "cell": "combat-r6c2",
-      "reason": "never hovered in any segment"
-    },
-    {
-      "tree": "Combat",
-      "row": 6,
-      "col": 1,
-      "cell": "combat-r7c2",
-      "reason": "never hovered in any segment"
-    }
-  ],
+  "missing_cells": [],
   "stats": {
     "cells": 53,
-    "hovered": 43,
-    "read": 43,
-    "missing": 10,
+    "hovered": 53,
+    "read": 53,
+    "missing": 0,
     "confidence": {
-      "0.7": 1,
-      "1.0": 42
+      "0.7": 3,
+      "1.0": 50
     },
     "cut_off": 0,
     "duplicate_names": 0,
@@ -1696,6 +1625,135 @@
       }
     },
     {
+      "id": "rogue/assassination/r4c0",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 4,
+      "col": 0,
+      "name": "Vigor",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your maximum Energy by 5.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18314.133,
+        "timestamp": "05:05:14.133",
+        "frame_index": 1098848,
+        "crop_path": "work/cursor/recovered/rogue/assassination-r5c1.png",
+        "icon_crop_path": "work/cursor/recovered/rogue/assassination-r5c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r5c1",
+        "cell": [
+          1,
+          5,
+          1
+        ],
+        "bbox": [
+          534,
+          373,
+          217,
+          81
+        ],
+        "sharpness": 2307.3,
+        "frames": 76,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Vigor",
+            "description": "Increases your maximum Energy by 5.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Vigor",
+            "description": "Increases your maximum Energy by 5.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Vigor",
+            "description": "Increases your maximum Energy by 5.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 1266.7,
+          "cursor_cell": [
+            1,
+            5,
+            1
+          ],
+          "darkness": 0.91
+        }
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your maximum Energy by {0}.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match rogue/assassination/Vigor (talent 382) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 382,
+          "name": "Vigor",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 1,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
       "id": "rogue/assassination/r4c1",
       "class": "rogue",
       "tree": "Assassination",
@@ -1811,6 +1869,145 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/assassination/r4c2",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Improved Kidney Shot",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Enemies Stunned by your Kidney Shot ability take 5% increased damage from your poisons and attacks.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18309.05,
+        "timestamp": "05:05:09.050",
+        "frame_index": 1098543,
+        "crop_path": "work/cursor/recovered/rogue/assassination-r5c3.png",
+        "icon_crop_path": "work/cursor/recovered/rogue/assassination-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r5c3",
+        "cell": [
+          1,
+          5,
+          3
+        ],
+        "bbox": [
+          642,
+          352,
+          223,
+          102
+        ],
+        "sharpness": 4157.7,
+        "frames": 305,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Kidney Shot",
+            "description": "Enemies Stunned by your Kidney Shot ability take 5% increased damage from your poisons and attacks.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Kidney Shot",
+            "description": "Enemies Stunned by your Kidney Shot ability take 5% increased damage from your poisons and attacks.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Kidney Shot",
+            "description": "Enemies Stunned by your Kidney Shot ability take 5% increased damage from your poisons and attacks.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 5083.4,
+          "cursor_cell": [
+            1,
+            5,
+            3
+          ],
+          "darkness": 0.84
+        }
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Enemies Stunned by your Kidney Shot ability take {0}% increased damage from your poisons and attacks.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            8
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 279,
+          "classicSpellIds": [
+            14174,
+            14175,
+            14176
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/assassination/Improved Kidney Shot (talent 279): Classic has 3 ranks, step +3 applied over 2 ranks from 5.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 279,
+          "name": "Improved Kidney Shot",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -2343,6 +2540,156 @@
       }
     },
     {
+      "id": "rogue/combat/r0c2",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Lightning Reflexes",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Dodge chance by 1%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18346.15,
+        "timestamp": "05:05:46.150",
+        "frame_index": 1100769,
+        "crop_path": "work/cursor/recovered/rogue/combat-r1c3.png",
+        "icon_crop_path": "work/cursor/recovered/rogue/combat-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r1c3",
+        "cell": [
+          2,
+          1,
+          3
+        ],
+        "bbox": [
+          1002,
+          132,
+          212,
+          106
+        ],
+        "sharpness": 2625.0,
+        "frames": 47,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Lightning Reflexes",
+            "description": "Increases your Dodge chance by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Lightning Reflexes",
+            "description": "Increases your Dodge chance by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Lightning Reflexes",
+            "description": "Increases your Dodge chance by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 783.4,
+          "cursor_cell": [
+            2,
+            1,
+            3
+          ],
+          "darkness": 0.9
+        }
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Dodge chance by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 186,
+          "classicSpellIds": [
+            13712,
+            13788,
+            13789,
+            13790,
+            13791
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/combat/Lightning Reflexes (talent 186): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 186,
+          "name": "Lightning Reflexes",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
       "id": "rogue/combat/r1c0",
       "class": "rogue",
       "tree": "Combat",
@@ -2467,6 +2814,425 @@
           "maxRank": 3,
           "match": "description",
           "similarity": 0.9
+        }
+      }
+    },
+    {
+      "id": "rogue/combat/r1c1",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Deflection",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Parry chance by 2%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18349.017,
+        "timestamp": "05:05:49.017",
+        "frame_index": 1100941,
+        "crop_path": "work/cursor/recovered/rogue/combat-r2c2.png",
+        "icon_crop_path": "work/cursor/recovered/rogue/combat-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r2c2",
+        "cell": [
+          2,
+          2,
+          2
+        ],
+        "bbox": [
+          948,
+          211,
+          203,
+          81
+        ],
+        "sharpness": 2766.2,
+        "frames": 132,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Deflection",
+            "description": "Increases your Parry chance by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Deflection",
+            "description": "Increases your Parry chance by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Deflection",
+            "description": "Increases your Parry chance by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 2200.0,
+          "cursor_cell": [
+            2,
+            2,
+            2
+          ],
+          "darkness": 0.9
+        }
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Parry chance by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 187,
+          "classicSpellIds": [
+            13713,
+            13853,
+            13854,
+            13855,
+            13856
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/combat/Deflection (talent 187): Classic has 5 ranks, step +1 applied over 3 ranks from 2.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 187,
+          "name": "Deflection",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/combat/r1c2",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Precision",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your chance to hit with all attacks and Poisons by 1%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18348.017,
+        "timestamp": "05:05:48.017",
+        "frame_index": 1100881,
+        "crop_path": "work/cursor/recovered/rogue/combat-r2c3.png",
+        "icon_crop_path": "work/cursor/recovered/rogue/combat-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r2c3",
+        "cell": [
+          2,
+          2,
+          3
+        ],
+        "bbox": [
+          1002,
+          200,
+          211,
+          92
+        ],
+        "sharpness": 2898.3,
+        "frames": 47,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Precision",
+            "description": "Increases your chance to hit with all attacks and Poisons by 1%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Precision",
+            "description": "Increases your chance to hit with all attacks and Poisons by 1%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Precision",
+            "description": "Increases your chance to hit with all attacks and Poisons by 1%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 783.4,
+          "cursor_cell": [
+            2,
+            2,
+            3
+          ],
+          "darkness": 0.89
+        }
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your chance to hit with all attacks and Poisons by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 181,
+          "classicSpellIds": [
+            13705,
+            13832,
+            13843,
+            13844,
+            13845
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/combat/Precision (talent 181): Classic has 5 ranks, step +1 applied over 3 ranks from 1.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 181,
+          "name": "Precision",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/combat/r2c0",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Endurance",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown of your Sprint and Evasion abilities by 30%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18378.2,
+        "timestamp": "05:06:18.200",
+        "frame_index": 1102692,
+        "crop_path": "work/cursor/recovered/rogue/combat-r3c1.png",
+        "icon_crop_path": "work/cursor/recovered/rogue/combat-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r3c1",
+        "cell": [
+          2,
+          3,
+          1
+        ],
+        "bbox": [
+          894,
+          254,
+          216,
+          92
+        ],
+        "sharpness": 3087.6,
+        "frames": 318,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Endurance",
+            "description": "Reduces the cooldown of your Sprint and Evasion abilities by 30%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Endurance",
+            "description": "Reduces the cooldown of your Sprint and Evasion abilities by 30%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Endurance",
+            "description": "Reduces the cooldown of your Sprint and Evasion abilities by 30%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 5300.0,
+          "cursor_cell": [
+            2,
+            3,
+            1
+          ],
+          "darkness": 0.88
+        }
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Sprint and Evasion abilities by {0}%.",
+        "ranks": [
+          [
+            30
+          ],
+          [
+            60
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match rogue/combat/Endurance (talent 204) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 204,
+          "name": "Endurance",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
         }
       }
     },
@@ -2721,6 +3487,144 @@
       }
     },
     {
+      "id": "rogue/combat/r3c0",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Improved Kick",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Kick ability a 50% chance to Silence the target for 2 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18396.383,
+        "timestamp": "05:06:36.383",
+        "frame_index": 1103783,
+        "crop_path": "work/cursor/recovered/rogue/combat-r4c1.png",
+        "icon_crop_path": "work/cursor/recovered/rogue/combat-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r4c1",
+        "cell": [
+          2,
+          4,
+          1
+        ],
+        "bbox": [
+          894,
+          308,
+          227,
+          92
+        ],
+        "sharpness": 3101.7,
+        "frames": 244,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Kick",
+            "description": "Gives your Kick ability a 50% chance to Silence the target for 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Kick",
+            "description": "Gives your Kick ability a 50% chance to Silence the target for 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Kick",
+            "description": "Gives your Kick ability a 50% chance to Silence the target for 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 4066.7,
+          "cursor_cell": [
+            2,
+            4,
+            1
+          ],
+          "darkness": 0.88
+        }
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Kick ability a {0}% chance to Silence the target for 2 sec.",
+        "ranks": [
+          [
+            50
+          ],
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 206,
+          "classicSpellIds": [
+            13754,
+            13867
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/combat/Improved Kick (talent 206): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 206,
+          "name": "Improved Kick",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
       "id": "rogue/combat/r3c1",
       "class": "rogue",
       "tree": "Combat",
@@ -2826,6 +3730,158 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/combat/r3c2",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Dual Wield Specialization",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage done by your off-hand weapon by 5%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18402.95,
+        "timestamp": "05:06:42.950",
+        "frame_index": 1104177,
+        "crop_path": "work/cursor/recovered/rogue/combat-r4c3.png",
+        "icon_crop_path": "work/cursor/recovered/rogue/combat-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r4c3",
+        "cell": [
+          2,
+          4,
+          3
+        ],
+        "bbox": [
+          1002,
+          308,
+          210,
+          92
+        ],
+        "sharpness": 3661.9,
+        "frames": 53,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Dual Wield Specialization",
+            "description": "Increases the damage done by your off-hand weapon by 5%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Dual Wield Specialization",
+            "description": "Increases the damage done by your off-hand weapon by 5%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Dual Wield Specialization",
+            "description": "Increases the damage done by your off-hand weapon by 5%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 883.4,
+          "cursor_cell": [
+            2,
+            4,
+            3
+          ],
+          "darkness": 0.85
+        }
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by your off-hand weapon by {0}%.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ],
+          [
+            15
+          ],
+          [
+            20
+          ],
+          [
+            25
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 221,
+          "classicSpellIds": [
+            13715,
+            13848,
+            13849,
+            13851,
+            13852
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/combat/Dual Wield Specialization (talent 221): Classic 10/20/30/40/50 scaled by 0.5.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 221,
+          "name": "Dual Wield Specialization",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -3086,6 +4142,144 @@
       }
     },
     {
+      "id": "rogue/combat/r5c1",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 5,
+      "col": 1,
+      "name": "Weapon Expertise",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the chance for your attacks to be Dodged or Parried by 1%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18490.033,
+        "timestamp": "05:08:10.033",
+        "frame_index": 1109402,
+        "crop_path": "work/cursor/recovered/rogue/combat-r6c2.png",
+        "icon_crop_path": "work/cursor/recovered/rogue/combat-r6c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r6c2",
+        "cell": [
+          2,
+          6,
+          2
+        ],
+        "bbox": [
+          948,
+          416,
+          226,
+          92
+        ],
+        "sharpness": 3427.5,
+        "frames": 59,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Weapon Expertise",
+            "description": "Reduces the chance for your attacks to be Dodged or Parried by 1%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Weapon Expertise",
+            "description": "Reduces the chance for your attacks to be Dodged or Parried by 1%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Weapon Expertise",
+            "description": "Reduces the chance for your attacks to be Dodged or Parried by 1%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 983.4,
+          "cursor_cell": [
+            2,
+            6,
+            2
+          ],
+          "darkness": 0.87
+        }
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the chance for your attacks to be Dodged or Parried by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1703,
+          "classicSpellIds": [
+            30919,
+            30920
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/combat/Weapon Expertise (talent 1703): Classic 3/5, Forever rank 1 is 1: applied +2/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1703,
+          "name": "Weapon Expertise",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
       "id": "rogue/combat/r5c2",
       "class": "rogue",
       "tree": "Combat",
@@ -3217,6 +4411,132 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      }
+    },
+    {
+      "id": "rogue/combat/r6c1",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Adrenaline Rush",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "5 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Increases your Energy regeneration rate by 100% for 15 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18500.067,
+        "timestamp": "05:08:20.067",
+        "frame_index": 1110004,
+        "crop_path": "work/cursor/recovered/rogue/combat-r7c2.png",
+        "icon_crop_path": "work/cursor/recovered/rogue/combat-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r7c2",
+        "cell": [
+          2,
+          7,
+          2
+        ],
+        "bbox": [
+          948,
+          470,
+          227,
+          92
+        ],
+        "sharpness": 3673.3,
+        "frames": 45,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Adrenaline Rush",
+            "description": "Increases your Energy regeneration rate by 100% for 15 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "5 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Adrenaline Rush",
+            "description": "Increases your Energy regeneration rate by 100% for 15 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "5 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Adrenaline Rush",
+            "description": "Increases your Energy regeneration rate by 100% for 15 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [],
+        "recovered": {
+          "method": "cursor-track",
+          "dwell_ms": 750.0,
+          "cursor_cell": [
+            2,
+            7,
+            2
+          ],
+          "darkness": 0.86
+        }
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Energy regeneration rate by {0}% for {1} sec.",
+        "ranks": [
+          [
+            100,
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -5609,5 +6929,36 @@
         "rule": "none"
       }
     }
-  ]
+  ],
+  "recovery": {
+    "at": "2026-09-13T10:03:50Z",
+    "source": "work/cursor/recovered.json (cursor-track recovery, pipeline/work/cursor/report.md)",
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+    "added": [
+      "rogue/assassination/r4c0",
+      "rogue/assassination/r4c2",
+      "rogue/combat/r0c2",
+      "rogue/combat/r1c1",
+      "rogue/combat/r1c2",
+      "rogue/combat/r2c0",
+      "rogue/combat/r3c0",
+      "rogue/combat/r3c2",
+      "rogue/combat/r5c1",
+      "rogue/combat/r6c1"
+    ],
+    "recovered_cells": [
+      "assassination-r5c1",
+      "assassination-r5c3",
+      "combat-r1c3",
+      "combat-r2c2",
+      "combat-r2c3",
+      "combat-r3c1",
+      "combat-r4c1",
+      "combat-r4c3",
+      "combat-r6c2",
+      "combat-r7c2"
+    ],
+    "collisions": [],
+    "duplicate_names": []
+  }
 }

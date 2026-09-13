@@ -5,7 +5,7 @@
   "className": "Warlock",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T01:57:03Z",
+  "generatedAt": "2026-09-13T10:04:06Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -1010,6 +1010,54 @@
                 "name": "Improved Imp",
                 "description": "Increases the damage of your Imp's Firebolt spell by 10% and the effect of its Fire Shield spell by 10%.",
                 "maxRank": 3,
+                "confidence": 1.0
+              }
+            ],
+            "reviewed": false
+          }
+        },
+        {
+          "id": "demonic-embrace",
+          "name": "Demonic Embrace",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "crop-demonic-embrace",
+          "iconSource": "crop",
+          "iconCrop": "data/review/warlock/demonology/demonic-embrace.icon.png",
+          "description": "Increases your total Stamina by {0}%.",
+          "ranks": [[3], [6], [9], [12], [15]],
+          "ranksObserved": [1],
+          "ranksSource": "extrapolated",
+          "ranksNote": "Classic match warlock/demonology/Demonic Embrace (talent 1223) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 19193.0,
+            "frame": 1151580,
+            "crop": "data/review/warlock/demonology/demonic-embrace.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+                "name": "Demonic Embrace",
+                "description": "Increases your total Stamina by 3%.",
+                "maxRank": 5,
+                "confidence": 1.0
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+                "name": "Demonic Embrace",
+                "description": "Increases your total Stamina by 3%.",
+                "maxRank": 5,
+                "confidence": 1.0
+              },
+              {
+                "reader": "codex-cli",
+                "name": "Demonic Embrace",
+                "description": "Increases your total Stamina by 3%.",
+                "maxRank": 5,
                 "confidence": 1.0
               }
             ],
