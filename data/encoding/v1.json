@@ -20,6 +20,66 @@
           "field-medic"
         ]
       }
+    },
+    "paladin": {
+      "trees": [
+        "holy",
+        "protection",
+        "retribution"
+      ],
+      "order": {
+        "holy": [
+          "improved-holy-strike",
+          "divine-strength",
+          "divine-intellect",
+          "spiritual-focus",
+          "improved-seals",
+          "unyielding-faith",
+          "voice-of-truth",
+          "reverence",
+          "purifying-power",
+          "illumination",
+          "divine-precision",
+          "holy-shock",
+          "consecrated-ground",
+          "holy-power",
+          "lights-vigil"
+        ],
+        "protection": [
+          "toughness",
+          "redoubt",
+          "precision",
+          "guardians-favor",
+          "anticipation",
+          "improved-seal-of-fury",
+          "improved-righteous-fury",
+          "shield-specialization",
+          "sacred-duty",
+          "swift-judgement",
+          "one-handed-weapon-specialization",
+          "improved-hammer-of-justice",
+          "templars-bulwark",
+          "reckoning",
+          "iron-creed",
+          "holy-shield"
+        ],
+        "retribution": [
+          "deflection",
+          "vindication",
+          "sanctified-judgement",
+          "seal-of-command",
+          "pursuit-of-justice",
+          "eye-for-an-eye",
+          "sacred-arbiter",
+          "crusade",
+          "two-handed-weapon-specialization",
+          "vengeance",
+          "repentance",
+          "champion-of-the-light",
+          "instrument-of-law",
+          "twist-of-light"
+        ]
+      }
     }
   }
 }

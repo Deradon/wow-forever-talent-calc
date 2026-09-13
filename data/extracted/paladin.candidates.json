@@ -1,0 +1,6078 @@
+{
+  "class": "paladin",
+  "generated_at": "2026-09-12T23:54:04Z",
+  "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+  "prompt_version": "tooltip-v3",
+  "passes": [
+    3.0,
+    2.0
+  ],
+  "segments": [
+    {
+      "segment_id": "01-paladin-13640",
+      "page": "Primary",
+      "trees": {
+        "1": "Holy",
+        "2": "Protection",
+        "3": "Retribution"
+      },
+      "unspent_talents": 29,
+      "hovers": 24
+    },
+    {
+      "segment_id": "02-paladin-14320",
+      "page": "Primary",
+      "trees": {
+        "1": "Holy",
+        "2": "Protection",
+        "3": "Retribution"
+      },
+      "unspent_talents": 29,
+      "hovers": 26
+    },
+    {
+      "segment_id": "03-paladin-14430",
+      "page": "Primary",
+      "trees": {
+        "1": "Holy",
+        "2": "Protection",
+        "3": "Retribution"
+      },
+      "unspent_talents": 29,
+      "hovers": 1
+    },
+    {
+      "segment_id": "04-paladin-14460",
+      "page": "Primary",
+      "trees": {
+        "1": "Holy",
+        "2": "Protection",
+        "3": "Retribution"
+      },
+      "unspent_talents": 29,
+      "hovers": 0
+    },
+    {
+      "segment_id": "05-paladin-14510",
+      "page": "Secondary",
+      "trees": {
+        "1": "Holy",
+        "2": "Protection",
+        "3": "Retribution"
+      },
+      "unspent_talents": 29,
+      "hovers": 0
+    },
+    {
+      "segment_id": "25-paladin-21570",
+      "page": "Primary",
+      "trees": {
+        "1": "Holy",
+        "2": "Protection",
+        "3": "Retribution"
+      },
+      "unspent_talents": 29,
+      "hovers": 8
+    },
+    {
+      "segment_id": "26-paladin-21630",
+      "page": "Primary",
+      "trees": {
+        "1": "Holy",
+        "2": "Protection",
+        "3": "Retribution"
+      },
+      "unspent_talents": 29,
+      "hovers": 15
+    },
+    {
+      "segment_id": "27-paladin-21740",
+      "page": "Primary",
+      "trees": {
+        "1": "Holy",
+        "2": "Protection",
+        "3": "Retribution"
+      },
+      "unspent_talents": 29,
+      "hovers": 2
+    }
+  ],
+  "trees": {
+    "1": "Holy",
+    "2": "Protection",
+    "3": "Retribution"
+  },
+  "missing_cells": [
+    {
+      "tree": "Holy",
+      "row": 1,
+      "col": 0,
+      "cell": "holy-r2c1",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Holy",
+      "row": 3,
+      "col": 0,
+      "cell": "holy-r4c1",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Holy",
+      "row": 3,
+      "col": 2,
+      "cell": "holy-r4c3",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Retribution",
+      "row": 0,
+      "col": 2,
+      "cell": "retribution-r1c3",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Retribution",
+      "row": 1,
+      "col": 0,
+      "cell": "retribution-r2c1",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Retribution",
+      "row": 1,
+      "col": 1,
+      "cell": "retribution-r2c2",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Retribution",
+      "row": 1,
+      "col": 2,
+      "cell": "retribution-r2c3",
+      "reason": "never hovered in any segment"
+    }
+  ],
+  "stats": {
+    "cells": 52,
+    "hovered": 45,
+    "read": 45,
+    "missing": 7,
+    "confidence": {
+      "1.0": 45
+    },
+    "cut_off": 0,
+    "duplicate_names": 0,
+    "vlm_calls": 122,
+    "cache_hits": 0,
+    "vlm_seconds": 140.5,
+    "wall_seconds": 141.1
+  },
+  "candidates": [
+    {
+      "id": "paladin/holy/r0c0",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 0,
+      "col": 0,
+      "name": "Improved Holy Strike",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown of your Holy Strike ability by 1 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14340.883,
+        "timestamp": "03:59:00.883",
+        "frame_index": 860453,
+        "crop_path": "work/hovers/02-paladin-14320/holy-r1c1.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/holy-r1c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "holy-r1c1",
+        "cell": [
+          1,
+          1,
+          1
+        ],
+        "bbox": [
+          534,
+          121,
+          210,
+          117
+        ],
+        "sharpness": 3366.5,
+        "frames": 60,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Holy Strike",
+            "description": "Reduces the cooldown of your Holy Strike ability by 1 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Holy Strike",
+            "description": "Reduces the cooldown of your Holy Strike ability by 1 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Holy Strike",
+            "description": "Reduces the cooldown of your Holy Strike ability by 1 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13660.0,
+            "sharpness": 3364.5,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Holy Strike ability by {0} sec.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 143,
+          "classicSpellIds": [
+            12302,
+            12765
+          ],
+          "match": "description",
+          "similarity": 0.94
+        },
+        "ranksNote": "Classic warrior/protection/Improved Taunt (talent 143) (cross-class), matched on description (0.94): ranks copied.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 143,
+          "name": "Improved Taunt",
+          "class": "warrior",
+          "tree": "protection",
+          "maxRank": 2,
+          "match": "description",
+          "similarity": 0.94
+        }
+      }
+    },
+    {
+      "id": "paladin/holy/r0c1",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Divine Strength",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Strength by 2%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14341.333,
+        "timestamp": "03:59:01.333",
+        "frame_index": 860480,
+        "crop_path": "work/hovers/02-paladin-14320/holy-r1c2.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/holy-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "holy-r1c2",
+        "cell": [
+          1,
+          1,
+          2
+        ],
+        "bbox": [
+          588,
+          132,
+          180,
+          106
+        ],
+        "sharpness": 3080.0,
+        "frames": 1,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Divine Strength",
+            "description": "Increases your Strength by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Divine Strength",
+            "description": "Increases your Strength by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Divine Strength",
+            "description": "Increases your Strength by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13653.733,
+            "sharpness": 3068.0,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Strength by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1450,
+          "classicSpellIds": [
+            20262,
+            20263,
+            20264,
+            20265,
+            20266
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/holy/Divine Strength (talent 1450): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1450,
+          "name": "Divine Strength",
+          "class": "paladin",
+          "tree": "holy",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/holy/r0c2",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Divine Intellect",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your total Intellect by 2%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14339.2,
+        "timestamp": "03:58:59.200",
+        "frame_index": 860352,
+        "crop_path": "work/hovers/02-paladin-14320/holy-r1c3.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/holy-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "holy-r1c3",
+        "cell": [
+          1,
+          1,
+          3
+        ],
+        "bbox": [
+          642,
+          132,
+          205,
+          106
+        ],
+        "sharpness": 2787.5,
+        "frames": 1,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Divine Intellect",
+            "description": "Increases your total Intellect by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Divine Intellect",
+            "description": "Increases your total Intellect by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Divine Intellect",
+            "description": "Increases your total Intellect by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your total Intellect by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1449,
+          "classicSpellIds": [
+            20257,
+            20258,
+            20259,
+            20260,
+            20261
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/holy/Divine Intellect (talent 1449): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1449,
+          "name": "Divine Intellect",
+          "class": "paladin",
+          "tree": "holy",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/holy/r1c1",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Spiritual Focus",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Flash of Light, Holy Light, and Light's Vigil spells a 35% chance to not lose casting time when you take damage.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 13657.7,
+        "timestamp": "03:47:37.700",
+        "frame_index": 819462,
+        "crop_path": "work/hovers/01-paladin-13640/holy-r2c2.png",
+        "icon_crop_path": "work/hovers/01-paladin-13640/holy-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "01-paladin-13640",
+        "hover_id": "holy-r2c2",
+        "cell": [
+          1,
+          2,
+          2
+        ],
+        "bbox": [
+          588,
+          179,
+          226,
+          113
+        ],
+        "sharpness": 3678.3,
+        "frames": 1,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Spiritual Focus",
+            "description": "Gives your Flash of Light, Holy Light, and Light's Vigil spells a 35% chance to not lose casting time when you take damage.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Spiritual Focus",
+            "description": "Gives your Flash of Light, Holy Light, and Light's Vigil spells a 35% chance to not lose casting time when you take damage.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Spiritual Focus",
+            "description": "Gives your Flash of Light, Holy Light, and Light's Vigil spells a 35% chance to not lose casting time when you take damage.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "02-paladin-14320",
+            "t": 14341.367,
+            "sharpness": 3519.0,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 13640,
+        "frame_index": 818400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Flash of Light, Holy Light, and Light's Vigil spells a {0}% chance to not lose casting time when you take damage.",
+        "ranks": [
+          [
+            35
+          ],
+          [
+            49
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1432,
+          "classicSpellIds": [
+            20205,
+            20206,
+            20207,
+            20209,
+            20208
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/holy/Spiritual Focus (talent 1432): Classic has 5 ranks, step +14 applied over 2 ranks from 35.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 1432,
+          "name": "Spiritual Focus",
+          "class": "paladin",
+          "tree": "holy",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/holy/r1c2",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Improved Seals",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage done by your Seals and Judgements by 5%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 13641.15,
+        "timestamp": "03:47:21.150",
+        "frame_index": 818469,
+        "crop_path": "work/hovers/01-paladin-13640/holy-r2c3.png",
+        "icon_crop_path": "work/hovers/01-paladin-13640/holy-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "01-paladin-13640",
+        "hover_id": "holy-r2c3",
+        "cell": [
+          1,
+          2,
+          3
+        ],
+        "bbox": [
+          642,
+          200,
+          210,
+          92
+        ],
+        "sharpness": 3612.2,
+        "frames": 2,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Seals",
+            "description": "Increases the damage done by your Seals and Judgements by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Seals",
+            "description": "Increases the damage done by your Seals and Judgements by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Seals",
+            "description": "Increases the damage done by your Seals and Judgements by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 13640,
+        "frame_index": 818400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by your Seals and Judgements by {0}%.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ],
+          [
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 561,
+          "classicSpellIds": [
+            16038,
+            16160,
+            16161
+          ],
+          "match": "description",
+          "similarity": 0.86
+        },
+        "ranksNote": "Classic shaman/elemental/Call of Flame (talent 561) (cross-class), matched on description (0.86): ranks copied.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 561,
+          "name": "Call of Flame",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 3,
+          "match": "description",
+          "similarity": 0.86
+        }
+      }
+    },
+    {
+      "id": "paladin/holy/r1c3",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 1,
+      "col": 3,
+      "name": "Unyielding Faith",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the duration of Fear and Disorient effects on you by 15%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 13641.117,
+        "timestamp": "03:47:21.117",
+        "frame_index": 818467,
+        "crop_path": "work/hovers/01-paladin-13640/holy-r2c4.png",
+        "icon_crop_path": "work/hovers/01-paladin-13640/holy-r2c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "01-paladin-13640",
+        "hover_id": "holy-r2c4",
+        "cell": [
+          1,
+          2,
+          4
+        ],
+        "bbox": [
+          696,
+          200,
+          199,
+          92
+        ],
+        "sharpness": 3648.2,
+        "frames": 1,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Unyielding Faith",
+            "description": "Reduces the duration of Fear and Disorient effects on you by 15%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Unyielding Faith",
+            "description": "Reduces the duration of Fear and Disorient effects on you by 15%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Unyielding Faith",
+            "description": "Reduces the duration of Fear and Disorient effects on you by 15%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 13640,
+        "frame_index": 818400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the duration of Fear and Disorient effects on you by {0}%.",
+        "ranks": [
+          [
+            15
+          ],
+          [
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1628,
+          "classicSpellIds": [
+            9453,
+            25836
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/holy/Unyielding Faith (talent 1628): Classic 5/10 scaled by 3.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 1628,
+          "name": "Unyielding Faith",
+          "class": "paladin",
+          "tree": "holy",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/holy/r2c0",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Voice of Truth",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "3 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Grants you immunity to Silence and Interrupt effects. Lasts 6 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21570.933,
+        "timestamp": "05:59:30.933",
+        "frame_index": 1294256,
+        "crop_path": "work/hovers/25-paladin-21570/holy-r3c1.png",
+        "icon_crop_path": "work/hovers/25-paladin-21570/holy-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "25-paladin-21570",
+        "hover_id": "holy-r3c1",
+        "cell": [
+          1,
+          3,
+          1
+        ],
+        "bbox": [
+          534,
+          254,
+          226,
+          92
+        ],
+        "sharpness": 4009.0,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Voice of Truth",
+            "description": "Grants you immunity to Silence and Interrupt effects. Lasts 6 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Voice of Truth",
+            "description": "Grants you immunity to Silence and Interrupt effects. Lasts 6 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Voice of Truth",
+            "description": "Grants you immunity to Silence and Interrupt effects. Lasts 6 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21570,
+        "frame_index": 1294200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Grants you immunity to Silence and Interrupt effects. Lasts {0} sec.",
+        "ranks": [
+          [
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/holy/r2c1",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Reverence",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Allows 10% of your Mana regeneration to continue while casting.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21574.867,
+        "timestamp": "05:59:34.867",
+        "frame_index": 1294492,
+        "crop_path": "work/hovers/25-paladin-21570/holy-r3c2.png",
+        "icon_crop_path": "work/hovers/25-paladin-21570/holy-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "25-paladin-21570",
+        "hover_id": "holy-r3c2",
+        "cell": [
+          1,
+          3,
+          2
+        ],
+        "bbox": [
+          588,
+          254,
+          225,
+          92
+        ],
+        "sharpness": 3282.7,
+        "frames": 14,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Reverence",
+            "description": "Allows 10% of your Mana regeneration to continue while casting.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Reverence",
+            "description": "Allows 10% of your Mana regeneration to continue while casting.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Reverence",
+            "description": "Allows 10% of your Mana regeneration to continue while casting.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13660.183,
+            "sharpness": 3048.3,
+            "cut_off": false
+          },
+          {
+            "segment_id": "02-paladin-14320",
+            "t": 14341.383,
+            "sharpness": 3023.6,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21570,
+        "frame_index": 1294200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Allows {0}% of your Mana regeneration to continue while casting.",
+        "ranks": [
+          [
+            10
+          ],
+          [
+            20
+          ],
+          [
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 829,
+          "classicSpellIds": [
+            17106,
+            17107,
+            17108
+          ],
+          "match": "description",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (1.00): Classic 5/10/15 scaled by 2.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 829,
+          "name": "Reflection",
+          "class": "druid",
+          "tree": "restoration",
+          "maxRank": 3,
+          "match": "description",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/holy/r2c2",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 2,
+      "col": 2,
+      "name": "Purifying Power",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the mana cost of your Cleanse and Purify spells by 10% and reduces the cooldown of your Exorcism and Holy Wrath spells by 17%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21575.533,
+        "timestamp": "05:59:35.533",
+        "frame_index": 1294532,
+        "crop_path": "work/hovers/25-paladin-21570/holy-r3c3.png",
+        "icon_crop_path": "work/hovers/25-paladin-21570/holy-r3c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "25-paladin-21570",
+        "hover_id": "holy-r3c3",
+        "cell": [
+          1,
+          3,
+          3
+        ],
+        "bbox": [
+          642,
+          233,
+          226,
+          113
+        ],
+        "sharpness": 3998.4,
+        "frames": 11,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Purifying Power",
+            "description": "Reduces the mana cost of your Cleanse and Purify spells by 10% and reduces the cooldown of your Exorcism and Holy Wrath spells by 17%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Purifying Power",
+            "description": "Reduces the mana cost of your Cleanse and Purify spells by 10% and reduces the cooldown of your Exorcism and Holy Wrath spells by 17%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Purifying Power",
+            "description": "Reduces the mana cost of your Cleanse and Purify spells by 10% and reduces the cooldown of your Exorcism and Holy Wrath spells by 17%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21570,
+        "frame_index": 1294200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the mana cost of your Cleanse and Purify spells by {0}% and reduces the cooldown of your Exorcism and Holy Wrath spells by {1}%.",
+        "ranks": [
+          [
+            10,
+            17
+          ],
+          [
+            20,
+            34
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "paladin/holy/r3c1",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "Illumination",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "After getting a critical effect from your Flash of Light, Holy Light, Light's Vigil, or Holy Shock heal spell you have a 20% chance to gain Mana equal to 50% of the base cost of the spell.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 13660.2,
+        "timestamp": "03:47:40.200",
+        "frame_index": 819612,
+        "crop_path": "work/hovers/01-paladin-13640/holy-r4c2.png",
+        "icon_crop_path": "work/hovers/01-paladin-13640/holy-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "01-paladin-13640",
+        "hover_id": "holy-r4c2",
+        "cell": [
+          1,
+          4,
+          2
+        ],
+        "bbox": [
+          588,
+          277,
+          227,
+          123
+        ],
+        "sharpness": 4052.5,
+        "frames": 1,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Illumination",
+            "description": "After getting a critical effect from your Flash of Light, Holy Light, Light's Vigil, or Holy Shock heal spell you have a 20% chance to gain Mana equal to 50% of the base cost of the spell.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Illumination",
+            "description": "After getting a critical effect from your Flash of Light, Holy Light, Light's Vigil, or Holy Shock heal spell you have a 20% chance to gain Mana equal to 50% of the base cost of the spell.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Illumination",
+            "description": "After getting a critical effect from your Flash of Light, Holy Light, Light's Vigil, or Holy Shock heal spell you have a 20% chance to gain Mana equal to 50% of the base cost of the spell.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 13640,
+        "frame_index": 818400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "After getting a critical effect from your Flash of Light, Holy Light, Light's Vigil, or Holy Shock heal spell you have a {0}% chance to gain Mana equal to {1}% of the base cost of the spell.",
+        "ranks": [
+          [
+            20,
+            50
+          ],
+          [
+            40,
+            100
+          ],
+          [
+            60,
+            150
+          ],
+          [
+            80,
+            200
+          ],
+          [
+            100,
+            250
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match paladin/holy/Illumination (talent 1461) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 1461,
+          "name": "Illumination",
+          "class": "paladin",
+          "tree": "holy",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/holy/r4c0",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 4,
+      "col": 0,
+      "name": "Divine Precision",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your chance to hit with Holy spells by 6.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21580.267,
+        "timestamp": "05:59:40.267",
+        "frame_index": 1294816,
+        "crop_path": "work/hovers/25-paladin-21570/holy-r5c1.png",
+        "icon_crop_path": "work/hovers/25-paladin-21570/holy-r5c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "25-paladin-21570",
+        "hover_id": "holy-r5c1",
+        "cell": [
+          1,
+          5,
+          1
+        ],
+        "bbox": [
+          534,
+          362,
+          248,
+          90
+        ],
+        "sharpness": 2971.5,
+        "frames": 9,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Divine Precision",
+            "description": "Increases your chance to hit with Holy spells by 6.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Divine Precision",
+            "description": "Increases your chance to hit with Holy spells by 6.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Divine Precision",
+            "description": "Increases your chance to hit with Holy spells by 6%.",
+            "maxRank": 3,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21570,
+        "frame_index": 1294200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your chance to hit with Holy spells by {0}.",
+        "ranks": [
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1630,
+          "classicSpellIds": [
+            20189,
+            20192,
+            20193
+          ],
+          "match": "fuzzy-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/protection/Precision (talent 1630), matched on name (1.00): Classic 1/2/3, Forever rank 1 is 6: applied +1/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1630,
+          "name": "Precision",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 3,
+          "match": "fuzzy-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/holy/r4c1",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Holy Shock",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "160 Mana",
+        "Instant"
+      ],
+      "requires": [],
+      "description_rank1": "Blasts the target with Holy energy, causing 129 to 139 Holy damage to an enemy, or 110 to 118 healing to an ally.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21581.333,
+        "timestamp": "05:59:41.333",
+        "frame_index": 1294880,
+        "crop_path": "work/hovers/25-paladin-21570/holy-r5c2.png",
+        "icon_crop_path": "work/hovers/25-paladin-21570/holy-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "25-paladin-21570",
+        "hover_id": "holy-r5c2",
+        "cell": [
+          1,
+          5,
+          2
+        ],
+        "bbox": [
+          588,
+          327,
+          227,
+          125
+        ],
+        "sharpness": 4803.6,
+        "frames": 18,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Holy Shock",
+            "description": "Blasts the target with Holy energy, causing 129 to 139 Holy damage to an enemy, or 110 to 118 healing to an ally.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "160 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Holy Shock",
+            "description": "Blasts the target with Holy energy, causing 129 to 139 Holy damage to an enemy, or 110 to 118 healing to an ally.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "160 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Holy Shock",
+            "description": "Blasts the target with Holy energy, causing 129 to 139 Holy damage to an enemy, or 110 to 118 healing to an ally.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13660.233,
+            "sharpness": 4657.7,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21570,
+        "frame_index": 1294200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Blasts the target with Holy energy, causing {0} to {1} Holy damage to an enemy, or {2} to {3} healing to an ally.",
+        "ranks": [
+          [
+            129,
+            139,
+            110,
+            118
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/holy/r4c2",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Consecrated Ground",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Holy spells 5% Increased damage against the first 4 enemies that enter your Consecration.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21586.133,
+        "timestamp": "05:59:46.133",
+        "frame_index": 1295168,
+        "crop_path": "work/hovers/25-paladin-21570/holy-r5c3.png",
+        "icon_crop_path": "work/hovers/25-paladin-21570/holy-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "25-paladin-21570",
+        "hover_id": "holy-r5c3",
+        "cell": [
+          1,
+          5,
+          3
+        ],
+        "bbox": [
+          642,
+          352,
+          227,
+          92
+        ],
+        "sharpness": 4486.3,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Consecrated Ground",
+            "description": "Gives your Holy spells 5% Increased damage against the first 4 enemies that enter your Consecration.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Consecrated Ground",
+            "description": "Gives your Holy spells 5% Increased damage against the first 4 enemies that enter your Consecration.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Consecrated Ground",
+            "description": "Gives your Holy spells 5% increased damage against the first 4 enemies that enter your Consecration.",
+            "maxRank": 2,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21570,
+        "frame_index": 1294200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Holy spells {0}% Increased damage against the first {1} enemies that enter your Consecration.",
+        "ranks": [
+          [
+            5,
+            4
+          ],
+          [
+            10,
+            8
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "paladin/holy/r5c2",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Holy Power",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike chance of your Holy Shock spell by 3%, and all other spells by 1%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21590.0,
+        "timestamp": "05:59:50.000",
+        "frame_index": 1295400,
+        "crop_path": "work/hovers/25-paladin-21570/holy-r6c3.png",
+        "icon_crop_path": "work/hovers/25-paladin-21570/holy-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "25-paladin-21570",
+        "hover_id": "holy-r6c3",
+        "cell": [
+          1,
+          6,
+          3
+        ],
+        "bbox": [
+          641,
+          374,
+          217,
+          135
+        ],
+        "sharpness": 2751.1,
+        "frames": 12,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Holy Power",
+            "description": "Increases the critical strike chance of your Holy Shock spell by 3%, and all other spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Holy Power",
+            "description": "Increases the critical strike chance of your Holy Shock spell by 3%, and all other spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Holy Power",
+            "description": "Increases the critical strike chance of your Holy Shock spell by 3%, and all other spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21570,
+        "frame_index": 1294200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike chance of your Holy Shock spell by {0}%, and all other spells by {1}%.",
+        "ranks": [
+          [
+            3,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            15,
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match paladin/holy/Holy Power (talent 1627) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 1627,
+          "name": "Holy Power",
+          "class": "paladin",
+          "tree": "holy",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/holy/r6c1",
+      "class": "paladin",
+      "tree": "Holy",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Light's Vigil",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "730 Mana",
+        "1.5 sec cast",
+        "Enemy: 20 yd range",
+        "Friendly: 40 yd range",
+        "6 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Applies Light's Vigil to the target for 30 sec. Your next Holy Shock cast on them triggers no cooldown and causes friendly targets to heal their party for 315 to 333, or enemy targets to suffer 175 to 189 Holy damage and refund 75% of Light's Vigil's Mana cost. You may only have 1 Light's Vigil active per Paladin, per party.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 13662.933,
+        "timestamp": "03:47:42.933",
+        "frame_index": 819776,
+        "crop_path": "work/hovers/01-paladin-13640/holy-r7c2.png",
+        "icon_crop_path": "work/hovers/01-paladin-13640/holy-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "01-paladin-13640",
+        "hover_id": "holy-r7c2",
+        "cell": [
+          1,
+          7,
+          2
+        ],
+        "bbox": [
+          588,
+          372,
+          227,
+          190
+        ],
+        "sharpness": 5473.2,
+        "frames": 614,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Light's Vigil",
+            "description": "Applies Light's Vigil to the target for 30 sec. Your next Holy Shock cast on them triggers no cooldown and causes friendly targets to heal their party for 315 to 333, or enemy targets to suffer 175 to 189 Holy damage and refund 75% of Light's Vigil's Mana cost. You may only have 1 Light's Vigil active per Paladin, per party.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "730 Mana",
+              "1.5 sec cast",
+              "Enemy: 20 yd range",
+              "Friendly: 40 yd range",
+              "6 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Light's Vigil",
+            "description": "Applies Light's Vigil to the target for 30 sec. Your next Holy Shock cast on them triggers no cooldown and causes friendly targets to heal their party for 315 to 333, or enemy targets to suffer 175 to 189 Holy damage and refund 75% of Light's Vigil's Mana cost. You may only have 1 Light's Vigil active per Paladin, per party.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "730 Mana",
+              "1.5 sec cast",
+              "Enemy: 20 yd range",
+              "Friendly: 40 yd range",
+              "6 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Light's Vigil",
+            "description": "Applies Light's Vigil to the target for 30 sec. Your next Holy Shock cast on them triggers no cooldown and causes friendly targets to heal their party for 315 to 333, or enemy targets to suffer 175 to 189 Holy damage and refund 75% of Light's Vigil's Mana cost. You may only have 1 Light's Vigil active per Paladin, per party.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "25-paladin-21570",
+            "t": 21616.4,
+            "sharpness": 5446.1,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 13640,
+        "frame_index": 818400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Applies Light's Vigil to the target for {0} sec. Your next Holy Shock cast on them triggers no cooldown and causes friendly targets to heal their party for {1} to {2}, or enemy targets to suffer {3} to {4} Holy damage and refund {5}% of Light's Vigil's Mana cost. You may only have {6} Light's Vigil active per Paladin, per party.",
+        "ranks": [
+          [
+            30,
+            315,
+            333,
+            175,
+            189,
+            75,
+            1
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/protection/r0c1",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Toughness",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your armor value from items by 2%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 13642.467,
+        "timestamp": "03:47:22.467",
+        "frame_index": 818548,
+        "crop_path": "work/hovers/01-paladin-13640/protection-r1c2.png",
+        "icon_crop_path": "work/hovers/01-paladin-13640/protection-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "01-paladin-13640",
+        "hover_id": "protection-r1c2",
+        "cell": [
+          2,
+          1,
+          2
+        ],
+        "bbox": [
+          947,
+          121,
+          223,
+          116
+        ],
+        "sharpness": 2503.7,
+        "frames": 6,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Toughness",
+            "description": "Increases your armor value from items by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Toughness",
+            "description": "Increases your armor value from items by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Toughness",
+            "description": "Increases your armor value from items by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "26-paladin-21630",
+            "t": 21669.8,
+            "sharpness": 2300.4,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 13640,
+        "frame_index": 818400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your armor value from items by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1423,
+          "classicSpellIds": [
+            20143,
+            20144,
+            20145,
+            20146,
+            20147
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/protection/Toughness (talent 1423): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1423,
+          "name": "Toughness",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/protection/r0c2",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Redoubt",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Damaging melee attacks against you have a 10% chance to increase your chance to block by 6%. Lasts 10 sec or 5 blocks.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 13642.033,
+        "timestamp": "03:47:22.033",
+        "frame_index": 818522,
+        "crop_path": "work/hovers/01-paladin-13640/protection-r1c3.png",
+        "icon_crop_path": "work/hovers/01-paladin-13640/protection-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "01-paladin-13640",
+        "hover_id": "protection-r1c3",
+        "cell": [
+          2,
+          1,
+          3
+        ],
+        "bbox": [
+          1001,
+          100,
+          226,
+          138
+        ],
+        "sharpness": 3027.3,
+        "frames": 11,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Redoubt",
+            "description": "Damaging melee attacks against you have a 10% chance to increase your chance to block by 6%. Lasts 10 sec or 5 blocks.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Redoubt",
+            "description": "Damaging melee attacks against you have a 10% chance to increase your chance to block by 6%. Lasts 10 sec or 5 blocks.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Redoubt",
+            "description": "Damaging melee attacks against you have a 10% chance to increase your chance to block by 6%. Lasts 10 sec or 5 blocks.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "02-paladin-14320",
+            "t": 14332.983,
+            "sharpness": 3009.1,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 13640,
+        "frame_index": 818400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Damaging melee attacks against you have a {0}% chance to increase your chance to block by {1}%. Lasts {2} sec or {3} blocks.",
+        "ranks": [
+          [
+            10,
+            6,
+            10,
+            5
+          ],
+          [
+            10,
+            6,
+            10,
+            5
+          ],
+          [
+            10,
+            6,
+            10,
+            5
+          ],
+          [
+            10,
+            6,
+            10,
+            5
+          ],
+          [
+            10,
+            6,
+            10,
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match paladin/protection/Redoubt (talent 1421) has no alignable slots; ranks 2..5 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 1421,
+          "name": "Redoubt",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/protection/r1c0",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Precision",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your chance to hit with all spells and attacks by 1%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21670.067,
+        "timestamp": "06:01:10.067",
+        "frame_index": 1300204,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r2c1.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r2c1",
+        "cell": [
+          2,
+          2,
+          1
+        ],
+        "bbox": [
+          892,
+          199,
+          214,
+          94
+        ],
+        "sharpness": 2959.6,
+        "frames": 5,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Precision",
+            "description": "Increases your chance to hit with all spells and attacks by 1%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Precision",
+            "description": "Increases your chance to hit with all spells and attacks by 1%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Precision",
+            "description": "Increases your chance to hit with all spells and attacks by 1%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13641.0,
+            "sharpness": 2889.7,
+            "cut_off": false
+          },
+          {
+            "segment_id": "02-paladin-14320",
+            "t": 14339.1,
+            "sharpness": 2840.8,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your chance to hit with all spells and attacks by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1630,
+          "classicSpellIds": [
+            20189,
+            20192,
+            20193
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/protection/Precision (talent 1630): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1630,
+          "name": "Precision",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/protection/r1c1",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Guardian's Favor",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown of your Blessing of Protection by 1 min and Increases the duration of your Blessing of Freedom by 3 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21632.933,
+        "timestamp": "06:00:32.933",
+        "frame_index": 1297976,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r2c2.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r2c2",
+        "cell": [
+          2,
+          2,
+          2
+        ],
+        "bbox": [
+          948,
+          179,
+          227,
+          114
+        ],
+        "sharpness": 3990.9,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Guardian's Favor",
+            "description": "Reduces the cooldown of your Blessing of Protection by 1 min and Increases the duration of your Blessing of Freedom by 3 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Guardian's Favor",
+            "description": "Reduces the cooldown of your Blessing of Protection by 1 min and Increases the duration of your Blessing of Freedom by 3 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Guardian's Favor",
+            "description": "Reduces the cooldown of your Blessing of Protection by 1 min and increases the duration of your Blessing of Freedom by 3 sec.",
+            "maxRank": 2,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13646.967,
+            "sharpness": 3988.1,
+            "cut_off": false
+          },
+          {
+            "segment_id": "02-paladin-14320",
+            "t": 14338.717,
+            "sharpness": 3521.4,
+            "cut_off": false
+          }
+        ],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Blessing of Protection by {0} min and Increases the duration of your Blessing of Freedom by {1} sec.",
+        "ranks": [
+          [
+            1,
+            3
+          ],
+          [
+            61,
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1425,
+          "classicSpellIds": [
+            20174,
+            20175
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/protection/Guardian's Favor (talent 1425): Classic 60/120, Forever rank 1 is 1: applied +60/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1425,
+          "name": "Guardian's Favor",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/protection/r1c3",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 1,
+      "col": 3,
+      "name": "Anticipation",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Defense Skill by 4.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 13650.133,
+        "timestamp": "03:47:30.133",
+        "frame_index": 819008,
+        "crop_path": "work/hovers/01-paladin-13640/protection-r2c4.png",
+        "icon_crop_path": "work/hovers/01-paladin-13640/protection-r2c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "01-paladin-13640",
+        "hover_id": "protection-r2c4",
+        "cell": [
+          2,
+          2,
+          4
+        ],
+        "bbox": [
+          1057,
+          211,
+          195,
+          81
+        ],
+        "sharpness": 3634.3,
+        "frames": 14,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Anticipation",
+            "description": "Increases your Defense Skill by 4.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Anticipation",
+            "description": "Increases your Defense Skill by 4.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Anticipation",
+            "description": "Increases your Defense Skill by 4.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "02-paladin-14320",
+            "t": 14331.45,
+            "sharpness": 3390.7,
+            "cut_off": false
+          },
+          {
+            "segment_id": "26-paladin-21630",
+            "t": 21697.8,
+            "sharpness": 3362.0,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 13640,
+        "frame_index": 818400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Defense Skill by {0}.",
+        "ranks": [
+          [
+            4
+          ],
+          [
+            8
+          ],
+          [
+            12
+          ],
+          [
+            16
+          ],
+          [
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1629,
+          "classicSpellIds": [
+            20096,
+            20097,
+            20098,
+            20099,
+            20100
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/protection/Anticipation (talent 1629): Classic 2/4/6/8/10 scaled by 2.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 1629,
+          "name": "Anticipation",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/protection/r2c0",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Improved Seal of Fury",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "When Seal of Fury's shield is fully absorbed, restore 38 Mana, increased by 15% per level the attacker is above you, up to 45%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21694.533,
+        "timestamp": "06:01:34.533",
+        "frame_index": 1301672,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r3c1.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r3c1",
+        "cell": [
+          2,
+          3,
+          1
+        ],
+        "bbox": [
+          894,
+          233,
+          220,
+          112
+        ],
+        "sharpness": 4165.9,
+        "frames": 9,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Seal of Fury",
+            "description": "When Seal of Fury's shield is fully absorbed, restore 38 Mana, increased by 15% per level the attacker is above you, up to 45%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Seal of Fury",
+            "description": "When Seal of Fury's shield is fully absorbed, restore 38 Mana, increased by 15% per level the attacker is above you, up to 45%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Seal of Fury",
+            "description": "When Seal of Fury's shield is fully absorbed, restore 38 Mana, increased by 15% per level the attacker is above you, up to 45%.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13640.333,
+            "sharpness": 3825.3,
+            "cut_off": false
+          },
+          {
+            "segment_id": "03-paladin-14430",
+            "t": 14435.0,
+            "sharpness": 4144.8,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When Seal of Fury's shield is fully absorbed, restore {0} Mana, increased by {1}% per level the attacker is above you, up to {2}%.",
+        "ranks": [
+          [
+            38,
+            15,
+            45
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/protection/r2c1",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Improved Righteous Fury",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "While Righteous Fury is active, all damage taken is reduced by 2%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21638.533,
+        "timestamp": "06:00:38.533",
+        "frame_index": 1298312,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r3c2.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r3c2",
+        "cell": [
+          2,
+          3,
+          2
+        ],
+        "bbox": [
+          947,
+          253,
+          198,
+          92
+        ],
+        "sharpness": 4474.0,
+        "frames": 10,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Righteous Fury",
+            "description": "While Righteous Fury is active, all damage taken is reduced by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Righteous Fury",
+            "description": "While Righteous Fury is active, all damage taken is reduced by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Righteous Fury",
+            "description": "While Righteous Fury is active, all damage taken is reduced by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13652.35,
+            "sharpness": 3998.8,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "While Righteous Fury is active, all damage taken is reduced by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            19
+          ],
+          [
+            36
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1501,
+          "classicSpellIds": [
+            20468,
+            20469,
+            20470
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/protection/Improved Righteous Fury (talent 1501): Classic 16/33/50, Forever rank 1 is 2: applied +17/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1501,
+          "name": "Improved Righteous Fury",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/protection/r2c2",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 2,
+      "col": 2,
+      "name": "Shield Specialization",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the amount of damage absorbed by your shield by 10%, and gives your blocks a 33% chance to restore 6% of your maximum Mana. May only occur once every 3 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21696.2,
+        "timestamp": "06:01:36.200",
+        "frame_index": 1301772,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r3c3.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r3c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r3c3",
+        "cell": [
+          2,
+          3,
+          3
+        ],
+        "bbox": [
+          1000,
+          223,
+          215,
+          121
+        ],
+        "sharpness": 4992.0,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Shield Specialization",
+            "description": "Increases the amount of damage absorbed by your shield by 10%, and gives your blocks a 33% chance to restore 6% of your maximum Mana. May only occur once every 3 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Shield Specialization",
+            "description": "Increases the amount of damage absorbed by your shield by 10%, and gives your blocks a 33% chance to restore 6% of your maximum Mana. May only occur once every 3 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Shield Specialization",
+            "description": "Increases the amount of damage absorbed by your shield by 10%, and gives your blocks a 33% chance to restore 6% of your maximum Mana. May only occur once every 3 sec.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13652.3,
+            "sharpness": 4907.7,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the amount of damage absorbed by your shield by {0}%, and gives your blocks a {1}% chance to restore {2}% of your maximum Mana. May only occur once every {3} sec.",
+        "ranks": [
+          [
+            10,
+            33,
+            6,
+            3
+          ],
+          [
+            10,
+            33,
+            6,
+            3
+          ],
+          [
+            10,
+            33,
+            6,
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match paladin/protection/Shield Specialization (talent 1424) has no alignable slots; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 1424,
+          "name": "Shield Specialization",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/protection/r2c3",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 2,
+      "col": 3,
+      "name": "Sacred Duty",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield. Divine Protection, and Templar's Bulwark spells by 30 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14335.05,
+        "timestamp": "03:58:55.050",
+        "frame_index": 860103,
+        "crop_path": "work/hovers/02-paladin-14320/protection-r3c4.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/protection-r3c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "protection-r3c4",
+        "cell": [
+          2,
+          3,
+          4
+        ],
+        "bbox": [
+          1054,
+          233,
+          228,
+          113
+        ],
+        "sharpness": 3986.1,
+        "frames": 55,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Sacred Duty",
+            "description": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield. Divine Protection, and Templar's Bulwark spells by 30 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Sacred Duty",
+            "description": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield. Divine Protection, and Templar's Bulwark spells by 30 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Sacred Duty",
+            "description": "Increases your total Stamina by 2% and reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by 30 sec.",
+            "maxRank": 2,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13651.033,
+            "sharpness": 3935.0,
+            "cut_off": false
+          },
+          {
+            "segment_id": "26-paladin-21630",
+            "t": 21635.067,
+            "sharpness": 3825.1,
+            "cut_off": false
+          }
+        ],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your total Stamina by {0}% and reduces the cooldown of your Divine Shield. Divine Protection, and Templar's Bulwark spells by {1} sec.",
+        "ranks": [
+          [
+            2,
+            30
+          ],
+          [
+            2,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (30 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/protection/r3c0",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Swift Judgement",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "1 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Finishes the remaining cooldown on your Judgement ability and reduces the Mana cost of your next Judgement by 100%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21688.933,
+        "timestamp": "06:01:28.933",
+        "frame_index": 1301336,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r4c1.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r4c1",
+        "cell": [
+          2,
+          4,
+          1
+        ],
+        "bbox": [
+          895,
+          286,
+          225,
+          114
+        ],
+        "sharpness": 4248.6,
+        "frames": 20,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Swift Judgement",
+            "description": "Finishes the remaining cooldown on your Judgement ability and reduces the Mana cost of your next Judgement by 100%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "1 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Swift Judgement",
+            "description": "Finishes the remaining cooldown on your Judgement ability and reduces the Mana cost of your next Judgement by 100%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "1 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Swift Judgement",
+            "description": "Finishes the remaining cooldown on your Judgement ability and reduces the Mana cost of your next Judgement by 100%.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Finishes the remaining cooldown on your Judgement ability and reduces the Mana cost of your next Judgement by {0}%.",
+        "ranks": [
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/protection/r3c1",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "One-Handed Weapon Specialization",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage you deal with one-handed melee weapons by 3%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21686.0,
+        "timestamp": "06:01:26.000",
+        "frame_index": 1301160,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r4c2.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r4c2",
+        "cell": [
+          2,
+          4,
+          2
+        ],
+        "bbox": [
+          947,
+          294,
+          212,
+          106
+        ],
+        "sharpness": 4383.6,
+        "frames": 3,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "One-Handed Weapon Specialization",
+            "description": "Increases the damage you deal with one-handed melee weapons by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "One-Handed Weapon Specialization",
+            "description": "Increases the damage you deal with one-handed melee weapons by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "One-Handed Weapon Specialization",
+            "description": "Increases the damage you deal with one-handed melee weapons by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage you deal with one-handed melee weapons by {0}%.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            5
+          ],
+          [
+            7
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1429,
+          "classicSpellIds": [
+            20196,
+            20197,
+            20198,
+            20199,
+            20200
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/protection/One-Handed Weapon Specialization (talent 1429): Classic has 5 ranks, step +2 applied over 3 ranks from 3.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 1429,
+          "name": "One-Handed Weapon Specialization",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/protection/r3c2",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Improved Hammer of Justice",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Decreases the cooldown of your Hammer of Justice spell by 5 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21644.933,
+        "timestamp": "06:00:44.933",
+        "frame_index": 1298696,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r4c3.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r4c3",
+        "cell": [
+          2,
+          4,
+          3
+        ],
+        "bbox": [
+          1001,
+          308,
+          200,
+          92
+        ],
+        "sharpness": 4582.4,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Hammer of Justice",
+            "description": "Decreases the cooldown of your Hammer of Justice spell by 5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Hammer of Justice",
+            "description": "Decreases the cooldown of your Hammer of Justice spell by 5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Hammer of Justice",
+            "description": "Decreases the cooldown of your Hammer of Justice spell by 5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "02-paladin-14320",
+            "t": 14335.967,
+            "sharpness": 4396.0,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Decreases the cooldown of your Hammer of Justice spell by {0} sec.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ],
+          [
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1521,
+          "classicSpellIds": [
+            20487,
+            20488,
+            20489
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/protection/Improved Hammer of Justice (talent 1521): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1521,
+          "name": "Improved Hammer of Justice",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/protection/r4c1",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Templar's Bulwark",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "110 Mana",
+        "Instant",
+        "5 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "When activated, this ability grants you an absorb shield equal to 100% of your maximum health for 8 sec. Applies Forbearance for 1 min. Cannot be cast while Forbearance is active.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21680.867,
+        "timestamp": "06:01:20.867",
+        "frame_index": 1300852,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r5c2.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r5c2",
+        "cell": [
+          2,
+          5,
+          2
+        ],
+        "bbox": [
+          948,
+          317,
+          227,
+          137
+        ],
+        "sharpness": 4652.5,
+        "frames": 23,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Templar's Bulwark",
+            "description": "When activated, this ability grants you an absorb shield equal to 100% of your maximum health for 8 sec. Applies Forbearance for 1 min. Cannot be cast while Forbearance is active.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "110 Mana",
+              "Instant",
+              "5 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Templar's Bulwark",
+            "description": "When activated, this ability grants you an absorb shield equal to 100% of your maximum health for 8 sec. Applies Forbearance for 1 min. Cannot be cast while Forbearance is active.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "110 Mana",
+              "Instant",
+              "5 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Templar's Bulwark",
+            "description": "When activated, this ability grants you an absorb shield equal to 100% of your maximum health for 8 sec. Applies Forbearance for 1 min. Cannot be cast while Forbearance is active.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When activated, this ability grants you an absorb shield equal to {0}% of your maximum health for {1} sec. Applies Forbearance for {2} min. Cannot be cast while Forbearance is active.",
+        "ranks": [
+          [
+            100,
+            8,
+            1
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/protection/r4c2",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Reckoning",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives you a 8% chance to gain an extra attack after Blocking a melee attack and a 20% chance to gain an extra attack after being the victim of a non-periodic critical strike.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21684.933,
+        "timestamp": "06:01:24.933",
+        "frame_index": 1301096,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r5c3.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r5c3",
+        "cell": [
+          2,
+          5,
+          3
+        ],
+        "bbox": [
+          1002,
+          331,
+          227,
+          123
+        ],
+        "sharpness": 4128.1,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Reckoning",
+            "description": "Gives you a 8% chance to gain an extra attack after Blocking a melee attack and a 20% chance to gain an extra attack after being the victim of a non-periodic critical strike.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Reckoning",
+            "description": "Gives you a 8% chance to gain an extra attack after Blocking a melee attack and a 20% chance to gain an extra attack after being the victim of a non-periodic critical strike.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Reckoning",
+            "description": "Gives you a 8% chance to gain an extra attack after Blocking a melee attack and a 20% chance to gain an extra attack after being the victim of a non-periodic critical strike.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13678.283,
+            "sharpness": 4124.6,
+            "cut_off": false
+          },
+          {
+            "segment_id": "02-paladin-14320",
+            "t": 14336.0,
+            "sharpness": 4023.7,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives you a {0}% chance to gain an extra attack after Blocking a melee attack and a {1}% chance to gain an extra attack after being the victim of a non-periodic critical strike.",
+        "ranks": [
+          [
+            8,
+            20
+          ],
+          [
+            16,
+            40
+          ],
+          [
+            24,
+            60
+          ],
+          [
+            32,
+            80
+          ],
+          [
+            40,
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match paladin/protection/Reckoning (talent 1426) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 1426,
+          "name": "Reckoning",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/protection/r5c2",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Iron Creed",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the threat generated by your Holy Strike ability 5%. While Righteous Fury is active, Holy Strike also reduces your damage taken by 2% for 6 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21676.733,
+        "timestamp": "06:01:16.733",
+        "frame_index": 1300604,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r6c3.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r6c3",
+        "cell": [
+          2,
+          6,
+          3
+        ],
+        "bbox": [
+          1002,
+          395,
+          225,
+          113
+        ],
+        "sharpness": 4184.6,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Iron Creed",
+            "description": "Increases the threat generated by your Holy Strike ability 5%. While Righteous Fury is active, Holy Strike also reduces your damage taken by 2% for 6 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Iron Creed",
+            "description": "Increases the threat generated by your Holy Strike ability 5%. While Righteous Fury is active, Holy Strike also reduces your damage taken by 2% for 6 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Iron Creed",
+            "description": "Increases the threat generated by your Holy Strike ability 5%. While Righteous Fury is active, Holy Strike also reduces your damage taken by 2% for 6 sec.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13676.0,
+            "sharpness": 4183.1,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the threat generated by your Holy Strike ability {0}%. While Righteous Fury is active, Holy Strike also reduces your damage taken by {1}% for {2} sec.",
+        "ranks": [
+          [
+            5,
+            2,
+            6
+          ],
+          [
+            5,
+            2,
+            6
+          ],
+          [
+            5,
+            2,
+            6
+          ],
+          [
+            5,
+            2,
+            6
+          ],
+          [
+            5,
+            2,
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match hunter/beast-mastery/Unleashed Fury (talent 1396) has no alignable slots; ranks 2..5 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 1396,
+          "name": "Unleashed Fury",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 5,
+          "match": "description",
+          "similarity": 0.86
+        }
+      }
+    },
+    {
+      "id": "paladin/protection/r6c1",
+      "class": "paladin",
+      "tree": "Protection",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Holy Shield",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "150 Mana",
+        "Instant",
+        "10 sec cooldown"
+      ],
+      "requires": [
+        "Shields"
+      ],
+      "description_rank1": "Increases chance to block by 20% for 10 sec, and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21682.133,
+        "timestamp": "06:01:22.133",
+        "frame_index": 1300928,
+        "crop_path": "work/hovers/26-paladin-21630/protection-r7c2.png",
+        "icon_crop_path": "work/hovers/26-paladin-21630/protection-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "26-paladin-21630",
+        "hover_id": "protection-r7c2",
+        "cell": [
+          2,
+          7,
+          2
+        ],
+        "bbox": [
+          948,
+          404,
+          227,
+          158
+        ],
+        "sharpness": 4516.2,
+        "frames": 21,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Holy Shield",
+            "description": "Increases chance to block by 20% for 10 sec, and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [
+              "Shields"
+            ],
+            "extra_lines": [
+              "150 Mana",
+              "Instant",
+              "10 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Holy Shield",
+            "description": "Increases chance to block by 20% for 10 sec, and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [
+              "Shields"
+            ],
+            "extra_lines": [
+              "150 Mana",
+              "Instant",
+              "10 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Holy Shield",
+            "description": "Increases chance to block by 20% for 10 sec. and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13672.017,
+            "sharpness": 4409.4,
+            "cut_off": false
+          },
+          {
+            "segment_id": "02-paladin-14320",
+            "t": 14336.05,
+            "sharpness": 4277.5,
+            "cut_off": false
+          }
+        ],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21630,
+        "frame_index": 1297800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases chance to block by {0}% for {1} sec, and deals {2} Holy damage for each attack blocked while active. Damage caused by Holy Shield causes {3}% additional threat. Each block expends a charge. {4} charges.",
+        "ranks": [
+          [
+            20,
+            10,
+            110,
+            20,
+            4
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/retribution/r0c1",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Deflection",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Parry chance by 1%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 13658.65,
+        "timestamp": "03:47:38.650",
+        "frame_index": 819519,
+        "crop_path": "work/hovers/01-paladin-13640/retribution-r1c2.png",
+        "icon_crop_path": "work/hovers/01-paladin-13640/retribution-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "01-paladin-13640",
+        "hover_id": "retribution-r1c2",
+        "cell": [
+          3,
+          1,
+          2
+        ],
+        "bbox": [
+          1312,
+          132,
+          206,
+          106
+        ],
+        "sharpness": 2428.0,
+        "frames": 23,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Deflection",
+            "description": "Increases your Parry chance by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Deflection",
+            "description": "Increases your Parry chance by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Deflection",
+            "description": "Increases your Parry chance by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 13640,
+        "frame_index": 818400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Parry chance by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1403,
+          "classicSpellIds": [
+            20060,
+            20061,
+            20062,
+            20063,
+            20064
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/retribution/Deflection (talent 1403): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1403,
+          "name": "Deflection",
+          "class": "paladin",
+          "tree": "retribution",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/retribution/r2c0",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Vindication",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your damaging melee attacks a chance to reduce the target's Attack Power by 42, and increase your Attack Power by 1% for 30 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14322.05,
+        "timestamp": "03:58:42.050",
+        "frame_index": 859323,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r3c1.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r3c1",
+        "cell": [
+          3,
+          3,
+          1
+        ],
+        "bbox": [
+          1259,
+          233,
+          224,
+          113
+        ],
+        "sharpness": 3817.3,
+        "frames": 8,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Vindication",
+            "description": "Gives your damaging melee attacks a chance to reduce the target's Attack Power by 42, and increase your Attack Power by 1% for 30 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Vindication",
+            "description": "Gives your damaging melee attacks a chance to reduce the target's Attack Power by 42, and increase your Attack Power by 1% for 30 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Vindication",
+            "description": "Gives your damaging melee attacks a chance to reduce the target's Attack Power by 42, and increase your Attack Power by 1% for 30 sec.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your damaging melee attacks a chance to reduce the target's Attack Power by {0}, and increase your Attack Power by {1}% for {2} sec.",
+        "ranks": [
+          [
+            42,
+            1,
+            30
+          ],
+          [
+            42,
+            1,
+            30
+          ],
+          [
+            42,
+            1,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match paladin/retribution/Vindication (talent 1633) has no alignable slots; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 1633,
+          "name": "Vindication",
+          "class": "paladin",
+          "tree": "retribution",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/retribution/r2c1",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Sanctified Judgement",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Judgement ability a 33% chance to return 20% of the Mana cost of the judged seal.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14321.0,
+        "timestamp": "03:58:41.000",
+        "frame_index": 859260,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r3c2.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r3c2",
+        "cell": [
+          3,
+          3,
+          2
+        ],
+        "bbox": [
+          1312,
+          244,
+          227,
+          102
+        ],
+        "sharpness": 4134.4,
+        "frames": 69,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Sanctified Judgement",
+            "description": "Gives your Judgement ability a 33% chance to return 20% of the Mana cost of the judged seal.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Sanctified Judgement",
+            "description": "Gives your Judgement ability a 33% chance to return 20% of the Mana cost of the judged seal.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Sanctified Judgement",
+            "description": "Gives your Judgement ability a 33% chance to return 20% of the Mana cost of the judged seal.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Judgement ability a {0}% chance to return {1}% of the Mana cost of the judged seal.",
+        "ranks": [
+          [
+            33,
+            20
+          ],
+          [
+            66,
+            40
+          ],
+          [
+            99,
+            60
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "paladin/retribution/r2c2",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 2,
+      "col": 2,
+      "name": "Seal of Command",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "65 Mana",
+        "Instant"
+      ],
+      "requires": [],
+      "description_rank1": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or Incapacitated.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21748.333,
+        "timestamp": "06:02:28.333",
+        "frame_index": 1304900,
+        "crop_path": "work/hovers/27-paladin-21740/retribution-r3c3.png",
+        "icon_crop_path": "work/hovers/27-paladin-21740/retribution-r3c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "27-paladin-21740",
+        "hover_id": "retribution-r3c3",
+        "cell": [
+          3,
+          3,
+          3
+        ],
+        "bbox": [
+          1369,
+          158,
+          226,
+          188
+        ],
+        "sharpness": 4521.7,
+        "frames": 8,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Seal of Command",
+            "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or Incapacitated.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "65 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Seal of Command",
+            "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or Incapacitated.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "65 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Seal of Command",
+            "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or incapacitated.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "02-paladin-14320",
+            "t": 14320.05,
+            "sharpness": 4460.4,
+            "cut_off": false
+          }
+        ],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21740,
+        "frame_index": 1304400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives the Paladin a chance to deal additional Holy damage equal to {0}% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts {1} sec. Unleashing this Seal's energy will judge an enemy, instantly causing {2} to {3} Holy damage, {4} to {5} if the target is stunned or Incapacitated.",
+        "ranks": [
+          [
+            70,
+            30,
+            68,
+            73,
+            137,
+            146
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/retribution/r2c3",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 2,
+      "col": 3,
+      "name": "Pursuit of Justice",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed Increasing effects.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14328.383,
+        "timestamp": "03:58:48.383",
+        "frame_index": 859703,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r3c4.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r3c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r3c4",
+        "cell": [
+          3,
+          3,
+          4
+        ],
+        "bbox": [
+          1421,
+          232,
+          228,
+          115
+        ],
+        "sharpness": 3884.9,
+        "frames": 43,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Pursuit of Justice",
+            "description": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed Increasing effects.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Pursuit of Justice",
+            "description": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed Increasing effects.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Pursuit of Justice",
+            "description": "Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed increasing effects.",
+            "maxRank": 2,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases movement speed and mounted movement speed by {0}%. This does not stack with other movement speed Increasing effects.",
+        "ranks": [
+          [
+            8
+          ],
+          [
+            16
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1634,
+          "classicSpellIds": [
+            26022,
+            26023
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/retribution/Pursuit of Justice (talent 1634): Classic 4/8 scaled by 2.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 1634,
+          "name": "Pursuit of Justice",
+          "class": "paladin",
+          "tree": "retribution",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/retribution/r3c0",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Eye for an Eye",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "All critical strikes against you cause 5% of the damage taken to the attacker as well. The damage caused by Eye for an Eye will not exceed 50% of the Paladin's total health.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14322.383,
+        "timestamp": "03:58:42.383",
+        "frame_index": 859343,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r4c1.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r4c1",
+        "cell": [
+          3,
+          4,
+          1
+        ],
+        "bbox": [
+          1259,
+          277,
+          226,
+          123
+        ],
+        "sharpness": 3995.0,
+        "frames": 37,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Eye for an Eye",
+            "description": "All critical strikes against you cause 5% of the damage taken to the attacker as well. The damage caused by Eye for an Eye will not exceed 50% of the Paladin's total health.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Eye for an Eye",
+            "description": "All critical strikes against you cause 5% of the damage taken to the attacker as well. The damage caused by Eye for an Eye will not exceed 50% of the Paladin's total health.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Eye for an Eye",
+            "description": "All critical strikes against you cause 5% of the damage taken to the attacker as well. The damage caused by Eye for an Eye will not exceed 50% of the Paladin's total health.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "All critical strikes against you cause {0}% of the damage taken to the attacker as well. The damage caused by Eye for an Eye will not exceed 50% of the Paladin's total health.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1632,
+          "classicSpellIds": [
+            9799,
+            25988
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/retribution/Eye for an Eye (talent 1632): Classic 15/30, Forever rank 1 is 5: applied +15/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1632,
+          "name": "Eye for an Eye",
+          "class": "paladin",
+          "tree": "retribution",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/retribution/r3c2",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Sacred Arbiter",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage of your Holy Strike ability by 10% and causes it to refresh all Judgement effects on the target.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14326.583,
+        "timestamp": "03:58:46.583",
+        "frame_index": 859595,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r4c3.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r4c3",
+        "cell": [
+          3,
+          4,
+          3
+        ],
+        "bbox": [
+          1369,
+          287,
+          211,
+          113
+        ],
+        "sharpness": 3274.2,
+        "frames": 1,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Sacred Arbiter",
+            "description": "Increases the damage of your Holy Strike ability by 10% and causes it to refresh all Judgement effects on the target.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Sacred Arbiter",
+            "description": "Increases the damage of your Holy Strike ability by 10% and causes it to refresh all Judgement effects on the target.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Sacred Arbiter",
+            "description": "Increases the damage of your Holy Strike ability by 10% and causes it to refresh all Judgement effects on the target.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage of your Holy Strike ability by {0}% and causes it to refresh all Judgement effects on the target.",
+        "ranks": [
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/retribution/r3c3",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 3,
+      "col": 3,
+      "name": "Crusade",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases all damage dealt by 1%. Increased by an additional 1% against Demon and Undead targets.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14329.45,
+        "timestamp": "03:58:49.450",
+        "frame_index": 859767,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r4c4.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r4c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r4c4",
+        "cell": [
+          3,
+          4,
+          4
+        ],
+        "bbox": [
+          1421,
+          297,
+          220,
+          105
+        ],
+        "sharpness": 3535.8,
+        "frames": 55,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Crusade",
+            "description": "Increases all damage dealt by 1%. Increased by an additional 1% against Demon and Undead targets.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Crusade",
+            "description": "Increases all damage dealt by 1%. Increased by an additional 1% against Demon and Undead targets.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Crusade",
+            "description": "Increases all damage dealt by 1%. Increased by an additional 1% against Demon and Undead targets.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases all damage dealt by {0}%. Increased by an additional {1}% against Demon and Undead targets.",
+        "ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "paladin/retribution/r4c0",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 4,
+      "col": 0,
+      "name": "Two-Handed Weapon Specialization",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage you deal with two-handed melee weapons by 3%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14323.533,
+        "timestamp": "03:58:43.533",
+        "frame_index": 859412,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r5c1.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r5c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r5c1",
+        "cell": [
+          3,
+          5,
+          1
+        ],
+        "bbox": [
+          1261,
+          350,
+          209,
+          104
+        ],
+        "sharpness": 4328.2,
+        "frames": 49,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Two-Handed Weapon Specialization",
+            "description": "Increases the damage you deal with two-handed melee weapons by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Two-Handed Weapon Specialization",
+            "description": "Increases the damage you deal with two-handed melee weapons by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Two-Handed Weapon Specialization",
+            "description": "Increases the damage you deal with two-handed melee weapons by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage you deal with two-handed melee weapons by {0}%.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1410,
+          "classicSpellIds": [
+            20111,
+            20112,
+            20113
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/retribution/Two-Handed Weapon Specialization (talent 1410): Classic 2/4/6 scaled by 1.5.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 1410,
+          "name": "Two-Handed Weapon Specialization",
+          "class": "paladin",
+          "tree": "retribution",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/retribution/r4c1",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Vengeance",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Physical and Holy damage dealt by 1% for 30 sec after landing a critical strike. Stacks up to 5 times.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14324.65,
+        "timestamp": "03:58:44.650",
+        "frame_index": 859479,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r5c2.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r5c2",
+        "cell": [
+          3,
+          5,
+          2
+        ],
+        "bbox": [
+          1312,
+          341,
+          224,
+          113
+        ],
+        "sharpness": 3469.6,
+        "frames": 57,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Vengeance",
+            "description": "Increases your Physical and Holy damage dealt by 1% for 30 sec after landing a critical strike. Stacks up to 5 times.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Vengeance",
+            "description": "Increases your Physical and Holy damage dealt by 1% for 30 sec after landing a critical strike. Stacks up to 5 times.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Vengeance",
+            "description": "Increases your Physical and Holy damage dealt by 1% for 30 sec after landing a critical strike. Stacks up to 5 times.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Physical and Holy damage dealt by {0}% for {1} sec after landing a critical strike. Stacks up to {2} times.",
+        "ranks": [
+          [
+            1,
+            30,
+            5
+          ],
+          [
+            1,
+            30,
+            5
+          ],
+          [
+            1,
+            30,
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match paladin/retribution/Vengeance (talent 1402) has no alignable slots; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 1402,
+          "name": "Vengeance",
+          "class": "paladin",
+          "tree": "retribution",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "paladin/retribution/r4c2",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Repentance",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "60 Mana",
+        "Instant",
+        "20 yd range",
+        "1 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Puts the enemy target in a state of meditation, incapacitating them for up to 6 sec. Any damage caused will awaken the target. Only works against Humanoids.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14330.167,
+        "timestamp": "03:58:50.167",
+        "frame_index": 859810,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r5c3.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r5c3",
+        "cell": [
+          3,
+          5,
+          3
+        ],
+        "bbox": [
+          1369,
+          318,
+          226,
+          136
+        ],
+        "sharpness": 4476.6,
+        "frames": 18,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Repentance",
+            "description": "Puts the enemy target in a state of meditation, incapacitating them for up to 6 sec. Any damage caused will awaken the target. Only works against Humanoids.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "60 Mana",
+              "Instant",
+              "20 yd range",
+              "1 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Repentance",
+            "description": "Puts the enemy target in a state of meditation, incapacitating them for up to 6 sec. Any damage caused will awaken the target. Only works against Humanoids.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "60 Mana",
+              "Instant",
+              "20 yd range",
+              "1 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Repentance",
+            "description": "Puts the enemy target in a state of meditation, incapacitating them for up to 6 sec. Any damage caused will awaken the target. Only works against Humanoids.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Puts the enemy target in a state of meditation, incapacitating them for up to {0} sec. Any damage caused will awaken the target. Only works against Humanoids.",
+        "ranks": [
+          [
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/retribution/r5c1",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 5,
+      "col": 1,
+      "name": "Champion of the Light",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your spell damage and healing by up to 33% of your Intellect.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14325.083,
+        "timestamp": "03:58:45.083",
+        "frame_index": 859505,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r6c2.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r6c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r6c2",
+        "cell": [
+          3,
+          6,
+          2
+        ],
+        "bbox": [
+          1312,
+          416,
+          221,
+          92
+        ],
+        "sharpness": 3902.1,
+        "frames": 56,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Champion of the Light",
+            "description": "Increases your spell damage and healing by up to 33% of your Intellect.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Champion of the Light",
+            "description": "Increases your spell damage and healing by up to 33% of your Intellect.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Champion of the Light",
+            "description": "Increases your spell damage and healing by up to 33% of your Intellect.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your spell damage and healing by up to {0}% of your Intellect.",
+        "ranks": [
+          [
+            33
+          ],
+          [
+            66
+          ],
+          [
+            99
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "paladin/retribution/r5c2",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Instrument of Law",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cast time of your Hammer of Wrath by 0.5 sec, and reduces all threat you generate by 10% while Righteous Fury is not active.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14331.0,
+        "timestamp": "03:58:51.000",
+        "frame_index": 859860,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r6c3.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r6c3",
+        "cell": [
+          3,
+          6,
+          3
+        ],
+        "bbox": [
+          1369,
+          395,
+          225,
+          113
+        ],
+        "sharpness": 3931.2,
+        "frames": 21,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Instrument of Law",
+            "description": "Reduces the cast time of your Hammer of Wrath by 0.5 sec, and reduces all threat you generate by 10% while Righteous Fury is not active.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Instrument of Law",
+            "description": "Reduces the cast time of your Hammer of Wrath by 0.5 sec, and reduces all threat you generate by 10% while Righteous Fury is not active.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Instrument of Law",
+            "description": "Reduces the cast time of your Hammer of Wrath by 0.5 sec, and reduces all threat you generate by 10% while Righteous Fury is not active.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13658.317,
+            "sharpness": 3778.8,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cast time of your Hammer of Wrath by {0} sec, and reduces all threat you generate by {1}% while Righteous Fury is not active.",
+        "ranks": [
+          [
+            0.5,
+            10
+          ],
+          [
+            0.5,
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (0.5 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "paladin/retribution/r6c1",
+      "class": "paladin",
+      "tree": "Retribution",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Twist of Light",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [
+        "Level 40"
+      ],
+      "description_rank1": "When you replace your Seal of Command, Seal of Righteousness, Seal of Fury, or Seal of Justice with a different Seal, gain an Echo. Your next melee attack applies the replaced Seal's effects, consuming the Echo.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14326.467,
+        "timestamp": "03:58:46.467",
+        "frame_index": 859588,
+        "crop_path": "work/hovers/02-paladin-14320/retribution-r7c2.png",
+        "icon_crop_path": "work/hovers/02-paladin-14320/retribution-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "02-paladin-14320",
+        "hover_id": "retribution-r7c2",
+        "cell": [
+          3,
+          7,
+          2
+        ],
+        "bbox": [
+          1313,
+          416,
+          227,
+          146
+        ],
+        "sharpness": 3996.0,
+        "frames": 30,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Twist of Light",
+            "description": "When you replace your Seal of Command, Seal of Righteousness, Seal of Fury, or Seal of Justice with a different Seal, gain an Echo. Your next melee attack applies the replaced Seal's effects, consuming the Echo.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [
+              "Level 40"
+            ],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Twist of Light",
+            "description": "When you replace your Seal of Command, Seal of Righteousness, Seal of Fury, or Seal of Justice with a different Seal, gain an Echo. Your next melee attack applies the replaced Seal's effects, consuming the Echo.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [
+              "Level 40"
+            ],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Twist of Light",
+            "description": "When you replace your Seal of Command, Seal of Righteousness, Seal of Fury, or Seal of Justice with a different Seal, gain an Echo. Your next melee attack applies the replaced Seal's effects, consuming the Echo.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "01-paladin-13640",
+            "t": 13658.15,
+            "sharpness": 3744.2,
+            "cut_off": false
+          },
+          {
+            "segment_id": "27-paladin-21740",
+            "t": 21755.267,
+            "sharpness": 1875.2,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 14320,
+        "frame_index": 859200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When you replace your Seal of Command, Seal of Righteousness, Seal of Fury, or Seal of Justice with a different Seal, gain an Echo. Your next melee attack applies the replaced Seal's effects, consuming the Echo.",
+        "ranks": [
+          []
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    }
+  ]
+}

@@ -111,3 +111,13 @@ def test_find_tooltip_shape_constraints():
     bbox, small = ui.find_tooltip(mask)
     assert bbox == (1000, 300, 225, 120)
     assert (900, 500, 30, 20) in small
+
+
+def test_darkness_separates_tooltips_from_dimmed_grid():
+    box = np.full((100, 200, 3), 8, np.uint8)
+    box[20:30, 10:150] = 230                     # a line of text
+    assert ui.darkness(box) > 0.9
+    assert ui.looks_like_tooltip(box)
+    dim = np.full((100, 200, 3), 90, np.uint8)   # dimmed icons, no black box
+    assert ui.darkness(dim) == 0.0
+    assert not ui.looks_like_tooltip(dim)

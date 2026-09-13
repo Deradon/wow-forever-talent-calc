@@ -58,6 +58,15 @@ def observe(frame: np.ndarray, bg: np.ndarray, cells: list[ui.Cell], t: float, s
     if bbox is None:
         return None, {"rejected": rejected}
     x, y, w, h = bbox
+    m = CROP_MARGIN
+    x0, y0 = max(0, x - m), max(0, y - m)
+    x1, y1 = min(ui.FRAME_W, x + w + m), min(ui.FRAME_H, y + h + m)
+    crop = frame[y0:y1, x0:x1].copy()
+    dark = ui.darkness(crop)
+    if dark < ui.TOOLTIP_MIN_DARK:
+        # a dimmed part of the grid (search box, spellbook), not a black tooltip box
+        rejected.append(bbox)
+        return None, {"rejected": rejected, "not_dark": round(dark, 2)}
     cell, dist, method = ui.cell_for_tooltip(cells, bbox)
     cursor_cell = None
     for sx, sy, sw, sh in small:
@@ -65,10 +74,9 @@ def observe(frame: np.ndarray, bg: np.ndarray, cells: list[ui.Cell], t: float, s
         if c is not None and (cell is None or (c.tree, c.row, c.col) != (cell.tree, cell.row, cell.col)):
             cursor_cell = c
             break
-    m = CROP_MARGIN
-    x0, y0 = max(0, x - m), max(0, y - m)
-    x1, y1 = min(ui.FRAME_W, x + w + m), min(ui.FRAME_H, y + h + m)
-    crop = frame[y0:y1, x0:x1].copy()
+    if method == "column" and cursor_cell is not None:
+        # the corner rule failed and the cursor sits on another cell: do not guess
+        cell, method = None, "column-vs-cursor"
     obs = ui.Observation(
         t=t, sq=sq, offset=off, bbox=(x0, y0, x1 - x0, y1 - y0),
         hash=ui.dhash(crop), sharpness=ui.sharpness(crop),
@@ -76,7 +84,8 @@ def observe(frame: np.ndarray, bg: np.ndarray, cells: list[ui.Cell], t: float, s
     )
     info = {"dist": round(dist, 1), "method": method,
             "cursor_cell": [cursor_cell.tree, cursor_cell.row, cursor_cell.col] if cursor_cell else None,
-            "cut_off": x1 >= ui.WORK_ROI[2] - 1 or y1 >= ui.WORK_ROI[3] - 1}
+            "darkness": round(dark, 2),
+            "cut_off": x1 >= ui.WORK_ROI[2] - 1 or y1 >= ui.WORK_ROI[3] - 1 or w >= ui.TOOLTIP_W_RANGE[1] - 3}
     return obs, info
 
 

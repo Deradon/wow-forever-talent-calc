@@ -47,6 +47,8 @@ MASKS = [
 
 TOOLTIP_W_RANGE = (120, 270)            # up to ~228 px wide, narrower for short text (177 seen), height by content
 TOOLTIP_H_MIN = 50
+TOOLTIP_MIN_DARK = 0.65                 # fraction of near-black pixels inside a real tooltip (>= 0.69 measured; junk <= 0.59)
+TOOLTIP_DARK_LEVEL = 40
 
 
 @dataclass
@@ -334,6 +336,21 @@ def find_tooltip(mask: np.ndarray, w_range: tuple[int, int] = TOOLTIP_W_RANGE,
         if bw * bh > best_area:
             best, best_area = bb, bw * bh
     return best, small
+
+
+def darkness(crop: np.ndarray, border: int = 4, level: int = TOOLTIP_DARK_LEVEL) -> float:
+    """Fraction of near-black pixels inside ``crop`` (border stripped).
+
+    A tooltip is a near-black box with light text; a diff blob that is
+    really a dimmed part of the grid (search box, spellbook) is not.
+    """
+    g = crop if crop.ndim == 2 else cv2.cvtColor(crop, cv2.COLOR_BGR2GRAY)
+    inner = g[border:-border, border:-border] if min(g.shape[:2]) > 2 * border + 1 else g
+    return float((inner < level).mean()) if inner.size else 0.0
+
+
+def looks_like_tooltip(crop: np.ndarray, min_dark: float = TOOLTIP_MIN_DARK) -> bool:
+    return darkness(crop) >= min_dark
 
 
 # --------------------------------------------------------------------------- hashing / grouping

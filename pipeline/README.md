@@ -130,3 +130,72 @@ and exits 1. Crops are copied from the candidates' `source.crop_path` to
 Tests: `tests/test_ranks.py` (real Classic talents as fixtures) and
 `tests/test_export.py` (synthetic `tests/fixtures/warrior.candidates.json`,
 end to end through the stage CLI in a temporary repo root).
+
+<!-- stage 5 (VLM read) and the per-class wrapper; keep this section self-contained -->
+## Stage 5: read the crops, and `run_class.sh`
+
+Shared code: `src/wowtalents/reader.py` (prompt, JSON schema, crop
+preparation, confidence, record assembly, on-disk reading cache) and the
+stage `stages/05_read.py`. Needs llama-server (`scripts/llama-server.sh 4b`,
+default `http://127.0.0.1:8089`, override with `--server`).
+
+```bash
+uv run stages/05_read.py one ../data/review/paladin/holy/r1c1.png   # both passes of one crop
+uv run stages/05_read.py run paladin --dry-run                       # merged hovers, no VLM calls
+uv run stages/05_read.py run paladin                                 # -> data/extracted/paladin.candidates.json
+uv run stages/05_read.py run paladin --segments 1,25 --limit 5 --no-copy --out /path/x.json
+```
+
+What `run` does: merges every `work/hovers/<segment>.json` of the class on
+(page, tree, row, col), keeping the crop that is not cut off and then the
+sharpest; takes the icon grid as the consensus of all calibrations (a cell
+must be present in more than half of the calibrations with >= 40 cells, so a
+spellbook or search-box median cannot add cells); reads the header strip and
+the three tree strips of every segment once (display names from the
+footage, tab state cross-checked against the saturation test); sends every
+crop twice (3x and 2x cubic upscale, temperature 0, `response_format:
+json_schema`) and sets `source.confidence` to 1.0 when both passes agree on
+every field, 0.7 when name and rank agree, else 0.3; caps the confidence at
+0.3 when one name is read at two cells of a tree (cell-attribution error);
+writes 0-based `row`/`col` (what `export.py` expects; hover files are
+1-based, the original cell is kept in `source.cell`) and copies crops to
+`data/review/<class>/<tree>/r<row>c<col>.png` (1-based provisional ids, plus
+`_header.png` per tree). Readings are cached in `work/read/cache/` by
+content hash + prompt, so a re-run only pays for new crops. Output is an
+object: `candidates` (brief section 1 shape), `segments`, `trees`,
+`missing_cells` (with the reason: never hovered / only a flash shorter than
+`--min-frames`), `stats`.
+
+Reader contract (schema in `reader.TOOLTIP_SCHEMA`): `name`,
+`rank_current`, `rank_max`, `kind` (`"Passive"` or null), `extra_lines`
+(cost / range / cast lines), `requires` (only lines starting with
+"Requires"), `description` (gold paragraph only), `footer` ("Click to
+learn"), `cut_off` (text truncated or touching the border). `clean_reading`
+re-files a misplaced Passive / Requires / Click-to-learn line and never
+invents text. Stage 4 now rejects diff blobs whose interior is less than 65 %
+near-black (`ui.darkness`; real tooltips measure >= 0.69, dimmed-grid junk
+<= 0.59), refuses to guess a cell when the column fallback disagrees with the
+cursor, and flags boxes at the width ceiling as cut off.
+
+Second opinion (optional, `scripts/second_opinion.py <class>`): transcribes
+every crop of the candidates file with the local `codex` CLI (about 5 s per
+crop, cached in `work/read/codex/`), appends the reading to
+`source.readings` and lowers `source.confidence` to 0.7 with a note where
+name, `rank_max` or description differ from the Qwen reading, so the record
+lands in the review queue (validator `NEEDS-REVIEW` below 0.8). On Paladin
+this caught the six one-character defects that two Qwen passes agreed on
+(mid-sentence "In..." words capitalised, a dropped `%`).
+
+Whole class in one go (stops at the first error, one fragment request at a
+time by construction):
+
+```bash
+scripts/run_class.sh paladin                # 03+04 per segment, then 05, 06 --force, 08 extract --update-encoding, validate
+scripts/run_class.sh paladin --skip-video   # hovers exist: 05 -> 08
+scripts/run_class.sh paladin --skip-read    # candidates exist: 06 -> 08
+scripts/run_class.sh paladin --second-opinion   # 05, then scripts/second_opinion.py, then 06 -> 08
+```
+
+Tests: `tests/test_reader.py` (confidence levels, re-filing of misplaced
+lines, record shape and 0-based indices, cross-segment merge, consensus
+grid, cache keys) and `tests/test_ui.py::test_darkness_*`.
