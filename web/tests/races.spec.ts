@@ -64,7 +64,7 @@ test('a race page shows its traits, their verdicts and the source once', async (
   await expect(page.getByTestId('trait-stoneform').locator('img.races-trait-icon')).toBeVisible()
 
   // The provenance is stated once for the page, not on every card.
-  await expect(page.getByTestId('race-trust')).toContainText('Read from the stream')
+  await expect(page.getByTestId('race-trust')).toContainText('Read from BlizzCon 2026 footage')
   await expect(page.getByTestId('race-trust')).toContainText('not yet reviewed')
   await expect(page.locator('.races-trust-line')).toHaveCount(0)
 
