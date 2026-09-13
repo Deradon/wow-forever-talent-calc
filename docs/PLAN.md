@@ -157,6 +157,14 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-13 ~06:00: owner insisted every talent was hovered; two
+  independent investigations (tooltip-detector forensics, cursor tracking)
+  recovered 34 of the 36 gaps and found the causes: dark-panel tooltips under
+  the pixel-area gate, ghost tooltips baked into the median, merged blobs.
+  Detector fixed generally. 468 of 470 live. Remaining: mage Fire r1c3,
+  paladin Holy r2c1 (never cached as fragments; recovering from the merged
+  mkv) and the Hot Streak / Master of Elements id collision in mage Fire.
+
 - 2026-09-13 ~03:45: Phase 2 done. All nine classes live, 434 of 470
   talents, unreviewed; 73 flagged (orange badge) after a Codex second
   opinion on every crop; 36 cells never hovered on stream (see
