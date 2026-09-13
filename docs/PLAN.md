@@ -157,6 +157,13 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-13 ~15:00: prerequisites (67 arrows from tree backgrounds),
+  proportional rank scaling (63 talents corrected, e.g. Meditation 17/34/51),
+  and clean icons for 397 talents matched against a 6,631-icon reference set
+  (72 keep crops, 24 of them likely new Forever icons) are live. Pipeline 171
+  tests, web 81 tests. Review queue: 79 talents plus 21 low-confidence arrows
+  and the doubtful rank cases in `docs/handover/2026-09-13-rank-scaling.md`.
+
 - 2026-09-13 ~06:40: 469 of 470 talents live. Healing Light (paladin) and
   Hot Streak (mage) recovered from the merged mkv; mage Fire r1c3 proven
   absent from the footage (streamer skipped it). Master of Elements id
