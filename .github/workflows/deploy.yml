@@ -18,6 +18,7 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
       - run: uv sync --frozen
         working-directory: pipeline
       - run: uv run pytest -q
