@@ -189,6 +189,67 @@ export declare function buildRacesIndex(races: RaceFile[], matrix: unknown, race
 export declare function collectRaceCrops(races: RaceFile[]): string[]
 export declare function renderRaceCrops(paths: string[]): string
 
+// --- spells ----------------------------------------------------------------
+
+export interface SpellIndexTab {
+  id: string
+  name: string
+  spells: number
+}
+
+export interface SpellIndexEntry {
+  id: string
+  className: string
+  observedLevel: number
+  entries: number
+  /** Entries whose full tooltip text was read. */
+  withText: number
+  tooltips: number
+  new: number
+  /** Entries seen only on a search page, so filed under no tab. */
+  searchOnly: number
+  tabs: SpellIndexTab[]
+  /** Tabs that were never opened; their spells are absent, not missing. */
+  tabsMissing: string[]
+  showAllSpellRanks: 'on' | 'off' | 'not observed'
+  complete: boolean
+}
+
+export interface SpellsIndexFile {
+  prior: string
+  /** The Classic name prior is written from memory; false today. */
+  priorVerified: boolean
+  classes: SpellIndexEntry[]
+  /** Classes with no spellbook file at all - priest, today. */
+  absent: { id: string; className: string }[]
+}
+
+export interface SpellFile {
+  id: string
+  data: {
+    className: string
+    observedLevel: number
+    tabs: { id: string; name: string; order: number }[]
+    spells: unknown[]
+    coverage: { tabsMissing: string[]; showAllSpellRanks: string }
+    complete: boolean
+  }
+}
+
+export declare const SPELL_PRIOR_PATH: string
+export declare function readSpells(): SpellFile[]
+export declare function tabCounts(data: unknown): SpellIndexTab[]
+export declare function spellCounts(data: unknown): {
+  entries: number
+  withText: number
+  tooltips: number
+  new: number
+  searchOnly: number
+}
+export declare function buildSpellsIndex(spells: SpellFile[], classes: unknown[], prior: unknown): SpellsIndexFile
+export declare function collectSpellCrops(data: unknown): string[]
+export declare function renderSpellCrops(classId: string, paths: string[]): string
+
 export declare function generate(root?: string): boolean
 export declare function expected(): {
   index: string
@@ -197,4 +258,7 @@ export declare function expected(): {
   classicText: string
   racesIndex: string
   raceCrops: string
+  spellsIndex: string
+  /** One module per class, keyed by class id. */
+  spellCrops: Record<string, string>
 }

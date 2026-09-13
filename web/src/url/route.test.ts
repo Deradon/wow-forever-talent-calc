@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildHash, changesHash, classHash, parseHash, racesHash } from './route'
+import { buildHash, changesHash, classHash, parseHash, racesHash, spellsHash } from './route'
 
 describe('hash routing', () => {
   it('parses the documented forms', () => {
@@ -80,5 +80,19 @@ describe('hash routing', () => {
       raceId: 'skyborne',
       variant: 'high-order',
     })
+  })
+
+  it('routes the spell pages', () => {
+    expect(parseHash('#/spells')).toEqual({ kind: 'spells' })
+    expect(parseHash('#/spells/mage')).toEqual({ kind: 'spells', classId: 'mage' })
+    // Priest has no spellbook file, but the route still exists: the page says
+    // so, which is a better answer than an unknown-route panel.
+    expect(parseHash('#/spells/priest')).toEqual({ kind: 'spells', classId: 'priest' })
+    expect(parseHash('#/spells/Mage')).toMatchObject({ kind: 'unknown' })
+    expect(parseHash('#/spells/mage/fire')).toMatchObject({ kind: 'unknown' })
+
+    expect(spellsHash()).toBe('#/spells')
+    expect(spellsHash('shaman')).toBe('#/spells/shaman')
+    expect(parseHash(spellsHash('shaman'))).toEqual({ kind: 'spells', classId: 'shaman' })
   })
 })

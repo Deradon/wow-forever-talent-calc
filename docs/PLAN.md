@@ -98,10 +98,11 @@ Skyborne starting zone and a new character sheet. Inventory with timestamps:
   route `#/races`. Cheapest, complete, highest news value.
 - 2c "What changed vs Classic" view (done 2026-09-13): route `#/changes`, generated
   `data/changes/index.json`; stays valuable after datamining.
-- 2d Spellbook lists and hover tooltips (data half done 2026-09-13):
+- 2d Spellbook lists and hover tooltips (done 2026-09-13):
   `data/spells/<class>.json`, 327 entries and 112 tooltips over eight classes
-  (priest never on screen), route `#/spells/<class>` not built yet -- see the
-  recommendation in `docs/handover/2026-09-13-spells-data.md` section 6.
+  (priest never on screen); routes `#/spells` and `#/spells/<class>`, scoped as
+  "spells seen on stream" with the coverage record in the header, as
+  `docs/handover/2026-09-13-spells-data.md` section 6 recommends.
   Legacy and lore still open, as a hand-written notes page (2-3 h).
 
 ### Phase 3: harden and prepare for datamined data (from 2026-09-17)
@@ -203,6 +204,18 @@ workflow then publishes to https://deradon.github.io/wow-forever-talent-calc/
 on every push to `main`.
 
 ## Status log
+
+- 2026-09-14 ~03:30: Phase 2d web half done, so 2b-2d are all live. `#/spells`
+  is the coverage overview (eight class cards with entries seen, rows with full
+  text and the tab pages nobody opened; priest named as never shown) and
+  `#/spells/<class>` the entries grouped by tab, each with its icon crop, the
+  ranks that were on screen, a New chip for the 16 names the Classic list does
+  not have, and the verbatim tooltip behind a disclosure where one exists. Pure
+  `spellsModel.ts`, generated `spells-index.json`, one lazy crop module per
+  class - the 14 MB of spellbook crops now reach no chunk but the class the
+  visitor opened, and the review registry lost them too (141 -> 63 kB). Web 523
+  unit + 76 browser tests. Next: owner review of the spell entries (no
+  overrides mechanism yet), and a sourced Classic spell prior with tooltip text.
 
 - 2026-09-14 ~02:30: Phase 2d data half done. Stage 11 (`11_spellbook.py`,
   `spells.py`, `validate_spells.py`, `data/schema/spell.schema.json`) read the

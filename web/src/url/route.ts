@@ -1,6 +1,6 @@
 /**
  * Hash routing: `#/`, `#/<class>?v=<N>&t=<build>`, `#/changes[/<class>]`,
- * `#/races[/<race>][?variant=<id>]`, `#/review/<class>`.
+ * `#/races[/<race>][?variant=<id>]`, `#/spells[/<class>]`, `#/review/<class>`.
  * No router library: parseHash plus a `hashchange` listener in App.tsx.
  *
  * Two optional parameters ride along on the class route and are ignored by the
@@ -21,6 +21,12 @@ export type Route =
    * the Alliance variant rather than emptying the page.
    */
   | { kind: 'races'; raceId?: string; variant?: string }
+  /**
+   * `#/spells` is the coverage overview, `#/spells/<class>` one class's
+   * spellbook as the stream showed it. Priest has no file and is not a route:
+   * the page says so rather than rendering an empty book.
+   */
+  | { kind: 'spells'; classId?: string }
   | { kind: 'review'; classId: string }
   | { kind: 'unknown'; hash: string }
 
@@ -51,6 +57,11 @@ export function parseHash(hash: string): Route {
     if (segments.length === 1) return { kind: 'races' }
     if (segments[1] && SLUG.test(segments[1])) return { kind: 'races', raceId: segments[1], ...view }
   }
+  // `#/spells` is the coverage overview, `#/spells/<class>` one spellbook.
+  if (segments[0] === 'spells' && segments.length <= 2) {
+    if (segments.length === 1) return { kind: 'spells' }
+    if (segments[1] && SLUG.test(segments[1])) return { kind: 'spells', classId: segments[1] }
+  }
   if (segments.length === 1 && segments[0] && SLUG.test(segments[0])) {
     const v = params.get('v')
     const t = params.get('t')
@@ -76,6 +87,8 @@ export function buildHash(route: Route): string {
       return `#/review/${route.classId}`
     case 'changes':
       return route.classId ? `#/changes/${route.classId}` : '#/changes'
+    case 'spells':
+      return route.classId ? `#/spells/${route.classId}` : '#/spells'
     case 'races': {
       if (!route.raceId) return '#/races'
       // The variant only means something on a race that has variants, so it is
@@ -123,6 +136,11 @@ export function classHash(classId: string, version: number, build: string, view:
 /** `#/changes` or `#/changes/<class>`. */
 export function changesHash(classId?: string): string {
   return buildHash({ kind: 'changes', classId })
+}
+
+/** `#/spells` or `#/spells/<class>`. */
+export function spellsHash(classId?: string): string {
+  return buildHash({ kind: 'spells', classId })
 }
 
 /** `#/races`, `#/races/<race>` or `#/races/<race>?variant=<id>`. */

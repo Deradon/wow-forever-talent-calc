@@ -26,8 +26,19 @@
  *   raceCrops.ts        static `?url` imports for the crops the races routes
  *                       render or link (icon crops, trait row crops, the class
  *                       bar and panel evidence).
+ *   spells-index.json   the `#/spells` overview's whole data source: per class
+ *                       the tabs that were opened, the entry and full-text
+ *                       counts and the new-name count, plus the classes with no
+ *                       spellbook file at all. The overview therefore fetches
+ *                       no spell file.
+ *   spellCrops/spells-<class>.ts  static `?url` imports for the crops one class page
+ *                       renders or links - the 40 px row icons and the tooltip
+ *                       frames. One module per class, loaded through a lazy
+ *                       `import.meta.glob` in spellCrop.ts, so the 14 MB of
+ *                       spellbook crops land in no chunk but the one class the
+ *                       visitor opened.
  */
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { compactDiff } from './diffWords.mjs'
@@ -53,6 +64,11 @@ const PRIOR = join(repoRoot, 'data/prior/classic-era/talents.json')
 const RACES_DIR = join(repoRoot, 'data/races')
 const RACE_PRIOR = join(repoRoot, 'data/prior/classic-era/racials.json')
 export const RACE_PRIOR_PATH = 'data/prior/classic-era/racials.json'
+
+/** Spells: the per-class spellbook files and the Classic Era name prior. */
+const SPELLS_DIR = join(repoRoot, 'data/spells')
+const SPELL_PRIOR = join(repoRoot, 'data/prior/classic-era/spells-baseline.json')
+export const SPELL_PRIOR_PATH = 'data/prior/classic-era/spells-baseline.json'
 
 function readClasses() {
   const seen = new Map()
@@ -735,6 +751,131 @@ ${entries}
 `
 }
 
+// --- spells (docs/handover/2026-09-13-spells-data.md, section 5) -----------
+//
+// The spellbook is a coverage record, not a spell list: it holds what the
+// stream happened to show of a level-38 demo character's book. The index
+// therefore carries the counts *and* the gaps - which tabs were opened, which
+// were not, and which classes have no file at all (priest was never on screen).
+
+/** The eight spellbook files, sorted by id. Priest has none. */
+export function readSpells() {
+  if (!existsSync(SPELLS_DIR)) return []
+  return readdirSync(SPELLS_DIR)
+    .sort()
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => ({ id: f.replace(/\.json$/, ''), data: JSON.parse(readFileSync(join(SPELLS_DIR, f), 'utf8')) }))
+}
+
+function readSpellPrior() {
+  if (!existsSync(SPELL_PRIOR)) return undefined
+  return JSON.parse(readFileSync(SPELL_PRIOR, 'utf8'))
+}
+
+/**
+ * The tabs of one class in spellbook order, each with the number of entries
+ * read from it. A tab with no entries stays in the list: it was opened, and
+ * "opened and empty" is a different statement from "never opened".
+ */
+export function tabCounts(data) {
+  const byTab = new Map()
+  for (const spell of data.spells ?? []) {
+    if (!spell.tab) continue
+    byTab.set(spell.tab, (byTab.get(spell.tab) ?? 0) + 1)
+  }
+  return (data.tabs ?? [])
+    .slice()
+    .sort((a, b) => a.order - b.order)
+    .map((t) => ({ id: t.id, name: t.name, spells: byTab.get(t.id) ?? 0 }))
+}
+
+/** Entries, spells with a full tooltip, tooltips read, and new names. */
+export function spellCounts(data) {
+  const spells = data.spells ?? []
+  return {
+    entries: spells.length,
+    withText: spells.filter((s) => (s.tooltips ?? []).length > 0).length,
+    tooltips: spells.reduce((n, s) => n + (s.tooltips ?? []).length, 0),
+    new: spells.filter((s) => s.classic?.status === 'new').length,
+    searchOnly: spells.filter((s) => !s.tab).length,
+  }
+}
+
+/**
+ * The `#/spells` overview's data source. Counts, tabs and gaps only: names,
+ * tooltip text, crops and provenance stay in the per-class files, which the
+ * class page fetches one at a time.
+ *
+ * `absent` is the other half of the record. A class with no spellbook file was
+ * never on screen, and the overview has to say so rather than 404.
+ */
+export function buildSpellsIndex(spells, classes, prior) {
+  const seen = new Set(spells.map((s) => s.id))
+  return {
+    prior: SPELL_PRIOR_PATH,
+    // Names written from memory: the page says "unverified" because the data does.
+    priorVerified: Boolean(prior?.verified),
+    classes: spells.map(({ id, data }) => {
+      const counts = spellCounts(data)
+      const coverage = data.coverage ?? {}
+      return {
+        id,
+        className: data.className,
+        observedLevel: data.observedLevel,
+        entries: counts.entries,
+        withText: counts.withText,
+        tooltips: counts.tooltips,
+        new: counts.new,
+        searchOnly: counts.searchOnly,
+        tabs: tabCounts(data),
+        tabsMissing: coverage.tabsMissing ?? [],
+        showAllSpellRanks: coverage.showAllSpellRanks ?? 'not observed',
+        complete: Boolean(data.complete),
+      }
+    }),
+    absent: classes
+      .filter((c) => c.origin === 'talents' && !seen.has(c.id))
+      .map((c) => ({ id: c.id, className: c.data.className })),
+  }
+}
+
+/**
+ * The crops one class page renders or links: the 40 px row icon of every entry
+ * and the frame behind every full tooltip. Row crops are deliberately not
+ * collected - a row without a tooltip shows no disclosure, so nothing links
+ * them, and they are the bulk of the 14 MB.
+ */
+export function collectSpellCrops(data) {
+  const paths = new Set()
+  const add = (p) => {
+    if (typeof p === 'string' && p) paths.add(p.replace(/^\.?\//, ''))
+  }
+  for (const spell of data.spells ?? []) {
+    if (spell.iconSource === 'crop') add(spell.iconCrop)
+    for (const tooltip of spell.tooltips ?? []) add(tooltip.source?.crop)
+  }
+  return [...paths].sort()
+}
+
+export function renderSpellCrops(classId, paths) {
+  const imports = paths.map((p, i) => `import s${i} from '../../../../${p}?url'`).join('\n')
+  const entries = paths.map((p, i) => `  ${JSON.stringify(p)}: s${i},`).join('\n')
+  return `/**
+ * GENERATED by scripts/gen-data-index.mjs - do not edit.
+ *
+ * The ${paths.length} crops the ${classId} spell page renders or links: the row icon of
+ * every entry and the frame behind every full tooltip. One module per class,
+ * reached through the lazy glob in spellCrop.ts, so a visitor downloads the
+ * URLs of one class and never the whole spellbook.
+ */
+${imports}
+
+export const spellCropUrls: Record<string, string> = {
+${entries}
+}
+`
+}
+
 function readPrior() {
   if (!existsSync(PRIOR)) return undefined
   return JSON.parse(readFileSync(PRIOR, 'utf8'))
@@ -750,6 +891,7 @@ function writeIfChanged(path, content) {
 /** Regenerates every generated file; true when anything changed on disk. */
 export function generate(root = webRoot) {
   const out = expected()
+  const cropDir = join(root, 'src/data/spellCrops')
   const written = [
     writeIfChanged(join(root, 'src/data/classes-index.json'), out.index),
     writeIfChanged(join(root, 'src/data/iconCrops.ts'), out.crops),
@@ -757,6 +899,18 @@ export function generate(root = webRoot) {
     writeIfChanged(join(root, 'src/data/classic-text.json'), out.classicText),
     writeIfChanged(join(root, 'src/data/races-index.json'), out.racesIndex),
     writeIfChanged(join(root, 'src/data/raceCrops.ts'), out.raceCrops),
+    writeIfChanged(join(root, 'src/data/spells-index.json'), out.spellsIndex),
+    ...Object.entries(out.spellCrops).map(([id, content]) =>
+      writeIfChanged(join(cropDir, `spells-${id}.ts`), content),
+    ),
+    // A class whose spellbook file was deleted must not leave a module behind:
+    // spellCrop.ts globs this directory, so a stale file would still be served.
+    ...(existsSync(cropDir) ? readdirSync(cropDir) : [])
+      .filter((f) => f.endsWith('.ts') && !(f.replace(/^spells-/, '').replace(/\.ts$/, '') in out.spellCrops))
+      .map((f) => {
+        rmSync(join(cropDir, f))
+        return true
+      }),
   ]
   return written.some(Boolean)
 }
@@ -765,6 +919,7 @@ export function expected() {
   const classes = readClasses()
   const classic = buildClassic(classes, readPrior())
   const races = readRaces()
+  const spells = readSpells()
   return {
     index: `${JSON.stringify(buildClassesIndex(classes), null, 2)}\n`,
     crops: renderIconCrops(collectIconCrops(classes)),
@@ -773,6 +928,10 @@ export function expected() {
     classicText: `${JSON.stringify(classic.text)}\n`,
     racesIndex: `${JSON.stringify(buildRacesIndex(races, readMatrix(), readRacePrior()), null, 2)}\n`,
     raceCrops: renderRaceCrops(collectRaceCrops(races)),
+    spellsIndex: `${JSON.stringify(buildSpellsIndex(spells, classes, readSpellPrior()), null, 2)}\n`,
+    spellCrops: Object.fromEntries(
+      spells.map(({ id, data }) => [id, renderSpellCrops(id, collectSpellCrops(data))]),
+    ),
   }
 }
 

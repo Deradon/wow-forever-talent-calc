@@ -1,0 +1,285 @@
+/*
+ * `#/spells` - the spellbook overview and one page per class.
+ *
+ * Imported from SpellsPage.tsx, which App.tsx loads lazily, so none of this
+ * reaches a player who only opens a class page. Desktop first: a class page is
+ * a long list of short rows, so the rows go two across on a wide screen and
+ * the full text opens underneath the row it belongs to.
+ */
+
+.spells-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spells-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.spells-head h1 {
+  margin: 0;
+}
+.spells-all {
+  font-size: 13px;
+}
+
+.spells-lead {
+  margin: 0;
+  max-width: 95ch;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+.spells-notes {
+  margin: 0;
+  padding-left: 18px;
+  max-width: 95ch;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+.spells-notes li {
+  margin: 2px 0;
+}
+
+/* --- the overview --- */
+.spells-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.spells-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+}
+.spells-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--class-colour, var(--gold));
+  text-decoration: none;
+}
+.spells-card-title:hover span.serif {
+  text-decoration: underline;
+}
+.spells-card-counts {
+  margin: 0;
+  font-size: 13px;
+}
+.spells-card-tabs {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+/* The pages nobody opened are the reason this overview exists. */
+.spells-card-gap {
+  margin: 0;
+  color: #e0b070;
+  font-size: 12px;
+}
+.spells-absent {
+  margin: 0;
+  max-width: 95ch;
+  color: #e0b070;
+  font-size: 13px;
+}
+
+/* --- one class --- */
+.spells-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+}
+.spells-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.spells-title-row h2 {
+  margin: 0;
+}
+.spells-level {
+  padding: 2px 9px;
+  border: 1px solid #2a3148;
+  border-radius: 999px;
+  color: var(--text-dim);
+  font-size: 11px;
+}
+.spells-talents-link {
+  margin-left: auto;
+  font-size: 12px;
+}
+
+.spells-coverage {
+  margin: 0;
+  max-width: 95ch;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.spells-trust {
+  margin: 0;
+  max-width: 95ch;
+  color: var(--gold-dim);
+  font-size: 12px;
+}
+
+.spells-group {
+  padding: 12px 14px;
+}
+.spells-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 8px;
+}
+.spells-group-count {
+  color: var(--text-dim);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* Two columns of rows on a wide desktop; a row is one line until its text is
+   opened, and a single column would be a very long thin page. */
+.spells-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 4px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.spells-row {
+  padding: 5px 0;
+  border-bottom: 1px solid #1a2033;
+}
+.spells-row-head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.spells-icon {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--gold-border);
+  border-radius: 4px;
+}
+.spells-icon-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a2136;
+  color: var(--gold-dim);
+  font-size: 11px;
+  font-weight: 600;
+}
+.spells-name {
+  font-size: 13px;
+}
+.spells-rank {
+  color: var(--text-dim);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.spells-kind {
+  color: var(--text-dim);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* The one chip: a name the Classic Era list does not have. */
+.spells-chip {
+  padding: 1px 8px;
+  border: 1px solid var(--gold-border);
+  border-radius: 999px;
+  background: #1d1b0f;
+  color: var(--gold);
+  font-size: 10px;
+  white-space: nowrap;
+}
+.spells-card-title .spells-chip {
+  margin-left: auto;
+}
+/* The talent tooltip's amber line, for the few readings below the threshold. */
+.spells-trust-line {
+  margin-left: auto;
+  color: #e0b070;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* --- the full text --- */
+.spells-text {
+  margin-left: 41px;
+  font-size: 12px;
+}
+.spells-text > summary {
+  cursor: pointer;
+  color: var(--text-dim);
+  list-style: none;
+}
+.spells-text > summary::before {
+  content: '\25b8\00a0';
+  color: var(--gold-dim);
+}
+.spells-text[open] > summary::before {
+  content: '\25be\00a0';
+}
+.spells-text > summary:hover {
+  color: var(--text);
+}
+.spells-readings {
+  color: var(--gold-dim);
+}
+
+.spells-tooltip {
+  margin: 5px 0 8px 14px;
+  padding: 8px 10px;
+  border: 1px solid #232a3e;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3);
+  max-width: 70ch;
+}
+/* The tooltip's own header pairs, as the game prints them. */
+.spells-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 16px;
+  margin: 0 0 5px;
+}
+.spells-facts div {
+  display: flex;
+  gap: 5px;
+}
+.spells-facts dt {
+  color: var(--text-dim);
+}
+.spells-facts dd {
+  margin: 0;
+  color: #ded5c0;
+}
+.spells-tooltip-text {
+  margin: 0;
+  color: #ded5c0;
+  line-height: 1.5;
+}
+.spells-tooltip-meta {
+  margin: 6px 0 0;
+  color: var(--text-dim);
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .spells-list {
+    grid-template-columns: 1fr;
+  }
+}

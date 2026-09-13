@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
-import { changesHash, parseHash, racesHash, type Route } from './url/route'
+import { changesHash, parseHash, racesHash, spellsHash, type Route } from './url/route'
 import { ClassPicker, REPO_URL } from './ui/ClassPicker'
 import { ClassPage } from './ui/ClassPage'
 import { ShortcutsOverlay } from './ui/ShortcutsOverlay'
@@ -25,6 +25,14 @@ const ChangesPage = lazy(() => import('./ui/ChangesPage').then((m) => ({ default
  * carries none of it.
  */
 const RacesPage = lazy(() => import('./ui/RacesPage').then((m) => ({ default: m.RacesPage })))
+
+/**
+ * `#/spells` and `#/spells/<class>`: the spellbook as the stream showed it.
+ * Lazy for the usual reason, and for one more - the spellbook crops are 14 MB,
+ * so the class page pulls its own crop URLs one class at a time through
+ * `spellCrop.ts` and no other route ever touches them.
+ */
+const SpellsPage = lazy(() => import('./ui/SpellsPage').then((m) => ({ default: m.SpellsPage })))
 
 function useRoute(): Route {
   const [route, setRoute] = useState<Route>(() => parseHash(window.location.hash))
@@ -75,7 +83,7 @@ export default function App() {
           WoW Forever Talents
         </a>
         <span className="app-nav-right text-xs text-[var(--text-dim)]">
-          {/* The two pages that are not the calculator; everything else is one
+          {/* The pages that are not the calculator; everything else is one
               class away from the picker. */}
           <a href={changesHash()} data-testid="nav-changes">
             Changes
@@ -83,6 +91,10 @@ export default function App() {
           {' · '}
           <a href={racesHash()} data-testid="nav-races">
             Races
+          </a>
+          {' · '}
+          <a href={spellsHash()} data-testid="nav-spells">
+            Spells
           </a>
           {' - '}
           Classic+ talent calculator, unofficial and unreviewed
@@ -125,6 +137,8 @@ function Body({ route }: { route: Route }) {
       return <ChangesPage key={route.classId ?? ''} classId={route.classId} />
     case 'races':
       return <RacesPage key={route.raceId ?? ''} raceId={route.raceId} variant={route.variant} />
+    case 'spells':
+      return <SpellsPage key={route.classId ?? ''} classId={route.classId} />
     case 'review':
       return <ReviewPage classId={route.classId} />
     default:

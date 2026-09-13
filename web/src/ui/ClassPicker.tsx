@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import classesIndex from '../data/classes-index.json'
 import { includeExamples } from '../data/load'
-import { changesHash, classHash, racesHash } from '../url/route'
+import { changesHash, classHash, racesHash, spellsHash } from '../url/route'
 import { ClassIcon } from './ClassIcon'
 import { continueLabel, forgetLastBuild, readLastBuild } from './storage'
 import { SITE_TITLE, useTitle } from './title'
@@ -78,6 +78,17 @@ export function ClassPicker() {
           <span className="text-[var(--text-dim)]">
             {' '}
             - 37 racial traits, the Skyborne variants, and the combinations Classic Era never allowed.
+          </span>
+        </p>
+        {/* Phase 2d: the spellbook pages the stream opened, and the coverage
+            record that says which it did not. */}
+        <p className="mb-2 text-sm">
+          <a href={spellsHash()} data-testid="landing-spells-link">
+            Spells seen on stream
+          </a>
+          <span className="text-[var(--text-dim)]">
+            {' '}
+            - 327 spellbook entries and 112 tooltips read from the demo, with the pages nobody opened named.
           </span>
         </p>
         <p className="mb-4 text-sm text-[var(--text-dim)]">

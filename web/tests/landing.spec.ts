@@ -3,7 +3,9 @@ import { expect, test } from '@playwright/test'
 /**
  * Performance review P-1/P-2: the landing page used to import all nine class
  * chunks to print a few hundred bytes of text, and every first load carried the
- * registry of all 971 review crops. Both are now build-time artefacts.
+ * registry of every review crop. Both are now build-time artefacts, and the
+ * budget below is what keeps them that way - the spellbook crops alone are
+ * 14 MB and must never be on this path.
  */
 
 test('the landing page loads no class chunk and no review code', async ({ page }) => {
@@ -20,13 +22,14 @@ test('the landing page loads no class chunk and no review code', async ({ page }
   const classChunks = scripts.filter((p) => /\/(paladin|priest|druid|mage|rogue|shaman|warlock|warrior|hunter)-[^/]+\.js$/.test(p))
   expect(classChunks, `class chunks fetched: ${classChunks.join(', ')}`).toHaveLength(0)
   // Nothing a landing visitor does not run: no route page, no crop registry.
-  const routeChunks = scripts.filter((p) => /ReviewPage|ChangesPage|RacesPage|crops-/.test(p))
+  const routeChunks = scripts.filter((p) => /ReviewPage|ChangesPage|RacesPage|SpellsPage|crops-|spells-/.test(p))
   expect(routeChunks, `route chunks fetched: ${routeChunks.join(', ')}`).toHaveLength(0)
   // The entry chunk plus the shared runtime chunks rolldown splits out once
   // several lazy routes share React and the small ui helpers with the entry -
   // three of them since `#/races` became the fourth lazy route
-  // (docs/handover/2026-09-13-races-web.md section 4). Counting them keeps the
-  // budget honest without pinning the bundler's grouping.
+  // (docs/handover/2026-09-13-races-web.md section 4). `#/spells` is the fifth
+  // and adds none, because its own crop modules are lazy too. Counting them
+  // keeps the budget honest without pinning the bundler's grouping.
   expect(scripts.length, `scripts fetched: ${scripts.join(', ')}`).toBeLessThanOrEqual(4)
 })
 

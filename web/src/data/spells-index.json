@@ -1,0 +1,272 @@
+{
+  "prior": "data/prior/classic-era/spells-baseline.json",
+  "priorVerified": false,
+  "classes": [
+    {
+      "id": "druid",
+      "className": "Druid",
+      "observedLevel": 38,
+      "entries": 41,
+      "withText": 27,
+      "tooltips": 27,
+      "new": 2,
+      "searchOnly": 0,
+      "tabs": [
+        {
+          "id": "balance",
+          "name": "Balance",
+          "spells": 10
+        },
+        {
+          "id": "feral-combat",
+          "name": "Feral Combat",
+          "spells": 22
+        },
+        {
+          "id": "restoration",
+          "name": "Restoration",
+          "spells": 9
+        }
+      ],
+      "tabsMissing": [
+        "general"
+      ],
+      "showAllSpellRanks": "not observed",
+      "complete": false
+    },
+    {
+      "id": "hunter",
+      "className": "Hunter",
+      "observedLevel": 38,
+      "entries": 63,
+      "withText": 36,
+      "tooltips": 36,
+      "new": 0,
+      "searchOnly": 4,
+      "tabs": [
+        {
+          "id": "general",
+          "name": "General",
+          "spells": 11
+        },
+        {
+          "id": "beast-mastery",
+          "name": "Beast Mastery",
+          "spells": 10
+        },
+        {
+          "id": "marksmanship",
+          "name": "Marksmanship",
+          "spells": 12
+        },
+        {
+          "id": "pet",
+          "name": "Pet",
+          "spells": 11
+        },
+        {
+          "id": "survival",
+          "name": "Survival",
+          "spells": 15
+        }
+      ],
+      "tabsMissing": [],
+      "showAllSpellRanks": "on",
+      "complete": false
+    },
+    {
+      "id": "mage",
+      "className": "Mage",
+      "observedLevel": 38,
+      "entries": 45,
+      "withText": 29,
+      "tooltips": 32,
+      "new": 3,
+      "searchOnly": 0,
+      "tabs": [
+        {
+          "id": "general",
+          "name": "General",
+          "spells": 10
+        },
+        {
+          "id": "arcane",
+          "name": "Arcane",
+          "spells": 23
+        },
+        {
+          "id": "fire",
+          "name": "Fire",
+          "spells": 5
+        },
+        {
+          "id": "frost",
+          "name": "Frost",
+          "spells": 7
+        }
+      ],
+      "tabsMissing": [],
+      "showAllSpellRanks": "not observed",
+      "complete": false
+    },
+    {
+      "id": "paladin",
+      "className": "Paladin",
+      "observedLevel": 38,
+      "entries": 48,
+      "withText": 6,
+      "tooltips": 6,
+      "new": 2,
+      "searchOnly": 7,
+      "tabs": [
+        {
+          "id": "general",
+          "name": "General",
+          "spells": 13
+        },
+        {
+          "id": "holy",
+          "name": "Holy",
+          "spells": 12
+        },
+        {
+          "id": "protection",
+          "name": "Protection",
+          "spells": 12
+        },
+        {
+          "id": "retribution",
+          "name": "Retribution",
+          "spells": 4
+        }
+      ],
+      "tabsMissing": [],
+      "showAllSpellRanks": "on",
+      "complete": false
+    },
+    {
+      "id": "rogue",
+      "className": "Rogue",
+      "observedLevel": 38,
+      "entries": 15,
+      "withText": 1,
+      "tooltips": 1,
+      "new": 0,
+      "searchOnly": 0,
+      "tabs": [
+        {
+          "id": "general",
+          "name": "General",
+          "spells": 15
+        }
+      ],
+      "tabsMissing": [
+        "assassination",
+        "combat",
+        "subtlety"
+      ],
+      "showAllSpellRanks": "not observed",
+      "complete": false
+    },
+    {
+      "id": "shaman",
+      "className": "Shaman",
+      "observedLevel": 38,
+      "entries": 59,
+      "withText": 8,
+      "tooltips": 9,
+      "new": 6,
+      "searchOnly": 0,
+      "tabs": [
+        {
+          "id": "general",
+          "name": "General",
+          "spells": 13
+        },
+        {
+          "id": "elemental-combat",
+          "name": "Elemental Combat",
+          "spells": 14
+        },
+        {
+          "id": "enhancement",
+          "name": "Enhancement",
+          "spells": 21
+        },
+        {
+          "id": "restoration",
+          "name": "Restoration",
+          "spells": 11
+        }
+      ],
+      "tabsMissing": [],
+      "showAllSpellRanks": "on",
+      "complete": false
+    },
+    {
+      "id": "warlock",
+      "className": "Warlock",
+      "observedLevel": 38,
+      "entries": 10,
+      "withText": 0,
+      "tooltips": 0,
+      "new": 1,
+      "searchOnly": 1,
+      "tabs": [
+        {
+          "id": "general",
+          "name": "General",
+          "spells": 9
+        }
+      ],
+      "tabsMissing": [
+        "affliction",
+        "demonology",
+        "destruction"
+      ],
+      "showAllSpellRanks": "on",
+      "complete": false
+    },
+    {
+      "id": "warrior",
+      "className": "Warrior",
+      "observedLevel": 38,
+      "entries": 46,
+      "withText": 1,
+      "tooltips": 1,
+      "new": 2,
+      "searchOnly": 2,
+      "tabs": [
+        {
+          "id": "general",
+          "name": "General",
+          "spells": 14
+        },
+        {
+          "id": "arms",
+          "name": "Arms",
+          "spells": 10
+        },
+        {
+          "id": "fury",
+          "name": "Fury",
+          "spells": 11
+        },
+        {
+          "id": "protection",
+          "name": "Protection",
+          "spells": 9
+        }
+      ],
+      "tabsMissing": [],
+      "showAllSpellRanks": "not observed",
+      "complete": false
+    }
+  ],
+  "absent": [
+    {
+      "id": "priest",
+      "className": "Priest"
+    }
+  ]
+}

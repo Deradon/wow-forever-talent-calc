@@ -10,13 +10,16 @@ import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
-import { expected, readRaces } from '../../scripts/gen-data-index.mjs'
+import { expected, readRaces, readSpells } from '../../scripts/gen-data-index.mjs'
 import classesIndex from './classes-index.json'
 import racesIndex from './races-index.json'
+import spellsIndex from './spells-index.json'
 import { iconCropUrl, iconCropCount } from './iconCrop'
 import { parseClass } from './schema.zod'
 import { parseRace } from './races.zod'
 import { raceCropUrl, raceCropCount } from './raceCrop'
+import { parseSpells } from './spells.zod'
+import { loadSpellCrops, spellCropClasses } from './spellCrop'
 
 const here = fileURLToPath(new URL('.', import.meta.url))
 const repo = join(here, '../../..')
@@ -33,6 +36,58 @@ describe('generated data indexes', () => {
   it('races-index.json and raceCrops.ts are up to date', () => {
     expect(readFileSync(join(here, 'races-index.json'), 'utf8')).toBe(expected().racesIndex)
     expect(readFileSync(join(here, 'raceCrops.ts'), 'utf8')).toBe(expected().raceCrops)
+  })
+
+  it('spells-index.json and every spellCrops module are up to date', () => {
+    expect(readFileSync(join(here, 'spells-index.json'), 'utf8')).toBe(expected().spellsIndex)
+    for (const [id, content] of Object.entries(expected().spellCrops)) {
+      expect(readFileSync(join(here, `spellCrops/spells-${id}.ts`), 'utf8'), id).toBe(content)
+    }
+  })
+
+  it('indexes every spellbook with its tabs, counts and gaps - and the class that has none', () => {
+    const spells = readSpells()
+    expect(spellsIndex.classes.map((c) => c.id)).toEqual(spells.map((s) => s.id))
+    // Priest was never on screen. The overview has to know that, so the index
+    // carries the classes with no file rather than the page guessing.
+    expect(spellsIndex.absent.map((c) => c.id)).toEqual(['priest'])
+    expect(spellsIndex.priorVerified).toBe(false)
+    for (const { id, data } of spells) {
+      const entry = spellsIndex.classes.find((c) => c.id === id)!
+      const file = parseSpells(data, id)
+      expect(entry.className).toBe(file.className)
+      expect(entry.entries).toBe(file.spells.length)
+      expect(entry.withText).toBe(file.spells.filter((s) => (s.tooltips ?? []).length > 0).length)
+      expect(entry.new).toBe(file.spells.filter((s) => s.classic.status === 'new').length)
+      expect(entry.tabs.map((t) => t.id)).toEqual(
+        [...file.tabs].sort((a, b) => a.order - b.order).map((t) => t.id),
+      )
+      expect(entry.tabs.reduce((n, t) => n + t.spells, 0) + entry.searchOnly).toBe(file.spells.length)
+      expect(entry.tabsMissing).toEqual(file.coverage.tabsMissing)
+      expect(entry.observedLevel).toBe(file.observedLevel)
+    }
+  })
+
+  it("ships one crop module per class, holding only that class's crops", async () => {
+    expect(spellCropClasses()).toEqual(readSpells().map((s) => s.id))
+    for (const { id, data } of readSpells()) {
+      const crops = await loadSpellCrops(id)
+      const file = parseSpells(data, id)
+      for (const spell of file.spells) {
+        if (spell.iconSource === 'crop') expect(crops[spell.iconCrop!], `${id}/${spell.id}`).toBeDefined()
+        for (const tooltip of spell.tooltips ?? []) expect(crops[tooltip.source.crop!]).toBeDefined()
+      }
+      for (const path of Object.keys(crops)) expect(path.startsWith(`data/review/spells/${id}/`)).toBe(true)
+    }
+  })
+
+  it('keeps the spellbook crops out of the review registry', async () => {
+    const { cropUrl } = await import('./crops')
+    const mage = await loadSpellCrops('mage')
+    const [first] = Object.keys(mage)
+    expect(first).toBeDefined()
+    // 765 files and 14 MB: the review route must not carry their URLs.
+    expect(cropUrl(first)).toBeUndefined()
   })
 
   it('indexes every race file with its variants, classes and trait counts', () => {
