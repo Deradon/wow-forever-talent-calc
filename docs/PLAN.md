@@ -94,9 +94,9 @@ a redesigned spellbook with new baseline spells, a new Legacy system, the
 Skyborne starting zone and a new character sheet. Inventory with timestamps:
 `data/extracted/other-content.md`.
 
-- 2b Races and race/class combos (~half a day): `data/races/<race>.json`,
+- 2b Races and race/class combos (done 2026-09-13): `data/races/<race>.json`,
   route `#/races`. Cheapest, complete, highest news value.
-- 2c "What changed vs Classic" view (~1 day): route `#/changes`, generated
+- 2c "What changed vs Classic" view (done 2026-09-13): route `#/changes`, generated
   `data/changes/index.json`; stays valuable after datamining.
 - 2d Spellbook lists and hover tooltips (~1 day) only if talents are done;
   Legacy and lore as a hand-written notes page (2-3 h).
@@ -200,6 +200,15 @@ workflow then publishes to https://deradon.github.io/wow-forever-talent-calc/
 on every push to `main`.
 
 ## Status log
+
+- 2026-09-14 ~01:00: UI round 2 live (`#/changes` page with inline diffs,
+  `sel=` deep links pinning a tooltip, level control, `?` shortcuts overlay,
+  print view, embed mode). Phase 2b live: 37 racial traits for 9 races and
+  the race/class matrix (16 new combinations) at `#/races`. Phases 2b and 2c
+  done. Web 437 unit + 70 browser tests, pipeline 363. Remaining: optional
+  2d spellbook, Phase 3 datamined importer once beta data exists
+  (2026-09-17), owner review of the 6 queued records, launch freeze of
+  encoding v1.
 
 - 2026-09-13 ~23:00: landing page reduced to class crests; cell attribution
   audited and confirmed correct (Blackout/Spirit Tap swap is a real game
