@@ -1,0 +1,94 @@
+/*
+ * Tooltip meta styles (work package A1). Kept out of talents.css so the two
+ * packages do not fight over one file; imported from Tooltip.tsx.
+ *
+ * `.tooltip-layer` in talents.css sets `pointer-events: none` so a tooltip can
+ * never swallow a click meant for a cell. The Details disclosure opts back in
+ * for itself only, which is enough once the hover interaction keeps the tooltip
+ * open while the pointer is over it (see the handover request to A2).
+ */
+
+.tooltip details.meta {
+  margin-top: 6px;
+  pointer-events: auto;
+}
+
+.tooltip details.meta > summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+  color: #e2a640; /* the one amber line */
+  font-size: 12px;
+}
+
+.tooltip details.meta > summary::-webkit-details-marker {
+  display: none;
+}
+
+.tooltip details.meta > summary .more {
+  color: #8f98b3;
+  font-size: 11px;
+  text-decoration: underline dotted;
+}
+
+.tooltip details.meta[open] > summary .more {
+  text-decoration: none;
+}
+
+.tooltip .meta-body {
+  color: #8f98b3;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.tooltip .meta-body p {
+  margin: 3px 0;
+}
+
+/* Game requirements read from the tooltip itself (stance, form, shield, level). */
+.tooltip .req-game {
+  color: #d8d8e6;
+  margin-top: 6px;
+}
+
+/* --- review route (#/review/<class>) --- */
+
+.review-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+/* "Jump to" scrolls with JS (a #fragment would land in the hash route), so the
+   sticky toolbar must not cover the row it jumped to. */
+.review-row {
+  scroll-margin-top: 130px;
+}
+
+.chip {
+  border: 1px solid var(--gold-border, #6b5a2a);
+  border-radius: 999px;
+  padding: 1px 9px;
+  font-size: 12px;
+  color: var(--text-dim, #8f98b3);
+  background: transparent;
+  cursor: pointer;
+}
+
+.chip[aria-pressed='true'] {
+  color: #0d1020;
+  background: var(--gold, #e2b855);
+  border-color: var(--gold, #e2b855);
+}
+
+.diff-add {
+  color: #7fd18a;
+}
+
+.diff-del {
+  color: #e4707a;
+  text-decoration: line-through;
+}
