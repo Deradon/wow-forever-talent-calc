@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 11px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
   line-height: 1;
   color: #5c6478;
@@ -44,25 +44,26 @@
   color: #4a5164;
 }
 
-/* --- the "what's new" switch --------------------------------------------- */
+/* --- the "what's new" switch ---------------------------------------------
+   A `.btn` modifier, not a control of its own: it sits in the class-level row
+   between Search and Reset, and looking different from both was the whole of
+   the round-one complaint. Only the pressed state departs from `.btn`, in the
+   same blue as the cell markers it turns on. */
 .new-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 2px 8px;
-  font-size: 12px;
-  border: 1px solid var(--gold-border);
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.35);
-  color: var(--text-dim);
-  cursor: pointer;
-  white-space: nowrap;
+  gap: 5px;
 }
-.new-toggle:hover {
-  border-color: var(--gold-dim);
+.new-toggle .new-toggle-star {
+  font-size: 13px;
+  line-height: 1;
+  color: #6bb6ff;
 }
 .new-toggle[aria-pressed='true'] {
   border-color: #4ea3ff;
-  background: rgba(78, 163, 255, 0.16);
+  background: linear-gradient(180deg, #1d3a5c 0%, #0f2138 100%);
+  color: #cfe6ff;
+}
+.new-toggle[aria-pressed='true'] .new-toggle-star {
   color: #cfe6ff;
 }

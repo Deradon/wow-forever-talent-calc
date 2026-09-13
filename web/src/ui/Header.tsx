@@ -49,53 +49,46 @@ export function Header({ cls, classId, build, query, onQuery, onJump, onReset, r
   }, [cls, query])
 
   return (
-    <header className="panel mb-3 flex flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3">
-      <h1 className="serif text-xl text-[var(--gold)]">{cls.className}</h1>
-      <ClassSwitcher current={classId} />
-      <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm">
-        <span>
-          Points left:{' '}
-          <strong data-testid="points-left" className={left === 0 ? 'text-[var(--gold)]' : undefined}>
-            {left}
-          </strong>
-          <span className="text-[var(--text-dim)]"> / {cls.rules.maxPoints}</span>
-          {left === 0 && (
-            <span className="ml-2 text-xs text-[var(--gold)]" data-testid="no-points-left">
-              all spent
-            </span>
-          )}
-        </span>
-        <span>
-          Required level: <strong data-testid="required-level">{level}</strong>
-        </span>
-        <span className="text-[var(--text-dim)]" data-testid="tree-counts">
-          {cls.trees.map((t, i) => (
-            <span key={t.id}>
-              {i > 0 && ' / '}
-              {t.name} <strong className="text-[var(--text)]">{pointsInTree(build, t.id)}</strong>
-            </span>
-          ))}
-        </span>
-      </div>
-      <div className="ml-auto flex items-center gap-2">
-        <HighlightNewToggle classId={classId} />
-        {/* A Reset used to destroy a 51-point build silently (usability 10). It
-            is an ordinary commit now, so Ctrl+Z takes it back - and for the
-            eight seconds after the click, so does the button itself. */}
-        {resetUndoAt !== undefined ? (
-          <button className="btn reset-undo" onClick={onUndoReset} data-testid="reset-undo">
-            Build reset - Undo
-          </button>
-        ) : (
-          <button className="btn" onClick={onReset} data-testid="reset-all" disabled={total === 0}>
-            Reset
-          </button>
-        )}
+    <header className="panel mb-3 flex flex-col gap-2 px-4 py-3">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+        <h1 className="serif text-xl text-[var(--gold)]">{cls.className}</h1>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm">
+          <span>
+            Points left:{' '}
+            <strong data-testid="points-left" className={left === 0 ? 'text-[var(--gold)]' : undefined}>
+              {left}
+            </strong>
+            <span className="text-[var(--text-dim)]"> / {cls.rules.maxPoints}</span>
+            {left === 0 && (
+              <span className="ml-2 text-xs text-[var(--gold)]" data-testid="no-points-left">
+                all spent
+              </span>
+            )}
+          </span>
+          <span>
+            Required level: <strong data-testid="required-level">{level}</strong>
+          </span>
+          <span className="text-[var(--text-dim)]" data-testid="tree-counts">
+            {cls.trees.map((t, i) => (
+              <span key={t.id}>
+                {i > 0 && ' / '}
+                {t.name} <strong className="text-[var(--text)]">{pointsInTree(build, t.id)}</strong>
+              </span>
+            ))}
+          </span>
+        </div>
       </div>
 
-      <div className="flex w-full flex-wrap items-start gap-x-4 gap-y-2">
-        <div className="flex items-center gap-2">
-          <label className="text-sm text-[var(--text-dim)]" htmlFor="talent-search">
+      <ClassSwitcher current={classId} />
+
+      {/* One class-level control row, left to right: search, What's new, Reset
+          - all three act on the whole class, all three are the same height, and
+          What's new is a `.btn` like the other two rather than the odd chip out
+          it was when it still lived in a tree panel header. The legend keeps the
+          right edge. */}
+      <div className="class-controls">
+        <div className="control-field">
+          <label className="control-label" htmlFor="talent-search">
             Search
           </label>
           <input
@@ -111,12 +104,25 @@ export function Header({ cls, classId, build, query, onQuery, onJump, onReset, r
             onChange={(e) => onQuery(e.target.value)}
             onKeyDown={(e) => e.key === 'Escape' && onQuery('')}
           />
-          <span id="talent-search-count" className="text-xs text-[var(--text-dim)]" data-testid="search-count">
+          <span id="talent-search-count" className="control-label" data-testid="search-count">
             {query.trim() ? `${results.length} match${results.length === 1 ? '' : 'es'}` : ''}
           </span>
         </div>
+        <HighlightNewToggle classId={classId} />
+        {/* A Reset used to destroy a 51-point build silently (usability 10). It
+            is an ordinary commit now, so Ctrl+Z takes it back - and for the
+            eight seconds after the click, so does the button itself. */}
+        {resetUndoAt !== undefined ? (
+          <button className="btn reset-undo" onClick={onUndoReset} data-testid="reset-undo">
+            Build reset - Undo
+          </button>
+        ) : (
+          <button className="btn" onClick={onReset} data-testid="reset-all" disabled={total === 0}>
+            Reset
+          </button>
+        )}
         {/* The `?` badge is otherwise an unexplained glyph floating over the grid (usability 7). */}
-        <p className="ml-auto text-xs text-[var(--text-dim)]" data-testid="badge-legend">
+        <p className="control-legend" data-testid="badge-legend">
           <span className="legend-flag" aria-hidden="true">
             ?
           </span>{' '}
@@ -141,7 +147,9 @@ export function Header({ cls, classId, build, query, onQuery, onJump, onReset, r
               </button>
             </li>
           ))}
-          {results.length === 0 && <li className="text-xs text-[var(--text-dim)]">No talent matches "{query.trim()}".</li>}
+          {results.length === 0 && (
+            <li className="text-xs text-[var(--text-dim)]">No talent matches "{query.trim()}".</li>
+          )}
           {results.length > MAX_RESULTS && (
             <li className="text-xs text-[var(--text-dim)]">and {results.length - MAX_RESULTS} more</li>
           )}

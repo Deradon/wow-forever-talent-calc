@@ -2,6 +2,7 @@ import { useState } from 'react'
 import classesIndex from '../data/classes-index.json'
 import { includeExamples } from '../data/load'
 import { classHash } from '../url/route'
+import { ClassIcon } from './ClassIcon'
 import { continueLabel, forgetLastBuild, readLastBuild } from './storage'
 import { SITE_TITLE, useTitle } from './title'
 
@@ -68,7 +69,8 @@ export function ClassPicker() {
         </p>
         {classes.length === 0 ? (
           <p className="text-[var(--text-dim)]">
-            No class data yet. Real classes appear here as they pass review; run the dev server to see the example class.
+            No class data yet. Real classes appear here as they pass review; run the dev server to see the example
+            class.
           </p>
         ) : (
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" data-testid="class-list">
@@ -86,7 +88,8 @@ function ClassCard({ entry }: { entry: IndexEntry }) {
   return (
     <li className="class-card">
       <a href={`#/${entry.id}`} className="block no-underline" data-testid={`class-${entry.id}`}>
-        <div className="flex items-baseline gap-2">
+        <div className="flex items-center gap-3">
+          <ClassIcon classId={entry.id} className={entry.className} size={40} />
           <span className="serif text-lg text-[var(--gold)]">{entry.className}</span>
           {entry.origin !== 'talents' && <span className="text-xs text-[var(--text-dim)]">example</span>}
           <span className="ml-auto text-xs text-[var(--text-dim)]" data-testid={`class-${entry.id}-talents`}>
@@ -96,7 +99,8 @@ function ClassCard({ entry }: { entry: IndexEntry }) {
         <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm" data-testid={`class-${entry.id}-trees`}>
           {entry.trees.map((t) => (
             <li key={t.id}>
-              <span className="text-[var(--text)]">{t.name}</span> <span className="text-[var(--text-dim)]">{t.talents}</span>
+              <span className="text-[var(--text)]">{t.name}</span>{' '}
+              <span className="text-[var(--text-dim)]">{t.talents}</span>
             </li>
           ))}
         </ul>

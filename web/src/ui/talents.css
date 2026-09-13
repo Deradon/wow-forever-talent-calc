@@ -145,7 +145,7 @@
   padding: 0 2px;
   height: 22px;
   line-height: 20px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-align: center;
   border: 1px solid #000;
@@ -323,7 +323,7 @@
 .tooltip .prov {
   color: #8f98b3;
   margin-top: 6px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 /* --- notices --- */
@@ -339,11 +339,11 @@
 .cell .review-flag,
 .legend-flag {
   display: inline-block;
-  width: 15px;
-  height: 15px;
-  line-height: 15px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: #000;
   background: #f0a020;
@@ -620,10 +620,49 @@
 .summary-head h2 {
   margin: 0;
 }
+/* The empty state carries the shortcuts (round-one review: the column was
+   mostly dead space until the first point was spent, and it stretches to the
+   full height of the trees). It is replaced by the talent list on the first
+   click, so it costs a returning player nothing. */
 .summary-empty {
   color: var(--text-dim);
   font-size: 13px;
   margin: 0;
+}
+.summary-empty-lead {
+  margin: 0;
+}
+.summary-hints-title {
+  margin: 12px 0 6px;
+  padding-bottom: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px solid var(--gold-border);
+}
+.summary-hints {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.45;
+}
+.summary-hints kbd {
+  display: inline-block;
+  min-width: 17px;
+  padding: 0 4px;
+  border: 1px solid var(--gold-border);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  white-space: nowrap;
 }
 .summary-trees,
 .summary-talents {
@@ -751,9 +790,9 @@
 .class-chip {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
+  gap: 7px;
+  height: 32px;
+  padding: 0 3px;
   border: 1px solid #000;
   border-radius: 4px;
   background: linear-gradient(180deg, #1b2136 0%, #0b0f1c 100%);
@@ -767,16 +806,89 @@
   outline: 2px solid #fff;
   outline-offset: 1px;
 }
-.class-chip-initial {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  color: var(--class-colour);
+.class-chip-name {
+  /* Icon-only below 1320px - the same step at which the summary column drops
+     under the trees. Nine class names are ~700px of chip strip, which on a
+     laptop would push the header to three lines; the `title` and the sr-only
+     name mean nothing is lost when the text goes. */
+  display: none;
+  padding-right: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--class-text, var(--class-colour));
+}
+@media (min-width: 1320px) {
+  .class-chip-name {
+    display: inline;
+  }
 }
 .class-chip[data-active='true'] {
   border-color: var(--class-colour);
   box-shadow: 0 0 0 1px var(--class-colour);
   background: linear-gradient(180deg, #2a3350 0%, #141a2c 100%);
+}
+
+/* --- the class crest, shared by the chips and the landing cards ---
+   `web/public/icons/classicon_<class>.jpg`, fetched by hand and documented in
+   `web/public/icons/CLASS-ICONS.md`. The initials block is both the
+   "no icon for this class" and the "file did not load" case, so removing the
+   icons degrades these two places instead of breaking them. */
+.class-icon {
+  display: block;
+  flex: none;
+  object-fit: cover;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background: #000;
+}
+.class-icon-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--class-text, var(--class-colour, var(--gold)));
+  background: linear-gradient(135deg, #3a3f5c, #1b1e2e);
+}
+
+/* --- the class-level control row: search, What's new, Reset ---
+   All three act on the whole class, so they are one left-aligned group in that
+   order, at one height, with the badge legend holding the right edge. Before
+   this, Reset and What's new sat top-right, Search sat on a line of its own,
+   and the toggle was a smaller chip in a third style. */
+.class-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+.control-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.control-label {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.control-legend {
+  margin: 0 0 0 auto;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.class-controls .btn {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+.class-controls .search-input {
+  height: 28px;
+  padding: 0 8px;
+  font-size: 13px;
 }
 
 /* --- reset undo, continue card (brief ideas 7 and 8) --- */

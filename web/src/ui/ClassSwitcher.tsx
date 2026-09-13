@@ -1,23 +1,12 @@
 import classesIndex from '../data/classes-index.json'
 import { includeExamples } from '../data/load'
+import { ClassIcon } from './ClassIcon'
+import { classColour, classTextColour } from './classIcon'
 
 interface IndexEntry {
   id: string
   origin: string
   className: string
-}
-
-/** The Blizzard class colours; anything not in the list falls back to gold. */
-const CLASS_COLOUR: Record<string, string> = {
-  druid: '#ff7d0a',
-  hunter: '#abd473',
-  mage: '#69ccf0',
-  paladin: '#f58cba',
-  priest: '#ffffff',
-  rogue: '#fff569',
-  shaman: '#0070de',
-  warlock: '#9482c9',
-  warrior: '#c79c6e',
 }
 
 const classes: IndexEntry[] = (classesIndex as IndexEntry[]).filter((c) => includeExamples || c.origin === 'talents')
@@ -32,6 +21,12 @@ const classes: IndexEntry[] = (classesIndex as IndexEntry[]).filter((c) => inclu
  * build. The build you were on is one Back away, which is exactly the guard the
  * brief asks for and costs nothing: the class page pushes one history entry per
  * editing session (see history.ts).
+ *
+ * Each chip carries the class crest and the class name in the class colour. The
+ * name is hidden below 1320px - the same breakpoint at which the summary column
+ * drops under the trees - and the chips become icon-only; the `title` and the
+ * `sr-only` name mean nothing is lost when it goes, so the strip never wraps
+ * into three lines on a laptop.
  */
 export function ClassSwitcher({ current }: { current: string }) {
   if (classes.length <= 1) return null
@@ -44,14 +39,20 @@ export function ClassSwitcher({ current }: { current: string }) {
             key={entry.id}
             href={`#/${entry.id}`}
             className="class-chip"
-            style={{ '--class-colour': CLASS_COLOUR[entry.id] ?? 'var(--gold)' } as React.CSSProperties}
+            style={
+              {
+                '--class-colour': classColour(entry.id),
+                '--class-text': classTextColour(entry.id),
+              } as React.CSSProperties
+            }
             data-testid={`class-chip-${entry.id}`}
             data-active={active}
             aria-current={active ? 'page' : undefined}
             title={`${entry.className} - starts an empty build`}
           >
-            <span className="class-chip-initial" aria-hidden="true">
-              {entry.className.slice(0, 2)}
+            <ClassIcon classId={entry.id} className={entry.className} size={24} />
+            <span className="class-chip-name" aria-hidden="true">
+              {entry.className}
             </span>
             <span className="sr-only">{entry.className}</span>
           </a>

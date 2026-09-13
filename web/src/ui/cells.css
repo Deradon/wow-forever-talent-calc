@@ -7,24 +7,33 @@
  *   top-right     the new-in-Forever star
  *   bottom-right  the rank badge (22x22, covering the game's own counter)
  *
- * Three fixed slots, so no two markers can ever land on the same corner. The
- * star is 14px and the badge 22px on a 44px cell, which leaves 8px of vertical
- * clearance between them on the right-hand edge.
+ * Three fixed slots, so no two markers can ever land on the same corner.
+ *
+ * The star was 14px with a 10px glyph and read as a blue smudge at arm's
+ * length (round-one review). It is 18px with a 14px glyph now, which is the
+ * largest it can be: the cell's padding box is 40px on a 44px cell and the
+ * rank badge occupies the bottom 22px of the right-hand edge, so 18px is
+ * exactly flush with the badge and still not overlapping it - the bounding-box
+ * case in `tests/changes.spec.ts` asserts both that and a 16px floor. Across
+ * the top edge it sits beside the 16px `?`: 16 + 18 = 34 of 40.
  */
 
 .cell .new-flag {
   position: absolute;
   right: 0;
   top: 0;
-  width: 14px;
-  height: 14px;
-  line-height: 13px;
+  width: 18px;
+  height: 18px;
+  line-height: 16px;
   text-align: center;
-  font-size: 10px;
-  color: #041024;
+  font-size: 14px;
+  color: #04223f;
   background: #4ea3ff;
   border: 1px solid #04223f;
-  border-radius: 0 2px 0 3px;
+  border-radius: 0 2px 0 4px;
+  /* The icon underneath is busy and can be any colour, so the marker carries
+     its own separation rather than relying on the border alone. */
+  box-shadow: 0 0 3px rgba(4, 34, 63, 0.9);
   pointer-events: none;
 }
 

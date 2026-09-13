@@ -77,9 +77,41 @@ export function BuildSummary({ cls, build, link, code, canUndo, canRedo, onUndo,
       </div>
 
       {summary.spentTrees.length === 0 ? (
-        <p className="summary-empty" data-testid="summary-empty">
-          No points spent yet. Click a talent to start.
-        </p>
+        /* The column is `align-self: stretch`, so on an empty build it used to
+           be 700px of nothing next to the trees. It is also the one place a
+           player is already looking, so the dead space pays for itself as the
+           shortcut card - the gestures and keys that are otherwise discoverable
+           only by reading the hint line under the trees. It disappears the
+           moment the first point is spent. */
+        <div className="summary-empty" data-testid="summary-empty">
+          <p className="summary-empty-lead">
+            No points spent yet. Click a talent to start - what you spend shows up here, tree by tree, with the link to
+            share it.
+          </p>
+          <h3 className="summary-hints-title">Worth knowing</h3>
+          <ul className="summary-hints" data-testid="summary-hints">
+            <li>
+              <kbd>Shift</kbd>+click fills a talent to its last rank in one go.
+            </li>
+            <li>
+              <kbd>Ctrl</kbd>+click empties one; a right click takes back a single point.
+            </li>
+            <li>
+              <kbd>/</kbd> jumps to the search box, <kbd>Esc</kbd> clears it.
+            </li>
+            <li>
+              <kbd>d</kbd> opens, inside a tooltip, where its numbers were read from.
+            </li>
+            <li>
+              <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> redoes - a Reset
+              too.
+            </li>
+            <li>
+              <strong className="text-[var(--text)]">What's new</strong> in the header dims everything Classic already
+              had.
+            </li>
+          </ul>
+        </div>
       ) : (
         <ul className="summary-trees" data-testid="summary-trees">
           {summary.spentTrees.map((tree) => (
