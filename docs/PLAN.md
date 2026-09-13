@@ -157,6 +157,12 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-13 ~06:40: 469 of 470 talents live. Healing Light (paladin) and
+  Hot Streak (mage) recovered from the merged mkv; mage Fire r1c3 proven
+  absent from the footage (streamer skipped it). Master of Elements id
+  collision resolved. 141 pipeline tests, 81 web tests. Next: owner review
+  of the 79 flagged talents, then Phase 2b (races).
+
 - 2026-09-13 ~06:00: owner insisted every talent was hovered; two
   independent investigations (tooltip-detector forensics, cursor tracking)
   recovered 34 of the 36 gaps and found the causes: dark-panel tooltips under
