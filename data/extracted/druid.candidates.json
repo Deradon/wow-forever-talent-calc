@@ -301,11 +301,11 @@
           "match": "description",
           "similarity": 0.95
         },
-        "ranksNote": "Classic mage/fire/Fire Power (talent 35) (cross-class), matched on description (0.95): Classic 2/4/6/8/10 scaled by 0.5.",
+        "ranksNote": "Classic mage/fire/Fire Power (talent 35) (cross-class), matched on description (0.95): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 35,
           "name": "Fire Power",
@@ -545,7 +545,7 @@
             5
           ],
           [
-            7
+            10
           ]
         ],
         "ranksObserved": [
@@ -564,11 +564,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic druid/balance/Improved Moonfire (talent 763): Classic has 5 ranks, step +2 applied over 2 ranks from 5.",
+        "ranksNote": "Classic druid/balance/Improved Moonfire (talent 763): Classic 2/4/6/8/10 is proportional, Classic has 5 ranks; Forever rank 1 is 5: scaled proportionally (5 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 763,
           "name": "Improved Moonfire",
@@ -813,11 +813,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match druid/balance/Nature's Reach (talent 764) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "Classic match druid/balance/Nature's Reach (talent 764) has no alignable slots; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 764,
           "name": "Nature's Reach",
@@ -939,11 +939,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match druid/balance/Improved Entangling Roots (talent 787) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "Classic match druid/balance/Improved Entangling Roots (talent 787) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 787,
           "name": "Improved Entangling Roots",
@@ -1730,11 +1730,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -2093,11 +2093,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic druid/balance/Moonfury (talent 790): Classic 2/4/6/8/10 scaled by 0.5.",
+        "ranksNote": "Classic druid/balance/Moonfury (talent 790): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 790,
           "name": "Moonfury",
@@ -2502,11 +2502,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic druid/feral-combat/Heart of the Wild (talent 808): Classic 4/8/12/16/20 scaled by 0.5; Classic 4/8/12/16/20 scaled by 0.5.",
+        "ranksNote": "Classic druid/feral-combat/Heart of the Wild (talent 808): Classic 4/8/12/16/20 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank); Classic 4/8/12/16/20 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 808,
           "name": "Heart of the Wild",
@@ -2738,7 +2738,7 @@
         "confidence": 1.0
       },
       "ranks_anticipated": {
-        "description": "Increases damage done by your Swipe ability by {0}% and reduces the chance enemies have to detect you while Prowling as if you were {1} level higher{2}.",
+        "description": "Increases damage done by your Swipe ability by {0}% and reduces the chance enemies have to detect you while Prowling as if you were {1} level{2} higher.",
         "ranks": [
           [
             10,
@@ -2760,11 +2760,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match druid/feral-combat/Feral Instinct (talent 799) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "Classic match druid/feral-combat/Feral Instinct (talent 799) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 799,
           "name": "Feral Instinct",
@@ -3009,11 +3009,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match druid/feral-combat/Thick Hide (talent 794) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "Classic match druid/feral-combat/Thick Hide (talent 794) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 794,
           "name": "Thick Hide",
@@ -3137,11 +3137,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic druid/feral-combat/Savage Fury (talent 805): Classic 10/20 scaled by 0.5.",
+        "ranksNote": "Classic druid/feral-combat/Savage Fury (talent 805): Classic 10/20 is proportional; Forever rank 1 is 5: scaled proportionally (5 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 805,
           "name": "Savage Fury",
@@ -3371,7 +3371,7 @@
             3
           ],
           [
-            5
+            6
           ]
         ],
         "ranksObserved": [
@@ -3388,11 +3388,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic druid/feral-combat/Sharpened Claws (talent 798): Classic has 3 ranks, step +2 applied over 2 ranks from 3.",
+        "ranksNote": "Classic druid/feral-combat/Sharpened Claws (talent 798): Classic 2/4/6 is proportional, Classic has 3 ranks; Forever rank 1 is 3: scaled proportionally (3 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 798,
           "name": "Sharpened Claws",
@@ -3513,11 +3513,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -4277,11 +4277,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -4547,11 +4547,11 @@
           "match": "description",
           "similarity": 0.88
         },
-        "ranksNote": "Classic hunter/beast-mastery/Unleashed Fury (talent 1396) (cross-class), matched on description (0.88): Classic 4/8/12/16/20 scaled by 0.5.",
+        "ranksNote": "Classic hunter/beast-mastery/Unleashed Fury (talent 1396) (cross-class), matched on description (0.88): Classic 4/8/12/16/20 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1396,
           "name": "Unleashed Fury",
@@ -5230,10 +5230,10 @@
             10
           ],
           [
-            14
+            20
           ],
           [
-            18
+            30
           ]
         ],
         "ranksObserved": [
@@ -5252,11 +5252,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic druid/restoration/Subtlety (talent 841): Classic has 5 ranks, step +4 applied over 3 ranks from 10.",
+        "ranksNote": "Classic druid/restoration/Subtlety (talent 841): Classic 4/8/12/16/20 is proportional, Classic has 5 ranks; Forever rank 1 is 10: scaled proportionally (10 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 841,
           "name": "Subtlety",
@@ -5496,10 +5496,10 @@
             17
           ],
           [
-            22
+            34
           ],
           [
-            27
+            51
           ]
         ],
         "ranksObserved": [
@@ -5516,11 +5516,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic druid/restoration/Reflection (talent 829): Classic 5/10/15, Forever rank 1 is 17: applied +5/rank.",
+        "ranksNote": "Classic druid/restoration/Reflection (talent 829): Classic 5/10/15 is proportional; Forever rank 1 is 17: scaled proportionally (17 x rank). Rounding: rank 2 34 may read 35, rank 3 51 may read 50 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 829,
           "name": "Reflection",
@@ -6392,10 +6392,10 @@
             5
           ],
           [
-            30
+            10
           ],
           [
-            55
+            15
           ]
         ],
         "ranksObserved": [
@@ -6412,11 +6412,11 @@
           "match": "description",
           "similarity": 0.86
         },
-        "ranksNote": "Classic druid/balance/Improved Thorns (talent 782), matched on description (0.86): Classic 25/50/75, Forever rank 1 is 5: applied +25/rank.",
+        "ranksNote": "Classic druid/balance/Improved Thorns (talent 782), matched on description (0.86): Classic 25/50/75 is proportional; Forever rank 1 is 5: scaled proportionally (5 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 782,
           "name": "Improved Thorns",
@@ -6533,11 +6533,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match druid/restoration/Improved Tranquility (talent 842) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "Classic match druid/restoration/Improved Tranquility (talent 842) has no alignable slots; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 842,
           "name": "Improved Tranquility",

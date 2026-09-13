@@ -659,7 +659,7 @@
             35
           ],
           [
-            49
+            70
           ]
         ],
         "ranksObserved": [
@@ -678,11 +678,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic paladin/holy/Spiritual Focus (talent 1432): Classic has 5 ranks, step +14 applied over 2 ranks from 35.",
+        "ranksNote": "Classic paladin/holy/Spiritual Focus (talent 1432): Classic 14/28/42/56/70 is proportional, Classic has 5 ranks; Forever rank 1 is 35: scaled proportionally (35 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1432,
           "name": "Spiritual Focus",
@@ -940,11 +940,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic paladin/holy/Unyielding Faith (talent 1628): Classic 5/10 scaled by 3.",
+        "ranksNote": "Classic paladin/holy/Unyielding Faith (talent 1628): Classic 5/10 is proportional; Forever rank 1 is 15: scaled proportionally (15 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1628,
           "name": "Unyielding Faith",
@@ -1200,11 +1200,11 @@
           "match": "description",
           "similarity": 0.99
         },
-        "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (0.99): Classic 5/10/15 scaled by 2.",
+        "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (0.99): Classic 5/10/15 is proportional; Forever rank 1 is 10: scaled proportionally (10 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 829,
           "name": "Reflection",
@@ -1321,11 +1321,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed. Rounding: {1} rank 2 34 may read 35 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -1568,11 +1568,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match paladin/holy/Illumination (talent 1461) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match paladin/holy/Illumination (talent 1461) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1461,
           "name": "Illumination",
@@ -1821,10 +1821,10 @@
             6
           ],
           [
-            7
+            12
           ],
           [
-            8
+            18
           ]
         ],
         "ranksObserved": [
@@ -1841,11 +1841,11 @@
           "match": "description",
           "similarity": 0.91
         },
-        "ranksNote": "Classic shaman/restoration/Nature's Guidance (talent 583) (cross-class), matched on description (0.91): Classic 1/2/3, Forever rank 1 is 6: applied +1/rank.",
+        "ranksNote": "Classic shaman/restoration/Nature's Guidance (talent 583) (cross-class), matched on description (0.91): Classic 1/2/3 is proportional; Forever rank 1 is 6: scaled proportionally (6 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 583,
           "name": "Nature's Guidance",
@@ -2100,11 +2100,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -2224,11 +2224,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match paladin/holy/Holy Power (talent 1627) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match paladin/holy/Holy Power (talent 1627) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1627,
           "name": "Holy Power",
@@ -3116,11 +3116,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic paladin/protection/Anticipation (talent 1629): Classic 2/4/6/8/10 scaled by 2.",
+        "ranksNote": "Classic paladin/protection/Anticipation (talent 1629): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 4: scaled proportionally (4 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1629,
           "name": "Anticipation",
@@ -3358,10 +3358,10 @@
             2
           ],
           [
-            19
+            4
           ],
           [
-            36
+            6
           ]
         ],
         "ranksObserved": [
@@ -3378,11 +3378,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic paladin/protection/Improved Righteous Fury (talent 1501): Classic 16/33/50, Forever rank 1 is 2: applied +17/rank.",
+        "ranksNote": "Classic paladin/protection/Improved Righteous Fury (talent 1501): Classic 16/33/50 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1501,
           "name": "Improved Righteous Fury",
@@ -3893,10 +3893,10 @@
             3
           ],
           [
-            5
+            6
           ],
           [
-            7
+            9
           ]
         ],
         "ranksObserved": [
@@ -3915,11 +3915,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic paladin/protection/One-Handed Weapon Specialization (talent 1429): Classic has 5 ranks, step +2 applied over 3 ranks from 3.",
+        "ranksNote": "Classic paladin/protection/One-Handed Weapon Specialization (talent 1429): Classic 2/4/6/8/10 is proportional, Classic has 5 ranks; Forever rank 1 is 3: scaled proportionally (3 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1429,
           "name": "One-Handed Weapon Specialization",
@@ -4322,11 +4322,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match paladin/protection/Reckoning (talent 1426) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match paladin/protection/Reckoning (talent 1426) has no alignable slots; proportional x2..x5 of rank 1 assumed. Rounding: {0} rank 3 24 may read 25 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1426,
           "name": "Reckoning",
@@ -4883,16 +4883,16 @@
             2
           ],
           [
-            5
+            4
+          ],
+          [
+            6
           ],
           [
             8
           ],
           [
-            11
-          ],
-          [
-            14
+            10
           ]
         ],
         "ranksObserved": [
@@ -4911,11 +4911,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic paladin/retribution/Benediction (talent 1407): Classic 3/6/9/12/15, Forever rank 1 is 2: applied +3/rank.",
+        "ranksNote": "Classic paladin/retribution/Benediction (talent 1407): Classic 3/6/9/12/15 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1407,
           "name": "Benediction",
@@ -5178,11 +5178,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -5574,11 +5574,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed. Rounding: {0} rank 2 66 may read 65, rank 3 99 may read 100 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -5822,11 +5822,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic paladin/retribution/Pursuit of Justice (talent 1634): Classic 4/8 scaled by 2.",
+        "ranksNote": "Classic paladin/retribution/Pursuit of Justice (talent 1634): Classic 4/8 is proportional; Forever rank 1 is 8: scaled proportionally (8 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1634,
           "name": "Pursuit of Justice",
@@ -5934,7 +5934,7 @@
             5
           ],
           [
-            20
+            10
           ]
         ],
         "ranksObserved": [
@@ -5950,11 +5950,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic paladin/retribution/Eye for an Eye (talent 1632): Classic 15/30, Forever rank 1 is 5: applied +15/rank.",
+        "ranksNote": "Classic paladin/retribution/Eye for an Eye (talent 1632): Classic 15/30 is proportional; Forever rank 1 is 5: scaled proportionally (5 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1632,
           "name": "Eye for an Eye",
@@ -6177,11 +6177,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -6300,11 +6300,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic paladin/retribution/Two-Handed Weapon Specialization (talent 1410): Classic 2/4/6 scaled by 1.5.",
+        "ranksNote": "Classic paladin/retribution/Two-Handed Weapon Specialization (talent 1410): Classic 2/4/6 is proportional; Forever rank 1 is 3: scaled proportionally (3 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1410,
           "name": "Two-Handed Weapon Specialization",
@@ -6683,11 +6683,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed. Rounding: rank 2 66 may read 65, rank 3 99 may read 100 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {

@@ -5,7 +5,7 @@
   "className": "Mage",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T11:17:14Z",
+  "generatedAt": "2026-09-13T11:38:52Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -89,7 +89,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic mage/arcane/Arcane Focus (talent 76): Classic 2/4/6/8/10 scaled by 0.5.",
+          "ranksNote": "Classic mage/arcane/Arcane Focus (talent 76): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -114,7 +114,7 @@
           "ranks": [[20, 14], [40, 28], [60, 42], [80, 56], [100, 70]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match mage/arcane/Improved Arcane Missiles (talent 80) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+          "ranksNote": "Classic match mage/arcane/Improved Arcane Missiles (talent 80) has no alignable slots; proportional x2..x5 of rank 1 assumed. Rounding: {1} rank 3 42 may read 40, rank 4 56 may read 55 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -136,7 +136,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/mage/arcane/arcane-subtlety.icon.png",
           "description": "Reduces your target's resistance to all your spells by {0} and reduces the threat caused by your Arcane spells by {1}%.",
-          "ranks": [[8, 15], [13, 30]],
+          "ranks": [[8, 15], [16, 30]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -145,7 +145,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic mage/arcane/Arcane Subtlety (talent 74): Classic 5/10, Forever rank 1 is 8: applied +5/rank; Classic 20/40 scaled by 0.75.",
+          "ranksNote": "Classic mage/arcane/Arcane Subtlety (talent 74): Classic 5/10 is proportional; Forever rank 1 is 8: scaled proportionally (8 x rank); Classic 20/40 is proportional; Forever rank 1 is 15: scaled proportionally (15 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -167,7 +167,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/mage/arcane/magic-absorption.icon.png",
           "description": "Increases all your resistances by {0} and causes all spells you fully resist to restore {1}% of your total mana. Cannot trigger more often than 1 time per sec.",
-          "ranks": [[5, 1], [7, 2]],
+          "ranks": [[5, 1], [10, 2]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -176,7 +176,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic mage/arcane/Magic Absorption (talent 1650): Classic has 5 ranks, step +2 applied over 2 ranks from 5; Classic has 5 ranks, step +1 applied over 2 ranks from 1.",
+          "ranksNote": "Classic mage/arcane/Magic Absorption (talent 1650): Classic 2/4/6/8/10 is proportional, Classic has 5 ranks; Forever rank 1 is 5: scaled proportionally (5 x rank); Classic 1/2/3/4/5 is proportional, Classic has 5 ranks; Forever rank 1 is 1: scaled proportionally (1 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -232,7 +232,7 @@
           "ranks": [[25], [50]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match mage/arcane/Arcane Resilience (talent 85) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "Classic match mage/arcane/Arcane Resilience (talent 85) has no alignable slots; proportional x2..x2 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -343,7 +343,7 @@
           "ranks": [[17, 25], [34, 50]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match mage/arcane/Improved Mana Shield (talent 83) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "Classic match mage/arcane/Improved Mana Shield (talent 83) has no alignable slots; proportional x2..x2 of rank 1 assumed. Rounding: {0} rank 2 34 may read 35 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -390,7 +390,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/mage/arcane/arcane-meditation.icon.png",
           "description": "Allows {0}% of your Mana regeneration to continue while casting.",
-          "ranks": [[17], [22], [27]],
+          "ranks": [[17], [34], [51]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -399,7 +399,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic mage/arcane/Arcane Meditation (talent 1142): Classic 5/10/15, Forever rank 1 is 17: applied +5/rank.",
+          "ranksNote": "Classic mage/arcane/Arcane Meditation (talent 1142): Classic 5/10/15 is proportional; Forever rank 1 is 17: scaled proportionally (17 x rank). Rounding: rank 2 34 may read 35, rank 3 51 may read 50 (values above are the raw scaled numbers).",
           "requires": [
             {
               "talent": "arcane-concentration",
@@ -480,7 +480,7 @@
           "ranks": [[2, 20], [4, 40], [6, 60], [8, 80], [10, 100]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match mage/arcane/Arcane Mind (talent 77) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+          "ranksNote": "Classic match mage/arcane/Arcane Mind (talent 77) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -505,7 +505,7 @@
           "ranks": [[1, 1], [2, 2], [3, 3]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match mage/arcane/Arcane Instability (talent 421) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+          "ranksNote": "Classic match mage/arcane/Arcane Instability (talent 421) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -698,7 +698,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/mage/fire/impact.icon.png",
           "description": "Gives your Fire spells a {0}% chance to stun the target for 2 sec.",
-          "ranks": [[3], [5], [7]],
+          "ranks": [[3], [6], [9]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -707,7 +707,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic mage/fire/Impact (talent 30): Classic has 5 ranks, step +2 applied over 3 ranks from 3.",
+          "ranksNote": "Classic mage/fire/Impact (talent 30): Classic 2/4/6/8/10 is proportional, Classic has 5 ranks; Forever rank 1 is 3: scaled proportionally (3 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -729,7 +729,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/mage/fire/burning-soul.icon.png",
           "description": "Gives your Fire spells a {0}% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by {1}%.",
-          "ranks": [[23, 10], [58, 25], [93, 40]],
+          "ranks": [[23, 10], [46, 20], [69, 30]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -738,7 +738,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic mage/fire/Burning Soul (talent 23): Classic has 2 ranks, step +35 applied over 3 ranks from 23; Classic has 2 ranks, step +15 applied over 3 ranks from 10.",
+          "ranksNote": "Classic mage/fire/Burning Soul (talent 23): Classic 35/70 is proportional, Classic has 2 ranks; Forever rank 1 is 23: scaled proportionally (23 x rank); Classic 15/30 is proportional, Classic has 2 ranks; Forever rank 1 is 10: scaled proportionally (10 x rank). Rounding: {0} rank 2 46 may read 45, rank 3 69 may read 70 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -825,7 +825,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic mage/fire/Improved Scorch (talent 25): non-linear Classic progression copied.",
+          "ranksNote": "Classic mage/fire/Improved Scorch (talent 25): ranks copied.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1142,7 +1142,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/mage/frost/elemental-precision.icon.png",
           "description": "Increases your chance to hit with Frost and Fire spells by {0}%.",
-          "ranks": [[1], [3], [5], [7], [9]],
+          "ranks": [[1], [2], [3], [4], [5]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1151,7 +1151,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic mage/frost/Elemental Precision (talent 1649): Classic has 3 ranks, step +2 applied over 5 ranks from 1.",
+          "ranksNote": "Classic mage/frost/Elemental Precision (talent 1649): Classic 2/4/6 is proportional, Classic has 3 ranks; Forever rank 1 is 1: scaled proportionally (1 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1459,7 +1459,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/mage/frost/shatter.icon.png",
           "description": "Increases the critical strike chance of all your spells against Frozen targets by {0}.",
-          "ranks": [[50], [60], [70]],
+          "ranks": [[50], [100], [150]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1468,7 +1468,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic mage/frost/Shatter (talent 67): Classic has 5 ranks, step +10 applied over 3 ranks from 50.",
+          "ranksNote": "Classic mage/frost/Shatter (talent 67): Classic 10/20/30/40/50 is proportional, Classic has 5 ranks; Forever rank 1 is 50: scaled proportionally (50 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1491,7 +1491,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/mage/frost/improved-cone-of-cold.icon.png",
           "description": "Increases the damage dealt by your Cone of Cold spell by {0}%.",
-          "ranks": [[12], [22], [32]],
+          "ranks": [[12], [20], [28]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1500,7 +1500,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic mage/frost/Improved Cone of Cold (talent 64): Classic 15/25/35, Forever rank 1 is 12: applied +10/rank.",
+          "ranksNote": "Classic mage/frost/Improved Cone of Cold (talent 64): Classic 15/25/35 = 10 x rank +5; Forever rank 1 is 12 = 0.8x Classic's 15, step and offset scaled by 0.8.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",

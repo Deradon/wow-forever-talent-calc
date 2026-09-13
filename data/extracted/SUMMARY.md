@@ -8,16 +8,16 @@ Columns: cells = icon cells in the consensus grid (Forever tree size); crops = c
 
 | class | cells | read | needs-review | ranks manual/extrap. | missing | prereqs (arrows) | Classic talents (prereqs) |
 |---|---|---|---|---|---|---|---|
-| warrior | 54 | 54 | 5 | 14 | 0 | 7 | 52 (9) |
+| warrior | 54 | 54 | 5 | 13 | 0 | 7 | 52 (9) |
 | paladin | 52 | 52 | 8 | 17 | 0 | 6 | 44 (5) |
 | hunter | 50 | 50 | 8 | 15 | 0 | 8 | 46 (6) |
 | rogue | 53 | 53 | 3 | 11 | 0 | 8 | 51 (7) |
-| priest | 53 | 53 | 9 | 14 | 0 | 7 | 47 (7) |
-| shaman | 50 | 50 | 10 | 14 | 0 | 7 | 46 (5) |
+| priest | 53 | 53 | 9 | 13 | 0 | 7 | 47 (7) |
+| shaman | 50 | 50 | 10 | 12 | 0 | 7 | 46 (5) |
 | mage | 54 | 53 | 9 | 10 | 1 | 6 | 49 (7) |
 | warlock | 52 | 52 | 16 | 23 | 0 | 9 | 50 (9) |
 | druid | 52 | 52 | 9 | 16 | 0 | 9 | 47 (10) |
-| **total** | **470** | **469** | **77** | **134** | **1** | **67** | **432** (65) |
+| **total** | **470** | **469** | **77** | **130** | **1** | **67** | **432** (65) |
 
 ## Per tree
 
@@ -27,7 +27,7 @@ Forever cell counts next to the Classic Era tree (talent count) they descend fro
 |---|---|---|---|---|---|---|---|---|
 | warrior | Arms | 17 | 17 | 17 | 1 | 3 | 0 | Arms 18 |
 | warrior | Fury | 18 | 18 | 18 | 3 | 5 | 0 | Fury 17 |
-| warrior | Protection | 19 | 19 | 19 | 1 | 6 | 0 | Protection 17 |
+| warrior | Protection | 19 | 19 | 19 | 1 | 5 | 0 | Protection 17 |
 | paladin | Holy | 18 | 18 | 18 | 3 | 5 | 0 | Holy 14 |
 | paladin | Protection | 16 | 16 | 16 | 3 | 5 | 0 | Protection 15 |
 | paladin | Retribution | 18 | 18 | 18 | 2 | 7 | 0 | Retribution 15 |
@@ -39,10 +39,10 @@ Forever cell counts next to the Classic Era tree (talent count) they descend fro
 | rogue | Subtlety | 19 | 19 | 19 | 2 | 5 | 0 | Subtlety 17 |
 | priest | Discipline | 18 | 18 | 18 | 4 | 6 | 0 | Discipline 15 |
 | priest | Holy | 17 | 17 | 17 | 2 | 4 | 0 | Holy 16 |
-| priest | Shadow Magic | 18 | 18 | 18 | 3 | 4 | 0 | Shadow 16 |
-| shaman | Elemental Combat | 16 | 16 | 16 | 4 | 6 | 0 | Elemental 15 |
+| priest | Shadow Magic | 18 | 18 | 18 | 3 | 3 | 0 | Shadow 16 |
+| shaman | Elemental Combat | 16 | 16 | 16 | 4 | 5 | 0 | Elemental 15 |
 | shaman | Enhancement | 18 | 18 | 18 | 4 | 4 | 0 | Enhancement 16 |
-| shaman | Restoration | 16 | 16 | 16 | 2 | 4 | 0 | Restoration 15 |
+| shaman | Restoration | 16 | 16 | 16 | 2 | 3 | 0 | Restoration 15 |
 | mage | Arcane | 18 | 18 | 18 | 1 | 6 | 0 | Arcane 16 |
 | mage | Fire | 17 | 16 | 16 | 3 | 1 | 1 | Fire 16 |
 | mage | Frost | 19 | 19 | 19 | 5 | 3 | 0 | Frost 17 |
@@ -109,4 +109,5 @@ Name similarity below 90 (`token_sort_ratio`) against every Classic talent of th
 - Only rank-0 tooltips except mage Frost r4c4 (Shatter, 3/3 in the 04:53 pass; flagged, confidence 0.7).
 - mage Fire r4c3 is Hot Streak (0/1, both readers agree) and r4c4 Master of Elements (`master-of-elements`, plain id). The earlier second Master of Elements record at r4c3 was a ghost-blob mis-attribution and was removed from the candidates file (`corrections` block there; `master-of-elements-r3c3` is gone from the export and the unpublished encoding).
 - Many talents have fewer ranks than Classic (30 `MAXRANK-DIFFERS-FROM-CLASSIC` warnings, e.g. warrior Improved Slam 2 vs 5, priest Wand Specialization 2 vs 5); 13 of 27 trees cannot absorb 51 points with the read maxRanks (rule 18), so the assumed Classic point rules may be wrong for Forever.
+- Anticipated ranks were rescaled on 2026-09-13 (`docs/handover/2026-09-13-rank-scaling.md`): proportional Classic progressions now scale from Forever's own rank 1 (`v1 * k`) instead of inheriting Classic's additive step. 63 talents got new rank values, 4 of them moving from `manual` to `classic-prior` (hence 130 instead of 134 above).
 - Equipment/stance/form requirements (13, e.g. "Requires Bear Form, Dire Bear Form") are kept in `source.note` as unparsed; the schema models talent prerequisites only.

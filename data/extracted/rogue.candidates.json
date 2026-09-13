@@ -706,11 +706,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic rogue/assassination/Murder (talent 274): Classic 1/2 scaled by 2.",
+        "ranksNote": "Classic rogue/assassination/Murder (talent 274): Classic 1/2 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 274,
           "name": "Murder",
@@ -1620,11 +1620,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match rogue/assassination/Improved Poisons (talent 268) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match rogue/assassination/Improved Poisons (talent 268) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 268,
           "name": "Improved Poisons",
@@ -1749,11 +1749,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match rogue/assassination/Vigor (talent 382) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "Classic match rogue/assassination/Vigor (talent 382) has no alignable slots; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 382,
           "name": "Vigor",
@@ -1989,7 +1989,7 @@
             5
           ],
           [
-            8
+            10
           ]
         ],
         "ranksObserved": [
@@ -2006,11 +2006,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic rogue/assassination/Improved Kidney Shot (talent 279): Classic has 3 ranks, step +3 applied over 2 ranks from 5.",
+        "ranksNote": "Classic rogue/assassination/Improved Kidney Shot (talent 279): Classic 3/6/9 is proportional, Classic has 3 ranks; Forever rank 1 is 5: scaled proportionally (5 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 279,
           "name": "Improved Kidney Shot",
@@ -2399,10 +2399,10 @@
             7
           ],
           [
-            12
+            14
           ],
           [
-            17
+            21
           ]
         ],
         "ranksObserved": [
@@ -2419,11 +2419,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic rogue/assassination/Improved Eviscerate (talent 276): Classic 5/10/15, Forever rank 1 is 7: applied +5/rank.",
+        "ranksNote": "Classic rogue/assassination/Improved Eviscerate (talent 276): Classic 5/10/15 is proportional; Forever rank 1 is 7: scaled proportionally (7 x rank). Rounding: rank 3 21 may read 20 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 276,
           "name": "Improved Eviscerate",
@@ -2947,10 +2947,10 @@
             2
           ],
           [
-            3
+            4
           ],
           [
-            4
+            6
           ]
         ],
         "ranksObserved": [
@@ -2969,11 +2969,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic rogue/combat/Deflection (talent 187): Classic has 5 ranks, step +1 applied over 3 ranks from 2.",
+        "ranksNote": "Classic rogue/combat/Deflection (talent 187): Classic 1/2/3/4/5 is proportional, Classic has 5 ranks; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 187,
           "name": "Deflection",
@@ -3115,11 +3115,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic rogue/combat/Precision (talent 181): Classic has 5 ranks, step +1 applied over 3 ranks from 1.",
+        "ranksNote": "Classic rogue/combat/Precision (talent 181): Classic 1/2/3/4/5 is proportional, Classic has 5 ranks; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 181,
           "name": "Precision",
@@ -3244,11 +3244,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match rogue/combat/Endurance (talent 204) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "Classic match rogue/combat/Endurance (talent 204) has no alignable slots; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 204,
           "name": "Endurance",
@@ -3904,11 +3904,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic rogue/combat/Dual Wield Specialization (talent 221): Classic 10/20/30/40/50 scaled by 0.5.",
+        "ranksNote": "Classic rogue/combat/Dual Wield Specialization (talent 221): Classic 10/20/30/40/50 is proportional; Forever rank 1 is 5: scaled proportionally (5 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 221,
           "name": "Dual Wield Specialization",
@@ -4295,7 +4295,7 @@
             1
           ],
           [
-            3
+            2
           ]
         ],
         "ranksObserved": [
@@ -4311,11 +4311,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic rogue/combat/Weapon Expertise (talent 1703): Classic 3/5, Forever rank 1 is 1: applied +2/rank.",
+        "ranksNote": "Classic rogue/combat/Weapon Expertise (talent 1703): Classic 3/5 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1703,
           "name": "Weapon Expertise",
@@ -4728,11 +4728,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic rogue/subtlety/Camouflage (talent 244): Classic 1/2/3/4/5 scaled by 2.",
+        "ranksNote": "Classic rogue/subtlety/Camouflage (talent 244): Classic 1/2/3/4/5 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 244,
           "name": "Camouflage",
@@ -4834,7 +4834,7 @@
         "confidence": 1.0
       },
       "ranks_anticipated": {
-        "description": "Reduces the chance enemies have to detect you while in Stealth mode as if you were {0} level higher{1}.",
+        "description": "Reduces the chance enemies have to detect you while in Stealth mode as if you were {0} level{1} higher.",
         "ranks": [
           [
             1,
@@ -4853,11 +4853,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match rogue/subtlety/Master of Deception (talent 241) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "Classic match rogue/subtlety/Master of Deception (talent 241) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 241,
           "name": "Master of Deception",
@@ -4965,7 +4965,7 @@
             5
           ],
           [
-            9
+            10
           ]
         ],
         "ranksObserved": [
@@ -4984,11 +4984,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic rogue/subtlety/Opportunity (talent 261): Classic has 5 ranks, step +4 applied over 2 ranks from 5.",
+        "ranksNote": "Classic rogue/subtlety/Opportunity (talent 261): Classic 4/8/12/16/20 is proportional, Classic has 5 ranks; Forever rank 1 is 5: scaled proportionally (5 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 261,
           "name": "Opportunity",
@@ -5096,10 +5096,10 @@
             33
           ],
           [
-            48
+            66
           ],
           [
-            63
+            99
           ]
         ],
         "ranksObserved": [
@@ -5116,11 +5116,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic rogue/subtlety/Setup (talent 246): Classic 15/30/45, Forever rank 1 is 33: applied +15/rank.",
+        "ranksNote": "Classic rogue/subtlety/Setup (talent 246): Classic 15/30/45 is proportional; Forever rank 1 is 33: scaled proportionally (33 x rank). Rounding: rank 2 66 may read 65, rank 3 99 may read 100 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 246,
           "name": "Setup",
@@ -5370,11 +5370,11 @@
           "match": "description",
           "similarity": 0.87
         },
-        "ranksNote": "Classic rogue/subtlety/Dirty Deeds (talent 265), matched on description (0.87): Classic 10/20 scaled by 2.5.",
+        "ranksNote": "Classic rogue/subtlety/Dirty Deeds (talent 265), matched on description (0.87): Classic 10/20 is proportional; Forever rank 1 is 25: scaled proportionally (25 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 265,
           "name": "Dirty Deeds",
@@ -5619,10 +5619,10 @@
             33
           ],
           [
-            58
+            66
           ],
           [
-            83
+            99
           ]
         ],
         "ranksObserved": [
@@ -5639,11 +5639,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic rogue/subtlety/Initiative (talent 245): Classic 25/50/75, Forever rank 1 is 33: applied +25/rank.",
+        "ranksNote": "Classic rogue/subtlety/Initiative (talent 245): Classic 25/50/75 is proportional; Forever rank 1 is 33: scaled proportionally (33 x rank). Rounding: rank 2 66 may read 65, rank 3 99 may read 100 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 245,
           "name": "Initiative",
@@ -5872,7 +5872,7 @@
         "confidence": 1.0
       },
       "ranks_anticipated": {
-        "description": "Increases the radius of your Distract ability by {0} yds, and further reduces the Stealth detection of distracted enemies as though they were an additional {1} level lower{2}.",
+        "description": "Increases the radius of your Distract ability by {0} yds, and further reduces the Stealth detection of distracted enemies as though they were an additional {1} level{2} lower.",
         "ranks": [
           [
             3,
@@ -5889,11 +5889,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -5986,7 +5986,7 @@
         "confidence": 1.0
       },
       "ranks_anticipated": {
-        "description": "Increases your Stealth detection as if you were {0} level higher{1} and reduces your chance to be hit by spells and ranged attacks by {2}%.",
+        "description": "Increases your Stealth detection as if you were {0} level{1} higher and reduces your chance to be hit by spells and ranged attacks by {2}%.",
         "ranks": [
           [
             1,
@@ -6003,11 +6003,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match rogue/subtlety/Heightened Senses (talent 1701) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "Classic match rogue/subtlety/Heightened Senses (talent 1701) has no alignable slots; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1701,
           "name": "Heightened Senses",
@@ -6761,11 +6761,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       },
       "requires_arrows": [
         {

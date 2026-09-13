@@ -5,7 +5,7 @@
   "className": "Paladin",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T11:17:14Z",
+  "generatedAt": "2026-09-13T11:38:52Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -265,7 +265,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/paladin/holy/spiritual-focus.icon.png",
           "description": "Gives your Flash of Light, Holy Light, and Light's Vigil spells a {0}% chance to not lose casting time when you take damage.",
-          "ranks": [[35], [49]],
+          "ranks": [[35], [70]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -274,7 +274,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic paladin/holy/Spiritual Focus (talent 1432): Classic has 5 ranks, step +14 applied over 2 ranks from 35.",
+          "ranksNote": "Classic paladin/holy/Spiritual Focus (talent 1432): Classic 14/28/42/56/70 is proportional, Classic has 5 ranks; Forever rank 1 is 35: scaled proportionally (35 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -382,7 +382,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic paladin/holy/Unyielding Faith (talent 1628): Classic 5/10 scaled by 3.",
+          "ranksNote": "Classic paladin/holy/Unyielding Faith (talent 1628): Classic 5/10 is proportional; Forever rank 1 is 15: scaled proportionally (15 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -483,7 +483,7 @@
             "match": "description",
             "similarity": 0.99
           },
-          "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (0.99): Classic 5/10/15 scaled by 2.",
+          "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (0.99): Classic 5/10/15 is proportional; Forever rank 1 is 10: scaled proportionally (10 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -531,7 +531,7 @@
           "ranks": [[10, 17], [20, 34]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed. Rounding: {1} rank 2 34 may read 35 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -628,7 +628,7 @@
           "ranks": [[20, 50], [40, 100], [60, 150], [80, 200], [100, 250]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match paladin/holy/Illumination (talent 1461) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+          "ranksNote": "Classic match paladin/holy/Illumination (talent 1461) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
           "requires": [
             {
               "talent": "reverence",
@@ -727,7 +727,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/paladin/holy/divine-precision.icon.png",
           "description": "Increases your chance to hit with Holy spells by {0}.",
-          "ranks": [[6], [7], [8]],
+          "ranks": [[6], [12], [18]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -736,7 +736,7 @@
             "match": "description",
             "similarity": 0.91
           },
-          "ranksNote": "Classic shaman/restoration/Nature's Guidance (talent 583) (cross-class), matched on description (0.91): Classic 1/2/3, Forever rank 1 is 6: applied +1/rank.",
+          "ranksNote": "Classic shaman/restoration/Nature's Guidance (talent 583) (cross-class), matched on description (0.91): Classic 1/2/3 is proportional; Forever rank 1 is 6: scaled proportionally (6 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -832,7 +832,7 @@
           "ranks": [[5, 4], [10, 8]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -881,7 +881,7 @@
           "ranks": [[3, 1], [6, 2], [9, 3], [12, 4], [15, 5]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match paladin/holy/Holy Power (talent 1627) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+          "ranksNote": "Classic match paladin/holy/Holy Power (talent 1627) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1221,7 +1221,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic paladin/protection/Anticipation (talent 1629): Classic 2/4/6/8/10 scaled by 2.",
+          "ranksNote": "Classic paladin/protection/Anticipation (talent 1629): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 4: scaled proportionally (4 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1313,7 +1313,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/paladin/protection/improved-righteous-fury.icon.png",
           "description": "While Righteous Fury is active, all damage taken is reduced by {0}%.",
-          "ranks": [[2], [19], [36]],
+          "ranks": [[2], [4], [6]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1322,7 +1322,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic paladin/protection/Improved Righteous Fury (talent 1501): Classic 16/33/50, Forever rank 1 is 2: applied +17/rank.",
+          "ranksNote": "Classic paladin/protection/Improved Righteous Fury (talent 1501): Classic 16/33/50 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1525,7 +1525,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/paladin/protection/one-handed-weapon-specialization.icon.png",
           "description": "Increases the damage you deal with one-handed melee weapons by {0}%.",
-          "ranks": [[3], [5], [7]],
+          "ranks": [[3], [6], [9]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1534,7 +1534,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic paladin/protection/One-Handed Weapon Specialization (talent 1429): Classic has 5 ranks, step +2 applied over 3 ranks from 3.",
+          "ranksNote": "Classic paladin/protection/One-Handed Weapon Specialization (talent 1429): Classic 2/4/6/8/10 is proportional, Classic has 5 ranks; Forever rank 1 is 3: scaled proportionally (3 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1683,7 +1683,7 @@
           "ranks": [[8, 20], [16, 40], [24, 60], [32, 80], [40, 100]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match paladin/protection/Reckoning (talent 1426) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+          "ranksNote": "Classic match paladin/protection/Reckoning (talent 1426) has no alignable slots; proportional x2..x5 of rank 1 assumed. Rounding: {0} rank 3 24 may read 25 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1905,7 +1905,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/paladin/retribution/benediction.icon.png",
           "description": "Reduces the Mana cost of all instant cast spells and abilities by {0}%.",
-          "ranks": [[2], [5], [8], [11], [14]],
+          "ranks": [[2], [4], [6], [8], [10]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1914,7 +1914,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic paladin/retribution/Benediction (talent 1407): Classic 3/6/9/12/15, Forever rank 1 is 2: applied +3/rank.",
+          "ranksNote": "Classic paladin/retribution/Benediction (talent 1407): Classic 3/6/9/12/15 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2016,7 +2016,7 @@
           "ranks": [[20], [40]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2166,7 +2166,7 @@
           "ranks": [[33, 20], [66, 40], [99, 60]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed. Rounding: {0} rank 2 66 may read 65, rank 3 99 may read 100 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2268,7 +2268,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic paladin/retribution/Pursuit of Justice (talent 1634): Classic 4/8 scaled by 2.",
+          "ranksNote": "Classic paladin/retribution/Pursuit of Justice (talent 1634): Classic 4/8 is proportional; Forever rank 1 is 8: scaled proportionally (8 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2314,7 +2314,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/paladin/retribution/eye-for-an-eye.icon.png",
           "description": "All critical strikes against you cause {0}% of the damage taken to the attacker as well. The damage caused by Eye for an Eye will not exceed 50% of the Paladin's total health.",
-          "ranks": [[5], [20]],
+          "ranks": [[5], [10]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -2323,7 +2323,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic paladin/retribution/Eye for an Eye (talent 1632): Classic 15/30, Forever rank 1 is 5: applied +15/rank.",
+          "ranksNote": "Classic paladin/retribution/Eye for an Eye (talent 1632): Classic 15/30 is proportional; Forever rank 1 is 5: scaled proportionally (5 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2418,7 +2418,7 @@
           "ranks": [[1, 1], [2, 2]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2472,7 +2472,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic paladin/retribution/Two-Handed Weapon Specialization (talent 1410): Classic 2/4/6 scaled by 1.5.",
+          "ranksNote": "Classic paladin/retribution/Two-Handed Weapon Specialization (talent 1410): Classic 2/4/6 is proportional; Forever rank 1 is 3: scaled proportionally (3 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2622,7 +2622,7 @@
           "ranks": [[33], [66], [99]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed. Rounding: rank 2 66 may read 65, rank 3 99 may read 100 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",

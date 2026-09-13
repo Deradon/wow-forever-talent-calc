@@ -155,11 +155,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -258,7 +258,7 @@
             13
           ],
           [
-            18
+            26
           ]
         ],
         "ranksObserved": [
@@ -277,11 +277,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic priest/discipline/Wand Specialization (talent 345): Classic has 5 ranks, step +5 applied over 2 ranks from 13.",
+        "ranksNote": "Classic priest/discipline/Wand Specialization (talent 345): Classic 5/10/15/20/25 is proportional, Classic has 5 ranks; Forever rank 1 is 13: scaled proportionally (13 x rank). Rounding: rank 2 26 may read 25 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 345,
           "name": "Wand Specialization",
@@ -417,11 +417,11 @@
           "match": "description",
           "similarity": 0.85
         },
-        "ranksNote": "Classic priest/holy/Spiritual Healing (talent 404), matched on description (0.85): Classic 2/4/6/8/10 scaled by 0.5.",
+        "ranksNote": "Classic priest/holy/Spiritual Healing (talent 404), matched on description (0.85): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 404,
           "name": "Spiritual Healing",
@@ -542,11 +542,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match priest/discipline/Silent Resolve (talent 352) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "Classic match priest/discipline/Silent Resolve (talent 352) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 352,
           "name": "Silent Resolve",
@@ -656,10 +656,10 @@
             6
           ],
           [
-            7
+            12
           ],
           [
-            8
+            18
           ]
         ],
         "ranksObserved": [
@@ -676,11 +676,11 @@
           "match": "description",
           "similarity": 0.95
         },
-        "ranksNote": "Classic shaman/restoration/Nature's Guidance (talent 583) (cross-class), matched on description (0.95): Classic 1/2/3, Forever rank 1 is 6: applied +1/rank.",
+        "ranksNote": "Classic shaman/restoration/Nature's Guidance (talent 583) (cross-class), matched on description (0.95): Classic 1/2/3 is proportional; Forever rank 1 is 6: scaled proportionally (6 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 583,
           "name": "Nature's Guidance",
@@ -790,10 +790,10 @@
             7
           ],
           [
-            12
+            14
           ],
           [
-            17
+            21
           ]
         ],
         "ranksObserved": [
@@ -810,11 +810,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic priest/discipline/Improved Power Word: Shield (talent 343): Classic 5/10/15, Forever rank 1 is 7: applied +5/rank.",
+        "ranksNote": "Classic priest/discipline/Improved Power Word: Shield (talent 343): Classic 5/10/15 is proportional; Forever rank 1 is 7: scaled proportionally (7 x rank). Rounding: rank 3 21 may read 20 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 343,
           "name": "Improved Power Word: Shield",
@@ -941,11 +941,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic priest/discipline/Martyrdom (talent 321): Classic 10/20 scaled by 2.",
+        "ranksNote": "Classic priest/discipline/Martyrdom (talent 321): Classic 10/20 is proportional; Forever rank 1 is 20: scaled proportionally (20 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 321,
           "name": "Martyrdom",
@@ -1054,10 +1054,10 @@
             3
           ],
           [
-            5
+            6
           ],
           [
-            7
+            9
           ]
         ],
         "ranksObserved": [
@@ -1076,11 +1076,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic priest/discipline/Mental Agility (talent 341): Classic has 5 ranks, step +2 applied over 3 ranks from 3.",
+        "ranksNote": "Classic priest/discipline/Mental Agility (talent 341): Classic 2/4/6/8/10 is proportional, Classic has 5 ranks; Forever rank 1 is 3: scaled proportionally (3 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 341,
           "name": "Mental Agility",
@@ -1304,10 +1304,10 @@
             17
           ],
           [
-            22
+            34
           ],
           [
-            27
+            51
           ]
         ],
         "ranksObserved": [
@@ -1324,11 +1324,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic priest/discipline/Meditation (talent 347): Classic 5/10/15, Forever rank 1 is 17: applied +5/rank.",
+        "ranksNote": "Classic priest/discipline/Meditation (talent 347): Classic 5/10/15 is proportional; Forever rank 1 is 17: scaled proportionally (17 x rank). Rounding: rank 2 34 may read 35, rank 3 51 may read 50 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 347,
           "name": "Meditation",
@@ -1449,11 +1449,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match priest/discipline/Improved Inner Fire (talent 346) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "Classic match priest/discipline/Improved Inner Fire (talent 346) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 346,
           "name": "Improved Inner Fire",
@@ -1589,11 +1589,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic priest/discipline/Mental Strength (talent 1201): Classic 2/4/6/8/10 scaled by 1.5.",
+        "ranksNote": "Classic priest/discipline/Mental Strength (talent 1201): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 3: scaled proportionally (3 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1201,
           "name": "Mental Strength",
@@ -2449,10 +2449,10 @@
             23
           ],
           [
-            53
+            40.25
           ],
           [
-            83
+            57.5
           ]
         ],
         "ranksObserved": [
@@ -2469,11 +2469,11 @@
           "match": "description",
           "similarity": 0.93
         },
-        "ranksNote": "Classic druid/balance/Improved Entangling Roots (talent 787) (cross-class), matched on description (0.93): Classic 40/70/100, Forever rank 1 is 23: applied +30/rank.",
+        "ranksNote": "Classic druid/balance/Improved Entangling Roots (talent 787) (cross-class), matched on description (0.93): Classic 40/70/100 = 30 x rank +10; Forever rank 1 is 23 = 0.575x Classic's 40, step and offset scaled by 0.575. Rounding: rank 2 40.25 may read 40, rank 3 57.5 may read 58 (values above are the raw scaled numbers).",
         "needsManual": false,
-        "confidence": "medium",
+        "confidence": "low",
         "review": true,
-        "rule": "step",
+        "rule": "affine",
         "match": {
           "classicTalentId": 787,
           "name": "Improved Entangling Roots",
@@ -3404,10 +3404,10 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic priest/holy/Inspiration (talent 361): non-linear Classic progression copied.",
+        "ranksNote": "Classic priest/holy/Inspiration (talent 361): ranks copied.",
         "needsManual": false,
-        "confidence": "medium",
-        "review": true,
+        "confidence": "high",
+        "review": false,
         "rule": "copied",
         "match": {
           "classicTalentId": 361,
@@ -3785,11 +3785,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match priest/holy/Searing Light (talent 403) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "Classic match priest/holy/Searing Light (talent 403) has no alignable slots; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 403,
           "name": "Searing Light",
@@ -4033,11 +4033,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -4263,11 +4263,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match priest/holy/Spiritual Guidance (talent 402) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match priest/holy/Spiritual Guidance (talent 402) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 402,
           "name": "Spiritual Guidance",
@@ -4375,10 +4375,10 @@
             3
           ],
           [
-            5
+            6
           ],
           [
-            7
+            9
           ]
         ],
         "ranksObserved": [
@@ -4397,11 +4397,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic priest/holy/Spiritual Healing (talent 404): Classic has 5 ranks, step +2 applied over 3 ranks from 3.",
+        "ranksNote": "Classic priest/holy/Spiritual Healing (talent 404): Classic 2/4/6/8/10 is proportional, Classic has 5 ranks; Forever rank 1 is 3: scaled proportionally (3 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 404,
           "name": "Spiritual Healing",
@@ -4673,11 +4673,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic priest/shadow/Shadow Focus (talent 463): Classic 2/4/6/8/10 scaled by 0.5.",
+        "ranksNote": "Classic priest/shadow/Shadow Focus (talent 463): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 463,
           "name": "Shadow Focus",
@@ -5065,21 +5065,31 @@
             10
           ],
           [
-            10
+            20
           ],
           [
-            10
+            30
           ]
         ],
         "ranksObserved": [
           1
         ],
-        "ranksSource": "manual",
-        "ranksNote": "needs manual ranks: Classic priest/shadow/Shadow Affinity (talent 466) scales 8/16/25 (non-linear) but Forever rank 1 is 10; ranks 2..3 are copies of rank 1.",
-        "needsManual": true,
-        "confidence": "low",
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 466,
+          "classicSpellIds": [
+            15318,
+            15272,
+            15320
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic priest/shadow/Shadow Affinity (talent 466): Classic 8/16/25 is proportional; Forever rank 1 is 10: scaled proportionally (10 x rank).",
+        "needsManual": false,
+        "confidence": "medium",
         "review": true,
-        "rule": "none",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 466,
           "name": "Shadow Affinity",
@@ -5315,7 +5325,7 @@
             10
           ],
           [
-            17
+            20
           ]
         ],
         "ranksObserved": [
@@ -5332,11 +5342,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic priest/shadow/Shadow Reach (talent 881): Classic has 3 ranks, step +7 applied over 2 ranks from 10.",
+        "ranksNote": "Classic priest/shadow/Shadow Reach (talent 881): Classic 6/13/20 is proportional, Classic has 3 ranks; Forever rank 1 is 10: scaled proportionally (10 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 881,
           "name": "Shadow Reach",
@@ -6210,10 +6220,10 @@
             33
           ],
           [
-            53
+            66
           ],
           [
-            73
+            99
           ]
         ],
         "ranksObserved": [
@@ -6232,11 +6242,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic priest/shadow/Shadow Weaving (talent 461): Classic has 5 ranks, step +20 applied over 3 ranks from 33.",
+        "ranksNote": "Classic priest/shadow/Shadow Weaving (talent 461): Classic 20/40/60/80/100 is proportional, Classic has 5 ranks; Forever rank 1 is 33: scaled proportionally (33 x rank). Rounding: rank 2 66 may read 65, rank 3 99 may read 100 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 461,
           "name": "Shadow Weaving",
@@ -6476,11 +6486,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -6588,11 +6598,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {

@@ -5,7 +5,7 @@
   "className": "Hunter",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T11:17:14Z",
+  "generatedAt": "2026-09-13T11:38:51Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -160,7 +160,7 @@
           "ranks": [[1], [2]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -208,7 +208,7 @@
           "ranks": [[2, 50], [4, 100], [6, 150]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match hunter/beast-mastery/Improved Aspect of the Monkey (talent 1381) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+          "ranksNote": "Classic match hunter/beast-mastery/Improved Aspect of the Monkey (talent 1381) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -419,7 +419,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic hunter/beast-mastery/Unleashed Fury (talent 1396): Classic 4/8/12/16/20 scaled by 0.75.",
+          "ranksNote": "Classic hunter/beast-mastery/Unleashed Fury (talent 1396): Classic 4/8/12/16/20 is proportional; Forever rank 1 is 3: scaled proportionally (3 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -512,7 +512,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/hunter/beast-mastery/ferocity.icon.png",
           "description": "Increases the critical strike chance of your pets and hawks by {0}%.",
-          "ranks": [[2], [5], [8], [11], [14]],
+          "ranks": [[2], [4], [6], [8], [10]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -521,7 +521,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic hunter/beast-mastery/Ferocity (talent 1393): Classic 3/6/9/12/15, Forever rank 1 is 2: applied +3/rank.",
+          "ranksNote": "Classic hunter/beast-mastery/Ferocity (talent 1393): Classic 3/6/9/12/15 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -724,7 +724,7 @@
           "ranks": [[10, 25], [20, 50]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match hunter/beast-mastery/Bestial Discipline (talent 1390) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "Classic match hunter/beast-mastery/Bestial Discipline (talent 1390) has no alignable slots; proportional x2..x2 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1125,7 +1125,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic hunter/marksmanship/Efficiency (talent 1342): Classic 2/4/6/8/10 scaled by 1.5.",
+          "ranksNote": "Classic hunter/marksmanship/Efficiency (talent 1342): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 3: scaled proportionally (3 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1170,7 +1170,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/hunter/marksmanship/careful-aim.icon.png",
           "description": "Increases your Attack Power by {0}% of your Intellect.",
-          "ranks": [[20], [22], [24], [26], [28]],
+          "ranks": [[20], [40], [60], [80], [100]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1179,7 +1179,7 @@
             "match": "description",
             "similarity": 0.94
           },
-          "ranksNote": "Classic rogue/subtlety/Deadliness (talent 1702) (cross-class), matched on description (0.94): Classic 2/4/6/8/10, Forever rank 1 is 20: applied +2/rank.",
+          "ranksNote": "Classic rogue/subtlety/Deadliness (talent 1702) (cross-class), matched on description (0.94): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 20: scaled proportionally (20 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1282,7 +1282,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic hunter/marksmanship/Improved Arcane Shot (talent 1346): Classic 0.2/0.4/0.6/0.8/1 scaled by 1.5.",
+          "ranksNote": "Classic hunter/marksmanship/Improved Arcane Shot (talent 1346): Classic 0.2/0.4/0.6/0.8/1 is proportional; Forever rank 1 is 0.3: scaled proportionally (0.3 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1538,7 +1538,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/hunter/marksmanship/barrage.icon.png",
           "description": "Increases the damage done by your Multi-Shot, Aimed Shot, and Volley abilities by {0}%.",
-          "ranks": [[3], [8], [13]],
+          "ranks": [[3], [6], [9]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1547,7 +1547,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic hunter/marksmanship/Barrage (talent 1347): Classic 5/10/15, Forever rank 1 is 3: applied +5/rank.",
+          "ranksNote": "Classic hunter/marksmanship/Barrage (talent 1347): Classic 5/10/15 is proportional; Forever rank 1 is 3: scaled proportionally (3 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1771,7 +1771,7 @@
           "ranks": [[1], [2], [3], [4], [5]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x5 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x5 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1825,7 +1825,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic hunter/survival/Deflection (talent 1311): Classic 1/2/3/4/5 scaled by 2.",
+          "ranksNote": "Classic hunter/survival/Deflection (talent 1311): Classic 1/2/3/4/5 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1918,7 +1918,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/hunter/survival/savage-strikes.icon.png",
           "description": "Increases the critical strike chance of all your melee abilities by {0}%.",
-          "ranks": [[2], [12]],
+          "ranks": [[2], [4]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1927,7 +1927,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic hunter/survival/Savage Strikes (talent 1621): Classic 10/20, Forever rank 1 is 2: applied +10/rank.",
+          "ranksNote": "Classic hunter/survival/Savage Strikes (talent 1621): Classic 10/20 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2026,7 +2026,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/hunter/survival/improved-wing-clip.icon.png",
           "description": "Gives your Wing Clip ability a {0}% chance to immobilize the target for 5 sec.",
-          "ranks": [[7], [11], [15]],
+          "ranks": [[7], [14], [21]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -2035,7 +2035,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic hunter/survival/Improved Wing Clip (talent 1305): Classic has 5 ranks, step +4 applied over 3 ranks from 7.",
+          "ranksNote": "Classic hunter/survival/Improved Wing Clip (talent 1305): Classic 4/8/12/16/20 is proportional, Classic has 5 ranks; Forever rank 1 is 7: scaled proportionally (7 x rank). Rounding: rank 3 21 may read 20 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2144,7 +2144,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic hunter/survival/Surefooted (talent 1310): Classic 5/10/15 scaled by 2.",
+          "ranksNote": "Classic hunter/survival/Surefooted (talent 1310): Classic 5/10/15 is proportional; Forever rank 1 is 10: scaled proportionally (10 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2239,7 +2239,7 @@
           "ranks": [[5], [10]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2287,7 +2287,7 @@
           "ranks": [[6, 10], [12, 20], [18, 30], [24, 40], [30, 50]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match hunter/marksmanship/Mortal Shots (talent 1349) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+          "ranksNote": "Classic match hunter/marksmanship/Mortal Shots (talent 1349) has no alignable slots; proportional x2..x5 of rank 1 assumed. Rounding: {0} rank 4 24 may read 25 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2485,7 +2485,7 @@
           "ranks": [[20], [40]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2577,7 +2577,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/hunter/survival/lightning-reflexes.icon.png",
           "description": "Increases your Agility by {0}%.",
-          "ranks": [[2], [5], [8], [11], [14]],
+          "ranks": [[2], [4], [6], [8], [10]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -2586,7 +2586,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic hunter/survival/Lightning Reflexes (talent 1303): Classic 3/6/9/12/15, Forever rank 1 is 2: applied +3/rank.",
+          "ranksNote": "Classic hunter/survival/Lightning Reflexes (talent 1303): Classic 3/6/9/12/15 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",

@@ -137,12 +137,23 @@ uv run stages/08_export.py promote warrior
 uv run stages/08_export.py all warrior --update-encoding  # both; -v prints dedupe/encoding INFO lines
 ```
 
+Scaling rule (changed 2026-09-13, `docs/handover/2026-09-13-rank-scaling.md`):
+each Classic slot is classified as *proportional* (`c_k = a * k`, up to the
+half unit the client rounds by: 5/10/15, 2/4/6/8/10, 16/33/50), *affine*
+(arithmetic with an offset, 10/15/20 = 5k + 5) or *irregular*. A proportional
+slot on a different base scales from Forever's own rank 1 (`v_k = v1 * k`, so
+17% against Classic 5/10/15 gives 17/34/51, not 17/22/27); an affine slot has
+step and offset multiplied by `v1 / c1` and drops one confidence notch; an
+irregular slot is copied only when rank 1 agrees, else `manual`. Values that
+look rounded in game (51 -> 50, 40.25 -> 40) are reported in a `Rounding:`
+clause of `ranksNote` and never rounded in the data.
+
 Decision table of stage 6 (`ranksSource` / confidence): 1-rank talent
-`observed`; exact same-class Classic name with constant/arithmetic slots and
-the same rank-1 value `classic-prior` high (copied, no review); fuzzy,
-cross-class or description match, re-based (ratio or +step), rank count
-extended, or shape-changing per-rank strings `classic-prior` medium (review
-queue); non-linear Classic with a different rank-1 value `manual`; no match
+`observed`; exact same-class Classic name with the same rank-1 value and rank
+count `classic-prior` high (copied, no review); fuzzy, cross-class or
+description match, re-based (proportional or affine), different rank count,
+or shape-changing per-rank strings `classic-prior` medium, affine low (review
+queue); irregular Classic with a different rank-1 value `manual`; no match
 with one or two numbers `extrapolated` (`v1 * k`, low); no match with zero,
 three or more numbers, or any `sec`/`min` slot, `manual`. `ranksNote` states
 the rule, `needsManual` marks copies of rank 1.

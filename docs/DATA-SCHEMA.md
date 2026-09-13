@@ -140,7 +140,7 @@ Top level of `data/talents/<class>.json` (identical for `data/extracted/`).
 | `ranksObserved` | array of integer (1-based) | yes | Which ranks were actually read from footage/DB2. Video data: `[1]`. Datamined: all. |
 | `ranksSource` | enum `observed`, `classic-prior`, `extrapolated`, `manual` | yes | How ranks beyond `ranksObserved` were derived. `observed` only when `ranksObserved` covers every rank. The UI shows a caveat for everything else. |
 | `ranksPrior` | object | iff `ranksSource == "classic-prior"` | `{ "classicTalentId": 124, "classicSpellIds": [12282, 12663, 12664], "match": "exact-name" \| "fuzzy-name" \| "description", "similarity": 0.97 }`. Points into `data/prior/classic-era/`. |
-| `ranksNote` | string | no | Human note, e.g. `"Classic scales 15/25/35, Forever rank 1 is 20: applied +10/rank"`. Required when `ranksSource == "manual"`. |
+| `ranksNote` | string | no | Human note, e.g. `"Classic 5/10/15 is proportional; Forever rank 1 is 17: scaled proportionally (17 x rank)"`. Required when `ranksSource == "manual"`. May end in a `Rounding: ...` clause (section 5). |
 | `requires` | array of Requirement | no | Prerequisite talents (arrow). Array from day one: Talent.db2 has three `PrereqTalent` slots and Wowhead's data uses an array. Empty array is not allowed; omit instead. |
 | `capstone` | boolean | no | Informational; the app derives "bottom row" itself. Only for a talent that is explicitly called out as the tree's capstone in footage. |
 | `spellIds` | array of integer, length == `maxRank` | no | Per-rank spell ids once datamined. Absent for video data. |
@@ -191,6 +191,21 @@ A `manual` source needs only `kind`, `reviewed: true`, `reviewedBy`,
 - `ranksSource` and `ranksObserved` drive the caveat. Rule for the UI:
   `ranksSource != "observed"` -> show "ranks 2+ anticipated (<ranksSource>)"
   on the tooltip and dim the next-rank text.
+- Scaling of anticipated ranks (`pipeline/src/wowtalents/ranks.py`, changed
+  2026-09-13, see `docs/handover/2026-09-13-rank-scaling.md`): Classic Era
+  progressions are proportional far more often than not (`c_k = a * k`, up to
+  the half unit the client rounds by: 5/10/15, 2/4/6/8/10, 16/33/50). When
+  Forever's rank 1 differs from Classic's, a proportional Classic slot is
+  scaled proportionally from Forever's own rank 1 (`v_k = v_1 * k`; 17% gives
+  17/34/51), never by Classic's additive step from a foreign base. An
+  additive step is only scaled along when Classic itself carries an offset
+  (10/15/20 = 5k + 5); step and offset are then both multiplied by
+  `v_1 / c_1` and the record is one confidence notch lower.
+- Anticipated values are the raw result of that arithmetic. Where a value
+  looks like a number the client would round (51 -> 50, 34 -> 35, 40.25 ->
+  40), `ranksNote` ends in `Rounding: rank <k> <raw> may read <rounded>, ...
+  (values above are the raw scaled numbers)`. The rounding is never applied
+  to `ranks`; only a reviewer or datamined data may replace the raw value.
 
 ## 6. Extracted, overrides and canonical files
 

@@ -303,11 +303,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match warlock/affliction/Suppression (talent 1005) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match warlock/affliction/Suppression (talent 1005) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1005,
           "name": "Suppression",
@@ -578,11 +578,11 @@
           "match": "description",
           "similarity": 0.9
         },
-        "ranksNote": "Classic warlock/destruction/Emberstorm (talent 966), matched on description (0.90): Classic 2/4/6/8/10 scaled by 0.5.",
+        "ranksNote": "Classic warlock/destruction/Emberstorm (talent 966), matched on description (0.90): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 966,
           "name": "Emberstorm",
@@ -951,11 +951,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -1062,10 +1062,10 @@
             23
           ],
           [
-            37
+            46
           ],
           [
-            51
+            69
           ]
         ],
         "ranksObserved": [
@@ -1084,11 +1084,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warlock/affliction/Fel Concentration (talent 1001): Classic has 5 ranks, step +14 applied over 3 ranks from 23.",
+        "ranksNote": "Classic warlock/affliction/Fel Concentration (talent 1001): Classic 14/28/42/56/70 is proportional, Classic has 5 ranks; Forever rank 1 is 23: scaled proportionally (23 x rank). Rounding: rank 2 46 may read 45, rank 3 69 may read 70 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1001,
           "name": "Fel Concentration",
@@ -1320,10 +1320,10 @@
             33
           ],
           [
-            35
+            66
           ],
           [
-            37
+            99
           ]
         ],
         "ranksObserved": [
@@ -1340,11 +1340,11 @@
           "match": "description",
           "similarity": 0.89
         },
-        "ranksNote": "Classic mage/fire/Critical Mass (talent 33) (cross-class), matched on description (0.89): Classic 2/4/6, Forever rank 1 is 33: applied +2/rank.",
+        "ranksNote": "Classic mage/fire/Critical Mass (talent 33) (cross-class), matched on description (0.89): Classic 2/4/6 is proportional; Forever rank 1 is 33: scaled proportionally (33 x rank). Rounding: rank 2 66 may read 65, rank 3 99 may read 100 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 33,
           "name": "Critical Mass",
@@ -2017,11 +2017,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed. Rounding: {0} rank 2 34 may read 35, rank 3 51 may read 50 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -2150,11 +2150,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warlock/affliction/Shadow Mastery (talent 1042): Classic 2/4/6/8/10 scaled by 0.5.",
+        "ranksNote": "Classic warlock/affliction/Shadow Mastery (talent 1042): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1042,
           "name": "Shadow Mastery",
@@ -2539,11 +2539,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match warlock/demonology/Improved Imp (talent 1222) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "Classic match warlock/demonology/Improved Imp (talent 1222) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1222,
           "name": "Improved Imp",
@@ -2677,11 +2677,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match warlock/demonology/Demonic Embrace (talent 1223) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match warlock/demonology/Demonic Embrace (talent 1223) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1223,
           "name": "Demonic Embrace",
@@ -2817,11 +2817,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warlock/demonology/Unholy Power (talent 1262): Classic 4/8/12/16/20 scaled by 0.5.",
+        "ranksNote": "Classic warlock/demonology/Unholy Power (talent 1262): Classic 4/8/12/16/20 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1262,
           "name": "Unholy Power",
@@ -2936,11 +2936,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -3186,11 +3186,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -3298,11 +3298,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -4423,11 +4423,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed. Rounding: rank 2 66 may read 65, rank 3 99 may read 100 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -4532,25 +4532,25 @@
             4,
             4,
             4,
-            2.2
+            4
           ],
           [
             6,
             6,
             6,
-            2.4
+            6
           ],
           [
             8,
             8,
             8,
-            2.6
+            8
           ],
           [
             10,
             10,
             10,
-            2.8
+            10
           ]
         ],
         "ranksObserved": [
@@ -4569,11 +4569,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warlock/demonology/Master Demonologist (talent 1244): Classic 4/8/12/16/20 scaled by 0.5; Classic 0.2/0.4/0.6/0.8/1, Forever rank 1 is 2: applied +0.2/rank.",
+        "ranksNote": "Classic warlock/demonology/Master Demonologist (talent 1244): Classic 4/8/12/16/20 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank); Classic 0.2/0.4/0.6/0.8/1 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1244,
           "name": "Master Demonologist",
@@ -5242,11 +5242,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match warlock/demonology/Master Demonologist (talent 1244) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match warlock/demonology/Master Demonologist (talent 1244) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1244,
           "name": "Master Demonologist",
@@ -5363,10 +5363,10 @@
             3
           ],
           [
-            4
+            6
           ],
           [
-            5
+            9
           ]
         ],
         "ranksObserved": [
@@ -5385,11 +5385,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warlock/destruction/Cataclysm (talent 941): Classic has 5 ranks, step +1 applied over 3 ranks from 3.",
+        "ranksNote": "Classic warlock/destruction/Cataclysm (talent 941): Classic 1/2/3/4/5 is proportional, Classic has 5 ranks; Forever rank 1 is 3: scaled proportionally (3 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 941,
           "name": "Cataclysm",
@@ -5661,11 +5661,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match warlock/destruction/Ruin (talent 967) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match warlock/destruction/Ruin (talent 967) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 967,
           "name": "Ruin",
@@ -5904,10 +5904,10 @@
             23
           ],
           [
-            58
+            46
           ],
           [
-            93
+            69
           ]
         ],
         "ranksObserved": [
@@ -5923,11 +5923,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warlock/destruction/Intensity (talent 985): Classic has 2 ranks, step +35 applied over 3 ranks from 23.",
+        "ranksNote": "Classic warlock/destruction/Intensity (talent 985): Classic 35/70 is proportional, Classic has 2 ranks; Forever rank 1 is 23: scaled proportionally (23 x rank). Rounding: rank 2 46 may read 45, rank 3 69 may read 70 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 985,
           "name": "Intensity",
@@ -6050,11 +6050,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match warlock/affliction/Improved Curse of Agony (talent 1284) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "Classic match warlock/affliction/Improved Curse of Agony (talent 1284) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1284,
           "name": "Improved Curse of Agony",
@@ -6595,11 +6595,11 @@
           "match": "description",
           "similarity": 0.91
         },
-        "ranksNote": "Classic mage/fire/Critical Mass (talent 33) (cross-class), matched on description (0.91): Classic 2/4/6 scaled by 4.",
+        "ranksNote": "Classic mage/fire/Critical Mass (talent 33) (cross-class), matched on description (0.91): Classic 2/4/6 is proportional; Forever rank 1 is 8: scaled proportionally (8 x rank). Rounding: rank 3 24 may read 25 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 33,
           "name": "Critical Mass",

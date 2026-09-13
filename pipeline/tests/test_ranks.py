@@ -51,6 +51,12 @@ def test_duration_and_rank_reference_detection():
     assert by_value  # silence unused warning
 
 
+def test_comparative_never_takes_the_plural():
+    # "1 level higher" pluralises the noun, not the comparative: "2 levels higher"
+    assert R.number_infos("as if you were 1 level higher.")[0].head_word.text == "level"
+    assert R.number_infos("as though they were an additional 1 level lower.")[0].head_word.text == "level"
+
+
 def test_plural_head_word_stops_at_units_percent_and_stopwords():
     assert R.number_infos("by 1 rage point.")[0].head_word.text == "point"
     assert R.number_infos("by 1% for 5 sec.")[0].head_word is None
@@ -117,29 +123,69 @@ def test_no_match(prior):
 # ----------------------------------------------------------------------------
 
 @pytest.mark.parametrize("values,kind", [
-    ([2, 4, 6, 8, 10], "arithmetic"), ([15, 25, 35], "arithmetic"), ([3, 3, 3], "constant"),
-    ([15, 30, 45, 65], "other"), ([1, 2, 4], "other"), ([5], "constant"),
+    ([2, 4, 6, 8, 10], "proportional"), ([5, 10, 15], "proportional"), ([3, 3, 3], "constant"),
+    ([15, 25, 35], "affine"), ([10, 15, 20], "affine"), ([15, 30, 45, 65], "irregular"), ([5], "constant"),
+    # the client rounds what it shows: 50/3 per rank reads 16/33/50, 8.2 per rank reads 8/16/25
+    ([16, 33, 50], "proportional"), ([8, 16, 25], "proportional"),
 ])
 def test_progression(values, kind):
     assert R.progression(values) == kind
 
 
-def test_scale_slot_copy_ratio_step_extended():
-    assert R.scale_slot(2, [2, 4, 6, 8, 10], 5).values == [2, 4, 6, 8, 10]
-    ratio = R.scale_slot(3, [2, 4, 6, 8, 10], 5)
-    assert ratio.rule == "ratio" and ratio.values == [3, 6, 9, 12, 15]
-    step = R.scale_slot(20, [15, 25, 35], 3)
-    assert step.rule == "step" and step.values == [20, 30, 40]
-    ext = R.scale_slot(1, [1, 2, 3, 4, 5], 3)
-    assert ext.rule == "extended" and ext.values == [1, 2, 3]
+def test_proportional_coefficient():
+    assert R.proportional_coefficient([5, 10, 15]) == pytest.approx(5)
+    assert R.proportional_coefficient([16, 33, 50]) == pytest.approx(16.5, abs=0.2)
+    assert R.proportional_coefficient([10, 15, 20]) is None
+    assert R.proportional_coefficient([15, 30, 45, 65]) is None
+
+
+def test_scale_slot_copies_when_forever_starts_where_classic_starts():
+    # Toughness-style: rank 1 agrees, so Classic's own numbers are used verbatim
+    plan = R.scale_slot(2, [2, 4, 6, 8, 10], 5)
+    assert plan.rule == "copied" and plan.values == [2, 4, 6, 8, 10]
     assert R.scale_slot(7, [7, 7, 7], 3).values == [7, 7, 7]
-    assert R.scale_slot(20, [15, 30, 45, 65], 4) is None       # non-linear, re-based: manual
     assert R.scale_slot(15, [15, 30, 45, 65], 4).values == [15, 30, 45, 65]
+
+
+def test_scale_slot_proportional_scales_from_forever_rank_1():
+    # a proportional Classic progression on a different base: f1 * k, never Classic's step
+    plan = R.scale_slot(3, [2, 4, 6, 8, 10], 5)
+    assert plan.rule == "proportional" and plan.values == [3, 6, 9, 12, 15]
+    # Meditation: Classic 5/10/15, Forever rank 1 17 -> 17/34/51 (not 17/22/27)
+    med = R.scale_slot(17, [5, 10, 15], 3)
+    assert med.rule == "proportional" and med.values == [17, 34, 51]
+    assert "proportional" in med.note and "17 x rank" in med.note
+    # a different rank count is no reason to fall back to the step either
+    ext = R.scale_slot(4, [1, 2, 3, 4, 5], 3)
+    assert ext.rule == "proportional" and ext.values == [4, 8, 12] and "Classic has 5 ranks" in ext.note
+
+
+def test_scale_slot_affine_scales_step_and_offset_by_the_ratio():
+    # Classic 15/25/35 = 10 x rank + 5; Forever rank 1 12 is 0.8x Classic's 15
+    plan = R.scale_slot(12, [15, 25, 35], 3)
+    assert plan.rule == "affine" and plan.values == [12, 20, 28]
+    assert "10 x rank +5" in plan.note and "scaled by 0.8" in plan.note
+    # the offset survives a ratio that does not come out whole; the raw value is kept
+    half = R.scale_slot(5, [10, 15, 20, 25, 30], 5)
+    assert half.rule == "affine" and half.values == [5, 7.5, 10, 12.5, 15]
+    assert "rank 2 7.5 may read 8" in half.rounding
+    assert R.scale_slot(20, [15, 30, 45, 65], 4) is None       # irregular, re-based: manual
 
 
 def test_scale_slot_keeps_decimals_tidy():
     assert R.scale_slot(0.1, [0.1, 0.2, 0.3, 0.4, 0.5], 5).values == [0.1, 0.2, 0.3, 0.4, 0.5]
-    assert R.scale_slot(0.2, [0.1, 0.2, 0.3, 0.4, 0.5], 5).values == [0.2, 0.4, 0.6, 0.8, 1]
+    prop = R.scale_slot(0.2, [0.1, 0.2, 0.3, 0.4, 0.5], 5)
+    assert prop.rule == "proportional" and prop.values == [0.2, 0.4, 0.6, 0.8, 1]
+    # small decimals are deliberate, not rounding artefacts: no rounding note
+    assert prop.rounding is None
+    assert R.scale_slot(0.75, [0.5, 1, 1.5], 3).values == [0.75, 1.5, 2.25]
+
+
+def test_rounding_hints_are_reported_not_applied():
+    assert R.rounding_hint([17, 34, 51]) == "rank 2 34 may read 35, rank 3 51 may read 50"
+    assert R.rounding_hint([2, 4, 6, 8, 10]) is None      # small integers are taken at face value
+    assert R.rounding_hint([23, 40.25, 57.5]) == "rank 2 40.25 may read 40, rank 3 57.5 may read 58"
+    assert R.rounding_hint([10, 22, 33]) is None          # 22 is 10% off 20: not a rounding artefact
 
 
 # ----------------------------------------------------------------------------
@@ -177,20 +223,33 @@ def test_one_rank_talent_is_observed(prior):
     assert "ranksPrior" not in r.to_fields() and "ranksNote" not in r.to_fields()
 
 
-def test_rebased_ratio_scaling(prior):
-    # Forever Toughness rank 1 reads 3% instead of Classic's 2%: 1.5x ratio
+def test_rebased_proportional_scaling(prior):
+    # Forever Toughness rank 1 reads 3% instead of Classic's 2%: 3/6/9/12/15
     r = anticipate(prior, "Toughness", "Increases your armor value from items by 3%.", 5, "warrior")
     assert r.ranks_source == "classic-prior" and r.confidence == "medium" and r.review
-    assert r.ranks == [[3], [6], [9], [12], [15]] and r.rule == "ratio"
-    assert "scaled by 1.5" in r.ranks_note
+    assert r.ranks == [[3], [6], [9], [12], [15]] and r.rule == "proportional"
+    assert "is proportional" in r.ranks_note
 
 
-def test_rebased_additive_step(prior):
-    # the DATA-SCHEMA.md ranksNote example: Classic 15/25/35, Forever rank 1 is 20 -> +10/rank
-    r = anticipate(prior, "Improved Rend", "Increases the bleed damage done by your Rend ability by 20%.", 3, "warrior")
-    assert r.ranks_source == "classic-prior" and r.rule == "step"
-    assert r.ranks == [[20], [30], [40]]
-    assert "applied +10/rank" in r.ranks_note
+def test_meditation_scales_proportionally(prior):
+    # the reported bug: Classic 5/10/15, Forever rank 1 17% -> 17/34/51, not Classic's +5 step
+    r = anticipate(prior, "Meditation", "Allows 17% of your Mana regeneration to continue while casting.", 3, "priest")
+    assert r.ranks_source == "classic-prior" and r.rule == "proportional"
+    assert r.ranks == [[17], [34], [51]]
+    assert "Classic 5/10/15 is proportional" in r.ranks_note
+    # the likely in-game rounding is stated, never applied
+    assert "rank 3 51 may read 50" in r.ranks_note and "raw scaled numbers" in r.ranks_note
+    assert r.rendered()[2] == "Allows 51% of your Mana regeneration to continue while casting."
+
+
+def test_rebased_affine_offset(prior):
+    # Classic Improved Rend 15/25/35 carries a +5 offset: step and offset scale by 12/15
+    r = anticipate(prior, "Improved Rend", "Increases the bleed damage done by your Rend ability by 12%.", 3, "warrior")
+    assert r.ranks_source == "classic-prior" and r.rule == "affine"
+    assert r.ranks == [[12], [20], [28]]
+    assert "10 x rank +5" in r.ranks_note and "scaled by 0.8" in r.ranks_note
+    # an offset scaled by a ratio is one notch less trustworthy than a proportional scale
+    assert r.confidence == "low" and r.review
 
 
 def test_nonlinear_classic_copied_when_base_matches(prior):
@@ -209,9 +268,9 @@ def test_nonlinear_classic_rebased_goes_manual(prior):
     assert r.to_fields()["match"]["classicTalentId"] == 921  # match kept for the reviewer
 
 
-def test_max_rank_differs_from_classic_extends_step(prior):
+def test_max_rank_differs_from_classic(prior):
     r = anticipate(prior, "Tactical Mastery", "You retain up to 5 of your rage points when you change stances.", 3, "warrior")
-    assert r.ranks_source == "classic-prior" and r.rule == "extended" and r.review
+    assert r.ranks_source == "classic-prior" and r.rule == "proportional" and r.review
     assert r.ranks == [[5], [10], [15]]
     assert "Classic has 5 ranks" in r.ranks_note
 
@@ -248,7 +307,7 @@ def test_no_match_single_number_extrapolates(prior):
     r = anticipate(prior, "Volatile Mixture", "Your Flasks also deal 40 Fire damage to nearby enemies.", 3, "tinker")
     assert r.ranks_source == "extrapolated" and r.confidence == "low" and r.review
     assert r.ranks == [[40], [80], [120]] and r.ranks_prior is None
-    assert "linear" in r.ranks_note
+    assert "proportional x2..x3 of rank 1" in r.ranks_note and r.rule == "proportional"
 
 
 def test_no_match_two_numbers_extrapolate_both(prior):
@@ -286,6 +345,17 @@ def test_plural_slot_from_heuristic_without_classic(prior):
     r = anticipate(prior, "Spare Parts", "Grants 1 additional charge.", 3, "tinker")
     assert r.description == "Grants {0} additional charge{1}."
     assert r.ranks == [[1, ""], [2, "s"], [3, "s"]]
+
+
+def test_extrapolated_units_and_plurals_render_for_rank_2(prior):
+    # no Classic counterpart: v1 * k, with the plural computed per rank and the unit left alone
+    r = anticipate(prior, "Scrap Shield", "Absorbs 1 damage point and grants 1 stack.", 3, "tinker")
+    assert r.ranks_source == "extrapolated"
+    assert r.description == "Absorbs {0} damage point{1} and grants {2} stack{3}."
+    assert r.rendered()[1] == "Absorbs 2 damage points and grants 2 stacks."
+    # a duration is never extrapolated, so "1 sec" can never turn into a wrong "2 sec"
+    d = anticipate(prior, "Scrap Shield", "Absorbs damage for 1 sec.", 3, "tinker")
+    assert d.ranks_source == "manual" and d.rendered()[1] == "Absorbs damage for 1 sec."
 
 
 def test_curly_quotes_and_nbsp_are_normalised(prior):

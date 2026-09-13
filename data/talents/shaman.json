@@ -5,7 +5,7 @@
   "className": "Shaman",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T11:17:17Z",
+  "generatedAt": "2026-09-13T11:38:54Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -121,7 +121,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic shaman/elemental/Elemental Warding (talent 1640): Classic 4/7/10, Forever rank 1 is 3: applied +3/rank.",
+          "ranksNote": "Classic shaman/elemental/Elemental Warding (talent 1640): Classic 4/7/10 is proportional; Forever rank 1 is 3: scaled proportionally (3 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -264,7 +264,7 @@
           "ranks": [[20], [40], [60], [80], [100]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match shaman/elemental/Elemental Fury (talent 565) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+          "ranksNote": "Classic match shaman/elemental/Elemental Fury (talent 565) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -311,10 +311,16 @@
           "iconSource": "crop",
           "iconCrop": "data/review/shaman/elemental-combat/eye-of-the-storm.icon.png",
           "description": "Reduces the pushback suffered from damaging attacks while casting Lightning Bolt, Chain Lightning, and Lava Burst by {0}%.",
-          "ranks": [[23], [23], [23]],
+          "ranks": [[23], [46], [69]],
           "ranksObserved": [1],
-          "ranksSource": "manual",
-          "ranksNote": "needs manual ranks: Classic shaman/elemental/Eye of the Storm (talent 1642) scales 33/66/100 (non-linear) but Forever rank 1 is 23; ranks 2..3 are copies of rank 1.",
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 1642,
+            "classicSpellIds": [29062, 29064, 29065],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic shaman/elemental/Eye of the Storm (talent 1642): Classic 33/66/100 is proportional; Forever rank 1 is 23: scaled proportionally (23 x rank). Rounding: rank 2 46 may read 45, rank 3 69 may read 70 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -370,7 +376,7 @@
           "ranks": [[3, 8], [6, 16]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match shaman/elemental/Storm Reach (talent 1641) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "Classic match shaman/elemental/Storm Reach (talent 1641) has no alignable slots; proportional x2..x2 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -395,7 +401,7 @@
           "ranks": [[3], [6], [9]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -597,7 +603,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic shaman/enhancement/Ancestral Knowledge (talent 614): Classic 1/2/3/4/5 scaled by 2.",
+          "ranksNote": "Classic shaman/enhancement/Ancestral Knowledge (talent 614): Classic 1/2/3/4/5 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -653,7 +659,7 @@
           "ranks": [[33], [66], [99]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed. Rounding: rank 2 66 may read 65, rank 3 99 may read 100 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -747,7 +753,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic shaman/enhancement/Elemental Weapons (talent 611): non-linear Classic progression copied; non-linear Classic progression copied.",
+          "ranksNote": "Classic shaman/enhancement/Elemental Weapons (talent 611): ranks copied.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -793,7 +799,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/shaman/enhancement/anticipation.icon.png",
           "description": "Increases your chance to dodge by an additional {0}%.",
-          "ranks": [[2], [3], [4]],
+          "ranks": [[2], [4], [6]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -802,7 +808,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic shaman/enhancement/Anticipation (talent 601): Classic has 5 ranks, step +1 applied over 3 ranks from 2.",
+          "ranksNote": "Classic shaman/enhancement/Anticipation (talent 601): Classic 1/2/3/4/5 is proportional, Classic has 5 ranks; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -855,7 +861,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/shaman/enhancement/flurry.icon.png",
           "description": "Increases your attack speed by {0}% for your next 3 swings after dealing a melee critical strike.",
-          "ranks": [[5], [10], [15], [20], [25]],
+          "ranks": [[5], [7.5], [10], [12.5], [15]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -864,7 +870,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic shaman/enhancement/Flurry (talent 602): Classic 10/15/20/25/30, Forever rank 1 is 5: applied +5/rank.",
+          "ranksNote": "Classic shaman/enhancement/Flurry (talent 602): Classic 10/15/20/25/30 = 5 x rank +5; Forever rank 1 is 5 = 0.5x Classic's 10, step and offset scaled by 0.5. Rounding: rank 2 7.5 may read 8, rank 4 12.5 may read 13 (values above are the raw scaled numbers).",
           "requires": [
             {
               "talent": "mental-dexterity",
@@ -946,7 +952,7 @@
           "ranks": [[15], [30]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+          "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1139,7 +1145,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/shaman/restoration/mindfulness.icon.png",
           "description": "Allows {0}% of your Mana regeneration to continue while casting.",
-          "ranks": [[17], [22], [27]],
+          "ranks": [[17], [34], [51]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1148,7 +1154,7 @@
             "match": "description",
             "similarity": 0.99
           },
-          "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (0.99): Classic 5/10/15, Forever rank 1 is 17: applied +5/rank.",
+          "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (0.99): Classic 5/10/15 is proportional; Forever rank 1 is 17: scaled proportionally (17 x rank). Rounding: rank 2 34 may read 35, rank 3 51 may read 50 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1204,7 +1210,7 @@
           "ranks": [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match shaman/restoration/Tidal Focus (talent 593) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+          "ranksNote": "Classic match shaman/restoration/Tidal Focus (talent 593) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1260,7 +1266,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic shaman/restoration/Ancestral Healing (talent 581): non-linear Classic progression copied.",
+          "ranksNote": "Classic shaman/restoration/Ancestral Healing (talent 581): ranks copied.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1282,7 +1288,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/shaman/restoration/healing-focus.icon.png",
           "description": "Gives you a {0}% chance to avoid interruption caused by damage while casting any healing spell.",
-          "ranks": [[23], [37], [51]],
+          "ranks": [[23], [46], [69]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1291,7 +1297,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic shaman/restoration/Healing Focus (talent 587): Classic has 5 ranks, step +14 applied over 3 ranks from 23.",
+          "ranksNote": "Classic shaman/restoration/Healing Focus (talent 587): Classic 14/28/42/56/70 is proportional, Classic has 5 ranks; Forever rank 1 is 23: scaled proportionally (23 x rank). Rounding: rank 2 46 may read 45, rank 3 69 may read 70 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1371,7 +1377,7 @@
           "ranks": [[5, 10], [10, 20], [15, 30], [20, 40], [25, 50]],
           "ranksObserved": [1],
           "ranksSource": "extrapolated",
-          "ranksNote": "Classic match shaman/restoration/Restorative Totems (talent 588) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+          "ranksNote": "Classic match shaman/restoration/Restorative Totems (talent 588) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1417,10 +1423,16 @@
           "iconSource": "crop",
           "iconCrop": "data/review/shaman/restoration/healing-way.icon.png",
           "description": "Increases the amount healed by your Healing Wave spell by {0}.",
-          "ranks": [[8], [8], [8]],
+          "ranks": [[8], [16], [24]],
           "ranksObserved": [1],
-          "ranksSource": "manual",
-          "ranksNote": "needs manual ranks: Classic shaman/restoration/Healing Way (talent 1648) scales 33/66/100 (non-linear) but Forever rank 1 is 8; ranks 2..3 are copies of rank 1.",
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 1648,
+            "classicSpellIds": [29206, 29205, 29202],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic shaman/restoration/Healing Way (talent 1648): Classic 33/66/100 is proportional; Forever rank 1 is 8: scaled proportionally (8 x rank). Rounding: rank 3 24 may read 25 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",

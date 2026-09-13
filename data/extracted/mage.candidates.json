@@ -387,11 +387,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic mage/arcane/Arcane Focus (talent 76): Classic 2/4/6/8/10 scaled by 0.5.",
+        "ranksNote": "Classic mage/arcane/Arcane Focus (talent 76): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 76,
           "name": "Arcane Focus",
@@ -527,11 +527,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match mage/arcane/Improved Arcane Missiles (talent 80) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match mage/arcane/Improved Arcane Missiles (talent 80) has no alignable slots; proportional x2..x5 of rank 1 assumed. Rounding: {1} rank 3 42 may read 40, rank 4 56 may read 55 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 80,
           "name": "Improved Arcane Missiles",
@@ -647,7 +647,7 @@
             15
           ],
           [
-            13,
+            16,
             30
           ]
         ],
@@ -664,11 +664,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic mage/arcane/Arcane Subtlety (talent 74): Classic 5/10, Forever rank 1 is 8: applied +5/rank; Classic 20/40 scaled by 0.75.",
+        "ranksNote": "Classic mage/arcane/Arcane Subtlety (talent 74): Classic 5/10 is proportional; Forever rank 1 is 8: scaled proportionally (8 x rank); Classic 20/40 is proportional; Forever rank 1 is 15: scaled proportionally (15 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 74,
           "name": "Arcane Subtlety",
@@ -777,7 +777,7 @@
             1
           ],
           [
-            7,
+            10,
             2
           ]
         ],
@@ -797,11 +797,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic mage/arcane/Magic Absorption (talent 1650): Classic has 5 ranks, step +2 applied over 2 ranks from 5; Classic has 5 ranks, step +1 applied over 2 ranks from 1.",
+        "ranksNote": "Classic mage/arcane/Magic Absorption (talent 1650): Classic 2/4/6/8/10 is proportional, Classic has 5 ranks; Forever rank 1 is 5: scaled proportionally (5 x rank); Classic 1/2/3/4/5 is proportional, Classic has 5 ranks; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1650,
           "name": "Magic Absorption",
@@ -1067,11 +1067,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match mage/arcane/Arcane Resilience (talent 85) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "Classic match mage/arcane/Arcane Resilience (talent 85) has no alignable slots; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 85,
           "name": "Arcane Resilience",
@@ -1592,11 +1592,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match mage/arcane/Improved Mana Shield (talent 83) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "Classic match mage/arcane/Improved Mana Shield (talent 83) has no alignable slots; proportional x2..x2 of rank 1 assumed. Rounding: {0} rank 2 34 may read 35 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 83,
           "name": "Improved Mana Shield",
@@ -1830,10 +1830,10 @@
             17
           ],
           [
-            22
+            34
           ],
           [
-            27
+            51
           ]
         ],
         "ranksObserved": [
@@ -1850,11 +1850,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic mage/arcane/Arcane Meditation (talent 1142): Classic 5/10/15, Forever rank 1 is 17: applied +5/rank.",
+        "ranksNote": "Classic mage/arcane/Arcane Meditation (talent 1142): Classic 5/10/15 is proportional; Forever rank 1 is 17: scaled proportionally (17 x rank). Rounding: rank 2 34 may read 35, rank 3 51 may read 50 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1142,
           "name": "Arcane Meditation",
@@ -2221,11 +2221,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match mage/arcane/Arcane Mind (talent 77) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match mage/arcane/Arcane Mind (talent 77) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 77,
           "name": "Arcane Mind",
@@ -2346,11 +2346,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match mage/arcane/Arcane Instability (talent 421) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "Classic match mage/arcane/Arcane Instability (talent 421) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 421,
           "name": "Arcane Instability",
@@ -3123,10 +3123,10 @@
             3
           ],
           [
-            5
+            6
           ],
           [
-            7
+            9
           ]
         ],
         "ranksObserved": [
@@ -3145,11 +3145,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic mage/fire/Impact (talent 30): Classic has 5 ranks, step +2 applied over 3 ranks from 3.",
+        "ranksNote": "Classic mage/fire/Impact (talent 30): Classic 2/4/6/8/10 is proportional, Classic has 5 ranks; Forever rank 1 is 3: scaled proportionally (3 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 30,
           "name": "Impact",
@@ -3268,12 +3268,12 @@
             10
           ],
           [
-            58,
-            25
+            46,
+            20
           ],
           [
-            93,
-            40
+            69,
+            30
           ]
         ],
         "ranksObserved": [
@@ -3289,11 +3289,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic mage/fire/Burning Soul (talent 23): Classic has 2 ranks, step +35 applied over 3 ranks from 23; Classic has 2 ranks, step +15 applied over 3 ranks from 10.",
+        "ranksNote": "Classic mage/fire/Burning Soul (talent 23): Classic 35/70 is proportional, Classic has 2 ranks; Forever rank 1 is 23: scaled proportionally (23 x rank); Classic 15/30 is proportional, Classic has 2 ranks; Forever rank 1 is 10: scaled proportionally (10 x rank). Rounding: {0} rank 2 46 may read 45, rank 3 69 may read 70 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 23,
           "name": "Burning Soul",
@@ -3707,10 +3707,10 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic mage/fire/Improved Scorch (talent 25): non-linear Classic progression copied.",
+        "ranksNote": "Classic mage/fire/Improved Scorch (talent 25): ranks copied.",
         "needsManual": false,
-        "confidence": "medium",
-        "review": true,
+        "confidence": "high",
+        "review": false,
         "rule": "copied",
         "match": {
           "classicTalentId": 25,
@@ -4913,16 +4913,16 @@
             1
           ],
           [
+            2
+          ],
+          [
             3
           ],
           [
+            4
+          ],
+          [
             5
-          ],
-          [
-            7
-          ],
-          [
-            9
           ]
         ],
         "ranksObserved": [
@@ -4939,11 +4939,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic mage/frost/Elemental Precision (talent 1649): Classic has 3 ranks, step +2 applied over 5 ranks from 1.",
+        "ranksNote": "Classic mage/frost/Elemental Precision (talent 1649): Classic 2/4/6 is proportional, Classic has 3 ranks; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1649,
           "name": "Elemental Precision",
@@ -6389,10 +6389,10 @@
             50
           ],
           [
-            60
+            100
           ],
           [
-            70
+            150
           ]
         ],
         "ranksObserved": [
@@ -6411,11 +6411,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic mage/frost/Shatter (talent 67): Classic has 5 ranks, step +10 applied over 3 ranks from 50.",
+        "ranksNote": "Classic mage/frost/Shatter (talent 67): Classic 10/20/30/40/50 is proportional, Classic has 5 ranks; Forever rank 1 is 50: scaled proportionally (50 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 67,
           "name": "Shatter",
@@ -6525,10 +6525,10 @@
             12
           ],
           [
-            22
+            20
           ],
           [
-            32
+            28
           ]
         ],
         "ranksObserved": [
@@ -6545,11 +6545,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic mage/frost/Improved Cone of Cold (talent 64): Classic 15/25/35, Forever rank 1 is 12: applied +10/rank.",
+        "ranksNote": "Classic mage/frost/Improved Cone of Cold (talent 64): Classic 15/25/35 = 10 x rank +5; Forever rank 1 is 12 = 0.8x Classic's 15, step and offset scaled by 0.8.",
         "needsManual": false,
-        "confidence": "medium",
+        "confidence": "low",
         "review": true,
-        "rule": "step",
+        "rule": "affine",
         "match": {
           "classicTalentId": 64,
           "name": "Improved Cone of Cold",

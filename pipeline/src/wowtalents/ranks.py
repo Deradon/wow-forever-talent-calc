@@ -10,18 +10,28 @@ Entry point::
     res = anticipate("Toughness", "Increases your armor value from items by 2%.", 5, "paladin", prior)
     res.to_fields()   # description, ranks, ranksObserved, ranksSource, ranksPrior/ranksNote, needsManual
 
+Scaling rule (2026-09-13): a Classic progression is classified per slot as *proportional*
+(``c_k = a * k``, up to the half-unit the client rounds by: 5/10/15, 2/4/6/8/10, 16/33/50),
+*affine* (an arithmetic step with a non-zero offset: 10/15/20 = 5k + 5) or *irregular*.
+Proportional Classic + a different Forever rank 1 scales proportionally (``f1 * k``, so
+Forever's 17% against Classic's 5/10/15 gives 17/34/51, never Classic's +5 step from a
+foreign base). Affine Classic scales step *and* offset by ``f1 / c1`` and drops one
+confidence notch. Irregular stays manual unless Forever's rank 1 equals Classic's.
+Values that look like something Blizzard would round (51 -> 50, 40.25 -> 40) are reported
+in ``ranksNote`` ("Rounding: ...") and never rounded in the data.
+
 Decision table (``ranksSource`` / confidence):
 
     maxRank == 1                                            observed       high
-    exact same-class name, slots constant/arithmetic, c1==f1 classic-prior  high   (copied)
+    exact same-class name, c1 == f1, same rank count        classic-prior  high   (copied)
     fuzzy / cross-class / description match, copied         classic-prior  medium (review queue)
     ("exact" is full-string key equality; the fuzzy tier uses token_sort_ratio, so a token subset
     such as "Divine Precision" vs "Precision" never scores 1.0 and never skips review)
-    Classic match, arithmetic slot, base or ratio differs   classic-prior  medium (scaled, review queue)
-    Classic match, rank count differs, arithmetic slot      classic-prior  medium (step extended, review queue)
+    Classic match, proportional slot, other base/rank count classic-prior  medium (f1 * k, review queue)
+    Classic match, affine slot, other base/rank count       classic-prior  low    (step+offset x f1/c1, review queue)
     Classic shape-changing text, rank 1 identical           classic-prior  medium (per-rank strings copied)
-    Classic match, non-linear slot, c1 == f1                classic-prior  medium (copied, review queue)
-    Classic match, non-linear slot, c1 != f1                manual         -      (rank 1 copied, review queue)
+    Classic match, irregular slot, c1 == f1                 classic-prior  medium (copied, review queue)
+    Classic match, irregular slot, c1 != f1                 manual         -      (rank 1 copied, review queue)
     Classic duration in another unit (60 sec vs 1 min)      classic-prior  medium (Classic converted to Forever's unit, review queue)
     Classic duration unit does not convert whole (45 sec vs 1 min) manual  -      (rank 1 copied, review queue)
     Classic match but slot counts cannot be aligned         -> falls through to the no-match rows
@@ -39,6 +49,7 @@ never copied from Classic. A number preceded by ``Rank`` is never a slot.
 from __future__ import annotations
 
 import json
+import math
 import re
 import unicodedata
 from dataclasses import dataclass
@@ -57,12 +68,15 @@ DURATION_UNITS = {"sec", "secs", "second", "seconds", "min", "mins", "minute", "
 DURATION_SECONDS = {"sec": 1, "secs": 1, "second": 1, "seconds": 1, "min": 60, "mins": 60, "minute": 60, "minutes": 60,
                     "hr": 3600, "hrs": 3600, "hour": 3600, "hours": 3600}
 PLURAL_STOPWORDS = {"in", "of", "to", "for", "and", "or", "per", "from", "on", "by", "with", "while", "that", "when",
-                    "the", "a", "an", "at", "is", "are", "if", "over", "up", "down", "than", "more", "less"}
+                    "the", "a", "an", "at", "is", "are", "if", "over", "up", "down", "than", "more", "less",
+                    # comparatives never carry the plural: "2 levels higher", not "2 level highers"
+                    "higher", "lower", "longer", "shorter", "faster", "slower", "further", "farther", "greater",
+                    "smaller", "deeper", "closer", "wider", "stronger", "weaker"}
 
+FRACTION_HINT_MIN = 5.0      # below this a fractional scaled value is taken at face value
 NAME_THRESHOLD = 90.0        # rapidfuzz token_sort_ratio on names (brief (b), validator rule 15)
 DESC_THRESHOLD = 85.0        # token_ratio on number-masked descriptions (brief (b) step 3)
 MAXRANK_PENALTY = 10.0       # brief (b) step 2
-CLEAN_RATIO_STEP = 0.25      # f1/c1 is "clean" when a multiple of this, and <= 4
 
 
 # ----------------------------------------------------------------------------
@@ -335,35 +349,83 @@ def match_classic(name: str, text: str, max_rank: int, cls: str, prior: Prior) -
 # Progression classification and scaling
 # ----------------------------------------------------------------------------
 
+def proportional_coefficient(values: list[int | float]) -> float | None:
+    """The per-rank coefficient ``a`` of a proportional Classic progression (``c_k = a * k``),
+    or ``None`` when no such ``a`` exists.
+
+    Integer Classic values only have to sit within half a unit of ``a * k``: the client shows
+    rounded numbers, so 16/33/50 is ``50/3`` per rank, not ``16 + 17k``, and 8/16/25 is ``8.2``
+    per rank. Decimal values must hit the ray exactly.
+    """
+    if not values or any(float(v) <= 0 for v in values):
+        return None
+    ints = all(float(v).is_integer() for v in values)
+    tol = 0.5 if ints else 1e-9
+    lo, hi = 0.0, float("inf")
+    for k, v in enumerate(values, start=1):
+        lo = max(lo, (float(v) - tol) / k)
+        hi = min(hi, (float(v) + tol) / k)
+    if lo > hi or hi <= 0:
+        return None
+    return (lo + hi) / 2
+
+
 def progression(values: list[int | float]) -> str:
-    """constant | arithmetic | other over Classic per-rank values of one slot."""
+    """constant | proportional | affine | irregular over Classic per-rank values of one slot.
+
+    ``proportional``  c_k = a * k (5/10/15, 2/4/6/8/10, and 16/33/50 up to display rounding)
+    ``affine``        arithmetic with a non-zero offset (10/15/20 = 5k + 5)
+    ``irregular``     neither (15/30/45/65)
+    """
     if len(values) < 2:
         return "constant"
     d = [round(float(b) - float(a), 6) for a, b in zip(values, values[1:])]
     if all(x == 0 for x in d):
         return "constant"
-    return "arithmetic" if len(set(d)) == 1 else "other"
+    if proportional_coefficient(values) is not None:
+        return "proportional"
+    return "affine" if len(set(d)) == 1 else "irregular"
 
 
-def _clean_ratio(f1: float, c1: float, classic: list[int | float]) -> float | None:
-    if c1 == 0 or f1 == 0:
+def rounding_hint(values: list[int | float], first_rank: int = 2) -> str | None:
+    """Where a scaled value looks like a number Blizzard would round on the tooltip.
+
+    Two cases: a fraction (40.25 -> 40) and an integer just off a multiple of five
+    (51 -> 50, 34 -> 35). Reported only, never applied: ``values`` keeps the raw scaled
+    number so the reviewer sees what the rule produced.
+    """
+    hints = []
+    for k, v in enumerate(values[first_rank - 1:], start=first_rank):
+        if isinstance(v, bool) or not isinstance(v, (int, float)):
+            continue
+        f = float(v)
+        if not f.is_integer():
+            # a fraction only reads as a rounded tooltip number when the value is big enough
+            # for the fraction to be noise (7.5 -> 8), never for a deliberate 0.4 sec
+            if f >= FRACTION_HINT_MIN:
+                hints.append((k, v, nice(_round_half_up(f))))
+            continue
+        n = int(f)
+        if n < 10 or n % 5 == 0:
+            continue
+        m = 5 * int(_round_half_up(n / 5))
+        if m > 0 and abs(n - m) / n <= 0.05:
+            hints.append((k, v, m))
+    if not hints:
         return None
-    r = f1 / c1
-    if r <= 0 or r > 4 or round(r / CLEAN_RATIO_STEP, 6) != int(round(r / CLEAN_RATIO_STEP)):
-        return None
-    ints = all(isinstance(c, int) for c in classic)
-    for c in classic:
-        v = c * r
-        if ints and abs(v - round(v)) > 1e-9:
-            return None
-    return r
+    return ", ".join(f"rank {k} {v} may read {m}" for k, v, m in hints)
+
+
+def _round_half_up(x: float) -> int:
+    return int(math.floor(x + 0.5)) if x >= 0 else -int(math.floor(-x + 0.5))
 
 
 @dataclass
 class SlotPlan:
     values: list[int | float]
-    rule: str            # copied | ratio | step | constant | extended
+    rule: str            # constant | copied | proportional | affine
     note: str | None = None
+    rounding: str | None = None
 
 
 def duration_unit(tokens: list[Token], pos: int, text: str) -> str | None:
@@ -390,28 +452,44 @@ def convert_duration(values: list[int | float], from_unit: str, to_unit: str) ->
 
 
 def scale_slot(f1: int | float, classic: list[int | float], max_rank: int) -> SlotPlan | None:
-    """Apply Classic's per-rank pattern to Forever's rank-1 value. None -> manual."""
+    """Apply Classic's per-rank pattern to Forever's rank-1 value. None -> manual.
+
+    Classic progressions are almost always proportional (``c_k = c_1 * k``); Forever's own
+    rank 1 is then the only base we know, so rank k is ``f1 * k``. An additive step from a
+    different base is only defensible when Classic itself carries a non-zero offset
+    (``10/15/20``), and even then the offset is scaled by ``f1 / c1`` like the step.
+    """
     kind = progression(classic)
     c1 = classic[0]
     n = len(classic)
+    c_str = "/".join(str(nice(c)) for c in classic)
     if kind == "constant":
         return SlotPlan([nice(f1)] * max_rank, "constant")
-    if kind == "arithmetic":
-        d = float(classic[1]) - float(classic[0])
-        if n == max_rank and c1 == f1:
-            return SlotPlan([nice(v) for v in classic], "copied")
-        if n != max_rank:
-            vals = [nice(float(f1) + k * d) for k in range(max_rank)]
-            return SlotPlan(vals, "extended", f"Classic has {n} ranks, step {nice(d):+} applied over {max_rank} ranks from {nice(f1)}")
-        r = _clean_ratio(float(f1), float(c1), classic)
-        if r is not None:
-            return SlotPlan([nice(c * r) for c in classic], "ratio",
-                            f"Classic {'/'.join(str(nice(c)) for c in classic)} scaled by {nice(r)}")
-        vals = [nice(float(f1) + k * d) for k in range(max_rank)]
-        return SlotPlan(vals, "step", f"Classic {'/'.join(str(nice(c)) for c in classic)}, Forever rank 1 is {nice(f1)}: applied {nice(d):+}/rank")
-    # non-linear Classic progression: only a verbatim copy is defensible
     if n == max_rank and c1 == f1:
-        return SlotPlan([nice(v) for v in classic], "copied", "non-linear Classic progression copied")
+        # Forever starts where Classic starts: Classic's own numbers beat any formula
+        note = None if kind in ("proportional", "affine") else "non-linear Classic progression copied"
+        return SlotPlan([nice(v) for v in classic], "copied", note)
+    if float(f1) <= 0:
+        return None
+    if kind == "proportional":
+        vals = [nice(float(f1) * k) for k in range(1, max_rank + 1)]
+        extra = f", Classic has {n} ranks" if n != max_rank else ""
+        note = (f"Classic {c_str} is proportional{extra}; Forever rank 1 is {nice(f1)}: "
+                f"scaled proportionally ({nice(f1)} x rank)")
+        return SlotPlan(vals, "proportional", note, rounding_hint(vals))
+    if kind == "affine":
+        step = float(classic[1]) - float(classic[0])
+        offset = float(c1) - step
+        if float(c1) == 0:
+            return None
+        r = float(f1) / float(c1)
+        vals = [nice(r * (step * k + offset)) for k in range(1, max_rank + 1)]
+        extra = f", Classic has {n} ranks" if n != max_rank else ""
+        rs = f"{r:.4g}"
+        note = (f"Classic {c_str} = {nice(step)} x rank {nice(offset):+}{extra}; Forever rank 1 is "
+                f"{nice(f1)} = {rs}x Classic's {nice(c1)}, step and offset scaled by {rs}")
+        return SlotPlan(vals, "affine", note, rounding_hint(vals))
+    # irregular Classic progression on a different base: only a reviewer can fill this in
     return None
 
 
@@ -429,7 +507,7 @@ class RankResult:
     needs_manual: bool = False
     confidence: str = "high"          # high | medium | low
     match: Match | None = None
-    rule: str | None = None           # copied | ratio | step | extended | linear | none
+    rule: str | None = None           # copied | constant | proportional | affine | none
     review: bool = False              # belongs in the review queue
 
     def to_fields(self) -> dict:
@@ -541,8 +619,13 @@ def anticipate(name: str, description_rank1: str, max_rank: int, cls: str, prior
         heads = {j: n.head_word for j, n in enumerate(slot_nums)}
         template, ranks = _finish(text, tokens, cols, max_rank, heads)
         base = "No Classic counterpart" if m is None else reason
-        note = f"{base}; linear x2..x{max_rank} of rank 1 assumed."
-        return RankResult(template, ranks, "extrapolated", None, note, False, "low", m, "linear", review=True)
+        note = f"{base}; proportional x2..x{max_rank} of rank 1 assumed."
+        multi = len(cols) > 1
+        roundings = [(f"{{{j}}} " if multi else "") + h
+                     for j, (_, vals) in enumerate(cols) if (h := rounding_hint(vals))]
+        if roundings:
+            note += f" Rounding: {'; '.join(roundings)} (values above are the raw scaled numbers)."
+        return RankResult(template, ranks, "extrapolated", None, note, False, "low", m, "proportional", review=True)
     reason = reason or (f"{len(slot_nums)} numeric slots" if slot_nums else "no numbers in rank-1 text")
     return _manual(text, tokens, nums, max_rank, reason, m)
 
@@ -650,6 +733,8 @@ def _from_classic(m: Match, text: str, tokens: list[Token], slot_nums: list[Numb
     template, ranks = _finish(text, tokens, [(n, pl.values) for n, pl in plans], max_rank, heads)
     rules = {pl.rule for _, pl in plans}
     notes = [pl.note for _, pl in plans if pl.note] + literal_notes
+    multi = sum(1 for _, pl in plans if pl.rounding) > 1 or len(plans) > 1
+    roundings = [(f"{{{j}}} " if multi else "") + pl.rounding for j, (_, pl) in enumerate(plans) if pl.rounding]
     prefix = f"Classic {m.label}" + (" (cross-class)" if m.cross_class else "")
     if m.match == "description":
         prefix += f", matched on description ({m.similarity:.2f})"
@@ -664,8 +749,12 @@ def _from_classic(m: Match, text: str, tokens: list[Token], slot_nums: list[Numb
         return RankResult(template, ranks, "classic-prior", _prior_block(m), note, False, "high", m, "copied", review=False)
     detail = "; ".join(notes) if notes else "ranks copied"
     note = f"{prefix}: {detail}."
-    rule = "copied" if rules <= {"copied", "constant"} else ("ratio" if "ratio" in rules else ("step" if "step" in rules else "extended"))
-    return RankResult(template, ranks, "classic-prior", _prior_block(m), note, False, "medium", m, rule, review=True)
+    if roundings:
+        note += f" Rounding: {'; '.join(roundings)} (values above are the raw scaled numbers)."
+    rule = "copied" if rules <= {"copied", "constant"} else ("affine" if "affine" in rules else "proportional")
+    # an offset scaled by a ratio is guesswork on top of guesswork: one notch below proportional
+    confidence = "low" if "affine" in rules else "medium"
+    return RankResult(template, ranks, "classic-prior", _prior_block(m), note, False, confidence, m, rule, review=True)
 
 
 def anticipate_record(rec: dict, prior: Prior | None) -> RankResult:

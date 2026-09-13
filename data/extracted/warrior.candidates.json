@@ -433,10 +433,10 @@
             12
           ],
           [
-            22
+            20
           ],
           [
-            32
+            28
           ]
         ],
         "ranksObserved": [
@@ -453,11 +453,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/arms/Improved Rend (talent 127): Classic 15/25/35, Forever rank 1 is 12: applied +10/rank.",
+        "ranksNote": "Classic warrior/arms/Improved Rend (talent 127): Classic 15/25/35 = 10 x rank +5; Forever rank 1 is 12 = 0.8x Classic's 15, step and offset scaled by 0.8.",
         "needsManual": false,
-        "confidence": "medium",
+        "confidence": "low",
         "review": true,
-        "rule": "step",
+        "rule": "affine",
         "match": {
           "classicTalentId": 127,
           "name": "Improved Rend",
@@ -716,11 +716,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -1364,11 +1364,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/arms/Two-Handed Weapon Specialization (talent 136): Classic has 5 ranks, step +1 applied over 3 ranks from 1.",
+        "ranksNote": "Classic warrior/arms/Two-Handed Weapon Specialization (talent 136): Classic 1/2/3/4/5 is proportional, Classic has 5 ranks; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 136,
           "name": "Two-Handed Weapon Specialization",
@@ -2019,7 +2019,7 @@
             0.25
           ],
           [
-            0.35
+            0.5
           ]
         ],
         "ranksObserved": [
@@ -2038,11 +2038,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/fury/Improved Slam (talent 168): Classic has 5 ranks, step +0.1 applied over 2 ranks from 0.25.",
+        "ranksNote": "Classic warrior/fury/Improved Slam (talent 168): Classic 0.1/0.2/0.3/0.4/0.5 is proportional, Classic has 5 ranks; Forever rank 1 is 0.25: scaled proportionally (0.25 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 168,
           "name": "Improved Slam",
@@ -2980,10 +2980,10 @@
             1
           ],
           [
-            41
+            2
           ],
           [
-            81
+            3
           ]
         ],
         "ranksObserved": [
@@ -3000,11 +3000,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/fury/Improved Cleave (talent 166): Classic 40/80/120, Forever rank 1 is 1: applied +40/rank.",
+        "ranksNote": "Classic warrior/fury/Improved Cleave (talent 166): Classic 40/80/120 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 166,
           "name": "Improved Cleave",
@@ -3379,11 +3379,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -3727,16 +3727,16 @@
             30
           ],
           [
-            35
+            60
           ],
           [
-            40
+            90
           ],
           [
-            45
+            120
           ],
           [
-            50
+            150
           ]
         ],
         "ranksObserved": [
@@ -3755,11 +3755,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/fury/Enrage (talent 155): Classic 5/10/15/20/25, Forever rank 1 is 30: applied +5/rank.",
+        "ranksNote": "Classic warrior/fury/Enrage (talent 155): Classic 5/10/15/20/25 is proportional; Forever rank 1 is 30: scaled proportionally (30 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 155,
           "name": "Enrage",
@@ -3885,11 +3885,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/fury/Improved Execute (talent 1542): Classic 2/5, Forever rank 1 is 3: applied +3/rank.",
+        "ranksNote": "Classic warrior/fury/Improved Execute (talent 1542): Classic 2/5 is proportional; Forever rank 1 is 3: scaled proportionally (3 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1542,
           "name": "Improved Execute",
@@ -4427,11 +4427,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match warrior/fury/Improved Berserker Rage (talent 1541) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "Classic match warrior/fury/Improved Berserker Rage (talent 1541) has no alignable slots; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1541,
           "name": "Improved Berserker Rage",
@@ -4546,16 +4546,16 @@
             5
           ],
           [
+            7.5
+          ],
+          [
             10
           ],
           [
+            12.5
+          ],
+          [
             15
-          ],
-          [
-            20
-          ],
-          [
-            25
           ]
         ],
         "ranksObserved": [
@@ -4574,11 +4574,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/fury/Flurry (talent 156): Classic 10/15/20/25/30, Forever rank 1 is 5: applied +5/rank.",
+        "ranksNote": "Classic warrior/fury/Flurry (talent 156): Classic 10/15/20/25/30 = 5 x rank +5; Forever rank 1 is 5 = 0.5x Classic's 10, step and offset scaled by 0.5. Rounding: rank 2 7.5 may read 8, rank 4 12.5 may read 13 (values above are the raw scaled numbers).",
         "needsManual": false,
-        "confidence": "medium",
+        "confidence": "low",
         "review": true,
-        "rule": "step",
+        "rule": "affine",
         "match": {
           "classicTalentId": 156,
           "name": "Flurry",
@@ -5028,11 +5028,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/protection/Anticipation (talent 138): Classic 2/4/6/8/10 scaled by 2.",
+        "ranksNote": "Classic warrior/protection/Anticipation (talent 138): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 4: scaled proportionally (4 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "ratio",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 138,
           "name": "Anticipation",
@@ -5147,7 +5147,7 @@
             25
           ],
           [
-            28
+            50
           ]
         ],
         "ranksObserved": [
@@ -5163,11 +5163,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/protection/Improved Bloodrage (talent 142): Classic 2/5, Forever rank 1 is 25: applied +3/rank.",
+        "ranksNote": "Classic warrior/protection/Improved Bloodrage (talent 142): Classic 2/5 is proportional; Forever rank 1 is 25: scaled proportionally (25 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 142,
           "name": "Improved Bloodrage",
@@ -5429,21 +5429,31 @@
             2
           ],
           [
-            2
+            4
           ],
           [
-            2
+            6
           ]
         ],
         "ranksObserved": [
           1
         ],
-        "ranksSource": "manual",
-        "ranksNote": "needs manual ranks: Classic warrior/arms/Improved Thunder Clap (talent 128) scales 1/2/4 (non-linear) but Forever rank 1 is 2; ranks 2..3 are copies of rank 1.",
-        "needsManual": true,
-        "confidence": "low",
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 128,
+          "classicSpellIds": [
+            12287,
+            12665,
+            12666
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic warrior/arms/Improved Thunder Clap (talent 128): Classic 1/2/4 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
+        "needsManual": false,
+        "confidence": "medium",
         "review": true,
-        "rule": "none",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 128,
           "name": "Improved Thunder Clap",
@@ -5692,11 +5702,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       },
       "requires_arrows": [
         {
@@ -5814,10 +5824,10 @@
             20
           ],
           [
-            35
+            40
           ],
           [
-            50
+            60
           ]
         ],
         "ranksObserved": [
@@ -5834,11 +5844,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/protection/Improved Revenge (talent 147): Classic 15/30/45, Forever rank 1 is 20: applied +15/rank.",
+        "ranksNote": "Classic warrior/protection/Improved Revenge (talent 147): Classic 15/30/45 is proportional; Forever rank 1 is 20: scaled proportionally (20 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 147,
           "name": "Improved Revenge",
@@ -5959,10 +5969,10 @@
             5
           ],
           [
-            8
+            10
           ],
           [
-            11
+            15
           ]
         ],
         "ranksObserved": [
@@ -5981,11 +5991,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/protection/Defiance (talent 144): Classic has 5 ranks, step +3 applied over 3 ranks from 5.",
+        "ranksNote": "Classic warrior/protection/Defiance (talent 144): Classic 3/6/9/12/15 is proportional, Classic has 5 ranks; Forever rank 1 is 5: scaled proportionally (5 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "extended",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 144,
           "name": "Defiance",
@@ -6239,10 +6249,10 @@
             7
           ],
           [
-            8
+            14
           ],
           [
-            9
+            21
           ]
         ],
         "ranksObserved": [
@@ -6259,11 +6269,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic warrior/protection/Improved Disarm (talent 151): Classic 1/2/3, Forever rank 1 is 7: applied +1/rank.",
+        "ranksNote": "Classic warrior/protection/Improved Disarm (talent 151): Classic 1/2/3 is proportional; Forever rank 1 is 7: scaled proportionally (7 x rank). Rounding: rank 3 21 may read 20 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 151,
           "name": "Improved Disarm",
@@ -6896,11 +6906,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "Classic match druid/feral-combat/Heart of the Wild (talent 808) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "Classic match druid/feral-combat/Heart of the Wild (talent 808) has no alignable slots; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 808,
           "name": "Heart of the Wild",
@@ -7025,11 +7035,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x3 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
@@ -7151,11 +7161,11 @@
           1
         ],
         "ranksSource": "extrapolated",
-        "ranksNote": "No Classic counterpart; linear x2..x5 of rank 1 assumed.",
+        "ranksNote": "No Classic counterpart; proportional x2..x5 of rank 1 assumed.",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "linear"
+        "rule": "proportional"
       }
     },
     {
