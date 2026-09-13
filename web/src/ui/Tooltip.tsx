@@ -1,5 +1,6 @@
 import { renderDescription, type ClassData, type Talent, type Tree } from '../data/schema'
 import type { Verdict } from '../rules'
+import { streamStamp } from './review'
 
 interface Props {
   cls: ClassData
@@ -13,13 +14,25 @@ interface Props {
  * Tooltip body: name, "Rank x/y", current-rank text (rank 0 shows rank 1),
  * "Next rank:" block, red requirement line when locked, a caveat when ranks
  * beyond the observed ones are anticipated, and a provenance line.
+ *
+ * `ranksSource: "manual"` means only the observed ranks are real (the data
+ * carries copies of rank 1 as placeholders). Those talents never show a
+ * placeholder as if it were the next rank: the next-rank block says the
+ * higher ranks are unknown, and a rank beyond the observed ones shows the
+ * highest observed text with a note.
  */
 export function TooltipContent({ cls, tree, talent, rank, verdict }: Props) {
-  const current = renderDescription(talent, Math.max(0, rank - 1))
+  const manual = talent.ranksSource === 'manual'
+  const observedMax = talent.ranksObserved.length > 0 ? Math.max(...talent.ranksObserved) : 1
+  const currentRank = Math.max(1, rank)
+  const currentKnown = !manual || talent.ranksObserved.includes(currentRank)
+  const current = renderDescription(talent, (currentKnown ? currentRank : observedMax) - 1)
+
   const hasNext = rank > 0 && rank < talent.maxRank
-  const next = hasNext ? renderDescription(talent, rank) : undefined
-  const anticipated = talent.ranksSource !== 'observed'
   const nextObserved = hasNext && talent.ranksObserved.includes(rank + 1)
+  const nextKnown = hasNext && (!manual || nextObserved)
+  const next = nextKnown ? renderDescription(talent, rank) : undefined
+  const anticipated = talent.ranksSource !== 'observed'
 
   const requirement = requirementLine(cls, tree, talent, verdict)
 
@@ -33,16 +46,21 @@ export function TooltipContent({ cls, tree, talent, rank, verdict }: Props) {
       </div>
       {talent.capstone && <div className="text-xs text-[var(--gold-dim)]">Capstone</div>}
       <div className="desc">{current}</div>
-      {next !== undefined && (
+      {!currentKnown && (
+        <div className="caveat">
+          Rank {currentRank} values unknown; showing the rank {observedMax} text.
+        </div>
+      )}
+      {hasNext && (
         <div className={`next${anticipated && !nextObserved ? ' dim' : ''}`}>
           <div className="text-white">Next rank:</div>
-          <div>{next}</div>
+          <div>{next ?? `Higher ranks unknown (only rank ${observedMax} was read).`}</div>
         </div>
       )}
       {requirement && <div className="req">{requirement}</div>}
       {anticipated && talent.maxRank > 1 && (
         <div className="caveat">
-          Ranks {talent.ranksObserved.length > 0 ? Math.max(...talent.ranksObserved) + 1 : 2}+ anticipated ({talent.ranksSource})
+          {manual ? `Ranks ${observedMax + 1}+ unknown` : `Ranks ${observedMax + 1}+ anticipated (${talent.ranksSource})`}
           {talent.ranksNote ? `: ${talent.ranksNote}` : '.'}
         </div>
       )}
@@ -73,13 +91,8 @@ function provenance(talent: Talent): string {
   const s = talent.source
   const reviewed = s.reviewed ? 'reviewed' : 'unreviewed'
   if (s.kind === 'video') {
-    const t = s.t ?? 0
-    const h = Math.floor(t / 3600)
-    const m = Math.floor((t % 3600) / 60)
-    const sec = Math.floor(t % 60)
-    const stamp = `${h}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`
     const conf = s.confidence !== undefined ? `, confidence ${Math.round(s.confidence * 100)}%` : ''
-    return `Read from stream at ${stamp}${conf}, ${reviewed}`
+    return `Read from stream at ${streamStamp(s.t ?? 0)}${conf}, ${reviewed}`
   }
   if (s.kind === 'datamined') return `Datamined from build ${s.build ?? '?'}, ${reviewed}`
   return `Entered by hand${s.note ? ` (${s.note})` : ''}, ${reviewed}`

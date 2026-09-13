@@ -2,12 +2,13 @@ import { useEffect, useMemo, useState } from 'react'
 import { loadRegistry } from '../data/encoding'
 import { hasClass, loadClass } from '../data/load'
 import type { ClassData } from '../data/schema'
-import { add, pointsInPage, remove, resetAll, resetTree, type Build } from '../rules'
+import { add, pointsInPage, pointsInTree, remove, resetAll, resetTree, type Build } from '../rules'
 import { decode, encode, type Notice } from '../url/codec'
 import { classHash } from '../url/route'
 import { Header } from './Header'
 import { Notices } from './Notice'
 import { PageTabs } from './PageTabs'
+import { SITE_TITLE, useTitle } from './title'
 import { TreePanel } from './TreePanel'
 
 interface Props {
@@ -51,6 +52,11 @@ export function ClassPage({ classId, version, buildString }: Props) {
   const [dismissed, setDismissed] = useState<string>()
   const [page, setPage] = useState<string>()
 
+  const liveBuild = cls && decoded ? (edit && edit.key === routeKey ? edit.build : decoded.build) : undefined
+  useTitle(
+    cls && liveBuild ? `${cls.className} ${cls.trees.map((t) => pointsInTree(liveBuild, t.id)).join('/')} - ${SITE_TITLE}` : undefined,
+  )
+
   if (error) {
     return (
       <div className="panel p-4">
@@ -61,7 +67,7 @@ export function ClassPage({ classId, version, buildString }: Props) {
   }
   if (!cls || !decoded) return <div className="panel p-4 text-[var(--text-dim)]">Loading {classId}...</div>
 
-  const build = edit && edit.key === routeKey ? edit.build : decoded.build
+  const build = liveBuild!
   const notices: Notice[] = dismissed === routeKey || (edit && edit.key === routeKey) ? [] : decoded.notices
   const encoded = encode(cls, build, registry)
   const hash = classHash(classId, cls.dataVersion, encoded)

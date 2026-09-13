@@ -13,7 +13,9 @@ import {
 } from '@floating-ui/react'
 import type { ClassData, Talent, Tree } from '../data/schema'
 import type { Verdict } from '../rules'
+import { cropUrl } from '../data/crops'
 import { cellState } from './cellState'
+import { needsReview } from './review'
 import { TooltipContent } from './Tooltip'
 
 interface Props {
@@ -42,7 +44,10 @@ export function TalentCell({ cls, tree, talent, rank, addVerdict, onAdd, onRemov
   const { getReferenceProps, getFloatingProps } = useInteractions([hover, focus, dismiss])
 
   const state = cellState(rank, talent.maxRank, addVerdict)
-  const iconUrl = `${import.meta.env.BASE_URL}icons/${talent.icon}.jpg`
+  // Unmatched icons render their frame crop; matched ones the fetched icon file.
+  const iconUrl =
+    talent.iconSource === 'crop' ? cropUrl(talent.iconCrop) : `${import.meta.env.BASE_URL}icons/${talent.icon}.jpg`
+  const iconKind = iconUrl === undefined || imgFailed ? 'initials' : talent.iconSource === 'crop' ? 'crop' : 'file'
   const initials = talent.name
     .split(/\s+/)
     .map((w) => w[0])
@@ -63,6 +68,7 @@ export function TalentCell({ cls, tree, talent, rank, addVerdict, onAdd, onRemov
         data-review={needsReview(talent) ? 'true' : undefined}
         data-rank={rank}
         data-addable={addVerdict.ok}
+        data-icon={iconKind}
         aria-label={`${talent.name}, rank ${rank} of ${talent.maxRank}`}
         onClick={onAdd}
         onContextMenu={(e) => {
@@ -77,7 +83,7 @@ export function TalentCell({ cls, tree, talent, rank, addVerdict, onAdd, onRemov
         }}
         {...getReferenceProps()}
       >
-        {imgFailed ? (
+        {iconKind === 'initials' ? (
           <span className="icon-fallback" aria-hidden="true">
             {initials}
           </span>
@@ -99,9 +105,3 @@ export function TalentCell({ cls, tree, talent, rank, addVerdict, onAdd, onRemov
   )
 }
 
-
-function needsReview(t: { source?: { confidence?: number; reviewed?: boolean } }): boolean {
-  const s = t.source
-  if (!s || s.reviewed) return false
-  return s.confidence !== undefined && s.confidence < 0.8
-}

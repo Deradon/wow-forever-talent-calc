@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { parseHash, type Route } from './url/route'
-import { ClassPicker } from './ui/ClassPicker'
+import { ClassPicker, REPO_URL } from './ui/ClassPicker'
 import { ClassPage } from './ui/ClassPage'
 import { ReviewPage } from './ui/ReviewPage'
 
@@ -26,8 +26,13 @@ export default function App() {
       </nav>
       <Body route={route} />
       <footer className="mt-8 text-xs text-[var(--text-dim)]">
-        Not affiliated with Blizzard Entertainment. Talent names, descriptions and icons are property of Blizzard
-        Entertainment. Code MIT.
+        Not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft, talent names, descriptions, icons
+        and frame crops are property of Blizzard Entertainment. Data read from BlizzCon 2026 demo footage, unreviewed.
+        Code MIT,{' '}
+        <a href={REPO_URL} target="_blank" rel="noreferrer">
+          source on GitHub
+        </a>
+        .
       </footer>
     </div>
   )
