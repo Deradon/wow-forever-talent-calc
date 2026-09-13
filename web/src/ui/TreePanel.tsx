@@ -113,6 +113,7 @@ export function TreePanel({ cls, tree, build, pointsLeft, coarse, query, blocked
                 tabIndex={talent.id === tabStop ? 0 : -1}
                 onGridFocus={() => setFocused(talent.id)}
                 onGridKeyDown={(e) => gridKeyDown(talent, e)}
+                rankOf={(talentId) => rankOf(build, tree.id, talentId)}
                 match={query ? matchesTalent(talent, query) : undefined}
                 blockedAt={blocked?.talentId === talent.id ? blocked.at : undefined}
                 onAdd={() => onAdd(tree.id, talent.id)}

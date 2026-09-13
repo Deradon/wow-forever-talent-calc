@@ -236,12 +236,13 @@
 
 /* --- tooltip --- */
 /* The positioned element is the floating wrapper; z-index must live there. */
-/* A hover tooltip is anchored 8 px to the right of its cell and is wider than
-   the 12 px gap, so it always covers the neighbouring cell. It therefore stays
-   pointer-events: none: a tooltip must never swallow a click meant for a cell.
-   Measured with the layer interactive, the cell to the right of any hovered
-   talent became unclickable. The consequence is that A1's Details disclosure
-   is not mouse-reachable on a class page - see the handover. */
+/* A hover tooltip is anchored 8 px from its cell and is wider than the 12 px
+   gap, so it always covers a neighbour. It therefore starts pointer-transparent:
+   a tooltip must never swallow a click meant for a cell. It takes the pointer
+   only once the player dwelled on the cell and then walked into it
+   (data-sticky, see stickyTooltip.ts), which is what makes the nested tooltips
+   mouse-reachable without breaking the grid. The neighbour is clickable again
+   the moment the tooltip closes, because the layer is unmounted with it. */
 .tooltip-layer {
   z-index: 50;
   pointer-events: none;
@@ -249,10 +250,10 @@
   flex-direction: column;
   gap: 4px;
 }
-/* Touch: the tooltip is opened by an explicit tap and carries the +/- controls
-   and the disclosure, so there it does take taps (A-2/A-3). */
+/* Touch: the tooltip is opened by an explicit tap and carries the +/- controls,
+   so there it takes taps from the start (A-2/A-3). */
 .tooltip-layer[data-touch='true'],
-.tooltip-layer[data-touch='true'] .tooltip {
+.tooltip-layer[data-sticky='true'] {
   pointer-events: auto;
 }
 .tooltip-note {
@@ -287,7 +288,8 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
   color: #fff;
   font-size: 13px;
-  pointer-events: none;
+  /* The layer decides: transparent on hover, live when sticky or on touch. */
+  pointer-events: inherit;
 }
 .tooltip .name {
   font-size: 15px;

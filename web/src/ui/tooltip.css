@@ -1,51 +1,183 @@
 /*
- * Tooltip meta styles (work package A1). Kept out of talents.css so the two
- * packages do not fight over one file; imported from Tooltip.tsx.
+ * Tooltip meta and nested-tooltip styles. Kept out of talents.css so the two
+ * work packages do not fight over one file; imported from Tooltip.tsx.
  *
- * `.tooltip-layer` in talents.css sets `pointer-events: none` so a tooltip can
- * never swallow a click meant for a cell. The Details disclosure opts back in
- * for itself only, which is enough once the hover interaction keeps the tooltip
- * open while the pointer is over it (see the handover request to A2).
+ * `.tooltip-layer` in talents.css is pointer-transparent until it goes sticky,
+ * so a tooltip can never swallow a click meant for a cell. Terms therefore only
+ * respond once the player has walked into the tooltip - or on a tap, where the
+ * layer is live from the start.
  */
 
-.tooltip details.meta {
-  margin-top: 6px;
-  pointer-events: auto;
-}
+/* --- the meta row: one amber trust line, plus the uncertain marker --- */
 
-.tooltip details.meta > summary {
+.tooltip .meta {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
   gap: 8px;
-  cursor: pointer;
-  list-style: none;
-  color: #e2a640; /* the one amber line */
+  margin-top: 6px;
   font-size: 12px;
 }
 
-.tooltip details.meta > summary::-webkit-details-marker {
-  display: none;
+.tooltip .trust {
+  color: #e2a640; /* the one amber line */
 }
 
-.tooltip details.meta > summary .more {
-  color: #8f98b3;
+.tooltip .meta .review-chip {
+  flex: none;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
   font-size: 11px;
-  text-decoration: underline dotted;
+  font-weight: 700;
+  color: #000;
+  background: #f0a020;
+  border-radius: 50%;
 }
 
-.tooltip details.meta[open] > summary .more {
-  text-decoration: none;
+/* --- hoverable terms: the replacement for the old <details> disclosure --- */
+
+.tooltip .tip-term {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  cursor: help;
+  /* The discovery cue: a dotted underline says "there is more behind this". */
+  text-decoration: underline dotted currentColor;
+  text-underline-offset: 2px;
 }
+
+.tooltip .tip-term:hover,
+.tooltip .tip-term:focus-visible,
+.tooltip .tip-term[data-open='true'] {
+  text-decoration-style: solid;
+  filter: brightness(1.25);
+  outline: none;
+}
+
+.tooltip .meta .review-chip.tip-term {
+  text-decoration: none;
+  box-shadow: 0 0 0 1px rgba(240, 160, 32, 0.5);
+}
+
+/* --- the derivation, opened in place by `d` --- */
 
 .tooltip .meta-body {
   color: #8f98b3;
   font-size: 11px;
   margin-top: 4px;
+  border-top: 1px solid rgba(226, 184, 85, 0.2);
+  padding-top: 4px;
 }
 
 .tooltip .meta-body p {
   margin: 3px 0;
+}
+
+/* --- nested tooltips: one level deeper, smaller, offset, connected --- */
+
+.tooltip-nest {
+  z-index: 60;
+  width: max-content;
+}
+
+.tooltip-nest .tooltip {
+  width: 260px;
+  font-size: 12px;
+  background: rgba(14, 18, 36, 0.99);
+  border-color: var(--gold-dim, #b8933f);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.8),
+    0 12px 30px rgba(0, 0, 0, 0.85);
+}
+
+/* The connector: a short rule from the term to the nested card, on whichever
+   side floating-ui ended up placing it. */
+.tooltip-nest::before {
+  content: '';
+  position: absolute;
+  background: var(--gold-dim, #b8933f);
+  opacity: 0.55;
+}
+.tooltip-nest[data-side='right']::before,
+.tooltip-nest[data-side='left']::before {
+  top: 14px;
+  width: 10px;
+  height: 1px;
+}
+.tooltip-nest[data-side='right']::before {
+  left: -10px;
+}
+.tooltip-nest[data-side='left']::before {
+  right: -10px;
+}
+.tooltip-nest[data-side='top']::before,
+.tooltip-nest[data-side='bottom']::before {
+  left: 16px;
+  width: 1px;
+  height: 10px;
+}
+.tooltip-nest[data-side='top']::before {
+  bottom: -10px;
+}
+.tooltip-nest[data-side='bottom']::before {
+  top: -10px;
+}
+
+.tooltip-nest .nest-body {
+  color: #c6cbdd;
+}
+
+.tooltip-nest .nest-body p {
+  margin: 4px 0;
+}
+
+/* --- the readings behind the `?` marker --- */
+
+.tooltip .reading + .reading {
+  margin-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 6px;
+}
+
+.tooltip .reading-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: #8f98b3;
+  font-size: 11px;
+}
+
+.tooltip .reading-pct {
+  color: #e2a640;
+}
+
+.tooltip .reading-name {
+  color: #fff;
+  font-weight: 600;
+}
+
+.tooltip .reading-text {
+  color: #ffd;
+}
+
+/* Natural size where it fits: a tooltip crop is ~227x113 and reads best
+   unscaled. Never stretched, so a placeholder crop cannot become a black wall. */
+.tooltip .reading-crop {
+  display: block;
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  margin-top: 8px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background: #000;
 }
 
 /* Game requirements read from the tooltip itself (stance, form, shield, level). */

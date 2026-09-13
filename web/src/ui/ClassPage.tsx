@@ -210,7 +210,7 @@ export function ClassPage({ classId, version, buildString }: Props) {
       <div className="mt-3 text-xs text-[var(--text-dim)]">
         {coarse
           ? 'Tap a talent for its tooltip, then + to add a point and - to remove one.'
-          : 'Left click adds a point, right click removes one. With a talent focused: Enter or Space adds, Backspace removes, arrow keys move.'}
+          : 'Left click adds a point, right click removes one. With a talent focused: Enter or Space adds, Backspace removes, arrow keys move. Move the pointer into a tooltip to keep it open, or press d to show where its numbers come from.'}
         {cls.notes?.map((n, i) => (
           <div key={i}>{n}</div>
         ))}

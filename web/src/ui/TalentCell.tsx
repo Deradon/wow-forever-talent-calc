@@ -1,9 +1,10 @@
-import { useState, type KeyboardEvent } from 'react'
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from 'react'
 import {
   autoUpdate,
   flip,
   FloatingPortal,
   offset,
+  safePolygon,
   shift,
   useClick,
   useDismiss,
@@ -11,12 +12,25 @@ import {
   useFocus,
   useHover,
   useInteractions,
+  useMergeRefs,
+  type Placement,
 } from '@floating-ui/react'
 import type { ClassData, Talent, Tree } from '../data/schema'
 import type { Verdict } from '../rules'
 import { iconCropUrl } from '../data/iconCrop'
 import { cellState } from './cellState'
 import { needsReview } from './review'
+import {
+  APPROACH_TICKS,
+  CELL_DWELL_MS,
+  claimTooltip,
+  isApproachStep,
+  pointInside,
+  releaseTooltip,
+  stepLength,
+  type Point,
+} from './stickyTooltip'
+import { placementFallbacks, preferredPlacement } from './tooltipPlacement'
 import { TooltipContent } from './Tooltip'
 
 interface Props {
@@ -37,6 +51,8 @@ interface Props {
   tabIndex: number
   onGridFocus: () => void
   onGridKeyDown: (e: KeyboardEvent<HTMLButtonElement>) => void
+  /** Rank of any talent in this tree, so a nested prerequisite card is honest. */
+  rankOf: (talentId: string) => number
   /** Search: false dims the cell, true outlines it. Undefined = no search. */
   match?: boolean
   /** Changes whenever this cell refused an action, to replay the flash. */
@@ -47,9 +63,17 @@ interface Props {
  * One talent. Mouse: click adds, right click refunds, hover shows the tooltip.
  * Keyboard: Enter/Space add, Backspace/Delete/- refund, arrows move within the
  * tree (the handlers go through getReferenceProps so floating-ui's own
- * onKeyDown cannot swallow them - a11y review A-1). Touch: a tap opens the
- * tooltip, which then carries explicit +/- buttons (A-2, A-3), because
- * useHover never fires and there is no right click.
+ * onKeyDown cannot swallow them - a11y review A-1), `d` opens the derivation.
+ * Touch: a tap opens the tooltip, which then carries explicit +/- buttons
+ * (A-2, A-3), because useHover never fires and there is no right click.
+ *
+ * **Sticky tooltips.** The floating layer starts pointer-transparent, exactly as
+ * before, so a click always reaches the cell. Once the pointer has dwelled on
+ * the cell and then walked into the tooltip (see stickyTooltip.ts for why both
+ * are required), the layer takes the pointer and stays open while the pointer is
+ * inside it - which is what makes the nested tooltips reachable with a mouse.
+ * Leaving it, Escape, a press on its own background, or hovering another cell
+ * closes it, and the neighbour it covered is clickable again immediately.
  */
 export function TalentCell({
   cls,
@@ -66,21 +90,81 @@ export function TalentCell({
   tabIndex,
   onGridFocus,
   onGridKeyDown,
+  rankOf,
   match,
   blockedAt,
 }: Props) {
   const [open, setOpen] = useState(false)
+  const [sticky, setSticky] = useState(false)
+  const [derivationOpen, setDerivationOpen] = useState(false)
   const [imgFailed, setImgFailed] = useState(false)
+
+  const armedRef = useRef(false)
+  const stickyRef = useRef(false)
+  const dwellRef = useRef(0)
+  const ticksRef = useRef(0)
+  const pointRef = useRef<Point | null>(null)
+  const layerRef = useRef<HTMLDivElement | null>(null)
+
+  const reset = useCallback(() => {
+    window.clearTimeout(dwellRef.current)
+    armedRef.current = false
+    stickyRef.current = false
+    ticksRef.current = 0
+    pointRef.current = null
+    setSticky(false)
+    setDerivationOpen(false)
+    releaseTooltip(talent.id)
+  }, [talent.id])
+
+  const closeNow = useCallback(() => {
+    reset()
+    setOpen(false)
+  }, [reset])
+
+  /** True while the cursor is known to sit inside the (still transparent) layer. */
+  const pointerOverLayer = useCallback(() => {
+    const el = layerRef.current
+    const p = pointRef.current
+    return Boolean(el && p && pointInside(p, el.getBoundingClientRect(), 2))
+  }, [])
+
+  const onOpenChange = useCallback(
+    (next: boolean) => {
+      if (!next && armedRef.current && !stickyRef.current && pointerOverLayer()) {
+        // The pointer left the cell towards the tooltip and is over it now.
+        // safePolygon cannot see that while the layer is transparent, so the
+        // approach would be cut off under the cursor. Hold instead of closing;
+        // the layer is still transparent, so the cell below keeps every click.
+        return
+      }
+      if (next) claimTooltip(talent.id, closeNow)
+      else reset()
+      setOpen(next)
+    },
+    [closeNow, pointerOverLayer, reset, talent.id],
+  )
+
+  const placement = preferredPlacement({ row: talent.row, col: talent.col }, { rows: tree.rows, cols: tree.cols })
   const { refs, floatingStyles, context } = useFloating({
     open,
-    onOpenChange: setOpen,
-    placement: 'right-start',
-    middleware: [offset(8), flip(), shift({ padding: 8 })],
+    onOpenChange,
+    placement: placement as Placement,
+    middleware: [
+      offset(8),
+      flip({ fallbackPlacements: placementFallbacks(placement) as Placement[] }),
+      shift({ padding: 8 }),
+    ],
     whileElementsMounted: autoUpdate,
   })
   // On a coarse pointer the tooltip is the only way to read a talent, so it
   // opens on tap and stays until dismissed; a mouse keeps hover/focus.
-  const hover = useHover(context, { move: false, enabled: !coarse, delay: { open: 60, close: 0 } })
+  const hover = useHover(context, {
+    move: false,
+    enabled: !coarse,
+    delay: { open: 60, close: 140 },
+    handleClose: safePolygon({ buffer: 2 }),
+  })
   const focus = useFocus(context, { enabled: !coarse })
   const click = useClick(context, { enabled: coarse })
   const dismiss = useDismiss(context)
@@ -89,6 +173,48 @@ export function TalentCell({
   // rather than nesting a second tooltip role on the floating wrapper (A-4).
   const { getReferenceProps, getFloatingProps } = useInteractions([hover, focus, click, dismiss])
   const tooltipId = `tooltip-${talent.id}`
+  const setLayer = useMergeRefs([refs.setFloating, layerRef])
+
+  // Watch the approach while the layer is still transparent (see stickyTooltip.ts).
+  useEffect(() => {
+    if (!open || coarse || sticky) return
+    function onMove(e: PointerEvent) {
+      const p = { x: e.clientX, y: e.clientY }
+      const step = stepLength(pointRef.current, p)
+      pointRef.current = p
+      const el = layerRef.current
+      if (!armedRef.current || !el) return
+      if (!pointInside(p, el.getBoundingClientRect(), 2)) {
+        ticksRef.current = 0
+        return
+      }
+      if (!isApproachStep(step)) return
+      ticksRef.current += 1
+      if (ticksRef.current < APPROACH_TICKS) return
+      stickyRef.current = true
+      setSticky(true)
+    }
+    document.addEventListener('pointermove', onMove)
+    return () => document.removeEventListener('pointermove', onMove)
+  }, [open, coarse, sticky])
+
+  // `d` is the no-pointer way into the derivation: it opens in place, so it
+  // works from the keyboard and while the layer is still transparent.
+  useEffect(() => {
+    if (!open) return
+    function onKey(e: globalThis.KeyboardEvent) {
+      if (e.key !== 'd' && e.key !== 'D') return
+      if (e.ctrlKey || e.metaKey || e.altKey) return
+      const t = e.target as HTMLElement | null
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return
+      e.preventDefault()
+      setDerivationOpen((v) => !v)
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [open])
+
+  useEffect(() => reset, [reset])
 
   const state = cellState(rank, talent.maxRank, addVerdict)
   const outOfPoints = !addVerdict.ok && addVerdict.reason === 'no-points'
@@ -110,6 +236,7 @@ export function TalentCell({
       onRemove()
       return
     }
+    if (e.key === 'd' || e.key === 'D') return // handled on the document, once
     onGridKeyDown(e)
   }
 
@@ -144,6 +271,14 @@ export function TalentCell({
             onRemove()
           },
           onKeyDown: keyDown,
+          onPointerEnter: (e) => {
+            if (coarse || e.pointerType !== 'mouse') return
+            window.clearTimeout(dwellRef.current)
+            dwellRef.current = window.setTimeout(() => {
+              armedRef.current = true
+            }, CELL_DWELL_MS)
+          },
+          onPointerLeave: () => window.clearTimeout(dwellRef.current),
         })}
       >
         <span className="icon-clip" aria-hidden="true">
@@ -167,13 +302,34 @@ export function TalentCell({
       {open && (
         <FloatingPortal>
           <div
-            ref={refs.setFloating}
+            ref={setLayer}
             className="tooltip-layer"
             data-touch={coarse ? 'true' : undefined}
+            data-sticky={sticky ? 'true' : undefined}
+            data-testid={`tooltip-layer-${talent.id}`}
             style={floatingStyles}
-            {...getFloatingProps()}
+            {...getFloatingProps({
+              // Cells win: pressing the tooltip's own background gets it out of
+              // the way instead of eating a second click meant for the grid.
+              onPointerDown: (e) => {
+                if (!sticky) return
+                const t = e.target as HTMLElement
+                if (t.closest('button, a, img, input')) return
+                closeNow()
+              },
+            })}
           >
-            <TooltipContent cls={cls} tree={tree} talent={talent} rank={rank} verdict={addVerdict} id={tooltipId} />
+            <TooltipContent
+              cls={cls}
+              tree={tree}
+              talent={talent}
+              rank={rank}
+              verdict={addVerdict}
+              id={tooltipId}
+              placement={placement}
+              rankOf={rankOf}
+              derivationOpen={derivationOpen}
+            />
             {outOfPoints && (
               <div className="tooltip tooltip-note" data-testid={`no-points-${talent.id}`}>
                 No talent points left ({maxPoints}/{maxPoints} spent). Refund a point somewhere to spend it here.

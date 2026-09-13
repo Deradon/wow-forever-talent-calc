@@ -21,10 +21,16 @@ import {
   internalId,
   metaLength,
   noteLines,
+  classicSeries,
+  foreverSeries,
+  rankDerivationLines,
   rankScaling,
+  ranksCopied,
+  readerViews,
   readingLine,
   requirementLine,
   roundingLines,
+  splitOnNames,
   trustKind,
   trustLine,
   withPeriod,
@@ -239,6 +245,93 @@ describe('details', () => {
   })
 })
 
+describe('nested tooltips', () => {
+  it('reports the slot that actually changes between ranks', () => {
+    expect(foreverSeries([[1], [2], [3]])).toBe('1/2/3')
+    // "{0} energy point{1}": the plural must not be mistaken for the value
+    expect(
+      foreverSeries([
+        [1, ''],
+        [2, 's'],
+        [3, 's'],
+      ]),
+    ).toBe('1/2/3')
+    expect(foreverSeries([[70, 3, 2]])).toBe('70')
+    expect(foreverSeries(['A whole sentence.', 'Another one.'])).toBeUndefined()
+    expect(foreverSeries([])).toBeUndefined()
+  })
+
+  it('lifts the Classic numbers out of the note without the id or the score', () => {
+    const note = 'Classic mage/fire/Fire Power (talent 35) (cross-class), matched on description (0.95): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).'
+    expect(classicSeries(note)).toBe('2/4/6/8/10')
+    expect(classicSeries('Same wording as Improved Heroic Strike; Classic scales 1/2/3.')).toBe('1/2/3')
+    expect(classicSeries('Classic druid/balance/Moonglow (talent 783): ranks copied.')).toBeUndefined()
+    expect(classicSeries('Classic has 5 ranks')).toBeUndefined()
+    expect(ranksCopied('Classic druid/balance/Moonglow (talent 783): ranks copied.')).toBe(true)
+  })
+
+  it('shows the Classic values a scaled rank came from, and nothing internal', () => {
+    const talent = {
+      ranksSource: 'classic-prior' as const,
+      ranksObserved: [1],
+      maxRank: 5,
+      ranks: [[5], [10], [15], [20], [25]],
+      ranksNote: 'Classic druid/balance/Improved Moonfire (talent 763): Classic 2/4/6/8/10 is proportional; Forever rank 1 is 5: scaled proportionally (5 x rank).',
+      ranksPrior: { classicTalentId: 763, classicSpellIds: [], match: 'exact-name' as const, similarity: 1 },
+    }
+    const lines = rankDerivationLines(talent)
+    expect(lines[0]).toBe('Values by rank: 5/10/15/20/25.')
+    expect(lines[1]).toBe('Classic Era: 2/4/6/8/10.')
+    expect(lines[2]).toMatch(/^Rank 1 was read from the stream\./)
+    for (const line of lines) expect(internalId(line), line).toBe(false)
+  })
+
+  it('says nothing about Classic when the record has no prior', () => {
+    const lines = rankDerivationLines({
+      ranksSource: 'extrapolated',
+      ranksObserved: [1],
+      maxRank: 2,
+      ranks: [[1], [2]],
+      ranksNote: 'No Classic counterpart; proportional x1..x2 of rank 1 assumed.',
+    })
+    expect(lines.some((l) => l.startsWith('Classic Era:'))).toBe(false)
+  })
+
+  it('labels the readings without ever naming a reader', () => {
+    const source = {
+      kind: 'video' as const,
+      reviewed: false,
+      confidence: 0.71,
+      reader: 'qwen3-vl-8b-instruct-q4_k_m',
+      readings: [{ reader: 'rapidocr-1.4', name: 'Steady Hand', description: 'Increases your chance by 1%.', confidence: 0.62 }],
+    }
+    const views = readerViews(source, { name: 'Steady Hands', text: 'Increases your chance by 1%.' })
+    expect(views).toHaveLength(2)
+    expect(views[0]).toMatchObject({ label: 'The reading in use', name: 'Steady Hands', percent: 71 })
+    expect(views[1]).toMatchObject({ label: 'A second reading', name: 'Steady Hand', percent: 62 })
+    expect(JSON.stringify(views)).not.toMatch(/qwen|rapidocr/i)
+  })
+
+  it('cuts a requirement line at the prerequisite names it mentions', () => {
+    const segments = splitOnNames('Requires 3 points in Improved Wrench.', [{ id: 'improved-wrench', name: 'Improved Wrench' }])
+    expect(segments).toEqual([
+      { text: 'Requires 3 points in ' },
+      { text: 'Improved Wrench', talentId: 'improved-wrench' },
+      { text: '.' },
+    ])
+    // a line with no name in it comes back whole
+    expect(splitOnNames('Requires 10 points in Holy Talents.', [{ id: 'x', name: 'Rocket Boots' }])).toEqual([
+      { text: 'Requires 10 points in Holy Talents.' },
+    ])
+    // the longer name wins over the substring
+    const both = splitOnNames('Requires 2 points in Improved Wrench.', [
+      { id: 'wrench', name: 'Wrench' },
+      { id: 'improved-wrench', name: 'Improved Wrench' },
+    ])
+    expect(both.find((s) => s.talentId)?.talentId).toBe('improved-wrench')
+  })
+})
+
 describe('helpers', () => {
   it('withPeriod does not double a terminator', () => {
     expect(withPeriod('Requires Shields')).toBe('Requires Shields.')
@@ -327,6 +420,25 @@ describe(`tooltip text over ${files.length} class file(s)`, () => {
         ...detailLines(talent),
       ].filter((l): l is string => Boolean(l))
       for (const line of lines) expect(line.endsWith('.'), `${talent.id}: ${line}`).toBe(true)
+    }
+  })
+
+  it('keeps the nested tooltips free of ids, scores and reader names', () => {
+    for (const talent of talents) {
+      for (const line of rankDerivationLines(talent)) {
+        expect(internalId(line), `${talent.id}: ${line}`).toBe(false)
+        expect(line.endsWith('.'), `${talent.id}: ${line}`).toBe(true)
+      }
+      const views = readerViews(talent.source, { name: talent.name, text: renderDescription(talent, 0) })
+      expect(JSON.stringify(views), talent.id).not.toMatch(/qwen|codex|llama|gemini|rapidocr/i)
+    }
+  })
+
+  it('shows the Classic numbers wherever the data records a prior', () => {
+    const scaled = talents.filter((t) => t.ranksPrior && classicSeries(t.ranksNote))
+    expect(scaled.length).toBeGreaterThan(0)
+    for (const talent of scaled) {
+      expect(rankDerivationLines(talent).some((l) => l.startsWith('Classic Era: ')), talent.id).toBe(true)
     }
   })
 

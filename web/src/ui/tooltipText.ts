@@ -267,7 +267,7 @@ function fieldList(raw: string): string {
   return joinAnd(names)
 }
 
-/** Everything the Details disclosure shows, in reading order. */
+/** Everything the derivation block shows, in reading order. */
 export function detailLines(talent: Pick<Talent, 'ranksSource' | 'ranksObserved' | 'maxRank' | 'ranks' | 'ranksNote' | 'source'>): string[] {
   const lines = [
     derivationLine(talent),
@@ -277,6 +277,142 @@ export function detailLines(talent: Pick<Talent, 'ranksSource' | 'ranksObserved'
     ...noteLines(talent.source.note),
   ]
   return lines.filter((l): l is string => Boolean(l) && !internalId(l!))
+}
+
+// --- nested tooltips -------------------------------------------------------
+//
+// The nested tooltips are the mouse-reachable replacement for the old `Details`
+// disclosure: hovering a term in an open tooltip opens a second, smaller one.
+// Everything they render goes through the same `internalId` guard, so a Classic
+// talent id or a reader model name still cannot reach a player.
+
+/**
+ * The numbers a rank series shows, e.g. `"1/2/3"`. Picks the slot that actually
+ * changes between ranks, so `"Reduces the cost by {0} energy point{1}"` reports
+ * the cost and not the plural `s`. Undefined when the ranks are whole sentences.
+ */
+export function foreverSeries(ranks: Rank[] | undefined): string | undefined {
+  if (!ranks || ranks.length === 0) return undefined
+  const rows = ranks.filter(Array.isArray) as (number | string)[][]
+  if (rows.length !== ranks.length) return undefined
+  const width = Math.min(...rows.map((r) => r.length))
+  let fallback: number | undefined
+  for (let j = 0; j < width; j++) {
+    const column = rows.map((r) => r[j])
+    if (!column.every((v) => typeof v === 'number')) continue
+    if (fallback === undefined) fallback = j
+    if (new Set(column).size > 1) return column.join('/')
+  }
+  if (fallback === undefined) return undefined
+  const slot = fallback
+  return rows.map((r) => r[slot]).join('/')
+}
+
+/**
+ * The Classic Era numbers the pipeline scaled from, lifted out of `ranksNote`.
+ * The note also carries the Classic talent id and the similarity score, which
+ * is why only the digit series is taken and never the sentence around it.
+ */
+export function classicSeries(ranksNote: string | undefined): string | undefined {
+  if (!ranksNote) return undefined
+  const number = String.raw`\d+(?:\.\d+)?`
+  const m = new RegExp(String.raw`\bClassic (?:scales )?(${number}(?:\/${number})+)`).exec(ranksNote)
+  return m ? m[1] : undefined
+}
+
+/** True when the note says the Classic values were taken over unchanged. */
+export function ranksCopied(ranksNote: string | undefined): boolean {
+  return ranksNote !== undefined && /\branks copied\b/i.test(ranksNote)
+}
+
+/**
+ * What the nested tooltip behind the rank numbers says: the values this talent
+ * shows per rank, the Classic Era values they were scaled from when the record
+ * carries a `ranksPrior` match, and the derivation in the same words the
+ * derivation block uses.
+ */
+export function rankDerivationLines(
+  talent: Pick<Talent, 'ranksSource' | 'ranksObserved' | 'maxRank' | 'ranks' | 'ranksNote' | 'ranksPrior'>,
+): string[] {
+  const mine = foreverSeries(talent.ranks)
+  const prior = talent.ranksPrior
+    ? (classicSeries(talent.ranksNote) ?? (ranksCopied(talent.ranksNote) ? mine : undefined))
+    : undefined
+  const lines = [
+    mine && talent.maxRank > 1 ? `Values by rank: ${mine}.` : undefined,
+    prior ? `Classic Era: ${prior}.` : undefined,
+    derivationLine(talent),
+    ...roundingLines(talent.ranksNote),
+  ]
+  return lines.filter((l): l is string => Boolean(l) && !internalId(l!))
+}
+
+/** One reader's take on a tooltip. Never carries the reader's model name. */
+export interface ReaderView {
+  label: string
+  name?: string
+  text?: string
+  /** Whole percent, omitted when the record does not record one. */
+  percent?: number
+}
+
+const READING_LABELS = ['The reading in use', 'A second reading', 'A third reading']
+
+/**
+ * Both (or all) readings of a tooltip, for the nested tooltip behind the
+ * uncertain marker. The first entry is what the calculator shows; the rest come
+ * from `source.readings`. Reader ids stay on `#/review/<class>`: a player gets
+ * "a second reading", not "rapidocr-1.4".
+ */
+export function readerViews(source: Source, current: { name: string; text: string }): ReaderView[] {
+  const label = (i: number) => READING_LABELS[i] ?? `Reading ${i + 1}`
+  const views: ReaderView[] = [
+    { label: label(0), name: current.name, text: current.text, percent: percent(source.confidence) },
+  ]
+  for (const [i, r] of (source.readings ?? []).entries()) {
+    views.push({ label: label(i + 1), name: r.name, text: r.description, percent: percent(r.confidence) })
+  }
+  return views.map((v) => ({ ...v, text: v.text && !internalId(v.text) ? v.text : undefined }))
+}
+
+function percent(confidence: number | undefined): number | undefined {
+  return confidence === undefined ? undefined : Math.round(confidence * 100)
+}
+
+/** A requirement line cut at the talent names it mentions, so they can be terms. */
+export interface NameSegment {
+  text: string
+  /** Set when this segment is exactly a talent name the tooltip can nest. */
+  talentId?: string
+}
+
+/**
+ * Splits a rendered line on the prerequisite names it contains. Longest name
+ * first, so "Improved Wrench" wins over a hypothetical "Wrench"; names that do
+ * not occur are simply not found and the line comes back in one piece.
+ */
+export function splitOnNames(line: string, names: { id: string; name: string }[]): NameSegment[] {
+  const wanted = names.filter((n) => n.name).sort((a, b) => b.name.length - a.name.length)
+  const out: NameSegment[] = []
+  let rest = line
+  while (rest.length > 0) {
+    let at = -1
+    let hit: { id: string; name: string } | undefined
+    for (const n of wanted) {
+      const i = rest.indexOf(n.name)
+      if (i === -1) continue
+      if (at === -1 || i < at || (i === at && n.name.length > (hit?.name.length ?? 0))) {
+        at = i
+        hit = n
+      }
+    }
+    if (at === -1 || !hit) break
+    if (at > 0) out.push({ text: rest.slice(0, at) })
+    out.push({ text: hit.name, talentId: hit.id })
+    rest = rest.slice(at + hit.name.length)
+  }
+  if (rest.length > 0) out.push({ text: rest })
+  return out
 }
 
 // --- guards ----------------------------------------------------------------

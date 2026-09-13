@@ -26,3 +26,27 @@ test('a tap opens the tooltip and its +/- controls add and refund', async ({ pag
   await expect(cell).toHaveAttribute('data-rank', '1')
   await expect(page.getByTestId('points-left')).toHaveText('50')
 })
+
+test('a tap opens the nested tooltips that replaced the Details disclosure', async ({ page }) => {
+  await page.goto('/#/tinker')
+  const cell = page.getByTestId('talent-steady-hands')
+
+  await cell.tap()
+  await expect(page.getByTestId('tooltip-steady-hands')).toBeVisible()
+  await expect(cell).toHaveAttribute('data-rank', '0')
+
+  // +/- still work, so the touch path from A2 is untouched
+  await page.getByTestId('touch-add-steady-hands').tap()
+  await expect(cell).toHaveAttribute('data-rank', '1')
+  await page.getByTestId('touch-remove-steady-hands').tap()
+  await expect(cell).toHaveAttribute('data-rank', '0')
+
+  // the old <details> is gone; the term opens the same lines one level deeper
+  await page.getByTestId('term-derivation-steady-hands').tap()
+  await expect(page.getByTestId('nest-term-derivation-steady-hands')).toContainText('read from the stream')
+  await expect(cell).toHaveAttribute('data-rank', '0') // the tap never reached the cell
+
+  // and the uncertain marker opens both readings
+  await page.getByTestId('term-reading-steady-hands').tap()
+  await expect(page.getByTestId('nest-term-reading-steady-hands')).toContainText('A second reading')
+})
