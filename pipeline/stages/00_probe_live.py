@@ -42,11 +42,20 @@ def _times(start: int, end: int, step: int, times: str | None) -> list[int]:
     return list(range(start, end + 1, step))
 
 
+_HEALTH: fr.DownloadHealth | None = None
+
+
 def _guard_download(label: str) -> None:
-    n = fr.skipped_fragments()
-    if n:
-        typer.echo(f"ABORT ({label}): download.log shows {n} skipped fragments; not touching the stream further.")
-        raise typer.Exit(code=3)
+    global _HEALTH
+    if _HEALTH is None:
+        _HEALTH = fr.DownloadHealth()
+    try:
+        warn = _HEALTH.check()
+    except fr.FragmentError as e:
+        typer.echo(f"ABORT ({label}): {e}")
+        raise typer.Exit(code=3) from e
+    if warn:
+        typer.echo(f"  warn ({label}): {warn}")
 
 
 def _fetch_loop(client: fr.FragmentClient, ns: list[int], dest_for, width: int | None,

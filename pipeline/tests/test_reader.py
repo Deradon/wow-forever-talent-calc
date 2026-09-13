@@ -148,3 +148,35 @@ def test_consensus_cells_ignores_small_grids_and_strays():
     assert disputed == {(2, 4, 4)}
     only_small, _ = RD.consensus_cells([c])
     assert only_small == {(1, 1, 1), (2, 1, 2)}
+
+
+def test_clean_reading_restores_dropped_requires_prefix():
+    # Holy Shield: both Qwen passes filed "Shields" under requires without the literal prefix
+    r = RD.clean_reading({**READING, "requires": ["Shields", "Requires Level 40"]})
+    assert r["requires"] == ["Requires Shields", "Requires Level 40"]
+
+
+def test_assemble_record_without_rank_line_is_flagged():
+    # druid Feral Charge: the game showed the tooltip without name/Rank line (dual-form ability)
+    headless = dict(READING, name="5 Rage", rank_current=None, rank_max=None)
+    rec = RD.assemble_record("druid", HOVER, "22-druid-20650", "Feral Combat", "Primary", headless, dict(headless),
+                             reader="qwen-test")
+    assert rec["rank"] == {"current": None, "max": None}
+    assert rec["source"]["confidence"] == 0.3 and "no Rank line" in rec["source"]["note"]
+
+
+def test_rank0_order_puts_best_first_then_uncut_sharpest():
+    best = {"t": 17590.0, "sharpness": 5000.0, "cut_off": False, "_segment": "10"}
+    a = {"t": 14770.0, "sharpness": 3000.0, "cut_off": False, "_segment": "06"}
+    b = {"t": 14780.0, "sharpness": 4000.0, "cut_off": True, "_segment": "06"}
+    c = {"t": 15000.0, "sharpness": 3000.0, "cut_off": False, "_segment": "08"}
+    order = RD.rank0_order(best, [b, c, best, a])
+    assert order[0] is best and order[1] is a and order[2] is c and order[3] is b
+
+
+def test_same_tree_name_snaps_typos_but_keeps_renames():
+    assert RD.same_tree_name("Marksmananship", "Marksmanship")
+    assert RD.same_tree_name("Feral  Combat", "Feral Combat")
+    assert not RD.same_tree_name("Shadow Magic", "Shadow")
+    assert not RD.same_tree_name("Elemental Combat", "Elemental")
+    assert not RD.same_tree_name("Gameplay", "Arms")

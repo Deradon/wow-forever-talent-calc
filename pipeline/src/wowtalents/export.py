@@ -294,7 +294,9 @@ def _video_source(src: dict, crop_rel: str, video: str, fps: int) -> dict:
     }
     readings = [r for r in (src.get("readings") or []) if isinstance(r, dict)]
     if readings:
-        out["readings"] = [{k: r[k] for k in ("reader", "name", "description", "maxRank", "confidence") if k in r} for r in readings]
+        # schema: reading.maxRank is an integer when present; a reading without a Rank line omits it
+        out["readings"] = [{k: r[k] for k in ("reader", "name", "description", "maxRank", "confidence")
+                            if k in r and r[k] is not None} for r in readings]
     out["reviewed"] = False
     if src.get("note"):
         out["note"] = str(src["note"])

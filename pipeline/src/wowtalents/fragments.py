@@ -144,10 +144,59 @@ def decode_frame(data: bytes, width: int | None = 640, fmt: str = "jpg",
 
 
 def skipped_fragments(log: Path = DOWNLOAD_LOG) -> int:
-    """Number of 'Skipping fragment' lines in the running download's log (must stay 0)."""
+    """Number of 'Skipping fragment' lines in the running download's log."""
     if not log.exists():
         return 0
     return log.read_bytes().count(b"Skipping fragment")
+
+
+SKIP_RE = re.compile(rb"Skipping fragment (\d+)")
+HTTP_ERROR_RE = re.compile(rb"HTTP Error|\b(?:403|429)\b|Unable to download")
+
+
+def classify_skips(log: Path = DOWNLOAD_LOG) -> tuple[int, int]:
+    """(throttled, live_edge) skipped fragments in the download log.
+
+    A skip preceded by an HTTP error (the 403 storm the brief warns about) means the CDN is
+    throttling and every request of ours makes it worse: *throttled*. A skip preceded only by
+    'Did not get any data blocks' / 'fragment not found' is yt-dlp asking for the not-yet-
+    available head fragment of the live stream (2026-09-13: sq 30806/30807 at the live edge
+    while our fetches were at sq ~19000): *live_edge*, unrelated to our traffic.
+    """
+    if not log.exists():
+        return 0, 0
+    text = log.read_bytes().replace(b"\r", b"\n")
+    throttled = live_edge = 0
+    pos = 0
+    for m in SKIP_RE.finditer(text):
+        context = text[max(pos, m.start() - 1500):m.start()]
+        pos = m.end()
+        if HTTP_ERROR_RE.search(context):
+            throttled += 1
+        else:
+            live_edge += 1
+    return throttled, live_edge
+
+
+class DownloadHealth:
+    """Guard for the running download: abort on throttled skips, and on any live-edge skip that
+    appears *after* this process started (i.e. while we were fetching); pre-existing live-edge
+    skips are only reported. Rationale in ``classify_skips``."""
+
+    def __init__(self, log: Path = DOWNLOAD_LOG):
+        self.log = log
+        self.baseline_live_edge = classify_skips(log)[1]
+
+    def check(self) -> str | None:
+        """Return a warning string (or None); raise FragmentError when fetching must stop."""
+        throttled, live_edge = classify_skips(self.log)
+        if throttled:
+            raise FragmentError(f"download.log shows {throttled} skipped fragments after HTTP errors; not touching the stream")
+        if live_edge > self.baseline_live_edge:
+            raise FragmentError(f"download.log gained {live_edge - self.baseline_live_edge} live-edge skips while we were fetching; stopping")
+        if live_edge:
+            return f"download.log shows {live_edge} live-edge skip(s) from before this run (head fragment not found); continuing"
+        return None
 
 
 class FragmentClient:
@@ -180,7 +229,8 @@ class FragmentCache:
 
     One request at a time, ``sleep`` seconds between network fetches, refresh
     the URL after ``max_failures`` consecutive failures, abort when the main
-    download starts skipping fragments. Cached fragments cost no request.
+    download skips fragments after HTTP errors or starts skipping while we
+    fetch (``DownloadHealth``). Cached fragments cost no request.
     """
 
     def __init__(self, cache_dir: Path = FRAGS_DIR, sleep: float = 0.3, max_failures: int = 3,
@@ -190,6 +240,8 @@ class FragmentCache:
         self.max_failures = max_failures
         self._client = client
         self.fetched = 0
+        self.health = DownloadHealth()
+        self.health_warning = self.health.check()
 
     @property
     def client(self) -> FragmentClient:
@@ -204,8 +256,7 @@ class FragmentCache:
         p = self.path(sq)
         if p.exists():
             return p.read_bytes()
-        if skipped_fragments():
-            raise FragmentError("download.log shows skipped fragments; not touching the stream")
+        self.health.check()
         failures = 0
         refreshed = False
         while True:

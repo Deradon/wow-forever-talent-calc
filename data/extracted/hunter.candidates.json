@@ -1,0 +1,6446 @@
+{
+  "class": "hunter",
+  "generated_at": "2026-09-13T01:41:49Z",
+  "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+  "prompt_version": "tooltip-v3",
+  "passes": [
+    3.0,
+    2.0
+  ],
+  "segments": [
+    {
+      "segment_id": "23-hunter-21030",
+      "page": "Primary",
+      "trees": {
+        "1": "Beast Mastery",
+        "2": "Marksmanship",
+        "3": "Survival"
+      },
+      "unspent_talents": 29,
+      "hovers": 12
+    },
+    {
+      "segment_id": "24-hunter-21060",
+      "page": "Primary",
+      "trees": {
+        "1": "Beast Mastery",
+        "2": "Marksmanship",
+        "3": "Survival"
+      },
+      "unspent_talents": 29,
+      "hovers": 42
+    }
+  ],
+  "trees": {
+    "1": "Beast Mastery",
+    "2": "Marksmanship",
+    "3": "Survival"
+  },
+  "missing_cells": [],
+  "stats": {
+    "cells": 50,
+    "hovered": 50,
+    "read": 50,
+    "missing": 0,
+    "confidence": {
+      "1.0": 50
+    },
+    "cut_off": 0,
+    "duplicate_names": 0,
+    "vlm_calls": 0,
+    "cache_hits": 108,
+    "vlm_seconds": 0.0,
+    "wall_seconds": 0.4
+  },
+  "candidates": [
+    {
+      "id": "hunter/beast-mastery/r0c1",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Deadly Aspects",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "While Aspect of the Hawk is active, all normal ranged attacks have a 2% chance of increasing ranged attack speed by 30% for 12 sec. While Aspect of the Beast is active, all melee auto attacks have a 2% chance of increasing melee attack speed by 30% for 12 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21030.333,
+        "timestamp": "05:50:30.333",
+        "frame_index": 1261820,
+        "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r1c2.png",
+        "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "23-hunter-21030",
+        "hover_id": "beast-mastery-r1c2",
+        "cell": [
+          1,
+          1,
+          2
+        ],
+        "bbox": [
+          588,
+          69,
+          226,
+          169
+        ],
+        "sharpness": 4182.8,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Deadly Aspects",
+            "description": "While Aspect of the Hawk is active, all normal ranged attacks have a 2% chance of increasing ranged attack speed by 30% for 12 sec. While Aspect of the Beast is active, all melee auto attacks have a 2% chance of increasing melee attack speed by 30% for 12 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Deadly Aspects",
+            "description": "While Aspect of the Hawk is active, all normal ranged attacks have a 2% chance of increasing ranged attack speed by 30% for 12 sec. While Aspect of the Beast is active, all melee auto attacks have a 2% chance of increasing melee attack speed by 30% for 12 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Deadly Aspects",
+            "description": "While Aspect of the Hawk is active, all normal ranged attacks have a 2% chance of increasing ranged attack speed by 30% for 12 sec. While Aspect of the Beast is active, all melee auto attacks have a 2% chance of increasing melee attack speed by 30% for 12 sec.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21030,
+        "frame_index": 1261800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "While Aspect of the Hawk is active, all normal ranged attacks have a {0}% chance of increasing ranged attack speed by {1}% for {2} sec. While Aspect of the Beast is active, all melee auto attacks have a {3}% chance of increasing melee attack speed by {4}% for {5} sec.",
+        "ranks": [
+          [
+            2,
+            30,
+            12,
+            2,
+            30,
+            12
+          ],
+          [
+            2,
+            30,
+            12,
+            2,
+            30,
+            12
+          ],
+          [
+            2,
+            30,
+            12,
+            2,
+            30,
+            12
+          ],
+          [
+            2,
+            30,
+            12,
+            2,
+            30,
+            12
+          ],
+          [
+            2,
+            30,
+            12,
+            2,
+            30,
+            12
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match hunter/beast-mastery/Improved Aspect of the Hawk (talent 1382) has no alignable slots; ranks 2..5 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 1382,
+          "name": "Improved Aspect of the Hawk",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 5,
+          "match": "description",
+          "similarity": 0.99
+        }
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r0c2",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Endurance Training",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the Health and Armor of your pets by 3%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21032.333,
+        "timestamp": "05:50:32.333",
+        "frame_index": 1261940,
+        "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r1c3.png",
+        "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "23-hunter-21030",
+        "hover_id": "beast-mastery-r1c3",
+        "cell": [
+          1,
+          1,
+          3
+        ],
+        "bbox": [
+          642,
+          121,
+          226,
+          117
+        ],
+        "sharpness": 2873.1,
+        "frames": 16,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Endurance Training",
+            "description": "Increases the Health and Armor of your pets by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Endurance Training",
+            "description": "Increases the Health and Armor of your pets by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Endurance Training",
+            "description": "Increases the Health and Armor of your pets by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21030,
+        "frame_index": 1261800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the Health and Armor of your pets by {0}%.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ],
+          [
+            12
+          ],
+          [
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1389,
+          "classicSpellIds": [
+            19583,
+            19584,
+            19585,
+            19586,
+            19587
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/beast-mastery/Endurance Training (talent 1389): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1389,
+          "name": "Endurance Training",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r1c0",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Focused Fire",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases all damage you deal by 1% while your pet is active.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21034.533,
+        "timestamp": "05:50:34.533",
+        "frame_index": 1262072,
+        "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c1.png",
+        "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "23-hunter-21030",
+        "hover_id": "beast-mastery-r2c1",
+        "cell": [
+          1,
+          2,
+          1
+        ],
+        "bbox": [
+          534,
+          200,
+          214,
+          92
+        ],
+        "sharpness": 3248.3,
+        "frames": 21,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Focused Fire",
+            "description": "Increases all damage you deal by 1% while your pet is active.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Focused Fire",
+            "description": "Increases all damage you deal by 1% while your pet is active.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Focused Fire",
+            "description": "Increases all damage you deal by 1% while your pet is active.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21030,
+        "frame_index": 1261800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases all damage you deal by {0}% while your pet is active.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r1c1",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Improved Aspect of the Monkey",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the Dodge bonus of your Aspect of the Monkey by 2%. Additionally, your pet gains 50% of the effect of your Aspect of the Monkey ability.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21036.4,
+        "timestamp": "05:50:36.400",
+        "frame_index": 1262184,
+        "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c2.png",
+        "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "23-hunter-21030",
+        "hover_id": "beast-mastery-r2c2",
+        "cell": [
+          1,
+          2,
+          2
+        ],
+        "bbox": [
+          588,
+          169,
+          224,
+          123
+        ],
+        "sharpness": 4821.0,
+        "frames": 23,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Aspect of the Monkey",
+            "description": "Increases the Dodge bonus of your Aspect of the Monkey by 2%. Additionally, your pet gains 50% of the effect of your Aspect of the Monkey ability.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Aspect of the Monkey",
+            "description": "Increases the Dodge bonus of your Aspect of the Monkey by 2%. Additionally, your pet gains 50% of the effect of your Aspect of the Monkey ability.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Aspect of the Monkey",
+            "description": "Increases the Dodge bonus of your Aspect of the Monkey by 2%. Additionally, your pet gains 5% of the effect of your Aspect of the Monkey ability.",
+            "maxRank": 3,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21030,
+        "frame_index": 1261800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the Dodge bonus of your Aspect of the Monkey by {0}%. Additionally, your pet gains {1}% of the effect of your Aspect of the Monkey ability.",
+        "ranks": [
+          [
+            2,
+            50
+          ],
+          [
+            4,
+            100
+          ],
+          [
+            6,
+            150
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match hunter/beast-mastery/Improved Aspect of the Monkey (talent 1381) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 1381,
+          "name": "Improved Aspect of the Monkey",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r1c2",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Pathfinding",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 3%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21038.0,
+        "timestamp": "05:50:38.000",
+        "frame_index": 1262280,
+        "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c3.png",
+        "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "23-hunter-21030",
+        "hover_id": "beast-mastery-r2c3",
+        "cell": [
+          1,
+          2,
+          3
+        ],
+        "bbox": [
+          642,
+          190,
+          216,
+          102
+        ],
+        "sharpness": 3751.8,
+        "frames": 13,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Pathfinding",
+            "description": "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 3%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Pathfinding",
+            "description": "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 3%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Pathfinding",
+            "description": "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 3%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21030,
+        "frame_index": 1261800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by {0}%.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1384,
+          "classicSpellIds": [
+            19559,
+            19560
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/beast-mastery/Pathfinding (talent 1384): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1384,
+          "name": "Pathfinding",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r1c3",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 1,
+      "col": 3,
+      "name": "Improved Revive Pet",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Revive Pet's casting time is reduced by 3 sec. mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21039.0,
+        "timestamp": "05:50:39.000",
+        "frame_index": 1262340,
+        "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c4.png",
+        "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r2c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "23-hunter-21030",
+        "hover_id": "beast-mastery-r2c4",
+        "cell": [
+          1,
+          2,
+          4
+        ],
+        "bbox": [
+          696,
+          179,
+          226,
+          113
+        ],
+        "sharpness": 4193.1,
+        "frames": 9,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Revive Pet",
+            "description": "Revive Pet's casting time is reduced by 3 sec. mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Revive Pet",
+            "description": "Revive Pet's casting time is reduced by 3 sec. mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Revive Pet",
+            "description": "Revive Pet's casting time is reduced by 3 sec, mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%.",
+            "maxRank": 2,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21030,
+        "frame_index": 1261800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Revive Pet's casting time is reduced by {0} sec. mana cost is reduced by {1}%, and increases the health your pet returns with by an additional {2}%.",
+        "ranks": [
+          [
+            3,
+            20,
+            15
+          ],
+          [
+            6,
+            40,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1625,
+          "classicSpellIds": [
+            24443,
+            19575
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/beast-mastery/Improved Revive Pet (talent 1625): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1625,
+          "name": "Improved Revive Pet",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r2c1",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Bestial Swiftness",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the movement speed of your pets by 30%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21040.4,
+        "timestamp": "05:50:40.400",
+        "frame_index": 1262424,
+        "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r3c2.png",
+        "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "23-hunter-21030",
+        "hover_id": "beast-mastery-r3c2",
+        "cell": [
+          1,
+          3,
+          2
+        ],
+        "bbox": [
+          588,
+          254,
+          226,
+          92
+        ],
+        "sharpness": 3300.3,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Bestial Swiftness",
+            "description": "Increases the movement speed of your pets by 30%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Bestial Swiftness",
+            "description": "Increases the movement speed of your pets by 30%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Bestial Swiftness",
+            "description": "Increases the movement speed of your pets by 30%.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21030,
+        "frame_index": 1261800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the movement speed of your pets by {0}%.",
+        "ranks": [
+          [
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r2c2",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 2,
+      "col": 2,
+      "name": "Unleashed Fury",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage done by your pets and hawks by 3%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21042.0,
+        "timestamp": "05:50:42.000",
+        "frame_index": 1262520,
+        "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r3c3.png",
+        "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r3c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "23-hunter-21030",
+        "hover_id": "beast-mastery-r3c3",
+        "cell": [
+          1,
+          3,
+          3
+        ],
+        "bbox": [
+          642,
+          254,
+          208,
+          92
+        ],
+        "sharpness": 3519.2,
+        "frames": 10,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Unleashed Fury",
+            "description": "Increases the damage done by your pets and hawks by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Unleashed Fury",
+            "description": "Increases the damage done by your pets and hawks by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Unleashed Fury",
+            "description": "Increases the damage done by your pets and hawks by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21030,
+        "frame_index": 1261800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by your pets and hawks by {0}%.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ],
+          [
+            12
+          ],
+          [
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1396,
+          "classicSpellIds": [
+            19616,
+            19617,
+            19618,
+            19619,
+            19620
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/beast-mastery/Unleashed Fury (talent 1396): Classic 4/8/12/16/20 scaled by 0.75.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 1396,
+          "name": "Unleashed Fury",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r3c0",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Improved Mend Pet",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Mend Pet spell a 15% chance of cleansing 1 Curse, Disease, Magic, or Poison effect from your pet each time it heals and reduces the Mana cost by 10%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21043.267,
+        "timestamp": "05:50:43.267",
+        "frame_index": 1262596,
+        "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r4c1.png",
+        "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "23-hunter-21030",
+        "hover_id": "beast-mastery-r4c1",
+        "cell": [
+          1,
+          4,
+          1
+        ],
+        "bbox": [
+          534,
+          277,
+          220,
+          123
+        ],
+        "sharpness": 4330.4,
+        "frames": 10,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Mend Pet",
+            "description": "Gives your Mend Pet spell a 15% chance of cleansing 1 Curse, Disease, Magic, or Poison effect from your pet each time it heals and reduces the Mana cost by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Mend Pet",
+            "description": "Gives your Mend Pet spell a 15% chance of cleansing 1 Curse, Disease, Magic, or Poison effect from your pet each time it heals and reduces the Mana cost by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Mend Pet",
+            "description": "Gives your Mend Pet spell a 15% chance of cleansing 1 Curse, Disease, Magic, or Poison effect from your pet each time it heals and reduces the Mana cost by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "24-hunter-21060",
+            "t": 21066.667,
+            "sharpness": 4038.5,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21030,
+        "frame_index": 1261800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Mend Pet spell a {0}% chance of cleansing {1} Curse, Disease, Magic, or Poison effect from your pet each time it heals and reduces the Mana cost by {2}%.",
+        "ranks": [
+          [
+            15,
+            1,
+            10
+          ],
+          [
+            15,
+            1,
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match hunter/beast-mastery/Improved Mend Pet (talent 1385) has no alignable slots; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 1385,
+          "name": "Improved Mend Pet",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r3c2",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Ferocity",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike chance of your pets and hawks by 2%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21044.0,
+        "timestamp": "05:50:44.000",
+        "frame_index": 1262640,
+        "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r4c3.png",
+        "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "23-hunter-21030",
+        "hover_id": "beast-mastery-r4c3",
+        "cell": [
+          1,
+          4,
+          3
+        ],
+        "bbox": [
+          642,
+          308,
+          215,
+          92
+        ],
+        "sharpness": 3044.5,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Ferocity",
+            "description": "Increases the critical strike chance of your pets and hawks by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Ferocity",
+            "description": "Increases the critical strike chance of your pets and hawks by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Ferocity",
+            "description": "Increases the critical strike chance of your pets and hawks by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "24-hunter-21060",
+            "t": 21066.067,
+            "sharpness": 3007.3,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21030,
+        "frame_index": 1261800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike chance of your pets and hawks by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            5
+          ],
+          [
+            8
+          ],
+          [
+            11
+          ],
+          [
+            14
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1393,
+          "classicSpellIds": [
+            19598,
+            19599,
+            19600,
+            19601,
+            19602
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/beast-mastery/Ferocity (talent 1393): Classic 3/6/9/12/15, Forever rank 1 is 2: applied +3/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1393,
+          "name": "Ferocity",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r3c3",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 3,
+      "col": 3,
+      "name": "Summon Hawk",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "80 Mana",
+        "Instant",
+        "35 yd range",
+        "6 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Command a hawk to dive-bomb your targeted enemy, dealing 53 Physical damage and continuing its assault for 18 sec. Only 2 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21080.0,
+        "timestamp": "05:51:20.000",
+        "frame_index": 1264800,
+        "crop_path": "work/hovers/24-hunter-21060/beast-mastery-r4c4.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/beast-mastery-r4c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "beast-mastery-r4c4",
+        "cell": [
+          1,
+          4,
+          4
+        ],
+        "bbox": [
+          696,
+          254,
+          227,
+          146
+        ],
+        "sharpness": 5034.8,
+        "frames": 45,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Summon Hawk",
+            "description": "Command a hawk to dive-bomb your targeted enemy, dealing 53 Physical damage and continuing its assault for 18 sec. Only 2 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "80 Mana",
+              "Instant",
+              "35 yd range",
+              "6 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Summon Hawk",
+            "description": "Command a hawk to dive-bomb your targeted enemy, dealing 53 Physical damage and continuing its assault for 18 sec. Only 2 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "80 Mana",
+              "Instant",
+              "35 yd range",
+              "6 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Summon Hawk",
+            "description": "Command a hawk to dive-bomb your targeted enemy, dealing 53 Physical damage and continuing its assault for 18 sec. Only 2 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "23-hunter-21030",
+            "t": 21046.4,
+            "sharpness": 4984.0,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Command a hawk to dive-bomb your targeted enemy, dealing {0} Physical damage and continuing its assault for {1} sec. Only {2} hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.",
+        "ranks": [
+          [
+            53,
+            18,
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r4c0",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 4,
+      "col": 0,
+      "name": "Spirit Bond",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "While your pet is active, you and your pet will regenerate 1% of total health every 10 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21067.0,
+        "timestamp": "05:51:07.000",
+        "frame_index": 1264020,
+        "crop_path": "work/hovers/24-hunter-21060/beast-mastery-r5c1.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/beast-mastery-r5c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "beast-mastery-r5c1",
+        "cell": [
+          1,
+          5,
+          1
+        ],
+        "bbox": [
+          534,
+          352,
+          220,
+          102
+        ],
+        "sharpness": 3406.3,
+        "frames": 3,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Spirit Bond",
+            "description": "While your pet is active, you and your pet will regenerate 1% of total health every 10 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Spirit Bond",
+            "description": "While your pet is active, you and your pet will regenerate 1% of total health every 10 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Spirit Bond",
+            "description": "While your pet is active, you and your pet will regenerate 1% of total health every 10 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "While your pet is active, you and your pet will regenerate {0}% of total health every 10 sec.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1388,
+          "classicSpellIds": [
+            19578,
+            20895
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/beast-mastery/Spirit Bond (talent 1388): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1388,
+          "name": "Spirit Bond",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r4c1",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Intimidation",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "84 Mana",
+        "Instant",
+        "100 yd range",
+        "1 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Command your pet to Stun the target for 3 sec on its next successful attack, which also gains 100% Increased critical strike chance. Generates high threat.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21064.467,
+        "timestamp": "05:51:04.467",
+        "frame_index": 1263868,
+        "crop_path": "work/hovers/24-hunter-21060/beast-mastery-r5c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/beast-mastery-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "beast-mastery-r5c2",
+        "cell": [
+          1,
+          5,
+          2
+        ],
+        "bbox": [
+          588,
+          318,
+          226,
+          136
+        ],
+        "sharpness": 4192.3,
+        "frames": 3,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Intimidation",
+            "description": "Command your pet to Stun the target for 3 sec on its next successful attack, which also gains 100% Increased critical strike chance. Generates high threat.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "84 Mana",
+              "Instant",
+              "100 yd range",
+              "1 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Intimidation",
+            "description": "Command your pet to Stun the target for 3 sec on its next successful attack, which also gains 100% Increased critical strike chance. Generates high threat.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "84 Mana",
+              "Instant",
+              "100 yd range",
+              "1 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Intimidation",
+            "description": "Command your pet to Stun the target for 3 sec on its next successful attack, which also gains 100% increased critical strike chance. Generates high threat.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Command your pet to Stun the target for {0} sec on its next successful attack, which also gains {1}% Increased critical strike chance. Generates high threat.",
+        "ranks": [
+          [
+            3,
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r4c3",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 4,
+      "col": 3,
+      "name": "Bestial Discipline",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the Focus regeneration of your pets by 10% and allows 25% of your Mana regeneration to continue while casting.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21048.333,
+        "timestamp": "05:50:48.333",
+        "frame_index": 1262900,
+        "crop_path": "work/hovers/23-hunter-21030/beast-mastery-r5c4.png",
+        "icon_crop_path": "work/hovers/23-hunter-21030/beast-mastery-r5c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "23-hunter-21030",
+        "hover_id": "beast-mastery-r5c4",
+        "cell": [
+          1,
+          5,
+          4
+        ],
+        "bbox": [
+          696,
+          341,
+          213,
+          113
+        ],
+        "sharpness": 4167.5,
+        "frames": 8,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Bestial Discipline",
+            "description": "Increases the Focus regeneration of your pets by 10% and allows 25% of your Mana regeneration to continue while casting.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Bestial Discipline",
+            "description": "Increases the Focus regeneration of your pets by 10% and allows 25% of your Mana regeneration to continue while casting.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Bestial Discipline",
+            "description": "Increases the Focus regeneration of your pets by 10% and allows 25% of your Mana regeneration to continue while casting.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "24-hunter-21060",
+            "t": 21064.6,
+            "sharpness": 3848.1,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 21030,
+        "frame_index": 1261800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the Focus regeneration of your pets by {0}% and allows {1}% of your Mana regeneration to continue while casting.",
+        "ranks": [
+          [
+            10,
+            25
+          ],
+          [
+            20,
+            50
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match hunter/beast-mastery/Bestial Discipline (talent 1390) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 1390,
+          "name": "Bestial Discipline",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r5c2",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Frenzy",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your pet a 20% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21061.0,
+        "timestamp": "05:51:01.000",
+        "frame_index": 1263660,
+        "crop_path": "work/hovers/24-hunter-21060/beast-mastery-r6c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/beast-mastery-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "beast-mastery-r6c3",
+        "cell": [
+          1,
+          6,
+          3
+        ],
+        "bbox": [
+          642,
+          406,
+          223,
+          102
+        ],
+        "sharpness": 3424.0,
+        "frames": 9,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Frenzy",
+            "description": "Gives your pet a 20% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Frenzy",
+            "description": "Gives your pet a 20% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Frenzy",
+            "description": "Gives your pet a 20% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your pet a {0}% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            40
+          ],
+          [
+            60
+          ],
+          [
+            80
+          ],
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1397,
+          "classicSpellIds": [
+            19621,
+            19622,
+            19623,
+            19624,
+            19625
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/beast-mastery/Frenzy (talent 1397): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1397,
+          "name": "Frenzy",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/beast-mastery/r6c1",
+      "class": "hunter",
+      "tree": "Beast Mastery",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Bestial Wrath",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "125 Mana",
+        "Instant",
+        "100 yd range",
+        "2 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Send your pet into a rage causing 50% additional damage for 18 sec. While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21060.6,
+        "timestamp": "05:51:00.600",
+        "frame_index": 1263636,
+        "crop_path": "work/hovers/24-hunter-21060/beast-mastery-r7c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/beast-mastery-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "beast-mastery-r7c2",
+        "cell": [
+          1,
+          7,
+          2
+        ],
+        "bbox": [
+          588,
+          426,
+          226,
+          136
+        ],
+        "sharpness": 4970.5,
+        "frames": 11,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Bestial Wrath",
+            "description": "Send your pet into a rage causing 50% additional damage for 18 sec. While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "125 Mana",
+              "Instant",
+              "100 yd range",
+              "2 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Bestial Wrath",
+            "description": "Send your pet into a rage causing 50% additional damage for 18 sec. While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "125 Mana",
+              "Instant",
+              "100 yd range",
+              "2 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Bestial Wrath",
+            "description": "Send your pet into a rage causing 50% additional damage for 18 sec. While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Send your pet into a rage causing {0}% additional damage for {1} sec. While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed.",
+        "ranks": [
+          [
+            50,
+            18
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r0c0",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 0,
+      "col": 0,
+      "name": "Hawk Eye",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the range of your ranged weapons by 2 yards.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21103.067,
+        "timestamp": "05:51:43.067",
+        "frame_index": 1266184,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r1c1.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r1c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r1c1",
+        "cell": [
+          2,
+          1,
+          1
+        ],
+        "bbox": [
+          894,
+          121,
+          207,
+          117
+        ],
+        "sharpness": 2703.5,
+        "frames": 8,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Hawk Eye",
+            "description": "Increases the range of your ranged weapons by 2 yards.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Hawk Eye",
+            "description": "Increases the range of your ranged weapons by 2 yards.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Hawk Eye",
+            "description": "Increases the range of your ranged weapons by 2 yards.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the range of your ranged weapons by {0} yards.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1352,
+          "classicSpellIds": [
+            19498,
+            19499,
+            19500
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/marksmanship/Hawk Eye (talent 1352): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1352,
+          "name": "Hawk Eye",
+          "class": "hunter",
+          "tree": "marksmanship",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r0c1",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Improved Concussive Shot",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Concussive Shot a 4% chance to stun the target for 3 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21104.133,
+        "timestamp": "05:51:44.133",
+        "frame_index": 1266248,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r1c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r1c2",
+        "cell": [
+          2,
+          1,
+          2
+        ],
+        "bbox": [
+          948,
+          122,
+          202,
+          116
+        ],
+        "sharpness": 3813.6,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Concussive Shot",
+            "description": "Gives your Concussive Shot a 4% chance to stun the target for 3 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Concussive Shot",
+            "description": "Gives your Concussive Shot a 4% chance to stun the target for 3 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Concussive Shot",
+            "description": "Gives your Concussive Shot a 4% chance to stun the target for 3 sec.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Concussive Shot a {0}% chance to stun the target for 3 sec.",
+        "ranks": [
+          [
+            4
+          ],
+          [
+            8
+          ],
+          [
+            12
+          ],
+          [
+            16
+          ],
+          [
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1341,
+          "classicSpellIds": [
+            19407,
+            19412,
+            19413,
+            19414,
+            19415
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/marksmanship/Improved Concussive Shot (talent 1341): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1341,
+          "name": "Improved Concussive Shot",
+          "class": "hunter",
+          "tree": "marksmanship",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r0c2",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Lethal Attacks",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your critical strike chance with all attacks by 1%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21105.267,
+        "timestamp": "05:51:45.267",
+        "frame_index": 1266316,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r1c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r1c3",
+        "cell": [
+          2,
+          1,
+          3
+        ],
+        "bbox": [
+          1001,
+          122,
+          210,
+          116
+        ],
+        "sharpness": 2778.8,
+        "frames": 5,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Lethal Attacks",
+            "description": "Increases your critical strike chance with all attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Lethal Attacks",
+            "description": "Increases your critical strike chance with all attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Lethal Attacks",
+            "description": "Increases your critical strike chance with all attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your critical strike chance with all attacks by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1311,
+          "classicSpellIds": [
+            19295,
+            19297,
+            19298,
+            19301,
+            19300
+          ],
+          "match": "description",
+          "similarity": 0.9
+        },
+        "ranksNote": "Classic hunter/survival/Deflection (talent 1311), matched on description (0.90): ranks copied.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1311,
+          "name": "Deflection",
+          "class": "hunter",
+          "tree": "survival",
+          "maxRank": 5,
+          "match": "description",
+          "similarity": 0.9
+        }
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r1c0",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Improved Stings",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increased the damage of your Serpent Sting ability by 6%, reduces the cooldown of your Viper Sting ability by 2 sec, and increases the duration of your Scorpion Sting ability by 15 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21108.333,
+        "timestamp": "05:51:48.333",
+        "frame_index": 1266500,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r2c1.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r2c1",
+        "cell": [
+          2,
+          2,
+          1
+        ],
+        "bbox": [
+          894,
+          168,
+          226,
+          125
+        ],
+        "sharpness": 4525.0,
+        "frames": 18,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Stings",
+            "description": "Increased the damage of your Serpent Sting ability by 6%, reduces the cooldown of your Viper Sting ability by 2 sec, and increases the duration of your Scorpion Sting ability by 15 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Stings",
+            "description": "Increased the damage of your Serpent Sting ability by 6%, reduces the cooldown of your Viper Sting ability by 2 sec, and increases the duration of your Scorpion Sting ability by 15 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Stings",
+            "description": "Increases the damage done by your Serpent Sting ability by 6%, reduces the cooldown of your Viper Sting ability by 2 sec, and increases the duration of your Scorpid Sting ability by 15 sec.",
+            "maxRank": 3,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increased the damage of your Serpent Sting ability by {0}%, reduces the cooldown of your Viper Sting ability by {1} sec, and increases the duration of your Scorpion Sting ability by {2} sec.",
+        "ranks": [
+          [
+            6,
+            2,
+            15
+          ],
+          [
+            6,
+            2,
+            15
+          ],
+          [
+            6,
+            2,
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (2 sec) is never extrapolated; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r1c1",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Efficiency",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the Mana cost of your Shots, Stings, and melee abilities by 3%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21107.133,
+        "timestamp": "05:51:47.133",
+        "frame_index": 1266428,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r2c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r2c2",
+        "cell": [
+          2,
+          2,
+          2
+        ],
+        "bbox": [
+          948,
+          199,
+          220,
+          94
+        ],
+        "sharpness": 3208.2,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Efficiency",
+            "description": "Reduces the Mana cost of your Shots, Stings, and melee abilities by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Efficiency",
+            "description": "Reduces the Mana cost of your Shots, Stings, and melee abilities by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Efficiency",
+            "description": "Reduces the Mana cost of your Shots, Stings, and melee abilities by 3%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the Mana cost of your Shots, Stings, and melee abilities by {0}%.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ],
+          [
+            12
+          ],
+          [
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1342,
+          "classicSpellIds": [
+            19416,
+            19417,
+            19418,
+            19419,
+            19420
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/marksmanship/Efficiency (talent 1342): Classic 2/4/6/8/10 scaled by 1.5.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 1342,
+          "name": "Efficiency",
+          "class": "hunter",
+          "tree": "marksmanship",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r1c2",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Careful Aim",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Attack Power by 20% of your Intellect.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21106.0,
+        "timestamp": "05:51:46.000",
+        "frame_index": 1266360,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r2c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r2c3",
+        "cell": [
+          2,
+          2,
+          3
+        ],
+        "bbox": [
+          1002,
+          199,
+          224,
+          94
+        ],
+        "sharpness": 2884.2,
+        "frames": 6,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Careful Aim",
+            "description": "Increases your Attack Power by 20% of your Intellect.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Careful Aim",
+            "description": "Increases your Attack Power by 20% of your Intellect.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Careful Aim",
+            "description": "Increases your Attack Power by 20% of your Intellect.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Attack Power by {0}% of your Intellect.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            22
+          ],
+          [
+            24
+          ],
+          [
+            26
+          ],
+          [
+            28
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1702,
+          "classicSpellIds": [
+            30902,
+            30903,
+            30904,
+            30905,
+            30906
+          ],
+          "match": "description",
+          "similarity": 0.94
+        },
+        "ranksNote": "Classic rogue/subtlety/Deadliness (talent 1702) (cross-class), matched on description (0.94): Classic 2/4/6/8/10, Forever rank 1 is 20: applied +2/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1702,
+          "name": "Deadliness",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 5,
+          "match": "description",
+          "similarity": 0.94
+        }
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r2c0",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Rapid Killing",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown on your Rapid Fire ability by 1 min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next Shot ability within 20 sec by 10%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21109.267,
+        "timestamp": "05:51:49.267",
+        "frame_index": 1266556,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r3c1.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r3c1",
+        "cell": [
+          2,
+          3,
+          1
+        ],
+        "bbox": [
+          894,
+          202,
+          228,
+          144
+        ],
+        "sharpness": 4632.4,
+        "frames": 7,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Rapid Killing",
+            "description": "Reduces the cooldown on your Rapid Fire ability by 1 min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next Shot ability within 20 sec by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Rapid Killing",
+            "description": "Reduces the cooldown on your Rapid Fire ability by 1 min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next Shot ability within 20 sec by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Rapid Killing",
+            "description": "Reduces the cooldown on your Rapid Fire ability by 1 min. In addition, when you kill a non-trivial enemy or critters while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next shot ability within 20 sec by 10%.",
+            "maxRank": 2,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown on your Rapid Fire ability by {0} min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next Shot ability within {1} sec by {2}%.",
+        "ranks": [
+          [
+            1,
+            20,
+            10
+          ],
+          [
+            1,
+            20,
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match warrior/protection/Improved Taunt (talent 143) has no alignable slots; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 143,
+          "name": "Improved Taunt",
+          "class": "warrior",
+          "tree": "protection",
+          "maxRank": 2,
+          "match": "description",
+          "similarity": 0.88
+        }
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r2c1",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Improved Arcane Shot",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown of your Arcane Shot by 0.3 sec. Does not affect the cooldown of abilities which share a cooldown with Arcane Shot.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21110.733,
+        "timestamp": "05:51:50.733",
+        "frame_index": 1266644,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r3c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r3c2",
+        "cell": [
+          2,
+          3,
+          2
+        ],
+        "bbox": [
+          948,
+          233,
+          223,
+          113
+        ],
+        "sharpness": 4398.6,
+        "frames": 22,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Arcane Shot",
+            "description": "Reduces the cooldown of your Arcane Shot by 0.3 sec. Does not affect the cooldown of abilities which share a cooldown with Arcane Shot.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Arcane Shot",
+            "description": "Reduces the cooldown of your Arcane Shot by 0.3 sec. Does not affect the cooldown of abilities which share a cooldown with Arcane Shot.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Arcane Shot",
+            "description": "Reduces the cooldown of your Arcane Shot by 0.3 sec. Does not affect the cooldown of abilities which share a cooldown with Arcane Shot.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Arcane Shot by {0} sec. Does not affect the cooldown of abilities which share a cooldown with Arcane Shot.",
+        "ranks": [
+          [
+            0.3
+          ],
+          [
+            0.6
+          ],
+          [
+            0.9
+          ],
+          [
+            1.2
+          ],
+          [
+            1.5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1346,
+          "classicSpellIds": [
+            19454,
+            19455,
+            19456,
+            19457,
+            19458
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/marksmanship/Improved Arcane Shot (talent 1346): Classic 0.2/0.4/0.6/0.8/1 scaled by 1.5.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 1346,
+          "name": "Improved Arcane Shot",
+          "class": "hunter",
+          "tree": "marksmanship",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r2c3",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 2,
+      "col": 3,
+      "name": "Lone Wolf",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "You deal 20% Increased damage with all attacks while you do not have an active pet.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21312.133,
+        "timestamp": "05:55:12.133",
+        "frame_index": 1278728,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r3c4.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r3c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r3c4",
+        "cell": [
+          2,
+          3,
+          4
+        ],
+        "bbox": [
+          1054,
+          244,
+          220,
+          102
+        ],
+        "sharpness": 3472.1,
+        "frames": 45,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Lone Wolf",
+            "description": "You deal 20% Increased damage with all attacks while you do not have an active pet.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Lone Wolf",
+            "description": "You deal 20% Increased damage with all attacks while you do not have an active pet.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Lone Wolf",
+            "description": "You deal 20% increased damage with all attacks while you do not have an active pet.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "You deal {0}% Increased damage with all attacks while you do not have an active pet.",
+        "ranks": [
+          [
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r3c1",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "Trueshot Aura",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "180 Mana",
+        "Instant"
+      ],
+      "requires": [],
+      "description_rank1": "Increases the Ranged Attack Power of party members within 45 yards by 30. Lasts 30 min.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21113.8,
+        "timestamp": "05:51:53.800",
+        "frame_index": 1266828,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r4c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r4c2",
+        "cell": [
+          2,
+          4,
+          2
+        ],
+        "bbox": [
+          948,
+          286,
+          222,
+          113
+        ],
+        "sharpness": 3329.1,
+        "frames": 12,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Trueshot Aura",
+            "description": "Increases the Ranged Attack Power of party members within 45 yards by 30. Lasts 30 min.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "180 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Trueshot Aura",
+            "description": "Increases the Ranged Attack Power of party members within 45 yards by 30. Lasts 30 min.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "180 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Trueshot Aura",
+            "description": "Increases the Ranged Attack Power of party members within 45 yards by 30. Lasts 30 min.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the Ranged Attack Power of party members within {0} yards by {1}. Lasts {2} min.",
+        "ranks": [
+          [
+            45,
+            30,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r3c2",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Mortal Shots",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike damage bonus on all ranged abilities by 6%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21115.0,
+        "timestamp": "05:51:55.000",
+        "frame_index": 1266900,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r4c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r4c3",
+        "cell": [
+          2,
+          4,
+          3
+        ],
+        "bbox": [
+          1002,
+          307,
+          208,
+          93
+        ],
+        "sharpness": 3590.3,
+        "frames": 17,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Mortal Shots",
+            "description": "Increases the critical strike damage bonus on all ranged abilities by 6%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Mortal Shots",
+            "description": "Increases the critical strike damage bonus on all ranged abilities by 6%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Mortal Shots",
+            "description": "Increases the critical strike damage bonus on all ranged abilities by 6%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike damage bonus on all ranged abilities by {0}%.",
+        "ranks": [
+          [
+            6
+          ],
+          [
+            12
+          ],
+          [
+            18
+          ],
+          [
+            24
+          ],
+          [
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1349,
+          "classicSpellIds": [
+            19485,
+            19487,
+            19488,
+            19489,
+            19490
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/marksmanship/Mortal Shots (talent 1349): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1349,
+          "name": "Mortal Shots",
+          "class": "hunter",
+          "tree": "marksmanship",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r4c0",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 4,
+      "col": 0,
+      "name": "Rapid Recuperation",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Hitting a target with your Serpent Sting ability grants you 25% and consuming Rapid Killing grants you 50% of your Mana regeneration while casting for the next 15 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21116.2,
+        "timestamp": "05:51:56.200",
+        "frame_index": 1266972,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r5c1.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r5c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r5c1",
+        "cell": [
+          2,
+          5,
+          1
+        ],
+        "bbox": [
+          893,
+          331,
+          227,
+          122
+        ],
+        "sharpness": 4647.6,
+        "frames": 13,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Rapid Recuperation",
+            "description": "Hitting a target with your Serpent Sting ability grants you 25% and consuming Rapid Killing grants you 50% of your Mana regeneration while casting for the next 15 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Rapid Recuperation",
+            "description": "Hitting a target with your Serpent Sting ability grants you 25% and consuming Rapid Killing grants you 50% of your Mana regeneration while casting for the next 15 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Rapid Recuperation",
+            "description": "Hitting a target with your Serpent Sting ability grants you 25% and consuming Rapid Killing grants you 50% of your Mana regeneration while casting for the next 15 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Hitting a target with your Serpent Sting ability grants you {0}% and consuming Rapid Killing grants you {1}% of your Mana regeneration while casting for the next {2} sec.",
+        "ranks": [
+          [
+            25,
+            50,
+            15
+          ],
+          [
+            25,
+            50,
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (15 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r4c2",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Barrage",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage done by your Multi-Shot, Aimed Shot, and Volley abilities by 3%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21118.867,
+        "timestamp": "05:51:58.867",
+        "frame_index": 1267132,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r5c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r5c3",
+        "cell": [
+          2,
+          5,
+          3
+        ],
+        "bbox": [
+          1002,
+          352,
+          210,
+          102
+        ],
+        "sharpness": 3595.0,
+        "frames": 37,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Barrage",
+            "description": "Increases the damage done by your Multi-Shot, Aimed Shot, and Volley abilities by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Barrage",
+            "description": "Increases the damage done by your Multi-Shot, Aimed Shot, and Volley abilities by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Barrage",
+            "description": "Increases the damage done by your Multi-Shot, Aimed Shot, and Volley abilities by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by your Multi-Shot, Aimed Shot, and Volley abilities by {0}%.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            8
+          ],
+          [
+            13
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1347,
+          "classicSpellIds": [
+            19461,
+            19462,
+            24691
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/marksmanship/Barrage (talent 1347): Classic 5/10/15, Forever rank 1 is 3: applied +5/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1347,
+          "name": "Barrage",
+          "class": "hunter",
+          "tree": "marksmanship",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r4c3",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 4,
+      "col": 3,
+      "name": "Scatter Shot",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "84 Mana",
+        "Instant",
+        "15 yd range",
+        "30 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "A short-range shot that deals 50% weapon damage and disorients the target for 4 sec. Any damage caused will remove the effect. Turns off your attack when used.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21121.133,
+        "timestamp": "05:52:01.133",
+        "frame_index": 1267268,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r5c4.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r5c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r5c4",
+        "cell": [
+          2,
+          5,
+          4
+        ],
+        "bbox": [
+          1057,
+          318,
+          224,
+          136
+        ],
+        "sharpness": 4571.1,
+        "frames": 13,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Scatter Shot",
+            "description": "A short-range shot that deals 50% weapon damage and disorients the target for 4 sec. Any damage caused will remove the effect. Turns off your attack when used.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "84 Mana",
+              "Instant",
+              "15 yd range",
+              "30 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Scatter Shot",
+            "description": "A short-range shot that deals 50% weapon damage and disorients the target for 4 sec. Any damage caused will remove the effect. Turns off your attack when used.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "84 Mana",
+              "Instant",
+              "15 yd range",
+              "30 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Scatter Shot",
+            "description": "A short-range shot that deals 50% weapon damage and disorients the target for 4 sec. Any damage caused will remove the effect. Turns off your attack when used.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "A short-range shot that deals {0}% weapon damage and disorients the target for {1} sec. Any damage caused will remove the effect. Turns off your attack when used.",
+        "ranks": [
+          [
+            50,
+            4
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r5c2",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Ranged Weapon Specialization",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage you deal with ranged weapons by 1%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21122.0,
+        "timestamp": "05:52:02.000",
+        "frame_index": 1267320,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r6c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r6c3",
+        "cell": [
+          2,
+          6,
+          3
+        ],
+        "bbox": [
+          1002,
+          416,
+          216,
+          92
+        ],
+        "sharpness": 4319.6,
+        "frames": 6,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Ranged Weapon Specialization",
+            "description": "Increases the damage you deal with ranged weapons by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Ranged Weapon Specialization",
+            "description": "Increases the damage you deal with ranged weapons by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Ranged Weapon Specialization",
+            "description": "Increases the damage you deal with ranged weapons by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage you deal with ranged weapons by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1362,
+          "classicSpellIds": [
+            19507,
+            19508,
+            19509,
+            19510,
+            19511
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/marksmanship/Ranged Weapon Specialization (talent 1362): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1362,
+          "name": "Ranged Weapon Specialization",
+          "class": "hunter",
+          "tree": "marksmanship",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/marksmanship/r6c1",
+      "class": "hunter",
+      "tree": "Marksmanship",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Sniper Shot",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "365 Mana",
+        "4 sec cast"
+      ],
+      "requires": [],
+      "description_rank1": "A steady snipe that increases ranged damage by 160.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21141.2,
+        "timestamp": "05:52:21.200",
+        "frame_index": 1268472,
+        "crop_path": "work/hovers/24-hunter-21060/marksmanship-r7c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/marksmanship-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "marksmanship-r7c2",
+        "cell": [
+          2,
+          7,
+          2
+        ],
+        "bbox": [
+          947,
+          458,
+          228,
+          103
+        ],
+        "sharpness": 4107.5,
+        "frames": 43,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Sniper Shot",
+            "description": "A steady snipe that increases ranged damage by 160.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "365 Mana",
+              "4 sec cast"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Sniper Shot",
+            "description": "A steady snipe that increases ranged damage by 160.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "365 Mana",
+              "4 sec cast"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Sniper Shot",
+            "description": "A steady snipe that increases ranged damage by 160.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "A steady snipe that increases ranged damage by {0}.",
+        "ranks": [
+          [
+            160
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/survival/r0c1",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Improved Tracking",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids, or Undead, all damage you deal to the tracked creature type is increased by 1%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21154.067,
+        "timestamp": "05:52:34.067",
+        "frame_index": 1269244,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r1c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r1c2",
+        "cell": [
+          3,
+          1,
+          2
+        ],
+        "bbox": [
+          1312,
+          90,
+          228,
+          149
+        ],
+        "sharpness": 3589.6,
+        "frames": 28,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Tracking",
+            "description": "While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids, or Undead, all damage you deal to the tracked creature type is increased by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Tracking",
+            "description": "While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids, or Undead, all damage you deal to the tracked creature type is increased by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Tracking",
+            "description": "While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids, or Undead, all damage you deal to the tracked creature type is increased by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids, or Undead, all damage you deal to the tracked creature type is increased by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "hunter/survival/r0c2",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Deflection",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Parry chance by 2%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21156.933,
+        "timestamp": "05:52:36.933",
+        "frame_index": 1269416,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r1c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r1c3",
+        "cell": [
+          3,
+          1,
+          3
+        ],
+        "bbox": [
+          1366,
+          132,
+          204,
+          107
+        ],
+        "sharpness": 2553.6,
+        "frames": 20,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Deflection",
+            "description": "Increases your Parry chance by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Deflection",
+            "description": "Increases your Parry chance by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Deflection",
+            "description": "Increases your Parry chance by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Parry chance by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1311,
+          "classicSpellIds": [
+            19295,
+            19297,
+            19298,
+            19301,
+            19300
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/survival/Deflection (talent 1311): Classic 1/2/3/4/5 scaled by 2.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 1311,
+          "name": "Deflection",
+          "class": "hunter",
+          "tree": "survival",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/survival/r1c0",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Entrapment",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "When your traps are triggered, all affected targets are Entrapped, preventing them from moving for 1 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21256.933,
+        "timestamp": "05:54:16.933",
+        "frame_index": 1275416,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r2c1.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r2c1",
+        "cell": [
+          3,
+          2,
+          1
+        ],
+        "bbox": [
+          1258,
+          189,
+          226,
+          104
+        ],
+        "sharpness": 3778.4,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Entrapment",
+            "description": "When your traps are triggered, all affected targets are Entrapped, preventing them from moving for 1 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Entrapment",
+            "description": "When your traps are triggered, all affected targets are Entrapped, preventing them from moving for 1 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Entrapment",
+            "description": "When your traps are triggered, all affected targets are Entrapped, preventing them from moving for 1 sec.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When your traps are triggered, all affected targets are Entrapped, preventing them from moving for {0} sec.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic hunter/survival/Entrapment (talent 1304) has 5/10/15/20/25 without unit where Forever rank 1 has 1 sec; units differ; ranks 2..5 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 1304,
+          "name": "Entrapment",
+          "class": "hunter",
+          "tree": "survival",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/survival/r1c1",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Savage Strikes",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike chance of all your melee abilities by 2%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21194.467,
+        "timestamp": "05:53:14.467",
+        "frame_index": 1271668,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r2c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r2c2",
+        "cell": [
+          3,
+          2,
+          2
+        ],
+        "bbox": [
+          1312,
+          199,
+          219,
+          94
+        ],
+        "sharpness": 3350.9,
+        "frames": 32,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Savage Strikes",
+            "description": "Increases the critical strike chance of all your melee abilities by 2%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Savage Strikes",
+            "description": "Increases the critical strike chance of all your melee abilities by 2%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Savage Strikes",
+            "description": "Increases the critical strike chance of all your melee abilities by 2%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike chance of all your melee abilities by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            12
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1621,
+          "classicSpellIds": [
+            19159,
+            19160
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/survival/Savage Strikes (talent 1621): Classic 10/20, Forever rank 1 is 2: applied +10/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1621,
+          "name": "Savage Strikes",
+          "class": "hunter",
+          "tree": "survival",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/survival/r1c2",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Survivalist",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your total Health by 2%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21162.4,
+        "timestamp": "05:52:42.400",
+        "frame_index": 1269744,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r2c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r2c3",
+        "cell": [
+          3,
+          2,
+          3
+        ],
+        "bbox": [
+          1366,
+          210,
+          200,
+          83
+        ],
+        "sharpness": 3196.9,
+        "frames": 22,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Survivalist",
+            "description": "Increases your total Health by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Survivalist",
+            "description": "Increases your total Health by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Survivalist",
+            "description": "Increases your total Health by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your total Health by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1622,
+          "classicSpellIds": [
+            19255,
+            19256,
+            19257,
+            19258,
+            19259
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/survival/Survivalist (talent 1622): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1622,
+          "name": "Survivalist",
+          "class": "hunter",
+          "tree": "survival",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/survival/r1c3",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 1,
+      "col": 3,
+      "name": "Improved Wing Clip",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Wing Clip ability a 7% chance to immobilize the target for 5 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21196.0,
+        "timestamp": "05:53:16.000",
+        "frame_index": 1271760,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r2c4.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r2c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r2c4",
+        "cell": [
+          3,
+          2,
+          4
+        ],
+        "bbox": [
+          1420,
+          190,
+          217,
+          103
+        ],
+        "sharpness": 3747.9,
+        "frames": 3,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Wing Clip",
+            "description": "Gives your Wing Clip ability a 7% chance to immobilize the target for 5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Wing Clip",
+            "description": "Gives your Wing Clip ability a 7% chance to immobilize the target for 5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Wing Clip",
+            "description": "Gives your Wing Clip ability a 7% chance to immobilize the target for 5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Wing Clip ability a {0}% chance to immobilize the target for 5 sec.",
+        "ranks": [
+          [
+            7
+          ],
+          [
+            11
+          ],
+          [
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1305,
+          "classicSpellIds": [
+            19228,
+            19232,
+            19233,
+            19234,
+            19235
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/survival/Improved Wing Clip (talent 1305): Classic has 5 ranks, step +4 applied over 3 ranks from 7.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 1305,
+          "name": "Improved Wing Clip",
+          "class": "hunter",
+          "tree": "survival",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/survival/r2c0",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Clever Traps",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the duration of Freezing and Frost trap effects by 15% and the damage of Immolation and Explosive trap effects by 15.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21188.067,
+        "timestamp": "05:53:08.067",
+        "frame_index": 1271284,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r3c1.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r3c1",
+        "cell": [
+          3,
+          3,
+          1
+        ],
+        "bbox": [
+          1258,
+          232,
+          223,
+          115
+        ],
+        "sharpness": 3646.7,
+        "frames": 30,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Clever Traps",
+            "description": "Increases the duration of Freezing and Frost trap effects by 15% and the damage of Immolation and Explosive trap effects by 15.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Clever Traps",
+            "description": "Increases the duration of Freezing and Frost trap effects by 15% and the damage of Immolation and Explosive trap effects by 15.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Clever Traps",
+            "description": "Increases the duration of Freezing and Frost trap effects by 15% and the damage of Immolation and Explosive trap effects by 15%.",
+            "maxRank": 2,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the duration of Freezing and Frost trap effects by {0}% and the damage of Immolation and Explosive trap effects by {1}.",
+        "ranks": [
+          [
+            15,
+            15
+          ],
+          [
+            30,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1306,
+          "classicSpellIds": [
+            19239,
+            19245
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/survival/Clever Traps (talent 1306): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1306,
+          "name": "Clever Traps",
+          "class": "hunter",
+          "tree": "survival",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/survival/r2c1",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Surefooted",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your hit chance by 1% and reduces the duration of movement impairing effects on you by 10%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21248.0,
+        "timestamp": "05:54:08.000",
+        "frame_index": 1274880,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r3c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r3c2",
+        "cell": [
+          3,
+          3,
+          2
+        ],
+        "bbox": [
+          1312,
+          243,
+          215,
+          104
+        ],
+        "sharpness": 3902.0,
+        "frames": 16,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Surefooted",
+            "description": "Increases your hit chance by 1% and reduces the duration of movement impairing effects on you by 10%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Surefooted",
+            "description": "Increases your hit chance by 1% and reduces the duration of movement impairing effects on you by 10%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Surefooted",
+            "description": "Increases your hit chance by 1% and reduces the duration of movement impairing effects on you by 10%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your hit chance by {0}% and reduces the duration of movement impairing effects on you by {1}%.",
+        "ranks": [
+          [
+            1,
+            10
+          ],
+          [
+            2,
+            20
+          ],
+          [
+            3,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1310,
+          "classicSpellIds": [
+            19290,
+            19294,
+            24283
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/survival/Surefooted (talent 1310): Classic 5/10/15 scaled by 2.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 1310,
+          "name": "Surefooted",
+          "class": "hunter",
+          "tree": "survival",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/survival/r2c2",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 2,
+      "col": 2,
+      "name": "Deterrence",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "5 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "When activated, increases your Dodge and Parry chance by 25% for 10 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21200.267,
+        "timestamp": "05:53:20.267",
+        "frame_index": 1272016,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r3c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r3c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r3c3",
+        "cell": [
+          3,
+          3,
+          3
+        ],
+        "bbox": [
+          1366,
+          253,
+          229,
+          94
+        ],
+        "sharpness": 3761.0,
+        "frames": 26,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Deterrence",
+            "description": "When activated, increases your Dodge and Parry chance by 25% for 10 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "5 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Deterrence",
+            "description": "When activated, increases your Dodge and Parry chance by 25% for 10 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "5 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Deterrence",
+            "description": "When activated, increases your Dodge and Parry chance by 25% for 10 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When activated, increases your Dodge and Parry chance by {0}% for {1} sec.",
+        "ranks": [
+          [
+            25,
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/survival/r3c0",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Survival Tactics",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your chance to hit with your Trap and Feign Death abilities by 5%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21191.2,
+        "timestamp": "05:53:11.200",
+        "frame_index": 1271472,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r4c1.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r4c1",
+        "cell": [
+          3,
+          4,
+          1
+        ],
+        "bbox": [
+          1258,
+          308,
+          222,
+          94
+        ],
+        "sharpness": 3494.4,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Survival Tactics",
+            "description": "Increases your chance to hit with your Trap and Feign Death abilities by 5%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Survival Tactics",
+            "description": "Increases your chance to hit with your Trap and Feign Death abilities by 5%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Survival Tactics",
+            "description": "Increases your chance to hit with your Trap and Feign Death abilities by 5%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your chance to hit with your Trap and Feign Death abilities by {0}%.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "hunter/survival/r3c1",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "Predator's Edge",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your melee critical strike damage by 6% and your offhand weapon damage by 10%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21198.067,
+        "timestamp": "05:53:18.067",
+        "frame_index": 1271884,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r4c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r4c2",
+        "cell": [
+          3,
+          4,
+          2
+        ],
+        "bbox": [
+          1312,
+          298,
+          206,
+          103
+        ],
+        "sharpness": 4026.8,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Predator's Edge",
+            "description": "Increases your melee critical strike damage by 6% and your offhand weapon damage by 10%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Predator's Edge",
+            "description": "Increases your melee critical strike damage by 6% and your offhand weapon damage by 10%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Predator's Edge",
+            "description": "Increases your melee critical strike damage by 6% and your offhand weapon damage by 10%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your melee critical strike damage by {0}% and your offhand weapon damage by {1}%.",
+        "ranks": [
+          [
+            6,
+            10
+          ],
+          [
+            12,
+            20
+          ],
+          [
+            18,
+            30
+          ],
+          [
+            24,
+            40
+          ],
+          [
+            30,
+            50
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match hunter/marksmanship/Mortal Shots (talent 1349) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 1349,
+          "name": "Mortal Shots",
+          "class": "hunter",
+          "tree": "marksmanship",
+          "maxRank": 5,
+          "match": "description",
+          "similarity": 0.89
+        }
+      }
+    },
+    {
+      "id": "hunter/survival/r3c2",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Counterattack",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "30 Mana",
+        "Instant"
+      ],
+      "requires": [],
+      "description_rank1": "A strike that becomes active after parrying an opponent's attack. This attack deals 50% weapon damage plus 13 and immobilizes the target for 5 sec. Counterattack cannot be blocked, dodged, or parried.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21246.667,
+        "timestamp": "05:54:06.667",
+        "frame_index": 1274800,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r4c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r4c3",
+        "cell": [
+          3,
+          4,
+          3
+        ],
+        "bbox": [
+          1366,
+          254,
+          229,
+          147
+        ],
+        "sharpness": 4682.6,
+        "frames": 19,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Counterattack",
+            "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 50% weapon damage plus 13 and immobilizes the target for 5 sec. Counterattack cannot be blocked, dodged, or parried.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "30 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Counterattack",
+            "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 50% weapon damage plus 13 and immobilizes the target for 5 sec. Counterattack cannot be blocked, dodged, or parried.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "30 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Counterattack",
+            "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 50% weapon damage plus 13 and immobilizes the target for 5 sec. Counterattack cannot be blocked, dodged, or parried.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "A strike that becomes active after parrying an opponent's attack. This attack deals {0}% weapon damage plus {1} and immobilizes the target for {2} sec. Counterattack cannot be blocked, dodged, or parried.",
+        "ranks": [
+          [
+            50,
+            13,
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/survival/r4c0",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 4,
+      "col": 0,
+      "name": "Resourcefulness",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the mana cost of your Trap abilities and melee abilities by 30%. In addition, your critical strikes have a 30% chance to allow 50% of your Mana regeneration to continue while casting for 30 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21180.067,
+        "timestamp": "05:53:00.067",
+        "frame_index": 1270804,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r5c1.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r5c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r5c1",
+        "cell": [
+          3,
+          5,
+          1
+        ],
+        "bbox": [
+          1261,
+          320,
+          225,
+          135
+        ],
+        "sharpness": 4256.4,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Resourcefulness",
+            "description": "Reduces the mana cost of your Trap abilities and melee abilities by 30%. In addition, your critical strikes have a 30% chance to allow 50% of your Mana regeneration to continue while casting for 30 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Resourcefulness",
+            "description": "Reduces the mana cost of your Trap abilities and melee abilities by 30%. In addition, your critical strikes have a 30% chance to allow 50% of your Mana regeneration to continue while casting for 30 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Resourcefulness",
+            "description": "Reduces the mana cost of your Trap abilities and melee abilities by 30%. In addition, your critical strikes have a 30% chance to allow 50% of your Mana regeneration to continue while casting for 30 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the mana cost of your Trap abilities and melee abilities by {0}%. In addition, your critical strikes have a {1}% chance to allow {2}% of your Mana regeneration to continue while casting for {3} sec.",
+        "ranks": [
+          [
+            30,
+            30,
+            50,
+            30
+          ],
+          [
+            30,
+            30,
+            50,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (30 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/survival/r4c1",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Expose Prey",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your attacks against targets with Hunter's Mark have a 5% chance to activate your Mongoose Bite for 5 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21238.0,
+        "timestamp": "05:53:58.000",
+        "frame_index": 1274280,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r5c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r5c2",
+        "cell": [
+          3,
+          5,
+          2
+        ],
+        "bbox": [
+          1312,
+          352,
+          221,
+          103
+        ],
+        "sharpness": 3831.7,
+        "frames": 58,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Expose Prey",
+            "description": "Your attacks against targets with Hunter's Mark have a 5% chance to activate your Mongoose Bite for 5 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Expose Prey",
+            "description": "Your attacks against targets with Hunter's Mark have a 5% chance to activate your Mongoose Bite for 5 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Expose Prey",
+            "description": "Your attacks against targets with Hunter's Mark have a 5% chance to activate your Mongoose Bite for 5 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your attacks against targets with Hunter's Mark have a {0}% chance to activate your Mongoose Bite for {1} sec.",
+        "ranks": [
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (5 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/survival/r4c2",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Survivalist's Discipline",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown of your Trap and Deterrence abilities by 20%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21224.0,
+        "timestamp": "05:53:44.000",
+        "frame_index": 1273440,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r5c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r5c3",
+        "cell": [
+          3,
+          5,
+          3
+        ],
+        "bbox": [
+          1366,
+          361,
+          229,
+          94
+        ],
+        "sharpness": 3740.8,
+        "frames": 6,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Survivalist's Discipline",
+            "description": "Reduces the cooldown of your Trap and Deterrence abilities by 20%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Survivalist's Discipline",
+            "description": "Reduces the cooldown of your Trap and Deterrence abilities by 20%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Survivalist's Discipline",
+            "description": "Reduces the cooldown of your Trap and Deterrence abilities by 20%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Trap and Deterrence abilities by {0}%.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            40
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "hunter/survival/r4c3",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 4,
+      "col": 3,
+      "name": "Strider Kick",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "61 Mana",
+        "Instant"
+      ],
+      "requires": [],
+      "description_rank1": "A powerful kick that deals 100% melee weapon damage.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21214.933,
+        "timestamp": "05:53:34.933",
+        "frame_index": 1272896,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r5c4.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r5c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r5c4",
+        "cell": [
+          3,
+          5,
+          4
+        ],
+        "bbox": [
+          1420,
+          350,
+          229,
+          105
+        ],
+        "sharpness": 3865.1,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Strider Kick",
+            "description": "A powerful kick that deals 100% melee weapon damage.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "61 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Strider Kick",
+            "description": "A powerful kick that deals 100% melee weapon damage.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "61 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Strider Kick",
+            "description": "A powerful kick that deals 100% melee weapon damage.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "A powerful kick that deals {0}% melee weapon damage.",
+        "ranks": [
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "hunter/survival/r5c2",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Lightning Reflexes",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Agility by 2%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21233.6,
+        "timestamp": "05:53:53.600",
+        "frame_index": 1274016,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r6c3.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r6c3",
+        "cell": [
+          3,
+          6,
+          3
+        ],
+        "bbox": [
+          1366,
+          427,
+          170,
+          81
+        ],
+        "sharpness": 4136.7,
+        "frames": 18,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Lightning Reflexes",
+            "description": "Increases your Agility by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Lightning Reflexes",
+            "description": "Increases your Agility by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Lightning Reflexes",
+            "description": "Increases your Agility by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Agility by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            5
+          ],
+          [
+            8
+          ],
+          [
+            11
+          ],
+          [
+            14
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1303,
+          "classicSpellIds": [
+            19168,
+            19180,
+            19181,
+            24296,
+            24297
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/survival/Lightning Reflexes (talent 1303): Classic 3/6/9/12/15, Forever rank 1 is 2: applied +3/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1303,
+          "name": "Lightning Reflexes",
+          "class": "hunter",
+          "tree": "survival",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "hunter/survival/r6c1",
+      "class": "hunter",
+      "tree": "Survival",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Lacerating Strikes",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your Mongoose Bite also causes the target to Bleed for damage over 21 sec equal to 40% of the damage done by Mongoose Bite.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 21304.6,
+        "timestamp": "05:55:04.600",
+        "frame_index": 1278276,
+        "crop_path": "work/hovers/24-hunter-21060/survival-r7c2.png",
+        "icon_crop_path": "work/hovers/24-hunter-21060/survival-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "24-hunter-21060",
+        "hover_id": "survival-r7c2",
+        "cell": [
+          3,
+          7,
+          2
+        ],
+        "bbox": [
+          1313,
+          448,
+          225,
+          114
+        ],
+        "sharpness": 4027.5,
+        "frames": 30,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Lacerating Strikes",
+            "description": "Your Mongoose Bite also causes the target to Bleed for damage over 21 sec equal to 40% of the damage done by Mongoose Bite.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Lacerating Strikes",
+            "description": "Your Mongoose Bite also causes the target to Bleed for damage over 21 sec equal to 40% of the damage done by Mongoose Bite.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Lacerating Strikes",
+            "description": "Your Mongoose Bite also causes the target to bleed for damage over 21 sec equal to 40% of the damage done by Mongoose Bite.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 21060,
+        "frame_index": 1263600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your Mongoose Bite also causes the target to Bleed for damage over {0} sec equal to {1}% of the damage done by Mongoose Bite.",
+        "ranks": [
+          [
+            21,
+            40
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    }
+  ]
+}

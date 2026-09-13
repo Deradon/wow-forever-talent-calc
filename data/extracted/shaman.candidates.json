@@ -1,0 +1,6043 @@
+{
+  "class": "shaman",
+  "generated_at": "2026-09-13T01:10:54Z",
+  "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+  "prompt_version": "tooltip-v3",
+  "passes": [
+    3.0,
+    2.0
+  ],
+  "segments": [
+    {
+      "segment_id": "19-shaman-19830",
+      "page": "Primary",
+      "trees": {
+        "1": "Elemental Combat",
+        "2": "Enhancement",
+        "3": "Restoration"
+      },
+      "unspent_talents": 29,
+      "hovers": 18
+    },
+    {
+      "segment_id": "20-shaman-20040",
+      "page": "Primary",
+      "trees": {
+        "1": "Elemental Combat",
+        "2": "Enhancement",
+        "3": "Restoration"
+      },
+      "unspent_talents": 29,
+      "hovers": 4
+    },
+    {
+      "segment_id": "21-shaman-20130",
+      "page": "Primary",
+      "trees": {
+        "1": "Elemental Combat",
+        "2": "Enhancement",
+        "3": "Restoration"
+      },
+      "unspent_talents": 29,
+      "hovers": 29
+    }
+  ],
+  "trees": {
+    "1": "Elemental Combat",
+    "2": "Enhancement",
+    "3": "Restoration"
+  },
+  "missing_cells": [
+    {
+      "tree": "Elemental Combat",
+      "row": 0,
+      "col": 2,
+      "cell": "elemental-combat-r1c3",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Elemental Combat",
+      "row": 1,
+      "col": 1,
+      "cell": "elemental-combat-r2c2",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Elemental Combat",
+      "row": 1,
+      "col": 2,
+      "cell": "elemental-combat-r2c3",
+      "reason": "never hovered in any segment"
+    }
+  ],
+  "stats": {
+    "cells": 50,
+    "hovered": 47,
+    "read": 47,
+    "missing": 3,
+    "confidence": {
+      "1.0": 47
+    },
+    "cut_off": 0,
+    "duplicate_names": 0,
+    "vlm_calls": 106,
+    "cache_hits": 0,
+    "vlm_seconds": 126.4,
+    "wall_seconds": 126.9
+  },
+  "candidates": [
+    {
+      "id": "shaman/elemental-combat/r0c1",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Convection",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the mana cost of your Shock, Lightning Bolt, Lava Burst, and Chain Lightning spells by 2%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20130.467,
+        "timestamp": "05:35:30.467",
+        "frame_index": 1207828,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r1c2.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r1c2",
+        "cell": [
+          1,
+          1,
+          2
+        ],
+        "bbox": [
+          588,
+          111,
+          222,
+          127
+        ],
+        "sharpness": 3237.5,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Convection",
+            "description": "Reduces the mana cost of your Shock, Lightning Bolt, Lava Burst, and Chain Lightning spells by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Convection",
+            "description": "Reduces the mana cost of your Shock, Lightning Bolt, Lava Burst, and Chain Lightning spells by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Convection",
+            "description": "Reduces the mana cost of your Shock, Lightning Bolt, Lava Burst, and Chain Lightning spells by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the mana cost of your Shock, Lightning Bolt, Lava Burst, and Chain Lightning spells by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 564,
+          "classicSpellIds": [
+            16039,
+            16109,
+            16110,
+            16111,
+            16112
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/elemental/Convection (talent 564): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 564,
+          "name": "Convection",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r1c0",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Elemental Warding",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces damage taken from Fire, Frost, and Nature effects by 3%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20150.267,
+        "timestamp": "05:35:50.267",
+        "frame_index": 1209016,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r2c1.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r2c1",
+        "cell": [
+          1,
+          2,
+          1
+        ],
+        "bbox": [
+          533,
+          200,
+          228,
+          92
+        ],
+        "sharpness": 3610.3,
+        "frames": 5,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Elemental Warding",
+            "description": "Reduces damage taken from Fire, Frost, and Nature effects by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Elemental Warding",
+            "description": "Reduces damage taken from Fire, Frost, and Nature effects by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Elemental Warding",
+            "description": "Reduces damage taken from Fire, Frost, and Nature effects by 3%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces damage taken from Fire, Frost, and Nature effects by {0}%.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1640,
+          "classicSpellIds": [
+            28996,
+            28997,
+            28998
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/elemental/Elemental Warding (talent 1640): Classic 4/7/10, Forever rank 1 is 3: applied +3/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1640,
+          "name": "Elemental Warding",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r1c3",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 1,
+      "col": 3,
+      "name": "Elemental Devastation",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your offensive spell critical strikes will Increase your chance to get a critical strike with melee attacks by 3% for 10 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20142.4,
+        "timestamp": "05:35:42.400",
+        "frame_index": 1208544,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r2c4.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r2c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r2c4",
+        "cell": [
+          1,
+          2,
+          4
+        ],
+        "bbox": [
+          696,
+          179,
+          220,
+          113
+        ],
+        "sharpness": 4124.4,
+        "frames": 16,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Elemental Devastation",
+            "description": "Your offensive spell critical strikes will Increase your chance to get a critical strike with melee attacks by 3% for 10 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Elemental Devastation",
+            "description": "Your offensive spell critical strikes will Increase your chance to get a critical strike with melee attacks by 3% for 10 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Elemental Devastation",
+            "description": "Your offensive spell critical strikes will increase your chance to get a critical strike with melee attacks by 3% for 10 sec.",
+            "maxRank": 3,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your offensive spell critical strikes will Increase your chance to get a critical strike with melee attacks by {0}% for 10 sec.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1645,
+          "classicSpellIds": [
+            30160,
+            29179,
+            29180
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/elemental/Elemental Devastation (talent 1645): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1645,
+          "name": "Elemental Devastation",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r2c1",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Elemental Focus",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives you a 10% chance to enter a Clearcasting state after casting any Fire, Frost, or Nature damage spell. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20152.467,
+        "timestamp": "05:35:52.467",
+        "frame_index": 1209148,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r3c2.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r3c2",
+        "cell": [
+          1,
+          3,
+          2
+        ],
+        "bbox": [
+          588,
+          212,
+          227,
+          134
+        ],
+        "sharpness": 4138.5,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Elemental Focus",
+            "description": "Gives you a 10% chance to enter a Clearcasting state after casting any Fire, Frost, or Nature damage spell. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Elemental Focus",
+            "description": "Gives you a 10% chance to enter a Clearcasting state after casting any Fire, Frost, or Nature damage spell. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Elemental Focus",
+            "description": "Gives you a 10% chance to enter a Clearcasting state after casting any Fire, Frost, or Nature damage spell. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives you a {0}% chance to enter a Clearcasting state after casting any Fire, Frost, or Nature damage spell. The Clearcasting state reduces the mana cost of your next damage spell by {1}%.",
+        "ranks": [
+          [
+            10,
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r2c2",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 2,
+      "col": 2,
+      "name": "Elemental Fury",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike damage bonus of your Searing and Magma Totems and your Fire, Frost, and Nature spells by 20%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20158.467,
+        "timestamp": "05:35:58.467",
+        "frame_index": 1209508,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r3c3.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r3c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r3c3",
+        "cell": [
+          1,
+          3,
+          3
+        ],
+        "bbox": [
+          642,
+          233,
+          226,
+          113
+        ],
+        "sharpness": 3943.7,
+        "frames": 11,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Elemental Fury",
+            "description": "Increases the critical strike damage bonus of your Searing and Magma Totems and your Fire, Frost, and Nature spells by 20%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Elemental Fury",
+            "description": "Increases the critical strike damage bonus of your Searing and Magma Totems and your Fire, Frost, and Nature spells by 20%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Elemental Fury",
+            "description": "Increases the critical strike damage bonus of your Searing and Magma Totems and your Fire, Frost, and Nature spells by 20%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike damage bonus of your Searing and Magma Totems and your Fire, Frost, and Nature spells by {0}%.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            40
+          ],
+          [
+            60
+          ],
+          [
+            80
+          ],
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match shaman/elemental/Elemental Fury (talent 565) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 565,
+          "name": "Elemental Fury",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 1,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r3c0",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Improved Fire Nova",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage done by your Fire Nova spell by 10% and reduces its cooldown by 2 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20222.0,
+        "timestamp": "05:37:02.000",
+        "frame_index": 1213320,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r4c1.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r4c1",
+        "cell": [
+          1,
+          4,
+          1
+        ],
+        "bbox": [
+          532,
+          298,
+          224,
+          102
+        ],
+        "sharpness": 4080.6,
+        "frames": 26,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Fire Nova",
+            "description": "Increases the damage done by your Fire Nova spell by 10% and reduces its cooldown by 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Fire Nova",
+            "description": "Increases the damage done by your Fire Nova spell by 10% and reduces its cooldown by 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Fire Nova",
+            "description": "Increases the damage done by your Fire Nova spell by 10% and reduces its cooldown by 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by your Fire Nova spell by {0}% and reduces its cooldown by {1} sec.",
+        "ranks": [
+          [
+            10,
+            2
+          ],
+          [
+            10,
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (2 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r3c1",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "Eye of the Storm",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the pushback suffered from damaging attacks while casting Lightning Bolt, Chain Lightning, and Lava Burst by 23%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20164.0,
+        "timestamp": "05:36:04.000",
+        "frame_index": 1209840,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r4c2.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r4c2",
+        "cell": [
+          1,
+          4,
+          2
+        ],
+        "bbox": [
+          588,
+          287,
+          214,
+          113
+        ],
+        "sharpness": 4213.1,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Eye of the Storm",
+            "description": "Reduces the pushback suffered from damaging attacks while casting Lightning Bolt, Chain Lightning, and Lava Burst by 23%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Eye of the Storm",
+            "description": "Reduces the pushback suffered from damaging attacks while casting Lightning Bolt, Chain Lightning, and Lava Burst by 23%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Eye of the Storm",
+            "description": "Reduces the pushback suffered from damaging attacks while casting Lightning Bolt, Chain Lightning, and Lava Burst by 23%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the pushback suffered from damaging attacks while casting Lightning Bolt, Chain Lightning, and Lava Burst by {0}%.",
+        "ranks": [
+          [
+            23
+          ],
+          [
+            23
+          ],
+          [
+            23
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic shaman/elemental/Eye of the Storm (talent 1642) scales 33/66/100 (non-linear) but Forever rank 1 is 23; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 1642,
+          "name": "Eye of the Storm",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r3c2",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Call of Thunder",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by 3%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20160.733,
+        "timestamp": "05:36:00.733",
+        "frame_index": 1209644,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r4c3.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r4c3",
+        "cell": [
+          1,
+          4,
+          3
+        ],
+        "bbox": [
+          642,
+          298,
+          227,
+          102
+        ],
+        "sharpness": 3803.7,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Call of Thunder",
+            "description": "Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by 3%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Call of Thunder",
+            "description": "Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by 3%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Call of Thunder",
+            "description": "Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by 3%.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by {0}%.",
+        "ranks": [
+          [
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r4c0",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 4,
+      "col": 0,
+      "name": "Elemental Reach",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 3 yards, and increases the range of your Flame Shock spell by 8 yards.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20176.0,
+        "timestamp": "05:36:16.000",
+        "frame_index": 1210560,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r5c1.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r5c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r5c1",
+        "cell": [
+          1,
+          5,
+          1
+        ],
+        "bbox": [
+          532,
+          331,
+          220,
+          123
+        ],
+        "sharpness": 4457.3,
+        "frames": 43,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Elemental Reach",
+            "description": "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 3 yards, and increases the range of your Flame Shock spell by 8 yards.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Elemental Reach",
+            "description": "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 3 yards, and increases the range of your Flame Shock spell by 8 yards.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Elemental Reach",
+            "description": "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 3 yards, and increases the range of your Flame Shock spell by 8 yards.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by {0} yards, and increases the range of your Flame Shock spell by {1} yards.",
+        "ranks": [
+          [
+            3,
+            8
+          ],
+          [
+            6,
+            16
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match shaman/elemental/Storm Reach (talent 1641) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 1641,
+          "name": "Storm Reach",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 2,
+          "match": "description",
+          "similarity": 0.96
+        }
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r4c1",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Lightning Overload",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Lightning Bolt and Chain Lightning spells a 3% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20208.933,
+        "timestamp": "05:36:48.933",
+        "frame_index": 1212536,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r5c2.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r5c2",
+        "cell": [
+          1,
+          5,
+          2
+        ],
+        "bbox": [
+          588,
+          331,
+          227,
+          123
+        ],
+        "sharpness": 4704.7,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Lightning Overload",
+            "description": "Gives your Lightning Bolt and Chain Lightning spells a 3% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Lightning Overload",
+            "description": "Gives your Lightning Bolt and Chain Lightning spells a 3% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Lightning Overload",
+            "description": "Gives your Lightning Bolt and Chain Lightning spells a 3% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Lightning Bolt and Chain Lightning spells a {0}% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r4c3",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 4,
+      "col": 3,
+      "name": "Earthbound",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your Earthbind Totem Immobilizes nearby targets for 5 sec when cast.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20204.867,
+        "timestamp": "05:36:44.867",
+        "frame_index": 1212292,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r5c4.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r5c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r5c4",
+        "cell": [
+          1,
+          5,
+          4
+        ],
+        "bbox": [
+          696,
+          362,
+          201,
+          92
+        ],
+        "sharpness": 3810.8,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Earthbound",
+            "description": "Your Earthbind Totem Immobilizes nearby targets for 5 sec when cast.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Earthbound",
+            "description": "Your Earthbind Totem Immobilizes nearby targets for 5 sec when cast.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Earthbound",
+            "description": "Your Earthbind Totem immobilizes nearby targets for 5 sec when cast.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your Earthbind Totem Immobilizes nearby targets for {0} sec when cast.",
+        "ranks": [
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r5c2",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Elemental Alacrity",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cast time of your Lightning Bolt, Chain Lightning, and Lava Burst spells by 0.17 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20194.0,
+        "timestamp": "05:36:34.000",
+        "frame_index": 1211640,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r6c3.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r6c3",
+        "cell": [
+          1,
+          6,
+          3
+        ],
+        "bbox": [
+          642,
+          406,
+          227,
+          102
+        ],
+        "sharpness": 4120.9,
+        "frames": 30,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Elemental Alacrity",
+            "description": "Reduces the cast time of your Lightning Bolt, Chain Lightning, and Lava Burst spells by 0.17 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Elemental Alacrity",
+            "description": "Reduces the cast time of your Lightning Bolt, Chain Lightning, and Lava Burst spells by 0.17 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Elemental Alacrity",
+            "description": "Reduces the cast time of your Lightning Bolt, Chain Lightning, and Lava Burst spells by 0.17 sec.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cast time of your Lightning Bolt, Chain Lightning, and Lava Burst spells by {0} sec.",
+        "ranks": [
+          [
+            0.17
+          ],
+          [
+            0.17
+          ],
+          [
+            0.17
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (0.17 sec) is never extrapolated; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/elemental-combat/r6c1",
+      "class": "shaman",
+      "tree": "Elemental Combat",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Lava Burst",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "165 Mana",
+        "2.5 sec cast",
+        "30 yd range",
+        "10 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "You hurl molten lava at the target, dealing 158 to 187 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% Increased damage.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20186.333,
+        "timestamp": "05:36:26.333",
+        "frame_index": 1211180,
+        "crop_path": "work/hovers/21-shaman-20130/elemental-combat-r7c2.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/elemental-combat-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "elemental-combat-r7c2",
+        "cell": [
+          1,
+          7,
+          2
+        ],
+        "bbox": [
+          588,
+          437,
+          227,
+          125
+        ],
+        "sharpness": 4742.6,
+        "frames": 96,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Lava Burst",
+            "description": "You hurl molten lava at the target, dealing 158 to 187 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% Increased damage.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "165 Mana",
+              "2.5 sec cast",
+              "30 yd range",
+              "10 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Lava Burst",
+            "description": "You hurl molten lava at the target, dealing 158 to 187 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% Increased damage.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "165 Mana",
+              "2.5 sec cast",
+              "30 yd range",
+              "10 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Lava Burst",
+            "description": "You hurl molten lava at the target, dealing 158 to 187 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "You hurl molten lava at the target, dealing {0} to {1} Fire damage. If your Flame Shock is on the target, Lava Burst deals {2}% Increased damage.",
+        "ranks": [
+          [
+            158,
+            187,
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/enhancement/r0c0",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 0,
+      "col": 0,
+      "name": "Earth's Grasp",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the health of your Stoneclaw Totem by 25% and the radius of your Earthbind Totem by 10%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19830.067,
+        "timestamp": "05:30:30.067",
+        "frame_index": 1189804,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r1c1.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r1c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r1c1",
+        "cell": [
+          2,
+          1,
+          1
+        ],
+        "bbox": [
+          894,
+          111,
+          226,
+          127
+        ],
+        "sharpness": 3176.1,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Earth's Grasp",
+            "description": "Increases the health of your Stoneclaw Totem by 25% and the radius of your Earthbind Totem by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Earth's Grasp",
+            "description": "Increases the health of your Stoneclaw Totem by 25% and the radius of your Earthbind Totem by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Earth's Grasp",
+            "description": "Increases the health of your Stoneclaw Totem by 25% and the radius of your Earthbind Totem by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the health of your Stoneclaw Totem by {0}% and the radius of your Earthbind Totem by {1}%.",
+        "ranks": [
+          [
+            25,
+            10
+          ],
+          [
+            50,
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 572,
+          "classicSpellIds": [
+            16043,
+            16130
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/elemental/Earth's Grasp (talent 572): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 572,
+          "name": "Earth's Grasp",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/enhancement/r0c1",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Thundering Strikes",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Improves your chance to get a critical strike with all spells and attacks by 1%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19832.067,
+        "timestamp": "05:30:32.067",
+        "frame_index": 1189924,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r1c2.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r1c2",
+        "cell": [
+          2,
+          1,
+          2
+        ],
+        "bbox": [
+          948,
+          121,
+          220,
+          117
+        ],
+        "sharpness": 3380.7,
+        "frames": 3,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Thundering Strikes",
+            "description": "Improves your chance to get a critical strike with all spells and attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Thundering Strikes",
+            "description": "Improves your chance to get a critical strike with all spells and attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Thundering Strikes",
+            "description": "Improves your chance to get a critical strike with all spells and attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Improves your chance to get a critical strike with all spells and attacks by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 613,
+          "classicSpellIds": [
+            16255,
+            16302,
+            16303,
+            16304,
+            16305
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/enhancement/Thundering Strikes (talent 613): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 613,
+          "name": "Thundering Strikes",
+          "class": "shaman",
+          "tree": "enhancement",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/enhancement/r0c2",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Ancestral Knowledge",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Intellect by 2%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19841.6,
+        "timestamp": "05:30:41.600",
+        "frame_index": 1190496,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r1c3.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r1c3",
+        "cell": [
+          2,
+          1,
+          3
+        ],
+        "bbox": [
+          1002,
+          132,
+          179,
+          106
+        ],
+        "sharpness": 3286.0,
+        "frames": 9,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Ancestral Knowledge",
+            "description": "Increases your Intellect by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Ancestral Knowledge",
+            "description": "Increases your Intellect by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Ancestral Knowledge",
+            "description": "Increases your Intellect by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Intellect by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 614,
+          "classicSpellIds": [
+            17485,
+            17486,
+            17487,
+            17488,
+            17489
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/enhancement/Ancestral Knowledge (talent 614): Classic 1/2/3/4/5 scaled by 2.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 614,
+          "name": "Ancestral Knowledge",
+          "class": "shaman",
+          "tree": "enhancement",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/enhancement/r1c0",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Guardian Totems",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by 10% and reduces the cooldown of your Grounding Totem by 1 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19988.2,
+        "timestamp": "05:33:08.200",
+        "frame_index": 1199292,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r2c1.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r2c1",
+        "cell": [
+          2,
+          2,
+          1
+        ],
+        "bbox": [
+          894,
+          169,
+          227,
+          123
+        ],
+        "sharpness": 4319.8,
+        "frames": 7,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Guardian Totems",
+            "description": "Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by 10% and reduces the cooldown of your Grounding Totem by 1 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Guardian Totems",
+            "description": "Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by 10% and reduces the cooldown of your Grounding Totem by 1 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Guardian Totems",
+            "description": "Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by 10% and reduces the cooldown of your Grounding Totem by 1 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by {0}% and reduces the cooldown of your Grounding Totem by {1} sec.",
+        "ranks": [
+          [
+            10,
+            1
+          ],
+          [
+            20,
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 609,
+          "classicSpellIds": [
+            16258,
+            16293
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/enhancement/Guardian Totems (talent 609): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 609,
+          "name": "Guardian Totems",
+          "class": "shaman",
+          "tree": "enhancement",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/enhancement/r1c1",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Mental Dexterity",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Attack Power by an amount equal to 33% of your Intellect.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19872.467,
+        "timestamp": "05:31:12.467",
+        "frame_index": 1192348,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r2c2.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r2c2",
+        "cell": [
+          2,
+          2,
+          2
+        ],
+        "bbox": [
+          948,
+          200,
+          219,
+          92
+        ],
+        "sharpness": 3785.1,
+        "frames": 29,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Mental Dexterity",
+            "description": "Increases your Attack Power by an amount equal to 33% of your Intellect.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Mental Dexterity",
+            "description": "Increases your Attack Power by an amount equal to 33% of your Intellect.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Mental Dexterity",
+            "description": "Increases your Attack Power by an amount equal to 33% of your Intellect.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Attack Power by an amount equal to {0}% of your Intellect.",
+        "ranks": [
+          [
+            33
+          ],
+          [
+            66
+          ],
+          [
+            99
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x3 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "shaman/enhancement/r1c2",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Improved Ghost Wolf",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cast time of your Ghost Wolf spell by 1.0 sec, and Ghost Wolf may be used indoors.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19866.8,
+        "timestamp": "05:31:06.800",
+        "frame_index": 1192008,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r2c3.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r2c3",
+        "cell": [
+          2,
+          2,
+          3
+        ],
+        "bbox": [
+          1002,
+          190,
+          218,
+          102
+        ],
+        "sharpness": 4475.0,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Ghost Wolf",
+            "description": "Reduces the cast time of your Ghost Wolf spell by 1.0 sec, and Ghost Wolf may be used indoors.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Ghost Wolf",
+            "description": "Reduces the cast time of your Ghost Wolf spell by 1.0 sec, and Ghost Wolf may be used indoors.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Ghost Wolf",
+            "description": "Reduces the cast time of your Ghost Wolf spell by 1.0 sec., and Ghost Wolf may be used indoors.",
+            "maxRank": 2,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cast time of your Ghost Wolf spell by {0} sec, and Ghost Wolf may be used indoors.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 605,
+          "classicSpellIds": [
+            16262,
+            16287
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/enhancement/Improved Ghost Wolf (talent 605): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 605,
+          "name": "Improved Ghost Wolf",
+          "class": "shaman",
+          "tree": "enhancement",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/enhancement/r1c3",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 1,
+      "col": 3,
+      "name": "Improved Lightning Shield",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage done by your Lightning Shield orbs by 5%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19846.933,
+        "timestamp": "05:30:46.933",
+        "frame_index": 1190816,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r2c4.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r2c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r2c4",
+        "cell": [
+          2,
+          2,
+          4
+        ],
+        "bbox": [
+          1056,
+          200,
+          208,
+          92
+        ],
+        "sharpness": 4452.5,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Lightning Shield",
+            "description": "Increases the damage done by your Lightning Shield orbs by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Lightning Shield",
+            "description": "Increases the damage done by your Lightning Shield orbs by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Lightning Shield",
+            "description": "Increases the damage done by your Lightning Shield orbs by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by your Lightning Shield orbs by {0}%.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ],
+          [
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 607,
+          "classicSpellIds": [
+            16261,
+            16290,
+            16291
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/enhancement/Improved Lightning Shield (talent 607): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 607,
+          "name": "Improved Lightning Shield",
+          "class": "shaman",
+          "tree": "enhancement",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/enhancement/r2c0",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Elemental Weapons",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the melee attack power bonus of your Rockbiter Weapon by 7%, your Windfury Weapon effect by 13% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by 5%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19878.933,
+        "timestamp": "05:31:18.933",
+        "frame_index": 1192736,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r3c1.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r3c1",
+        "cell": [
+          2,
+          3,
+          1
+        ],
+        "bbox": [
+          894,
+          212,
+          224,
+          134
+        ],
+        "sharpness": 4729.2,
+        "frames": 63,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Elemental Weapons",
+            "description": "Increases the melee attack power bonus of your Rockbiter Weapon by 7%, your Windfury Weapon effect by 13% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Elemental Weapons",
+            "description": "Increases the melee attack power bonus of your Rockbiter Weapon by 7%, your Windfury Weapon effect by 13% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Elemental Weapons",
+            "description": "Increases the melee attack power bonus of your Rockbiter Weapon by 7%, your Windfury Weapon effect by 13% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the melee attack power bonus of your Rockbiter Weapon by {0}%, your Windfury Weapon effect by {1}% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by {2}%.",
+        "ranks": [
+          [
+            7,
+            13,
+            5
+          ],
+          [
+            14,
+            27,
+            10
+          ],
+          [
+            20,
+            40,
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 611,
+          "classicSpellIds": [
+            16266,
+            29079,
+            29080
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/enhancement/Elemental Weapons (talent 611): non-linear Classic progression copied; non-linear Classic progression copied.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 611,
+          "name": "Elemental Weapons",
+          "class": "shaman",
+          "tree": "enhancement",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/enhancement/r2c2",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 2,
+      "col": 2,
+      "name": "Shamanistic Focus",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the mana cost of your Shock and Lightning Shield spells by 45%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19884.333,
+        "timestamp": "05:31:24.333",
+        "frame_index": 1193060,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r3c3.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r3c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r3c3",
+        "cell": [
+          2,
+          3,
+          3
+        ],
+        "bbox": [
+          1002,
+          254,
+          220,
+          92
+        ],
+        "sharpness": 3970.9,
+        "frames": 11,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Shamanistic Focus",
+            "description": "Reduces the mana cost of your Shock and Lightning Shield spells by 45%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Shamanistic Focus",
+            "description": "Reduces the mana cost of your Shock and Lightning Shield spells by 45%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Shamanistic Focus",
+            "description": "Reduces the mana cost of your Shock and Lightning Shield spells by 45%.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the mana cost of your Shock and Lightning Shield spells by {0}%.",
+        "ranks": [
+          [
+            45
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/enhancement/r2c3",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 2,
+      "col": 3,
+      "name": "Anticipation",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your chance to dodge by an additional 2%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19886.0,
+        "timestamp": "05:31:26.000",
+        "frame_index": 1193160,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r3c4.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r3c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r3c4",
+        "cell": [
+          2,
+          3,
+          4
+        ],
+        "bbox": [
+          1056,
+          254,
+          220,
+          92
+        ],
+        "sharpness": 3127.1,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Anticipation",
+            "description": "Increases your chance to dodge by an additional 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Anticipation",
+            "description": "Increases your chance to dodge by an additional 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Anticipation",
+            "description": "Increases your chance to dodge by an additional 2%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your chance to dodge by an additional {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 601,
+          "classicSpellIds": [
+            16254,
+            16271,
+            16272,
+            16273,
+            16274
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/enhancement/Anticipation (talent 601): Classic has 5 ranks, step +1 applied over 3 ranks from 2.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 601,
+          "name": "Anticipation",
+          "class": "shaman",
+          "tree": "enhancement",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/enhancement/r3c0",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Toughness",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Stamina by 2%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19984.4,
+        "timestamp": "05:33:04.400",
+        "frame_index": 1199064,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r4c1.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r4c1",
+        "cell": [
+          2,
+          4,
+          1
+        ],
+        "bbox": [
+          894,
+          319,
+          177,
+          81
+        ],
+        "sharpness": 3630.8,
+        "frames": 7,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Toughness",
+            "description": "Increases your Stamina by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Toughness",
+            "description": "Increases your Stamina by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Toughness",
+            "description": "Increases your Stamina by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "20-shaman-20040",
+            "t": 20045.0,
+            "sharpness": 3599.5,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Stamina by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 615,
+          "classicSpellIds": [
+            16252,
+            16306,
+            16307,
+            16308,
+            16309
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/enhancement/Toughness (talent 615): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 615,
+          "name": "Toughness",
+          "class": "shaman",
+          "tree": "enhancement",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/enhancement/r3c1",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "Flurry",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your attack speed by 5% for your next 3 swings after dealing a melee critical strike.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19928.733,
+        "timestamp": "05:32:08.733",
+        "frame_index": 1195724,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r4c2.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r4c2",
+        "cell": [
+          2,
+          4,
+          2
+        ],
+        "bbox": [
+          948,
+          298,
+          219,
+          102
+        ],
+        "sharpness": 3457.7,
+        "frames": 51,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Flurry",
+            "description": "Increases your attack speed by 5% for your next 3 swings after dealing a melee critical strike.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Flurry",
+            "description": "Increases your attack speed by 5% for your next 3 swings after dealing a melee critical strike.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Flurry",
+            "description": "Increases your attack speed by 5% for your next 3 swings after dealing a melee critical strike.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "20-shaman-20040",
+            "t": 20046.0,
+            "sharpness": 3372.6,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your attack speed by {0}% for your next 3 swings after dealing a melee critical strike.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ],
+          [
+            15
+          ],
+          [
+            20
+          ],
+          [
+            25
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 602,
+          "classicSpellIds": [
+            16256,
+            16281,
+            16282,
+            16283,
+            16284
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/enhancement/Flurry (talent 602): Classic 10/15/20/25/30, Forever rank 1 is 5: applied +5/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 602,
+          "name": "Flurry",
+          "class": "shaman",
+          "tree": "enhancement",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/enhancement/r3c2",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Stormstrike",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "125 Mana",
+        "Instant",
+        "Melee Range",
+        "8 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Instantly strike for normal weapon damage and increase Nature damage you deal to the target by 20% for 12 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19892.867,
+        "timestamp": "05:31:32.867",
+        "frame_index": 1193572,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r4c3.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r4c3",
+        "cell": [
+          2,
+          4,
+          3
+        ],
+        "bbox": [
+          1002,
+          275,
+          227,
+          125
+        ],
+        "sharpness": 4255.4,
+        "frames": 75,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Stormstrike",
+            "description": "Instantly strike for normal weapon damage and increase Nature damage you deal to the target by 20% for 12 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "125 Mana",
+              "Instant",
+              "Melee Range",
+              "8 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Stormstrike",
+            "description": "Instantly strike for normal weapon damage and increase Nature damage you deal to the target by 20% for 12 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "125 Mana",
+              "Instant",
+              "Melee Range",
+              "8 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Stormstrike",
+            "description": "Instantly strike with both weapons and deal normal weapon damage and increase Nature damage you deal to the target by 20% for 12 sec.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Instantly strike for normal weapon damage and increase Nature damage you deal to the target by {0}% for {1} sec.",
+        "ranks": [
+          [
+            20,
+            12
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/enhancement/r4c0",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 4,
+      "col": 0,
+      "name": "Spirit Weapons",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and Increases all threat generated by 30% while Rockbiter Weapon is active.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19942.067,
+        "timestamp": "05:32:22.067",
+        "frame_index": 1196524,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r5c1.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r5c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r5c1",
+        "cell": [
+          2,
+          5,
+          1
+        ],
+        "bbox": [
+          894,
+          320,
+          227,
+          134
+        ],
+        "sharpness": 4577.1,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Spirit Weapons",
+            "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and Increases all threat generated by 30% while Rockbiter Weapon is active.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Spirit Weapons",
+            "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and Increases all threat generated by 30% while Rockbiter Weapon is active.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Spirit Weapons",
+            "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and increases all threat generated by 30% while Rockbiter Weapon is active.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "20-shaman-20040",
+            "t": 20044.0,
+            "sharpness": 4511.3,
+            "cut_off": false
+          }
+        ],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by {0}% while Rockbiter Weapon is not active, and Increases all threat generated by {1}% while Rockbiter Weapon is active.",
+        "ranks": [
+          [
+            30,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/enhancement/r4c1",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Mental Quickness",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your spell damage and healing by up to 15% of your Intellect.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20048.133,
+        "timestamp": "05:34:08.133",
+        "frame_index": 1202888,
+        "crop_path": "work/hovers/20-shaman-20040/enhancement-r5c2.png",
+        "icon_crop_path": "work/hovers/20-shaman-20040/enhancement-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "20-shaman-20040",
+        "hover_id": "enhancement-r5c2",
+        "cell": [
+          2,
+          5,
+          2
+        ],
+        "bbox": [
+          948,
+          362,
+          217,
+          92
+        ],
+        "sharpness": 3904.3,
+        "frames": 9,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Mental Quickness",
+            "description": "Increases your spell damage and healing by up to 15% of your Intellect.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Mental Quickness",
+            "description": "Increases your spell damage and healing by up to 15% of your Intellect.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Mental Quickness",
+            "description": "Increases your spell damage and healing by up to 15% of your Intellect.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "19-shaman-19830",
+            "t": 19939.733,
+            "sharpness": 3676.6,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 20040,
+        "frame_index": 1202400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your spell damage and healing by up to {0}% of your Intellect.",
+        "ranks": [
+          [
+            15
+          ],
+          [
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "shaman/enhancement/r4c2",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Improved Stormstrike",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "When you Stormstrike, you have a 50% chance to gain 50% mana regeneration while casting spells for 15 sec, and Stormstrike's cooldown has a 50% chance to reset each time you Dodge or Parry.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19944.467,
+        "timestamp": "05:32:24.467",
+        "frame_index": 1196668,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r5c3.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r5c3",
+        "cell": [
+          2,
+          5,
+          3
+        ],
+        "bbox": [
+          1002,
+          320,
+          226,
+          134
+        ],
+        "sharpness": 4591.7,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Stormstrike",
+            "description": "When you Stormstrike, you have a 50% chance to gain 50% mana regeneration while casting spells for 15 sec, and Stormstrike's cooldown has a 50% chance to reset each time you Dodge or Parry.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Stormstrike",
+            "description": "When you Stormstrike, you have a 50% chance to gain 50% mana regeneration while casting spells for 15 sec, and Stormstrike's cooldown has a 50% chance to reset each time you Dodge or Parry.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Stormstrike",
+            "description": "When you Stormstrike, you have a 50% chance to gain 50% mana regeneration while casting spells for 15 sec, and Stormstrike's cooldown has a 50% chance to reset each time you Dodge or Parry.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When you Stormstrike, you have a {0}% chance to gain {1}% mana regeneration while casting spells for {2} sec, and Stormstrike's cooldown has a {3}% chance to reset each time you Dodge or Parry.",
+        "ranks": [
+          [
+            50,
+            50,
+            15,
+            50
+          ],
+          [
+            50,
+            50,
+            15,
+            50
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (15 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/enhancement/r5c2",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Maelstrom Weapon",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 4%. Stacks up to 5 times. Lasts 30 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19974.0,
+        "timestamp": "05:32:54.000",
+        "frame_index": 1198440,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r6c3.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r6c3",
+        "cell": [
+          2,
+          6,
+          3
+        ],
+        "bbox": [
+          1002,
+          385,
+          222,
+          123
+        ],
+        "sharpness": 4691.6,
+        "frames": 45,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Maelstrom Weapon",
+            "description": "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 4%. Stacks up to 5 times. Lasts 30 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Maelstrom Weapon",
+            "description": "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 4%. Stacks up to 5 times. Lasts 30 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Maelstrom Weapon",
+            "description": "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 4%. Stacks up to 5 times. Lasts 30 sec.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by {0}%. Stacks up to {1} times. Lasts {2} sec.",
+        "ranks": [
+          [
+            4,
+            5,
+            30
+          ],
+          [
+            4,
+            5,
+            30
+          ],
+          [
+            4,
+            5,
+            30
+          ],
+          [
+            4,
+            5,
+            30
+          ],
+          [
+            4,
+            5,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (30 sec) is never extrapolated; ranks 2..5 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/enhancement/r6c1",
+      "class": "shaman",
+      "tree": "Enhancement",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Rage of the Farseer",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "3 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Increases your melee attack speed and spell casting speed by 30% for 25 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 19854.8,
+        "timestamp": "05:30:54.800",
+        "frame_index": 1191288,
+        "crop_path": "work/hovers/19-shaman-19830/enhancement-r7c2.png",
+        "icon_crop_path": "work/hovers/19-shaman-19830/enhancement-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "19-shaman-19830",
+        "hover_id": "enhancement-r7c2",
+        "cell": [
+          2,
+          7,
+          2
+        ],
+        "bbox": [
+          948,
+          470,
+          227,
+          92
+        ],
+        "sharpness": 4447.9,
+        "frames": 94,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Rage of the Farseer",
+            "description": "Increases your melee attack speed and spell casting speed by 30% for 25 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Rage of the Farseer",
+            "description": "Increases your melee attack speed and spell casting speed by 30% for 25 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Rage of the Farseeer",
+            "description": "Increases your melee attack speed and spell casting speed by 30% for 25 sec.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in name"
+      },
+      "tree_source": {
+        "t": 19830,
+        "frame_index": 1189800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your melee attack speed and spell casting speed by {0}% for {1} sec.",
+        "ranks": [
+          [
+            30,
+            25
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/restoration/r0c1",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Improved Healing Wave",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the casting time of your Healing Wave spell by 0.1 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20272.467,
+        "timestamp": "05:37:52.467",
+        "frame_index": 1216348,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r1c2.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r1c2",
+        "cell": [
+          3,
+          1,
+          2
+        ],
+        "bbox": [
+          1313,
+          121,
+          194,
+          117
+        ],
+        "sharpness": 3821.1,
+        "frames": 9,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Healing Wave",
+            "description": "Reduces the casting time of your Healing Wave spell by 0.1 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Healing Wave",
+            "description": "Reduces the casting time of your Healing Wave spell by 0.1 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Healing Wave",
+            "description": "Reduces the casting time of your Healing Wave spell by 0.1 sec.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the casting time of your Healing Wave spell by {0} sec.",
+        "ranks": [
+          [
+            0.1
+          ],
+          [
+            0.2
+          ],
+          [
+            0.3
+          ],
+          [
+            0.4
+          ],
+          [
+            0.5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 586,
+          "classicSpellIds": [
+            16182,
+            16226,
+            16227,
+            16228,
+            16229
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/restoration/Improved Healing Wave (talent 586): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 586,
+          "name": "Improved Healing Wave",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r0c2",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Tidal Mastery",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical effect chance of your healing spells by 1%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20274.467,
+        "timestamp": "05:37:54.467",
+        "frame_index": 1216468,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r1c3.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r1c3",
+        "cell": [
+          3,
+          1,
+          3
+        ],
+        "bbox": [
+          1367,
+          122,
+          220,
+          116
+        ],
+        "sharpness": 2969.4,
+        "frames": 30,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Tidal Mastery",
+            "description": "Increases the critical effect chance of your healing spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Tidal Mastery",
+            "description": "Increases the critical effect chance of your healing spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Tidal Mastery",
+            "description": "Increases the critical effect chance of your healing spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical effect chance of your healing spells by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 594,
+          "classicSpellIds": [
+            16194,
+            16218,
+            16219,
+            16220,
+            16221
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/restoration/Tidal Mastery (talent 594): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 594,
+          "name": "Tidal Mastery",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r1c0",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Mindfulness",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Allows 17% of your Mana regeneration to continue while casting.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20288.0,
+        "timestamp": "05:38:08.000",
+        "frame_index": 1217280,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r2c1.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r2c1",
+        "cell": [
+          3,
+          2,
+          1
+        ],
+        "bbox": [
+          1259,
+          200,
+          225,
+          92
+        ],
+        "sharpness": 3317.2,
+        "frames": 35,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Mindfulness",
+            "description": "Allows 17% of your Mana regeneration to continue while casting.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Mindfulness",
+            "description": "Allows 17% of your Mana regeneration to continue while casting.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Mindfulness",
+            "description": "Allows 17% of your Mana regeneration to continue while casting.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Allows {0}% of your Mana regeneration to continue while casting.",
+        "ranks": [
+          [
+            17
+          ],
+          [
+            22
+          ],
+          [
+            27
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 829,
+          "classicSpellIds": [
+            17106,
+            17107,
+            17108
+          ],
+          "match": "description",
+          "similarity": 0.99
+        },
+        "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (0.99): Classic 5/10/15, Forever rank 1 is 17: applied +5/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 829,
+          "name": "Reflection",
+          "class": "druid",
+          "tree": "restoration",
+          "maxRank": 3,
+          "match": "description",
+          "similarity": 0.99
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r1c1",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Natural Grace",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the threat generated by your spells by 5%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20286.0,
+        "timestamp": "05:38:06.000",
+        "frame_index": 1217160,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r2c2.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r2c2",
+        "cell": [
+          3,
+          2,
+          2
+        ],
+        "bbox": [
+          1312,
+          200,
+          223,
+          92
+        ],
+        "sharpness": 3052.2,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Natural Grace",
+            "description": "Reduces the threat generated by your spells by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Natural Grace",
+            "description": "Reduces the threat generated by your spells by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Natural Grace",
+            "description": "Reduces the threat generated by your spells by 5%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the threat generated by your spells by {0}%.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ],
+          [
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1646,
+          "classicSpellIds": [
+            29187,
+            29189,
+            29191
+          ],
+          "match": "description",
+          "similarity": 0.99
+        },
+        "ranksNote": "Classic shaman/restoration/Healing Grace (talent 1646), matched on description (0.99): ranks copied.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1646,
+          "name": "Healing Grace",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 3,
+          "match": "description",
+          "similarity": 0.99
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r1c2",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Tidal Focus",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the Mana cost of your healing spells by 1% and increases your chance to hit with all spells and attacks by 1%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20284.333,
+        "timestamp": "05:38:04.333",
+        "frame_index": 1217060,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r2c3.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r2c3",
+        "cell": [
+          3,
+          2,
+          3
+        ],
+        "bbox": [
+          1367,
+          190,
+          229,
+          103
+        ],
+        "sharpness": 3901.6,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Tidal Focus",
+            "description": "Reduces the Mana cost of your healing spells by 1% and increases your chance to hit with all spells and attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Tidal Focus",
+            "description": "Reduces the Mana cost of your healing spells by 1% and increases your chance to hit with all spells and attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Tidal Focus",
+            "description": "Reduces the Mana cost of your healing spells by 1% and increases your chance to hit with all spells and attacks by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the Mana cost of your healing spells by {0}% and increases your chance to hit with all spells and attacks by {1}%.",
+        "ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match shaman/restoration/Tidal Focus (talent 593) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 593,
+          "name": "Tidal Focus",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r1c3",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 1,
+      "col": 3,
+      "name": "Improved Reincarnation",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown of your Reincarnation spell by 10 min, increases your maximum health by 2%, and increases the amount of health and Mana you reincarnate with by an additional 10%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20280.933,
+        "timestamp": "05:38:00.933",
+        "frame_index": 1216856,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r2c4.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r2c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r2c4",
+        "cell": [
+          3,
+          2,
+          4
+        ],
+        "bbox": [
+          1421,
+          157,
+          221,
+          137
+        ],
+        "sharpness": 4371.3,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Reincarnation",
+            "description": "Reduces the cooldown of your Reincarnation spell by 10 min, increases your maximum health by 2%, and increases the amount of health and Mana you reincarnate with by an additional 10%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Reincarnation",
+            "description": "Reduces the cooldown of your Reincarnation spell by 10 min, increases your maximum health by 2%, and increases the amount of health and Mana you reincarnate with by an additional 10%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Reincarnation",
+            "description": "Reduces the cooldown of your Reincarnation spell by 10 min, increases your maximum health by 2%, and increases the amount of health and Mana you reincarnate with by an additional 10%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Reincarnation spell by {0} min, increases your maximum health by {1}%, and increases the amount of health and Mana you reincarnate with by an additional {2}%.",
+        "ranks": [
+          [
+            10,
+            2,
+            10
+          ],
+          [
+            10,
+            2,
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match shaman/restoration/Improved Reincarnation (talent 589) has no alignable slots; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 589,
+          "name": "Improved Reincarnation",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r2c0",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Ancestral Healing",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your target's armor value by 8% for 15 sec after getting a critical effect from one of your healing spells.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20291.533,
+        "timestamp": "05:38:11.533",
+        "frame_index": 1217492,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r3c1.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r3c1",
+        "cell": [
+          3,
+          3,
+          1
+        ],
+        "bbox": [
+          1259,
+          244,
+          223,
+          102
+        ],
+        "sharpness": 4348.3,
+        "frames": 23,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Ancestral Healing",
+            "description": "Increases your target's armor value by 8% for 15 sec after getting a critical effect from one of your healing spells.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Ancestral Healing",
+            "description": "Increases your target's armor value by 8% for 15 sec after getting a critical effect from one of your healing spells.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Ancestral Healing",
+            "description": "Increases your target's armor value by 8% for 15 sec after getting a critical effect from one of your healing spells.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your target's armor value by {0}% for 15 sec after getting a critical effect from one of your healing spells.",
+        "ranks": [
+          [
+            8
+          ],
+          [
+            16
+          ],
+          [
+            25
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 581,
+          "classicSpellIds": [
+            16176,
+            16235,
+            16240
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/restoration/Ancestral Healing (talent 581): non-linear Classic progression copied.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 581,
+          "name": "Ancestral Healing",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r2c1",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Healing Focus",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives you a 23% chance to avoid interruption caused by damage while casting any healing spell.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20306.0,
+        "timestamp": "05:38:26.000",
+        "frame_index": 1218360,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r3c2.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r3c2",
+        "cell": [
+          3,
+          3,
+          2
+        ],
+        "bbox": [
+          1312,
+          244,
+          219,
+          102
+        ],
+        "sharpness": 3951.1,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Healing Focus",
+            "description": "Gives you a 23% chance to avoid interruption caused by damage while casting any healing spell.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Healing Focus",
+            "description": "Gives you a 23% chance to avoid interruption caused by damage while casting any healing spell.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Healing Focus",
+            "description": "Gives you a 23% chance to avoid interruption caused by damage while casting any healing spell.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives you a {0}% chance to avoid interruption caused by damage while casting any healing spell.",
+        "ranks": [
+          [
+            23
+          ],
+          [
+            37
+          ],
+          [
+            51
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 587,
+          "classicSpellIds": [
+            16181,
+            16230,
+            16232,
+            16233,
+            16234
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/restoration/Healing Focus (talent 587): Classic has 5 ranks, step +14 applied over 3 ranks from 23.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 587,
+          "name": "Healing Focus",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r2c2",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 2,
+      "col": 2,
+      "name": "Water Shield",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "15 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's healing spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds. Lasts 10 min. Only one Elemental Shield can be active on the Shaman at any one time.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20302.067,
+        "timestamp": "05:38:22.067",
+        "frame_index": 1218124,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r3c3.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r3c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r3c3",
+        "cell": [
+          3,
+          3,
+          3
+        ],
+        "bbox": [
+          1367,
+          149,
+          229,
+          197
+        ],
+        "sharpness": 4715.6,
+        "frames": 44,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Water Shield",
+            "description": "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's healing spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds. Lasts 10 min. Only one Elemental Shield can be active on the Shaman at any one time.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "15 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Water Shield",
+            "description": "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's healing spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds. Lasts 10 min. Only one Elemental Shield can be active on the Shaman at any one time.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "15 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Water Shield",
+            "description": "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's healing spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds. Lasts 10 min. Only one Elemental Shield can be active on the Shaman at any one time.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "The caster is surrounded by {0} globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's healing spells gets a critical result, {1}% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds. Lasts {2} min. Only one Elemental Shield can be active on the Shaman at any one time.",
+        "ranks": [
+          [
+            3,
+            2,
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/restoration/r3c0",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Totemic Focus",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the Mana cost of your totems and any spells that summon or move them by 5%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20310.0,
+        "timestamp": "05:38:30.000",
+        "frame_index": 1218600,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r4c1.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r4c1",
+        "cell": [
+          3,
+          4,
+          1
+        ],
+        "bbox": [
+          1259,
+          298,
+          224,
+          102
+        ],
+        "sharpness": 3652.5,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Totemic Focus",
+            "description": "Reduces the Mana cost of your totems and any spells that summon or move them by 5%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Totemic Focus",
+            "description": "Reduces the Mana cost of your totems and any spells that summon or move them by 5%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Totemic Focus",
+            "description": "Reduces the Mana cost of your totems and any spells that summon or move them by 5%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the Mana cost of your totems and any spells that summon or move them by {0}%.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ],
+          [
+            15
+          ],
+          [
+            20
+          ],
+          [
+            25
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 595,
+          "classicSpellIds": [
+            16173,
+            16222,
+            16223,
+            16224,
+            16225
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/restoration/Totemic Focus (talent 595): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 595,
+          "name": "Totemic Focus",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r3c1",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "Restorative Totems",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the effect of your Mana Spring Totem by 5% and increases the effect of your Healing Stream Totem by 10%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20318.0,
+        "timestamp": "05:38:38.000",
+        "frame_index": 1219080,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r4c2.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r4c2",
+        "cell": [
+          3,
+          4,
+          2
+        ],
+        "bbox": [
+          1312,
+          287,
+          230,
+          113
+        ],
+        "sharpness": 3767.7,
+        "frames": 8,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Restorative Totems",
+            "description": "Increases the effect of your Mana Spring Totem by 5% and increases the effect of your Healing Stream Totem by 10%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Restorative Totems",
+            "description": "Increases the effect of your Mana Spring Totem by 5% and increases the effect of your Healing Stream Totem by 10%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Restorative Totems",
+            "description": "Increases the effect of your Mana Spring Totem by 5% and increases the effect of your Healing Stream Totem by 10%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the effect of your Mana Spring Totem by {0}% and increases the effect of your Healing Stream Totem by {1}%.",
+        "ranks": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            15,
+            30
+          ],
+          [
+            20,
+            40
+          ],
+          [
+            25,
+            50
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match shaman/restoration/Restorative Totems (talent 588) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 588,
+          "name": "Restorative Totems",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r3c2",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Mana Tide Totem",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "10 Mana",
+        "Instant",
+        "Tools: Water Totem"
+      ],
+      "requires": [],
+      "description_rank1": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 88 mana every 3 seconds to group members within 30 yards.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20296.267,
+        "timestamp": "05:38:16.267",
+        "frame_index": 1217776,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r4c3.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r4c3",
+        "cell": [
+          3,
+          4,
+          3
+        ],
+        "bbox": [
+          1367,
+          252,
+          229,
+          148
+        ],
+        "sharpness": 4182.2,
+        "frames": 36,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Mana Tide Totem",
+            "description": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 88 mana every 3 seconds to group members within 30 yards.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "10 Mana",
+              "Instant",
+              "Tools: Water Totem"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Mana Tide Totem",
+            "description": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 88 mana every 3 seconds to group members within 30 yards.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "10 Mana",
+              "Instant",
+              "Tools: Water Totem"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Mana Tide Totem",
+            "description": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 88 mana every 3 seconds to group members within 30 yards.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Summons a Mana Tide Totem with {0} health at the feet of the caster for {1} sec that restores {2} mana every {3} seconds to group members within {4} yards.",
+        "ranks": [
+          [
+            5,
+            12,
+            88,
+            3,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/restoration/r4c1",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Healing Way",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the amount healed by your Healing Wave spell by 8.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20317.0,
+        "timestamp": "05:38:37.000",
+        "frame_index": 1219020,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r5c2.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r5c2",
+        "cell": [
+          3,
+          5,
+          2
+        ],
+        "bbox": [
+          1313,
+          362,
+          218,
+          92
+        ],
+        "sharpness": 3347.2,
+        "frames": 5,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Healing Way",
+            "description": "Increases the amount healed by your Healing Wave spell by 8.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Healing Way",
+            "description": "Increases the amount healed by your Healing Wave spell by 8.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Healing Way",
+            "description": "Increases the amount healed by your Healing Wave spell by 8%.",
+            "maxRank": 3,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the amount healed by your Healing Wave spell by {0}.",
+        "ranks": [
+          [
+            8
+          ],
+          [
+            8
+          ],
+          [
+            8
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic shaman/restoration/Healing Way (talent 1648) scales 33/66/100 (non-linear) but Forever rank 1 is 8; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 1648,
+          "name": "Healing Way",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r4c2",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Nature's Swiftness",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "3 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an Instant cast spell.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20316.0,
+        "timestamp": "05:38:36.000",
+        "frame_index": 1218960,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r5c3.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r5c3",
+        "cell": [
+          3,
+          5,
+          3
+        ],
+        "bbox": [
+          1367,
+          352,
+          229,
+          102
+        ],
+        "sharpness": 4485.9,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Nature's Swiftness",
+            "description": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an Instant cast spell.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Nature's Swiftness",
+            "description": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an Instant cast spell.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Nature's Swiftness",
+            "description": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an instant cast spell.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When activated, your next Nature spell with a casting time less than {0} sec. becomes an Instant cast spell.",
+        "ranks": [
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "shaman/restoration/r5c2",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Purification",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the effectiveness of your healing spells by 2%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20319.0,
+        "timestamp": "05:38:39.000",
+        "frame_index": 1219140,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r6c3.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r6c3",
+        "cell": [
+          3,
+          6,
+          3
+        ],
+        "bbox": [
+          1367,
+          416,
+          208,
+          92
+        ],
+        "sharpness": 3151.2,
+        "frames": 21,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Purification",
+            "description": "Increases the effectiveness of your healing spells by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Purification",
+            "description": "Increases the effectiveness of your healing spells by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Purification",
+            "description": "Increases the effectiveness of your healing spells by 2%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the effectiveness of your healing spells by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 592,
+          "classicSpellIds": [
+            16178,
+            16210,
+            16211,
+            16212,
+            16213
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/restoration/Purification (talent 592): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 592,
+          "name": "Purification",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "shaman/restoration/r6c1",
+      "class": "shaman",
+      "tree": "Restoration",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Riptide",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "245 Mana",
+        "Instant",
+        "40 yd range",
+        "6 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Heals a friendly target for 479 to 528, an additional 499 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 20322.0,
+        "timestamp": "05:38:42.000",
+        "frame_index": 1219320,
+        "crop_path": "work/hovers/21-shaman-20130/restoration-r7c2.png",
+        "icon_crop_path": "work/hovers/21-shaman-20130/restoration-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "21-shaman-20130",
+        "hover_id": "restoration-r7c2",
+        "cell": [
+          3,
+          7,
+          2
+        ],
+        "bbox": [
+          1313,
+          426,
+          229,
+          136
+        ],
+        "sharpness": 4313.4,
+        "frames": 18,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Riptide",
+            "description": "Heals a friendly target for 479 to 528, an additional 499 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "245 Mana",
+              "Instant",
+              "40 yd range",
+              "6 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Riptide",
+            "description": "Heals a friendly target for 479 to 528, an additional 499 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "245 Mana",
+              "Instant",
+              "40 yd range",
+              "6 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Riptide",
+            "description": "Heals a friendly target for 479 to 528, an additional 499 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 20130,
+        "frame_index": 1207800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Heals a friendly target for {0} to {1}, an additional {2} over {3} sec, and increases the effectiveness of your Chain Heal casts directly on that target by {4}%.",
+        "ranks": [
+          [
+            479,
+            528,
+            499,
+            15,
+            25
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    }
+  ]
+}

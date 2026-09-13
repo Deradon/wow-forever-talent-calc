@@ -47,8 +47,11 @@ uv run stages/00_probe_live.py segments
 
 Rules baked into `scan`/`sample`: one request at a time, 0.3 s sleep, 3
 consecutive failures trigger one `yt-dlp -j` URL refresh, failing again
-aborts, and any `Skipping fragment` line in `work/video/download.log` aborts
-immediately.
+aborts. `Skipping fragment` lines in `work/video/download.log` are classified
+(`fragments.DownloadHealth`): a skip after an HTTP error (403 throttling)
+aborts at once; a live-edge skip ("Did not get any data blocks", the head
+fragment of the still-running stream) only warns when it predates the run
+and aborts when a new one appears while we are fetching.
 
 ## Stages 3 and 4: calibrate a segment, crop its tooltip hovers
 
@@ -57,7 +60,7 @@ the segment list in `../data/extracted/segments.json`. A segment is addressed
 by its 1-based index, its id (`<index>-<class>-<t_start>`, e.g.
 `01-paladin-13640`) or its `t_start`. Raw fragments are cached in
 `work/frags/<sq>.bin` (about 400 KB each) so re-runs cost no requests; the
-same one-request-at-a-time / 0.3 s / refresh-on-failure / abort-on-skip
+same one-request-at-a-time / 0.3 s / refresh-on-failure / download-health
 rules as stage 0 apply.
 
 ```bash
@@ -140,7 +143,7 @@ stage `stages/05_read.py`. Needs llama-server (`scripts/llama-server.sh 4b`,
 default `http://127.0.0.1:8089`, override with `--server`).
 
 ```bash
-uv run stages/05_read.py one ../data/review/paladin/holy/r1c1.png   # both passes of one crop
+uv run stages/05_read.py one ../data/review/paladin/holy/holy-power.png   # both passes of one crop
 uv run stages/05_read.py run paladin --dry-run                       # merged hovers, no VLM calls
 uv run stages/05_read.py run paladin                                 # -> data/extracted/paladin.candidates.json
 uv run stages/05_read.py run paladin --segments 1,25 --limit 5 --no-copy --out /path/x.json
@@ -148,7 +151,9 @@ uv run stages/05_read.py run paladin --segments 1,25 --limit 5 --no-copy --out /
 
 What `run` does: merges every `work/hovers/<segment>.json` of the class on
 (page, tree, row, col), keeping the crop that is not cut off and then the
-sharpest; takes the icon grid as the consensus of all calibrations (a cell
+sharpest (when that crop reads `rank_current > 0`, points already spent in a
+later segment, the next crops are read until one shows rank 0; a cell where
+every crop shows spent points keeps a note and confidence <= 0.7); takes the icon grid as the consensus of all calibrations (a cell
 must be present in more than half of the calibrations with >= 40 cells, so a
 spellbook or search-box median cannot add cells); reads the header strip and
 the three tree strips of every segment once (display names from the
@@ -158,9 +163,9 @@ json_schema`) and sets `source.confidence` to 1.0 when both passes agree on
 every field, 0.7 when name and rank agree, else 0.3; caps the confidence at
 0.3 when one name is read at two cells of a tree (cell-attribution error);
 writes 0-based `row`/`col` (what `export.py` expects; hover files are
-1-based, the original cell is kept in `source.cell`) and copies crops to
-`data/review/<class>/<tree>/r<row>c<col>.png` (1-based provisional ids, plus
-`_header.png` per tree). Readings are cached in `work/read/cache/` by
+1-based, the original cell is kept in `source.cell`) and copies the tree
+header strip to `data/review/<class>/<tree>/_header.png` (the tooltip and
+icon crops are placed by stage 8 under talent ids). Readings are cached in `work/read/cache/` by
 content hash + prompt, so a re-run only pays for new crops. Output is an
 object: `candidates` (brief section 1 shape), `segments`, `trees`,
 `missing_cells` (with the reason: never hovered / only a flash shorter than

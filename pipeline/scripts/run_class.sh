@@ -25,9 +25,15 @@ for a in "$@"; do
 done
 
 if [ "$skip_video" = 0 ] && [ "$skip_read" = 0 ]; then
-  if [ "$(grep -c 'Skipping fragment' work/video/download.log 2>/dev/null || echo 0)" != "0" ]; then
-    echo "download.log shows skipped fragments; not touching the stream" >&2; exit 1
-  fi
+  # same guard as FragmentCache: throttled (HTTP-error) skips abort, live-edge skips only warn
+  uv run python -c "
+import sys
+from wowtalents import fragments as fr
+try:
+    w = fr.DownloadHealth().check()
+except fr.FragmentError as e:
+    print(e, file=sys.stderr); sys.exit(1)
+if w: print('  warn:', w)" || exit 1
   mapfile -t segs < <(uv run python -c "
 import json
 for i, s in enumerate(json.load(open('../data/extracted/segments.json')), 1):

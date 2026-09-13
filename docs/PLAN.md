@@ -157,6 +157,13 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-13 ~evening: Phase 2 extraction done. `data/extracted/<class>.json`
+  for all nine classes, 0 validation errors each: 434 of 470 cells read (36
+  never hovered on stream, mostly mage Fire and rogue Combat), 73 records
+  flagged by the codex second opinion, 128 with manual/extrapolated ranks.
+  Nothing reviewed or promoted yet. Coverage in `data/extracted/SUMMARY.md`,
+  pipeline fixes and decisions in `docs/handover/2026-09-13-all-classes.md`.
+
 - 2026-09-13 ~03:30: Phase 1 done. Paladin live at
   https://deradon.github.io/wow-forever-talent-calc/#/paladin with 45 of 52
   talents (7 cells never hovered on stream), unreviewed, 7 flagged with an

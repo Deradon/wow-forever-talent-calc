@@ -1,0 +1,5653 @@
+{
+  "class": "mage",
+  "generated_at": "2026-09-13T01:55:34Z",
+  "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+  "prompt_version": "tooltip-v3",
+  "passes": [
+    3.0,
+    2.0
+  ],
+  "segments": [
+    {
+      "segment_id": "06-mage-14760",
+      "page": "Primary",
+      "trees": {
+        "1": "Arcane",
+        "2": "Fire",
+        "3": "Frost"
+      },
+      "unspent_talents": 29,
+      "hovers": 20
+    },
+    {
+      "segment_id": "07-mage-14850",
+      "page": "Primary",
+      "trees": {
+        "1": "Arcane",
+        "2": "Fire",
+        "3": "Frost"
+      },
+      "unspent_talents": 29,
+      "hovers": 0
+    },
+    {
+      "segment_id": "08-mage-14970",
+      "page": "Primary",
+      "trees": {
+        "1": "Arcane",
+        "2": "Fire",
+        "3": "Frost"
+      },
+      "unspent_talents": 29,
+      "hovers": 3
+    },
+    {
+      "segment_id": "09-mage-15040",
+      "page": "Primary",
+      "trees": {
+        "1": "Arcane",
+        "2": "Fire",
+        "3": "Frost"
+      },
+      "unspent_talents": 29,
+      "hovers": 23
+    },
+    {
+      "segment_id": "10-mage-17580",
+      "page": "Primary",
+      "trees": {
+        "1": "Arcane",
+        "2": "Fire",
+        "3": "Frost"
+      },
+      "unspent_talents": 4,
+      "hovers": 13
+    },
+    {
+      "segment_id": "11-mage-17610",
+      "page": "Secondary",
+      "trees": {
+        "1": "Arcane",
+        "2": "Fire",
+        "3": "Shadow"
+      },
+      "unspent_talents": 0,
+      "hovers": 0
+    }
+  ],
+  "trees": {
+    "1": "Arcane",
+    "2": "Fire",
+    "3": "Frost"
+  },
+  "missing_cells": [
+    {
+      "tree": "Arcane",
+      "row": 0,
+      "col": 1,
+      "cell": "arcane-r1c2",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Arcane",
+      "row": 2,
+      "col": 1,
+      "cell": "arcane-r3c2",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Fire",
+      "row": 0,
+      "col": 2,
+      "cell": "fire-r1c3",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Fire",
+      "row": 1,
+      "col": 2,
+      "cell": "fire-r2c3",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Fire",
+      "row": 2,
+      "col": 0,
+      "cell": "fire-r3c1",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Fire",
+      "row": 2,
+      "col": 1,
+      "cell": "fire-r3c2",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Fire",
+      "row": 2,
+      "col": 2,
+      "cell": "fire-r3c3",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Fire",
+      "row": 3,
+      "col": 0,
+      "cell": "fire-r4c1",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Fire",
+      "row": 3,
+      "col": 1,
+      "cell": "fire-r4c2",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Fire",
+      "row": 3,
+      "col": 3,
+      "cell": "fire-r4c4",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Fire",
+      "row": 4,
+      "col": 1,
+      "cell": "fire-r5c2",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Fire",
+      "row": 5,
+      "col": 2,
+      "cell": "fire-r6c3",
+      "reason": "never hovered in any segment"
+    }
+  ],
+  "stats": {
+    "cells": 54,
+    "hovered": 42,
+    "read": 42,
+    "missing": 12,
+    "confidence": {
+      "0.7": 1,
+      "1.0": 41
+    },
+    "cut_off": 0,
+    "duplicate_names": 0,
+    "vlm_calls": 18,
+    "cache_hits": 90,
+    "vlm_seconds": 21.2,
+    "wall_seconds": 21.7
+  },
+  "candidates": [
+    {
+      "id": "mage/arcane/r0c0",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 0,
+      "col": 0,
+      "name": "Wand Specialization",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your damage with Wands by 13%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14810.0,
+        "timestamp": "04:06:50.000",
+        "frame_index": 888600,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r1c1.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r1c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r1c1",
+        "cell": [
+          1,
+          1,
+          1
+        ],
+        "bbox": [
+          534,
+          121,
+          224,
+          117
+        ],
+        "sharpness": 2944.7,
+        "frames": 27,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Wand Specialization",
+            "description": "Increases your damage with Wands by 13%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Wand Specialization",
+            "description": "Increases your damage with Wands by 13%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Wand Specialization",
+            "description": "Increases your damage with Wands by 13%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your damage with Wands by {0}%.",
+        "ranks": [
+          [
+            13
+          ],
+          [
+            25
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 78,
+          "classicSpellIds": [
+            6057,
+            6085
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/arcane/Wand Specialization (talent 78): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 78,
+          "name": "Wand Specialization",
+          "class": "mage",
+          "tree": "arcane",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r0c2",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Improved Channeling",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives you a 20% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 14% chance while casting Arcane Blast.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14760.233,
+        "timestamp": "04:06:00.233",
+        "frame_index": 885614,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r1c3.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r1c3",
+        "cell": [
+          1,
+          1,
+          3
+        ],
+        "bbox": [
+          642,
+          100,
+          222,
+          138
+        ],
+        "sharpness": 3983.8,
+        "frames": 60,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Channeling",
+            "description": "Gives you a 20% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 14% chance while casting Arcane Blast.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Channeling",
+            "description": "Gives you a 20% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 14% chance while casting Arcane Blast.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Channeling",
+            "description": "Gives you a 20% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 14% chance while casting Arcane Blast.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "09-mage-15040",
+            "t": 15112.067,
+            "sharpness": 3966.0,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives you a {0}% chance to avoid interruption caused by damage while channeling Arcane Missiles and a {1}% chance while casting Arcane Blast.",
+        "ranks": [
+          [
+            20,
+            14
+          ],
+          [
+            40,
+            28
+          ],
+          [
+            60,
+            42
+          ],
+          [
+            80,
+            56
+          ],
+          [
+            100,
+            70
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match mage/arcane/Improved Arcane Missiles (talent 80) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 80,
+          "name": "Improved Arcane Missiles",
+          "class": "mage",
+          "tree": "arcane",
+          "maxRank": 5,
+          "match": "description",
+          "similarity": 0.94
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r1c0",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Arcane Subtlety",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces your target's resistance to all your spells by 8 and reduces the threat caused by your Arcane spells by 15%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14772.25,
+        "timestamp": "04:06:12.250",
+        "frame_index": 886335,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r2c1.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r2c1",
+        "cell": [
+          1,
+          2,
+          1
+        ],
+        "bbox": [
+          534,
+          190,
+          226,
+          102
+        ],
+        "sharpness": 4349.9,
+        "frames": 59,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Arcane Subtlety",
+            "description": "Reduces your target's resistance to all your spells by 8 and reduces the threat caused by your Arcane spells by 15%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Arcane Subtlety",
+            "description": "Reduces your target's resistance to all your spells by 8 and reduces the threat caused by your Arcane spells by 15%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Arcane Subtlety",
+            "description": "Reduces your target's resistance to all your spells by 8 and reduces the threat caused by your Arcane spells by 15%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "09-mage-15040",
+            "t": 15121.933,
+            "sharpness": 3425.4,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces your target's resistance to all your spells by {0} and reduces the threat caused by your Arcane spells by {1}%.",
+        "ranks": [
+          [
+            8,
+            15
+          ],
+          [
+            13,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 74,
+          "classicSpellIds": [
+            11210,
+            12592
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/arcane/Arcane Subtlety (talent 74): Classic 5/10, Forever rank 1 is 8: applied +5/rank; Classic 20/40 scaled by 0.75.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 74,
+          "name": "Arcane Subtlety",
+          "class": "mage",
+          "tree": "arcane",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r1c1",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Magic Absorption",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases all your resistances by 5 and causes all spells you fully resist to restore 1% of your total mana. Cannot trigger more often than 1 time per sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14770.717,
+        "timestamp": "04:06:10.717",
+        "frame_index": 886243,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r2c2.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r2c2",
+        "cell": [
+          1,
+          2,
+          2
+        ],
+        "bbox": [
+          588,
+          179,
+          223,
+          113
+        ],
+        "sharpness": 4465.5,
+        "frames": 60,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Magic Absorption",
+            "description": "Increases all your resistances by 5 and causes all spells you fully resist to restore 1% of your total mana. Cannot trigger more often than 1 time per sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Magic Absorption",
+            "description": "Increases all your resistances by 5 and causes all spells you fully resist to restore 1% of your total mana. Cannot trigger more often than 1 time per sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Magic Absorption",
+            "description": "Increases all your resistances by 5 and causes all spells you fully resist to restore 1% of your total mana. Cannot trigger more often than 1 time per sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases all your resistances by {0} and causes all spells you fully resist to restore {1}% of your total mana. Cannot trigger more often than 1 time per sec.",
+        "ranks": [
+          [
+            5,
+            1
+          ],
+          [
+            7,
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1650,
+          "classicSpellIds": [
+            29441,
+            29444,
+            29445,
+            29446,
+            29447
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/arcane/Magic Absorption (talent 1650): Classic has 5 ranks, step +2 applied over 2 ranks from 5; Classic has 5 ranks, step +1 applied over 2 ranks from 1.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 1650,
+          "name": "Magic Absorption",
+          "class": "mage",
+          "tree": "arcane",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r1c2",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Arcane Concentration",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives you a 2% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14814.433,
+        "timestamp": "04:06:54.433",
+        "frame_index": 888866,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r2c3.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r2c3",
+        "cell": [
+          1,
+          2,
+          3
+        ],
+        "bbox": [
+          642,
+          169,
+          213,
+          123
+        ],
+        "sharpness": 4997.9,
+        "frames": 60,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Arcane Concentration",
+            "description": "Gives you a 2% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Arcane Concentration",
+            "description": "Gives you a 2% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Arcane Concentration",
+            "description": "Gives you a 2% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "09-mage-15040",
+            "t": 15116.667,
+            "sharpness": 4189.9,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives you a {0}% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 75,
+          "classicSpellIds": [
+            11213,
+            12574,
+            12575,
+            12576,
+            12577
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/arcane/Arcane Concentration (talent 75): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 75,
+          "name": "Arcane Concentration",
+          "class": "mage",
+          "tree": "arcane",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r1c3",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 1,
+      "col": 3,
+      "name": "Arcane Resilience",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Armor by an amount equal to 25% of your Intellect.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14767.0,
+        "timestamp": "04:06:07.000",
+        "frame_index": 886020,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r2c4.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r2c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r2c4",
+        "cell": [
+          1,
+          2,
+          4
+        ],
+        "bbox": [
+          696,
+          200,
+          208,
+          92
+        ],
+        "sharpness": 3770.9,
+        "frames": 25,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Arcane Resilience",
+            "description": "Increases your Armor by an amount equal to 25% of your Intellect.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Arcane Resilience",
+            "description": "Increases your Armor by an amount equal to 25% of your Intellect.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Arcane Resilience",
+            "description": "Increases your Armor by an amount equal to 25% of your Intellect.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Armor by an amount equal to {0}% of your Intellect.",
+        "ranks": [
+          [
+            25
+          ],
+          [
+            50
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match mage/arcane/Arcane Resilience (talent 85) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 85,
+          "name": "Arcane Resilience",
+          "class": "mage",
+          "tree": "arcane",
+          "maxRank": 1,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r2c0",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Arcane Geometry",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the range of your Arcane spells by 3 yards.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14774.433,
+        "timestamp": "04:06:14.433",
+        "frame_index": 886466,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r3c1.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r3c1",
+        "cell": [
+          1,
+          3,
+          1
+        ],
+        "bbox": [
+          534,
+          254,
+          206,
+          92
+        ],
+        "sharpness": 3662.0,
+        "frames": 60,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Arcane Geometry",
+            "description": "Increases the range of your Arcane spells by 3 yards.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Arcane Geometry",
+            "description": "Increases the range of your Arcane spells by 3 yards.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Arcane Geometry",
+            "description": "Increases the range of your Arcane spells by 3 yards.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the range of your Arcane spells by {0} yards.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 28,
+          "classicSpellIds": [
+            11100,
+            12353
+          ],
+          "match": "description",
+          "similarity": 0.95
+        },
+        "ranksNote": "Classic mage/fire/Flame Throwing (talent 28), matched on description (0.95): ranks copied.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 28,
+          "name": "Flame Throwing",
+          "class": "mage",
+          "tree": "fire",
+          "maxRank": 2,
+          "match": "description",
+          "similarity": 0.95
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r2c3",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 2,
+      "col": 3,
+      "name": "Arcane Blast",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "122 Mana",
+        "2.5 sec cast"
+      ],
+      "requires": [],
+      "description_rank1": "Blasts the target with energy, dealing 95 to 104 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by 10% and the mana cost of Arcane Blast is increased by 175%. Effect stacks up to 4 times and lasts 8 sec or until any other damage spell is cast.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14766.2,
+        "timestamp": "04:06:06.200",
+        "frame_index": 885972,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r3c4.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r3c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r3c4",
+        "cell": [
+          1,
+          3,
+          4
+        ],
+        "bbox": [
+          696,
+          179,
+          227,
+          167
+        ],
+        "sharpness": 4922.8,
+        "frames": 17,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Arcane Blast",
+            "description": "Blasts the target with energy, dealing 95 to 104 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by 10% and the mana cost of Arcane Blast is increased by 175%. Effect stacks up to 4 times and lasts 8 sec or until any other damage spell is cast.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "122 Mana",
+              "2.5 sec cast"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Arcane Blast",
+            "description": "Blasts the target with energy, dealing 95 to 104 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by 10% and the mana cost of Arcane Blast is increased by 175%. Effect stacks up to 4 times and lasts 8 sec or until any other damage spell is cast.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "122 Mana",
+              "2.5 sec cast"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Arcane Blast",
+            "description": "Blasts the target with energy, dealing 95 to 104 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by 10% and the mana cost of Arcane Blast is increased by 175%. Effect stacks up to 4 times and lasts 8 sec or until any other damage spell is cast.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "09-mage-15040",
+            "t": 15117.867,
+            "sharpness": 4133.5,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Blasts the target with energy, dealing {0} to {1} Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by {2}% and the mana cost of Arcane Blast is increased by {3}%. Effect stacks up to {4} times and lasts {5} sec or until any other damage spell is cast.",
+        "ranks": [
+          [
+            95,
+            104,
+            10,
+            175,
+            4,
+            8
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "mage/arcane/r3c0",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Arcane Shielding",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Decreases the Mana lost per point of damage taken when your Mana Shield spell is active by 17% and increases the resistances granted by your Mage Armor spell by 25%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14778.433,
+        "timestamp": "04:06:18.433",
+        "frame_index": 886706,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r4c1.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r4c1",
+        "cell": [
+          1,
+          4,
+          1
+        ],
+        "bbox": [
+          534,
+          277,
+          227,
+          123
+        ],
+        "sharpness": 4568.8,
+        "frames": 240,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Arcane Shielding",
+            "description": "Decreases the Mana lost per point of damage taken when your Mana Shield spell is active by 17% and increases the resistances granted by your Mage Armor spell by 25%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Arcane Shielding",
+            "description": "Decreases the Mana lost per point of damage taken when your Mana Shield spell is active by 17% and increases the resistances granted by your Mage Armor spell by 25%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Arcane Shielding",
+            "description": "Decreases the Mana lost per point of damage taken when your Mana Shield spell is active by 17% and increases the resistances granted by your Mage Armor spell by 25%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Decreases the Mana lost per point of damage taken when your Mana Shield spell is active by {0}% and increases the resistances granted by your Mage Armor spell by {1}%.",
+        "ranks": [
+          [
+            17,
+            25
+          ],
+          [
+            34,
+            50
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match mage/arcane/Improved Mana Shield (talent 83) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 83,
+          "name": "Improved Mana Shield",
+          "class": "mage",
+          "tree": "arcane",
+          "maxRank": 2,
+          "match": "description",
+          "similarity": 0.97
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r3c1",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "Improved Counterspell",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your Counterspell also Silences the target for 2 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14787.133,
+        "timestamp": "04:06:27.133",
+        "frame_index": 887228,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r4c2.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r4c2",
+        "cell": [
+          1,
+          4,
+          2
+        ],
+        "bbox": [
+          588,
+          308,
+          207,
+          92
+        ],
+        "sharpness": 3734.4,
+        "frames": 28,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Counterspell",
+            "description": "Your Counterspell also Silences the target for 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Counterspell",
+            "description": "Your Counterspell also Silences the target for 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Counterspell",
+            "description": "Your Counterspell also Silences the target for 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your Counterspell also Silences the target for {0} sec.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic mage/arcane/Improved Counterspell (talent 88) has 50/100 without unit where Forever rank 1 has 2 sec; units differ; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 88,
+          "name": "Improved Counterspell",
+          "class": "mage",
+          "tree": "arcane",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r3c2",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Arcane Meditation",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Allows 17% of your Mana regeneration to continue while casting.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14788.017,
+        "timestamp": "04:06:28.017",
+        "frame_index": 887281,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r4c3.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r4c3",
+        "cell": [
+          1,
+          4,
+          3
+        ],
+        "bbox": [
+          642,
+          308,
+          225,
+          92
+        ],
+        "sharpness": 3567.0,
+        "frames": 45,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Arcane Meditation",
+            "description": "Allows 17% of your Mana regeneration to continue while casting.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Arcane Meditation",
+            "description": "Allows 17% of your Mana regeneration to continue while casting.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Arcane Meditation",
+            "description": "Allows 17% of your Mana regeneration to continue while casting.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "09-mage-15040",
+            "t": 15124.533,
+            "sharpness": 3121.6,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Allows {0}% of your Mana regeneration to continue while casting.",
+        "ranks": [
+          [
+            17
+          ],
+          [
+            22
+          ],
+          [
+            27
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1142,
+          "classicSpellIds": [
+            18462,
+            18463,
+            18464
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/arcane/Arcane Meditation (talent 1142): Classic 5/10/15, Forever rank 1 is 17: applied +5/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 1142,
+          "name": "Arcane Meditation",
+          "class": "mage",
+          "tree": "arcane",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r3c3",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 3,
+      "col": 3,
+      "name": "Missile Barrage",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Arcane Blast spell a 40% chance, and your Fireball, Frostbolt, and Frostfire Bolt spells a 20% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles will fire every 0.5 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14790.4,
+        "timestamp": "04:06:30.400",
+        "frame_index": 887424,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r4c4.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r4c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r4c4",
+        "cell": [
+          1,
+          4,
+          4
+        ],
+        "bbox": [
+          696,
+          256,
+          227,
+          144
+        ],
+        "sharpness": 4969.7,
+        "frames": 60,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Missile Barrage",
+            "description": "Gives your Arcane Blast spell a 40% chance, and your Fireball, Frostbolt, and Frostfire Bolt spells a 20% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles will fire every 0.5 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Missile Barrage",
+            "description": "Gives your Arcane Blast spell a 40% chance, and your Fireball, Frostbolt, and Frostfire Bolt spells a 20% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles will fire every 0.5 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Missile Barrage",
+            "description": "Gives your Arcane Blast spell a 40% chance, and your Fireball, Frostbolt, and Frostfire Bolt spells a 20% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles will fire every 0.5 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Arcane Blast spell a {0}% chance, and your Fireball, Frostbolt, and Frostfire Bolt spells a {1}% chance to reduce the channeled duration of your next Arcane Missiles spell by {2}%, reduce the Mana cost by {3}%, and missiles will fire every {4} sec.",
+        "ranks": [
+          [
+            40,
+            20,
+            50,
+            100,
+            0.5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "mage/arcane/r4c1",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Presence of Mind",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "3 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "When activated, your next Mage spell with a casting time less than 10 sec becomes an Instant cast spell.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14800.233,
+        "timestamp": "04:06:40.233",
+        "frame_index": 888014,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r5c2.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r5c2",
+        "cell": [
+          1,
+          5,
+          2
+        ],
+        "bbox": [
+          588,
+          352,
+          227,
+          102
+        ],
+        "sharpness": 4650.8,
+        "frames": 180,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Presence of Mind",
+            "description": "When activated, your next Mage spell with a casting time less than 10 sec becomes an Instant cast spell.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Presence of Mind",
+            "description": "When activated, your next Mage spell with a casting time less than 10 sec becomes an Instant cast spell.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Presence of Mind",
+            "description": "When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When activated, your next Mage spell with a casting time less than {0} sec becomes an Instant cast spell.",
+        "ranks": [
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "mage/arcane/r4c2",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Arcane Mind",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Intellect by 2% and increases the critical strike damage bonus of your Arcane spells by 20%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14763.2,
+        "timestamp": "04:06:03.200",
+        "frame_index": 885792,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r5c3.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r5c3",
+        "cell": [
+          1,
+          5,
+          3
+        ],
+        "bbox": [
+          642,
+          352,
+          208,
+          102
+        ],
+        "sharpness": 4120.1,
+        "frames": 3,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Arcane Mind",
+            "description": "Increases your Intellect by 2% and increases the critical strike damage bonus of your Arcane spells by 20%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Arcane Mind",
+            "description": "Increases your Intellect by 2% and increases the critical strike damage bonus of your Arcane spells by 20%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Arcane Mind",
+            "description": "Increases your Intellect by 2% and increases the critical strike damage bonus of your Arcane spells by 20%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Intellect by {0}% and increases the critical strike damage bonus of your Arcane spells by {1}%.",
+        "ranks": [
+          [
+            2,
+            20
+          ],
+          [
+            4,
+            40
+          ],
+          [
+            6,
+            60
+          ],
+          [
+            8,
+            80
+          ],
+          [
+            10,
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match mage/arcane/Arcane Mind (talent 77) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 77,
+          "name": "Arcane Mind",
+          "class": "mage",
+          "tree": "arcane",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r5c2",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Arcane Instability",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage done by all your spells by 1% and your critical strike chance with all attacks by 1%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14807.0,
+        "timestamp": "04:06:47.000",
+        "frame_index": 888420,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r6c3.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r6c3",
+        "cell": [
+          1,
+          6,
+          3
+        ],
+        "bbox": [
+          642,
+          406,
+          225,
+          102
+        ],
+        "sharpness": 4063.0,
+        "frames": 64,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Arcane Instability",
+            "description": "Increases the damage done by all your spells by 1% and your critical strike chance with all attacks by 1%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Arcane Instability",
+            "description": "Increases the damage done by all your spells by 1% and your critical strike chance with all attacks by 1%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Arcane Instability",
+            "description": "Increases the damage done by all your spells by 1% and your critical strike chance with all attacks by 1%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by all your spells by {0}% and your critical strike chance with all attacks by {1}%.",
+        "ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match mage/arcane/Arcane Instability (talent 421) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 421,
+          "name": "Arcane Instability",
+          "class": "mage",
+          "tree": "arcane",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/arcane/r6c1",
+      "class": "mage",
+      "tree": "Arcane",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Arcane Power",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "3 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "For the next 15 sec, your spells deal 30% more damage while costing 30% more mana to cast.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14762.217,
+        "timestamp": "04:06:02.217",
+        "frame_index": 885733,
+        "crop_path": "work/hovers/06-mage-14760/arcane-r7c2.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/arcane-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "arcane-r7c2",
+        "cell": [
+          1,
+          7,
+          2
+        ],
+        "bbox": [
+          588,
+          460,
+          227,
+          102
+        ],
+        "sharpness": 4188.6,
+        "frames": 14,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Arcane Power",
+            "description": "For the next 15 sec, your spells deal 30% more damage while costing 30% more mana to cast.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Arcane Power",
+            "description": "For the next 15 sec, your spells deal 30% more damage while costing 30% more mana to cast.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Arcane Power",
+            "description": "For the next 15 sec, your spells deal 30% more damage while costing 30% more mana to cast.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "For the next {0} sec, your spells deal {1}% more damage while costing {2}% more mana to cast.",
+        "ranks": [
+          [
+            15,
+            30,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "mage/fire/r0c0",
+      "class": "mage",
+      "tree": "Fire",
+      "page": "Primary",
+      "row": 0,
+      "col": 0,
+      "name": "Wake of Fire",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown of your Fire Blast spell by 1 sec. Killing a non-trivial target increases the critical strike chance of your next Fire Blast cast within 20 sec by 25%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14826.167,
+        "timestamp": "04:07:06.167",
+        "frame_index": 889570,
+        "crop_path": "work/hovers/06-mage-14760/fire-r1c1.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/fire-r1c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "fire-r1c1",
+        "cell": [
+          2,
+          1,
+          1
+        ],
+        "bbox": [
+          894,
+          90,
+          225,
+          148
+        ],
+        "sharpness": 3597.0,
+        "frames": 60,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Wake of Fire",
+            "description": "Reduces the cooldown of your Fire Blast spell by 1 sec. Killing a non-trivial target increases the critical strike chance of your next Fire Blast cast within 20 sec by 25%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Wake of Fire",
+            "description": "Reduces the cooldown of your Fire Blast spell by 1 sec. Killing a non-trivial target increases the critical strike chance of your next Fire Blast cast within 20 sec by 25%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Wake of Fire",
+            "description": "Reduces the cooldown of your Fire Blast spell by 1 sec. Killing a non-trivial target increases the critical strike chance of your next Fire Blast cast within 20 sec by 25%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Fire Blast spell by {0} sec. Killing a non-trivial target increases the critical strike chance of your next Fire Blast cast within {1} sec by {2}%.",
+        "ranks": [
+          [
+            1,
+            20,
+            25
+          ],
+          [
+            1,
+            20,
+            25
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match mage/frost/Improved Frost Nova (talent 62) has no alignable slots; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 62,
+          "name": "Improved Frost Nova",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 2,
+          "match": "description",
+          "similarity": 0.89
+        }
+      }
+    },
+    {
+      "id": "mage/fire/r0c1",
+      "class": "mage",
+      "tree": "Fire",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Incineration",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike chance of your Fire Blast. Ice Lance, Arcane Blast, and Scorch spells by 2%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14818.183,
+        "timestamp": "04:06:58.183",
+        "frame_index": 889091,
+        "crop_path": "work/hovers/06-mage-14760/fire-r1c2.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/fire-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "fire-r1c2",
+        "cell": [
+          2,
+          1,
+          2
+        ],
+        "bbox": [
+          948,
+          111,
+          226,
+          127
+        ],
+        "sharpness": 3082.9,
+        "frames": 120,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Incineration",
+            "description": "Increases the critical strike chance of your Fire Blast. Ice Lance, Arcane Blast, and Scorch spells by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Incineration",
+            "description": "Increases the critical strike chance of your Fire Blast. Ice Lance, Arcane Blast, and Scorch spells by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Incineration",
+            "description": "Increases the critical strike chance of your Fire Blast, Ice Lance, Arcane Blast, and Scorch spells by 2%.",
+            "maxRank": 3,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike chance of your Fire Blast. Ice Lance, Arcane Blast, and Scorch spells by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 33,
+          "classicSpellIds": [
+            11115,
+            11367,
+            11368
+          ],
+          "match": "description",
+          "similarity": 0.99
+        },
+        "ranksNote": "Classic mage/fire/Critical Mass (talent 33), matched on description (0.99): ranks copied.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 33,
+          "name": "Critical Mass",
+          "class": "mage",
+          "tree": "fire",
+          "maxRank": 3,
+          "match": "description",
+          "similarity": 0.99
+        }
+      }
+    },
+    {
+      "id": "mage/fire/r1c0",
+      "class": "mage",
+      "tree": "Fire",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Ignite",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your critical strikes from Fire damage spells cause the target to burn for an additional 8% of your spell's damage over 4 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14821.667,
+        "timestamp": "04:07:01.667",
+        "frame_index": 889300,
+        "crop_path": "work/hovers/06-mage-14760/fire-r2c1.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/fire-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "fire-r2c1",
+        "cell": [
+          2,
+          2,
+          1
+        ],
+        "bbox": [
+          894,
+          179,
+          214,
+          113
+        ],
+        "sharpness": 3167.1,
+        "frames": 1,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Ignite",
+            "description": "Your critical strikes from Fire damage spells cause the target to burn for an additional 8% of your spell's damage over 4 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Ignite",
+            "description": "Your critical strikes from Fire damage spells cause the target to burn for an additional 8% of your spell's damage over 4 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Ignite",
+            "description": "Your critical strikes from Fire damage spells cause the target to burn for an additional 8% of your spell's damage over 4 sec.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your critical strikes from Fire damage spells cause the target to burn for an additional {0}% of your spell's damage over 4 sec.",
+        "ranks": [
+          [
+            8
+          ],
+          [
+            16
+          ],
+          [
+            24
+          ],
+          [
+            32
+          ],
+          [
+            40
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 34,
+          "classicSpellIds": [
+            11119,
+            11120,
+            12846,
+            12847,
+            12848
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/fire/Ignite (talent 34): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 34,
+          "name": "Ignite",
+          "class": "mage",
+          "tree": "fire",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/fire/r1c1",
+      "class": "mage",
+      "tree": "Fire",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Flame Throwing",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the range of your Fire spells by 3 yards.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 14821.65,
+        "timestamp": "04:07:01.650",
+        "frame_index": 889299,
+        "crop_path": "work/hovers/06-mage-14760/fire-r2c2.png",
+        "icon_crop_path": "work/hovers/06-mage-14760/fire-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "06-mage-14760",
+        "hover_id": "fire-r2c2",
+        "cell": [
+          2,
+          2,
+          2
+        ],
+        "bbox": [
+          948,
+          200,
+          220,
+          92
+        ],
+        "sharpness": 2822.8,
+        "frames": 1,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Flame Throwing",
+            "description": "Increases the range of your Fire spells by 3 yards.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Flame Throwing",
+            "description": "Increases the range of your Fire spells by 3 yards.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Flame Throwing",
+            "description": "Increases the range of your Fire spells by 3 yards.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14760,
+        "frame_index": 885600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the range of your Fire spells by {0} yards.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 28,
+          "classicSpellIds": [
+            11100,
+            12353
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/fire/Flame Throwing (talent 28): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 28,
+          "name": "Flame Throwing",
+          "class": "mage",
+          "tree": "fire",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/fire/r3c2",
+      "class": "mage",
+      "tree": "Fire",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Master of Elements",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your Fire and Frost critical strikes will refund 10% of their base mana cost.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15003.733,
+        "timestamp": "04:10:03.733",
+        "frame_index": 900224,
+        "crop_path": "work/hovers/08-mage-14970/fire-r4c3.png",
+        "icon_crop_path": "work/hovers/08-mage-14970/fire-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "08-mage-14970",
+        "hover_id": "fire-r4c3",
+        "cell": [
+          2,
+          4,
+          3
+        ],
+        "bbox": [
+          1002,
+          266,
+          268,
+          125
+        ],
+        "sharpness": 2137.7,
+        "frames": 13,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Master of Elements",
+            "description": "Your Fire and Frost critical strikes will refund 10% of their base mana cost.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Master of Elements",
+            "description": "Your Fire and Frost critical strikes will refund 10% of their base mana cost.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Master of Elements",
+            "description": "Your Fire and Frost critical strikes will refund 10% of their base mana cost.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14970,
+        "frame_index": 898200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your Fire and Frost critical strikes will refund {0}% of their base mana cost.",
+        "ranks": [
+          [
+            10
+          ],
+          [
+            20
+          ],
+          [
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1639,
+          "classicSpellIds": [
+            29074,
+            29075,
+            29076
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/fire/Master of Elements (talent 1639): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1639,
+          "name": "Master of Elements",
+          "class": "mage",
+          "tree": "fire",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/fire/r4c2",
+      "class": "mage",
+      "tree": "Fire",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Blast Wave",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "215 Mana",
+        "Instant",
+        "45 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 160 to 191 Fire damage, and Dazing them for 50% reduced movement speed for 6 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15005.733,
+        "timestamp": "04:10:05.733",
+        "frame_index": 900344,
+        "crop_path": "work/hovers/08-mage-14970/fire-r5c3.png",
+        "icon_crop_path": "work/hovers/08-mage-14970/fire-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "08-mage-14970",
+        "hover_id": "fire-r5c3",
+        "cell": [
+          2,
+          5,
+          3
+        ],
+        "bbox": [
+          1002,
+          266,
+          225,
+          188
+        ],
+        "sharpness": 3333.6,
+        "frames": 18,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Blast Wave",
+            "description": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 160 to 191 Fire damage, and Dazing them for 50% reduced movement speed for 6 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "215 Mana",
+              "Instant",
+              "45 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Blast Wave",
+            "description": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 160 to 191 Fire damage, and Dazing them for 50% reduced movement speed for 6 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "215 Mana",
+              "Instant",
+              "45 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Blast Wave",
+            "description": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 160 to 191 Fire damage, and Dazing them for 50% reduced movement speed for 6 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14970,
+        "frame_index": 898200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for {0} to {1} Fire damage, and Dazing them for {2}% reduced movement speed for {3} sec.",
+        "ranks": [
+          [
+            160,
+            191,
+            50,
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "mage/fire/r6c1",
+      "class": "mage",
+      "tree": "Fire",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Combustion",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "3 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%. This effect lasts until you have caused 4 non-periodic critical strikes with Fire spells.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15012.467,
+        "timestamp": "04:10:12.467",
+        "frame_index": 900748,
+        "crop_path": "work/hovers/08-mage-14970/fire-r7c2.png",
+        "icon_crop_path": "work/hovers/08-mage-14970/fire-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "08-mage-14970",
+        "hover_id": "fire-r7c2",
+        "cell": [
+          2,
+          7,
+          2
+        ],
+        "bbox": [
+          948,
+          428,
+          227,
+          134
+        ],
+        "sharpness": 4940.8,
+        "frames": 80,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Combustion",
+            "description": "When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%. This effect lasts until you have caused 4 non-periodic critical strikes with Fire spells.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Combustion",
+            "description": "When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%. This effect lasts until you have caused 4 non-periodic critical strikes with Fire spells.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Combustion",
+            "description": "When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%. This effect lasts until you have caused 4 non-periodic critical strikes with Fire spells.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 14970,
+        "frame_index": 898200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by {0}%. This effect lasts until you have caused {1} non-periodic critical strikes with Fire spells.",
+        "ranks": [
+          [
+            10,
+            4
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "mage/frost/r0c0",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 0,
+      "col": 0,
+      "name": "Frost Warding",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the Armor and resistance given by your Frost Armor and Ice Armor spells by 15%. In addition, gives your Frost Ward a 10% chance to reflect Frost spells and effects while active.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15040.933,
+        "timestamp": "04:10:40.933",
+        "frame_index": 902456,
+        "crop_path": "work/hovers/09-mage-15040/frost-r1c1.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r1c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r1c1",
+        "cell": [
+          3,
+          1,
+          1
+        ],
+        "bbox": [
+          1259,
+          90,
+          227,
+          148
+        ],
+        "sharpness": 3904.3,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Frost Warding",
+            "description": "Increases the Armor and resistance given by your Frost Armor and Ice Armor spells by 15%. In addition, gives your Frost Ward a 10% chance to reflect Frost spells and effects while active.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Frost Warding",
+            "description": "Increases the Armor and resistance given by your Frost Armor and Ice Armor spells by 15%. In addition, gives your Frost Ward a 10% chance to reflect Frost spells and effects while active.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Frost Warding",
+            "description": "Increases the Armor and resistance given by your Frost Armor and Ice Armor spells by 15%. In addition, gives your Frost Ward a 10% chance to reflect Frost spells and effects while active.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Increases the Armor and resistance given by your Frost Armor and Ice Armor spells by {0}%. In addition, gives your Frost Ward a {1}% chance to reflect Frost spells and effects while active.",
+        "ranks": [
+          [
+            15,
+            10
+          ],
+          [
+            30,
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 70,
+          "classicSpellIds": [
+            11189,
+            28332
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Frost Warding (talent 70): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 70,
+          "name": "Frost Warding",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r0c1",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Improved Frostbolt",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the casting time of your Frostbolt spell by 0.1 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15042.333,
+        "timestamp": "04:10:42.333",
+        "frame_index": 902540,
+        "crop_path": "work/hovers/09-mage-15040/frost-r1c2.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r1c2",
+        "cell": [
+          3,
+          1,
+          2
+        ],
+        "bbox": [
+          1312,
+          121,
+          197,
+          117
+        ],
+        "sharpness": 3382.3,
+        "frames": 9,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Frostbolt",
+            "description": "Reduces the casting time of your Frostbolt spell by 0.1 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Frostbolt",
+            "description": "Reduces the casting time of your Frostbolt spell by 0.1 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Frostbolt",
+            "description": "Reduces the casting time of your Frostbolt spell by 0.1 sec.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the casting time of your Frostbolt spell by {0} sec.",
+        "ranks": [
+          [
+            0.1
+          ],
+          [
+            0.2
+          ],
+          [
+            0.3
+          ],
+          [
+            0.4
+          ],
+          [
+            0.5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 37,
+          "classicSpellIds": [
+            11070,
+            12473,
+            16763,
+            16765,
+            16766
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Improved Frostbolt (talent 37): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 37,
+          "name": "Improved Frostbolt",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r0c2",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Elemental Precision",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your chance to hit with Frost and Fire spells by 1%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15043.467,
+        "timestamp": "04:10:43.467",
+        "frame_index": 902608,
+        "crop_path": "work/hovers/09-mage-15040/frost-r1c3.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r1c3",
+        "cell": [
+          3,
+          1,
+          3
+        ],
+        "bbox": [
+          1369,
+          121,
+          223,
+          117
+        ],
+        "sharpness": 2906.9,
+        "frames": 9,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Elemental Precision",
+            "description": "Increases your chance to hit with Frost and Fire spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Elemental Precision",
+            "description": "Increases your chance to hit with Frost and Fire spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Elemental Precision",
+            "description": "Increases your chance to hit with Frost and Fire spells by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Increases your chance to hit with Frost and Fire spells by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            5
+          ],
+          [
+            7
+          ],
+          [
+            9
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1649,
+          "classicSpellIds": [
+            29438,
+            29439,
+            29440
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Elemental Precision (talent 1649): Classic has 3 ranks, step +2 applied over 5 ranks from 1.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 1649,
+          "name": "Elemental Precision",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r1c0",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Ice Shards",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike damage bonus of your Frost spells by 20%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15044.133,
+        "timestamp": "04:10:44.133",
+        "frame_index": 902648,
+        "crop_path": "work/hovers/09-mage-15040/frost-r2c1.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r2c1",
+        "cell": [
+          3,
+          2,
+          1
+        ],
+        "bbox": [
+          1259,
+          200,
+          207,
+          92
+        ],
+        "sharpness": 3519.4,
+        "frames": 13,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Ice Shards",
+            "description": "Increases the critical strike damage bonus of your Frost spells by 20%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Ice Shards",
+            "description": "Increases the critical strike damage bonus of your Frost spells by 20%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Ice Shards",
+            "description": "Increases the critical strike damage bonus of your Frost spells by 20%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "10-mage-17580",
+            "t": 17584.133,
+            "sharpness": 3335.5,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike damage bonus of your Frost spells by {0}%.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            40
+          ],
+          [
+            60
+          ],
+          [
+            80
+          ],
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 73,
+          "classicSpellIds": [
+            11207,
+            12672,
+            15047,
+            15052,
+            15053
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Ice Shards (talent 73): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 73,
+          "name": "Ice Shards",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r1c1",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Permafrost",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the duration of your Chill effects by 11% and reduces the target's speed by an additional 3%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15047.0,
+        "timestamp": "04:10:47.000",
+        "frame_index": 902820,
+        "crop_path": "work/hovers/09-mage-15040/frost-r2c2.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r2c2",
+        "cell": [
+          3,
+          2,
+          2
+        ],
+        "bbox": [
+          1312,
+          190,
+          230,
+          102
+        ],
+        "sharpness": 3646.1,
+        "frames": 23,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Permafrost",
+            "description": "Increases the duration of your Chill effects by 11% and reduces the target's speed by an additional 3%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Permafrost",
+            "description": "Increases the duration of your Chill effects by 11% and reduces the target's speed by an additional 3%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Permafrost",
+            "description": "Increases the duration of your Chill effects by 11% and reduces the target's speed by an additional 3%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "10-mage-17580",
+            "t": 17580.4,
+            "sharpness": 2921.0,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Increases the duration of your Chill effects by {0}% and reduces the target's speed by an additional {1}%.",
+        "ranks": [
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic mage/frost/Permafrost (talent 65) has 1/2/3 sec where Forever rank 1 has 11 without unit; units differ; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 65,
+          "name": "Permafrost",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r1c2",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Improved Frost Nova",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown of your Frost Nova spell by 2 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15048.333,
+        "timestamp": "04:10:48.333",
+        "frame_index": 902900,
+        "crop_path": "work/hovers/09-mage-15040/frost-r2c3.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r2c3",
+        "cell": [
+          3,
+          2,
+          3
+        ],
+        "bbox": [
+          1367,
+          200,
+          211,
+          92
+        ],
+        "sharpness": 3806.8,
+        "frames": 7,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Frost Nova",
+            "description": "Reduces the cooldown of your Frost Nova spell by 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Frost Nova",
+            "description": "Reduces the cooldown of your Frost Nova spell by 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Frost Nova",
+            "description": "Reduces the cooldown of your Frost Nova spell by 2 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Frost Nova spell by {0} sec.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 62,
+          "classicSpellIds": [
+            11165,
+            12475
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Improved Frost Nova (talent 62): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 62,
+          "name": "Improved Frost Nova",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r1c3",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 1,
+      "col": 3,
+      "name": "Frostbite",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Chill effects a 5% chance to Freeze the target for 5 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15054.467,
+        "timestamp": "04:10:54.467",
+        "frame_index": 903268,
+        "crop_path": "work/hovers/09-mage-15040/frost-r2c4.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r2c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r2c4",
+        "cell": [
+          3,
+          2,
+          4
+        ],
+        "bbox": [
+          1421,
+          199,
+          221,
+          94
+        ],
+        "sharpness": 2904.4,
+        "frames": 30,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Frostbite",
+            "description": "Gives your Chill effects a 5% chance to Freeze the target for 5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Frostbite",
+            "description": "Gives your Chill effects a 5% chance to Freeze the target for 5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Frostbite",
+            "description": "Gives your Chill effects a 5% chance to Freeze the target for 5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "10-mage-17580",
+            "t": 17595.867,
+            "sharpness": 2618.7,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Chill effects a {0}% chance to Freeze the target for 5 sec.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            10
+          ],
+          [
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 38,
+          "classicSpellIds": [
+            11071,
+            12496,
+            12497
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Frostbite (talent 38): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 38,
+          "name": "Frostbite",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r2c0",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Piercing Ice",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage of Frost spells by 2%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 17581.4,
+        "timestamp": "04:53:01.400",
+        "frame_index": 1054884,
+        "crop_path": "work/hovers/10-mage-17580/frost-r3c1.png",
+        "icon_crop_path": "work/hovers/10-mage-17580/frost-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "10-mage-17580",
+        "hover_id": "frost-r3c1",
+        "cell": [
+          3,
+          3,
+          1
+        ],
+        "bbox": [
+          1222,
+          230,
+          168,
+          116
+        ],
+        "sharpness": 3671.7,
+        "frames": 8,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Piercing Ice",
+            "description": "Increases the damage of Frost spells by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Piercing Ice",
+            "description": "Increases the damage of Frost spells by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Piercing Ice",
+            "description": "Increases the damage caused by your Frost spells by 2%.",
+            "maxRank": 3,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "09-mage-15040",
+            "t": 15068.067,
+            "sharpness": 3327.1,
+            "cut_off": false
+          }
+        ],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 17580,
+        "frame_index": 1054800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage of Frost spells by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 61,
+          "classicSpellIds": [
+            11151,
+            12952,
+            12953
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Piercing Ice (talent 61): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 61,
+          "name": "Piercing Ice",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r2c1",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Frost Channeling",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the mana cost of your Frost spells by 5% and reduces the threat caused by your Frost spells by 10%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15067.267,
+        "timestamp": "04:11:07.267",
+        "frame_index": 904036,
+        "crop_path": "work/hovers/09-mage-15040/frost-r3c2.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r3c2",
+        "cell": [
+          3,
+          3,
+          2
+        ],
+        "bbox": [
+          1315,
+          244,
+          211,
+          102
+        ],
+        "sharpness": 4323.8,
+        "frames": 18,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Frost Channeling",
+            "description": "Reduces the mana cost of your Frost spells by 5% and reduces the threat caused by your Frost spells by 10%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Frost Channeling",
+            "description": "Reduces the mana cost of your Frost spells by 5% and reduces the threat caused by your Frost spells by 10%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Frost Channeling",
+            "description": "Reduces the mana cost of your Frost spells by 5% and reduces the threat caused by your Frost spells by 10%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "10-mage-17580",
+            "t": 17582.867,
+            "sharpness": 3373.1,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the mana cost of your Frost spells by {0}% and reduces the threat caused by your Frost spells by {1}%.",
+        "ranks": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            15,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 66,
+          "classicSpellIds": [
+            11160,
+            12518,
+            12519
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Frost Channeling (talent 66): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 66,
+          "name": "Frost Channeling",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r2c2",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 2,
+      "col": 2,
+      "name": "Ice Lance",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "45 Mana",
+        "Instant"
+      ],
+      "requires": [],
+      "description_rank1": "Deals 28 to 33 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15065.533,
+        "timestamp": "04:11:05.533",
+        "frame_index": 903932,
+        "crop_path": "work/hovers/09-mage-15040/frost-r3c3.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r3c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r3c3",
+        "cell": [
+          3,
+          3,
+          3
+        ],
+        "bbox": [
+          1367,
+          231,
+          229,
+          115
+        ],
+        "sharpness": 3571.3,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Ice Lance",
+            "description": "Deals 28 to 33 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "45 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Ice Lance",
+            "description": "Deals 28 to 33 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "45 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Ice Lance",
+            "description": "Deals 28 to 33 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "10-mage-17580",
+            "t": 17590.6,
+            "sharpness": 3438.1,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Deals {0} to {1} Frost damage to an enemy target. Deals {2}% increased damage to Frozen targets.",
+        "ranks": [
+          [
+            28,
+            33,
+            300
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "mage/frost/r2c3",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 2,
+      "col": 3,
+      "name": "Improved Blizzard",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by 15% for 1.5 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15060.0,
+        "timestamp": "04:11:00.000",
+        "frame_index": 903600,
+        "crop_path": "work/hovers/09-mage-15040/frost-r3c4.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r3c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r3c4",
+        "cell": [
+          3,
+          3,
+          4
+        ],
+        "bbox": [
+          1421,
+          242,
+          212,
+          105
+        ],
+        "sharpness": 4287.9,
+        "frames": 60,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Blizzard",
+            "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by 15% for 1.5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Blizzard",
+            "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by 15% for 1.5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Blizzard",
+            "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by 15% for 1.5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by {0}% for {1} sec.",
+        "ranks": [
+          [
+            15,
+            1.5
+          ],
+          [
+            15,
+            1.5
+          ],
+          [
+            15,
+            1.5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic mage/frost/Improved Blizzard (talent 63) scales 30/50/65 (non-linear) but Forever rank 1 is 15; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 63,
+          "name": "Improved Blizzard",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r3c0",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Arctic Reach",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the range of your Frostbolt and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 10%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15068.933,
+        "timestamp": "04:11:08.933",
+        "frame_index": 904136,
+        "crop_path": "work/hovers/09-mage-15040/frost-r4c1.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r4c1",
+        "cell": [
+          3,
+          4,
+          1
+        ],
+        "bbox": [
+          1258,
+          287,
+          215,
+          113
+        ],
+        "sharpness": 3657.7,
+        "frames": 11,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Arctic Reach",
+            "description": "Increases the range of your Frostbolt and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Arctic Reach",
+            "description": "Increases the range of your Frostbolt and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Arctic Reach",
+            "description": "Increases the range of your Frostbolt and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 10%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "10-mage-17580",
+            "t": 17585.133,
+            "sharpness": 3152.5,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Increases the range of your Frostbolt and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by {0}%.",
+        "ranks": [
+          [
+            10
+          ],
+          [
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 741,
+          "classicSpellIds": [
+            16757,
+            16758
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Arctic Reach (talent 741): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 741,
+          "name": "Arctic Reach",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r3c1",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "Ice Block",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "15 Mana",
+        "Instant"
+      ],
+      "requires": [],
+      "description_rank1": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec. but during that time you cannot attack, move, or cast spells.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15070.0,
+        "timestamp": "04:11:10.000",
+        "frame_index": 904200,
+        "crop_path": "work/hovers/09-mage-15040/frost-r4c2.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r4c2",
+        "cell": [
+          3,
+          4,
+          2
+        ],
+        "bbox": [
+          1315,
+          264,
+          227,
+          136
+        ],
+        "sharpness": 4004.9,
+        "frames": 16,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Ice Block",
+            "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec. but during that time you cannot attack, move, or cast spells.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "15 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Ice Block",
+            "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec. but during that time you cannot attack, move, or cast spells.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "15 Mana",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Ice Block",
+            "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec, but during that time you cannot attack, move, or cast spells.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "10-mage-17580",
+            "t": 17584.867,
+            "sharpness": 3326.5,
+            "cut_off": false
+          }
+        ],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for {0} sec. but during that time you cannot attack, move, or cast spells.",
+        "ranks": [
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "mage/frost/r3c3",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 3,
+      "col": 3,
+      "name": "Shatter",
+      "rank": {
+        "current": 3,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike chance of all your spells against Frozen targets by 50.",
+      "footer": "Right click to unlearn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 17594.267,
+        "timestamp": "04:53:14.267",
+        "frame_index": 1055656,
+        "crop_path": "work/hovers/10-mage-17580/frost-r4c4.png",
+        "icon_crop_path": "work/hovers/10-mage-17580/frost-r4c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "10-mage-17580",
+        "hover_id": "frost-r4c4",
+        "cell": [
+          3,
+          4,
+          4
+        ],
+        "bbox": [
+          1421,
+          272,
+          229,
+          128
+        ],
+        "sharpness": 2540.7,
+        "frames": 5,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Shatter",
+            "description": "Increases the critical strike chance of all your spells against Frozen targets by 50.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Right click to unlearn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Shatter",
+            "description": "Increases the critical strike chance of all your spells against Frozen targets by 50.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Right click to unlearn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Shatter",
+            "description": "Increases the critical strike chance of all your spells against frozen targets by 50%.",
+            "maxRank": 3,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "every crop of this cell shows rank 3/3 (points already spent); text may not be rank 1; second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 17580,
+        "frame_index": 1054800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike chance of all your spells against Frozen targets by {0}.",
+        "ranks": [
+          [
+            50
+          ],
+          [
+            60
+          ],
+          [
+            70
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 67,
+          "classicSpellIds": [
+            11170,
+            12982,
+            12983,
+            12984,
+            12985
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Shatter (talent 67): Classic has 5 ranks, step +10 applied over 3 ranks from 50.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 67,
+          "name": "Shatter",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r4c0",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 4,
+      "col": 0,
+      "name": "Improved Cone of Cold",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage dealt by your Cone of Cold spell by 12%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15071.333,
+        "timestamp": "04:11:11.333",
+        "frame_index": 904280,
+        "crop_path": "work/hovers/09-mage-15040/frost-r5c1.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r5c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r5c1",
+        "cell": [
+          3,
+          5,
+          1
+        ],
+        "bbox": [
+          1258,
+          362,
+          210,
+          92
+        ],
+        "sharpness": 3848.5,
+        "frames": 11,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Cone of Cold",
+            "description": "Increases the damage dealt by your Cone of Cold spell by 12%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Cone of Cold",
+            "description": "Increases the damage dealt by your Cone of Cold spell by 12%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Cone of Cold",
+            "description": "Increases the damage dealt by your Cone of Cold spell by 12%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage dealt by your Cone of Cold spell by {0}%.",
+        "ranks": [
+          [
+            12
+          ],
+          [
+            22
+          ],
+          [
+            32
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 64,
+          "classicSpellIds": [
+            11190,
+            12489,
+            12490
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Improved Cone of Cold (talent 64): Classic 15/25/35, Forever rank 1 is 12: applied +10/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 64,
+          "name": "Improved Cone of Cold",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r4c1",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Cold Snap",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "10 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Finishes the remaining cooldown on all your other Frost spells.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15071.0,
+        "timestamp": "04:11:11.000",
+        "frame_index": 904260,
+        "crop_path": "work/hovers/09-mage-15040/frost-r5c2.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r5c2",
+        "cell": [
+          3,
+          5,
+          2
+        ],
+        "bbox": [
+          1312,
+          362,
+          230,
+          92
+        ],
+        "sharpness": 3615.7,
+        "frames": 14,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Cold Snap",
+            "description": "Finishes the remaining cooldown on all your other Frost spells.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "10 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Cold Snap",
+            "description": "Finishes the remaining cooldown on all your other Frost spells.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "10 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Cold Snap",
+            "description": "Finishes the remaining cooldown on all your other Frost spells.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "10-mage-17580",
+            "t": 17586.267,
+            "sharpness": 2957.1,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Finishes the remaining cooldown on all your other Frost spells.",
+        "ranks": [
+          []
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "mage/frost/r4c2",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Fingers of Frost",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 1 spell cast as if the target were Frozen. Lasts 15 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15073.0,
+        "timestamp": "04:11:13.000",
+        "frame_index": 904380,
+        "crop_path": "work/hovers/09-mage-15040/frost-r5c3.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r5c3",
+        "cell": [
+          3,
+          5,
+          3
+        ],
+        "bbox": [
+          1366,
+          341,
+          227,
+          113
+        ],
+        "sharpness": 3940.3,
+        "frames": 8,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Fingers of Frost",
+            "description": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 1 spell cast as if the target were Frozen. Lasts 15 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Fingers of Frost",
+            "description": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 1 spell cast as if the target were Frozen. Lasts 15 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Fingers of Frost",
+            "description": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 2 spell casts as if the target were frozen. Lasts 15 sec.",
+            "maxRank": 2,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "10-mage-17580",
+            "t": 17587.133,
+            "sharpness": 3453.4,
+            "cut_off": false
+          }
+        ],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Chill effects a {0}% chance to grant you the Fingers of Frost effect, which treats your next {1} spell cast as if the target were Frozen. Lasts {2} sec.",
+        "ranks": [
+          [
+            15,
+            1,
+            15
+          ],
+          [
+            15,
+            1,
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (15 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "mage/frost/r5c2",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Winter's Chill",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your Frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15074.0,
+        "timestamp": "04:11:14.000",
+        "frame_index": 904440,
+        "crop_path": "work/hovers/09-mage-15040/frost-r6c3.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r6c3",
+        "cell": [
+          3,
+          6,
+          3
+        ],
+        "bbox": [
+          1366,
+          374,
+          229,
+          134
+        ],
+        "sharpness": 4216.4,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Winter's Chill",
+            "description": "Gives your Frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Winter's Chill",
+            "description": "Gives your Frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Winter's Chill",
+            "description": "Gives your frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
+            "maxRank": 5,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "10-mage-17580",
+            "t": 17592.133,
+            "sharpness": 3618.6,
+            "cut_off": false
+          }
+        ],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Frost damage spells a {0}% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            40
+          ],
+          [
+            60
+          ],
+          [
+            80
+          ],
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 68,
+          "classicSpellIds": [
+            11180,
+            28592,
+            28593,
+            28594,
+            28595
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Winter's Chill (talent 68): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 68,
+          "name": "Winter's Chill",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "mage/frost/r6c1",
+      "class": "mage",
+      "tree": "Frost",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Ice Barrier",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "305 Mana",
+        "Instant",
+        "30 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Instantly shields you, absorbing 431 damage. Lasts 1 min. While the shield holds, your spellcasts will not be interrupted or delayed from taking damage.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15082.133,
+        "timestamp": "04:11:22.133",
+        "frame_index": 904928,
+        "crop_path": "work/hovers/09-mage-15040/frost-r7c2.png",
+        "icon_crop_path": "work/hovers/09-mage-15040/frost-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "09-mage-15040",
+        "hover_id": "frost-r7c2",
+        "cell": [
+          3,
+          7,
+          2
+        ],
+        "bbox": [
+          1315,
+          426,
+          226,
+          136
+        ],
+        "sharpness": 4165.6,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Ice Barrier",
+            "description": "Instantly shields you, absorbing 431 damage. Lasts 1 min. While the shield holds, your spellcasts will not be interrupted or delayed from taking damage.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "305 Mana",
+              "Instant",
+              "30 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Ice Barrier",
+            "description": "Instantly shields you, absorbing 431 damage. Lasts 1 min. While the shield holds, your spellcasts will not be interrupted or delayed from taking damage.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "305 Mana",
+              "Instant",
+              "30 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Ice Barrier",
+            "description": "Instantly shields you, absorbing 431 damage. Lasts 1 min. While the shield holds, your spellcasts will not be interrupted or delayed from taking damage.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "10-mage-17580",
+            "t": 17596.733,
+            "sharpness": 4006.8,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 15040,
+        "frame_index": 902400,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Instantly shields you, absorbing {0} damage. Lasts {1} min. While the shield holds, your spellcasts will not be interrupted or delayed from taking damage.",
+        "ranks": [
+          [
+            431,
+            1
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    }
+  ]
+}

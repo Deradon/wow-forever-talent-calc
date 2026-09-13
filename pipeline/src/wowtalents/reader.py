@@ -158,7 +158,8 @@ def clean_reading(r: dict) -> dict:
 
     Lines that start with 'Requires' are moved from ``extra_lines``/``description`` head into
     ``requires``; a lone 'Passive' anywhere else becomes ``kind``; 'Click to learn' anywhere
-    else becomes ``footer``. Nothing is invented, only re-filed.
+    else becomes ``footer``; a ``requires`` entry without the literal "Requires " prefix gets it
+    back. Nothing else is invented, only re-filed.
     """
     out = {
         "name": norm_text(r.get("name")),
@@ -190,8 +191,13 @@ def clean_reading(r: dict) -> dict:
             out["footer"] = out["footer"] or line
         elif low == "passive":
             out["kind"] = "Passive"
-        elif line and line not in reqs:
-            reqs.append(line)
+        elif line:
+            # the field holds only red "Requires ..." lines by contract; a model that files
+            # "Shields" here has dropped the literal prefix, so restore it (nothing else is added)
+            if not low.startswith("requires"):
+                line = "Requires " + line
+            if line not in reqs:
+                reqs.append(line)
     out["requires"] = reqs
     d = out["description"]
     if d.lower().startswith("passive "):
@@ -313,6 +319,11 @@ def assemble_record(cls: str, hover: dict, segment_id: str, tree_name: str, page
             ],
         },
     }
+    if p["rank_max"] is None:
+        # the tooltip carried no "Rank N/M" line (seen 2026-09-13: druid Feral Charge, a dual-form
+        # ability whose box starts at the cost line); name and maxRank are unverifiable
+        rec["source"]["confidence"] = min(conf, 0.3)
+        rec["source"]["note"] = "no Rank line in the tooltip; name and maxRank unverified (maxRank exported as 1)"
     if tree_source:
         rec["tree_source"] = dict(tree_source)
     return rec
@@ -337,6 +348,28 @@ def merge_hovers(per_segment: list[tuple[str, dict]]) -> tuple[dict[tuple, dict]
             if cur is None or score > (0 if cur.get("cut_off") else 1, float(cur.get("sharpness") or 0.0)):
                 best[key] = h
     return best, everything
+
+
+TREE_NAME_SNAP = 90.0
+
+
+def same_tree_name(read: str, label: str) -> bool:
+    """True when a tree-strip reading is a near-miss of the human label from segments.md
+    (token_sort_ratio >= 90: "Marksmananship" vs "Marksmanship" 92), False for a real rename
+    ("Shadow Magic" vs "Shadow" 63, "Elemental Combat" vs "Elemental" 72)."""
+    from rapidfuzz import fuzz
+    return fuzz.token_sort_ratio(norm_name(read), norm_name(label)) >= TREE_NAME_SNAP
+
+
+def rank0_order(best: dict, candidates: list[dict]) -> list[dict]:
+    """The crops of one cell in reading order: ``best`` first, then the others by
+    (not cut off, sharpness, earlier time). Stage 5 walks this list until a crop
+    reads ``rank_current == 0``, so a segment recorded after points were spent
+    does not win a cell just because its crop is the sharpest."""
+    rest = [h for h in candidates if h is not best]
+    rest.sort(key=lambda h: (0 if h.get("cut_off") else 1, float(h.get("sharpness") or 0.0), -float(h.get("t") or 0.0)),
+              reverse=True)
+    return [best] + rest
 
 
 def consensus_cells(grids: list[list[dict]], min_cells: int = 40) -> tuple[set[tuple[int, int, int]], set[tuple[int, int, int]]]:

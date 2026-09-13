@@ -85,7 +85,13 @@ def test_description_match_needs_same_rank_count(prior):
     # Feline Swiftness (2 ranks) is worded like this 3-rank talent; not trusted
     r = anticipate(prior, "Rocket Sprint", "Increases your movement speed by 10% for 5 sec.", 3, "tinker")
     assert r.ranks_source == "manual"
+    m = R.match_classic("Rocket Sprint", "Increases your movement speed by 10% for 5 sec.", 2, "tinker", prior)
+    assert m.match == "description"  # same rank count: the wording match is trusted
+    # ... but a Forever duration aligned with a Classic bare number is a unit mismatch -> manual
     r = anticipate(prior, "Rocket Sprint", "Increases your movement speed by 10% for 5 sec.", 2, "tinker")
+    assert r.ranks_source == "manual" and "units differ" in r.ranks_note
+    r = anticipate(prior, "Rocket Sprint",
+                   "Increases your movement speed by 10% while outdoors and increases your chance to dodge by 1%.", 2, "tinker")
     assert r.ranks_source == "classic-prior" and r.ranks_prior["match"] == "description"
 
 
@@ -297,3 +303,49 @@ def test_anticipate_record_reads_candidate_shape(prior):
 def test_without_prior_everything_is_extrapolated_or_manual():
     r = R.anticipate("Toughness", "Increases your armor value from items by 2%.", 5, "paladin", None)
     assert r.ranks_source == "extrapolated" and r.ranks == [[2], [4], [6], [8], [10]]
+
+
+# ----------------------------------------------------------------------------
+# Paladin handover fixes: unit-aware durations, no token-subset "exact" names
+# ----------------------------------------------------------------------------
+
+GF_TEXT = ("Reduces the cooldown of your Blessing of Protection by 1 min and increases the duration of your "
+           "Blessing of Freedom by 3 sec.")
+
+
+def test_duration_unit_is_normalised_before_scaling(prior):
+    # Classic Guardian's Favor 60/120 sec vs Forever "1 min": 1/2 min, never 1/61
+    r = anticipate(prior, "Guardian's Favor", GF_TEXT, 2, "paladin")
+    assert r.ranks_source == "classic-prior" and r.ranks == [[1, 3], [2, 6]]
+    assert r.description.startswith("Reduces the cooldown of your Blessing of Protection by {0} min")
+    assert r.review and r.confidence == "medium" and "taken as 1/2 min" in r.ranks_note
+
+
+def test_duration_unit_that_does_not_convert_whole_goes_manual():
+    rec = {"class": "tinker", "tree": "gadgets", "name": "Quick Fuse", "classicTalentId": 1, "maxRank": 2,
+           "ranks": ["Reduces the cooldown by 45 sec.", "Reduces the cooldown by 90 sec."],
+           "slots": [[45], [90]]}
+    m = R.Match(rec, "exact-name", 1.0, False)
+    text = "Reduces the cooldown by 1 min."
+    toks = R.tokenize(text)
+    nums = [n for n in R.number_infos(text, toks) if not n.is_rank_ref]
+    r = R._from_classic(m, text, toks, nums, 2)
+    assert r.ranks_source == "manual" and r.ranks == [[1], [1]] and "units differ" in r.ranks_note
+
+
+def test_convert_duration():
+    assert R.convert_duration([60, 120], "sec", "min") == [1, 2]
+    assert R.convert_duration([1, 2], "min", "sec") == [60, 120]
+    assert R.convert_duration([45, 90], "sec", "min") is None
+    assert R.convert_duration([5, 10], "sec", "sec") == [5, 10]
+
+
+def test_token_subset_name_is_not_exact(prior):
+    # "Divine Precision" must not match Classic rogue "Precision" at similarity 1.0
+    m = R.match_classic("Divine Precision", "Increases your chance to hit with Holy spells by 6%.", 3, "paladin", prior)
+    assert m is None or m.match != "exact-name"
+    assert m is None or m.similarity < 1.0
+    r = anticipate(prior, "Divine Precision", "Increases your chance to hit with Holy spells by 6%.", 3, "paladin")
+    assert r.review and r.confidence != "high"
+    assert R.name_similarity("Divine Precision", "Precision") < R.NAME_THRESHOLD
+    assert R.name_similarity("Improved Heroic Strke", "Improved Heroic Strike") >= R.NAME_THRESHOLD

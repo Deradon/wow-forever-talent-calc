@@ -5,7 +5,7 @@
   "className": "Paladin",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T00:00:53Z",
+  "generatedAt": "2026-09-13T00:07:46Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -427,9 +427,9 @@
             "classicTalentId": 829,
             "classicSpellIds": [17106, 17107, 17108],
             "match": "description",
-            "similarity": 1.0
+            "similarity": 0.99
           },
-          "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (1.00): Classic 5/10/15 scaled by 2.",
+          "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (0.99): Classic 5/10/15 scaled by 2.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -574,12 +574,12 @@
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
-            "classicTalentId": 1630,
-            "classicSpellIds": [20189, 20192, 20193],
-            "match": "fuzzy-name",
-            "similarity": 1.0
+            "classicTalentId": 583,
+            "classicSpellIds": [16180, 16196, 16198],
+            "match": "description",
+            "similarity": 0.91
           },
-          "ranksNote": "Classic paladin/protection/Precision (talent 1630), matched on name (1.00): Classic 1/2/3, Forever rank 1 is 6: applied +1/rank.",
+          "ranksNote": "Classic shaman/restoration/Nature's Guidance (talent 583) (cross-class), matched on description (0.91): Classic 1/2/3, Forever rank 1 is 6: applied +1/rank.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -993,7 +993,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/paladin/protection/guardians-favor.icon.png",
           "description": "Reduces the cooldown of your Blessing of Protection by {0} min and Increases the duration of your Blessing of Freedom by {1} sec.",
-          "ranks": [[1, 3], [61, 6]],
+          "ranks": [[1, 3], [2, 6]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1002,7 +1002,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic paladin/protection/Guardian's Favor (talent 1425): Classic 60/120, Forever rank 1 is 1: applied +60/rank.",
+          "ranksNote": "Classic paladin/protection/Guardian's Favor (talent 1425): Classic 60/120 sec taken as 1/2 min.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1633,7 +1633,7 @@
               }
             ],
             "reviewed": false,
-            "note": "second reader (codex) differs in description; unparsed requirement: Shields"
+            "note": "second reader (codex) differs in description; unparsed requirement: Requires Shields"
           }
         }
       ]
@@ -2349,7 +2349,7 @@
               }
             ],
             "reviewed": false,
-            "note": "unparsed requirement: Level 40"
+            "note": "unparsed requirement: Requires Level 40"
           }
         }
       ]

@@ -15,11 +15,15 @@ Decision table (``ranksSource`` / confidence):
     maxRank == 1                                            observed       high
     exact same-class name, slots constant/arithmetic, c1==f1 classic-prior  high   (copied)
     fuzzy / cross-class / description match, copied         classic-prior  medium (review queue)
+    ("exact" is full-string key equality; the fuzzy tier uses token_sort_ratio, so a token subset
+    such as "Divine Precision" vs "Precision" never scores 1.0 and never skips review)
     Classic match, arithmetic slot, base or ratio differs   classic-prior  medium (scaled, review queue)
     Classic match, rank count differs, arithmetic slot      classic-prior  medium (step extended, review queue)
     Classic shape-changing text, rank 1 identical           classic-prior  medium (per-rank strings copied)
     Classic match, non-linear slot, c1 == f1                classic-prior  medium (copied, review queue)
     Classic match, non-linear slot, c1 != f1                manual         -      (rank 1 copied, review queue)
+    Classic duration in another unit (60 sec vs 1 min)      classic-prior  medium (Classic converted to Forever's unit, review queue)
+    Classic duration unit does not convert whole (45 sec vs 1 min) manual  -      (rank 1 copied, review queue)
     Classic match but slot counts cannot be aligned         -> falls through to the no-match rows
     (a description-only match also requires the same rank count)
     no match, 1 or 2 numeric slots, none a duration         extrapolated   low    (v1 * k, review queue)
@@ -50,10 +54,12 @@ TOKEN_RE = re.compile(r"\d+(?:\.\d+)?|(?<!\d)\.\d+|[A-Za-z]+")
 NUM_RE = re.compile(r"^(?:\d+(?:\.\d+)?|\.\d+)$")
 
 DURATION_UNITS = {"sec", "secs", "second", "seconds", "min", "mins", "minute", "minutes", "hr", "hrs", "hour", "hours"}
+DURATION_SECONDS = {"sec": 1, "secs": 1, "second": 1, "seconds": 1, "min": 60, "mins": 60, "minute": 60, "minutes": 60,
+                    "hr": 3600, "hrs": 3600, "hour": 3600, "hours": 3600}
 PLURAL_STOPWORDS = {"in", "of", "to", "for", "and", "or", "per", "from", "on", "by", "with", "while", "that", "when",
                     "the", "a", "an", "at", "is", "are", "if", "over", "up", "down", "than", "more", "less"}
 
-NAME_THRESHOLD = 90.0        # rapidfuzz token_ratio on names (brief (b), validator rule 15)
+NAME_THRESHOLD = 90.0        # rapidfuzz token_sort_ratio on names (brief (b), validator rule 15)
 DESC_THRESHOLD = 85.0        # token_ratio on number-masked descriptions (brief (b) step 3)
 MAXRANK_PENALTY = 10.0       # brief (b) step 2
 CLEAN_RATIO_STEP = 0.25      # f1/c1 is "clean" when a multiple of this, and <= 4
@@ -274,6 +280,13 @@ def _name_key(name: str) -> str:
     return slug(clean_text(name))
 
 
+def name_similarity(a: str, b: str) -> float:
+    """0..100 name similarity for the fuzzy tier: ``token_sort_ratio``, never ``token_set_ratio``,
+    so a token subset ("Divine Precision" vs Classic "Precision") does not score 100. Only the
+    exact tier (full-string key equality) may report 1.0."""
+    return float(fuzz.token_sort_ratio(clean_text(a), clean_text(b)))
+
+
 def _best(cands: list[dict], score_fn, threshold: float, max_rank: int) -> tuple[dict | None, float]:
     best, best_raw, best_adj = None, 0.0, -1.0
     for c in cands:
@@ -296,16 +309,16 @@ def match_classic(name: str, text: str, max_rank: int, cls: str, prior: Prior) -
         if exact:
             rec, _ = _best(exact, lambda r: 100.0, 0.0, max_rank)
             return Match(rec, "exact-name", 1.0, False)
-        rec, score = _best(same, lambda r: fuzz.token_ratio(name, r["name"]), NAME_THRESHOLD, max_rank)
+        rec, score = _best(same, lambda r: name_similarity(name, r["name"]), NAME_THRESHOLD, max_rank)
         if rec is not None:
-            return Match(rec, "fuzzy-name", round(score / 100, 2), False)
+            return Match(rec, "fuzzy-name", min(round(score / 100, 2), 0.99), False)
         exact = [r for r in others if _name_key(r["name"]) == key]
         if exact:
             rec, _ = _best(exact, lambda r: 100.0, 0.0, max_rank)
             return Match(rec, "exact-name", 1.0, True)
-        rec, score = _best(others, lambda r: fuzz.token_ratio(name, r["name"]), NAME_THRESHOLD, max_rank)
+        rec, score = _best(others, lambda r: name_similarity(name, r["name"]), NAME_THRESHOLD, max_rank)
         if rec is not None:
-            return Match(rec, "fuzzy-name", round(score / 100, 2), True)
+            return Match(rec, "fuzzy-name", min(round(score / 100, 2), 0.99), True)
     m = masked(clean_text(text))
     if m:
         # a wording match alone is only trusted when the rank count agrees as well
@@ -314,7 +327,7 @@ def match_classic(name: str, text: str, max_rank: int, cls: str, prior: Prior) -
             rec, score = _best(pool, lambda r: fuzz.token_ratio(m, r["_masked"]) if r["_masked"] else 0.0,
                                DESC_THRESHOLD, max_rank)
             if rec is not None:
-                return Match(rec, "description", round(score / 100, 2), cross)
+                return Match(rec, "description", min(round(score / 100, 2), 0.99), cross)
     return None
 
 
@@ -351,6 +364,29 @@ class SlotPlan:
     values: list[int | float]
     rule: str            # copied | ratio | step | constant | extended
     note: str | None = None
+
+
+def duration_unit(tokens: list[Token], pos: int, text: str) -> str | None:
+    """Unit word directly after the number at ``pos`` ("sec"/"min"/...), else None."""
+    nxt = tokens[pos + 1] if pos + 1 < len(tokens) else None
+    if nxt and nxt.text.lower() in DURATION_UNITS and text[tokens[pos].end:nxt.start].strip() == "":
+        return nxt.text.lower()
+    return None
+
+
+def convert_duration(values: list[int | float], from_unit: str, to_unit: str) -> list[int | float] | None:
+    """Re-express Classic per-rank durations in Forever's unit (60 sec -> 1 min). None when a value
+    does not come out whole in the target unit (45 sec is not "0.75 min" on a tooltip)."""
+    if from_unit == to_unit:
+        return list(values)
+    factor = DURATION_SECONDS[from_unit] / DURATION_SECONDS[to_unit]
+    out: list[int | float] = []
+    for v in values:
+        c = float(v) * factor
+        if abs(c - round(c)) > 1e-9:
+            return None
+        out.append(int(round(c)))
+    return out
 
 
 def scale_slot(f1: int | float, classic: list[int | float], max_rank: int) -> SlotPlan | None:
@@ -577,9 +613,24 @@ def _from_classic(m: Match, text: str, tokens: list[Token], slot_nums: list[Numb
     for n, p in aligned:
         if p is None:
             continue  # a number Classic keeps constant: stays literal in the template
-        plan = scale_slot(n.value, c_columns[p], max_rank)
+        column = c_columns[p]
+        f_unit = duration_unit(tokens, n.token.pos, text) if n.is_duration else None
+        c_unit = duration_unit(c_tokens, p, c_text)
+        if f_unit != c_unit:
+            # "1 min" against Classic "60 sec": normalise Classic into Forever's unit before scaling,
+            # or hand over when the units are incompatible / do not convert whole
+            converted = convert_duration(column, c_unit, f_unit) if f_unit and c_unit else None
+            if converted is None:
+                c_vals = "/".join(str(nice(v)) for v in column)
+                reason = (f"Classic {m.label} has {c_vals} {c_unit or 'without unit'} where Forever rank 1 has "
+                          f"{nice(n.value)} {f_unit or 'without unit'}; units differ")
+                return _manual(text, tokens, number_infos(text, tokens), max_rank, reason, m)
+            literal_notes.append(f"Classic {'/'.join(str(nice(v)) for v in column)} {c_unit} taken as "
+                                 f"{'/'.join(str(v) for v in converted)} {f_unit}")
+            column = converted
+        plan = scale_slot(n.value, column, max_rank)
         if plan is None:
-            c_vals = "/".join(str(nice(v)) for v in c_columns[p])
+            c_vals = "/".join(str(nice(v)) for v in column)
             reason = f"Classic {m.label} scales {c_vals} (non-linear) but Forever rank 1 is {nice(n.value)}"
             res = _manual(text, tokens, number_infos(text, tokens), max_rank, reason, m)
             return res
@@ -598,7 +649,7 @@ def _from_classic(m: Match, text: str, tokens: list[Token], slot_nums: list[Numb
         return None
     template, ranks = _finish(text, tokens, [(n, pl.values) for n, pl in plans], max_rank, heads)
     rules = {pl.rule for _, pl in plans}
-    notes = [pl.note for _, pl in plans if pl.note]
+    notes = [pl.note for _, pl in plans if pl.note] + literal_notes
     prefix = f"Classic {m.label}" + (" (cross-class)" if m.cross_class else "")
     if m.match == "description":
         prefix += f", matched on description ({m.similarity:.2f})"
@@ -607,7 +658,7 @@ def _from_classic(m: Match, text: str, tokens: list[Token], slot_nums: list[Numb
     # only an exact same-class name with a verbatim copy skips review: a fuzzy name means the
     # name itself needs a reviewer, a cross-class or description match is structural guesswork
     high = (m.match == "exact-name" and not m.cross_class and rules <= {"copied", "constant"}
-            and "non-linear Classic progression copied" not in notes)
+            and "non-linear Classic progression copied" not in notes and not literal_notes)
     if high:
         note = f"{prefix}: ranks copied."
         return RankResult(template, ranks, "classic-prior", _prior_block(m), note, False, "high", m, "copied", review=False)

@@ -1,0 +1,5613 @@
+{
+  "class": "rogue",
+  "generated_at": "2026-09-13T01:56:32Z",
+  "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+  "prompt_version": "tooltip-v3",
+  "passes": [
+    3.0,
+    2.0
+  ],
+  "segments": [
+    {
+      "segment_id": "14-rogue-18260",
+      "page": "Primary",
+      "trees": {
+        "1": "Assassination",
+        "2": "Combat",
+        "3": "Subtlety"
+      },
+      "unspent_talents": 29,
+      "hovers": 5
+    },
+    {
+      "segment_id": "15-rogue-18280",
+      "page": "Primary",
+      "trees": {
+        "1": "Assassination",
+        "2": "Combat",
+        "3": "Subtlety"
+      },
+      "unspent_talents": 29,
+      "hovers": 40
+    }
+  ],
+  "trees": {
+    "1": "Assassination",
+    "2": "Combat",
+    "3": "Subtlety"
+  },
+  "missing_cells": [
+    {
+      "tree": "Assassination",
+      "row": 4,
+      "col": 0,
+      "cell": "assassination-r5c1",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Assassination",
+      "row": 4,
+      "col": 2,
+      "cell": "assassination-r5c3",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Combat",
+      "row": 0,
+      "col": 2,
+      "cell": "combat-r1c3",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Combat",
+      "row": 1,
+      "col": 1,
+      "cell": "combat-r2c2",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Combat",
+      "row": 1,
+      "col": 2,
+      "cell": "combat-r2c3",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Combat",
+      "row": 2,
+      "col": 0,
+      "cell": "combat-r3c1",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Combat",
+      "row": 3,
+      "col": 0,
+      "cell": "combat-r4c1",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Combat",
+      "row": 3,
+      "col": 2,
+      "cell": "combat-r4c3",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Combat",
+      "row": 5,
+      "col": 1,
+      "cell": "combat-r6c2",
+      "reason": "never hovered in any segment"
+    },
+    {
+      "tree": "Combat",
+      "row": 6,
+      "col": 1,
+      "cell": "combat-r7c2",
+      "reason": "never hovered in any segment"
+    }
+  ],
+  "stats": {
+    "cells": 53,
+    "hovered": 43,
+    "read": 43,
+    "missing": 10,
+    "confidence": {
+      "0.7": 1,
+      "1.0": 42
+    },
+    "cut_off": 0,
+    "duplicate_names": 0,
+    "vlm_calls": 2,
+    "cache_hits": 92,
+    "vlm_seconds": 2.3,
+    "wall_seconds": 2.7
+  },
+  "candidates": [
+    {
+      "id": "rogue/assassination/r0c0",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 0,
+      "col": 0,
+      "name": "Improved Gouge",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the duration of your Gouge ability by 0.5 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18264.0,
+        "timestamp": "05:04:24.000",
+        "frame_index": 1095840,
+        "crop_path": "work/hovers/14-rogue-18260/assassination-r1c1.png",
+        "icon_crop_path": "work/hovers/14-rogue-18260/assassination-r1c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "14-rogue-18260",
+        "hover_id": "assassination-r1c1",
+        "cell": [
+          1,
+          1,
+          1
+        ],
+        "bbox": [
+          534,
+          121,
+          218,
+          117
+        ],
+        "sharpness": 2990.5,
+        "frames": 68,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Gouge",
+            "description": "Increases the duration of your Gouge ability by 0.5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Gouge",
+            "description": "Increases the duration of your Gouge ability by 0.5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Gouge",
+            "description": "Increases the duration of your Gouge ability by 0.5 sec.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18260,
+        "frame_index": 1095600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the duration of your Gouge ability by {0} sec.",
+        "ranks": [
+          [
+            0.5
+          ],
+          [
+            1
+          ],
+          [
+            1.5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 203,
+          "classicSpellIds": [
+            13741,
+            13793,
+            13792
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/combat/Improved Gouge (talent 203): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 203,
+          "name": "Improved Gouge",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/assassination/r0c1",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Remorseless Attacks",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "After killing a non-trivial enemy, gives you a 20% Increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18265.017,
+        "timestamp": "05:04:25.017",
+        "frame_index": 1095901,
+        "crop_path": "work/hovers/14-rogue-18260/assassination-r1c2.png",
+        "icon_crop_path": "work/hovers/14-rogue-18260/assassination-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "14-rogue-18260",
+        "hover_id": "assassination-r1c2",
+        "cell": [
+          1,
+          1,
+          2
+        ],
+        "bbox": [
+          588,
+          90,
+          227,
+          148
+        ],
+        "sharpness": 3867.4,
+        "frames": 43,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Remorseless Attacks",
+            "description": "After killing a non-trivial enemy, gives you a 20% Increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Remorseless Attacks",
+            "description": "After killing a non-trivial enemy, gives you a 20% Increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Remorseless Attacks",
+            "description": "After killing a non-trivial enemy, gives you a 20% increased Critical Strike Chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
+            "maxRank": 2,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "15-rogue-18280",
+            "t": 18337.133,
+            "sharpness": 3680.8,
+            "cut_off": false
+          }
+        ],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 18260,
+        "frame_index": 1095600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "After killing a non-trivial enemy, gives you a {0}% Increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            40
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 272,
+          "classicSpellIds": [
+            14144,
+            14148
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/assassination/Remorseless Attacks (talent 272): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 272,
+          "name": "Remorseless Attacks",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/assassination/r0c2",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Malice",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your critical strike chance with all attacks and Poisons by 1%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18340.133,
+        "timestamp": "05:05:40.133",
+        "frame_index": 1100408,
+        "crop_path": "work/hovers/15-rogue-18280/assassination-r1c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/assassination-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r1c3",
+        "cell": [
+          1,
+          1,
+          3
+        ],
+        "bbox": [
+          642,
+          121,
+          209,
+          117
+        ],
+        "sharpness": 2827.7,
+        "frames": 3,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Malice",
+            "description": "Increases your critical strike chance with all attacks and Poisons by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Malice",
+            "description": "Increases your critical strike chance with all attacks and Poisons by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Malice",
+            "description": "Increases your critical strike chance with all attacks and Poisons by 1%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your critical strike chance with all attacks and Poisons by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 270,
+          "classicSpellIds": [
+            14138,
+            14139,
+            14140,
+            14141,
+            14142
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/assassination/Malice (talent 270): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 270,
+          "name": "Malice",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/assassination/r1c0",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Ruthlessness",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your finishing moves a 20% chance to add a Combo Point to your target.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18266.367,
+        "timestamp": "05:04:26.367",
+        "frame_index": 1095982,
+        "crop_path": "work/hovers/14-rogue-18260/assassination-r2c1.png",
+        "icon_crop_path": "work/hovers/14-rogue-18260/assassination-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "14-rogue-18260",
+        "hover_id": "assassination-r2c1",
+        "cell": [
+          1,
+          2,
+          1
+        ],
+        "bbox": [
+          534,
+          190,
+          216,
+          102
+        ],
+        "sharpness": 3585.2,
+        "frames": 11,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Ruthlessness",
+            "description": "Gives your finishing moves a 20% chance to add a Combo Point to your target.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Ruthlessness",
+            "description": "Gives your finishing moves a 20% chance to add a Combo Point to your target.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Ruthlessness",
+            "description": "Gives your finishing moves a 20% chance to add a Combo Point to your target.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18260,
+        "frame_index": 1095600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your finishing moves a {0}% chance to add a Combo Point to your target.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            40
+          ],
+          [
+            60
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 273,
+          "classicSpellIds": [
+            14156,
+            14160,
+            14161
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/assassination/Ruthlessness (talent 273): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 273,
+          "name": "Ruthlessness",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/assassination/r1c1",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Murder",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases all damage dealt by 2% against Humanoid and Giant targets.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18266.483,
+        "timestamp": "05:04:26.483",
+        "frame_index": 1095989,
+        "crop_path": "work/hovers/14-rogue-18260/assassination-r2c2.png",
+        "icon_crop_path": "work/hovers/14-rogue-18260/assassination-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "14-rogue-18260",
+        "hover_id": "assassination-r2c2",
+        "cell": [
+          1,
+          2,
+          2
+        ],
+        "bbox": [
+          588,
+          200,
+          211,
+          92
+        ],
+        "sharpness": 3198.4,
+        "frames": 2,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Murder",
+            "description": "Increases all damage dealt by 2% against Humanoid and Giant targets.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Murder",
+            "description": "Increases all damage dealt by 2% against Humanoid and Giant targets.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Murder",
+            "description": "Increases all damage dealt by 2% against Humanoid and Giant targets.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18260,
+        "frame_index": 1095600,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases all damage dealt by {0}% against Humanoid and Giant targets.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 274,
+          "classicSpellIds": [
+            14158,
+            14159
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/assassination/Murder (talent 274): Classic 1/2 scaled by 2.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 274,
+          "name": "Murder",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/assassination/r1c3",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 1,
+      "col": 3,
+      "name": "Improved Slice and Dice",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the duration of your Slice and Dice ability by 15%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18280.067,
+        "timestamp": "05:04:40.067",
+        "frame_index": 1096804,
+        "crop_path": "work/hovers/15-rogue-18280/assassination-r2c4.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/assassination-r2c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r2c4",
+        "cell": [
+          1,
+          2,
+          4
+        ],
+        "bbox": [
+          696,
+          200,
+          227,
+          92
+        ],
+        "sharpness": 3783.1,
+        "frames": 8,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Slice and Dice",
+            "description": "Increases the duration of your Slice and Dice ability by 15%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Slice and Dice",
+            "description": "Increases the duration of your Slice and Dice ability by 15%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Slice and Dice",
+            "description": "Increases the duration of your Slice and Dice ability by 15%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "14-rogue-18260",
+            "t": 18269.0,
+            "sharpness": 3570.6,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the duration of your Slice and Dice ability by {0}%.",
+        "ranks": [
+          [
+            15
+          ],
+          [
+            30
+          ],
+          [
+            45
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 277,
+          "classicSpellIds": [
+            14165,
+            14166,
+            14167
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/assassination/Improved Slice and Dice (talent 277): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 277,
+          "name": "Improved Slice and Dice",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/assassination/r2c0",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Relentless Strikes",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your finishing moves have a 20% chance per Combo Point to restore 25 Energy.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18292.267,
+        "timestamp": "05:04:52.267",
+        "frame_index": 1097536,
+        "crop_path": "work/hovers/15-rogue-18280/assassination-r3c1.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/assassination-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r3c1",
+        "cell": [
+          1,
+          3,
+          1
+        ],
+        "bbox": [
+          534,
+          244,
+          221,
+          102
+        ],
+        "sharpness": 3911.0,
+        "frames": 49,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Relentless Strikes",
+            "description": "Your finishing moves have a 20% chance per Combo Point to restore 25 Energy.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Relentless Strikes",
+            "description": "Your finishing moves have a 20% chance per Combo Point to restore 25 Energy.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Relentless Strikes",
+            "description": "Your finishing moves have a 20% chance per Combo Point to restore 25 Energy.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your finishing moves have a {0}% chance per Combo Point to restore {1} Energy.",
+        "ranks": [
+          [
+            20,
+            25
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/assassination/r2c1",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Improved Expose Armor",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the Energy cost of your Expose Armor ability by 5, and refunds 1 Combo Point when cast with 5 Combo Points.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18286.067,
+        "timestamp": "05:04:46.067",
+        "frame_index": 1097164,
+        "crop_path": "work/hovers/15-rogue-18280/assassination-r3c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/assassination-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r3c2",
+        "cell": [
+          1,
+          3,
+          2
+        ],
+        "bbox": [
+          588,
+          233,
+          223,
+          113
+        ],
+        "sharpness": 4198.7,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Expose Armor",
+            "description": "Reduces the Energy cost of your Expose Armor ability by 5, and refunds 1 Combo Point when cast with 5 Combo Points.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Expose Armor",
+            "description": "Reduces the Energy cost of your Expose Armor ability by 5, and refunds 1 Combo Point when cast with 5 Combo Points.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Expose Armor",
+            "description": "Reduces the Energy cost of your Expose Armor ability by 5, and refunds 1 Combo Point when cast with 5 Combo Points.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the Energy cost of your Expose Armor ability by {0}, and refunds {1} Combo Point when cast with {2} Combo Points.",
+        "ranks": [
+          [
+            5,
+            1,
+            5
+          ],
+          [
+            5,
+            1,
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match rogue/assassination/Improved Expose Armor (talent 278) has no alignable slots; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 278,
+          "name": "Improved Expose Armor",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/assassination/r2c2",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 2,
+      "col": 2,
+      "name": "Lethality",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Mutilate, Ghostly Strike, and Hemorrhage abilities by 6%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18282.067,
+        "timestamp": "05:04:42.067",
+        "frame_index": 1096924,
+        "crop_path": "work/hovers/15-rogue-18280/assassination-r3c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/assassination-r3c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r3c3",
+        "cell": [
+          1,
+          3,
+          3
+        ],
+        "bbox": [
+          642,
+          233,
+          224,
+          113
+        ],
+        "sharpness": 4006.2,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Lethality",
+            "description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Mutilate, Ghostly Strike, and Hemorrhage abilities by 6%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Lethality",
+            "description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Mutilate, Ghostly Strike, and Hemorrhage abilities by 6%.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Lethality",
+            "description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Mutilate, Ghostly Strike, and Hemorrhage abilities by 6%.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Mutilate, Ghostly Strike, and Hemorrhage abilities by {0}%.",
+        "ranks": [
+          [
+            6
+          ],
+          [
+            12
+          ],
+          [
+            18
+          ],
+          [
+            24
+          ],
+          [
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 269,
+          "classicSpellIds": [
+            14128,
+            14132,
+            14135,
+            14136,
+            14137
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/assassination/Lethality (talent 269): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 269,
+          "name": "Lethality",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/assassination/r3c0",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Vile Poisons",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage dealt by your poisons by 4% and gives your poisons an additional 8% chance to resist dispel effects.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18296.067,
+        "timestamp": "05:04:56.067",
+        "frame_index": 1097764,
+        "crop_path": "work/hovers/15-rogue-18280/assassination-r4c1.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/assassination-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r4c1",
+        "cell": [
+          1,
+          4,
+          1
+        ],
+        "bbox": [
+          534,
+          287,
+          227,
+          113
+        ],
+        "sharpness": 3602.4,
+        "frames": 7,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Vile Poisons",
+            "description": "Increases the damage dealt by your poisons by 4% and gives your poisons an additional 8% chance to resist dispel effects.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Vile Poisons",
+            "description": "Increases the damage dealt by your poisons by 4% and gives your poisons an additional 8% chance to resist dispel effects.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Vile Poisons",
+            "description": "Increases the damage dealt by your poisons by 4% and gives your poisons an additional 8% chance to resist dispel effects.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage dealt by your poisons by {0}% and gives your poisons an additional {1}% chance to resist dispel effects.",
+        "ranks": [
+          [
+            4,
+            8
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            12,
+            24
+          ],
+          [
+            16,
+            32
+          ],
+          [
+            20,
+            40
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 682,
+          "classicSpellIds": [
+            16513,
+            16514,
+            16515,
+            16719,
+            16720
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/assassination/Vile Poisons (talent 682): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 682,
+          "name": "Vile Poisons",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/assassination/r3c1",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "Cold Blood",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "3 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, Eviscerate, or Mutilate by 100%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18297.2,
+        "timestamp": "05:04:57.200",
+        "frame_index": 1097832,
+        "crop_path": "work/hovers/15-rogue-18280/assassination-r4c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/assassination-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r4c2",
+        "cell": [
+          1,
+          4,
+          2
+        ],
+        "bbox": [
+          588,
+          287,
+          227,
+          113
+        ],
+        "sharpness": 4108.0,
+        "frames": 11,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Cold Blood",
+            "description": "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, Eviscerate, or Mutilate by 100%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Cold Blood",
+            "description": "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, Eviscerate, or Mutilate by 100%.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "3 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Cold Blood",
+            "description": "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, Eviscerate, or Mutilate by 100%.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, Eviscerate, or Mutilate by {0}%.",
+        "ranks": [
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/assassination/r3c2",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Improved Poisons",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the chance to apply Poisons to your target by 2%, and gives Poison applications a 10% chance to not consume a charge.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18300.0,
+        "timestamp": "05:05:00.000",
+        "frame_index": 1098000,
+        "crop_path": "work/hovers/15-rogue-18280/assassination-r4c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/assassination-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r4c3",
+        "cell": [
+          1,
+          4,
+          3
+        ],
+        "bbox": [
+          642,
+          287,
+          222,
+          113
+        ],
+        "sharpness": 4213.0,
+        "frames": 30,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Poisons",
+            "description": "Increases the chance to apply Poisons to your target by 2%, and gives Poison applications a 10% chance to not consume a charge.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Poisons",
+            "description": "Increases the chance to apply Poisons to your target by 2%, and gives Poison applications a 10% chance to not consume a charge.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Poisons",
+            "description": "Increases the chance to apply Poisons to your target by 2%, and gives Poison applications a 10% chance to not consume a charge.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the chance to apply Poisons to your target by {0}%, and gives Poison applications a {1}% chance to not consume a charge.",
+        "ranks": [
+          [
+            2,
+            10
+          ],
+          [
+            4,
+            20
+          ],
+          [
+            6,
+            30
+          ],
+          [
+            8,
+            40
+          ],
+          [
+            10,
+            50
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match rogue/assassination/Improved Poisons (talent 268) has no alignable slots; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 268,
+          "name": "Improved Poisons",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/assassination/r4c1",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Mutilate",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "60 Energy",
+        "Instant"
+      ],
+      "requires": [],
+      "description_rank1": "Instantly attacks with both weapons for 75% weapon damage plus an additional 13 with each weapon. Damage increased by 20% against Poisoned targets. Awards 2 Combo Points.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18308.2,
+        "timestamp": "05:05:08.200",
+        "frame_index": 1098492,
+        "crop_path": "work/hovers/15-rogue-18280/assassination-r5c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/assassination-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r5c2",
+        "cell": [
+          1,
+          5,
+          2
+        ],
+        "bbox": [
+          588,
+          318,
+          227,
+          136
+        ],
+        "sharpness": 4497.4,
+        "frames": 14,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Mutilate",
+            "description": "Instantly attacks with both weapons for 75% weapon damage plus an additional 13 with each weapon. Damage increased by 20% against Poisoned targets. Awards 2 Combo Points.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "60 Energy",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Mutilate",
+            "description": "Instantly attacks with both weapons for 75% weapon damage plus an additional 13 with each weapon. Damage increased by 20% against Poisoned targets. Awards 2 Combo Points.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "60 Energy",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Mutilate",
+            "description": "Instantly attacks with both weapons for 75% weapon damage plus an additional 13 with each weapon. Damage increased by 20% against Poisoned targets. Awards 2 Combo Points.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Instantly attacks with both weapons for {0}% weapon damage plus an additional {1} with each weapon. Damage increased by {2}% against Poisoned targets. Awards {3} Combo Points.",
+        "ranks": [
+          [
+            75,
+            13,
+            20,
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/assassination/r5c2",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Seal Fate",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your critical strikes from abilities that add Combo Points have a 20% chance to add an additional Combo Point.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18342.067,
+        "timestamp": "05:05:42.067",
+        "frame_index": 1100524,
+        "crop_path": "work/hovers/15-rogue-18280/assassination-r6c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/assassination-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r6c3",
+        "cell": [
+          1,
+          6,
+          3
+        ],
+        "bbox": [
+          642,
+          406,
+          221,
+          102
+        ],
+        "sharpness": 3901.3,
+        "frames": 6,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Seal Fate",
+            "description": "Your critical strikes from abilities that add Combo Points have a 20% chance to add an additional Combo Point.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Seal Fate",
+            "description": "Your critical strikes from abilities that add Combo Points have a 20% chance to add an additional Combo Point.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Seal Fate",
+            "description": "Your critical strikes from abilities that add Combo Points have a 20% chance to add an additional Combo Point.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your critical strikes from abilities that add Combo Points have a {0}% chance to add an additional Combo Point.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            40
+          ],
+          [
+            60
+          ],
+          [
+            80
+          ],
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 283,
+          "classicSpellIds": [
+            14186,
+            14190,
+            14193,
+            14194,
+            14195
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/assassination/Seal Fate (talent 283): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 283,
+          "name": "Seal Fate",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/assassination/r6c1",
+      "class": "rogue",
+      "tree": "Assassination",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Venom",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "25 Energy",
+        "1 to 5 Combo Points",
+        "Instant"
+      ],
+      "requires": [],
+      "description_rank1": "Finishing move that increases the damage of your Poisons by 30% and your chance to apply Poisons by 10%. Lasts longer per combo point: 1 point: 9 seconds 2 points: 12 seconds 3 points: 15 seconds 4 points: 18 seconds 5 points: 21 seconds",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18318.733,
+        "timestamp": "05:05:18.733",
+        "frame_index": 1099124,
+        "crop_path": "work/hovers/15-rogue-18280/assassination-r7c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/assassination-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "assassination-r7c2",
+        "cell": [
+          1,
+          7,
+          2
+        ],
+        "bbox": [
+          588,
+          374,
+          221,
+          188
+        ],
+        "sharpness": 3941.7,
+        "frames": 10,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Venom",
+            "description": "Finishing move that increases the damage of your Poisons by 30% and your chance to apply Poisons by 10%. Lasts longer per combo point: 1 point: 9 seconds 2 points: 12 seconds 3 points: 15 seconds 4 points: 18 seconds 5 points: 21 seconds",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "25 Energy",
+              "1 to 5 Combo Points",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Venom",
+            "description": "Finishing move that increases the damage of your Poisons by 30% and your chance to apply Poisons by 10%. Lasts longer per combo point: 1 point: 9 seconds 2 points: 12 seconds 3 points: 15 seconds 4 points: 18 seconds 5 points: 21 seconds",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "25 Energy",
+              "1 to 5 Combo Points",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Venom",
+            "description": "Finishing move that increases the damage of your Poisons by 30% and your chance to apply Poisons by 10%. Lasts longer per combo point: 1 point: 9 seconds 2 points: 12 seconds 3 points: 15 seconds 4 points: 18 seconds 5 points: 21 seconds",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Finishing move that increases the damage of your Poisons by {0}% and your chance to apply Poisons by {1}%. Lasts longer per combo point: {2} point: {3} seconds {4} points: {5} seconds {6} points: {7} seconds {8} points: {9} seconds {10} points: {11} seconds",
+        "ranks": [
+          [
+            30,
+            10,
+            1,
+            9,
+            2,
+            12,
+            3,
+            15,
+            4,
+            18,
+            5,
+            21
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/combat/r0c0",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 0,
+      "col": 0,
+      "name": "Improved Eviscerate",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage done by your Eviscerate ability by 7%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18345.133,
+        "timestamp": "05:05:45.133",
+        "frame_index": 1100708,
+        "crop_path": "work/hovers/15-rogue-18280/combat-r1c1.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/combat-r1c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r1c1",
+        "cell": [
+          2,
+          1,
+          1
+        ],
+        "bbox": [
+          894,
+          121,
+          210,
+          117
+        ],
+        "sharpness": 3100.7,
+        "frames": 5,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Eviscerate",
+            "description": "Increases the damage done by your Eviscerate ability by 7%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Eviscerate",
+            "description": "Increases the damage done by your Eviscerate ability by 7%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Eviscerate",
+            "description": "Increases the damage done by your Eviscerate ability by 7%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by your Eviscerate ability by {0}%.",
+        "ranks": [
+          [
+            7
+          ],
+          [
+            12
+          ],
+          [
+            17
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 276,
+          "classicSpellIds": [
+            14162,
+            14163,
+            14164
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/assassination/Improved Eviscerate (talent 276): Classic 5/10/15, Forever rank 1 is 7: applied +5/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 276,
+          "name": "Improved Eviscerate",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/combat/r0c1",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Improved Sinister Strike",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the Energy cost of your Sinister Strike ability by 3.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18346.0,
+        "timestamp": "05:05:46.000",
+        "frame_index": 1100760,
+        "crop_path": "work/hovers/15-rogue-18280/combat-r1c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/combat-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r1c2",
+        "cell": [
+          2,
+          1,
+          2
+        ],
+        "bbox": [
+          948,
+          121,
+          191,
+          117
+        ],
+        "sharpness": 3748.0,
+        "frames": 11,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Sinister Strike",
+            "description": "Reduces the Energy cost of your Sinister Strike ability by 3.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Sinister Strike",
+            "description": "Reduces the Energy cost of your Sinister Strike ability by 3.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Sinister Strike",
+            "description": "Reduces the Energy cost of your Sinister Strike ability by 3.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the Energy cost of your Sinister Strike ability by {0}.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 201,
+          "classicSpellIds": [
+            13732,
+            13863
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/combat/Improved Sinister Strike (talent 201): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 201,
+          "name": "Improved Sinister Strike",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/combat/r1c0",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Puncturing Wounds",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike chance of your Backstab by 10% and your Mutilate by 5%, and gives Backstab a 15% chance to add an additional Combo Point.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18356.333,
+        "timestamp": "05:05:56.333",
+        "frame_index": 1101380,
+        "crop_path": "work/hovers/15-rogue-18280/combat-r2c1.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/combat-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r2c1",
+        "cell": [
+          2,
+          2,
+          1
+        ],
+        "bbox": [
+          894,
+          169,
+          216,
+          123
+        ],
+        "sharpness": 4502.6,
+        "frames": 67,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Puncturing Wounds",
+            "description": "Increases the critical strike chance of your Backstab by 10% and your Mutilate by 5%, and gives Backstab a 15% chance to add an additional Combo Point.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Puncturing Wounds",
+            "description": "Increases the critical strike chance of your Backstab by 10% and your Mutilate by 5%, and gives Backstab a 15% chance to add an additional Combo Point.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Puncturing Wounds",
+            "description": "Increases the critical strike chance of your Backstab by 10% and your Mutilate by 5%, and gives Backstab a 15% chance to add an additional Combo Point.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike chance of your Backstab by {0}% and your Mutilate by {1}%, and gives Backstab a {2}% chance to add an additional Combo Point.",
+        "ranks": [
+          [
+            10,
+            5,
+            15
+          ],
+          [
+            10,
+            5,
+            15
+          ],
+          [
+            10,
+            5,
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match rogue/combat/Improved Backstab (talent 202) has no alignable slots; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 202,
+          "name": "Improved Backstab",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 3,
+          "match": "description",
+          "similarity": 0.9
+        }
+      }
+    },
+    {
+      "id": "rogue/combat/r2c1",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Riposte",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "10 Energy",
+        "Instant",
+        "Melee Range",
+        "6 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for 6 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18364.0,
+        "timestamp": "05:06:04.000",
+        "frame_index": 1101840,
+        "crop_path": "work/hovers/15-rogue-18280/combat-r3c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/combat-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r3c2",
+        "cell": [
+          2,
+          3,
+          2
+        ],
+        "bbox": [
+          948,
+          221,
+          227,
+          125
+        ],
+        "sharpness": 4516.1,
+        "frames": 30,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Riposte",
+            "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for 6 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "10 Energy",
+              "Instant",
+              "Melee Range",
+              "6 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Riposte",
+            "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for 6 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "10 Energy",
+              "Instant",
+              "Melee Range",
+              "6 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Riposte",
+            "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for 6 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "A strike that becomes active after parrying an opponent's attack. This attack deals {0}% weapon damage and disarms the target for {1} sec.",
+        "ranks": [
+          [
+            150,
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/combat/r2c3",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 2,
+      "col": 3,
+      "name": "Improved Sprint",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives a 50% chance to remove all movement impairing effects when you activate your Sprint ability.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18402.0,
+        "timestamp": "05:06:42.000",
+        "frame_index": 1104120,
+        "crop_path": "work/hovers/15-rogue-18280/combat-r3c4.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/combat-r3c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r3c4",
+        "cell": [
+          2,
+          3,
+          4
+        ],
+        "bbox": [
+          1056,
+          244,
+          225,
+          102
+        ],
+        "sharpness": 4083.0,
+        "frames": 16,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Sprint",
+            "description": "Gives a 50% chance to remove all movement impairing effects when you activate your Sprint ability.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Sprint",
+            "description": "Gives a 50% chance to remove all movement impairing effects when you activate your Sprint ability.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Sprint",
+            "description": "Gives a 50% chance to remove all movement impairing effects when you activate your Sprint ability.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives a {0}% chance to remove all movement impairing effects when you activate your Sprint ability.",
+        "ranks": [
+          [
+            50
+          ],
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 222,
+          "classicSpellIds": [
+            13743,
+            13875
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/combat/Improved Sprint (talent 222): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 222,
+          "name": "Improved Sprint",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/combat/r3c1",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "Restless Blades",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your damaging finishing moves reduce the remaining cooldown of your Adrenaline Rush, Blade Flurry, Evasion, Sprint, and Vanish abilities by 2 sec per combo point.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18422.667,
+        "timestamp": "05:07:02.667",
+        "frame_index": 1105360,
+        "crop_path": "work/hovers/15-rogue-18280/combat-r4c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/combat-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r4c2",
+        "cell": [
+          2,
+          4,
+          2
+        ],
+        "bbox": [
+          948,
+          277,
+          227,
+          123
+        ],
+        "sharpness": 4532.1,
+        "frames": 60,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Restless Blades",
+            "description": "Your damaging finishing moves reduce the remaining cooldown of your Adrenaline Rush, Blade Flurry, Evasion, Sprint, and Vanish abilities by 2 sec per combo point.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Restless Blades",
+            "description": "Your damaging finishing moves reduce the remaining cooldown of your Adrenaline Rush, Blade Flurry, Evasion, Sprint, and Vanish abilities by 2 sec per combo point.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Restless Blades",
+            "description": "Your damaging finishing moves reduce the remaining cooldown of your Adrenaline Rush, Blade Flurry, Evasion, Sprint, and Vanish abilities by 2 sec per combo point.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your damaging finishing moves reduce the remaining cooldown of your Adrenaline Rush, Blade Flurry, Evasion, Sprint, and Vanish abilities by {0} sec per combo point.",
+        "ranks": [
+          [
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/combat/r4c1",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Blade Flurry",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "25 Energy",
+        "Instant",
+        "2 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Increases your melee attack speed by 20% and your melee attacks strike an additional nearby opponent. Lasts 15 sec.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18406.2,
+        "timestamp": "05:06:46.200",
+        "frame_index": 1104372,
+        "crop_path": "work/hovers/15-rogue-18280/combat-r5c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/combat-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r5c2",
+        "cell": [
+          2,
+          5,
+          2
+        ],
+        "bbox": [
+          948,
+          329,
+          227,
+          125
+        ],
+        "sharpness": 3947.3,
+        "frames": 23,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Blade Flurry",
+            "description": "Increases your melee attack speed by 20% and your melee attacks strike an additional nearby opponent. Lasts 15 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "25 Energy",
+              "Instant",
+              "2 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Blade Flurry",
+            "description": "Increases your melee attack speed by 20% and your melee attacks strike an additional nearby opponent. Lasts 15 sec.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "25 Energy",
+              "Instant",
+              "2 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Blade Flurry",
+            "description": "Increases your melee attack speed by 20% and your melee attacks strike an additional nearby opponent. Lasts 15 sec.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your melee attack speed by {0}% and your melee attacks strike an additional nearby opponent. Lasts {1} sec.",
+        "ranks": [
+          [
+            20,
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/combat/r4c2",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Hack and Slash",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives your melee weapon attacks a benefit depending on the weapon. Axe/Sword: Your successful melee attacks have a 1% chance to trigger an extra attack on the target. Dagger/Fist: Increases your critical strike chance by 1%. Mace: Your attacks ignore 3% of your target's armor.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18412.467,
+        "timestamp": "05:06:52.467",
+        "frame_index": 1104748,
+        "crop_path": "work/hovers/15-rogue-18280/combat-r5c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/combat-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r5c3",
+        "cell": [
+          2,
+          5,
+          3
+        ],
+        "bbox": [
+          1002,
+          247,
+          207,
+          207
+        ],
+        "sharpness": 4308.3,
+        "frames": 60,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Hack and Slash",
+            "description": "Gives your melee weapon attacks a benefit depending on the weapon. Axe/Sword: Your successful melee attacks have a 1% chance to trigger an extra attack on the target. Dagger/Fist: Increases your critical strike chance by 1%. Mace: Your attacks ignore 3% of your target's armor.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Hack and Slash",
+            "description": "Gives your melee weapon attacks a benefit depending on the weapon. Axe/Sword: Your successful melee attacks have a 1% chance to trigger an extra attack on the target. Dagger/Fist: Increases your critical strike chance by 1%. Mace: Your attacks ignore 3% of your target's armor.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Hack and Slash",
+            "description": "Gives your melee weapon attacks a benefit depending on the weapon. Axe/Sword: Your successful melee attacks have a 1% chance to trigger an extra attack on the target. Dagger/Fist: Increases your critical strike chance by 1%. Mace: Your attacks ignore 3% of your target's armor.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives your melee weapon attacks a benefit depending on the weapon. Axe/Sword: Your successful melee attacks have a {0}% chance to trigger an extra attack on the target. Dagger/Fist: Increases your critical strike chance by {1}%. Mace: Your attacks ignore {2}% of your target's armor.",
+        "ranks": [
+          [
+            1,
+            1,
+            3
+          ],
+          [
+            1,
+            1,
+            3
+          ],
+          [
+            1,
+            1,
+            3
+          ],
+          [
+            1,
+            1,
+            3
+          ],
+          [
+            1,
+            1,
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match rogue/assassination/Malice (talent 270) has no alignable slots; ranks 2..5 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 270,
+          "name": "Malice",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 5,
+          "match": "description",
+          "similarity": 0.99
+        }
+      }
+    },
+    {
+      "id": "rogue/combat/r5c2",
+      "class": "rogue",
+      "tree": "Combat",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Aggression",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 2%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18488.8,
+        "timestamp": "05:08:08.800",
+        "frame_index": 1109328,
+        "crop_path": "work/hovers/15-rogue-18280/combat-r6c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/combat-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "combat-r6c3",
+        "cell": [
+          2,
+          6,
+          3
+        ],
+        "bbox": [
+          1002,
+          406,
+          227,
+          102
+        ],
+        "sharpness": 3338.3,
+        "frames": 6,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Aggression",
+            "description": "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Aggression",
+            "description": "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Aggression",
+            "description": "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 2%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1122,
+          "classicSpellIds": [
+            18427,
+            18428,
+            18429
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/combat/Aggression (talent 1122): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1122,
+          "name": "Aggression",
+          "class": "rogue",
+          "tree": "combat",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r0c0",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 0,
+      "col": 0,
+      "name": "Camouflage",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces your speed penalty from your Stealth ability by 3% and reduces its cooldown by 2 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18502.067,
+        "timestamp": "05:08:22.067",
+        "frame_index": 1110124,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r1c1.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r1c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r1c1",
+        "cell": [
+          3,
+          1,
+          1
+        ],
+        "bbox": [
+          1259,
+          111,
+          225,
+          127
+        ],
+        "sharpness": 3138.8,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Camouflage",
+            "description": "Reduces your speed penalty from your Stealth ability by 3% and reduces its cooldown by 2 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Camouflage",
+            "description": "Reduces your speed penalty from your Stealth ability by 3% and reduces its cooldown by 2 sec.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Camouflage",
+            "description": "Reduces your speed penalty from your Stealth ability by 3% and reduces its cooldown by 2 sec.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces your speed penalty from your Stealth ability by {0}% and reduces its cooldown by {1} sec.",
+        "ranks": [
+          [
+            3,
+            2
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            15,
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 244,
+          "classicSpellIds": [
+            13975,
+            14062,
+            14063,
+            14064,
+            14065
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/subtlety/Camouflage (talent 244): Classic 1/2/3/4/5 scaled by 2.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 244,
+          "name": "Camouflage",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r0c1",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 0,
+      "col": 1,
+      "name": "Master of Deception",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the chance enemies have to detect you while in Stealth mode as if you were 1 level higher.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18503.0,
+        "timestamp": "05:08:23.000",
+        "frame_index": 1110180,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r1c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r1c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r1c2",
+        "cell": [
+          3,
+          1,
+          2
+        ],
+        "bbox": [
+          1313,
+          111,
+          221,
+          127
+        ],
+        "sharpness": 3394.8,
+        "frames": 4,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Master of Deception",
+            "description": "Reduces the chance enemies have to detect you while in Stealth mode as if you were 1 level higher.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Master of Deception",
+            "description": "Reduces the chance enemies have to detect you while in Stealth mode as if you were 1 level higher.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Master of Deception",
+            "description": "Reduces the chance enemies have to detect you while in Stealth mode as if you were 1 level higher.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the chance enemies have to detect you while in Stealth mode as if you were {0} level higher{1}.",
+        "ranks": [
+          [
+            1,
+            ""
+          ],
+          [
+            2,
+            "s"
+          ],
+          [
+            3,
+            "s"
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match rogue/subtlety/Master of Deception (talent 241) has no alignable slots; linear x2..x3 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 241,
+          "name": "Master of Deception",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r0c2",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 0,
+      "col": 2,
+      "name": "Opportunity",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the damage dealt by your Backstab, Garrote, Ambush, and Mutilate abilities by 5%.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18504.267,
+        "timestamp": "05:08:24.267",
+        "frame_index": 1110256,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r1c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r1c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r1c3",
+        "cell": [
+          3,
+          1,
+          3
+        ],
+        "bbox": [
+          1367,
+          111,
+          211,
+          127
+        ],
+        "sharpness": 3261.3,
+        "frames": 16,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Opportunity",
+            "description": "Increases the damage dealt by your Backstab, Garrote, Ambush, and Mutilate abilities by 5%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Opportunity",
+            "description": "Increases the damage dealt by your Backstab, Garrote, Ambush, and Mutilate abilities by 5%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Opportunity",
+            "description": "Increases the damage dealt by your Backstab, Garrote, Ambush, and Mutilate abilities by 5%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage dealt by your Backstab, Garrote, Ambush, and Mutilate abilities by {0}%.",
+        "ranks": [
+          [
+            5
+          ],
+          [
+            9
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 261,
+          "classicSpellIds": [
+            14057,
+            14072,
+            14073,
+            14074,
+            14075
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/subtlety/Opportunity (talent 261): Classic has 5 ranks, step +4 applied over 2 ranks from 5.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "extended",
+        "match": {
+          "classicTalentId": 261,
+          "name": "Opportunity",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r1c0",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 1,
+      "col": 0,
+      "name": "Setup",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives you a 33% chance to add a Combo Point to your target after Dodging an attack or fully resisting a spell.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18509.2,
+        "timestamp": "05:08:29.200",
+        "frame_index": 1110552,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r2c1.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r2c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r2c1",
+        "cell": [
+          3,
+          2,
+          1
+        ],
+        "bbox": [
+          1261,
+          179,
+          211,
+          113
+        ],
+        "sharpness": 3269.7,
+        "frames": 14,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Setup",
+            "description": "Gives you a 33% chance to add a Combo Point to your target after Dodging an attack or fully resisting a spell.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Setup",
+            "description": "Gives you a 33% chance to add a Combo Point to your target after Dodging an attack or fully resisting a spell.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Setup",
+            "description": "Gives you a 33% chance to add a Combo Point to your target after Dodging an attack or fully resisting a spell.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives you a {0}% chance to add a Combo Point to your target after Dodging an attack or fully resisting a spell.",
+        "ranks": [
+          [
+            33
+          ],
+          [
+            48
+          ],
+          [
+            63
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 246,
+          "classicSpellIds": [
+            13983,
+            14070,
+            14071
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/subtlety/Setup (talent 246): Classic 15/30/45, Forever rank 1 is 33: applied +15/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 246,
+          "name": "Setup",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r1c1",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 1,
+      "col": 1,
+      "name": "Elusiveness",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the cooldown of your Vanish and Blind abilities by 45 sec.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18507.667,
+        "timestamp": "05:08:27.667",
+        "frame_index": 1110460,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r2c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r2c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r2c2",
+        "cell": [
+          3,
+          2,
+          2
+        ],
+        "bbox": [
+          1313,
+          200,
+          222,
+          92
+        ],
+        "sharpness": 3272.4,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Elusiveness",
+            "description": "Reduces the cooldown of your Vanish and Blind abilities by 45 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Elusiveness",
+            "description": "Reduces the cooldown of your Vanish and Blind abilities by 45 sec.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Elusiveness",
+            "description": "Reduces the cooldown of your Vanish and Blind abilities by 45 sec.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Vanish and Blind abilities by 45 sec.",
+        "ranks": [
+          "Reduces the cooldown of your Vanish and Blind abilities by 45 sec.",
+          "Reduces the cooldown of your Vanish and Blind abilities by 1.5 min."
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 247,
+          "classicSpellIds": [
+            13981,
+            14066
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/subtlety/Elusiveness (talent 247): sentence shape changes per rank, per-rank texts copied as strings.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 247,
+          "name": "Elusiveness",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r1c2",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 1,
+      "col": 2,
+      "name": "Dirty Tricks",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the Energy cost of your Sap and Blind abilities by 25%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18504.533,
+        "timestamp": "05:08:24.533",
+        "frame_index": 1110272,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r2c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r2c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r2c3",
+        "cell": [
+          3,
+          2,
+          3
+        ],
+        "bbox": [
+          1367,
+          200,
+          215,
+          92
+        ],
+        "sharpness": 3209.4,
+        "frames": 9,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Dirty Tricks",
+            "description": "Reduces the Energy cost of your Sap and Blind abilities by 25%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Dirty Tricks",
+            "description": "Reduces the Energy cost of your Sap and Blind abilities by 25%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Dirty Tricks",
+            "description": "Reduces the Energy cost of your Sap and Blind abilities by 25%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the Energy cost of your Sap and Blind abilities by {0}%.",
+        "ranks": [
+          [
+            25
+          ],
+          [
+            50
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 265,
+          "classicSpellIds": [
+            14082,
+            14083
+          ],
+          "match": "description",
+          "similarity": 0.87
+        },
+        "ranksNote": "Classic rogue/subtlety/Dirty Deeds (talent 265), matched on description (0.87): Classic 10/20 scaled by 2.5.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "ratio",
+        "match": {
+          "classicTalentId": 265,
+          "name": "Dirty Deeds",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 2,
+          "match": "description",
+          "similarity": 0.87
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r1c3",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 1,
+      "col": 3,
+      "name": "Improved Ambush",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the critical strike chance of your Ambush ability by 15%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18506.0,
+        "timestamp": "05:08:26.000",
+        "frame_index": 1110360,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r2c4.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r2c4-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r2c4",
+        "cell": [
+          3,
+          2,
+          4
+        ],
+        "bbox": [
+          1421,
+          199,
+          218,
+          93
+        ],
+        "sharpness": 3614.0,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Ambush",
+            "description": "Increases the critical strike chance of your Ambush ability by 15%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Ambush",
+            "description": "Increases the critical strike chance of your Ambush ability by 15%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Ambush",
+            "description": "Increases the critical strike chance of your Ambush ability by 15%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike chance of your Ambush ability by {0}%.",
+        "ranks": [
+          [
+            15
+          ],
+          [
+            30
+          ],
+          [
+            45
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 263,
+          "classicSpellIds": [
+            14079,
+            14080,
+            14081
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/subtlety/Improved Ambush (talent 263): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 263,
+          "name": "Improved Ambush",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r2c0",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 2,
+      "col": 0,
+      "name": "Initiative",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Gives you a 33% chance to add an additional combo point to your target when using your Ambush. Garrote, or Cheap Shot ability.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18510.133,
+        "timestamp": "05:08:30.133",
+        "frame_index": 1110608,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r3c1.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r3c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r3c1",
+        "cell": [
+          3,
+          3,
+          1
+        ],
+        "bbox": [
+          1258,
+          233,
+          220,
+          114
+        ],
+        "sharpness": 3733.5,
+        "frames": 10,
+        "agreement": {
+          "confidence": 0.7,
+          "differs_in": [
+            "description"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Initiative",
+            "description": "Gives you a 33% chance to add an additional combo point to your target when using your Ambush. Garrote, or Cheap Shot ability.",
+            "maxRank": 3,
+            "confidence": 0.7,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Initiative",
+            "description": "Gives you a 33% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
+            "maxRank": 3,
+            "confidence": 0.7,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Initiative",
+            "description": "Gives you a 33% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
+            "maxRank": 3,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Gives you a {0}% chance to add an additional combo point to your target when using your Ambush. Garrote, or Cheap Shot ability.",
+        "ranks": [
+          [
+            33
+          ],
+          [
+            58
+          ],
+          [
+            83
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 245,
+          "classicSpellIds": [
+            13976,
+            13979,
+            13980
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/subtlety/Initiative (talent 245): Classic 25/50/75, Forever rank 1 is 33: applied +25/rank.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "step",
+        "match": {
+          "classicTalentId": 245,
+          "name": "Initiative",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r2c1",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 2,
+      "col": 1,
+      "name": "Ghostly Strike",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "40 Energy",
+        "Instant",
+        "Melee Range",
+        "20 sec cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "A strike that deals 125% (180% if a Dagger is equipped in your Main Hand) weapon damage and increases your chance to dodge by 15% for 7 sec. Awards 1 combo point.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18512.0,
+        "timestamp": "05:08:32.000",
+        "frame_index": 1110720,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r3c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r3c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r3c2",
+        "cell": [
+          3,
+          3,
+          2
+        ],
+        "bbox": [
+          1312,
+          210,
+          229,
+          137
+        ],
+        "sharpness": 4855.1,
+        "frames": 17,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Ghostly Strike",
+            "description": "A strike that deals 125% (180% if a Dagger is equipped in your Main Hand) weapon damage and increases your chance to dodge by 15% for 7 sec. Awards 1 combo point.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "40 Energy",
+              "Instant",
+              "Melee Range",
+              "20 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Ghostly Strike",
+            "description": "A strike that deals 125% (180% if a Dagger is equipped in your Main Hand) weapon damage and increases your chance to dodge by 15% for 7 sec. Awards 1 combo point.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "40 Energy",
+              "Instant",
+              "Melee Range",
+              "20 sec cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Ghostly Strike",
+            "description": "A strike that deals 125% (180% if a Dagger is equipped in your Main Hand) weapon damage and increases your chance to dodge by 15% for 7 sec. Awards 1 combo point.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "A strike that deals {0}% ({1}% if a Dagger is equipped in your Main Hand) weapon damage and increases your chance to dodge by {2}% for {3} sec. Awards {4} combo point.",
+        "ranks": [
+          [
+            125,
+            180,
+            15,
+            7,
+            1
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/subtlety/r2c2",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 2,
+      "col": 2,
+      "name": "Improved Distract",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases the radius of your Distract ability by 3 yds, and further reduces the Stealth detection of distracted enemies as though they were an additional 1 level lower.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18520.467,
+        "timestamp": "05:08:40.467",
+        "frame_index": 1111228,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r3c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r3c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r3c3",
+        "cell": [
+          3,
+          3,
+          3
+        ],
+        "bbox": [
+          1366,
+          222,
+          229,
+          124
+        ],
+        "sharpness": 4315.8,
+        "frames": 35,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Improved Distract",
+            "description": "Increases the radius of your Distract ability by 3 yds, and further reduces the Stealth detection of distracted enemies as though they were an additional 1 level lower.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Improved Distract",
+            "description": "Increases the radius of your Distract ability by 3 yds, and further reduces the Stealth detection of distracted enemies as though they were an additional 1 level lower.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Improved Distract",
+            "description": "Increases the radius of your Distract ability by 3 yds, and further reduces the Stealth detection of distracted enemies as though they were an additional 1 level lower.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the radius of your Distract ability by {0} yds, and further reduces the Stealth detection of distracted enemies as though they were an additional {1} level lower{2}.",
+        "ranks": [
+          [
+            3,
+            1,
+            ""
+          ],
+          [
+            6,
+            2,
+            "s"
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "rogue/subtlety/r3c0",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 3,
+      "col": 0,
+      "name": "Heightened Senses",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Increases your Stealth detection as if you were 1 level higher and reduces your chance to be hit by spells and ranged attacks by 2%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18524.067,
+        "timestamp": "05:08:44.067",
+        "frame_index": 1111444,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r4c1.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r4c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r4c1",
+        "cell": [
+          3,
+          4,
+          1
+        ],
+        "bbox": [
+          1258,
+          286,
+          217,
+          113
+        ],
+        "sharpness": 4199.0,
+        "frames": 6,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Heightened Senses",
+            "description": "Increases your Stealth detection as if you were 1 level higher and reduces your chance to be hit by spells and ranged attacks by 2%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Heightened Senses",
+            "description": "Increases your Stealth detection as if you were 1 level higher and reduces your chance to be hit by spells and ranged attacks by 2%.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Heightened Senses",
+            "description": "Increases your Stealth detection as if you were 1 level higher and reduces your chance to be hit by spells and ranged attacks by 2%.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your Stealth detection as if you were {0} level higher{1} and reduces your chance to be hit by spells and ranged attacks by {2}%.",
+        "ranks": [
+          [
+            1,
+            "",
+            2
+          ],
+          [
+            2,
+            "s",
+            4
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match rogue/subtlety/Heightened Senses (talent 1701) has no alignable slots; linear x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear",
+        "match": {
+          "classicTalentId": 1701,
+          "name": "Heightened Senses",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r3c1",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 3,
+      "col": 1,
+      "name": "Premeditation",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "20 yd range",
+        "Instant",
+        "2 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "Adds 2 Combo Points to your target. You must add to or use those combo points within 20 sec or the combo points are lost.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18523.0,
+        "timestamp": "05:08:43.000",
+        "frame_index": 1111380,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r4c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r4c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r4c2",
+        "cell": [
+          3,
+          4,
+          2
+        ],
+        "bbox": [
+          1312,
+          275,
+          234,
+          124
+        ],
+        "sharpness": 4066.8,
+        "frames": 6,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Premeditation",
+            "description": "Adds 2 Combo Points to your target. You must add to or use those combo points within 20 sec or the combo points are lost.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "20 yd range",
+              "Instant",
+              "2 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Premeditation",
+            "description": "Adds 2 Combo Points to your target. You must add to or use those combo points within 20 sec or the combo points are lost.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "20 yd range",
+              "Instant",
+              "2 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Premeditation",
+            "description": "Adds 2 Combo Points to your target. You must add to or use those combo points within 20 sec or the combo points are lost.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Adds {0} Combo Points to your target. You must add to or use those combo points within {1} sec or the combo points are lost.",
+        "ranks": [
+          [
+            2,
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/subtlety/r3c2",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Serrated Blades",
+      "rank": {
+        "current": 0,
+        "max": 3
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Causes your attacks to ignore 3% of your target's Armor and increases the damage dealt by your Rupture ability by 10%.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18522.733,
+        "timestamp": "05:08:42.733",
+        "frame_index": 1111364,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r4c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r4c3",
+        "cell": [
+          3,
+          4,
+          3
+        ],
+        "bbox": [
+          1366,
+          287,
+          226,
+          113
+        ],
+        "sharpness": 3693.9,
+        "frames": 12,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Serrated Blades",
+            "description": "Causes your attacks to ignore 3% of your target's Armor and increases the damage dealt by your Rupture ability by 10%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Serrated Blades",
+            "description": "Causes your attacks to ignore 3% of your target's Armor and increases the damage dealt by your Rupture ability by 10%.",
+            "maxRank": 3,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Serrated Blades",
+            "description": "Causes your attacks to ignore 3% of your target's Armor and increases the damage dealt by your Rupture ability by 10%.",
+            "maxRank": 3,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Causes your attacks to ignore 3% of your target's Armor and increases the damage dealt by your Rupture ability by {0}%.",
+        "ranks": [
+          [
+            10
+          ],
+          [
+            20
+          ],
+          [
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1123,
+          "classicSpellIds": [
+            14171,
+            14172,
+            14173
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/subtlety/Serrated Blades (talent 1123): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1123,
+          "name": "Serrated Blades",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r4c0",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 4,
+      "col": 0,
+      "name": "Dirty Deeds",
+      "rank": {
+        "current": 0,
+        "max": 2
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Reduces the Energy cost of your Cheap Shot and Garrote abilities by 10, and your Garrote ability no longer requires you to be behind your target.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18528.333,
+        "timestamp": "05:08:48.333",
+        "frame_index": 1111700,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r5c1.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r5c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r5c1",
+        "cell": [
+          3,
+          5,
+          1
+        ],
+        "bbox": [
+          1258,
+          340,
+          228,
+          114
+        ],
+        "sharpness": 3936.0,
+        "frames": 16,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Dirty Deeds",
+            "description": "Reduces the Energy cost of your Cheap Shot and Garrote abilities by 10, and your Garrote ability no longer requires you to be behind your target.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Dirty Deeds",
+            "description": "Reduces the Energy cost of your Cheap Shot and Garrote abilities by 10, and your Garrote ability no longer requires you to be behind your target.",
+            "maxRank": 2,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Dirty Deeds",
+            "description": "Reduces the Energy cost of your Cheap Shot and Garrote abilities by 10, and your Garrote ability no longer requires you to be behind your target.",
+            "maxRank": 2,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the Energy cost of your Cheap Shot and Garrote abilities by {0}, and your Garrote ability no longer requires you to be behind your target.",
+        "ranks": [
+          [
+            10
+          ],
+          [
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 265,
+          "classicSpellIds": [
+            14082,
+            14083
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/subtlety/Dirty Deeds (talent 265): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 265,
+          "name": "Dirty Deeds",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
+      }
+    },
+    {
+      "id": "rogue/subtlety/r4c1",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 4,
+      "col": 1,
+      "name": "Preparation",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "Instant",
+        "10 min cooldown"
+      ],
+      "requires": [],
+      "description_rank1": "When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18530.0,
+        "timestamp": "05:08:50.000",
+        "frame_index": 1111800,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r5c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r5c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r5c2",
+        "cell": [
+          3,
+          5,
+          2
+        ],
+        "bbox": [
+          1312,
+          352,
+          229,
+          102
+        ],
+        "sharpness": 4176.0,
+        "frames": 16,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Preparation",
+            "description": "When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "10 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Preparation",
+            "description": "When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "Instant",
+              "10 min cooldown"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Preparation",
+            "description": "When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
+        "ranks": [
+          []
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/subtlety/r4c2",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 4,
+      "col": 2,
+      "name": "Hemorrhage",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": null,
+      "extra_lines": [
+        "35 Energy",
+        "Instant"
+      ],
+      "requires": [],
+      "description_rank1": "An instant strike that deals 100% weapon damage (145% if a Dagger is equipped) and causes the target to take 15% increased Rupture damage from the Rogue. Lasts 15 sec. Awards 1 Combo Point.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18532.0,
+        "timestamp": "05:08:52.000",
+        "frame_index": 1111920,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r5c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r5c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r5c3",
+        "cell": [
+          3,
+          5,
+          3
+        ],
+        "bbox": [
+          1366,
+          308,
+          229,
+          146
+        ],
+        "sharpness": 4282.1,
+        "frames": 36,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Hemorrhage",
+            "description": "An instant strike that deals 100% weapon damage (145% if a Dagger is equipped) and causes the target to take 15% increased Rupture damage from the Rogue. Lasts 15 sec. Awards 1 Combo Point.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "35 Energy",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Hemorrhage",
+            "description": "An instant strike that deals 100% weapon damage (145% if a Dagger is equipped) and causes the target to take 15% increased Rupture damage from the Rogue. Lasts 15 sec. Awards 1 Combo Point.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": null,
+            "requires": [],
+            "extra_lines": [
+              "35 Energy",
+              "Instant"
+            ],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Hemorrhage",
+            "description": "An instant strike that deals 100% weapon damage (145% if a Dagger is equipped) and causes the target to take 15% increased Rupture damage from the Rogue. Lasts 15 sec. Awards 1 Combo Point.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "An instant strike that deals {0}% weapon damage ({1}% if a Dagger is equipped) and causes the target to take {2}% increased Rupture damage from the Rogue. Lasts {3} sec. Awards {4} Combo Point.",
+        "ranks": [
+          [
+            100,
+            145,
+            15,
+            15,
+            1
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/subtlety/r5c0",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 5,
+      "col": 0,
+      "name": "Quietus",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your Sinister Strike, Ghostly Strike, and Hemorrhage abilities cause 2% more damage against targets below 35% health.",
+      "footer": "Click to learn",
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18556.0,
+        "timestamp": "05:09:16.000",
+        "frame_index": 1113360,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r6c1.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r6c1-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r6c1",
+        "cell": [
+          3,
+          6,
+          1
+        ],
+        "bbox": [
+          1259,
+          394,
+          226,
+          114
+        ],
+        "sharpness": 3452.0,
+        "frames": 18,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": [
+            "footer"
+          ]
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Quietus",
+            "description": "Your Sinister Strike, Ghostly Strike, and Hemorrhage abilities cause 2% more damage against targets below 35% health.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": "Click to learn",
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Quietus",
+            "description": "Your Sinister Strike, Ghostly Strike, and Hemorrhage abilities cause 2% more damage against targets below 35% health.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Quietus",
+            "description": "Your Sinister Strike, Ghostly Strike, and Hemorrhage abilities cause 2% more damage against targets below 35% health.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your Sinister Strike, Ghostly Strike, and Hemorrhage abilities cause {0}% more damage against targets below {1}% health.",
+        "ranks": [
+          [
+            2,
+            35
+          ],
+          [
+            4,
+            70
+          ],
+          [
+            6,
+            105
+          ],
+          [
+            8,
+            140
+          ],
+          [
+            10,
+            175
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; linear x2..x5 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "linear"
+      }
+    },
+    {
+      "id": "rogue/subtlety/r5c2",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 5,
+      "col": 2,
+      "name": "Cutthroat",
+      "rank": {
+        "current": 0,
+        "max": 5
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your Backstab has a 3% chance to cause your next Ambush within 10 sec to not require Stealth.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18538.8,
+        "timestamp": "05:08:58.800",
+        "frame_index": 1112328,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r6c3.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r6c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r6c3",
+        "cell": [
+          3,
+          6,
+          3
+        ],
+        "bbox": [
+          1367,
+          406,
+          226,
+          102
+        ],
+        "sharpness": 3470.1,
+        "frames": 30,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Cutthroat",
+            "description": "Your Backstab has a 3% chance to cause your next Ambush within 10 sec to not require Stealth.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Cutthroat",
+            "description": "Your Backstab has a 3% chance to cause your next Ambush within 10 sec to not require Stealth.",
+            "maxRank": 5,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Cutthroat",
+            "description": "Your Backstab has a 3% chance to cause your next Ambush within 10 sec to not require Stealth.",
+            "maxRank": 5,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": []
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your Backstab has a {0}% chance to cause your next Ambush within {1} sec to not require Stealth.",
+        "ranks": [
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (10 sec) is never extrapolated; ranks 2..5 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
+      }
+    },
+    {
+      "id": "rogue/subtlety/r6c1",
+      "class": "rogue",
+      "tree": "Subtlety",
+      "page": "Primary",
+      "row": 6,
+      "col": 1,
+      "name": "Thousand Cuts",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "When your Rupture ability deals periodic damage, the Energy cost of your next Hemorrhage or Backstab ability within 10 sec is reduced by 3, stacking up to 5 times.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 18560.0,
+        "timestamp": "05:09:20.000",
+        "frame_index": 1113600,
+        "crop_path": "work/hovers/15-rogue-18280/subtlety-r7c2.png",
+        "icon_crop_path": "work/hovers/15-rogue-18280/subtlety-r7c2-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 0.7,
+        "reviewed": false,
+        "segment_id": "15-rogue-18280",
+        "hover_id": "subtlety-r7c2",
+        "cell": [
+          3,
+          7,
+          2
+        ],
+        "bbox": [
+          1315,
+          439,
+          210,
+          123
+        ],
+        "sharpness": 4563.4,
+        "frames": 15,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Thousand Cuts",
+            "description": "When your Rupture ability deals periodic damage, the Energy cost of your next Hemorrhage or Backstab ability within 10 sec is reduced by 3, stacking up to 5 times.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Thousand Cuts",
+            "description": "When your Rupture ability deals periodic damage, the Energy cost of your next Hemorrhage or Backstab ability within 10 sec is reduced by 3, stacking up to 5 times.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Thousand Cuts",
+            "description": "When your Rupture ability deals periodic damage, the Energy cost of your next Hemorrhage or Backstab ability within 10 secs is reduced by 3, stacking up to 5 times.",
+            "maxRank": 1,
+            "confidence": 0.7
+          }
+        ],
+        "alternates": [],
+        "note": "second reader (codex) differs in description"
+      },
+      "tree_source": {
+        "t": 18280,
+        "frame_index": 1096800,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "When your Rupture ability deals periodic damage, the Energy cost of your next Hemorrhage or Backstab ability within {0} sec is reduced by {1}, stacking up to {2} times.",
+        "ranks": [
+          [
+            10,
+            3,
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
+    }
+  ]
+}

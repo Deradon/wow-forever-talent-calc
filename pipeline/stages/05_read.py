@@ -14,13 +14,13 @@ Output: ``data/extracted/<class>.candidates.json`` (object with ``candidates``
 in the brief's section-1 shape, plus ``segments``, ``missing_cells`` and
 ``stats``). Readings are cached in ``work/read/cache/`` by content hash, so a
 re-run only pays for new crops. Crops are copied to
-``data/review/<class>/<tree>/r<row>c<col>.png`` (1-based, provisional ids).
+``data/review/<class>/<tree>/_header.png`` (the crops themselves are placed by stage 8 under talent ids).
 
 Run from ``pipeline/`` with llama-server up (``scripts/llama-server.sh``)::
 
     uv run stages/05_read.py run paladin
     uv run stages/05_read.py run paladin --segments 1,25 --limit 5 --dry-run
-    uv run stages/05_read.py one ../data/review/paladin/holy/r1c1.png
+    uv run stages/05_read.py one ../data/review/paladin/holy/toughness.png
 """
 
 from __future__ import annotations
@@ -85,7 +85,13 @@ def read_segment_header(reader: RD.Reader, sid: str, calib: dict, log=typer.echo
             log(f"  warn: {sid}: tree {k} name unread; falling back to {exp!r}")
             name = exp or f"Tree {k}"
         elif exp and name.lower() != exp.lower():
-            log(f"  note: {sid}: tree {k} reads {name!r} (segments.md said {exp!r})")
+            if RD.same_tree_name(name, exp):
+                # a VLM typo of the human label ("Marksmananship"): the label wins; a real
+                # Forever rename ("Shadow Magic" for "Shadow") is far below the threshold and kept
+                log(f"  note: {sid}: tree {k} reads {name!r}, snapped to segments.md {exp!r}")
+                name = exp
+            else:
+                log(f"  note: {sid}: tree {k} reads {name!r} (segments.md said {exp!r})")
         names[k] = name
     return {"segment_id": sid, "page": page, "page_read": hdr, "tab_state": calib.get("tab_state"),
             "trees": names, "trees_read": trees, "t": calib.get("t_start"),
@@ -113,16 +119,15 @@ def missing_with_reasons(cells: set[tuple[int, int, int]], best: dict, docs: lis
 
 
 def copy_review(cls: str, rec: dict, hover: dict, tree_strip: Path | None) -> int:
-    """Copy tooltip + icon crops (and the tree header strip once) into data/review/<class>/<tree>/."""
+    """Copy the tree header strip once into data/review/<class>/<tree>/_header.png.
+
+    Tooltip and icon crops are not copied here any more: stage 8 places them under their
+    talent id (``<id>.png``, ``<id>.icon.png``) from ``source.crop_path``; the provisional
+    ``r<row>c<col>`` copies duplicated 3.5 MB per class.
+    """
     tree_dir = REVIEW / cls / ui.slug(rec["tree"])
     tree_dir.mkdir(parents=True, exist_ok=True)
-    row1, col1 = rec["source"]["cell"][1], rec["source"]["cell"][2]
     n = 0
-    for key, suffix in (("crop_path", ".png"), ("icon_crop_path", ".icon.png")):
-        src = rec["source"].get(key)
-        if src and (PIPELINE / src).is_file():
-            shutil.copyfile(PIPELINE / src, tree_dir / f"r{row1}c{col1}{suffix}")
-            n += 1
     if tree_strip and tree_strip.is_file() and not (tree_dir / "_header.png").is_file():
         shutil.copyfile(tree_strip, tree_dir / "_header.png")
         n += 1
@@ -157,7 +162,7 @@ def run(
     passes: str = typer.Option("3,2", help="upscale factors of the two passes (primary first)"),
     server: str = typer.Option(RD.DEFAULT_SERVER, help="llama-server base URL"),
     cache: bool = typer.Option(True, help="cache readings in work/read/cache by content hash"),
-    copy: bool = typer.Option(True, "--copy/--no-copy", help="copy crops into data/review/<class>/"),
+    copy: bool = typer.Option(True, "--copy/--no-copy", help="copy tree header strips into data/review/<class>/"),
     out: Path | None = typer.Option(None, help="output (default data/extracted/<class>.candidates.json)"),
     dry_run: bool = typer.Option(False, help="merge hovers and list them; no VLM calls, nothing written"),
 ):
@@ -216,18 +221,37 @@ def run(
         keys = keys[:limit]
     conf_counts: Counter = Counter()
     for i, key in enumerate(keys, 1):
-        h = best[key]
         page, tree, row, col = key
-        sid = h["_segment"]
-        crop_rel = f"work/hovers/{h['files']['tooltip']}"
-        img = cv2.imread(str(PIPELINE / crop_rel))
-        if img is None:
-            typer.echo(f"  {sid}/{h['id']}: crop missing at {crop_rel}; skipped")
-            continue
         t0 = time.time()
-        a = reader.read_tooltip(img, f1)
-        b = reader.read_tooltip(img, f2)
-        primary, secondary = RD.choose_primary(a, b)
+        # sharpest crop first; when it shows points already spent (rank_current > 0, e.g. a later
+        # segment after the streamer allocated talents) fall back to the next crop that reads rank 0
+        chosen = None
+        spent_note = None
+        for h in RD.rank0_order(best[key], everything[key]):
+            sid = h["_segment"]
+            crop_rel = f"work/hovers/{h['files']['tooltip']}"
+            img = cv2.imread(str(PIPELINE / crop_rel))
+            if img is None:
+                typer.echo(f"  {sid}/{h['id']}: crop missing at {crop_rel}; skipped")
+                continue
+            a = reader.read_tooltip(img, f1)
+            b = reader.read_tooltip(img, f2)
+            primary, secondary = RD.choose_primary(a, b)
+            if chosen is None:
+                chosen = (h, primary, secondary)
+            if (primary.get("rank_current") or 0) == 0:
+                if chosen[0] is not h:
+                    spent_note = (f"sharpest crop ({chosen[0]['_segment']}@{chosen[0]['t']}) showed rank "
+                                  f"{chosen[1].get('rank_current')}/{chosen[1].get('rank_max')}; used a rank-0 crop instead")
+                chosen = (h, primary, secondary)
+                break
+            typer.echo(f"  {sid}/{h['id']}: reads rank {primary.get('rank_current')}/{primary.get('rank_max')} (points spent); trying another crop")
+        if chosen is None:
+            continue
+        h, primary, secondary = chosen
+        sid = h["_segment"]
+        if (primary.get("rank_current") or 0) > 0:
+            spent_note = f"every crop of this cell shows rank {primary.get('rank_current')}/{primary.get('rank_max')} (points already spent); text may not be rank 1"
         tree_name = names.get(tree, headers[sid]["trees"].get(tree, f"Tree {tree}"))
         page_name = headers[sid]["page"]
         tree_source = {"t": headers[sid]["t"], "frame_index": headers[sid]["frame_index"], "video": RD.VIDEO_ID,
@@ -238,6 +262,10 @@ def run(
         rec["source"]["alternates"] = [{"segment_id": x["_segment"], "t": x["t"], "sharpness": x["sharpness"],
                                         "cut_off": x.get("cut_off", False)}
                                        for x in everything[key] if x is not h]
+        if spent_note:
+            rec["source"]["note"] = spent_note
+            if (primary.get("rank_current") or 0) > 0:
+                rec["source"]["confidence"] = min(rec["source"]["confidence"], 0.7)
         records.append(rec)
         conf = rec["source"]["confidence"]
         conf_counts[conf] += 1
@@ -264,7 +292,11 @@ def run(
                 dupes += 1
             typer.echo(f"  warn: {tree}: {group[0]['name']!r} read at {len(group)} cells ({cells_txt}); confidence capped at 0.3")
 
-    missing = missing_with_reasons(cells, best, docs, names, headers[first_sid]["page"])
+    # the page the hovers were actually resolved on (a short first segment with a dialog over the
+    # tab bar can be mis-read as 'Secondary', which would report every Primary cell as missing)
+    page_votes = Counter(k[0] for k in best)
+    main_page = page_votes.most_common(1)[0][0] if page_votes else headers[first_sid]["page"]
+    missing = missing_with_reasons(cells, best, docs, names, main_page)
     stats = {
         "cells": len(cells), "hovered": len(best), "read": len(records), "missing": len(missing),
         "confidence": {str(k): v for k, v in sorted(conf_counts.items())},

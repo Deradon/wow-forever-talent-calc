@@ -277,3 +277,12 @@ def test_stage_cli_fails_loudly_without_encoding(tmp_path):
     assert res.returncode == 1
     assert "R11-ENCODING-CLASS" in res.stdout and "NOT written" in res.stdout
     assert not (root / "data" / "extracted" / "warrior.json").exists()
+
+
+def test_video_source_omits_null_reading_maxrank():
+    from wowtalents import export as E
+    src = {"t": 20800.0, "frame_index": 1248000, "confidence": 0.3, "reader": "q",
+           "readings": [{"reader": "q/3x", "name": "5 Rage", "description": "x", "maxRank": None, "confidence": 0.3},
+                        {"reader": "codex-cli", "name": "Feral Charge", "description": "x", "maxRank": 1, "confidence": 0.3}]}
+    out = E._video_source(src, "data/review/druid/feral-combat/x.png", "vid", 60)
+    assert "maxRank" not in out["readings"][0] and out["readings"][1]["maxRank"] == 1

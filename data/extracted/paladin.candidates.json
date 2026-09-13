@@ -1,6 +1,6 @@
 {
   "class": "paladin",
-  "generated_at": "2026-09-12T23:54:04Z",
+  "generated_at": "2026-09-13T00:07:45Z",
   "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
   "prompt_version": "tooltip-v3",
   "passes": [
@@ -163,10 +163,10 @@
     },
     "cut_off": 0,
     "duplicate_names": 0,
-    "vlm_calls": 122,
-    "cache_hits": 0,
-    "vlm_seconds": 140.5,
-    "wall_seconds": 141.1
+    "vlm_calls": 0,
+    "cache_hits": 122,
+    "vlm_seconds": 0.0,
+    "wall_seconds": 0.5
   },
   "candidates": [
     {
@@ -1235,9 +1235,9 @@
             17108
           ],
           "match": "description",
-          "similarity": 1.0
+          "similarity": 0.99
         },
-        "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (1.00): Classic 5/10/15 scaled by 2.",
+        "ranksNote": "Classic druid/restoration/Reflection (talent 829) (cross-class), matched on description (0.99): Classic 5/10/15 scaled by 2.",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
@@ -1249,7 +1249,7 @@
           "tree": "restoration",
           "maxRank": 3,
           "match": "description",
-          "similarity": 1.0
+          "similarity": 0.99
         }
       }
     },
@@ -1606,28 +1606,28 @@
         ],
         "ranksSource": "classic-prior",
         "ranksPrior": {
-          "classicTalentId": 1630,
+          "classicTalentId": 583,
           "classicSpellIds": [
-            20189,
-            20192,
-            20193
+            16180,
+            16196,
+            16198
           ],
-          "match": "fuzzy-name",
-          "similarity": 1.0
+          "match": "description",
+          "similarity": 0.91
         },
-        "ranksNote": "Classic paladin/protection/Precision (talent 1630), matched on name (1.00): Classic 1/2/3, Forever rank 1 is 6: applied +1/rank.",
+        "ranksNote": "Classic shaman/restoration/Nature's Guidance (talent 583) (cross-class), matched on description (0.91): Classic 1/2/3, Forever rank 1 is 6: applied +1/rank.",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
         "rule": "step",
         "match": {
-          "classicTalentId": 1630,
-          "name": "Precision",
-          "class": "paladin",
-          "tree": "protection",
+          "classicTalentId": 583,
+          "name": "Nature's Guidance",
+          "class": "shaman",
+          "tree": "restoration",
           "maxRank": 3,
-          "match": "fuzzy-name",
-          "similarity": 1.0
+          "match": "description",
+          "similarity": 0.91
         }
       }
     },
@@ -2694,7 +2694,7 @@
             3
           ],
           [
-            61,
+            2,
             6
           ]
         ],
@@ -2711,11 +2711,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic paladin/protection/Guardian's Favor (talent 1425): Classic 60/120, Forever rank 1 is 1: applied +60/rank.",
+        "ranksNote": "Classic paladin/protection/Guardian's Favor (talent 1425): Classic 60/120 sec taken as 1/2 min.",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "step",
+        "rule": "copied",
         "match": {
           "classicTalentId": 1425,
           "name": "Guardian's Favor",
@@ -4228,7 +4228,7 @@
         "10 sec cooldown"
       ],
       "requires": [
-        "Shields"
+        "Requires Shields"
       ],
       "description_rank1": "Increases chance to block by 20% for 10 sec, and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
       "footer": null,
@@ -4271,7 +4271,7 @@
             "confidence": 1.0,
             "kind": null,
             "requires": [
-              "Shields"
+              "Requires Shields"
             ],
             "extra_lines": [
               "150 Mana",
@@ -4289,7 +4289,7 @@
             "confidence": 1.0,
             "kind": null,
             "requires": [
-              "Shields"
+              "Requires Shields"
             ],
             "extra_lines": [
               "150 Mana",
@@ -5966,7 +5966,7 @@
       "kind": "Passive",
       "extra_lines": [],
       "requires": [
-        "Level 40"
+        "Requires Level 40"
       ],
       "description_rank1": "When you replace your Seal of Command, Seal of Righteousness, Seal of Fury, or Seal of Justice with a different Seal, gain an Echo. Your next melee attack applies the replaced Seal's effects, consuming the Echo.",
       "footer": null,
@@ -6009,7 +6009,7 @@
             "confidence": 1.0,
             "kind": "Passive",
             "requires": [
-              "Level 40"
+              "Requires Level 40"
             ],
             "extra_lines": [],
             "footer": null,
@@ -6023,7 +6023,7 @@
             "confidence": 1.0,
             "kind": "Passive",
             "requires": [
-              "Level 40"
+              "Requires Level 40"
             ],
             "extra_lines": [],
             "footer": null,
