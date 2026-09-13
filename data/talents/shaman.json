@@ -5,7 +5,7 @@
   "className": "Shaman",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T13:45:04Z",
+  "generatedAt": "2026-09-13T15:14:51Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -847,7 +847,7 @@
           "icon": "ability_ghoulfrenzy",
           "iconSource": "classic",
           "description": "Increases your attack speed by {0}% for your next 3 swings after dealing a melee critical strike.",
-          "ranks": [[5], [7.5], [10], [12.5], [15]],
+          "ranks": [[5], [10], [15], [20], [25]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -856,7 +856,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic shaman/enhancement/Flurry (talent 602): Classic 10/15/20/25/30 = 5 x rank +5; Forever rank 1 is 5 = 0.5x Classic's 10, step and offset scaled by 0.5. Rounding: rank 2 7.5 may read 8, rank 4 12.5 may read 13 (values above are the raw scaled numbers).",
+          "ranksNote": "Classic shaman/enhancement/Flurry (talent 602): Classic 10/15/20/25/30 is 5 x rank +5, which does not start at Forever's rank 1 (5); Classic's pattern was NOT applied, ranks scaled proportionally (5 x rank).",
           "requires": [
             {
               "talent": "mental-dexterity",
@@ -1162,7 +1162,7 @@
             "match": "description",
             "similarity": 0.99
           },
-          "ranksNote": "Classic shaman/restoration/Healing Grace (talent 1646), matched on description (0.99): ranks copied.",
+          "ranksNote": "Classic shaman/restoration/Healing Grace (talent 1646), matched on description (0.99): Classic 5/10/15 is proportional; Forever rank 1 is 5: scaled proportionally (5 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",

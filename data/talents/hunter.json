@@ -5,7 +5,7 @@
   "className": "Hunter",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T13:45:02Z",
+  "generatedAt": "2026-09-13T15:14:50Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -593,7 +593,7 @@
             "match": "description",
             "similarity": 0.9
           },
-          "ranksNote": "Classic hunter/survival/Deflection (talent 1311), matched on description (0.90): ranks copied.",
+          "ranksNote": "Classic hunter/survival/Deflection (talent 1311), matched on description (0.90): Classic 1/2/3/4/5 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",

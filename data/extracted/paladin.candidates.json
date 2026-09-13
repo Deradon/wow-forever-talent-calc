@@ -257,11 +257,11 @@
           "match": "description",
           "similarity": 0.94
         },
-        "ranksNote": "Classic warrior/protection/Improved Taunt (talent 143) (cross-class), matched on description (0.94): ranks copied.",
+        "ranksNote": "Classic warrior/protection/Improved Taunt (talent 143) (cross-class), matched on description (0.94): Classic 1/2 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "copied",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 143,
           "name": "Improved Taunt",
@@ -864,11 +864,11 @@
           "match": "description",
           "similarity": 0.86
         },
-        "ranksNote": "Classic shaman/elemental/Call of Flame (talent 561) (cross-class), matched on description (0.86): ranks copied.",
+        "ranksNote": "Classic shaman/elemental/Call of Flame (talent 561) (cross-class), matched on description (0.86): Classic 5/10/15 is proportional; Forever rank 1 is 5: scaled proportionally (5 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "copied",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 561,
           "name": "Call of Flame",
@@ -2026,7 +2026,49 @@
           "confidence": 1.0,
           "medians": 7
         }
-      ]
+      ],
+      "ranks_anticipated": {
+        "description": "Increases your chance to hit with Holy spells by {0}%.",
+        "ranks": [
+          [
+            6
+          ],
+          [
+            12
+          ],
+          [
+            18
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1630,
+          "classicSpellIds": [
+            20189,
+            20192,
+            20193
+          ],
+          "match": "description",
+          "similarity": 0.87
+        },
+        "ranksNote": "Classic paladin/protection/Precision (talent 1630), matched on description (0.87): Classic 1/2/3 is proportional; Forever rank 1 is 6: scaled proportionally (6 x rank).",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "proportional",
+        "match": {
+          "classicTalentId": 1630,
+          "name": "Precision",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 3,
+          "match": "description",
+          "similarity": 0.87
+        }
+      }
     },
     {
       "id": "paladin/holy/r4c1",
@@ -2291,6 +2333,28 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Holy spells {0}% increased damage against the first {1} enemies that enter your Consecration.",
+        "ranks": [
+          [
+            5,
+            4
+          ],
+          [
+            10,
+            8
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "No Classic counterpart; proportional x2..x2 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "proportional"
       }
     },
     {
@@ -3238,6 +3302,46 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown of your Blessing of Protection by {0} min and increases the duration of your Blessing of Freedom by {1} sec.",
+        "ranks": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1425,
+          "classicSpellIds": [
+            20174,
+            20175
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/protection/Guardian's Favor (talent 1425): Classic 60/120 sec taken as 1/2 min.",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1425,
+          "name": "Guardian's Favor",
+          "class": "paladin",
+          "tree": "protection",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -3987,6 +4091,28 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases your total Stamina by {0}% and reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by {1} sec.",
+        "ranks": [
+          [
+            2,
+            30
+          ],
+          [
+            2,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (30 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
       }
     },
     {
@@ -5046,6 +5172,26 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Increases chance to block by {0}% for {1} sec. and deals {2} Holy damage for each attack blocked while active. Damage caused by Holy Shield causes {3}% additional threat. Each block expends a charge. {4} charges.",
+        "ranks": [
+          [
+            20,
+            10,
+            110,
+            20,
+            4
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -6226,6 +6372,27 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Gives the Paladin a chance to deal additional Holy damage equal to {0}% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts {1} sec. Unleashing this Seal's energy will judge an enemy, instantly causing {2} to {3} Holy damage, {4} to {5} if the target is stunned or incapacitated.",
+        "ranks": [
+          [
+            70,
+            30,
+            68,
+            73,
+            137,
+            146
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -6349,6 +6516,44 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Increases movement speed and mounted movement speed by {0}%. This does not stack with other movement speed increasing effects.",
+        "ranks": [
+          [
+            8
+          ],
+          [
+            16
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1634,
+          "classicSpellIds": [
+            26022,
+            26023
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic paladin/retribution/Pursuit of Justice (talent 1634): Classic 4/8 is proportional; Forever rank 1 is 8: scaled proportionally (8 x rank).",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "proportional",
+        "match": {
+          "classicTalentId": 1634,
+          "name": "Pursuit of Justice",
+          "class": "paladin",
+          "tree": "retribution",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {

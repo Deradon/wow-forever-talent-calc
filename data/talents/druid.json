@@ -5,7 +5,7 @@
   "className": "Druid",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T13:45:02Z",
+  "generatedAt": "2026-09-13T15:14:52Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -173,7 +173,7 @@
             "match": "description",
             "similarity": 0.85
           },
-          "ranksNote": "Classic mage/fire/Incinerate (talent 1141) (cross-class), matched on description (0.85): ranks copied.",
+          "ranksNote": "Classic mage/fire/Incinerate (talent 1141) (cross-class), matched on description (0.85): Classic 2/4 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -609,7 +609,7 @@
             "match": "description",
             "similarity": 0.94
           },
-          "ranksNote": "Classic druid/feral-combat/Feline Swiftness (talent 807), matched on description (0.94): ranks copied.",
+          "ranksNote": "Classic druid/feral-combat/Feline Swiftness (talent 807), matched on description (0.94): Classic 15/30 is proportional; Forever rank 1 is 15: scaled proportionally (15 x rank); Classic 2/4 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -915,7 +915,7 @@
             "match": "description",
             "similarity": 0.96
           },
-          "ranksNote": "Classic warrior/arms/Impale (talent 662) (cross-class), matched on description (0.96): ranks copied.",
+          "ranksNote": "Classic warrior/arms/Impale (talent 662) (cross-class), matched on description (0.96): Classic 10/20 is proportional; Forever rank 1 is 10: scaled proportionally (10 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",

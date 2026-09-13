@@ -178,26 +178,29 @@ uv run stages/08_export.py prune
 present and keeps everything `data/talents/*.json` and `data/examples/*.json`
 point at.
 
-Scaling rule (changed 2026-09-13, `docs/handover/2026-09-13-rank-scaling.md`):
-each Classic slot is classified as *proportional* (`c_k = a * k`, up to the
-half unit the client rounds by: 5/10/15, 2/4/6/8/10, 16/33/50), *affine*
-(arithmetic with an offset, 10/15/20 = 5k + 5) or *irregular*. A proportional
-slot on a different base scales from Forever's own rank 1 (`v_k = v1 * k`, so
-17% against Classic 5/10/15 gives 17/34/51, not 17/22/27); an affine slot has
-step and offset multiplied by `v1 / c1` and drops one confidence notch; an
-irregular slot is copied only when rank 1 agrees, else `manual`. Values that
-look rounded in game (51 -> 50, 40.25 -> 40) are reported in a `Rounding:`
-clause of `ranksNote` and never rounded in the data.
+Scaling rule (changed 2026-09-13, `docs/handover/2026-09-13-rank-scaling.md`,
+section 6): **anticipated ranks are `v1 * k`.** A Forever talent scales
+proportionally from its own rank 1 whatever shape Classic has. The one
+exception is a verbatim copy: an exact same-name Classic talent with the same
+rank count whose rank 1 equals Forever's - then Classic's own numbers are used,
+because they are Blizzard's and not our arithmetic (that is also why 8/16/25
+stays 8/16/25 and is not re-derived as 8/16/24). Classic's additive step and
+offset are never re-based onto a foreign rank 1; where the matched slot is not
+proportional (*affine*, 10/15/20 = 5k + 5, or *irregular*, 15/30/45/65) the
+pattern that was **not** applied is named in `ranksNote` and the record drops
+to `low` confidence. Values that look rounded in game (51 -> 50) are reported
+in a `Rounding:` clause of `ranksNote` and never rounded in the data.
 
 Decision table of stage 6 (`ranksSource` / confidence): 1-rank talent
 `observed`; exact same-class Classic name with the same rank-1 value and rank
-count `classic-prior` high (copied, no review); fuzzy, cross-class or
-description match, re-based (proportional or affine), different rank count,
-or shape-changing per-rank strings `classic-prior` medium, affine low (review
-queue); irregular Classic with a different rank-1 value `manual`; no match
-with one or two numbers `extrapolated` (`v1 * k`, low); no match with zero,
-three or more numbers, or any `sec`/`min` slot, `manual`. `ranksNote` states
-the rule, `needsManual` marks copies of rank 1.
+count `classic-prior` high (copied, no review); the same across classes
+`classic-prior` medium; any match re-based or with a different rank count
+`classic-prior` medium (`v1 * k`), dropping to low when Classic's own slot was
+not proportional; shape-changing per-rank strings with an identical rank-1 text
+`classic-prior` medium; no match with one or two numbers `extrapolated`
+(`v1 * k`, low); no match with zero, three or more numbers, or any `sec`/`min`
+slot, `manual`. `ranksNote` states the rule, `needsManual` marks copies of
+rank 1.
 
 `extract` never applies overrides (override targets are the ids as they
 appear in `extracted/`, section 6.2). `promote` applies them in file order,

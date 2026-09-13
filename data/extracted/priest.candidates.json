@@ -1027,6 +1027,46 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Gives you a {0}% chance to gain Focused Casting for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing Casting time when taking damage and increases your resistance to Interrupt effects by {1}%.",
+        "ranks": [
+          [
+            50,
+            20
+          ],
+          [
+            100,
+            40
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 321,
+          "classicSpellIds": [
+            14531,
+            14774
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic priest/discipline/Martyrdom (talent 321): Classic 10/20 is proportional; Forever rank 1 is 20: scaled proportionally (20 x rank).",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "proportional",
+        "match": {
+          "classicTalentId": 321,
+          "name": "Martyrdom",
+          "class": "priest",
+          "tree": "discipline",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -1150,6 +1190,50 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the mana cost of your Smite, Holy Fire, and instant cast spells by {0}%.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 341,
+          "classicSpellIds": [
+            14520,
+            14780,
+            14781,
+            14782,
+            14783
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic priest/discipline/Mental Agility (talent 341): Classic 2/4/6/8/10 is proportional, Classic has 5 ranks; Forever rank 1 is 3: scaled proportionally (3 x rank).",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "proportional",
+        "match": {
+          "classicTalentId": 341,
+          "name": "Mental Agility",
+          "class": "priest",
+          "tree": "discipline",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -2137,6 +2221,25 @@
         "confidence": "high",
         "tier": "later-talents",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Launches a volley of holy light at the target, causing {0} Holy damage to an enemy, or {1} healing to an ally, instantly and every {2} sec for {3} sec.",
+        "ranks": [
+          [
+            93,
+            223,
+            1,
+            2
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -2272,6 +2375,40 @@
         "confidence": "high",
         "tier": "later-talents",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Your heals from Flash Heal, Binding Heal, Lesser Heal, Heal, Greater Heal, and Penance gain {0}% increased critical strike chance when cast on targets with Weakened Soul, and reduce the remaining duration of Weakened Soul on their target by {1} sec.",
+        "ranks": [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (1 sec) is never extrapolated; ranks 2..5 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
       }
     },
     {
@@ -2662,10 +2799,10 @@
             23
           ],
           [
-            40.25
+            46
           ],
           [
-            57.5
+            69
           ]
         ],
         "ranksObserved": [
@@ -2682,11 +2819,11 @@
           "match": "description",
           "similarity": 0.93
         },
-        "ranksNote": "Classic druid/balance/Improved Entangling Roots (talent 787) (cross-class), matched on description (0.93): Classic 40/70/100 = 30 x rank +10; Forever rank 1 is 23 = 0.575x Classic's 40, step and offset scaled by 0.575. Rounding: rank 2 40.25 may read 40, rank 3 57.5 may read 58 (values above are the raw scaled numbers).",
+        "ranksNote": "Classic druid/balance/Improved Entangling Roots (talent 787) (cross-class), matched on description (0.93): Classic 40/70/100 is 30 x rank +10, which does not start at Forever's rank 1 (23); Classic's pattern was NOT applied, ranks scaled proportionally (23 x rank). Rounding: rank 2 46 may read 45, rank 3 69 may read 70 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "affine",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 787,
           "name": "Improved Entangling Roots",
@@ -3273,6 +3410,56 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the casting time of your Smite, Holy Fire, Heal, and Greater Heal spells by {0} sec.",
+        "ranks": [
+          [
+            0.1
+          ],
+          [
+            0.2
+          ],
+          [
+            0.3
+          ],
+          [
+            0.4
+          ],
+          [
+            0.5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1181,
+          "classicSpellIds": [
+            18530,
+            18531,
+            18533,
+            18534,
+            18535
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic priest/holy/Divine Fury (talent 1181): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1181,
+          "name": "Divine Fury",
+          "class": "priest",
+          "tree": "holy",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -4280,6 +4467,23 @@
         "confidence": "high",
         "tier": "later-talents",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Heals a friendly target and the caster for {0} to {1}.",
+        "ranks": [
+          [
+            330,
+            387
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -6468,6 +6672,30 @@
         "confidence": "high",
         "tier": "later-talents",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Your Mind Flay now deals {0}% more damage, gains {1} yards increased range, but slows the target's movement speed by {2}%.",
+        "ranks": [
+          [
+            10,
+            5,
+            35
+          ],
+          [
+            10,
+            5,
+            35
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: 3 numeric slots; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
       }
     },
     {
@@ -7602,6 +7830,25 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Assume Shadowform, increasing your Shadow damage by {0}%, reducing the Mana cost of all Shadow spells by {1}%, increasing the Critical strike damage bonus of your Shadow spells by {2}%, and reducing Physical damage taken by you by {3}%. However, you may not cast healing spells while in this form.",
+        "ranks": [
+          [
+            10,
+            50,
+            100,
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     }
   ],

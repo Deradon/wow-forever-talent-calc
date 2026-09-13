@@ -917,6 +917,12 @@ PERCENT_SLOT_RE = r"\{{{i}}}\s*%"
 THRESHOLD_RE = re.compile(
     r"(?:below|under|less than|beneath|at or below|above|over|more than|greater than|at least)\s+"
     r"(?:\w+\s+){0,2}?\{(\d+)\}\s*%", re.I)
+# The same shape with a distance instead of a percentage: "jumping to a nearby enemy within 5 yards"
+# is a search condition, not the talent's magnitude, so it does not double at rank 2 either.
+# Only distance units qualify - "within {0} sec" is often a real window that a talent may extend.
+DISTANCE_THRESHOLD_RE = re.compile(
+    r"(?:within|inside|closer than|no more than)\s+(?:\w+\s+){0,2}?\{(\d+)\}\s*(?:yards?|yds?|meters?|metres?)",
+    re.I)
 CLASSIC_HEADROOM = 1.6          # Forever rank N above this multiple of Classic's max is worth a look
 
 
@@ -937,6 +943,7 @@ def rule_20_rank_sanity(ctx: Ctx, doc: dict) -> None:
                 continue
             observed = set(t.get("ranksObserved") or [1])
             thresholds = {int(m.group(1)) for m in THRESHOLD_RE.finditer(desc)}
+            thresholds |= {int(m.group(1)) for m in DISTANCE_THRESHOLD_RE.finditer(desc)}
             for i in placeholders(desc):
                 col = [(n, r[i]) for n, r in enumerate(ranks, 1) if i < len(r) and is_number(r[i])]
                 if len(col) != len(ranks):
@@ -945,7 +952,7 @@ def rule_20_rank_sanity(ctx: Ctx, doc: dict) -> None:
                 if i in thresholds and len(set(vals)) > 1:
                     ctx.warn("R20-THRESHOLD-SCALED", path,
                              f"slot {{{i}}} reads as a threshold in the text but changes per rank {vals}; "
-                             f"a condition like 'below {vals[0]}% health' does not scale")
+                             f"a condition like 'below {vals[0]}% health' or 'within {vals[0]} yards' does not scale")
                 if _percent_slot(desc, i):
                     over = [(n, v) for n, v in col if v > 100 and n not in observed]
                     if over and vals[0] <= 100:

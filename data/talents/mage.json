@@ -5,7 +5,7 @@
   "className": "Mage",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T13:45:02Z",
+  "generatedAt": "2026-09-13T15:14:51Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -257,7 +257,7 @@
             "match": "description",
             "similarity": 0.95
           },
-          "ranksNote": "Classic mage/fire/Flame Throwing (talent 28), matched on description (0.95): ranks copied.",
+          "ranksNote": "Classic mage/fire/Flame Throwing (talent 28), matched on description (0.95): Classic 3/6 is proportional; Forever rank 1 is 3: scaled proportionally (3 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -287,7 +287,7 @@
             "match": "description",
             "similarity": 0.96
           },
-          "ranksNote": "Classic mage/fire/Critical Mass (talent 33), matched on description (0.96): ranks copied.",
+          "ranksNote": "Classic mage/fire/Critical Mass (talent 33), matched on description (0.96): Classic 2/4/6 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -598,7 +598,7 @@
             "match": "description",
             "similarity": 0.99
           },
-          "ranksNote": "Classic mage/fire/Critical Mass (talent 33), matched on description (0.99): ranks copied.",
+          "ranksNote": "Classic mage/fire/Critical Mass (talent 33), matched on description (0.99): Classic 2/4/6 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1343,11 +1343,17 @@
           "maxRank": 3,
           "icon": "spell_frost_icestorm",
           "iconSource": "classic",
-          "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by {0}% for {1} sec.",
-          "ranks": [[15, 1.5], [15, 1.5], [15, 1.5]],
+          "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by {0}% for 1.5 sec.",
+          "ranks": [[15], [30], [45]],
           "ranksObserved": [1],
-          "ranksSource": "manual",
-          "ranksNote": "needs manual ranks: Classic mage/frost/Improved Blizzard (talent 63) scales 30/50/65 (non-linear) but Forever rank 1 is 15; ranks 2..3 are copies of rank 1.",
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 63,
+            "classicSpellIds": [11185, 12487, 12488],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic mage/frost/Improved Blizzard (talent 63): Classic 30/50/65 is non-linear, which does not start at Forever's rank 1 (15); Classic's pattern was NOT applied, ranks scaled proportionally (15 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1451,7 +1457,7 @@
           "icon": "spell_frost_glacier",
           "iconSource": "classic",
           "description": "Increases the damage dealt by your Cone of Cold spell by {0}%.",
-          "ranks": [[12], [20], [28]],
+          "ranks": [[12], [24], [36]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1460,7 +1466,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic mage/frost/Improved Cone of Cold (talent 64): Classic 15/25/35 = 10 x rank +5; Forever rank 1 is 12 = 0.8x Classic's 15, step and offset scaled by 0.8.",
+          "ranksNote": "Classic mage/frost/Improved Cone of Cold (talent 64): Classic 15/25/35 is 10 x rank +5, which does not start at Forever's rank 1 (12); Classic's pattern was NOT applied, ranks scaled proportionally (12 x rank). Rounding: rank 2 24 may read 25, rank 3 36 may read 35 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",

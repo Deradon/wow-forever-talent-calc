@@ -331,6 +331,44 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "After killing a non-trivial enemy, gives you a {0}% increased Critical Strike Chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            40
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 272,
+          "classicSpellIds": [
+            14144,
+            14148
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/assassination/Remorseless Attacks (talent 272): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 272,
+          "name": "Remorseless Attacks",
+          "class": "rogue",
+          "tree": "assassination",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -6306,6 +6344,48 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Gives you a {0}% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
+        "ranks": [
+          [
+            33
+          ],
+          [
+            66
+          ],
+          [
+            99
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 245,
+          "classicSpellIds": [
+            13976,
+            13979,
+            13980
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic rogue/subtlety/Initiative (talent 245): Classic 25/50/75 is proportional; Forever rank 1 is 33: scaled proportionally (33 x rank). Rounding: rank 2 66 may read 65, rank 3 99 may read 100 (values above are the raw scaled numbers).",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "proportional",
+        "match": {
+          "classicTalentId": 245,
+          "name": "Initiative",
+          "class": "rogue",
+          "tree": "subtlety",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {

@@ -144,7 +144,21 @@ def test_scale_slot_copies_when_forever_starts_where_classic_starts():
     plan = R.scale_slot(2, [2, 4, 6, 8, 10], 5)
     assert plan.rule == "copied" and plan.values == [2, 4, 6, 8, 10]
     assert R.scale_slot(7, [7, 7, 7], 3).values == [7, 7, 7]
-    assert R.scale_slot(15, [15, 30, 45, 65], 4).values == [15, 30, 45, 65]
+    # a non-proportional Classic progression with the same rank 1 is still Blizzard's own data
+    nonlinear = R.scale_slot(15, [15, 30, 45, 65], 4)
+    assert nonlinear.rule == "copied" and nonlinear.values == [15, 30, 45, 65]
+    assert "copied verbatim" in nonlinear.note
+    # the client's own rounding is copied along: 8/16/25 is not replaced by 8/16/24
+    assert R.scale_slot(8, [8, 16, 25], 3).values == [8, 16, 25]
+
+
+def test_scale_slot_copy_needs_an_exact_name_match():
+    # a description or fuzzy match is a wording resemblance, not evidence that the numbers carried
+    # over: without copy_allowed even an equal rank 1 scales proportionally
+    plan = R.scale_slot(15, [15, 30, 45, 65], 4, copy_allowed=False)
+    assert plan.rule == "proportional" and plan.values == [15, 30, 45, 60] and plan.low
+    # where Classic is proportional the two paths agree anyway
+    assert R.scale_slot(2, [2, 4, 6, 8, 10], 5, copy_allowed=False).values == [2, 4, 6, 8, 10]
 
 
 def test_scale_slot_proportional_scales_from_forever_rank_1():
@@ -160,16 +174,21 @@ def test_scale_slot_proportional_scales_from_forever_rank_1():
     assert ext.rule == "proportional" and ext.values == [4, 8, 12] and "Classic has 5 ranks" in ext.note
 
 
-def test_scale_slot_affine_scales_step_and_offset_by_the_ratio():
-    # Classic 15/25/35 = 10 x rank + 5; Forever rank 1 12 is 0.8x Classic's 15
+def test_scale_slot_never_rebases_a_classic_offset():
+    # Classic 15/25/35 = 10 x rank + 5, but that offset belongs to Classic's base of 15.
+    # Forever's 12 scales proportionally; the unapplied pattern is named in the note.
     plan = R.scale_slot(12, [15, 25, 35], 3)
-    assert plan.rule == "affine" and plan.values == [12, 20, 28]
-    assert "10 x rank +5" in plan.note and "scaled by 0.8" in plan.note
-    # the offset survives a ratio that does not come out whole; the raw value is kept
-    half = R.scale_slot(5, [10, 15, 20, 25, 30], 5)
-    assert half.rule == "affine" and half.values == [5, 7.5, 10, 12.5, 15]
-    assert "rank 2 7.5 may read 8" in half.rounding
-    assert R.scale_slot(20, [15, 30, 45, 65], 4) is None       # irregular, re-based: manual
+    assert plan.rule == "proportional" and plan.values == [12, 24, 36] and plan.low
+    assert "10 x rank +5" in plan.note and "NOT applied" in plan.note
+    assert "12 x rank" in plan.note
+    # Flurry: Classic 10/15/20/25/30, Forever rank 1 5 -> 5/10/15/20/25, never 5/7.5/10/12.5/15
+    flurry = R.scale_slot(5, [10, 15, 20, 25, 30], 5)
+    assert flurry.rule == "proportional" and flurry.values == [5, 10, 15, 20, 25] and flurry.low
+    assert flurry.rounding is None                             # no halves left to warn about
+    # an irregular Classic progression on a different base scales the same way
+    irregular = R.scale_slot(20, [15, 30, 45, 65], 4)
+    assert irregular.rule == "proportional" and irregular.values == [20, 40, 60, 80]
+    assert "non-linear" in irregular.note and "NOT applied" in irregular.note and irregular.low
 
 
 def test_scale_slot_keeps_decimals_tidy():
@@ -242,29 +261,54 @@ def test_meditation_scales_proportionally(prior):
     assert r.rendered()[2] == "Allows 51% of your Mana regeneration to continue while casting."
 
 
-def test_rebased_affine_offset(prior):
-    # Classic Improved Rend 15/25/35 carries a +5 offset: step and offset scale by 12/15
+def test_rebased_affine_scales_proportionally(prior):
+    # Classic Improved Rend 15/25/35 carries a +5 offset that belongs to Classic's own base.
+    # Forever's 12 scales proportionally; the offset is named, not applied.
     r = anticipate(prior, "Improved Rend", "Increases the bleed damage done by your Rend ability by 12%.", 3, "warrior")
-    assert r.ranks_source == "classic-prior" and r.rule == "affine"
-    assert r.ranks == [[12], [20], [28]]
-    assert "10 x rank +5" in r.ranks_note and "scaled by 0.8" in r.ranks_note
-    # an offset scaled by a ratio is one notch less trustworthy than a proportional scale
+    assert r.ranks_source == "classic-prior" and r.rule == "proportional"
+    assert r.ranks == [[12], [24], [36]]
+    assert "10 x rank +5" in r.ranks_note and "NOT applied" in r.ranks_note
+    # a Classic pattern we chose not to apply is a standing doubt for the reviewer
     assert r.confidence == "low" and r.review
 
 
-def test_nonlinear_classic_copied_when_base_matches(prior):
+def test_flurry_affine_becomes_proportional(prior):
+    # Classic Flurry 10/15/20/25/30 against Forever's 5: 5/10/15/20/25, not 5/7.5/10/12.5/15
+    r = anticipate(prior, "Flurry", "Increases your attack speed by 5% for your next 3 swings after dealing a critical strike.",
+                   5, "warrior")
+    assert r.ranks_source == "classic-prior" and r.rule == "proportional" and r.confidence == "low"
+    assert [row[0] for row in r.ranks] == [5, 10, 15, 20, 25]
+    assert "NOT applied" in r.ranks_note
+
+
+def test_twilight_focus_scales_from_its_own_rank_1(prior):
+    # Owner report: 23% at rank 1 must give 23/46/69. The only Classic talent worded like this
+    # with three ranks is druid Improved Entangling Roots (40/70/100), whose offset is not ours.
+    r = anticipate(prior, "Twilight Focus",
+                   "Gives you a 23% chance to avoid interruption caused by damage while casting any spell.",
+                   3, "priest")
+    assert r.ranks_source == "classic-prior" and r.rule == "proportional"
+    assert r.ranks == [[23], [46], [69]]
+    assert "NOT applied" in r.ranks_note and "23 x rank" in r.ranks_note
+    assert r.confidence == "low" and r.review
+
+
+def test_nonlinear_classic_copied_when_name_and_base_match(prior):
+    # exact same-name, same rank count, same rank 1: Classic's own 15/30/45/65 is kept
     r = anticipate(prior, "Improved Nature's Grasp",
                    "Increases the chance for your Nature's Grasp to entangle an enemy by 15%.", 4, "druid")
     assert r.ranks_source == "classic-prior" and r.confidence == "medium" and r.review
-    assert r.ranks == [[15], [30], [45], [65]]
+    assert r.rule == "copied" and r.ranks == [[15], [30], [45], [65]]
 
 
-def test_nonlinear_classic_rebased_goes_manual(prior):
+def test_nonlinear_classic_rebased_scales_proportionally(prior):
+    # same name, different rank 1: the copy exception does not apply, so v1 * k
     r = anticipate(prior, "Improved Nature's Grasp",
                    "Increases the chance for your Nature's Grasp to entangle an enemy by 20%.", 4, "druid")
-    assert r.ranks_source == "manual" and r.needs_manual and r.ranks_prior is None
-    assert r.ranks == [[20], [20], [20], [20]]
-    assert r.ranks_note.startswith("needs manual ranks") and "non-linear" in r.ranks_note
+    assert r.ranks_source == "classic-prior" and not r.needs_manual and r.rule == "proportional"
+    assert r.ranks == [[20], [40], [60], [80]]
+    assert "non-linear" in r.ranks_note and "NOT applied" in r.ranks_note
+    assert r.confidence == "low" and r.review
     assert r.to_fields()["match"]["classicTalentId"] == 921  # match kept for the reviewer
 
 

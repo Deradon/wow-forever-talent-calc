@@ -5,7 +5,7 @@
   "className": "Warlock",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T13:45:04Z",
+  "generatedAt": "2026-09-13T15:14:52Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -326,7 +326,7 @@
             "match": "description",
             "similarity": 0.88
           },
-          "ranksNote": "Classic warlock/destruction/Devastation (talent 981), matched on description (0.88): ranks copied.",
+          "ranksNote": "Classic warlock/destruction/Devastation (talent 981), matched on description (0.88): Classic 1/2/3/4/5 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -761,7 +761,7 @@
             "match": "description",
             "similarity": 0.99
           },
-          "ranksNote": "Classic warlock/demonology/Improved Succubus (talent 1243), matched on description (0.99): ranks copied.",
+          "ranksNote": "Classic warlock/demonology/Improved Succubus (talent 1243), matched on description (0.99): Classic 10/20/30 is proportional; Forever rank 1 is 10: scaled proportionally (10 x rank); Classic 10/20/30 is proportional; Forever rank 1 is 10: scaled proportionally (10 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",

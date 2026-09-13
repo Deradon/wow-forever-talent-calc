@@ -744,11 +744,11 @@
           "match": "description",
           "similarity": 0.85
         },
-        "ranksNote": "Classic mage/fire/Incinerate (talent 1141) (cross-class), matched on description (0.85): ranks copied.",
+        "ranksNote": "Classic mage/fire/Incinerate (talent 1141) (cross-class), matched on description (0.85): Classic 2/4 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "copied",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1141,
           "name": "Incinerate",
@@ -1030,6 +1030,41 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by your Entangling Roots spell by {0}%, and its victims can take up to {1}% more damage without interrupting the effect.",
+        "ranks": [
+          [
+            25,
+            25
+          ],
+          [
+            50,
+            50
+          ],
+          [
+            75,
+            75
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "extrapolated",
+        "ranksNote": "Classic match druid/balance/Improved Entangling Roots (talent 787) has no alignable slots; proportional x2..x3 of rank 1 assumed.",
+        "needsManual": false,
+        "confidence": "low",
+        "review": true,
+        "rule": "proportional",
+        "match": {
+          "classicTalentId": 787,
+          "name": "Improved Entangling Roots",
+          "class": "druid",
+          "tree": "balance",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -2027,6 +2062,23 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "All non-periodic spell criticals grace you with a blessing of nature, increasing your spellcasting speed and reducing your global cooldown by {0}% for {1} sec.",
+        "ranks": [
+          [
+            10,
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -2457,6 +2509,24 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Transforms the Druid into Moonkin Form. While in this form, the armor contribution from items is increased by {0}% and all party members within {1} yards have their critical chance increased by {2}%, exclusive with Leader of the Pack. The Moonkin cannot cast healing spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement impairing effects.",
+        "ranks": [
+          [
+            360,
+            45,
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -2580,6 +2650,56 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cost of your Maul, Mangle, Swipe, Claw, and Rake abilities by {0} Rage or Energy.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 796,
+          "classicSpellIds": [
+            16934,
+            16935,
+            16936,
+            16937,
+            16938
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic druid/feral-combat/Ferocity (talent 796): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 796,
+          "name": "Ferocity",
+          "class": "druid",
+          "tree": "feral-combat",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -2869,11 +2989,11 @@
           "match": "description",
           "similarity": 0.94
         },
-        "ranksNote": "Classic druid/feral-combat/Feline Swiftness (talent 807), matched on description (0.94): ranks copied.",
+        "ranksNote": "Classic druid/feral-combat/Feline Swiftness (talent 807), matched on description (0.94): Classic 15/30 is proportional; Forever rank 1 is 15: scaled proportionally (15 x rank); Classic 2/4 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "copied",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 807,
           "name": "Feline Swiftness",
@@ -3627,6 +3747,23 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Charge an enemy, immobilizing them and interrupting any spell they are casting for {0} sec. Feral Charge (Cat): Leap behind an enemy. Dazing them for {1} sec.",
+        "ranks": [
+          [
+            4,
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -4479,11 +4616,11 @@
           "match": "description",
           "similarity": 0.96
         },
-        "ranksNote": "Classic warrior/arms/Impale (talent 662) (cross-class), matched on description (0.96): ranks copied.",
+        "ranksNote": "Classic warrior/arms/Impale (talent 662) (cross-class), matched on description (0.96): Classic 10/20 is proportional; Forever rank 1 is 10: scaled proportionally (10 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "copied",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 662,
           "name": "Impale",
@@ -4627,6 +4764,23 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the critical strike chance of all party members within {0} yards by {1}%, exclusive with Moonkin Aura.",
+        "ranks": [
+          [
+            45,
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -6558,6 +6712,56 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the mana cost of your Healing Touch and Tranquility spells by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 843,
+          "classicSpellIds": [
+            24968,
+            24969,
+            24970,
+            24971,
+            24972
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic druid/restoration/Tranquil Spirit (talent 843): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 843,
+          "name": "Tranquil Spirit",
+          "class": "druid",
+          "tree": "restoration",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -6976,7 +7180,21 @@
           "confidence": 0.7,
           "medians": 1
         }
-      ]
+      ],
+      "ranks_anticipated": {
+        "description": "When activated, your next Nature spell becomes an instant cast spell.",
+        "ranks": [
+          []
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
     },
     {
       "id": "druid/restoration/r4c1",

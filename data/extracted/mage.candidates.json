@@ -1309,11 +1309,11 @@
           "match": "description",
           "similarity": 0.95
         },
-        "ranksNote": "Classic mage/fire/Flame Throwing (talent 28), matched on description (0.95): ranks copied.",
+        "ranksNote": "Classic mage/fire/Flame Throwing (talent 28), matched on description (0.95): Classic 3/6 is proportional; Forever rank 1 is 3: scaled proportionally (3 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "copied",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 28,
           "name": "Flame Throwing",
@@ -1464,11 +1464,11 @@
           "match": "description",
           "similarity": 0.96
         },
-        "ranksNote": "Classic mage/fire/Critical Mass (talent 33), matched on description (0.96): ranks copied.",
+        "ranksNote": "Classic mage/fire/Critical Mass (talent 33), matched on description (0.96): Classic 2/4/6 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "copied",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 33,
           "name": "Critical Mass",
@@ -2334,6 +2334,22 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "When activated, your next Mage spell with a casting time less than {0} sec becomes an instant cast spell.",
+        "ranks": [
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -3013,6 +3029,48 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike chance of your Fire Blast, Ice Lance, Arcane Blast, and Scorch spells by {0}%.",
+        "ranks": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 33,
+          "classicSpellIds": [
+            11115,
+            11367,
+            11368
+          ],
+          "match": "description",
+          "similarity": 0.99
+        },
+        "ranksNote": "Classic mage/fire/Critical Mass (talent 33), matched on description (0.99): Classic 2/4/6 is proportional; Forever rank 1 is 2: scaled proportionally (2 x rank).",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "proportional",
+        "match": {
+          "classicTalentId": 33,
+          "name": "Critical Mass",
+          "class": "mage",
+          "tree": "fire",
+          "maxRank": 3,
+          "match": "description",
+          "similarity": 0.99
+        }
       }
     },
     {
@@ -3933,6 +3991,25 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Hurls an immense fiery boulder that causes {0} to {1} Fire damage and an additional {2} Fire damage over {3} sec.",
+        "ranks": [
+          [
+            155,
+            185,
+            76,
+            12
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -4066,6 +4143,48 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Your Scorch spell has a {0}% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
+        "ranks": [
+          [
+            33
+          ],
+          [
+            66
+          ],
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 25,
+          "classicSpellIds": [
+            11095,
+            12872,
+            12873
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/fire/Improved Scorch (talent 25): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 25,
+          "name": "Improved Scorch",
+          "class": "mage",
+          "tree": "fire",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -6596,30 +6715,37 @@
         "confidence": 0.7
       },
       "ranks_anticipated": {
-        "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by {0}% for {1} sec.",
+        "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by {0}% for 1.5 sec.",
         "ranks": [
           [
-            15,
-            1.5
+            15
           ],
           [
-            15,
-            1.5
+            30
           ],
           [
-            15,
-            1.5
+            45
           ]
         ],
         "ranksObserved": [
           1
         ],
-        "ranksSource": "manual",
-        "ranksNote": "needs manual ranks: Classic mage/frost/Improved Blizzard (talent 63) scales 30/50/65 (non-linear) but Forever rank 1 is 15; ranks 2..3 are copies of rank 1.",
-        "needsManual": true,
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 63,
+          "classicSpellIds": [
+            11185,
+            12487,
+            12488
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Improved Blizzard (talent 63): Classic 30/50/65 is non-linear, which does not start at Forever's rank 1 (15); Classic's pattern was NOT applied, ranks scaled proportionally (15 x rank).",
+        "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "none",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 63,
           "name": "Improved Blizzard",
@@ -6931,6 +7057,22 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for {0} sec, but during that time you cannot attack, move, or cast spells.",
+        "ranks": [
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -7045,6 +7187,29 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 0.7
+      },
+      "ranks_anticipated": {
+        "description": "Increases the critical strike chance of all your spells against frozen targets by {0}%.",
+        "ranks": [
+          [
+            50
+          ],
+          [
+            50
+          ],
+          [
+            50
+          ]
+        ],
+        "ranksObserved": [
+          3
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: tooltip shows rank 3/3, so its numbers are not rank 1; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
       }
     },
     {
@@ -7151,10 +7316,10 @@
             12
           ],
           [
-            20
+            24
           ],
           [
-            28
+            36
           ]
         ],
         "ranksObserved": [
@@ -7171,11 +7336,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic mage/frost/Improved Cone of Cold (talent 64): Classic 15/25/35 = 10 x rank +5; Forever rank 1 is 12 = 0.8x Classic's 15, step and offset scaled by 0.8.",
+        "ranksNote": "Classic mage/frost/Improved Cone of Cold (talent 64): Classic 15/25/35 is 10 x rank +5, which does not start at Forever's rank 1 (12); Classic's pattern was NOT applied, ranks scaled proportionally (12 x rank). Rounding: rank 2 24 may read 25, rank 3 36 may read 35 (values above are the raw scaled numbers).",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "affine",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 64,
           "name": "Improved Cone of Cold",
@@ -7475,6 +7640,30 @@
         "confidence": "high",
         "tier": "later-talents",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Gives your Chill effects a {0}% chance to grant you the Fingers of Frost effect, which treats your next {1} spell cast as if the target were frozen. Lasts {2} sec.",
+        "ranks": [
+          [
+            15,
+            1,
+            15
+          ],
+          [
+            15,
+            1,
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (15 sec) is never extrapolated; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
       }
     },
     {
@@ -7605,6 +7794,56 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Gives your frost damage spells a {0}% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
+        "ranks": [
+          [
+            20
+          ],
+          [
+            40
+          ],
+          [
+            60
+          ],
+          [
+            80
+          ],
+          [
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 68,
+          "classicSpellIds": [
+            11180,
+            28592,
+            28593,
+            28594,
+            28595
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic mage/frost/Winter's Chill (talent 68): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 68,
+          "name": "Winter's Chill",
+          "class": "mage",
+          "tree": "frost",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {

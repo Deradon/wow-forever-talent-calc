@@ -900,6 +900,48 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Revive Pet's casting time is reduced by {0} sec, mana cost is reduced by {1}%, and increases the health your pet returns with by an additional {2}%.",
+        "ranks": [
+          [
+            3,
+            20,
+            15
+          ],
+          [
+            6,
+            40,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1625,
+          "classicSpellIds": [
+            24443,
+            19575
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/beast-mastery/Improved Revive Pet (talent 1625): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1625,
+          "name": "Improved Revive Pet",
+          "class": "hunter",
+          "tree": "beast-mastery",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -1933,6 +1975,23 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Command your pet to Stun the target for {0} sec on its next successful attack, which also gains {1}% increased critical strike chance. Generates high threat.",
+        "ranks": [
+          [
+            3,
+            100
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -2836,11 +2895,11 @@
           "match": "description",
           "similarity": 0.9
         },
-        "ranksNote": "Classic hunter/survival/Deflection (talent 1311), matched on description (0.90): ranks copied.",
+        "ranksNote": "Classic hunter/survival/Deflection (talent 1311), matched on description (0.90): Classic 1/2/3/4/5 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "copied",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1311,
           "name": "Deflection",
@@ -2973,6 +3032,35 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increased the damage of your Serpent Sting ability by {0}%, reduces the cooldown of your Viper Sting ability by {1} sec, and increases the duration of your Scorpid Sting ability by {2} sec.",
+        "ranks": [
+          [
+            6,
+            2,
+            15
+          ],
+          [
+            6,
+            2,
+            15
+          ],
+          [
+            6,
+            2,
+            15
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: duration slot (2 sec) is never extrapolated; ranks 2..3 are copies of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none"
       }
     },
     {
@@ -3399,6 +3487,39 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Reduces the cooldown on your Rapid Fire ability by {0} min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next shot ability within {1} sec by {2}%.",
+        "ranks": [
+          [
+            1,
+            20,
+            10
+          ],
+          [
+            1,
+            20,
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "manual",
+        "ranksNote": "needs manual ranks: Classic match warrior/protection/Improved Taunt (talent 143) has no alignable slots; rank 2 is a copy of rank 1.",
+        "needsManual": true,
+        "confidence": "low",
+        "review": true,
+        "rule": "none",
+        "match": {
+          "classicTalentId": 143,
+          "name": "Improved Taunt",
+          "class": "warrior",
+          "tree": "protection",
+          "maxRank": 2,
+          "match": "description",
+          "similarity": 0.88
+        }
       }
     },
     {
@@ -3681,6 +3802,22 @@
         "confidence": "high",
         "tier": "later-talents",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "You deal {0}% increased damage with all attacks while you do not have an active pet.",
+        "ranks": [
+          [
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -5712,6 +5849,46 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Increases the duration of Freezing and Frost trap effects by {0}% and the damage of Immolation and Explosive trap effects by {1}%.",
+        "ranks": [
+          [
+            15,
+            15
+          ],
+          [
+            30,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1306,
+          "classicSpellIds": [
+            19239,
+            19245
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic hunter/survival/Clever Traps (talent 1306): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1306,
+          "name": "Clever Traps",
+          "class": "hunter",
+          "tree": "survival",
+          "maxRank": 2,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -7160,7 +7337,24 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ]
+      ],
+      "ranks_anticipated": {
+        "description": "Your Mongoose Bite also causes the target to bleed for damage over {0} sec equal to {1}% of the damage done by Mongoose Bite.",
+        "ranks": [
+          [
+            21,
+            40
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
     }
   ],
   "arrows": {

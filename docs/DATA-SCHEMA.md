@@ -210,18 +210,21 @@ A `manual` source needs only `kind`, `reviewed: true`, `reviewedBy`,
   `ranksSource != "observed"` -> show "ranks 2+ anticipated (<ranksSource>)"
   on the tooltip and dim the next-rank text.
 - Scaling of anticipated ranks (`pipeline/src/wowtalents/ranks.py`, changed
-  2026-09-13, see `docs/handover/2026-09-13-rank-scaling.md`): Classic Era
-  progressions are proportional far more often than not (`c_k = a * k`, up to
-  the half unit the client rounds by: 5/10/15, 2/4/6/8/10, 16/33/50). When
-  Forever's rank 1 differs from Classic's, a proportional Classic slot is
-  scaled proportionally from Forever's own rank 1 (`v_k = v_1 * k`; 17% gives
-  17/34/51), never by Classic's additive step from a foreign base. An
-  additive step is only scaled along when Classic itself carries an offset
-  (10/15/20 = 5k + 5); step and offset are then both multiplied by
-  `v_1 / c_1` and the record is one confidence notch lower.
+  2026-09-13, see `docs/handover/2026-09-13-rank-scaling.md` section 6):
+  **anticipated ranks are `v_k = v_1 * k`.** A Forever talent scales
+  proportionally from its own rank 1 whatever shape the matched Classic talent
+  has (17% gives 17/34/51). The single exception is a verbatim copy: an exact
+  same-name Classic talent with the same rank count whose rank 1 equals
+  Forever's keeps Classic's own per-rank numbers, because they are Blizzard's
+  and not our arithmetic (so 8/16/25 stays 8/16/25). Classic's additive step
+  and offset are never re-based onto a foreign rank 1 - that produced
+  23/40.25/57.5 for priest Twilight Focus. Where the matched Classic slot is
+  not proportional (10/15/20 = 5k + 5, or 15/30/45/65) and is not copied, the
+  pattern that was **not** applied is named in `ranksNote` and the record is
+  one confidence notch lower (`low`).
 - Anticipated values are the raw result of that arithmetic. Where a value
-  looks like a number the client would round (51 -> 50, 34 -> 35, 40.25 ->
-  40), `ranksNote` ends in `Rounding: rank <k> <raw> may read <rounded>, ...
+  looks like a number the client would round (51 -> 50, 34 -> 35, 69 -> 70),
+  `ranksNote` ends in `Rounding: rank <k> <raw> may read <rounded>, ...
   (values above are the raw scaled numbers)`. The rounding is never applied
   to `ranks`; only a reviewer or datamined data may replace the raw value.
 

@@ -5,7 +5,7 @@
   "className": "Paladin",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T13:45:03Z",
+  "generatedAt": "2026-09-13T15:14:50Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -58,7 +58,7 @@
             "match": "description",
             "similarity": 0.94
           },
-          "ranksNote": "Classic warrior/protection/Improved Taunt (talent 143) (cross-class), matched on description (0.94): ranks copied.",
+          "ranksNote": "Classic warrior/protection/Improved Taunt (talent 143) (cross-class), matched on description (0.94): Classic 1/2 is proportional; Forever rank 1 is 1: scaled proportionally (1 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -324,7 +324,7 @@
             "match": "description",
             "similarity": 0.86
           },
-          "ranksNote": "Classic shaman/elemental/Call of Flame (talent 561) (cross-class), matched on description (0.86): ranks copied.",
+          "ranksNote": "Classic shaman/elemental/Call of Flame (talent 561) (cross-class), matched on description (0.86): Classic 5/10/15 is proportional; Forever rank 1 is 5: scaled proportionally (5 x rank).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",

@@ -10,28 +10,29 @@ Entry point::
     res = anticipate("Toughness", "Increases your armor value from items by 2%.", 5, "paladin", prior)
     res.to_fields()   # description, ranks, ranksObserved, ranksSource, ranksPrior/ranksNote, needsManual
 
-Scaling rule (2026-09-13): a Classic progression is classified per slot as *proportional*
-(``c_k = a * k``, up to the half-unit the client rounds by: 5/10/15, 2/4/6/8/10, 16/33/50),
-*affine* (an arithmetic step with a non-zero offset: 10/15/20 = 5k + 5) or *irregular*.
-Proportional Classic + a different Forever rank 1 scales proportionally (``f1 * k``, so
-Forever's 17% against Classic's 5/10/15 gives 17/34/51, never Classic's +5 step from a
-foreign base). Affine Classic scales step *and* offset by ``f1 / c1`` and drops one
-confidence notch. Irregular stays manual unless Forever's rank 1 equals Classic's.
-Values that look like something Blizzard would round (51 -> 50, 40.25 -> 40) are reported
-in ``ranksNote`` ("Rounding: ...") and never rounded in the data.
+Scaling rule (2026-09-13, revised): **anticipated ranks are ``v1 * k``.** A Forever talent
+scales proportionally from its own rank 1, whatever shape Classic has. The single exception
+is a verbatim copy: an **exact same-name** Classic talent with the **same rank count** whose
+**rank 1 equals Forever's** — then Classic's own numbers are used, because they are
+Blizzard's and not our arithmetic. Every other case is proportional; when the Classic slot
+is not proportional (affine ``10/15/20 = 5k + 5``, or irregular ``15/30/45/65``) the pattern
+that was *not* applied is named in ``ranksNote`` and the record drops to ``low`` confidence.
+Classic's offset is never re-based onto a foreign rank 1: that is what produced
+23/40.25/57.5 for priest ``Twilight Focus`` (owner report), values nobody would design.
+Values that look like something Blizzard would round (51 -> 50) are reported in
+``ranksNote`` ("Rounding: ...") and never rounded in the data.
 
 Decision table (``ranksSource`` / confidence):
 
     maxRank == 1                                            observed       high
     exact same-class name, c1 == f1, same rank count        classic-prior  high   (copied)
-    fuzzy / cross-class / description match, copied         classic-prior  medium (review queue)
+    exact cross-class name, c1 == f1, same rank count       classic-prior  medium (copied, review queue)
     ("exact" is full-string key equality; the fuzzy tier uses token_sort_ratio, so a token subset
     such as "Divine Precision" vs "Precision" never scores 1.0 and never skips review)
     Classic match, proportional slot, other base/rank count classic-prior  medium (f1 * k, review queue)
-    Classic match, affine slot, other base/rank count       classic-prior  low    (step+offset x f1/c1, review queue)
+    Classic match, non-proportional slot not copied         classic-prior  low    (f1 * k, pattern named
+                                                                                   in the note, review queue)
     Classic shape-changing text, rank 1 identical           classic-prior  medium (per-rank strings copied)
-    Classic match, irregular slot, c1 == f1                 classic-prior  medium (copied, review queue)
-    Classic match, irregular slot, c1 != f1                 manual         -      (rank 1 copied, review queue)
     Classic duration in another unit (60 sec vs 1 min)      classic-prior  medium (Classic converted to Forever's unit, review queue)
     Classic duration unit does not convert whole (45 sec vs 1 min) manual  -      (rank 1 copied, review queue)
     Classic match but slot counts cannot be aligned         -> falls through to the no-match rows
@@ -414,9 +415,10 @@ def _round_half_up(x: float) -> int:
 @dataclass
 class SlotPlan:
     values: list[int | float]
-    rule: str            # constant | copied | proportional | affine
+    rule: str            # constant | copied | proportional
     note: str | None = None
     rounding: str | None = None
+    low: bool = False    # Classic's own progression was not proportional and was not applied
 
 
 def duration_unit(tokens: list[Token], pos: int, text: str) -> str | None:
@@ -442,13 +444,22 @@ def convert_duration(values: list[int | float], from_unit: str, to_unit: str) ->
     return out
 
 
-def scale_slot(f1: int | float, classic: list[int | float], max_rank: int) -> SlotPlan | None:
-    """Apply Classic's per-rank pattern to Forever's rank-1 value. None -> manual.
+def scale_slot(f1: int | float, classic: list[int | float], max_rank: int,
+               copy_allowed: bool = True) -> SlotPlan | None:
+    """Scale Forever's rank-1 value across its ranks. None -> manual.
 
-    Classic progressions are almost always proportional (``c_k = c_1 * k``); Forever's own
-    rank 1 is then the only base we know, so rank k is ``f1 * k``. An additive step from a
-    different base is only defensible when Classic itself carries a non-zero offset
-    (``10/15/20``), and even then the offset is scaled by ``f1 / c1`` like the step.
+    A Forever talent scales proportionally from its own rank 1: rank k is ``f1 * k``.
+    The one exception is a verbatim copy, and only when the caller says the Classic match is
+    strong enough for it (``copy_allowed``: an exact same-name talent) *and* Classic has the
+    same rank count *and* Classic's rank 1 is Forever's. Then Classic's own numbers are used;
+    they are Blizzard's and beat any formula, including where the client's own rounding makes
+    them miss the exact ray (8/16/25, 16/33/50).
+
+    Classic's additive step and offset are **never** re-based onto a different rank 1. A
+    Classic offset belongs to Classic's base; applied to Forever's it produces numbers nobody
+    designed (Twilight Focus: 23 against Classic 40/70/100 gave 23/40.25/57.5). A
+    non-proportional Classic slot is therefore scaled proportionally like everything else,
+    with the unapplied pattern named in the note and one confidence notch off.
     """
     kind = progression(classic)
     c1 = classic[0]
@@ -456,32 +467,29 @@ def scale_slot(f1: int | float, classic: list[int | float], max_rank: int) -> Sl
     c_str = "/".join(str(nice(c)) for c in classic)
     if kind == "constant":
         return SlotPlan([nice(f1)] * max_rank, "constant")
-    if n == max_rank and c1 == f1:
-        # Forever starts where Classic starts: Classic's own numbers beat any formula
-        note = None if kind in ("proportional", "affine") else "non-linear Classic progression copied"
+    if copy_allowed and n == max_rank and c1 == f1:
+        # Forever starts where Classic starts, under the same name: Classic's own numbers win
+        note = None if kind == "proportional" else "non-proportional Classic progression copied verbatim"
         return SlotPlan([nice(v) for v in classic], "copied", note)
     if float(f1) <= 0:
         return None
+    vals = [nice(float(f1) * k) for k in range(1, max_rank + 1)]
+    extra = f", Classic has {n} ranks" if n != max_rank else ""
     if kind == "proportional":
-        vals = [nice(float(f1) * k) for k in range(1, max_rank + 1)]
-        extra = f", Classic has {n} ranks" if n != max_rank else ""
         note = (f"Classic {c_str} is proportional{extra}; Forever rank 1 is {nice(f1)}: "
                 f"scaled proportionally ({nice(f1)} x rank)")
         return SlotPlan(vals, "proportional", note, rounding_hint(vals))
+    # affine or irregular: name the Classic pattern that was NOT applied, then scale anyway
     if kind == "affine":
         step = float(classic[1]) - float(classic[0])
         offset = float(c1) - step
-        if float(c1) == 0:
-            return None
-        r = float(f1) / float(c1)
-        vals = [nice(r * (step * k + offset)) for k in range(1, max_rank + 1)]
-        extra = f", Classic has {n} ranks" if n != max_rank else ""
-        rs = f"{r:.4g}"
-        note = (f"Classic {c_str} = {nice(step)} x rank {nice(offset):+}{extra}; Forever rank 1 is "
-                f"{nice(f1)} = {rs}x Classic's {nice(c1)}, step and offset scaled by {rs}")
-        return SlotPlan(vals, "affine", note, rounding_hint(vals))
-    # irregular Classic progression on a different base: only a reviewer can fill this in
-    return None
+        shape = f"{nice(step)} x rank {nice(offset):+}"
+    else:
+        shape = "non-linear"
+    note = (f"Classic {c_str} is {shape}{extra}, which does not start at Forever's rank 1 "
+            f"({nice(f1)}); Classic's pattern was NOT applied, ranks scaled proportionally "
+            f"({nice(f1)} x rank)")
+    return SlotPlan(vals, "proportional", note, rounding_hint(vals), low=True)
 
 
 # ----------------------------------------------------------------------------
@@ -498,7 +506,7 @@ class RankResult:
     needs_manual: bool = False
     confidence: str = "high"          # high | medium | low
     match: Match | None = None
-    rule: str | None = None           # copied | constant | proportional | affine | none
+    rule: str | None = None           # copied | constant | proportional | none
     review: bool = False              # belongs in the review queue
     # Which ranks the footage actually showed. [1] for every rank-0 tooltip; a crop taken with
     # points already spent reports the rank it really shows (see `observed_rank` in `anticipate`).
@@ -715,10 +723,14 @@ def _from_classic(m: Match, text: str, tokens: list[Token], slot_nums: list[Numb
             literal_notes.append(f"Classic {'/'.join(str(nice(v)) for v in column)} {c_unit} taken as "
                                  f"{'/'.join(str(v) for v in converted)} {f_unit}")
             column = converted
-        plan = scale_slot(n.value, column, max_rank)
+        # only an exact same-name Classic talent is evidence that Forever kept Classic's numbers;
+        # a fuzzy or description match is a wording resemblance, so it scales like everything else
+        plan = scale_slot(n.value, column, max_rank, copy_allowed=(m.match == "exact-name"))
         if plan is None:
+            # the only unscalable base: a rank-1 value of 0 (or below), which has no ray through it
             c_vals = "/".join(str(nice(v)) for v in column)
-            reason = f"Classic {m.label} scales {c_vals} (non-linear) but Forever rank 1 is {nice(n.value)}"
+            reason = (f"Forever rank 1 is {nice(n.value)}, which cannot be scaled proportionally "
+                      f"(Classic {m.label} has {c_vals})")
             res = _manual(text, tokens, number_infos(text, tokens), max_rank, reason, m)
             return res
         # plural head: prefer the word Classic pluralises, else the heuristic head
@@ -747,7 +759,7 @@ def _from_classic(m: Match, text: str, tokens: list[Token], slot_nums: list[Numb
     # only an exact same-class name with a verbatim copy skips review: a fuzzy name means the
     # name itself needs a reviewer, a cross-class or description match is structural guesswork
     high = (m.match == "exact-name" and not m.cross_class and rules <= {"copied", "constant"}
-            and "non-linear Classic progression copied" not in notes and not literal_notes)
+            and "non-proportional Classic progression copied verbatim" not in notes and not literal_notes)
     if high:
         note = f"{prefix}: ranks copied."
         return RankResult(template, ranks, "classic-prior", _prior_block(m), note, False, "high", m, "copied", review=False)
@@ -755,9 +767,9 @@ def _from_classic(m: Match, text: str, tokens: list[Token], slot_nums: list[Numb
     note = f"{prefix}: {detail}."
     if roundings:
         note += f" Rounding: {'; '.join(roundings)} (values above are the raw scaled numbers)."
-    rule = "copied" if rules <= {"copied", "constant"} else ("affine" if "affine" in rules else "proportional")
-    # an offset scaled by a ratio is guesswork on top of guesswork: one notch below proportional
-    confidence = "low" if "affine" in rules else "medium"
+    rule = "copied" if rules <= {"copied", "constant"} else "proportional"
+    # a Classic pattern we deliberately did not apply is a standing doubt: one notch below proportional
+    confidence = "low" if any(pl.low for _, pl in plans) else "medium"
     return RankResult(template, ranks, "classic-prior", _prior_block(m), note, False, confidence, m, rule, review=True)
 
 

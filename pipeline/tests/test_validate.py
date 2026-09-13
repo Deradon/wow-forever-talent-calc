@@ -300,6 +300,36 @@ def test_r20_flags_a_threshold_that_was_scaled(tmp_path, example, text):
     assert "R20-THRESHOLD-SCALED" in codes(findings, "WARNING")
 
 
+def test_r20_flags_a_scaled_distance_condition(tmp_path, example):
+    """priest/devouring-contagion: a jump radius of 'within 5 yards' became 10 at rank 2.
+    A search radius is a condition like a health threshold, not the talent's magnitude."""
+    doc = copy.deepcopy(example)
+    t = _first_multirank(doc)
+    t["maxRank"] = 2
+    t["description"] = ("Reduces the mana cost of your Devouring Plague by {0}%. Targets that die while it "
+                        "is active spread it, jumping to a nearby enemy within {1} yards.")
+    t["ranks"] = [[25, 5], [50, 10]]
+    t["ranksObserved"] = [1]
+    t["ranksSource"] = "extrapolated"
+    t.pop("ranksPrior", None)
+    _, findings = run(make_repo(tmp_path, doc))
+    assert "R20-THRESHOLD-SCALED" in codes(findings, "WARNING")
+
+
+def test_r20_leaves_a_scaled_time_window_alone(tmp_path, example):
+    """'within {0} sec' is often a real window a talent may extend: only distances are conditions."""
+    doc = copy.deepcopy(example)
+    t = _first_multirank(doc)
+    t["maxRank"] = 2
+    t["description"] = "Your next spell cast within {0} sec deals {1}% more damage."
+    t["ranks"] = [[5, 10], [10, 20]]
+    t["ranksObserved"] = [1]
+    t["ranksSource"] = "extrapolated"
+    t.pop("ranksPrior", None)
+    _, findings = run(make_repo(tmp_path, doc))
+    assert "R20-THRESHOLD-SCALED" not in codes(findings, "WARNING")
+
+
 def test_r20_leaves_a_constant_threshold_alone(tmp_path, example):
     doc = copy.deepcopy(example)
     t = _first_multirank(doc)

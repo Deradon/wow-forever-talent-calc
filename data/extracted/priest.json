@@ -5,7 +5,7 @@
   "className": "Priest",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T13:45:03Z",
+  "generatedAt": "2026-09-13T15:14:51Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -1039,7 +1039,7 @@
           "iconSource": "crop",
           "iconCrop": "data/review/priest/holy/twilight-focus.icon.png",
           "description": "Gives you a {0}% chance to avoid interruption caused by damage while casting any spell.",
-          "ranks": [[23], [40.25], [57.5]],
+          "ranks": [[23], [46], [69]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1048,7 +1048,7 @@
             "match": "description",
             "similarity": 0.93
           },
-          "ranksNote": "Classic druid/balance/Improved Entangling Roots (talent 787) (cross-class), matched on description (0.93): Classic 40/70/100 = 30 x rank +10; Forever rank 1 is 23 = 0.575x Classic's 40, step and offset scaled by 0.575. Rounding: rank 2 40.25 may read 40, rank 3 57.5 may read 58 (values above are the raw scaled numbers).",
+          "ranksNote": "Classic druid/balance/Improved Entangling Roots (talent 787) (cross-class), matched on description (0.93): Classic 40/70/100 is 30 x rank +10, which does not start at Forever's rank 1 (23); Classic's pattern was NOT applied, ranks scaled proportionally (23 x rank). Rounding: rank 2 46 may read 45, rank 3 69 may read 70 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",

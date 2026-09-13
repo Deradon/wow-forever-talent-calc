@@ -331,6 +331,56 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Increases the damage done by your Lightning Bolt, Chain Lightning, and Earth Shock spells by {0}%.",
+        "ranks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 563,
+          "classicSpellIds": [
+            16035,
+            16105,
+            16106,
+            16107,
+            16108
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/elemental/Concussion (talent 563): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 563,
+          "name": "Concussion",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 5,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -920,6 +970,48 @@
         "video": "DxtVEhjyROU",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
         "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your offensive spell critical strikes will increase your chance to get a critical strike with melee attacks by {0}% for 10 sec.",
+        "ranks": [
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1645,
+          "classicSpellIds": [
+            30160,
+            29179,
+            29180
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/elemental/Elemental Devastation (talent 1645): ranks copied.",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "copied",
+        "match": {
+          "classicTalentId": 1645,
+          "name": "Elemental Devastation",
+          "class": "shaman",
+          "tree": "elemental",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -1984,6 +2076,22 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Your Earthbind Totem immobilizes nearby targets for {0} sec when cast.",
+        "ranks": [
+          [
+            5
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -2265,6 +2373,24 @@
         "confidence": "high",
         "tier": "later-talents",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "You hurl molten lava at the target, dealing {0} to {1} Fire damage. If your Flame Shock is on the target, Lava Burst deals {2}% increased damage.",
+        "ranks": [
+          [
+            158,
+            187,
+            20
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -3977,16 +4103,16 @@
             5
           ],
           [
-            7.5
-          ],
-          [
             10
           ],
           [
-            12.5
+            15
           ],
           [
-            15
+            20
+          ],
+          [
+            25
           ]
         ],
         "ranksObserved": [
@@ -4005,11 +4131,11 @@
           "match": "exact-name",
           "similarity": 1.0
         },
-        "ranksNote": "Classic shaman/enhancement/Flurry (talent 602): Classic 10/15/20/25/30 = 5 x rank +5; Forever rank 1 is 5 = 0.5x Classic's 10, step and offset scaled by 0.5. Rounding: rank 2 7.5 may read 8, rank 4 12.5 may read 13 (values above are the raw scaled numbers).",
+        "ranksNote": "Classic shaman/enhancement/Flurry (talent 602): Classic 10/15/20/25/30 is 5 x rank +5, which does not start at Forever's rank 1 (5); Classic's pattern was NOT applied, ranks scaled proportionally (5 x rank).",
         "needsManual": false,
         "confidence": "low",
         "review": true,
-        "rule": "affine",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 602,
           "name": "Flurry",
@@ -4318,6 +4444,23 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by {0}% while Rockbiter Weapon is not active, and increases all threat generated by {1}% while Rockbiter Weapon is active.",
+        "ranks": [
+          [
+            30,
+            30
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {
@@ -5474,11 +5617,11 @@
           "match": "description",
           "similarity": 0.99
         },
-        "ranksNote": "Classic shaman/restoration/Healing Grace (talent 1646), matched on description (0.99): ranks copied.",
+        "ranksNote": "Classic shaman/restoration/Healing Grace (talent 1646), matched on description (0.99): Classic 5/10/15 is proportional; Forever rank 1 is 5: scaled proportionally (5 x rank).",
         "needsManual": false,
         "confidence": "medium",
         "review": true,
-        "rule": "copied",
+        "rule": "proportional",
         "match": {
           "classicTalentId": 1646,
           "name": "Healing Grace",
@@ -6796,6 +6939,48 @@
         "confidence": "high",
         "tier": "classic-era-client",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "Increases the amount healed by your Healing Wave spell by {0}%.",
+        "ranks": [
+          [
+            8
+          ],
+          [
+            16
+          ],
+          [
+            24
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "classic-prior",
+        "ranksPrior": {
+          "classicTalentId": 1648,
+          "classicSpellIds": [
+            29206,
+            29205,
+            29202
+          ],
+          "match": "exact-name",
+          "similarity": 1.0
+        },
+        "ranksNote": "Classic shaman/restoration/Healing Way (talent 1648): Classic 33/66/100 is proportional; Forever rank 1 is 8: scaled proportionally (8 x rank). Rounding: rank 3 24 may read 25 (values above are the raw scaled numbers).",
+        "needsManual": false,
+        "confidence": "medium",
+        "review": true,
+        "rule": "proportional",
+        "match": {
+          "classicTalentId": 1648,
+          "name": "Healing Way",
+          "class": "shaman",
+          "tree": "restoration",
+          "maxRank": 3,
+          "match": "exact-name",
+          "similarity": 1.0
+        }
       }
     },
     {
@@ -6928,6 +7113,22 @@
         "confidence": "high",
         "tier": "prior",
         "verified": false
+      },
+      "ranks_anticipated": {
+        "description": "When activated, your next Nature spell with a casting time less than {0} sec. becomes an instant cast spell.",
+        "ranks": [
+          [
+            10
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
       }
     },
     {

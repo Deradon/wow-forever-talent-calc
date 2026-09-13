@@ -5,7 +5,7 @@
   "className": "Warrior",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T13:45:04Z",
+  "generatedAt": "2026-09-13T15:14:50Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -108,7 +108,7 @@
           "icon": "ability_gouge",
           "iconSource": "classic",
           "description": "Increases the Bleed damage done by your Rend ability by {0}%.",
-          "ranks": [[12], [20], [28]],
+          "ranks": [[12], [24], [36]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -117,7 +117,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic warrior/arms/Improved Rend (talent 127): Classic 15/25/35 = 10 x rank +5; Forever rank 1 is 12 = 0.8x Classic's 15, step and offset scaled by 0.8.",
+          "ranksNote": "Classic warrior/arms/Improved Rend (talent 127): Classic 15/25/35 is 10 x rank +5, which does not start at Forever's rank 1 (12); Classic's pattern was NOT applied, ranks scaled proportionally (12 x rank). Rounding: rank 2 24 may read 25, rank 3 36 may read 35 (values above are the raw scaled numbers).",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -995,7 +995,7 @@
           "icon": "ability_ghoulfrenzy",
           "iconSource": "classic",
           "description": "Increases your melee attack speed by {0}% for your next 3 swings after dealing a melee critical strike.",
-          "ranks": [[5], [7.5], [10], [12.5], [15]],
+          "ranks": [[5], [10], [15], [20], [25]],
           "ranksObserved": [1],
           "ranksSource": "classic-prior",
           "ranksPrior": {
@@ -1004,7 +1004,7 @@
             "match": "exact-name",
             "similarity": 1.0
           },
-          "ranksNote": "Classic warrior/fury/Flurry (talent 156): Classic 10/15/20/25/30 = 5 x rank +5; Forever rank 1 is 5 = 0.5x Classic's 10, step and offset scaled by 0.5. Rounding: rank 2 7.5 may read 8, rank 4 12.5 may read 13 (values above are the raw scaled numbers).",
+          "ranksNote": "Classic warrior/fury/Flurry (talent 156): Classic 10/15/20/25/30 is 5 x rank +5, which does not start at Forever's rank 1 (5); Classic's pattern was NOT applied, ranks scaled proportionally (5 x rank).",
           "requires": [
             {
               "talent": "enrage",
