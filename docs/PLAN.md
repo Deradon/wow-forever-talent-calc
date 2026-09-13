@@ -201,6 +201,15 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-13 ~18:30: UI round 1 live: build summary column with copy-as-text,
+  build code and import (our code or Wowhead Classic strings mapped by name),
+  class switcher chips, wide-desktop layout up to 56 px cells, undo/redo with
+  undoable reset, continue card from local storage, "New in Forever" markers
+  from a build-time Classic diff (145 new, 132 moved, 18 re-ranked, 108 gone),
+  shift/ctrl modifier clicks, tier gutter, cleaner arrows. Web 237 unit +
+  49 browser tests. Next: round 2 of `docs/briefs/ui-improvements.md`
+  (`#/changes` page, level slider, shortcuts overlay), then Phase 2b races.
+
 - 2026-09-13 ~16:00: review round done. Five role reviews consolidated in
   `docs/reviews/2026-09-13-consolidated.md`; fix packages A1 (tooltip meta
   text: median meta/description ratio 1.80 -> 0.26), A2 (keyboard grid, touch,
