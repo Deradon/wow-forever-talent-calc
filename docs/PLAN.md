@@ -201,6 +201,13 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-13 ~23:00: landing page reduced to class crests; cell attribution
+  audited and confirmed correct (Blackout/Spirit Tap swap is a real game
+  change); "moved" now means row or tree change only (123 -> 81); same-row
+  prerequisites allowed and detected (2 found: Holy Shock -> Divine
+  Precision, Mind Flay -> Improved Mind Flay) with horizontal arrows; browser
+  tests now block the deploy. Web 329 unit + 54 browser tests, pipeline 319.
+
 - 2026-09-13 ~21:00: owner feedback round. What's new toggle moved to the
   class header; class crests on switcher and landing cards; landing page
   without per-card provenance or review links (review route by URL only);
