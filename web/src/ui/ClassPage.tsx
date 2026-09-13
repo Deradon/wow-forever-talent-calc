@@ -33,6 +33,10 @@ interface Props {
   classId: string
   version?: number
   buildString?: string
+  /** `sel=<talentId>`: open that talent's tooltip, pinned (brief idea 12). */
+  sel?: string
+  /** `embed=1`: trees, a points line and a link back, nothing else (idea 16). */
+  embed?: boolean
 }
 
 interface Blocked {
@@ -66,7 +70,7 @@ function useCoarsePointer(): boolean {
  * are written back to the hash; an external hash change (back button, pasted
  * link) re-decodes and starts a fresh stack.
  */
-export function ClassPage({ classId, version, buildString }: Props) {
+export function ClassPage({ classId, version, buildString, sel: selParam, embed }: Props) {
   const [cls, setCls] = useState<ClassData>()
   const [error, setError] = useState<string>()
   const registry = loadRegistry()
@@ -98,8 +102,12 @@ export function ClassPage({ classId, version, buildString }: Props) {
   const [query, setQuery] = useState('')
   const [blocked, setBlocked] = useState<Blocked>()
   const [resetUndo, setResetUndo] = useState<number>()
+  /** The pinned talent. Starts at `sel=` and is dropped when its card closes. */
+  const [sel, setSel] = useState(selParam)
   /** The route for which one browser-history entry was already pushed. */
   const pushedFor = useRef<string | undefined>(undefined)
+
+  useEffect(() => setSel(selParam), [selParam])
 
   const editing = edit.key === routeKey
   const build = editing ? edit.present : decoded?.build
@@ -127,14 +135,14 @@ export function ClassPage({ classId, version, buildString }: Props) {
    */
   useEffect(() => {
     if (!cls || !editing) return
-    const nextHash = classHash(classId, cls.dataVersion, encode(cls, edit.present, registry))
+    const nextHash = classHash(classId, cls.dataVersion, encode(cls, edit.present, registry), { sel, embed })
     if (window.location.hash === nextHash) return
     if (pushedFor.current === routeKey) window.history.replaceState(null, '', nextHash)
     else {
       pushedFor.current = routeKey
       window.history.pushState(null, '', nextHash)
     }
-  }, [cls, editing, edit.present, classId, registry, routeKey])
+  }, [cls, editing, edit.present, classId, registry, routeKey, sel, embed])
 
   // Remembering the last build is best effort and never authoritative: it is
   // only ever read where the hash carries no build (idea 8).
@@ -183,6 +191,26 @@ export function ClassPage({ classId, version, buildString }: Props) {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
+
+  /**
+   * A `sel=` link (a `#/changes` row, or a link a player sent a friend) has to
+   * land on the talent even when it sits on another page of the class. The page
+   * switch happens here; the cell opens and focuses its own tooltip once it
+   * renders with `selected` (TalentCell), which is the only place that knows
+   * the claim/sticky mechanics.
+   */
+  useEffect(() => {
+    if (!cls || !sel) return
+    const tree = cls.trees.find((t) => t.talents.some((x) => x.id === sel))
+    if (!tree) return
+    setPage(tree.page)
+    const timer = window.setTimeout(() => {
+      document
+        .querySelector<HTMLElement>(`[data-talent="${CSS.escape(sel)}"]`)
+        ?.scrollIntoView({ block: 'center', behavior: 'auto' })
+    }, 0)
+    return () => window.clearTimeout(timer)
+  }, [cls, sel])
 
   const last = useMemo(() => (buildString ? undefined : readLastBuild()), [buildString])
 
@@ -234,6 +262,24 @@ export function ClassPage({ classId, version, buildString }: Props) {
     commit(remove(cls!, build!, treeId, talentId))
   }
 
+  /**
+   * The pinned card was dismissed. `sel` is view state, so it leaves the hash
+   * the moment it stops being true - and it is removed from the hash as it
+   * stands rather than rebuilt from the build, so a link whose `t=` needed
+   * sanitizing is not silently rewritten by closing a tooltip.
+   */
+  function deselect() {
+    setSel(undefined)
+    const h = window.location.hash
+    const q = h.indexOf('?')
+    if (q === -1) return
+    const params = new URLSearchParams(h.slice(q + 1))
+    if (!params.has('sel')) return
+    params.delete('sel')
+    const qs = params.toString()
+    window.history.replaceState(null, '', `${h.slice(0, q)}${qs ? `?${qs}` : ''}`)
+  }
+
   /** Search result or summary row clicked: switch page if needed, focus the cell. */
   function jumpTo(treeId: string, talentId: string) {
     const tree = cls!.trees.find((t) => t.id === treeId)
@@ -257,7 +303,8 @@ export function ClassPage({ classId, version, buildString }: Props) {
   const pageCounts = Object.fromEntries(cls.pages.map((p) => [p.id, pointsInPage(cls, build, p.id)]))
 
   return (
-    <div>
+    <div data-embed={embed ? 'true' : undefined}>
+      {!embed && (
       <Header
         cls={cls}
         classId={classId}
@@ -275,6 +322,7 @@ export function ClassPage({ classId, version, buildString }: Props) {
           setResetUndo(Date.now())
         }}
       />
+      )}
       {/* Polite, so a screen reader hears the effect of every point without
           interrupting; the blocked line is assertive-by-role="alert". */}
       <p className="sr-only" aria-live="polite" data-testid="live-status">
@@ -286,12 +334,13 @@ export function ClassPage({ classId, version, buildString }: Props) {
           {blocked.message}
         </p>
       )}
-      <Notices notices={notices} onDismiss={() => setDismissed(routeKey)} />
+      {!embed && <Notices notices={notices} onDismiss={() => setDismissed(routeKey)} />}
       {/* Only while the hash is still bare and nothing has been clicked: once
           there is a build on screen, an older one is noise, not an offer. */}
-      {last && !editing && last.classId === classId && last.t !== encoded && (
+      {!embed && last && !editing && last.classId === classId && last.t !== encoded && (
         <ContinueLine entry={last} version={cls.dataVersion} />
       )}
+      {embed && <EmbedBar cls={cls} build={build} spent={spent} link={link} />}
       <div className="class-layout">
         <div className="class-main">
           <PageTabs pages={cls.pages} active={activePage} counts={pageCounts} budgets={cls.rules.pointsPerPage} onSelect={setPage} />
@@ -309,9 +358,12 @@ export function ClassPage({ classId, version, buildString }: Props) {
                 onAdd={handleAdd}
                 onRemove={handleRemove}
                 onReset={(treeId) => commit(resetTree(build!, treeId))}
+                sel={sel}
+                onDeselect={deselect}
               />
             ))}
           </div>
+          {!embed && (
           <div className="class-help mt-3 text-xs text-[var(--text-dim)]">
             {coarse
               ? 'Tap a talent for its tooltip, then + to add a point and - to remove one.'
@@ -320,19 +372,22 @@ export function ClassPage({ classId, version, buildString }: Props) {
               <div key={i}>{n}</div>
             ))}
           </div>
+          )}
         </div>
-        <BuildSummary
-          cls={cls}
-          build={build}
-          link={link}
-          code={encoded}
-          canUndo={editing && canUndo(edit)}
-          canRedo={editing && canRedo(edit)}
-          onUndo={undo}
-          onRedo={redo}
-          onJump={jumpTo}
-          onImport={applyImport}
-        />
+        {!embed && (
+          <BuildSummary
+            cls={cls}
+            build={build}
+            link={link}
+            code={encoded}
+            canUndo={editing && canUndo(edit)}
+            canRedo={editing && canRedo(edit)}
+            onUndo={undo}
+            onRedo={redo}
+            onJump={jumpTo}
+            onImport={applyImport}
+          />
+        )}
       </div>
     </div>
   )
@@ -348,5 +403,29 @@ function ContinueLine({ entry, version }: { entry: LastBuild; version: number })
       </a>
       <span className="text-[var(--text-dim)]"> - your last build on this browser.</span>
     </p>
+  )
+}
+
+/**
+ * The whole of embed mode's chrome (brief idea 16): who this build belongs to,
+ * what it costs, and one way out. An iframe on a forum has no room for the
+ * header, the summary column or the footer, and repeating the site caveat in
+ * somebody else's page would be furniture rather than information - the link
+ * back leads to the page that states it.
+ */
+function EmbedBar({ cls, build, spent, link }: { cls: ClassData; build: Build; spent: number; link: string }) {
+  const spread = cls.trees.map((t) => pointsInTree(build, t.id)).join('/')
+  return (
+    <div className="embed-bar" data-testid="embed-bar">
+      <strong className="serif text-[var(--gold)]">
+        {cls.className} {spread}
+      </strong>
+      <span data-testid="embed-points">
+        {spent} of {cls.rules.maxPoints} points - level {requiredLevel(spent, cls.rules)}
+      </span>
+      <a href={link} target="_blank" rel="noreferrer" data-testid="embed-open">
+        Open the full calculator
+      </a>
+    </div>
   )
 }

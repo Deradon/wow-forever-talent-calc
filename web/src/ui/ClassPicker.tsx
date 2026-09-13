@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import classesIndex from '../data/classes-index.json'
 import { includeExamples } from '../data/load'
-import { classHash } from '../url/route'
+import { changesHash, classHash } from '../url/route'
 import { ClassIcon } from './ClassIcon'
 import { continueLabel, forgetLastBuild, readLastBuild } from './storage'
 import { SITE_TITLE, useTitle } from './title'
@@ -61,6 +61,13 @@ export function ClassPicker() {
         <p className="mb-2 text-sm text-[var(--text-dim)]">
           Read from BlizzCon 2026 demo footage by a local vision model and <strong>unreviewed</strong> - expect wrong
           names and numbers. Only rank 1 was on screen; higher ranks and the point rules are estimated from Classic Era.
+        </p>
+        {/* The one thing this calculator has that Wowhead cannot: the diff. */}
+        <p className="mb-2 text-sm">
+          <a href={changesHash()} data-testid="landing-changes-link">
+            What changed against Classic Era
+          </a>
+          <span className="text-[var(--text-dim)]"> - every new, moved, re-ranked and reworded talent, class by class.</span>
         </p>
         <p className="mb-4 text-sm text-[var(--text-dim)]">
           <a href={REPO_URL} target="_blank" rel="noreferrer">

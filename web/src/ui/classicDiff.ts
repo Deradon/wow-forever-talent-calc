@@ -40,6 +40,10 @@ export interface PriorCell {
    * ask this flag instead.
    */
   movedTree?: boolean
+  /** The Classic row differs from the Forever one. */
+  movedRow?: boolean
+  /** Only the column inside the same row differs - not a move to a player. */
+  movedCol?: boolean
 }
 
 export interface Change {
@@ -47,6 +51,8 @@ export interface Change {
   prior?: PriorCell
   textChange?: TextChange
   values?: ValuePair[]
+  /** The Forever row, written by the generator for `moved` entries only. */
+  row?: number
 }
 
 /** The op letters the generated word diff uses. */
@@ -58,6 +64,8 @@ export interface ClassicText {
   diff: [DiffOpLetter, string][]
   values?: ValuePair[]
 }
+
+export type RemovedTalent = PriorCell & { id: string; name: string }
 
 interface ClassDiff {
   counts: Record<string, number>
@@ -82,9 +90,29 @@ export function changedCount(classId: string): number {
   return CHANGED.reduce((n, key) => n + (c[key] ?? 0), 0)
 }
 
-/** Classic talents with no counterpart in Forever - for a later `#/changes`. */
-export function removedTalents(classId: string): (PriorCell & { id: string; name: string })[] {
+/** Classic talents with no counterpart in Forever - the `#/changes` "gone" section. */
+export function removedTalents(classId: string): RemovedTalent[] {
   return CLASSES[classId]?.removed ?? []
+}
+
+/**
+ * Every stored entry of one class, for the `#/changes` page. The generated file
+ * lists only the talents that actually changed (plus column-only moves), so an
+ * absent talent is `same` - which is why the page walks the class file and asks
+ * `changeOf` per talent rather than trusting this map to be complete.
+ */
+export function classChanges(classId: string): Record<string, Change> {
+  return CLASSES[classId]?.talents ?? {}
+}
+
+/** Per-status counts as the generator wrote them, `removed` included. */
+export function classCounts(classId: string): Record<string, number> {
+  return CLASSES[classId]?.counts ?? {}
+}
+
+/** The nine classes that were compared against Classic Era, in file order. */
+export function comparedClasses(): string[] {
+  return Object.keys(CLASSES)
 }
 
 /**
@@ -116,14 +144,23 @@ export function classicTextSync(classId: string, talentId: string): ClassicText 
  * a failed fetch must degrade to "no card", never to a broken tooltip.
  */
 export async function loadClassicText(classId: string, talentId: string): Promise<ClassicText | undefined> {
+  return (await loadClassicTexts(classId))[talentId]
+}
+
+/**
+ * The whole class at once, for `#/changes/<class>`, which prints every word
+ * diff it has rather than one card at a time. Same chunk, same single fetch as
+ * the tooltip card: whichever asks first pays for it, the other gets it free.
+ */
+export async function loadClassicTexts(classId: string): Promise<Record<string, ClassicText>> {
   if (!loaded) {
     loading ??= import('../data/classic-text.json').then((m) => (m.default ?? m) as unknown as TextIndex)
     try {
       loaded = await loading
     } catch {
       loading = undefined
-      return undefined
+      return {}
     }
   }
-  return loaded[classId]?.[talentId]
+  return loaded[classId] ?? {}
 }

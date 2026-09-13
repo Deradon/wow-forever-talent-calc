@@ -923,3 +923,180 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+/* =========================================================================
+   Round 2: the shortcut overlay (idea 14), the level control (idea 10) and
+   embed mode (idea 16). The `#/changes` page brings its own sheet, and the
+   print rules live in print.css.
+   ========================================================================= */
+
+/* --- the `?` trigger in the site nav --- */
+.app-nav-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.shortcuts-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--gold-border);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--gold-dim);
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+}
+.shortcuts-open:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.shortcuts-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6vh 16px;
+  background: rgba(3, 5, 10, 0.72);
+}
+.shortcuts-dialog {
+  width: min(760px, 100%);
+  max-height: 88vh;
+  overflow: auto;
+  padding: 16px 20px 14px;
+}
+.shortcuts-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.shortcuts-head h2 {
+  margin: 0;
+}
+/* Two columns on a desktop: the four groups fit above the fold, which is the
+   whole point of a list you opened to look something up. */
+.shortcuts-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 12px 28px;
+}
+.shortcuts-group-title {
+  margin: 0 0 4px;
+  color: var(--gold-dim);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.shortcuts-list {
+  margin: 0 0 8px;
+}
+.shortcuts-item {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 2px 0;
+}
+.shortcuts-item dt {
+  flex: none;
+  width: 140px;
+  text-align: right;
+}
+.shortcuts-item dd {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+.shortcuts-plus {
+  color: var(--text-dim);
+  font-size: 11px;
+  padding: 0 3px;
+}
+.shortcuts-where {
+  opacity: 0.75;
+}
+.shortcuts-dialog kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid #3a4260;
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background: #10162a;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 11px;
+}
+.shortcuts-foot {
+  margin: 8px 0 0;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+/* --- the level control in the summary column --- */
+.summary-level {
+  padding: 8px 10px;
+  border: 1px solid #2a3148;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.22);
+}
+.summary-level-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.level-slider {
+  flex: 1;
+  min-width: 0;
+  accent-color: var(--gold-dim);
+}
+.summary-level-value {
+  min-width: 2ch;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.summary-level-line {
+  margin: 4px 0 0;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+/* --- embed mode --- */
+.embed-shell {
+  max-width: none;
+}
+.embed-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--gold-border);
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+}
+.embed-bar a {
+  margin-left: auto;
+}
+/* An embed is one column whatever the iframe is: there is no summary panel to
+   share the width with, so the trees take all of it. */
+[data-embed='true'] .class-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* --- the pinned talent (`sel=`) --- */
+.cell[data-selected='true'] {
+  box-shadow:
+    0 0 0 2px var(--gold),
+    0 0 12px rgba(255, 209, 0, 0.35);
+}

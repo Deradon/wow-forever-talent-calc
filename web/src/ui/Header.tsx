@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import type { ClassData } from '../data/schema'
 import { pointsInTree, requiredLevel, totalPoints, type Build } from '../rules'
+import { changesHash } from '../url/route'
 import { ClassSwitcher } from './ClassSwitcher'
 import { matchesTalent } from './interaction'
 
@@ -109,6 +110,11 @@ export function Header({ cls, classId, build, query, onQuery, onJump, onReset, r
           </span>
         </div>
         <HighlightNewToggle classId={classId} />
+        {/* The switch dims what Classic already had; this is the same question
+            answered as a list, with the old wording beside the new. */}
+        <a className="btn" href={changesHash(classId)} data-testid="changes-link">
+          What changed vs Classic
+        </a>
         {/* A Reset used to destroy a 51-point build silently (usability 10). It
             is an ordinary commit now, so Ctrl+Z takes it back - and for the
             eight seconds after the click, so does the button itself. */}

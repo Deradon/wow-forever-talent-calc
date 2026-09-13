@@ -65,6 +65,10 @@ interface Props {
   match?: boolean
   /** Changes whenever this cell refused an action, to replay the flash. */
   blockedAt?: number
+  /** `sel=<talentId>` names this cell: open its tooltip pinned and focus it. */
+  selected?: boolean
+  /** The pinned tooltip closed, so `sel=` is no longer true. */
+  onDeselect?: () => void
 }
 
 /**
@@ -107,6 +111,8 @@ export function TalentCell({
   rankOf,
   match,
   blockedAt,
+  selected,
+  onDeselect,
 }: Props) {
   const [open, setOpen] = useState(false)
   const [sticky, setSticky] = useState(false)
@@ -153,10 +159,15 @@ export function TalentCell({
         return
       }
       if (next) claimTooltip(talent.id, closeNow)
-      else reset()
+      else {
+        reset()
+        // A pinned card that closes has to take `sel=` out of the hash with it,
+        // or a reload would pin it again (brief idea 12).
+        if (selected) onDeselect?.()
+      }
       setOpen(next)
     },
-    [closeNow, pointerOverLayer, reset, talent.id],
+    [closeNow, onDeselect, pointerOverLayer, reset, selected, talent.id],
   )
 
   const placement = preferredPlacement({ row: talent.row, col: talent.col }, { rows: tree.rows, cols: tree.cols })
@@ -211,6 +222,28 @@ export function TalentCell({
     document.addEventListener('pointermove', onMove)
     return () => document.removeEventListener('pointermove', onMove)
   }, [open, coarse, sticky])
+
+  /**
+   * The `sel=` deep link. A tooltip normally earns the pointer by dwell and
+   * approach (stickyTooltip.ts); a link is a stronger statement of intent than
+   * either, so it skips straight to sticky: the card is interactive, its nested
+   * terms are reachable, and it claims the single open slot like any other.
+   * It closes the way every other tooltip closes - Escape, its own background,
+   * or hovering another cell - and says so upwards, which drops `sel=`.
+   */
+  useEffect(() => {
+    if (!selected) return
+    armedRef.current = true
+    stickyRef.current = true
+    setSticky(true)
+    claimTooltip(talent.id, closeNow)
+    setOpen(true)
+    // Focus lands on the cell, not in the card: arrow keys must keep working.
+    ;(refs.domReference.current as HTMLElement | null)?.focus({ preventScroll: true })
+    // Deliberately keyed on `selected` alone: `closeNow` and `refs` are stable
+    // for the life of the cell, and re-running on a fresh closure would re-open
+    // a card the player has just dismissed.
+  }, [selected, talent.id, closeNow, refs])
 
   // `d` is the no-pointer way into the derivation: it opens in place, so it
   // works from the keyboard and while the layer is still transparent.
@@ -278,6 +311,7 @@ export function TalentCell({
         data-match={match === undefined ? undefined : String(match)}
         data-change={change?.status}
         data-highlight={highlight ? 'true' : undefined}
+        data-selected={selected ? 'true' : undefined}
         tabIndex={tabIndex}
         aria-label={cellLabel(talent, rank, state, addVerdict, flagged, isNew)}
         aria-describedby={open ? tooltipId : undefined}

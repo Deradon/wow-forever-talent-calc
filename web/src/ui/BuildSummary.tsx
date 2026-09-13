@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { ClassData } from '../data/schema'
-import type { Build } from '../rules'
+import { levelLine, levelRange, standingAtLevel, type Build } from '../rules'
 import { ImportDialog } from './ImportDialog'
 import { summarizeBuild, summaryTitle, buildAsText } from './summaryText'
 
@@ -66,7 +66,9 @@ export function BuildSummary({ cls, build, link, code, canUndo, canRedo, onUndo,
 
   return (
     <aside className="panel summary-panel" aria-labelledby="build-summary-title" data-testid="build-summary">
-      <div className="summary-head">
+      {/* data-print-link: the print stylesheet prints the URL under the title,
+          which is the only way a printed build stays shareable. */}
+      <div className="summary-head" data-print-link={link}>
         <h2 className="serif text-base text-[var(--gold)]" id="build-summary-title" data-testid="summary-title">
           {summaryTitle(summary)}
         </h2>
@@ -145,6 +147,8 @@ export function BuildSummary({ cls, build, link, code, canUndo, canRedo, onUndo,
         </ul>
       )}
 
+      <LevelControl cls={cls} spent={summary.spent} />
+
       <div className="summary-actions">
         <button className="btn" data-testid="copy-link" data-link={link} onClick={() => copyLink(link)}>
           {label(linkCopy, 'Copy link')}
@@ -161,6 +165,12 @@ export function BuildSummary({ cls, build, link, code, canUndo, canRedo, onUndo,
         </button>
         <button className="btn" data-testid="open-import" aria-expanded={importing} onClick={() => setImporting((v) => !v)}>
           Import
+        </button>
+        {/* The print stylesheet hides every control and lays the trees and this
+            list out for one page (brief idea 15); the button is here because
+            this column is where a player already goes to take a build away. */}
+        <button className="btn" data-testid="print-build" onClick={() => window.print()}>
+          Print
         </button>
       </div>
 
@@ -187,6 +197,49 @@ export function BuildSummary({ cls, build, link, code, canUndo, canRedo, onUndo,
 
       {importing && <ImportDialog cls={cls} onClose={() => setImporting(false)} onImport={onImport} />}
     </aside>
+  )
+}
+
+/**
+ * "Points at level X" (brief idea 10). The order in which a build was spent is
+ * not tracked - the link carries a set of ranks, not a history - so the panel
+ * refuses to point at individual talents and says the one thing it can prove:
+ * how many of the spent points a character of that level actually has.
+ *
+ * The arithmetic is `standingAtLevel` in `src/rules/level.ts`, pure and unit
+ * tested; everything here is the control around it.
+ */
+function LevelControl({ cls, spent }: { cls: ClassData; spent: number }) {
+  const { min, max } = levelRange(cls.rules)
+  const [level, setLevel] = useState(max)
+  const standing = standingAtLevel(level, spent, cls.rules)
+
+  return (
+    <div className="summary-level" data-testid="level-control">
+      <div className="summary-level-row">
+        <label className="control-label" htmlFor="level-slider">
+          Level
+        </label>
+        <input
+          id="level-slider"
+          className="level-slider"
+          type="range"
+          min={min}
+          max={max}
+          step={1}
+          value={level}
+          data-testid="level-slider"
+          aria-describedby="level-line"
+          onChange={(e) => setLevel(Number(e.target.value))}
+        />
+        <output className="summary-level-value" htmlFor="level-slider" data-testid="level-value">
+          {level}
+        </output>
+      </div>
+      <p className="summary-level-line" id="level-line" data-testid="level-line" aria-live="polite">
+        {levelLine(standing)}
+      </p>
+    </div>
   )
 }
 

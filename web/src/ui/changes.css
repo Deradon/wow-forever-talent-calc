@@ -1,0 +1,208 @@
+/*
+ * `#/changes` - what changed against Classic Era (brief idea 13).
+ *
+ * Imported from ChangesPage.tsx, which App.tsx loads lazily, so none of this
+ * reaches a player who only ever opens a class page.
+ */
+
+.changes-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.changes-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.changes-head h1 {
+  margin: 0;
+}
+.changes-all {
+  font-size: 13px;
+}
+
+.changes-lead,
+.changes-note {
+  margin: 0;
+  max-width: 90ch;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+/* --- the overview table ---
+   Nine rows of counts. Numbers right-aligned and tabular so the columns can be
+   compared down the page, which is the only reason this is a table. */
+.changes-table {
+  border-collapse: collapse;
+  width: max-content;
+  min-width: 520px;
+  font-size: 13px;
+}
+.changes-table th,
+.changes-table td {
+  padding: 5px 12px;
+  border-bottom: 1px solid #22283c;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.changes-table thead th {
+  color: var(--text-dim);
+  font-weight: 500;
+}
+.changes-table th[scope='row'] {
+  text-align: left;
+  font-weight: 400;
+}
+.changes-table th[scope='row'] a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.changes-table th[scope='row'] a:hover {
+  color: var(--gold);
+}
+.changes-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+.changes-table tfoot th,
+.changes-table tfoot td {
+  border-bottom: 0;
+  border-top: 1px solid var(--gold-border);
+  color: var(--gold-dim);
+}
+
+/* --- the per-class page --- */
+.changes-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+}
+.changes-bar h2 {
+  margin: 0;
+}
+.changes-total {
+  color: var(--text-dim);
+  font-size: 13px;
+}
+.changes-open {
+  font-size: 13px;
+}
+.changes-filter {
+  margin-left: auto;
+}
+
+.changes-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.changes-jump a {
+  padding: 3px 10px;
+  border: 1px solid #2a3148;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--text-dim);
+  font-size: 12px;
+  text-decoration: none;
+}
+.changes-jump a:hover {
+  border-color: var(--gold-border);
+  color: var(--text);
+}
+.changes-jump strong {
+  color: var(--gold);
+}
+
+.changes-empty {
+  margin: 0;
+  color: var(--text-dim);
+}
+
+.changes-section {
+  padding: 12px 14px;
+  /* A section whose rows all failed the filter is hidden, not emptied, so the
+     page does not keep a column of bare headings while you type. */
+  scroll-margin-top: 12px;
+}
+.changes-section h3 {
+  margin: 0 0 2px;
+}
+.changes-count {
+  color: var(--text-dim);
+  font-size: 13px;
+}
+.changes-blurb {
+  margin: 0 0 10px;
+  color: var(--text-dim);
+  font-size: 12px;
+  max-width: 90ch;
+}
+
+/* Three columns on a wide desktop: these lists run to 30 rows and a single
+   column would turn "what changed" into a scroll exercise. */
+.changes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 10px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.changes-item {
+  padding: 6px 8px;
+  border-left: 2px solid #2a3148;
+  background: rgba(0, 0, 0, 0.18);
+}
+.changes-item-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.changes-name {
+  color: var(--gold-dim);
+  font-weight: 600;
+  text-decoration: none;
+}
+a.changes-name:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+.changes-name-gone {
+  color: #c99;
+  text-decoration: line-through;
+}
+.changes-rank {
+  margin-left: auto;
+  color: var(--text-dim);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.changes-detail {
+  margin: 2px 0 0;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+/* The Classic sentence with the word diff drawn into it. Same treatment as the
+   tooltip's nested card (diff.css): dropped words struck, added words marked on
+   a faint plate, because colour alone is not a difference every player sees. */
+.changes-diff {
+  margin: 4px 0 0;
+  color: #ded5c0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.changes-diff .diff-add {
+  color: #7fd18a;
+  background: rgba(127, 209, 138, 0.14);
+  border-radius: 2px;
+}
+.changes-diff .diff-del {
+  color: #e4707a;
+  text-decoration: line-through;
+}

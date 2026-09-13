@@ -28,7 +28,15 @@ const classes: IndexEntry[] = (classesIndex as IndexEntry[]).filter((c) => inclu
  * `sr-only` name mean nothing is lost when it goes, so the strip never wraps
  * into three lines on a laptop.
  */
-export function ClassSwitcher({ current }: { current: string }) {
+interface SwitcherProps {
+  current: string
+  /** Where a chip goes. Defaults to the class page; `#/changes` passes its own. */
+  hrefFor?: (classId: string) => string
+  /** The chip's tooltip, which is not "starts an empty build" everywhere. */
+  hintFor?: (className: string) => string
+}
+
+export function ClassSwitcher({ current, hrefFor, hintFor }: SwitcherProps) {
   if (classes.length <= 1) return null
   return (
     <nav className="class-switcher" aria-label="Switch class" data-testid="class-switcher">
@@ -37,7 +45,7 @@ export function ClassSwitcher({ current }: { current: string }) {
         return (
           <a
             key={entry.id}
-            href={`#/${entry.id}`}
+            href={hrefFor ? hrefFor(entry.id) : `#/${entry.id}`}
             className="class-chip"
             style={
               {
@@ -48,7 +56,7 @@ export function ClassSwitcher({ current }: { current: string }) {
             data-testid={`class-chip-${entry.id}`}
             data-active={active}
             aria-current={active ? 'page' : undefined}
-            title={`${entry.className} - starts an empty build`}
+            title={hintFor ? hintFor(entry.className) : `${entry.className} - starts an empty build`}
           >
             <ClassIcon classId={entry.id} className={entry.className} size={24} />
             <span className="class-chip-name" aria-hidden="true">

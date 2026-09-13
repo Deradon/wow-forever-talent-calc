@@ -1,0 +1,142 @@
+/*
+ * Print view (brief `docs/briefs/ui-improvements.md`, idea 15). No `?view=print`
+ * route: a stylesheet is the whole feature, it costs one request nothing, and
+ * Ctrl+P works from wherever the player already is. The Print button in the
+ * summary column calls `window.print()`.
+ *
+ * What a printed build is for: reading the trees and the talent list on paper
+ * or in a PDF next to the game. So everything that can only be *used* on screen
+ * goes - controls, links, tooltips, the site chrome - and what is left is laid
+ * out for one page on white.
+ */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #000;
+    font-size: 10px;
+  }
+  body {
+    background-image: none !important;
+  }
+
+  .app-shell {
+    max-width: none;
+    padding: 0 !important;
+  }
+
+  /* Controls, navigation and anything transient. A printed page cannot be
+     clicked, searched, undone or dismissed. */
+  .app-nav,
+  .app-footer,
+  .skip-link,
+  .class-switcher,
+  .class-controls,
+  .search-results,
+  .class-help,
+  .summary-actions,
+  .summary-history,
+  .summary-level-row,
+  .summary-empty,
+  .continue-line,
+  .continue-card,
+  .notice,
+  .blocked-message,
+  .tooltip-layer,
+  .shortcuts-backdrop,
+  .shortcuts-open,
+  .tree-columns .btn,
+  .embed-bar a {
+    display: none !important;
+  }
+
+  /* One page: the trees beside the talent list, both at their natural size and
+     never split across a page break. */
+  .class-layout {
+    display: block;
+    --cell: 34px;
+    --gap: 8px;
+    --arrow-scale: 0.75; /* (34 + 8) / (44 + 12) */
+  }
+  .class-main,
+  .summary-panel {
+    break-inside: avoid;
+  }
+  .tree-columns {
+    gap: 10px;
+  }
+  .tree-columns > section {
+    break-inside: avoid;
+  }
+
+  .panel {
+    border-color: #999 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+  .serif,
+  .text-\[var\(--gold\)\],
+  h1,
+  h2,
+  h3 {
+    color: #000 !important;
+  }
+
+  /* The cells keep their icons but lose the dark plate; a locked cell is told
+     apart by its border and its rank badge rather than by being near-black. */
+  .cell {
+    border-color: #666 !important;
+    background: #fff !important;
+    filter: none !important;
+  }
+  .cell .icon-clip img {
+    filter: none !important;
+  }
+  .cell .badge {
+    color: #000 !important;
+    background: #fff !important;
+    border-color: #666 !important;
+  }
+  .cell[data-state='locked'] .icon-clip {
+    opacity: 0.45;
+  }
+  .tier {
+    color: #444 !important;
+  }
+
+  /* The summary list is the reason to print at all: full width under the trees,
+     in two columns, with the ranks kept next to their names. */
+  .summary-panel {
+    margin-top: 8px;
+    padding: 0;
+    border: 0;
+  }
+  .summary-trees {
+    columns: 3;
+    column-gap: 18px;
+  }
+  .summary-trees > li {
+    break-inside: avoid;
+  }
+  .summary-talent {
+    color: #000 !important;
+  }
+  .summary-level {
+    border: 0;
+    background: none;
+    padding: 0;
+  }
+  .summary-level-line {
+    color: #333 !important;
+  }
+
+  /* The link is worth having on paper, and only on paper. */
+  .summary-head::after {
+    content: attr(data-print-link);
+    display: block;
+    margin-top: 2px;
+    color: #444;
+    font-size: 9px;
+    word-break: break-all;
+  }
+}

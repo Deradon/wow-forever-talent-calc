@@ -29,6 +29,10 @@ interface Props {
   onAdd: (treeId: string, talentId: string) => void
   onRemove: (treeId: string, talentId: string) => void
   onReset: (treeId: string) => void
+  /** `sel=<talentId>` from the hash: that cell opens its tooltip, pinned. */
+  sel?: string
+  /** The pinned card was dismissed; the class page drops `sel` from the hash. */
+  onDeselect?: () => void
 }
 
 /**
@@ -42,7 +46,20 @@ interface Props {
  * the "highlight what's new" state (the switch itself sits in the header), which lives in
  * `highlightNew.ts` because it applies to all three trees at once.
  */
-export function TreePanel({ cls, tree, build, pointsLeft, coarse, query, blocked, onAdd, onRemove, onReset }: Props) {
+export function TreePanel({
+  cls,
+  tree,
+  build,
+  pointsLeft,
+  coarse,
+  query,
+  blocked,
+  onAdd,
+  onRemove,
+  onReset,
+  sel,
+  onDeselect,
+}: Props) {
   const spent = pointsInTree(build, tree.id)
   const style = { '--rows': tree.rows, '--cols': tree.cols } as CSSProperties
   const [focused, setFocused] = useState<string>()
@@ -187,6 +204,8 @@ export function TreePanel({ cls, tree, build, pointsLeft, coarse, query, blocked
                   rankOf={(talentId) => rankOf(build, tree.id, talentId)}
                   match={query ? matchesTalent(talent, query) : undefined}
                   blockedAt={blocked?.talentId === talent.id ? blocked.at : undefined}
+                  selected={sel === talent.id}
+                  onDeselect={onDeselect}
                   onAdd={() => onAdd(tree.id, talent.id)}
                   onRemove={() => onRemove(tree.id, talent.id)}
                   onMax={() => runRepeat(talent.id, 'add')}
