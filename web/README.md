@@ -13,7 +13,7 @@ with Classic-style talent trees, point rules and shareable build links. Brief:
 | `npm run build` | Type-check and build to `dist/`. Set `VITE_BASE=/<repo>/` for GitHub Pages, `VITE_INCLUDE_EXAMPLES=1` to ship `data/examples/`. |
 | `npm run build:e2e` | Production build that includes the example classes (`.env.e2e`). |
 | `npm run preview` | Serve `dist/` on http://localhost:4173. |
-| `npm test` | Vitest: rules engine table (points and levels), codec, routing, Zod-vs-JSON-Schema, `validate-data`, crop registry, review ordering, the Classic diff and the `#/changes` model. |
+| `npm test` | Vitest: rules engine table (points and levels), codec, routing, Zod-vs-JSON-Schema, `validate-data`, crop registry, review ordering, the Classic diff, the `#/changes` model, the race files against a Zod mirror and the `#/races` model. |
 | `npm run e2e` | Playwright: `tests/smoke.spec.ts` (example class) and `tests/paladin.spec.ts` (real data: crop icons, titles, manual ranks, review route). Builds with `build:e2e`, then `preview`. First time: `npx playwright install chromium`. |
 | `npm run lint` | oxlint. |
 
@@ -25,10 +25,10 @@ stable on CI runners.
 
 ## Layout
 
-- `src/data/` - `schema.ts` (Zod mirror of the JSON Schema; unknown keys pass through), `load.ts` (class files via `import.meta.glob`; `data/talents/` always, `data/examples/` and `tests/fixtures/` when `VITE_INCLUDE_EXAMPLES=1`), `encoding.ts` (encoding versions and migrations).
+- `src/data/` - `schema.ts` (Zod mirror of the JSON Schema; unknown keys pass through), `load.ts` (class files via `import.meta.glob`; `data/talents/` always, `data/examples/` and `tests/fixtures/` when `VITE_INCLUDE_EXAMPLES=1`), `encoding.ts` (encoding versions and migrations). Races are the same arrangement one folder over: `schema.races.ts` and `races.zod.ts` mirror `docs/DATA-SCHEMA-RACES.md`, `races.ts` loads `data/races/<race>.json` lazily, `raceCrop.ts` resolves the racial icon and row crops.
 - `src/rules/` - pure rules engine (`points`, `level`, `validate`, `mutate`); no DOM.
 - `src/url/` - `codec.ts` (Wowhead-style tree strings) and `route.ts` (hash routing).
-- `src/ui/` - React components and `talents.css` (the skin), plus `print.css` (the print view) and `changes.css` (the `#/changes` page). `changesModel.ts` is the pure model behind `#/changes`, `classicDiff.ts` the read side of the generated Classic diff.
+- `src/ui/` - React components and `talents.css` (the skin), plus `print.css` (the print view), `changes.css` (the `#/changes` page) and `races.css` (the `#/races` pages). `changesModel.ts` is the pure model behind `#/changes`, `racesModel.ts` the one behind `#/races`, `classicDiff.ts` the read side of the generated Classic diff, `trust.ts` the trust line and the internal-id guard all three renderers share.
 - `tests/` - Playwright smoke test and JSON fixtures.
 
 ## Routes
@@ -36,6 +36,7 @@ stable on CI runners.
 - `#/` class picker
 - `#/<class>?v=<dataVersion>&t=<tree strings>` calculator; `#/<class>` is an empty build
 - `#/changes` what changed against Classic Era: per-class counts; `#/changes/<class>` lists them in six sections (new, moved, rank count changed, reworked with the word diff, values changed, gone from Classic) with a filter box
+- `#/races` the race/class matrix: one row per playable identity (the two Skyborne variants are separate rows), one column per class, the combinations Classic Era did not allow ringed in gold; `#/races/<race>` its racial traits as cards with the icon crop, the kind, the vs-Classic verdict and the frame behind Details. `?variant=<id>` picks the Skyborne variant.
 - `#/review/<class>` review queue: every talent, worst reading first (unreviewed below 80% confidence, then other unreviewed, then reviewed), with the frame crop, icon crop, provenance and the rendered tooltip at rank 1 and max rank. Read-only.
 
 Two optional parameters ride along on the class route. Both are view state: the

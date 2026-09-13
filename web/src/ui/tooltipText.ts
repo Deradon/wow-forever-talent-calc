@@ -18,63 +18,32 @@
  */
 import type { Rank, Source, Talent } from '../data/schema'
 import type { Verdict } from '../rules'
-import { REVIEW_THRESHOLD, streamStamp } from './review'
+import { highestObserved, internalId, readingLine, trustLine, withPeriod } from './trust'
+import type { RankFacts, ReadFacts } from './trust'
+
+/**
+ * The trust primitives moved to `trust.ts` so that the changes list and the
+ * races pages can state trust in the same words without pulling this whole
+ * file in. They are re-exported here because this module is where every caller
+ * and every test already looks for them.
+ */
+export {
+  highestObserved,
+  internalId,
+  readingLine,
+  trustKind,
+  trustLine,
+  withPeriod,
+  type RankFacts,
+  type ReadFacts,
+  type TrustKind,
+} from './trust'
 
 /** Label of the disclosure that holds everything except the trust line. */
 export const DETAILS_LABEL = 'Details'
 
 /** Style-guide cap for the amber line (roughly one line at 300 px). */
 export const TRUST_MAX = 60
-
-export type TrustKind = 'uncertain' | 'observed-only' | 'estimated'
-
-export interface RankFacts {
-  ranksSource: Talent['ranksSource']
-  ranksObserved: number[]
-  maxRank: number
-  ranks?: Rank[]
-  ranksNote?: string
-}
-
-/**
- * The reading facts live under `talent.source`, so they are nested here too:
- * a flat `confidence` would make a whole `Talent` structurally assignable
- * while silently reading `undefined`.
- */
-export interface ReadFacts {
-  source: { confidence?: number; reviewed?: boolean }
-}
-
-/** Highest rank actually read from the stream; 1 when nothing is recorded. */
-export function highestObserved(ranksObserved: number[]): number {
-  return ranksObserved.length > 0 ? Math.max(...ranksObserved) : 1
-}
-
-/**
- * Which single trust line applies, worst news first: a shaky reading beats an
- * estimated rank, because it questions the text the player is looking at (see
- * the `warrior/enrage` example in the text-quality review, section 3).
- */
-export function trustKind(facts: RankFacts & ReadFacts): TrustKind | undefined {
-  const { confidence, reviewed } = facts.source
-  if (!reviewed && confidence !== undefined && confidence < REVIEW_THRESHOLD) return 'uncertain'
-  const observed = highestObserved(facts.ranksObserved)
-  if (facts.maxRank <= observed) return undefined
-  return facts.ranksSource === 'manual' ? 'observed-only' : 'estimated'
-}
-
-/** The amber line, in full or in the short variant used when space is tight. */
-export function trustLine(facts: RankFacts & ReadFacts, opts: { short?: boolean } = {}): string | undefined {
-  const kind = trustKind(facts)
-  if (!kind) return undefined
-  const observed = highestObserved(facts.ranksObserved)
-  if (kind === 'uncertain') return opts.short ? 'Check this reading.' : 'Uncertain reading, check.'
-  if (kind === 'observed-only') return opts.short ? `Rank ${observed} only.` : `Only rank ${observed} is known.`
-  const lo = observed + 1
-  const hi = facts.maxRank
-  if (opts.short) return 'Estimated ranks.'
-  return lo === hi ? `Rank ${lo} estimated.` : `Ranks ${lo}-${hi} estimated.`
-}
 
 /** Characters of meta text the default (collapsed) view spends. */
 export function metaLength(trust: string | undefined, hasDetails: boolean): number {
@@ -221,16 +190,6 @@ export function roundingLines(ranksNote: string | undefined): string[] {
     out.push(`Rank ${m[1]} may read ${m[3]} in game; the value shown is the unrounded ${m[2]}.`)
   }
   return out
-}
-
-/** One line for when and how well the tooltip was read. Never says "100%". */
-export function readingLine(source: Source): string | undefined {
-  if (source.kind === 'video') {
-    const pct = source.confidence !== undefined && source.confidence < 1 ? `, ${Math.round(source.confidence * 100)}% confidence` : ''
-    return `Read from the stream at ${streamStamp(source.t ?? 0)}${pct}.`
-  }
-  if (source.kind === 'datamined') return source.build ? `Datamined from build ${source.build}.` : 'Datamined from the client.'
-  return 'Entered by hand.'
 }
 
 /**
@@ -571,36 +530,7 @@ function ranksWord(n: number): string {
   return `${n} rank${n === 1 ? '' : 's'}`
 }
 
-// --- guards ----------------------------------------------------------------
-
-const INTERNAL = [
-  /\btalent \d+\b/i, // Classic talent ids
-  /\bstage \d+\b/i, // pipeline stage numbers
-  /\br\d+c\d+\b/i, // grid coordinates
-  /@\S*\d/, // frame references (r4c3@08-mage-14970)
-  /\bsimilarity\b|\(0\.\d+\)/, // match scores
-  /\b(codex|qwen|gpt|llama|gemini)\b/i, // reader model names
-  /\{\d+\}/, // raw slot labels
-  /needs manual ranks|no alignable slots|copies of rank/i,
-  /\bcross-class\b/i,
-  /\bpage (primary|secondary)\b/i,
-  /classic-prior|extrapolated|ranksSource/i,
-  /\bconfidence 0\.\d+/i,
-  /data\/review\/|\.png\b|\.jpg\b/i,
-  /\bconfidence 100%/i,
-]
-
-/** True when a string carries something that belongs on the review route only. */
-export function internalId(text: string): boolean {
-  return INTERNAL.some((re) => re.test(text))
-}
-
 // --- small helpers ---------------------------------------------------------
-
-export function withPeriod(text: string): string {
-  const trimmed = text.trim()
-  return /[.!?]$/.test(trimmed) ? trimmed : `${trimmed}.`
-}
 
 function joinAnd(parts: string[]): string {
   if (parts.length <= 1) return parts[0] ?? ''

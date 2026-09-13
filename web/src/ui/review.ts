@@ -1,13 +1,13 @@
 import type { Talent, Tree } from '../data/schema'
+import { needsReview } from './trust'
 
-/** Review-queue threshold from DATA-SCHEMA.md section 4.5. */
-export const REVIEW_THRESHOLD = 0.8
-
-export function needsReview(t: { source?: { confidence?: number; reviewed?: boolean } }): boolean {
-  const s = t.source
-  if (!s || s.reviewed) return false
-  return s.confidence !== undefined && s.confidence < REVIEW_THRESHOLD
-}
+/**
+ * The threshold, the queue predicate and the stream stamp now live in
+ * `trust.ts`, which imports nothing, so a page that only states trust does not
+ * pull this module's filtering and diffing in. Re-exported here because this is
+ * where every caller already looks for them.
+ */
+export { needsReview, REVIEW_THRESHOLD, streamStamp } from './trust'
 
 export interface ReviewRow {
   tree: Tree
@@ -38,14 +38,6 @@ export function reviewRows(trees: Tree[]): ReviewRow[] {
       a.talent.row - b.talent.row ||
       a.talent.col - b.talent.col,
   )
-}
-
-/** `h:mm:ss` into the stream for a `source.t` value. */
-export function streamStamp(t: number): string {
-  const h = Math.floor(t / 3600)
-  const m = Math.floor((t % 3600) / 60)
-  const sec = Math.floor(t % 60)
-  return `${h}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`
 }
 
 // --- review route filtering and reading diffs (pure; unit tested) ----------

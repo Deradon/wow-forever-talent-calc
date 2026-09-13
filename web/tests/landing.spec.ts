@@ -19,8 +19,15 @@ test('the landing page loads no class chunk and no review code', async ({ page }
 
   const classChunks = scripts.filter((p) => /\/(paladin|priest|druid|mage|rogue|shaman|warlock|warrior|hunter)-[^/]+\.js$/.test(p))
   expect(classChunks, `class chunks fetched: ${classChunks.join(', ')}`).toHaveLength(0)
-  expect(scripts.filter((p) => p.includes('ReviewPage'))).toHaveLength(0)
-  expect(scripts).toHaveLength(1) // the entry chunk only
+  // Nothing a landing visitor does not run: no route page, no crop registry.
+  const routeChunks = scripts.filter((p) => /ReviewPage|ChangesPage|RacesPage|crops-/.test(p))
+  expect(routeChunks, `route chunks fetched: ${routeChunks.join(', ')}`).toHaveLength(0)
+  // The entry chunk plus the shared runtime chunks rolldown splits out once
+  // several lazy routes share React and the small ui helpers with the entry -
+  // three of them since `#/races` became the fourth lazy route
+  // (docs/handover/2026-09-13-races-web.md section 4). Counting them keeps the
+  // budget honest without pinning the bundler's grouping.
+  expect(scripts.length, `scripts fetched: ${scripts.join(', ')}`).toBeLessThanOrEqual(4)
 })
 
 test('the class route still loads exactly one class chunk, and review stays split', async ({ page }) => {

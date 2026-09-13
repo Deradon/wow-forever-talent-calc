@@ -1,0 +1,474 @@
+/*
+ * `#/races` - the race/class matrix and one page per race.
+ *
+ * Imported from RacesPage.tsx, which App.tsx loads lazily, so none of this
+ * reaches a player who only ever opens a class page. Desktop first: the matrix
+ * is nine class columns wide and is meant to be read across, so it keeps its
+ * width and scrolls sideways in its own wrapper rather than reflowing.
+ */
+
+.races-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.races-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.races-head h1 {
+  margin: 0;
+}
+.races-all {
+  font-size: 13px;
+}
+
+.races-lead {
+  margin: 0;
+  max-width: 95ch;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+/* --- legend --- */
+.races-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+.races-legend li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.races-cell-sample {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: #1a2136;
+  border: 1px solid #2a3148;
+}
+.races-legend .races-cell-new {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(255, 209, 0, 0.35);
+}
+.races-legend .races-cell-no {
+  background: transparent;
+  border-style: dashed;
+}
+
+/* --- the matrix ---
+   A real table: the question it answers ("can this race be that class?") is a
+   two-axis lookup, and the class icons are the column headers a player already
+   knows from the game. */
+.races-table-wrap {
+  overflow-x: auto;
+}
+.races-table {
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.races-table th,
+.races-table td {
+  padding: 4px 6px;
+  border-bottom: 1px solid #22283c;
+  text-align: center;
+}
+.races-table thead th {
+  color: var(--text-dim);
+  font-weight: 500;
+  padding-bottom: 8px;
+  vertical-align: bottom;
+}
+.races-table thead th:first-child {
+  text-align: left;
+}
+.races-table th[scope='row'] {
+  text-align: left;
+  font-weight: 400;
+  white-space: nowrap;
+  padding-right: 16px;
+}
+.races-table th[scope='row'] a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--text);
+}
+.races-table th[scope='row'] a:hover {
+  color: var(--gold);
+}
+.races-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.races-row-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.races-row-faction {
+  color: var(--text-dim);
+  font-size: 11px;
+}
+.races-row-faction[data-faction='alliance'] {
+  color: #7fa8ff;
+}
+.races-row-faction[data-faction='horde'] {
+  color: #e08080;
+}
+
+.race-crest {
+  flex: none;
+  border-radius: 50%;
+  border: 1px solid var(--gold-border);
+  object-fit: cover;
+}
+.race-crest-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a2136;
+  color: var(--gold-dim);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* --- one cell --- */
+.races-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #2a3148;
+  background: #131a2c;
+  text-decoration: none;
+}
+a.races-cell:hover {
+  border-color: var(--class-colour, var(--gold));
+}
+.races-cell-yes .class-icon {
+  opacity: 0.85;
+}
+/* The one thing the matrix exists to show: a combination Classic Era refused. */
+.races-cell-new {
+  border-color: var(--gold);
+  background: #1d1b0f;
+  box-shadow: 0 0 0 1px rgba(255, 209, 0, 0.3);
+}
+.races-cell-flag {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.races-cell-no {
+  width: 30px;
+  height: 30px;
+  border: 1px dashed #232a3e;
+  background: transparent;
+}
+.races-cell-unknown {
+  color: var(--text-dim);
+  border-style: dotted;
+}
+
+.races-traits-col {
+  text-align: right;
+  padding-left: 18px;
+  font-variant-numeric: tabular-nums;
+}
+.races-traits-col a {
+  text-decoration: none;
+}
+.races-traits-col a:hover {
+  color: var(--gold);
+}
+.races-new-count {
+  color: var(--gold-dim);
+}
+
+.races-notes {
+  margin: 0;
+  padding-left: 18px;
+  max-width: 95ch;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+.races-notes li {
+  margin: 2px 0;
+}
+
+/* --- one race --- */
+.races-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+}
+.races-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.races-title-row h2 {
+  margin: 0;
+}
+.races-faction-chip {
+  padding: 2px 9px;
+  border: 1px solid #2a3148;
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+.races-faction-chip[data-faction='alliance'] {
+  color: #7fa8ff;
+  border-color: #2f4570;
+}
+.races-faction-chip[data-faction='horde'] {
+  color: #e08080;
+  border-color: #6c3030;
+}
+
+/* Variant tabs: real links, so a Windshaper build is shareable. */
+.races-variants {
+  display: flex;
+  gap: 8px;
+}
+.races-variant {
+  padding: 4px 12px;
+  border: 1px solid #2a3148;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--text-dim);
+  font-size: 13px;
+  text-decoration: none;
+}
+.races-variant:hover {
+  color: var(--text);
+  border-color: var(--gold-border);
+}
+.races-variant[data-active='true'] {
+  border-color: var(--gold);
+  background: #1d1b0f;
+  color: var(--gold);
+}
+
+.races-classes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.races-classes-label {
+  color: var(--text-dim);
+  font-size: 12px;
+}
+.races-class-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px 3px 4px;
+  border: 1px solid #2a3148;
+  border-radius: 999px;
+  color: var(--class-colour, var(--gold-dim));
+  font-size: 12px;
+  text-decoration: none;
+}
+.races-class-chip:hover {
+  border-color: var(--class-colour, var(--gold));
+}
+.races-unknown {
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+.races-trust {
+  margin: 0;
+  max-width: 95ch;
+  color: var(--gold-dim);
+  font-size: 12px;
+}
+
+/* --- trait cards ---
+   Three across on a wide desktop; a racial description is one sentence, so a
+   full-width row per trait would be four words and a lot of whitespace. */
+.races-traits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.races-trait {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+}
+.races-trait-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.races-trait-icon {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--gold-border);
+  border-radius: 4px;
+}
+.races-trait-icon-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a2136;
+  color: var(--gold-dim);
+  font-size: 12px;
+  font-weight: 600;
+}
+.races-trait-name {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.races-trait-name h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+.races-kind {
+  color: var(--text-dim);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.races-kind[data-kind='active'] {
+  color: #8fc7a0;
+}
+
+/* The vs-Classic verdict, one chip per card. */
+.races-chip {
+  margin-left: auto;
+  padding: 2px 9px;
+  border: 1px solid #2a3148;
+  border-radius: 999px;
+  font-size: 11px;
+  white-space: nowrap;
+  color: var(--text-dim);
+}
+.races-chip[data-status='new'] {
+  color: var(--gold);
+  border-color: var(--gold-border);
+  background: #1d1b0f;
+}
+.races-chip[data-status='changed'] {
+  color: #e0b070;
+  border-color: #6a5028;
+}
+.races-chip[data-status='same'] {
+  color: #8d9db8;
+}
+
+.races-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.races-desc-missing {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* The amber line the talent tooltip uses, for a racial that ever falls below
+   the review threshold. Nothing hits it today. */
+.races-trust-line {
+  margin: 0;
+  color: #e0b070;
+  font-size: 12px;
+}
+
+.races-classic,
+.races-details,
+.races-lore {
+  font-size: 12px;
+}
+.races-classic > summary,
+.races-details > summary,
+.races-lore > summary {
+  cursor: pointer;
+  color: var(--text-dim);
+  list-style: none;
+}
+.races-classic > summary::before,
+.races-details > summary::before,
+.races-lore > summary::before {
+  content: '\25b8\00a0';
+  color: var(--gold-dim);
+}
+.races-classic[open] > summary::before,
+.races-details[open] > summary::before,
+.races-lore[open] > summary::before {
+  content: '\25be\00a0';
+}
+.races-classic > summary:hover,
+.races-details > summary:hover,
+.races-lore > summary:hover {
+  color: var(--text);
+}
+.races-classic > *:not(summary),
+.races-details > *:not(summary) {
+  margin: 4px 0 0 14px;
+}
+
+/* The one word that has to travel with every render of the Classic paraphrase. */
+.races-unverified {
+  margin-left: 7px;
+  padding: 1px 6px;
+  border: 1px solid #6a5028;
+  border-radius: 999px;
+  color: #e0b070;
+  font-size: 10px;
+  text-transform: lowercase;
+}
+.races-classic-text {
+  color: #ded5c0;
+  line-height: 1.45;
+}
+.races-classic-note {
+  color: var(--text-dim);
+}
+
+.races-lore {
+  padding: 12px 14px;
+  max-width: 95ch;
+}
+.races-lore p {
+  margin: 6px 0 0;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+.races-lore-cut {
+  color: var(--gold-dim);
+}
+
+@media (max-width: 900px) {
+  .races-traits {
+    grid-template-columns: 1fr;
+  }
+}

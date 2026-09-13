@@ -1,6 +1,6 @@
 /**
  * Hash routing: `#/`, `#/<class>?v=<N>&t=<build>`, `#/changes[/<class>]`,
- * `#/review/<class>`.
+ * `#/races[/<race>][?variant=<id>]`, `#/review/<class>`.
  * No router library: parseHash plus a `hashchange` listener in App.tsx.
  *
  * Two optional parameters ride along on the class route and are ignored by the
@@ -15,6 +15,12 @@ export type Route =
   | { kind: 'picker' }
   | { kind: 'class'; classId: string; version?: number; build?: string; sel?: string; embed?: true }
   | { kind: 'changes'; classId?: string }
+  /**
+   * `#/races` is the race/class matrix, `#/races/<race>` one race. `variant`
+   * picks the Skyborne variant and is view state: an unknown id falls back to
+   * the Alliance variant rather than emptying the page.
+   */
+  | { kind: 'races'; raceId?: string; variant?: string }
   | { kind: 'review'; classId: string }
   | { kind: 'unknown'; hash: string }
 
@@ -37,6 +43,13 @@ export function parseHash(hash: string): Route {
   if (segments[0] === 'changes' && segments.length <= 2) {
     if (segments.length === 1) return { kind: 'changes' }
     if (segments[1] && SLUG.test(segments[1])) return { kind: 'changes', classId: segments[1] }
+  }
+  // `#/races` is the matrix, `#/races/<race>` one race and its traits.
+  if (segments[0] === 'races' && segments.length <= 2) {
+    const variant = params.get('variant')
+    const view = variant && SLUG.test(variant) ? { variant } : {}
+    if (segments.length === 1) return { kind: 'races' }
+    if (segments[1] && SLUG.test(segments[1])) return { kind: 'races', raceId: segments[1], ...view }
   }
   if (segments.length === 1 && segments[0] && SLUG.test(segments[0])) {
     const v = params.get('v')
@@ -63,6 +76,12 @@ export function buildHash(route: Route): string {
       return `#/review/${route.classId}`
     case 'changes':
       return route.classId ? `#/changes/${route.classId}` : '#/changes'
+    case 'races': {
+      if (!route.raceId) return '#/races'
+      // The variant only means something on a race that has variants, so it is
+      // never written without a race.
+      return `#/races/${route.raceId}${route.variant ? `?variant=${route.variant}` : ''}`
+    }
     case 'class': {
       const params = new URLSearchParams()
       if (route.build) {
@@ -104,4 +123,9 @@ export function classHash(classId: string, version: number, build: string, view:
 /** `#/changes` or `#/changes/<class>`. */
 export function changesHash(classId?: string): string {
   return buildHash({ kind: 'changes', classId })
+}
+
+/** `#/races`, `#/races/<race>` or `#/races/<race>?variant=<id>`. */
+export function racesHash(raceId?: string, variant?: string): string {
+  return buildHash({ kind: 'races', raceId, variant })
 }

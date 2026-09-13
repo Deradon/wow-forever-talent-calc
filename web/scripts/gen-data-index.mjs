@@ -18,6 +18,14 @@
  *                       counterpart. Unchanged talents are *not* listed - a
  *                       missing entry in a class that has a diff means "same",
  *                       which keeps the file to a few kB on the class route.
+ *   races-index.json    the `#/races` overview's whole data source: race names,
+ *                       factions, variants, class lists, trait counts and the
+ *                       new-versus-Classic combination flags. Without it the
+ *                       matrix would have to pull all nine race files plus
+ *                       matrix.json to draw one table.
+ *   raceCrops.ts        static `?url` imports for the crops the races routes
+ *                       render or link (icon crops, trait row crops, the class
+ *                       bar and panel evidence).
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -40,6 +48,11 @@ const SOURCES = [
 
 /** The Classic Era prior the diff compares against (data/prior/classic-era). */
 const PRIOR = join(repoRoot, 'data/prior/classic-era/talents.json')
+
+/** Races: the canonical files, the derived matrix and the Classic racial prior. */
+const RACES_DIR = join(repoRoot, 'data/races')
+const RACE_PRIOR = join(repoRoot, 'data/prior/classic-era/racials.json')
+export const RACE_PRIOR_PATH = 'data/prior/classic-era/racials.json'
 
 function readClasses() {
   const seen = new Map()
@@ -588,6 +601,140 @@ export function buildClassicText(classes, prior) {
   return buildClassic(classes, prior).text
 }
 
+// --- races (docs/handover/2026-09-13-races-data.md, section 5) -------------
+
+/** The nine race files, sorted by id; matrix.json is not a race. */
+export function readRaces() {
+  if (!existsSync(RACES_DIR)) return []
+  return readdirSync(RACES_DIR)
+    .sort()
+    .filter((f) => f.endsWith('.json') && f !== 'matrix.json')
+    .map((f) => ({ id: f.replace(/\.json$/, ''), data: JSON.parse(readFileSync(join(RACES_DIR, f), 'utf8')) }))
+}
+
+export function readMatrix() {
+  const file = join(RACES_DIR, 'matrix.json')
+  if (!existsSync(file)) return undefined
+  return JSON.parse(readFileSync(file, 'utf8'))
+}
+
+function readRacePrior() {
+  if (!existsSync(RACE_PRIOR)) return undefined
+  return JSON.parse(readFileSync(RACE_PRIOR, 'utf8'))
+}
+
+/**
+ * Which of a race's classes are new against Classic Era.
+ *
+ * The rule the data handover proposes: a class that the Classic racial prior
+ * does not list for that race. `undefined` when the prior knows nothing about
+ * the race at all, which is not the same as "everything is new" - the UI then
+ * marks no cell rather than claiming a combination is new on no evidence.
+ * Skyborne is the one race the prior lists with an empty class list, which is a
+ * real statement (it did not exist in Classic) and therefore flags all of them.
+ */
+export function newCombos(classes, priorClasses) {
+  if (!Array.isArray(priorClasses)) return undefined
+  const had = new Set(priorClasses)
+  return classes.filter((c) => !had.has(c))
+}
+
+/** Per-race trait counts by Classic status, plus the total. */
+export function traitCounts(traits) {
+  const counts = { total: traits.length, new: 0, changed: 0, same: 0, unknown: 0 }
+  for (const t of traits) {
+    const status = t.classic?.status ?? 'unknown'
+    if (status in counts) counts[status] += 1
+  }
+  return counts
+}
+
+/**
+ * The `#/races` overview's data source. Everything the matrix table and the
+ * race links need, and nothing a race page would want - descriptions, crops and
+ * provenance stay in the race files, which are fetched one at a time.
+ *
+ * `classes` is the class-bar order from matrix.json, because that is the order
+ * the game shows and therefore the column order of the table.
+ */
+export function buildRacesIndex(races, matrix, racePrior) {
+  const byRace = new Map((matrix?.races ?? []).map((r) => [r.race, r]))
+  const priorRaces = racePrior?.races ?? {}
+  return {
+    prior: RACE_PRIOR_PATH,
+    // The prior is a paraphrase written from memory; the flag travels with the
+    // data so the page can say so instead of hard-coding a caveat.
+    priorVerified: Boolean(racePrior?.verified),
+    classes: matrix?.classes ?? [],
+    races: races.map(({ id, data }) => {
+      const row = byRace.get(id)
+      const prior = priorRaces[id]
+      const counts = traitCounts(data.traits ?? [])
+      const entry = {
+        id,
+        raceName: data.raceName,
+        faction: data.faction,
+        classes: data.classes ?? [],
+        observed: row ? row.observed : (data.classes ?? []).length > 0,
+        complete: Boolean(data.complete),
+        traits: counts.total,
+        counts: { new: counts.new, changed: counts.changed, same: counts.same, unknown: counts.unknown },
+      }
+      const combos = newCombos(entry.classes, prior?.classes)
+      if (combos) entry.newCombos = combos
+      if (data.variants) {
+        entry.variants = data.variants.map((v) => {
+          const variant = { id: v.id, name: v.name, faction: v.faction, classes: v.classes ?? [] }
+          const own = newCombos(variant.classes, prior?.classes)
+          if (own) variant.newCombos = own
+          return variant
+        })
+      }
+      if (row?.reportedElsewhere) entry.reportedElsewhere = row.reportedElsewhere
+      if (row?.agreement) entry.agreement = row.agreement
+      if (row?.disagreement) entry.disagreement = row.disagreement
+      return entry
+    }),
+    notes: matrix?.notes ?? [],
+  }
+}
+
+/** Repo-relative crop paths the races routes render or link. */
+export function collectRaceCrops(races) {
+  const paths = new Set()
+  const add = (p) => {
+    if (typeof p === 'string' && p) paths.add(p.replace(/^\.?\//, ''))
+  }
+  for (const { data } of races) {
+    add(data.classesSource?.crop)
+    add(data.loreSource?.crop)
+    for (const trait of data.traits ?? []) {
+      if (trait.iconSource === 'crop') add(trait.iconCrop)
+      add(trait.source?.crop)
+    }
+  }
+  return [...paths].sort()
+}
+
+export function renderRaceCrops(paths) {
+  const imports = paths.map((p, i) => `import r${i} from '../../../${p}?url'`).join('\n')
+  const entries = paths.map((p, i) => `  ${JSON.stringify(p)}: r${i},`).join('\n')
+  return `/**
+ * GENERATED by scripts/gen-data-index.mjs - do not edit.
+ *
+ * The ${paths.length} crops the races routes render or link: 36 px racial icons,
+ * the trait row crops behind each card's Details line, and the class-bar and
+ * panel evidence. The full registry of every crop under data/review/ lives in
+ * crops.ts and is review-only.
+ */
+${imports}
+
+export const raceCropUrls: Record<string, string> = {
+${entries}
+}
+`
+}
+
 function readPrior() {
   if (!existsSync(PRIOR)) return undefined
   return JSON.parse(readFileSync(PRIOR, 'utf8'))
@@ -600,25 +747,32 @@ function writeIfChanged(path, content) {
   return true
 }
 
-/** Regenerates all four generated files; true when anything changed on disk. */
+/** Regenerates every generated file; true when anything changed on disk. */
 export function generate(root = webRoot) {
   const out = expected()
-  const a = writeIfChanged(join(root, 'src/data/classes-index.json'), out.index)
-  const b = writeIfChanged(join(root, 'src/data/iconCrops.ts'), out.crops)
-  const c = writeIfChanged(join(root, 'src/data/classic-diff.json'), out.classicDiff)
-  const d = writeIfChanged(join(root, 'src/data/classic-text.json'), out.classicText)
-  return a || b || c || d
+  const written = [
+    writeIfChanged(join(root, 'src/data/classes-index.json'), out.index),
+    writeIfChanged(join(root, 'src/data/iconCrops.ts'), out.crops),
+    writeIfChanged(join(root, 'src/data/classic-diff.json'), out.classicDiff),
+    writeIfChanged(join(root, 'src/data/classic-text.json'), out.classicText),
+    writeIfChanged(join(root, 'src/data/races-index.json'), out.racesIndex),
+    writeIfChanged(join(root, 'src/data/raceCrops.ts'), out.raceCrops),
+  ]
+  return written.some(Boolean)
 }
 
 export function expected() {
   const classes = readClasses()
   const classic = buildClassic(classes, readPrior())
+  const races = readRaces()
   return {
     index: `${JSON.stringify(buildClassesIndex(classes), null, 2)}\n`,
     crops: renderIconCrops(collectIconCrops(classes)),
     classicDiff: `${JSON.stringify(classic.diff, null, 2)}\n`,
     // No indentation: nobody reads this one, and it is fetched over the wire.
     classicText: `${JSON.stringify(classic.text)}\n`,
+    racesIndex: `${JSON.stringify(buildRacesIndex(races, readMatrix(), readRacePrior()), null, 2)}\n`,
+    raceCrops: renderRaceCrops(collectRaceCrops(races)),
   }
 }
 

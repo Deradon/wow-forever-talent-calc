@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildHash, changesHash, classHash, parseHash } from './route'
+import { buildHash, changesHash, classHash, parseHash, racesHash } from './route'
 
 describe('hash routing', () => {
   it('parses the documented forms', () => {
@@ -53,6 +53,32 @@ describe('hash routing', () => {
       build: '--3',
       sel: 'x',
       embed: true,
+    })
+  })
+
+  it('routes the races pages and their variant parameter', () => {
+    expect(parseHash('#/races')).toEqual({ kind: 'races' })
+    expect(parseHash('#/races/night-elf')).toEqual({ kind: 'races', raceId: 'night-elf' })
+    expect(parseHash('#/races/skyborne?variant=windshaper')).toEqual({
+      kind: 'races',
+      raceId: 'skyborne',
+      variant: 'windshaper',
+    })
+    // A variant without a race says nothing, and a non-slug variant is dropped
+    // rather than carried into the page.
+    expect(parseHash('#/races?variant=windshaper')).toEqual({ kind: 'races' })
+    expect(parseHash('#/races/skyborne?variant=<script>')).toEqual({ kind: 'races', raceId: 'skyborne' })
+    expect(parseHash('#/races/Skyborne')).toMatchObject({ kind: 'unknown' })
+    expect(parseHash('#/races/a/b')).toMatchObject({ kind: 'unknown' })
+
+    expect(racesHash()).toBe('#/races')
+    expect(racesHash('tauren')).toBe('#/races/tauren')
+    expect(racesHash('skyborne', 'high-order')).toBe('#/races/skyborne?variant=high-order')
+    expect(racesHash(undefined, 'high-order')).toBe('#/races')
+    expect(parseHash(racesHash('skyborne', 'high-order'))).toEqual({
+      kind: 'races',
+      raceId: 'skyborne',
+      variant: 'high-order',
     })
   })
 })

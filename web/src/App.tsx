@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
-import { parseHash, type Route } from './url/route'
+import { changesHash, parseHash, racesHash, type Route } from './url/route'
 import { ClassPicker, REPO_URL } from './ui/ClassPicker'
 import { ClassPage } from './ui/ClassPage'
 import { ShortcutsOverlay } from './ui/ShortcutsOverlay'
@@ -17,6 +17,14 @@ const ReviewPage = lazy(() => import('./ui/ReviewPage').then((m) => ({ default: 
  * route: its own chunk, fetched when the route is asked for.
  */
 const ChangesPage = lazy(() => import('./ui/ChangesPage').then((m) => ({ default: m.ChangesPage })))
+
+/**
+ * `#/races` and `#/races/<race>`: the race/class matrix, the racial traits and
+ * the crops they were read from. Same arrangement as `#/changes` - its own
+ * chunk, its own stylesheet, its own generated index - so the calculator route
+ * carries none of it.
+ */
+const RacesPage = lazy(() => import('./ui/RacesPage').then((m) => ({ default: m.RacesPage })))
 
 function useRoute(): Route {
   const [route, setRoute] = useState<Route>(() => parseHash(window.location.hash))
@@ -67,7 +75,17 @@ export default function App() {
           WoW Forever Talents
         </a>
         <span className="app-nav-right text-xs text-[var(--text-dim)]">
-          Classic+ talent calculator - unofficial, unreviewed data
+          {/* The two pages that are not the calculator; everything else is one
+              class away from the picker. */}
+          <a href={changesHash()} data-testid="nav-changes">
+            Changes
+          </a>
+          {' · '}
+          <a href={racesHash()} data-testid="nav-races">
+            Races
+          </a>
+          {' - '}
+          Classic+ talent calculator, unofficial and unreviewed
           <ShortcutsOverlay />
         </span>
       </nav>
@@ -105,6 +123,8 @@ function Body({ route }: { route: Route }) {
       )
     case 'changes':
       return <ChangesPage key={route.classId ?? ''} classId={route.classId} />
+    case 'races':
+      return <RacesPage key={route.raceId ?? ''} raceId={route.raceId} variant={route.variant} />
     case 'review':
       return <ReviewPage classId={route.classId} />
     default:

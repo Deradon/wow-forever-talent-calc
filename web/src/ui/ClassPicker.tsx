@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import classesIndex from '../data/classes-index.json'
 import { includeExamples } from '../data/load'
-import { changesHash, classHash } from '../url/route'
+import { changesHash, classHash, racesHash } from '../url/route'
 import { ClassIcon } from './ClassIcon'
 import { continueLabel, forgetLastBuild, readLastBuild } from './storage'
 import { SITE_TITLE, useTitle } from './title'
@@ -68,6 +68,17 @@ export function ClassPicker() {
             What changed against Classic Era
           </a>
           <span className="text-[var(--text-dim)]"> - every new, moved, re-ranked and reworded talent, class by class.</span>
+        </p>
+        {/* Phase 2b: the racials and the race/class matrix, the other half of
+            "what is different this time". */}
+        <p className="mb-2 text-sm">
+          <a href={racesHash()} data-testid="landing-races-link">
+            Races and the class matrix
+          </a>
+          <span className="text-[var(--text-dim)]">
+            {' '}
+            - 37 racial traits, the Skyborne variants, and the combinations Classic Era never allowed.
+          </span>
         </p>
         <p className="mb-4 text-sm text-[var(--text-dim)]">
           <a href={REPO_URL} target="_blank" rel="noreferrer">

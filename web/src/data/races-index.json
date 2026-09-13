@@ -1,0 +1,298 @@
+{
+  "prior": "data/prior/classic-era/racials.json",
+  "priorVerified": false,
+  "classes": [
+    "warrior",
+    "hunter",
+    "mage",
+    "rogue",
+    "priest",
+    "warlock",
+    "paladin",
+    "druid",
+    "shaman"
+  ],
+  "races": [
+    {
+      "id": "dwarf",
+      "raceName": "Dwarf",
+      "faction": "alliance",
+      "classes": [
+        "hunter",
+        "paladin",
+        "priest",
+        "rogue",
+        "shaman",
+        "warrior"
+      ],
+      "observed": true,
+      "complete": true,
+      "traits": 4,
+      "counts": {
+        "new": 2,
+        "changed": 1,
+        "same": 1,
+        "unknown": 0
+      },
+      "newCombos": [
+        "shaman"
+      ],
+      "reportedElsewhere": [
+        "shaman"
+      ],
+      "agreement": "confirmed on screen"
+    },
+    {
+      "id": "gnome",
+      "raceName": "Gnome",
+      "faction": "alliance",
+      "classes": [
+        "mage",
+        "priest",
+        "rogue",
+        "warlock",
+        "warrior"
+      ],
+      "observed": true,
+      "complete": true,
+      "traits": 4,
+      "counts": {
+        "new": 1,
+        "changed": 3,
+        "same": 0,
+        "unknown": 0
+      },
+      "newCombos": [
+        "priest"
+      ]
+    },
+    {
+      "id": "human",
+      "raceName": "Human",
+      "faction": "alliance",
+      "classes": [
+        "hunter",
+        "mage",
+        "paladin",
+        "priest",
+        "rogue",
+        "warlock",
+        "warrior"
+      ],
+      "observed": true,
+      "complete": true,
+      "traits": 4,
+      "counts": {
+        "new": 1,
+        "changed": 1,
+        "same": 2,
+        "unknown": 0
+      },
+      "newCombos": [
+        "hunter"
+      ]
+    },
+    {
+      "id": "night-elf",
+      "raceName": "Night Elf",
+      "faction": "alliance",
+      "classes": [
+        "druid",
+        "hunter",
+        "priest",
+        "rogue",
+        "warrior"
+      ],
+      "observed": true,
+      "complete": true,
+      "traits": 4,
+      "counts": {
+        "new": 1,
+        "changed": 2,
+        "same": 1,
+        "unknown": 0
+      },
+      "newCombos": []
+    },
+    {
+      "id": "orc",
+      "raceName": "Orc",
+      "faction": "horde",
+      "classes": [
+        "hunter",
+        "mage",
+        "rogue",
+        "shaman",
+        "warlock",
+        "warrior"
+      ],
+      "observed": true,
+      "complete": true,
+      "traits": 4,
+      "counts": {
+        "new": 1,
+        "changed": 3,
+        "same": 0,
+        "unknown": 0
+      },
+      "newCombos": [
+        "mage"
+      ]
+    },
+    {
+      "id": "skyborne",
+      "raceName": "Skyborne",
+      "faction": "neutral",
+      "classes": [
+        "druid",
+        "hunter",
+        "mage",
+        "rogue",
+        "shaman",
+        "warrior"
+      ],
+      "observed": true,
+      "complete": true,
+      "traits": 5,
+      "counts": {
+        "new": 5,
+        "changed": 0,
+        "same": 0,
+        "unknown": 0
+      },
+      "newCombos": [
+        "druid",
+        "hunter",
+        "mage",
+        "rogue",
+        "shaman",
+        "warrior"
+      ],
+      "variants": [
+        {
+          "id": "high-order",
+          "name": "High Order Skyborne",
+          "faction": "alliance",
+          "classes": [
+            "druid",
+            "hunter",
+            "mage",
+            "rogue",
+            "warrior"
+          ],
+          "newCombos": [
+            "druid",
+            "hunter",
+            "mage",
+            "rogue",
+            "warrior"
+          ]
+        },
+        {
+          "id": "windshaper",
+          "name": "Windshaper Skyborne",
+          "faction": "horde",
+          "classes": [
+            "druid",
+            "hunter",
+            "rogue",
+            "shaman",
+            "warrior"
+          ],
+          "newCombos": [
+            "druid",
+            "hunter",
+            "rogue",
+            "shaman",
+            "warrior"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tauren",
+      "raceName": "Tauren",
+      "faction": "horde",
+      "classes": [
+        "druid",
+        "hunter",
+        "shaman",
+        "warrior"
+      ],
+      "observed": true,
+      "complete": true,
+      "traits": 4,
+      "counts": {
+        "new": 1,
+        "changed": 2,
+        "same": 1,
+        "unknown": 0
+      },
+      "newCombos": [],
+      "reportedElsewhere": [
+        "shaman",
+        "druid"
+      ],
+      "agreement": "confirmed on screen"
+    },
+    {
+      "id": "troll",
+      "raceName": "Troll",
+      "faction": "horde",
+      "classes": [
+        "hunter",
+        "mage",
+        "priest",
+        "rogue",
+        "shaman",
+        "warlock",
+        "warrior"
+      ],
+      "observed": true,
+      "complete": true,
+      "traits": 4,
+      "counts": {
+        "new": 1,
+        "changed": 2,
+        "same": 1,
+        "unknown": 0
+      },
+      "newCombos": [
+        "warlock"
+      ]
+    },
+    {
+      "id": "undead",
+      "raceName": "Undead",
+      "faction": "horde",
+      "classes": [
+        "mage",
+        "paladin",
+        "priest",
+        "rogue",
+        "warlock",
+        "warrior"
+      ],
+      "observed": true,
+      "complete": true,
+      "traits": 4,
+      "counts": {
+        "new": 1,
+        "changed": 2,
+        "same": 1,
+        "unknown": 0
+      },
+      "newCombos": [
+        "paladin"
+      ],
+      "reportedElsewhere": [
+        "paladin"
+      ],
+      "agreement": "confirmed on screen"
+    }
+  ],
+  "notes": [
+    "Read from the lit/greyed class icons under the character preview; no VLM involved.",
+    "Cross-checked against the combinations Warcraft Tavern reported (docs/research/2026-09-13-talent-system.md); disagreements are recorded per race."
+  ]
+}

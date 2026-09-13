@@ -124,5 +124,77 @@ export declare function buildClassic(
 ): { diff: ClassicDiff; text: Record<string, Record<string, ClassicText>> }
 export declare function buildClassicDiff(classes: unknown[], prior: unknown): ClassicDiff
 export declare function buildClassicText(classes: unknown[], prior: unknown): Record<string, Record<string, ClassicText>>
+// --- races -----------------------------------------------------------------
+
+export interface RaceIndexVariant {
+  id: string
+  name: string
+  faction: 'alliance' | 'horde'
+  classes: string[]
+  /** Classes this variant could not be in Classic Era; absent when the prior is silent. */
+  newCombos?: string[]
+}
+
+export interface RaceIndexEntry {
+  id: string
+  raceName: string
+  faction: 'alliance' | 'horde' | 'neutral'
+  classes: string[]
+  /** `false` = the class bar was never read; the table shows unknown, not none. */
+  observed: boolean
+  complete: boolean
+  traits: number
+  counts: { new: number; changed: number; same: number; unknown: number }
+  newCombos?: string[]
+  variants?: RaceIndexVariant[]
+  reportedElsewhere?: string[]
+  agreement?: string
+  disagreement?: string
+}
+
+export interface RacesIndexFile {
+  prior: string
+  /** The Classic racial prior is written from memory; false today. */
+  priorVerified: boolean
+  /** Class-bar order, which is the matrix column order. */
+  classes: string[]
+  races: RaceIndexEntry[]
+  notes: string[]
+}
+
+export interface RaceFile {
+  id: string
+  data: {
+    raceName: string
+    faction: string
+    classes: string[]
+    traits: unknown[]
+    complete: boolean
+    variants?: { id: string; classes: string[] }[]
+  }
+}
+
+export declare const RACE_PRIOR_PATH: string
+export declare function readRaces(): RaceFile[]
+export declare function readMatrix(): unknown
+export declare function newCombos(classes: string[], priorClasses: unknown): string[] | undefined
+export declare function traitCounts(traits: unknown[]): {
+  total: number
+  new: number
+  changed: number
+  same: number
+  unknown: number
+}
+export declare function buildRacesIndex(races: RaceFile[], matrix: unknown, racePrior: unknown): RacesIndexFile
+export declare function collectRaceCrops(races: RaceFile[]): string[]
+export declare function renderRaceCrops(paths: string[]): string
+
 export declare function generate(root?: string): boolean
-export declare function expected(): { index: string; crops: string; classicDiff: string; classicText: string }
+export declare function expected(): {
+  index: string
+  crops: string
+  classicDiff: string
+  classicText: string
+  racesIndex: string
+  raceCrops: string
+}

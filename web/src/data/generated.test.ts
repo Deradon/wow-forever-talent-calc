@@ -10,10 +10,13 @@ import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
-import { expected } from '../../scripts/gen-data-index.mjs'
+import { expected, readRaces } from '../../scripts/gen-data-index.mjs'
 import classesIndex from './classes-index.json'
+import racesIndex from './races-index.json'
 import { iconCropUrl, iconCropCount } from './iconCrop'
 import { parseClass } from './schema.zod'
+import { parseRace } from './races.zod'
+import { raceCropUrl, raceCropCount } from './raceCrop'
 
 const here = fileURLToPath(new URL('.', import.meta.url))
 const repo = join(here, '../../..')
@@ -25,6 +28,53 @@ describe('generated data indexes', () => {
 
   it('iconCrops.ts is up to date', () => {
     expect(readFileSync(join(here, 'iconCrops.ts'), 'utf8')).toBe(expected().crops)
+  })
+
+  it('races-index.json and raceCrops.ts are up to date', () => {
+    expect(readFileSync(join(here, 'races-index.json'), 'utf8')).toBe(expected().racesIndex)
+    expect(readFileSync(join(here, 'raceCrops.ts'), 'utf8')).toBe(expected().raceCrops)
+  })
+
+  it('indexes every race file with its variants, classes and trait counts', () => {
+    const races = readRaces()
+    expect(racesIndex.races.map((r) => r.id)).toEqual(races.map((r) => r.id))
+    for (const { id, data } of races) {
+      const entry = racesIndex.races.find((r) => r.id === id)!
+      const race = parseRace(data, id)
+      expect(entry.raceName).toBe(race.raceName)
+      expect(entry.faction).toBe(race.faction)
+      expect(entry.classes).toEqual(race.classes)
+      expect(entry.traits).toBe(race.traits.length)
+      expect(entry.complete).toBe(race.complete)
+      expect(entry.variants?.map((v) => v.id)).toEqual(race.variants?.map((v) => v.id))
+      for (const v of entry.variants ?? []) {
+        expect(v.classes).toEqual(race.variants!.find((x) => x.id === v.id)!.classes)
+      }
+    }
+    // The column order is the class bar's, not alphabetical.
+    expect(racesIndex.classes[0]).toBe('warrior')
+    // The prior is a paraphrase written from memory; the page says so because
+    // the index says so.
+    expect(racesIndex.priorVerified).toBe(false)
+  })
+
+  it('resolves every race crop the pages render or link, and nothing else', () => {
+    expect(raceCropCount()).toBeGreaterThan(0)
+    expect(raceCropUrl(undefined)).toBeUndefined()
+    expect(raceCropUrl('data/review/races/nope/nope.png')).toBeUndefined()
+    let seen = 0
+    for (const { id, data } of readRaces()) {
+      const race = parseRace(data, id)
+      for (const t of race.traits) {
+        seen++
+        expect(raceCropUrl(t.iconCrop), `${id}/${t.id} icon`).toBeDefined()
+        expect(raceCropUrl(t.source.crop), `${id}/${t.id} crop`).toBeDefined()
+        expect(raceCropUrl(`./${t.iconCrop}`)).toBe(raceCropUrl(t.iconCrop))
+      }
+    }
+    expect(seen).toBeGreaterThan(0)
+    // Talent crops belong to the calculator's map, not to this one.
+    expect(raceCropUrl('data/review/paladin/holy/_header.png')).toBeUndefined()
   })
 
   it('indexes every class file with its trees and counts', () => {
