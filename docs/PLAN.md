@@ -79,7 +79,7 @@ contract.
 Definition of done: a public URL shows one Forever class with all its
 talents, every talent traceable to a frame, rules working, links shareable.
 
-### Phase 2: all classes (target: 2026-09-16)
+### Phase 2: all classes (target: 2026-09-16) - done 2026-09-13
 - Run the pipeline over all segments; review queue per class; publish
   classes as they pass review. Web M2: tooltips with next rank, self-hosted
   icons, review route, class picker, provenance badge.
@@ -156,6 +156,12 @@ workflow then publishes to https://deradon.github.io/wow-forever-talent-calc/
 on every push to `main`.
 
 ## Status log
+
+- 2026-09-13 ~03:45: Phase 2 done. All nine classes live, 434 of 470
+  talents, unreviewed; 73 flagged (orange badge) after a Codex second
+  opinion on every crop; 36 cells never hovered on stream (see
+  `data/extracted/SUMMARY.md`). Web M2 live (crop icons, review route,
+  titles). Next: owner review via `#/review/<class>`, then Phase 2b races.
 
 - 2026-09-13 ~evening: Phase 2 extraction done. `data/extracted/<class>.json`
   for all nine classes, 0 validation errors each: 434 of 470 cells read (36
