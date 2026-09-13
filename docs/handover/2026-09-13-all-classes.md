@@ -246,3 +246,74 @@ description match (`classic-prior` medium, review queue); the real Fire
 either pairing. New names with no same-class Classic counterpart: Boundless
 Rage (warrior), Infusion of Light, Holy Conduit (paladin), Wild Growth
 (druid). `data/review/` is now 20 MB.
+
+## Recovery from the mkv (2026-09-13, stream-time ranges outside every segment)
+
+The two cells the cursor track could not find (paladin Holy r2c1, mage Fire
+r1c3) and the Hot Streak ghost were chased in the merged download
+`pipeline/work/video/xaryu-blizzcon-day1.mkv` (8.56 h, 1080p60), the only
+source left for footage between segments. Nothing committed, no hand edits.
+
+**Time base.** `ffprobe` gives `start_time 0`, duration 30804.965 s. The
+first attempt's 775 skipped fragments (137-911, HTTP 403) were re-fetched by
+the resumed second attempt (it restarted at fragment 136; only the two
+live-edge fragments 30806/30807 were skipped), so the file is contiguous:
+video packets in every range used are a constant 1/60 s apart
+(`04b_hovers_mkv.py gaps`). The stage-0 probe sample of fragment 13680 (its
+first frame, stream time 13680.0) matches the decoded mkv exactly (mean
+|diff| 0.00) at file time 13679.533, so **file time = stream time - 0.467 s**
+(`wowtalents.mkv.OFFSET`, re-measurable with `04b_hovers_mkv.py offset`).
+
+**Tooling.** `pipeline/stages/04b_hovers_mkv.py run <class> --calib <segment>
+--start HH:MM:SS --end HH:MM:SS [--fps 60]` decodes the range with
+`ffmpeg -ss -i -t -vf fps=60` streamed frame by frame (nothing buffered),
+runs stage 4's `observe` with the borrowed calibration and writes the usual
+`work/hovers/<sid>.json` + crops + sheet under `m<NN>-<class>-<t_start>`
+(NN = donor segment), plus a `work/calib/<sid>.json` copy carrying
+`borrowed_from`, so stage 5 sees it as a segment. Stage 4's post-processing
+moved into `finish()` (behaviour unchanged) so both stages share it.
+`05_read.py run <class> --add` reads only cells the candidates file lacks and
+appends them (`additions` block; existing records untouched), and
+`scripts/second_opinion.py` now skips records that already carry a codex
+reading, so both are safe to re-run on a grown file. Helper module
+`src/wowtalents/mkv.py`; tests `tests/test_mkv.py`, `tests/test_stage05_add.py`.
+
+**Ranges decoded (60 fps) and results.**
+
+| class | range (stream) | calibration | tooltip frames | outcome |
+|---|---|---|---|---|
+| paladin | 05:58:30-05:59:35 | 25 | 27 runs | **holy-r2c1 Healing Light 0/3** at 05:59:28.5 (38 frames, corner 4.2 px, darkness 0.85); Holy r1c1-r1c3, r2c2-r2c4 seen 05:59:22-05:59:27, i.e. the row-1/2 sweep ended two seconds before segment 25 starts with r3c1 |
+| paladin | 03:58:05-03:59:45 | 02 | 43 runs | Holy r1c1, r1c2 only; no blob anchored at r2c1 |
+| paladin | 03:48:10-03:48:50 | 01 | 2 runs | nothing in Holy |
+| mage | 04:07:05-04:09:35 | 07 | 14 runs | Fire r1c1 04:07:05-04:07:08, then options menu 04:07:10-04:07:22, game menu, window open but idle 04:07:24-04:08:20, gameplay 04:08:20-04:09:29, pass resumes 04:09:29 at r4c3/r3c3/r2c3/r2c2/r3c2/r3c1; **no tooltip anchored at Fire r1c3** (no accepted, rejected or dropped blob at (1003, 238)) |
+| mage | 04:05:30-04:06:00, 04:10:15-04:10:45, 04:12:30-04:13:00 | 06, 08, 09 | 22 / 15 / 0 runs | Arcane r1c1-r1c3, Fire r7c2, Frost r1c1/r2c1/r2c2; no Fire r1c3 |
+
+Fire r1c3 is therefore proven absent from every cached segment and from
+every uncached margin around the mage passes: the streamer skipped it. It
+stays the single missing cell (469 of 470).
+
+**Hot Streak / Master of Elements.** The forensics re-run had already
+installed the fixed stage-4 output, so `work/hovers/08-mage-14970/fire-r4c3.png`
+now is the Hot Streak crop (byte-identical to
+`work/forensics/recovered/mage/fire-r4c3.png`, 04:10:02.3, 30 frames). The
+candidates file still carried the old reading of that path as "Master of
+Elements" at r4c3. That record was removed (clearly wrong: pointer on r4c4
+for 100 % of the run behind the r4c4 record, box started 60 px inside the
+ghost, and its crop path no longer shows that tooltip); the removal is logged
+in the file's `corrections` block with the old record's id, time, crop path
+and confidence. The r4c4 record keeps Master of Elements, its confidence
+returns from the duplicate-name cap (0.3) to the readers' agreement (1.0,
+codex agreeing) with a note about the removed twin. `05_read.py run mage
+--segments 8,m07 --add` then read r4c3 as **Hot Streak 0/1** (Qwen 3x/2x and
+codex agree). Export: `mage/fire/hot-streak` at r4c3, `mage/fire/master-of-elements`
+at r4c4; `master-of-elements-r3c3` is gone from `data/extracted`, `data/talents`
+and the unpublished `data/encoding/v1.json` order.
+
+**Downstream.** Codex second opinion: 0 disagreements on the two new crops.
+`06_rankfill` without `--force`: Healing Light `classic-prior` high (4/8/12,
+copied), Hot Streak `observed`; all other ranks kept. `08_export.py all
+<class> --update-encoding` for paladin and mage, validator on
+`data/talents/` and `data/extracted/`: 0 errors (paladin 14 warnings, mage
+19). `uv run pytest`: 141 passed. `web`: 81 vitest tests pass, `npm run
+build` OK. SUMMARY.md: paladin 52/52, mage 53/54, total 469 of 470,
+needs-review 77.

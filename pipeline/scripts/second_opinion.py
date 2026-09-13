@@ -82,8 +82,11 @@ def main(
     src = candidates or (REPO / "data" / "extracted" / f"{cls}.candidates.json")
     doc = json.loads(src.read_text(encoding="utf-8"))
     records = doc["candidates"] if isinstance(doc, dict) else doc
-    n_diff = n_missing = 0
+    n_diff = n_missing = n_done = 0
     for rec in records:
+        if any(r.get("reader") == "codex-cli" for r in rec.get("source", {}).get("readings") or []):
+            n_done += 1        # already has a second reading (additive stage-5 runs re-run this on the whole file)
+            continue
         crop = rec.get("source", {}).get("crop_path")
         path = (PIPELINE / crop) if crop and not Path(crop).is_absolute() else Path(crop or "")
         if not path.is_file():
@@ -109,7 +112,8 @@ def main(
                 a = other.get("rank_max") if f == "rank_max" else other.get("name" if f == "name" else "description")
                 b = (rec.get("rank") or {}).get("max") if f == "rank_max" else rec.get("name" if f == "name" else "description_rank1")
                 typer.echo(f"      codex: {a}\n      qwen:  {b}")
-    typer.echo(f"{len(records)} records: {n_diff} disagreements (confidence -> {SECOND_CONFIDENCE}), {n_missing} without a second reading")
+    typer.echo(f"{len(records)} records: {n_diff} disagreements (confidence -> {SECOND_CONFIDENCE}), "
+               f"{n_missing} without a second reading, {n_done} already had one")
     if not dry_run:
         src.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         typer.echo(f"wrote {src}")

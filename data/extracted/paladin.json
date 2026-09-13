@@ -5,7 +5,7 @@
   "className": "Paladin",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T10:04:04Z",
+  "generatedAt": "2026-09-13T10:22:23Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -195,6 +195,60 @@
                 "name": "Divine Intellect",
                 "description": "Increases your total Intellect by 2%.",
                 "maxRank": 5,
+                "confidence": 1.0
+              }
+            ],
+            "reviewed": false
+          }
+        },
+        {
+          "id": "healing-light",
+          "name": "Healing Light",
+          "row": 1,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "crop-healing-light",
+          "iconSource": "crop",
+          "iconCrop": "data/review/paladin/holy/healing-light.icon.png",
+          "description": "Increases the amount healed by your Holy Light, Flash of Light, and Holy Shock spells by {0}%.",
+          "ranks": [[4], [8], [12]],
+          "ranksObserved": [1],
+          "ranksSource": "classic-prior",
+          "ranksPrior": {
+            "classicTalentId": 1444,
+            "classicSpellIds": [20237, 20238, 20239],
+            "match": "exact-name",
+            "similarity": 1.0
+          },
+          "ranksNote": "Classic paladin/holy/Healing Light (talent 1444): ranks copied.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21568.467,
+            "frame": 1294108,
+            "crop": "data/review/paladin/holy/healing-light.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+                "name": "Healing Light",
+                "description": "Increases the amount healed by your Holy Light, Flash of Light, and Holy Shock spells by 4%.",
+                "maxRank": 3,
+                "confidence": 1.0
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+                "name": "Healing Light",
+                "description": "Increases the amount healed by your Holy Light, Flash of Light, and Holy Shock spells by 4%.",
+                "maxRank": 3,
+                "confidence": 1.0
+              },
+              {
+                "reader": "codex-cli",
+                "name": "Healing Light",
+                "description": "Increases the amount healed by your Holy Light, Flash of Light, and Holy Shock spells by 4%.",
+                "maxRank": 3,
                 "confidence": 1.0
               }
             ],

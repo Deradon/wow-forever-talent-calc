@@ -5,7 +5,7 @@
   "className": "Mage",
   "dataVersion": 1,
   "dataSource": "video",
-  "generatedAt": "2026-09-13T10:04:03Z",
+  "generatedAt": "2026-09-13T10:25:08Z",
   "rules": {
     "pointsPerRow": 5,
     "maxPoints": 51,
@@ -1500,10 +1500,57 @@
           }
         },
         {
+          "id": "hot-streak",
+          "name": "Hot Streak",
+          "row": 3,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "crop-hot-streak",
+          "iconSource": "crop",
+          "iconCrop": "data/review/mage/fire/hot-streak.icon.png",
+          "description": "Your non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch grant Hot Streak for {0} sec. Hot Streak reduces the cast time of Pyroblast by {1}%, stacking up to {2} times.",
+          "ranks": [[15, 25, 3]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 15002.333,
+            "frame": 900140,
+            "crop": "data/review/mage/fire/hot-streak.png",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+                "name": "Hot Streak",
+                "description": "Your non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch grant Hot Streak for 15 sec. Hot Streak reduces the cast time of Pyroblast by 25%, stacking up to 3 times.",
+                "maxRank": 1,
+                "confidence": 1.0
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+                "name": "Hot Streak",
+                "description": "Your non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch grant Hot Streak for 15 sec. Hot Streak reduces the cast time of Pyroblast by 25%, stacking up to 3 times.",
+                "maxRank": 1,
+                "confidence": 1.0
+              },
+              {
+                "reader": "codex-cli",
+                "name": "Hot Streak",
+                "description": "Your non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch grant Hot Streak for 15 sec. Hot Streak reduces the cast time of Pyroblast by 25%, stacking up to 3 times.",
+                "maxRank": 1,
+                "confidence": 1.0
+              }
+            ],
+            "reviewed": false
+          }
+        },
+        {
           "id": "master-of-elements",
           "name": "Master of Elements",
           "row": 3,
-          "col": 2,
+          "col": 3,
           "maxRank": 3,
           "icon": "crop-master-of-elements",
           "iconSource": "crop",
@@ -1522,65 +1569,10 @@
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
-            "t": 15003.733,
-            "frame": 900224,
-            "crop": "data/review/mage/fire/master-of-elements.png",
-            "confidence": 0.3,
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-            "readings": [
-              {
-                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
-                "name": "Master of Elements",
-                "description": "Your Fire and Frost critical strikes will refund 10% of their base mana cost.",
-                "maxRank": 3,
-                "confidence": 1.0
-              },
-              {
-                "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
-                "name": "Master of Elements",
-                "description": "Your Fire and Frost critical strikes will refund 10% of their base mana cost.",
-                "maxRank": 3,
-                "confidence": 1.0
-              },
-              {
-                "reader": "codex-cli",
-                "name": "Master of Elements",
-                "description": "Your Fire and Frost critical strikes will refund 10% of their base mana cost.",
-                "maxRank": 3,
-                "confidence": 1.0
-              }
-            ],
-            "reviewed": false,
-            "note": "name also read at r4c3@08-mage-14970, r4c4@08-mage-14970; cell attribution needs review"
-          }
-        },
-        {
-          "id": "master-of-elements-r3c3",
-          "name": "Master of Elements",
-          "row": 3,
-          "col": 3,
-          "maxRank": 3,
-          "icon": "crop-master-of-elements-r3c3",
-          "iconSource": "crop",
-          "iconCrop": "data/review/mage/fire/master-of-elements-r3c3.icon.png",
-          "description": "Your Fire and Frost critical strikes will refund {0}% of their base mana cost.",
-          "ranks": [[10], [20], [30]],
-          "ranksObserved": [1],
-          "ranksSource": "classic-prior",
-          "ranksPrior": {
-            "classicTalentId": 1639,
-            "classicSpellIds": [29074, 29075, 29076],
-            "match": "exact-name",
-            "similarity": 1.0
-          },
-          "ranksNote": "Classic mage/fire/Master of Elements (talent 1639): ranks copied.",
-          "source": {
-            "kind": "video",
-            "video": "DxtVEhjyROU",
             "t": 15003.15,
             "frame": 900189,
-            "crop": "data/review/mage/fire/master-of-elements-r3c3.png",
-            "confidence": 0.3,
+            "crop": "data/review/mage/fire/master-of-elements.png",
+            "confidence": 1.0,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
             "readings": [
               {
@@ -1606,7 +1598,7 @@
               }
             ],
             "reviewed": false,
-            "note": "name also read at r4c3@08-mage-14970, r4c4@08-mage-14970; cell attribution needs review"
+            "note": "Master of Elements was also read at r4c3@08-mage-14970 (04:10:03.7) from a box glued to the Hot Streak ghost in that segment's median; that record was removed on 2026-09-13 (pointer on r4c4 for the whole run, r4c3 is Hot Streak)"
           }
         },
         {

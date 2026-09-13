@@ -134,6 +134,39 @@ def copy_review(cls: str, rec: dict, hover: dict, tree_strip: Path | None) -> in
     return n
 
 
+def record_key(rec: dict, tree_index: dict[str, int]) -> tuple[str, int, int, int] | None:
+    """A candidate record's (page, tree index, 1-based row, 1-based col), the key ``merge_hovers`` uses."""
+    idx = tree_index.get(str(rec.get("tree") or ""))
+    if idx is None:
+        return None
+    return (str(rec.get("page") or "Primary"), int(idx), int(rec["row"]) + 1, int(rec["col"]) + 1)
+
+
+def additive_merge(existing: dict, records: list[dict], segments: list[dict], trees: dict[str, str],
+                   missing: list[dict], stats: dict, at: str, source: str = "05_read.py run --add") -> dict:
+    """``--add``: the existing candidates file plus ``records``; nothing already in it is rewritten.
+
+    Segments and tree names are unioned (existing entries win), ``missing_cells``
+    and ``stats`` are replaced by the recomputed ones, and an ``additions`` entry
+    records what this run appended (ids, segments, reader) so the provenance of a
+    grown file stays legible.
+    """
+    doc = dict(existing)
+    doc["generated_at"] = at
+    have = {s.get("segment_id") for s in existing.get("segments") or []}
+    doc["segments"] = list(existing.get("segments") or []) + [s for s in segments if s.get("segment_id") not in have]
+    doc["trees"] = {**{str(k): v for k, v in trees.items()}, **(existing.get("trees") or {})}
+    doc["missing_cells"] = missing
+    doc["stats"] = stats
+    doc["candidates"] = list(existing.get("candidates") or []) + list(records)
+    doc["additions"] = list(existing.get("additions") or []) + [{
+        "at": at, "source": source, "reader": stats.get("reader"),
+        "segments": [s.get("segment_id") for s in segments],
+        "added": [r["id"] for r in records],
+    }]
+    return doc
+
+
 @app.callback()
 def _main():
     """Stage 5: VLM reading of tooltip crops."""
@@ -165,6 +198,8 @@ def run(
     copy: bool = typer.Option(True, "--copy/--no-copy", help="copy tree header strips into data/review/<class>/"),
     out: Path | None = typer.Option(None, help="output (default data/extracted/<class>.candidates.json)"),
     dry_run: bool = typer.Option(False, help="merge hovers and list them; no VLM calls, nothing written"),
+    add: bool = typer.Option(False, "--add", help="additive: read only cells the existing candidates file lacks "
+                                                 "and append them; existing records are left as they are"),
 ):
     """Read every merged hover of a class; write data/extracted/<class>.candidates.json."""
     only = {s.strip() for s in segments.split(",")} if segments else None
@@ -186,6 +221,21 @@ def run(
         best.pop(k)
     typer.echo(f"{cls}: {len(docs)} segments ({', '.join(s for s, _ in docs)}), "
                f"{sum(len(v) for v in everything.values())} hovers -> {len(best)} unique cells of {len(cells)}")
+    dest = out or (EXTRACTED / f"{cls}.candidates.json")
+    existing: dict | None = None
+    covered: dict[tuple, dict] = dict(best)      # cells with a crop (best) or an existing record
+    if add:
+        if not dest.is_file():
+            typer.echo(f"--add needs an existing candidates file at {dest}")
+            raise typer.Exit(code=2)
+        existing = json.loads(dest.read_text(encoding="utf-8"))
+        tree_index = {v: int(k) for k, v in (existing.get("trees") or {}).items()}
+        have = {record_key(r, tree_index) for r in existing.get("candidates") or []} - {None}
+        for k in have:
+            covered.setdefault(k, {})
+        to_read = sorted(k for k in best if k not in have)
+        typer.echo(f"--add: {len(have)} cells already in {dest.name}, {len(to_read)} of the {len(best)} hovered cells are new")
+        best = {k: best[k] for k in to_read}
     if dry_run:
         for key in sorted(best):
             h = best[key]
@@ -279,7 +329,7 @@ def run(
 
     # the same name twice in one tree is a cell-attribution error (junk glued to the box moves its anchor)
     by_name: dict[tuple[str, str], list[dict]] = {}
-    for rec in records:
+    for rec in (list(existing.get("candidates") or []) + records) if existing else records:
         if rec["name"]:
             by_name.setdefault((rec["tree"], rec["name"].lower()), []).append(rec)
     dupes = 0
@@ -294,13 +344,16 @@ def run(
 
     # the page the hovers were actually resolved on (a short first segment with a dialog over the
     # tab bar can be mis-read as 'Secondary', which would report every Primary cell as missing)
-    page_votes = Counter(k[0] for k in best)
+    page_votes = Counter(k[0] for k in covered)
     main_page = page_votes.most_common(1)[0][0] if page_votes else headers[first_sid]["page"]
-    missing = missing_with_reasons(cells, best, docs, names, main_page)
+    missing = missing_with_reasons(cells, covered, docs, names, main_page)
+    all_records = (list(existing.get("candidates") or []) + records) if existing else records
+    if existing:
+        conf_counts = Counter(r["source"]["confidence"] for r in all_records)
     stats = {
-        "cells": len(cells), "hovered": len(best), "read": len(records), "missing": len(missing),
+        "cells": len(cells), "hovered": len(covered), "read": len(all_records), "missing": len(missing),
         "confidence": {str(k): v for k, v in sorted(conf_counts.items())},
-        "cut_off": sum(1 for r in records if r["cut_off"]),
+        "cut_off": sum(1 for r in all_records if r["cut_off"]),
         "duplicate_names": dupes,
         "vlm_calls": reader.calls, "cache_hits": reader.cache_hits, "vlm_seconds": round(reader.seconds, 1),
         "wall_seconds": round(time.time() - wall, 1),
@@ -319,10 +372,13 @@ def run(
         "stats": stats,
         "candidates": records,
     }
-    dest = out or (EXTRACTED / f"{cls}.candidates.json")
+    if existing:
+        stats["reader"] = reader_label
+        doc = additive_merge(existing, records, doc["segments"], doc["trees"], missing, stats, doc["generated_at"])
+        typer.echo(f"--add: appended {len(records)} records ({', '.join(r['id'] for r in records) or '-'})")
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    typer.echo(f"{len(records)} records, confidence {stats['confidence']}, {stats['cut_off']} cut off, "
+    typer.echo(f"{len(all_records)} records, confidence {stats['confidence']}, {stats['cut_off']} cut off, "
                f"{len(missing)} cells missing; {reader.calls} VLM calls ({reader.seconds:.0f}s), "
                f"{reader.cache_hits} cache hits, {stats['wall_seconds']}s wall")
     typer.echo(f"wrote {dest}")

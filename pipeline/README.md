@@ -88,6 +88,29 @@ uv run stages/04_hovers.py run 1 --start 13680 --end 13682   # a sub-range
 Shared helpers (grid detection, tooltip blob, dHash grouping, cell lookup)
 live in `src/wowtalents/ui.py` and are unit-tested in `tests/test_ui.py`.
 
+### Stage 4b: hovers from the merged mkv
+
+Footage between segments (10 s probe boundaries, ranges whose live fragments
+were never cached) exists only in `work/video/<vod>.mkv`. Stage 4b decodes a
+stream-time range from it (`ffmpeg -ss -i -t -vf fps=60`, streamed frame by
+frame), runs stage 4's detector with a neighbouring segment's calibration and
+writes stage-4-shaped output under a synthetic segment id
+`m<NN>-<class>-<t_start>` (NN = donor segment) plus a `work/calib/` copy with
+`borrowed_from`, so stage 5 picks it up like any segment. Stream time vs file
+time: the mkv starts at pts 0 but fragment `sq` begins at file time
+`sq - 0.467` (`wowtalents.mkv.OFFSET`, measured against the stage-0 sample of
+fragment 13680); `gaps` checks that the range has no missing packets first.
+
+```bash
+uv run stages/04b_hovers_mkv.py offset                      # re-measure the offset
+uv run stages/04b_hovers_mkv.py gaps 04:07:00 04:09:40      # packet continuity of a range
+uv run stages/04b_hovers_mkv.py run mage --calib 7 --start 04:07:05 --end 04:09:35
+#   -> work/hovers/m07-mage-14825.json, crops, sheet; work/calib/m07-mage-14825.json
+uv run stages/05_read.py run mage --segments 8,m07 --add    # read only the cells the candidates file lacks
+```
+
+Helpers in `src/wowtalents/mkv.py` (`tests/test_mkv.py`).
+
 ## Tests
 
 ```bash
@@ -153,6 +176,7 @@ uv run stages/05_read.py one ../data/review/paladin/holy/holy-power.png   # both
 uv run stages/05_read.py run paladin --dry-run                       # merged hovers, no VLM calls
 uv run stages/05_read.py run paladin                                 # -> data/extracted/paladin.candidates.json
 uv run stages/05_read.py run paladin --segments 1,25 --limit 5 --no-copy --out /path/x.json
+uv run stages/05_read.py run paladin --segments m25 --add                # append cells missing from the candidates file
 ```
 
 What `run` does: merges every `work/hovers/<segment>.json` of the class on
@@ -172,7 +196,11 @@ writes 0-based `row`/`col` (what `export.py` expects; hover files are
 1-based, the original cell is kept in `source.cell`) and copies the tree
 header strip to `data/review/<class>/<tree>/_header.png` (the tooltip and
 icon crops are placed by stage 8 under talent ids). Readings are cached in `work/read/cache/` by
-content hash + prompt, so a re-run only pays for new crops. Output is an
+content hash + prompt, so a re-run only pays for new crops. `--add` keeps the
+existing candidates file, reads only the hovered cells it has no record for,
+appends them and logs the run in an `additions` block (stats and
+`missing_cells` recomputed, the duplicate-name rule applied across old and
+new records). Output is an
 object: `candidates` (brief section 1 shape), `segments`, `trees`,
 `missing_cells` (with the reason: never hovered / only a flash shorter than
 `--min-frames`), `stats`.
@@ -202,7 +230,8 @@ every crop of the candidates file with the local `codex` CLI (about 5 s per
 crop, cached in `work/read/codex/`), appends the reading to
 `source.readings` and lowers `source.confidence` to 0.7 with a note where
 name, `rank_max` or description differ from the Qwen reading, so the record
-lands in the review queue (validator `NEEDS-REVIEW` below 0.8). On Paladin
+lands in the review queue (validator `NEEDS-REVIEW` below 0.8). Records that
+already carry a codex reading are skipped, so it can follow a `--add` run. On Paladin
 this caught the six one-character defects that two Qwen passes agreed on
 (mid-sentence "In..." words capitalised, a dropped `%`).
 

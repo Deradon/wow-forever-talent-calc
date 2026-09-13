@@ -1,6 +1,6 @@
 # Extraction summary, 2026-09-13
 
-Raw pipeline output (`data/extracted/<class>.json`, unreviewed) for all nine classes, validated with 0 errors each; includes the 34 cells recovered by the cursor track (2026-09-13, `docs/handover/2026-09-13-all-classes.md` section "Recovery"). Per-class run logs and fixes: `docs/handover/2026-09-13-all-classes.md`; method and error model: `docs/handover/2026-09-13-paladin-e2e.md`.
+Raw pipeline output (`data/extracted/<class>.json`, unreviewed) for all nine classes, validated with 0 errors each; includes the 34 cells recovered by the cursor track and the two recovered from the merged mkv (2026-09-13, `docs/handover/2026-09-13-all-classes.md` sections "Recovery" and "Recovery from the mkv"). Per-class run logs and fixes: `docs/handover/2026-09-13-all-classes.md`; method and error model: `docs/handover/2026-09-13-paladin-e2e.md`.
 
 Columns: cells = icon cells in the consensus grid (Forever tree size); crops = cells with a tooltip crop; read = records exported; needs-review = `source.confidence < 0.8` after the codex second opinion (a disagreement between the two readers, or a header-less tooltip); ranks manual/extrap. = `ranksSource` manual or extrapolated (no usable Classic pattern); missing = consensus cells with no tooltip on stream (fly-overs). Every exported record is in the review queue (unreviewed); the two review columns are the ones needing a decision.
 
@@ -9,15 +9,15 @@ Columns: cells = icon cells in the consensus grid (Forever tree size); crops = c
 | class | cells | read | needs-review | ranks manual/extrap. | missing | Classic talents |
 |---|---|---|---|---|---|---|
 | warrior | 54 | 54 | 5 | 14 | 0 | 52 |
-| paladin | 52 | 51 | 8 | 17 | 1 | 44 |
+| paladin | 52 | 52 | 8 | 17 | 0 | 44 |
 | hunter | 50 | 50 | 8 | 15 | 0 | 46 |
 | rogue | 53 | 53 | 3 | 11 | 0 | 51 |
 | priest | 53 | 53 | 9 | 14 | 0 | 47 |
 | shaman | 50 | 50 | 10 | 14 | 0 | 46 |
-| mage | 54 | 53 | 11 | 10 | 1 | 49 |
+| mage | 54 | 53 | 9 | 10 | 1 | 49 |
 | warlock | 52 | 52 | 16 | 23 | 0 | 50 |
 | druid | 52 | 52 | 9 | 16 | 0 | 47 |
-| **total** | **470** | **468** | **79** | **134** | **2** | **432** |
+| **total** | **470** | **469** | **77** | **134** | **1** | **432** |
 
 ## Per tree
 
@@ -28,7 +28,7 @@ Forever cell counts next to the Classic Era tree (talent count) they descend fro
 | warrior | Arms | 17 | 17 | 17 | 1 | 3 | 0 | Arms 18 |
 | warrior | Fury | 18 | 18 | 18 | 3 | 5 | 0 | Fury 17 |
 | warrior | Protection | 19 | 19 | 19 | 1 | 6 | 0 | Protection 17 |
-| paladin | Holy | 18 | 17 | 17 | 3 | 5 | 1 | Holy 14 |
+| paladin | Holy | 18 | 18 | 18 | 3 | 5 | 0 | Holy 14 |
 | paladin | Protection | 16 | 16 | 16 | 3 | 5 | 0 | Protection 15 |
 | paladin | Retribution | 18 | 18 | 18 | 2 | 7 | 0 | Retribution 15 |
 | hunter | Beast Mastery | 16 | 16 | 16 | 3 | 5 | 0 | Beast Mastery 16 |
@@ -44,7 +44,7 @@ Forever cell counts next to the Classic Era tree (talent count) they descend fro
 | shaman | Enhancement | 18 | 18 | 18 | 4 | 4 | 0 | Enhancement 16 |
 | shaman | Restoration | 16 | 16 | 16 | 2 | 4 | 0 | Restoration 15 |
 | mage | Arcane | 18 | 18 | 18 | 1 | 6 | 0 | Arcane 16 |
-| mage | Fire | 17 | 16 | 16 | 5 | 1 | 1 | Fire 16 |
+| mage | Fire | 17 | 16 | 16 | 3 | 1 | 1 | Fire 16 |
 | mage | Frost | 19 | 19 | 19 | 5 | 3 | 0 | Frost 17 |
 | warlock | Affliction | 17 | 17 | 17 | 5 | 6 | 0 | Affliction 17 |
 | warlock | Demonology | 19 | 19 | 19 | 4 | 10 | 0 | Demonology 17 |
@@ -55,10 +55,9 @@ Forever cell counts next to the Classic Era tree (talent count) they descend fro
 
 ## Missing cells (1-based `r<row>c<col>` of the tree)
 
-- paladin/Holy: holy-r2c1 (never hovered in any segment)
-- mage/Fire: fire-r1c3 (never hovered in any segment)
+- mage/Fire: fire-r1c3 (no tooltip anchored at the cell in any cached segment nor in the mkv margins 04:05:30-04:06:00, 04:07:05-04:09:35, 04:10:15-04:10:45, 04:12:30-04:13:00; the Fire pass skipped it)
 
-Recovered on 2026-09-13 by the cursor-track pass (`pipeline/work/cursor/report.md`, handover section "Recovery"): 34 of the 36 cells above that were listed before; the two left were fly-overs without a tooltip.
+Recovered on 2026-09-13 by the cursor-track pass (`pipeline/work/cursor/report.md`, handover section "Recovery"): 34 of the 36 cells that were listed before. Recovered from the merged mkv (`stages/04b_hovers_mkv.py`, handover section "Recovery from the mkv"): paladin holy-r2c1 Healing Light (05:59:28, two seconds before segment 25 starts) and a clean crop for mage fire-r4c3 Hot Streak (the ghost of segment 08's median).
 
 ## Talents with no same-class Classic counterpart by name
 
@@ -79,6 +78,6 @@ Name similarity below 90 (`token_sort_ratio`) against every Classic talent of th
 
 - Tree names from the footage: priest "Shadow Magic", shaman "Elemental Combat"; all others as in Classic.
 - Only rank-0 tooltips except mage Frost r4c4 (Shatter, 3/3 in the 04:53 pass; flagged, confidence 0.7).
-- mage Fire "Master of Elements" is read at two cells (r4c3 from stage 4, r4c4 from the cursor track; the pointer was on r4c4): both at confidence 0.3, exported as `master-of-elements` and `master-of-elements-r3c3`. The true r4c3 tooltip (the ghost baked into segment 08's median) has no clean crop.
+- mage Fire r4c3 is Hot Streak (0/1, both readers agree) and r4c4 Master of Elements (`master-of-elements`, plain id). The earlier second Master of Elements record at r4c3 was a ghost-blob mis-attribution and was removed from the candidates file (`corrections` block there; `master-of-elements-r3c3` is gone from the export and the unpublished encoding).
 - Many talents have fewer ranks than Classic (30 `MAXRANK-DIFFERS-FROM-CLASSIC` warnings, e.g. warrior Improved Slam 2 vs 5, priest Wand Specialization 2 vs 5); 13 of 27 trees cannot absorb 51 points with the read maxRanks (rule 18), so the assumed Classic point rules may be wrong for Forever.
 - Equipment/stance/form requirements (13, e.g. "Requires Bear Form, Dire Bear Form") are kept in `source.note` as unparsed; the schema models talent prerequisites only.

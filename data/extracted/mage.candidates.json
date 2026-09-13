@@ -1,6 +1,6 @@
 {
   "class": "mage",
-  "generated_at": "2026-09-13T01:55:34Z",
+  "generated_at": "2026-09-13T10:21:39Z",
   "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
   "prompt_version": "tooltip-v3",
   "passes": [
@@ -73,6 +73,17 @@
       },
       "unspent_talents": 0,
       "hovers": 0
+    },
+    {
+      "segment_id": "m07-mage-14825",
+      "page": "Primary",
+      "trees": {
+        "1": "Arcane",
+        "2": "Fire",
+        "3": "Frost"
+      },
+      "unspent_talents": 29,
+      "hovers": 7
     }
   ],
   "trees": {
@@ -95,16 +106,16 @@
     "read": 53,
     "missing": 1,
     "confidence": {
-      "0.3": 2,
       "0.7": 9,
-      "1.0": 42
+      "1.0": 44
     },
     "cut_off": 0,
-    "duplicate_names": 2,
-    "vlm_calls": 18,
-    "cache_hits": 90,
-    "vlm_seconds": 21.2,
-    "wall_seconds": 21.7
+    "duplicate_names": 0,
+    "vlm_calls": 2,
+    "cache_hits": 8,
+    "vlm_seconds": 3.5,
+    "wall_seconds": 3.5,
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3"
   },
   "candidates": [
     {
@@ -3827,139 +3838,6 @@
       }
     },
     {
-      "id": "mage/fire/r3c2",
-      "class": "mage",
-      "tree": "Fire",
-      "page": "Primary",
-      "row": 3,
-      "col": 2,
-      "name": "Master of Elements",
-      "rank": {
-        "current": 0,
-        "max": 3
-      },
-      "kind": "Passive",
-      "extra_lines": [],
-      "requires": [],
-      "description_rank1": "Your Fire and Frost critical strikes will refund 10% of their base mana cost.",
-      "footer": "Click to learn",
-      "cut_off": false,
-      "source": {
-        "video": "DxtVEhjyROU",
-        "t": 15003.733,
-        "timestamp": "04:10:03.733",
-        "frame_index": 900224,
-        "crop_path": "work/hovers/08-mage-14970/fire-r4c3.png",
-        "icon_crop_path": "work/hovers/08-mage-14970/fire-r4c3-icon.png",
-        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.3,
-        "reviewed": false,
-        "segment_id": "08-mage-14970",
-        "hover_id": "fire-r4c3",
-        "cell": [
-          2,
-          4,
-          3
-        ],
-        "bbox": [
-          1002,
-          266,
-          268,
-          125
-        ],
-        "sharpness": 2137.7,
-        "frames": 13,
-        "agreement": {
-          "confidence": 1.0,
-          "differs_in": []
-        },
-        "readings": [
-          {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
-            "name": "Master of Elements",
-            "description": "Your Fire and Frost critical strikes will refund 10% of their base mana cost.",
-            "maxRank": 3,
-            "confidence": 1.0,
-            "kind": "Passive",
-            "requires": [],
-            "extra_lines": [],
-            "footer": "Click to learn",
-            "cut_off": false
-          },
-          {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
-            "name": "Master of Elements",
-            "description": "Your Fire and Frost critical strikes will refund 10% of their base mana cost.",
-            "maxRank": 3,
-            "confidence": 1.0,
-            "kind": "Passive",
-            "requires": [],
-            "extra_lines": [],
-            "footer": "Click to learn",
-            "cut_off": false
-          },
-          {
-            "reader": "codex-cli",
-            "name": "Master of Elements",
-            "description": "Your Fire and Frost critical strikes will refund 10% of their base mana cost.",
-            "maxRank": 3,
-            "confidence": 1.0
-          }
-        ],
-        "alternates": [],
-        "note": "name also read at r4c3@08-mage-14970, r4c4@08-mage-14970; cell attribution needs review"
-      },
-      "tree_source": {
-        "t": 14970,
-        "frame_index": 898200,
-        "video": "DxtVEhjyROU",
-        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 1.0
-      },
-      "ranks_anticipated": {
-        "description": "Your Fire and Frost critical strikes will refund {0}% of their base mana cost.",
-        "ranks": [
-          [
-            10
-          ],
-          [
-            20
-          ],
-          [
-            30
-          ]
-        ],
-        "ranksObserved": [
-          1
-        ],
-        "ranksSource": "classic-prior",
-        "ranksPrior": {
-          "classicTalentId": 1639,
-          "classicSpellIds": [
-            29074,
-            29075,
-            29076
-          ],
-          "match": "exact-name",
-          "similarity": 1.0
-        },
-        "ranksNote": "Classic mage/fire/Master of Elements (talent 1639): ranks copied.",
-        "needsManual": false,
-        "confidence": "high",
-        "review": false,
-        "rule": "copied",
-        "match": {
-          "classicTalentId": 1639,
-          "name": "Master of Elements",
-          "class": "mage",
-          "tree": "fire",
-          "maxRank": 3,
-          "match": "exact-name",
-          "similarity": 1.0
-        }
-      }
-    },
-    {
       "id": "mage/fire/r3c3",
       "class": "mage",
       "tree": "Fire",
@@ -3985,7 +3863,7 @@
         "crop_path": "work/cursor/recovered/mage/fire-r4c4.png",
         "icon_crop_path": "work/cursor/recovered/mage/fire-r4c4-icon.png",
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
-        "confidence": 0.3,
+        "confidence": 1.0,
         "reviewed": false,
         "segment_id": "08-mage-14970",
         "hover_id": "fire-r4c4",
@@ -4050,7 +3928,7 @@
           ],
           "darkness": 0.85
         },
-        "note": "name also read at r4c3@08-mage-14970, r4c4@08-mage-14970; cell attribution needs review"
+        "note": "Master of Elements was also read at r4c3@08-mage-14970 (04:10:03.7) from a box glued to the Hot Streak ghost in that segment's median; that record was removed on 2026-09-13 (pointer on r4c4 for the whole run, r4c3 is Hot Streak)"
       },
       "tree_source": {
         "t": 14970,
@@ -7162,6 +7040,121 @@
         "review": false,
         "rule": "none"
       }
+    },
+    {
+      "id": "mage/fire/r3c2",
+      "class": "mage",
+      "tree": "Fire",
+      "page": "Primary",
+      "row": 3,
+      "col": 2,
+      "name": "Hot Streak",
+      "rank": {
+        "current": 0,
+        "max": 1
+      },
+      "kind": "Passive",
+      "extra_lines": [],
+      "requires": [],
+      "description_rank1": "Your non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch grant Hot Streak for 15 sec. Hot Streak reduces the cast time of Pyroblast by 25%, stacking up to 3 times.",
+      "footer": null,
+      "cut_off": false,
+      "source": {
+        "video": "DxtVEhjyROU",
+        "t": 15002.333,
+        "timestamp": "04:10:02.333",
+        "frame_index": 900140,
+        "crop_path": "work/hovers/08-mage-14970/fire-r4c3.png",
+        "icon_crop_path": "work/hovers/08-mage-14970/fire-r4c3-icon.png",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0,
+        "reviewed": false,
+        "segment_id": "08-mage-14970",
+        "hover_id": "fire-r4c3",
+        "cell": [
+          2,
+          4,
+          3
+        ],
+        "bbox": [
+          1003,
+          268,
+          224,
+          130
+        ],
+        "sharpness": 4097.6,
+        "frames": 30,
+        "agreement": {
+          "confidence": 1.0,
+          "differs_in": []
+        },
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/3x",
+            "name": "Hot Streak",
+            "description": "Your non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch grant Hot Streak for 15 sec. Hot Streak reduces the cast time of Pyroblast by 25%, stacking up to 3 times.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3/2x",
+            "name": "Hot Streak",
+            "description": "Your non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch grant Hot Streak for 15 sec. Hot Streak reduces the cast time of Pyroblast by 25%, stacking up to 3 times.",
+            "maxRank": 1,
+            "confidence": 1.0,
+            "kind": "Passive",
+            "requires": [],
+            "extra_lines": [],
+            "footer": null,
+            "cut_off": false
+          },
+          {
+            "reader": "codex-cli",
+            "name": "Hot Streak",
+            "description": "Your non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch grant Hot Streak for 15 sec. Hot Streak reduces the cast time of Pyroblast by 25%, stacking up to 3 times.",
+            "maxRank": 1,
+            "confidence": 1.0
+          }
+        ],
+        "alternates": [
+          {
+            "segment_id": "m07-mage-14825",
+            "t": 14969.567,
+            "sharpness": 3680.7,
+            "cut_off": false
+          }
+        ]
+      },
+      "tree_source": {
+        "t": 14970,
+        "frame_index": 898200,
+        "video": "DxtVEhjyROU",
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+        "confidence": 1.0
+      },
+      "ranks_anticipated": {
+        "description": "Your non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch grant Hot Streak for {0} sec. Hot Streak reduces the cast time of Pyroblast by {1}%, stacking up to {2} times.",
+        "ranks": [
+          [
+            15,
+            25,
+            3
+          ]
+        ],
+        "ranksObserved": [
+          1
+        ],
+        "ranksSource": "observed",
+        "needsManual": false,
+        "confidence": "high",
+        "review": false,
+        "rule": "none"
+      }
     }
   ],
   "recovery": {
@@ -7198,5 +7191,40 @@
     "duplicate_names": [
       "Fire: 'Master of Elements' at r4c3@08-mage-14970, r4c4@08-mage-14970"
     ]
-  }
+  },
+  "corrections": [
+    {
+      "at": "2026-09-13T10:19:37Z",
+      "removed": {
+        "id": "mage/fire/r3c2",
+        "name": "Master of Elements",
+        "cell": [
+          2,
+          4,
+          3
+        ],
+        "segment_id": "08-mage-14970",
+        "t": 15003.733,
+        "crop_path": "work/hovers/08-mage-14970/fire-r4c3.png",
+        "confidence": 0.3
+      },
+      "kept": "mage/fire/r3c3",
+      "reason": "ghost-blob mis-attribution: the tooltip belonged to r4c4 (cursor track: pointer on r4c4 for 100 % of the run; forensics: box started 60 px inside the Hot Streak ghost of segment 08's median). The crop path it cites now holds the Hot Streak tooltip after the forensics re-run replaced work/hovers/08-mage-14970.",
+      "see": "docs/handover/2026-09-13-missing-cells-forensics.md, docs/handover/2026-09-13-all-classes.md (Recovery)"
+    }
+  ],
+  "additions": [
+    {
+      "at": "2026-09-13T10:21:39Z",
+      "source": "05_read.py run --add",
+      "reader": "Qwen3VL-4B-Instruct-Q4_K_M+tooltip-v3",
+      "segments": [
+        "08-mage-14970",
+        "m07-mage-14825"
+      ],
+      "added": [
+        "mage/fire/r3c2"
+      ]
+    }
+  ]
 }

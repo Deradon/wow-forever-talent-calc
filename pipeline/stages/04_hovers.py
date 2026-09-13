@@ -98,67 +98,16 @@ def observe(frame: np.ndarray, bg: np.ndarray, cells: list[ui.Cell], t: float, s
     return obs, info
 
 
-@app.callback()
-def _main():
-    """Stage 4: tooltip hovers of one segment."""
+def finish(sid: str, cls: str, calib: dict, bg: np.ndarray, cells: list[ui.Cell], slugs: dict[int, str],
+           runs: list[list[ui.Observation]], infos: dict[tuple[int, int], dict], tracker: ui.RunTracker,
+           rejected_frames: list[dict], out_dir: Path, meta: dict) -> dict:
+    """Runs -> crops, icon crops, contact sheet and ``<out_dir>/<sid>.json``.
 
-
-@app.command()
-def run(
-    segment: str = typer.Argument(..., help="segment index (1-based), id, or t_start seconds"),
-    every: int = typer.Option(4, help="decode every N-th frame (4 = 15 fps)"),
-    thresh: int = typer.Option(25, help="absdiff threshold"),
-    max_dist: int = typer.Option(2, help="max dHash distance between consecutive frames of one hover"),
-    min_frames: int = typer.Option(3, help="minimum frames per hover"),
-    start: int | None = typer.Option(None, help="first fragment (default: segment start)"),
-    end: int | None = typer.Option(None, help="last fragment, exclusive (default: segment end)"),
-    calib_dir: Path = typer.Option(CALIB_DIR),
-    out_dir: Path = typer.Option(HOVERS_DIR),
-):
-    """Detect, group and crop tooltip hovers for one calibrated segment."""
-    segs = json.loads(SEGMENTS_JSON.read_text())
-    idx, seg = ui.find_segment(segs, segment)
-    sid = ui.segment_id(seg, idx)
-    calib_path = calib_dir / f"{sid}.json"
-    if not calib_path.exists():
-        typer.echo(f"no calibration at {calib_path}; run stages/03_calibrate.py first")
-        raise typer.Exit(code=2)
-    calib = json.loads(calib_path.read_text())
-    cells = [ui.Cell.from_json(c) for c in calib["cells"]]
-    bg = cv2.imread(str(calib_dir / calib["files"]["median"]))
-    slugs = tree_slugs(calib)
-    t0 = start if start is not None else seg["t_start"]
-    t1 = end if end is not None else seg["t_end"]
-    typer.echo(f"{sid}: {fr.hms(t0)}-{fr.hms(t1)}, every {every}th frame, {len(cells)} cells")
-
-    cache = fr.FragmentCache()
-    tracker = ui.RunTracker(max_dist=max_dist, min_len=min_frames)
-    infos: dict[tuple[int, int], dict] = {}
-    runs: list[list[ui.Observation]] = []
-    rejected_frames: list[dict] = []
-    n_frames = n_tooltip = 0
-    wall = time.time()
-    for sq in range(t0, t1):
-        data = cache.get(sq)
-        for off, frame in ui.decode_frames(data, every=every):
-            n_frames += 1
-            obs, info = observe(frame, bg, cells, sq + off / FPS, sq, off, thresh)
-            if obs is not None:
-                n_tooltip += 1
-                infos[(sq, off)] = info
-            elif info.get("rejected"):
-                rejected_frames.append({"t": round(sq + off / FPS, 3), "sq": sq, "offset": off,
-                                        "blobs": [list(b) for b in info["rejected"]],
-                                        "reasons": info.get("reasons", [])})
-            done = tracker.push(obs)
-            if done:
-                runs.append(done)
-        typer.echo(f"sq={sq} ({fr.hms(sq)}) frames {n_frames} tooltip-frames {n_tooltip} hovers {len(runs)} "
-                   f"({time.time() - wall:.0f}s)")
-    done = tracker.finish()
-    if done:
-        runs.append(done)
-
+    ``meta`` carries the range/sampling fields of the result (``t_start``,
+    ``t_end``, ``every``, ``fps``, ``frames_seen``, ``tooltip_frames`` and, for
+    other sources such as the mkv, whatever describes them). Shared with
+    ``04b_hovers_mkv.py``.
+    """
     # Per run: sharpest frame; dedupe on cell keeping the sharpest.
     seg_dir = ui.ensure_dir(out_dir / sid)
     for old in seg_dir.glob("*.png"):
@@ -222,9 +171,7 @@ def run(
     expected = {slugs[t]: calib["cells_per_tree"].get(str(t), calib["cells_per_tree"].get(t)) for t in (1, 2, 3)}
     missing = [f"{slugs[c.tree]}-r{c.row}c{c.col}" for c in cells if (c.tree, c.row, c.col) not in best_by_cell]
     result = {
-        "segment_id": sid, "class": seg["class"], "page": calib.get("page"),
-        "t_start": t0, "t_end": t1, "every": every, "fps": FPS / every,
-        "frames_seen": n_frames, "tooltip_frames": n_tooltip, "runs": len(runs),
+        "segment_id": sid, "class": cls, "page": calib.get("page"), **meta, "runs": len(runs),
         "runs_dropped_short": tracker.dropped_short,
         "dropped_runs": [{"t": round(d["t"], 3), "frames": d["frames"], "cell": list(d["cell"]) if d["cell"] else None}
                          for d in tracker.dropped],
@@ -238,8 +185,76 @@ def run(
     typer.echo(f"{tracker.dropped_short} short runs dropped, {len(rejected_frames)} frames with a big non-tooltip blob")
     typer.echo(f"{len(runs)} runs -> {len(hovers_out)} unique cells {per_tree} of {expected}; "
                f"{len(unresolved_out)} unresolved; missing {len(missing)}: {', '.join(missing) or '-'}")
-    typer.echo(f"wrote {out_dir / (sid + '.json')}, crops in {seg_dir}, sheet {sid}-sheet.png; "
+    return result
+
+
+@app.callback()
+def _main():
+    """Stage 4: tooltip hovers of one segment."""
+
+
+@app.command()
+def run(
+    segment: str = typer.Argument(..., help="segment index (1-based), id, or t_start seconds"),
+    every: int = typer.Option(4, help="decode every N-th frame (4 = 15 fps)"),
+    thresh: int = typer.Option(25, help="absdiff threshold"),
+    max_dist: int = typer.Option(2, help="max dHash distance between consecutive frames of one hover"),
+    min_frames: int = typer.Option(3, help="minimum frames per hover"),
+    start: int | None = typer.Option(None, help="first fragment (default: segment start)"),
+    end: int | None = typer.Option(None, help="last fragment, exclusive (default: segment end)"),
+    calib_dir: Path = typer.Option(CALIB_DIR),
+    out_dir: Path = typer.Option(HOVERS_DIR),
+):
+    """Detect, group and crop tooltip hovers for one calibrated segment."""
+    segs = json.loads(SEGMENTS_JSON.read_text())
+    idx, seg = ui.find_segment(segs, segment)
+    sid = ui.segment_id(seg, idx)
+    calib_path = calib_dir / f"{sid}.json"
+    if not calib_path.exists():
+        typer.echo(f"no calibration at {calib_path}; run stages/03_calibrate.py first")
+        raise typer.Exit(code=2)
+    calib = json.loads(calib_path.read_text())
+    cells = [ui.Cell.from_json(c) for c in calib["cells"]]
+    bg = cv2.imread(str(calib_dir / calib["files"]["median"]))
+    slugs = tree_slugs(calib)
+    t0 = start if start is not None else seg["t_start"]
+    t1 = end if end is not None else seg["t_end"]
+    typer.echo(f"{sid}: {fr.hms(t0)}-{fr.hms(t1)}, every {every}th frame, {len(cells)} cells")
+
+    cache = fr.FragmentCache()
+    tracker = ui.RunTracker(max_dist=max_dist, min_len=min_frames)
+    infos: dict[tuple[int, int], dict] = {}
+    runs: list[list[ui.Observation]] = []
+    rejected_frames: list[dict] = []
+    n_frames = n_tooltip = 0
+    wall = time.time()
+    for sq in range(t0, t1):
+        data = cache.get(sq)
+        for off, frame in ui.decode_frames(data, every=every):
+            n_frames += 1
+            obs, info = observe(frame, bg, cells, sq + off / FPS, sq, off, thresh)
+            if obs is not None:
+                n_tooltip += 1
+                infos[(sq, off)] = info
+            elif info.get("rejected"):
+                rejected_frames.append({"t": round(sq + off / FPS, 3), "sq": sq, "offset": off,
+                                        "blobs": [list(b) for b in info["rejected"]],
+                                        "reasons": info.get("reasons", [])})
+            done = tracker.push(obs)
+            if done:
+                runs.append(done)
+        typer.echo(f"sq={sq} ({fr.hms(sq)}) frames {n_frames} tooltip-frames {n_tooltip} hovers {len(runs)} "
+                   f"({time.time() - wall:.0f}s)")
+    done = tracker.finish()
+    if done:
+        runs.append(done)
+
+    result = finish(sid, seg["class"], calib, bg, cells, slugs, runs, infos, tracker, rejected_frames, out_dir,
+                    {"t_start": t0, "t_end": t1, "every": every, "fps": FPS / every, "frames_seen": n_frames,
+                     "tooltip_frames": n_tooltip})
+    typer.echo(f"wrote {out_dir / (sid + '.json')}, crops in {out_dir / sid}, sheet {sid}-sheet.png; "
                f"fetched {cache.fetched} fragments, {time.time() - wall:.0f}s")
+
 
 
 if __name__ == "__main__":
