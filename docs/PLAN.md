@@ -201,6 +201,14 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-13 ~21:00: owner feedback round. What's new toggle moved to the
+  class header; class crests on switcher and landing cards; landing page
+  without per-card provenance or review links (review route by URL only);
+  ranks always proportional from rank 1 (Twilight Focus 23/46/69); Classic
+  diff v2 maps renamed trees (false "moved" 132 -> 123 incl. 8 real cross-tree
+  moves) and adds reworked (111) and values-changed (16) categories with a
+  nested word-diff card. Web 281 unit + 51 browser tests, pipeline 313.
+
 - 2026-09-13 ~18:30: UI round 1 live: build summary column with copy-as-text,
   build code and import (our code or Wowhead Classic strings mapped by name),
   class switcher chips, wide-desktop layout up to 56 px cells, undo/redo with
