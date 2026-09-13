@@ -73,7 +73,7 @@ export function ClassPicker() {
             class.
           </p>
         ) : (
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" data-testid="class-list">
+          <ul className="grid grid-cols-3 gap-3" data-testid="class-list">
             {classes.map((c) => (
               <ClassCard key={c.id} entry={c} />
             ))}
@@ -95,14 +95,6 @@ function ClassCard({ entry }: { entry: IndexEntry }) {
           <span className="serif text-lg text-[var(--gold)]">{entry.className}</span>
           {entry.origin !== 'talents' && <span className="text-xs text-[var(--text-dim)]">example</span>}
         </div>
-        <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm" data-testid={`class-${entry.id}-trees`}>
-          {entry.trees.map((t) => (
-            <li key={t.id}>
-              <span className="text-[var(--text)]">{t.name}</span>{' '}
-              <span className="text-[var(--text-dim)]">{t.talents}</span>
-            </li>
-          ))}
-        </ul>
       </a>
     </li>
   )
