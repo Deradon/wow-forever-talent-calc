@@ -50,12 +50,24 @@ def split_sq(stream_t: float, fps: int = STREAM_FPS) -> tuple[int, int]:
 
 
 def decode_cmd(mkv: Path, file_t0: float, duration: float, fps: int = STREAM_FPS,
-               width: int = FRAME_W, height: int = FRAME_H) -> list[str]:
-    """ffmpeg command streaming raw BGR frames of ``[file_t0, file_t0 + duration)`` at ``fps``."""
-    cmd = ["ffmpeg", "-v", "error", "-nostdin", "-ss", f"{file_t0:.3f}", "-i", str(mkv),
-           "-t", f"{duration:.3f}", "-vf", f"fps={fps}"]
+               width: int = FRAME_W, height: int = FRAME_H, every: int | None = None) -> list[str]:
+    """ffmpeg command streaming raw BGR frames of ``[file_t0, file_t0 + duration)``.
+
+    ``every`` picks every n-th decoded frame by index (``select``) instead of
+    resampling to ``fps``. Use it whenever the recorded timestamp must be the
+    frame's own: ``fps=2`` hands back a frame up to a quarter second away from
+    the nominal time (measured 2026-09-13 at stream 11520, where the picker had
+    already moved from Dwarf to Human), which is enough to attribute a panel to
+    the wrong race. ``every`` is exact because the frames are contiguous
+    (:func:`pts_gaps`).
+    """
+    vf = rf"select=not(mod(n\,{every}))" if every else f"fps={fps}"
     if (width, height) != (FRAME_W, FRAME_H):
-        cmd[-1] += f",scale={width}:{height}"
+        vf += f",scale={width}:{height}"
+    cmd = ["ffmpeg", "-v", "error", "-nostdin", "-ss", f"{file_t0:.3f}", "-i", str(mkv),
+           "-t", f"{duration:.3f}", "-vf", vf]
+    if every:
+        cmd += ["-vsync", "0"]   # ffmpeg 4.4 has no -fps_mode; without this select's gaps are re-filled
     cmd += ["-f", "rawvideo", "-pix_fmt", "bgr24", "pipe:1"]
     return cmd
 
@@ -67,17 +79,19 @@ def frame_times(stream_t0: float, n: int, fps: int = STREAM_FPS) -> list[float]:
 
 def decode_range(mkv: Path, stream_t0: float, stream_t1: float, fps: int = STREAM_FPS,
                  offset: float = OFFSET, width: int = FRAME_W, height: int = FRAME_H,
-                 max_frames: int | None = None) -> Iterator[tuple[float, np.ndarray]]:
+                 max_frames: int | None = None, every: int | None = None) -> Iterator[tuple[float, np.ndarray]]:
     """Yield ``(stream_t, bgr)`` for every decoded frame of ``[stream_t0, stream_t1)``.
 
     Frames arrive one at a time from ffmpeg's stdout pipe; the caller must not
     keep them (stage 4's :class:`~wowtalents.ui.RunTracker` keeps only the
-    sharpest crop of a run).
+    sharpest crop of a run). With ``every`` the step is ``every / STREAM_FPS``
+    seconds and each timestamp is the frame's own (see :func:`decode_cmd`).
     """
     duration = float(stream_t1) - float(stream_t0)
     if duration <= 0:
         return
-    cmd = decode_cmd(mkv, file_time(stream_t0, offset), duration, fps, width, height)
+    step = (every / STREAM_FPS) if every else (1.0 / fps)
+    cmd = decode_cmd(mkv, file_time(stream_t0, offset), duration, fps, width, height, every)
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
     assert proc.stdout is not None
     nbytes = width * height * 3
@@ -87,7 +101,7 @@ def decode_range(mkv: Path, stream_t0: float, stream_t1: float, fps: int = STREA
             buf = proc.stdout.read(nbytes)
             if len(buf) < nbytes:
                 break
-            yield stream_t0 + k / fps, np.frombuffer(buf, np.uint8).reshape(height, width, 3)
+            yield stream_t0 + k * step, np.frombuffer(buf, np.uint8).reshape(height, width, 3)
             k += 1
     finally:
         proc.stdout.close()

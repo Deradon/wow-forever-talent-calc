@@ -1,0 +1,204 @@
+{
+  "$schema": "../schema/race.schema.json",
+  "schemaVersion": 1,
+  "race": "dwarf",
+  "raceName": "Dwarf",
+  "faction": "alliance",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T18:20:52Z",
+  "classes": ["hunter", "paladin", "priest", "rogue", "shaman", "warrior"],
+  "classesSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 11656.5,
+    "frame": 699390,
+    "crop": "data/review/races/dwarf/_classbar.png",
+    "panel": "class-bar",
+    "confidence": 1.0,
+    "reader": "opencv-classbar",
+    "reviewed": false,
+    "note": "lit/greyed separation margin 21.2"
+  },
+  "lore": "In ages past the dwarves cared only for riches taken from the earth's depths. Then records surfaced of a god-like race said to have given the dwarves life... and an enchanted birthright. Driven to learn more, the dwarves devoted themselves to the pursuit of",
+  "loreComplete": false,
+  "loreSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 21974.0,
+    "frame": 1318440,
+    "crop": "data/review/races/dwarf/_panel.png",
+    "panel": "race-panel",
+    "confidence": 1.0,
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+    "reviewed": false,
+    "note": "paragraph continues past the box edge"
+  },
+  "traits": [
+    {
+      "id": "stoneform",
+      "name": "Stoneform",
+      "kind": "active",
+      "order": 0,
+      "description": "Immunity to Bleeds, Poisons, and Diseases and reduce Physical damage taken for 8 sec",
+      "icon": "crop-stoneform",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/dwarf/stoneform.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Stoneform",
+        "classicText": "Removes bleed, poison and disease effects and increases armor by 10% for 8 sec",
+        "note": "Classic removes bleed, poison and disease and adds 10% armor; Forever grants immunity to them and reduces physical damage taken; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21968.0,
+        "frame": 1318080,
+        "crop": "data/review/races/dwarf/stoneform.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Stoneform",
+            "description": "Immunity to Bleeds, Poisons, and Diseases and reduce Physical damage taken for 8 sec",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Stoneform",
+            "description": "Immunity to Bleeds, Poisons, and Diseases and reduce Physical damage taken for 8 sec",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "find-treasure",
+      "name": "Find Treasure",
+      "kind": "active",
+      "order": 1,
+      "description": "Track nearby treasure chests",
+      "icon": "crop-find-treasure",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/dwarf/find-treasure.icon.png",
+      "classic": {
+        "status": "same",
+        "classicName": "Find Treasure",
+        "classicText": "Shows the location of nearby treasure on the minimap",
+        "note": "minimap treasure tracking in both; Classic is a toggle; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["classic-unchanged"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11608.5,
+        "frame": 696510,
+        "crop": "data/review/races/dwarf/find-treasure.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Find Treasure",
+            "description": "Track nearby treasure chests",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Find Treasure",
+            "description": "Track nearby treasure chests",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "mace-specialization",
+      "name": "Mace Specialization",
+      "kind": "passive",
+      "order": 2,
+      "description": "Maces increase spell and ability critical chance by 1%",
+      "icon": "crop-mace-specialization",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/dwarf/mace-specialization.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era racial called Mace Specialization for this race"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21974.0,
+        "frame": 1318440,
+        "crop": "data/review/races/dwarf/mace-specialization.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Mace Specialization",
+            "description": "Maces increase spell and ability critical chance by 1%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Mace Specialization",
+            "description": "Maces increase spell and ability critical chance by 1%",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "big-game-hunter",
+      "name": "Big Game Hunter",
+      "kind": "passive",
+      "order": 3,
+      "description": "Damage to Beasts increased by 5%",
+      "icon": "crop-big-game-hunter",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/dwarf/big-game-hunter.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era racial called Big Game Hunter for this race"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21974.0,
+        "frame": 1318440,
+        "crop": "data/review/races/dwarf/big-game-hunter.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Big Game Hunter",
+            "description": "Damage to Beasts increased by 5%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Big Game Hunter",
+            "description": "Damage to Beasts increased by 5%",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    }
+  ],
+  "complete": true,
+  "notes": ["BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed."]
+}

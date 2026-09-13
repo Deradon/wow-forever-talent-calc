@@ -700,12 +700,19 @@ def referenced_crops(doc: dict) -> set[str]:
     return out
 
 
+#: Subtrees of ``data/review/`` that belong to another pipeline and are therefore not
+#: this one's to prune. ``races/`` is stage 12's, validated by ``validate_races.py``
+#: (rule R9), which checks those crops against ``data/races/*.json`` instead.
+FOREIGN_REVIEW_DIRS = ("races",)
+
+
 def orphan_crops(root: Path, docs: Iterable[dict]) -> list[Path]:
     """PNGs under ``data/review/`` that no class document references any more.
 
     Stage 9 switches a talent to ``iconSource: "classic"`` and drops its ``iconCrop``; the
     file stays behind. 405 such files (1.0 MB) were still being globbed into the web bundle
     and deployed. Tooltip crops named in ``source.crop`` are provenance and are never orphans.
+    Subtrees in :data:`FOREIGN_REVIEW_DIRS` are skipped entirely.
     """
     review = root / "data" / "review"
     if not review.is_dir():
@@ -713,7 +720,9 @@ def orphan_crops(root: Path, docs: Iterable[dict]) -> list[Path]:
     keep: set[str] = set()
     for doc in docs:
         keep |= referenced_crops(doc)
-    return sorted(p for p in review.rglob("*.png") if str(p.relative_to(root)) not in keep)
+    return sorted(p for p in review.rglob("*.png")
+                  if p.relative_to(review).parts[0] not in FOREIGN_REVIEW_DIRS
+                  and str(p.relative_to(root)) not in keep)
 
 
 def prune_review_crops(root: Path, docs: Iterable[dict], log: Log, *, dry_run: bool = False) -> list[Path]:

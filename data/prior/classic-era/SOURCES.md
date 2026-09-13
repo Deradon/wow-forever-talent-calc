@@ -10,6 +10,8 @@ with `python3 data/prior/classic-era/build.py` (standard library only).
 |---|---|---|
 | `raw/talents-classic.js` | Wowhead Classic talent calculator data: `trees[tabId] = {id, description ("PaladinProtection"), role}`, `talents[tabId][talentId] = {id, row, col, icon, ranks: [spellId per rank], requires: [{id, qty}]}`. No names, no text. 1.27 MB, `WH.setPageData(...)` wrapper, parsed with `json.JSONDecoder.raw_decode`. | `https://nether.wowhead.com/classic/data/talents-classic`, HTTP 200, 2026-09-13 00:42 CEST, one request with a descriptive User-Agent |
 | `raw/spells.json` | `{spellId: {name, icon, rank, description}}` for the 1357 rank spells; per-rank tooltip text as rendered by Wowhead's Classic tooltip endpoint, scraped by the repo author in 2023. | `https://raw.githubusercontent.com/melv-n/wow-talent-calculator/master/src/data/spells.json`, HTTP 200, 2026-09-13 00:42 CEST (branch `master`; `main` is 404) |
+| `racials.json` | Classic Era racial traits per race (name, kind, short paraphrase) plus the Classic class list per race. **Written from memory by the data lead, not retrieved from anywhere**; `"verified": false`. Used by `pipeline/stages/12_races.py build` to decide whether a Forever racial is new. | hand-written 2026-09-13, unverified |
+| `racial-diff.json` | Per-trait `same` / `changed` verdicts for the racials that exist in both games, with a one-line reason. Separate from `racials.json` because a text diff against a paraphrase says "changed" every time; these are judgements, not computation. `"verified": false`. | hand-written 2026-09-13, unverified |
 | `talents.json` | Derived: class -> trees -> talents with `classicTalentId, id, name, row, col, maxRank, icon, requires[{talent, classicTalentId, rank}], spellIds, ranks[per-rank text], description ({n} template), slots[per-rank values]`. | `build.py` over the two raw files |
 
 Wowhead's per-spell tooltip endpoint (`https://nether.wowhead.com/classic/tooltip/spell/<id>`)
@@ -69,3 +71,16 @@ distribution: 5 -> 162, 3 -> 88, 2 -> 95, 1 -> 85, 4 -> 2.
 - Structural facts (positions, ranks, prerequisites, spell ids) are also
   available from Blizzard's own DB2 tables via wago.tools (brief section (e));
   the datamined importer will replace this prior for Forever data.
+
+## Racials (added 2026-09-13)
+
+`racials.json` and `racial-diff.json` are the only files here that were not
+retrieved from a source. They exist because Phase 2b needed a "what changed"
+verdict before any Forever or Classic racial data could be datamined, and they
+are marked `"verified": false` so nothing downstream can mistake them for
+sourced data. `data/races/*.json` copies their text into `classic.classicText`
+with the warning repeated in `classic.note`.
+
+Replace them with a sourced racial list (Wowhead Classic racial spell ids, or
+the beta DB2 from 2026-09-17) and re-run `12_races.py build`; no other file
+changes. Contract: `docs/DATA-SCHEMA-RACES.md` section 4.4.

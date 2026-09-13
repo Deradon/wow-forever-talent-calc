@@ -11,6 +11,12 @@ existed, updated 2026-09-13 to match the shipped code. Unknowns of the
 Forever talent system (Primary/Secondary tabs, tree count, points per row,
 cap) are modelled as data, not as code assumptions.
 
+Scope: this document covers `data/talents/` and the conventions everything
+under `data/` shares. Races have their own contract in
+`docs/DATA-SCHEMA-RACES.md` (`data/races/<race>.json`, `data/races/matrix.json`,
+`data/schema/race*.schema.json`, `pipeline/validate_races.py`); it reuses
+sections 2, 3 and 4.5 of this file and overrides the rest for race records.
+
 Related: `docs/briefs/data-prior-and-review.md` (implementation brief),
 `docs/research/2026-09-13-*.md` (background),
 `docs/reviews/2026-09-13-code-and-docs.md` (finding D3, the drift this
@@ -29,6 +35,11 @@ data/
   encoding/migrations/v<A>-v<B>.json   id renames/removals between versions
   review/<class>/<tree>/<talent-id>.png   tooltip crops referenced by source.crop
 ```
+
+`data/races/`, `data/schema/race.schema.json`, `data/schema/race-matrix.schema.json`
+and `data/review/races/` belong to `docs/DATA-SCHEMA-RACES.md`. The only place
+the two touch is `export.orphan_crops`, which skips `data/review/races/`
+(`FOREIGN_REVIEW_DIRS`) so promoting a class never deletes a race crop.
 
 Everything under `data/` is committed, crops included (a 64x64 icon crop is
 ~5 KB, a tooltip crop ~40 KB; 500 talents ~20 MB, acceptable). Video and full

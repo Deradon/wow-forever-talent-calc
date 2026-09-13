@@ -1,0 +1,224 @@
+{
+  "$schema": "../schema/race.schema.json",
+  "schemaVersion": 1,
+  "race": "orc",
+  "raceName": "Orc",
+  "faction": "horde",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T18:20:52Z",
+  "classes": ["hunter", "mage", "rogue", "shaman", "warlock", "warrior"],
+  "classesSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 19801.0,
+    "frame": 1188060,
+    "crop": "data/review/races/orc/_classbar.png",
+    "panel": "class-bar",
+    "confidence": 1.0,
+    "reader": "opencv-classbar",
+    "reviewed": false,
+    "note": "lit/greyed separation margin 23.4"
+  },
+  "lore": "The orc race originated on the planet",
+  "loreComplete": false,
+  "loreSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 11698.0,
+    "frame": 701880,
+    "crop": "data/review/races/orc/_panel.png",
+    "panel": "race-panel",
+    "confidence": 1.0,
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+    "reviewed": false,
+    "note": "paragraph continues past the box edge"
+  },
+  "traits": [
+    {
+      "id": "blood-fury",
+      "name": "Blood Fury",
+      "kind": "active",
+      "order": 0,
+      "description": "Increases Attack Power and Spell Power by 10% for 15 sec",
+      "icon": "crop-blood-fury",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/orc/blood-fury.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Blood Fury",
+        "classicText": "Increases melee attack power for 15 sec and reduces healing effects on you",
+        "note": "Classic gives flat, level-scaled melee attack power and reduces healing taken; Forever gives 10% Attack Power and Spell Power with no healing penalty in the text; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19798.5,
+        "frame": 1187910,
+        "crop": "data/review/races/orc/blood-fury.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blood Fury",
+            "description": "Increases Attack Power and Spell Power by 10% for 15 sec",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blood Fury",
+            "description": "Increases Attack Power and Spell Power by 10% for 15 sec",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shatter-curse",
+      "name": "Shatter Curse",
+      "kind": "active",
+      "order": 1,
+      "description": "Immunity to Curses and Banes and reduce Magical damage taken for 8 sec",
+      "icon": "crop-shatter-curse",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/orc/shatter-curse.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era racial called Shatter Curse for this race"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11698.0,
+        "frame": 701880,
+        "crop": "data/review/races/orc/shatter-curse.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shatter Curse",
+            "description": "Immunity to Curses and Banes and reduce Magical damage taken for 8 sec",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shatter Curse",
+            "description": "Immunity to Curses and Banes and reduce Magical damage taken for 8 sec",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Shatter Curse",
+            "description": "Immunity to Curses and Banes and reduce Magical damage taken for 8 sec",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "axe-specialization",
+      "name": "Axe Specialization",
+      "kind": "passive",
+      "order": 2,
+      "description": "Axes increase spell and ability critical chance by 1%",
+      "icon": "crop-axe-specialization",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/orc/axe-specialization.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Axe Specialization",
+        "classicText": "Expertise with Axes and Two-Handed Axes increased by 5 weapon skill",
+        "note": "Classic gives +5 axe weapon skill; Forever gives 1% spell and ability critical chance; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11698.0,
+        "frame": 701880,
+        "crop": "data/review/races/orc/axe-specialization.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Axe Specialization",
+            "description": "Axes increase spell and ability critical chance by 1%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Axe Specialization",
+            "description": "Axes increase spell and ability critical chance by 1%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Axe Specialization",
+            "description": "Axes increase spell and ability critical chance by 1%",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "hardiness",
+      "name": "Hardiness",
+      "kind": "passive",
+      "order": 3,
+      "description": "Stun durations decreased by 20%",
+      "icon": "crop-hardiness",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/orc/hardiness.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Hardiness",
+        "classicText": "Resistance to stun effects increased by 25%",
+        "note": "Classic reduces stun duration by 25%, Forever by 20%; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11698.0,
+        "frame": 701880,
+        "crop": "data/review/races/orc/hardiness.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Hardiness",
+            "description": "Stun durations decreased by 20%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Hardiness",
+            "description": "Stun durations decreased by 20%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Hardiness",
+            "description": "Stun durations decreased by 20%",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    }
+  ],
+  "complete": true,
+  "notes": ["BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed."]
+}

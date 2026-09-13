@@ -1,0 +1,86 @@
+{
+  "$schema": "../schema/race-matrix.schema.json",
+  "schemaVersion": 1,
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T18:20:52Z",
+  "classes": ["warrior", "hunter", "mage", "rogue", "priest", "warlock", "paladin", "druid", "shaman"],
+  "races": [
+    {
+      "race": "dwarf",
+      "raceName": "Dwarf",
+      "faction": "alliance",
+      "classes": ["hunter", "paladin", "priest", "rogue", "shaman", "warrior"],
+      "observed": true,
+      "reportedElsewhere": ["shaman"],
+      "agreement": "confirmed on screen"
+    },
+    {
+      "race": "gnome",
+      "raceName": "Gnome",
+      "faction": "alliance",
+      "classes": ["mage", "priest", "rogue", "warlock", "warrior"],
+      "observed": true
+    },
+    {
+      "race": "human",
+      "raceName": "Human",
+      "faction": "alliance",
+      "classes": ["hunter", "mage", "paladin", "priest", "rogue", "warlock", "warrior"],
+      "observed": true
+    },
+    {
+      "race": "night-elf",
+      "raceName": "Night Elf",
+      "faction": "alliance",
+      "classes": ["druid", "hunter", "priest", "rogue", "warrior"],
+      "observed": true
+    },
+    {
+      "race": "orc",
+      "raceName": "Orc",
+      "faction": "horde",
+      "classes": ["hunter", "mage", "rogue", "shaman", "warlock", "warrior"],
+      "observed": true
+    },
+    {
+      "race": "skyborne",
+      "raceName": "Skyborne",
+      "faction": "neutral",
+      "classes": ["druid", "hunter", "mage", "rogue", "shaman", "warrior"],
+      "byVariant": {
+        "high-order": ["druid", "hunter", "mage", "rogue", "warrior"],
+        "windshaper": ["druid", "hunter", "rogue", "shaman", "warrior"]
+      },
+      "observed": true
+    },
+    {
+      "race": "tauren",
+      "raceName": "Tauren",
+      "faction": "horde",
+      "classes": ["druid", "hunter", "shaman", "warrior"],
+      "observed": true,
+      "reportedElsewhere": ["shaman", "druid"],
+      "agreement": "confirmed on screen"
+    },
+    {
+      "race": "troll",
+      "raceName": "Troll",
+      "faction": "horde",
+      "classes": ["hunter", "mage", "priest", "rogue", "shaman", "warlock", "warrior"],
+      "observed": true
+    },
+    {
+      "race": "undead",
+      "raceName": "Undead",
+      "faction": "horde",
+      "classes": ["mage", "paladin", "priest", "rogue", "warlock", "warrior"],
+      "observed": true,
+      "reportedElsewhere": ["paladin"],
+      "agreement": "confirmed on screen"
+    }
+  ],
+  "notes": [
+    "Read from the lit/greyed class icons under the character preview; no VLM involved.",
+    "Cross-checked against the combinations Warcraft Tavern reported (docs/research/2026-09-13-talent-system.md); disagreements are recorded per race."
+  ]
+}

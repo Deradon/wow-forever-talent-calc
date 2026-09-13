@@ -1,0 +1,212 @@
+{
+  "$schema": "../schema/race.schema.json",
+  "schemaVersion": 1,
+  "race": "troll",
+  "raceName": "Troll",
+  "faction": "horde",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T18:20:52Z",
+  "classes": ["hunter", "mage", "priest", "rogue", "shaman", "warlock", "warrior"],
+  "classesSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 19428.0,
+    "frame": 1165680,
+    "crop": "data/review/races/troll/_classbar.png",
+    "panel": "class-bar",
+    "confidence": 1.0,
+    "reader": "opencv-classbar",
+    "reviewed": false,
+    "note": "lit/greyed separation margin 23.3"
+  },
+  "lore": "Once at home in the jungles of Stragglethorn Vale, the fierce trolls of the Darkspear tribe were pushed out by warring factions. Eventually the trolls befriended the orcish Horde, and Thrall, the orcs' young warchief, convinced the trolls to travel with him to Kalimdor. Though they cling to their shadow",
+  "loreComplete": false,
+  "loreSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 11740.0,
+    "frame": 704400,
+    "crop": "data/review/races/troll/_panel.png",
+    "panel": "race-panel",
+    "confidence": 1.0,
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+    "reviewed": false,
+    "note": "paragraph continues past the box edge"
+  },
+  "traits": [
+    {
+      "id": "berserking",
+      "name": "Berserking",
+      "kind": "active",
+      "order": 0,
+      "description": "Increases casting and attack speed by 10% for 10 sec",
+      "icon": "crop-berserking",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/troll/berserking.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Berserking",
+        "classicText": "Increases casting and attack speed by 10% to 30% for 10 sec, more the lower your health",
+        "note": "Classic scales from 10% to 30% with missing health; Forever is a flat 10%; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11742.0,
+        "frame": 704520,
+        "crop": "data/review/races/troll/berserking.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Berserking",
+            "description": "Increases casting and attack speed by 10% for 10 sec",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Berserking",
+            "description": "Increases casting and attack speed by 10% for 10 sec",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "rapid-regeneration",
+      "name": "Rapid Regeneration",
+      "kind": "active",
+      "order": 1,
+      "description": "Regenerate 50% of maximum Health over time",
+      "icon": "crop-rapid-regeneration",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/troll/rapid-regeneration.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era racial called Rapid Regeneration for this race"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11744.0,
+        "frame": 704640,
+        "crop": "data/review/races/troll/rapid-regeneration.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Rapid Regeneration",
+            "description": "Regenerate 50% of maximum Health over time",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Rapid Regeneration",
+            "description": "Regenerate 50% of maximum Health over time",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "regeneration",
+      "name": "Regeneration",
+      "kind": "passive",
+      "order": 2,
+      "description": "10% of Health regeneration continues during combat",
+      "icon": "crop-regeneration",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/troll/regeneration.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Regeneration",
+        "classicText": "Health regeneration increased by 10%, and 10% of it continues during combat",
+        "note": "Classic is +10% health regeneration of which 10% continues in combat; Forever keeps only the in-combat clause; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11740.0,
+        "frame": 704400,
+        "crop": "data/review/races/troll/regeneration.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Regeneration",
+            "description": "10% of Health regeneration continues during combat",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Regeneration",
+            "description": "10% of Health regeneration continues during combat",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Regeneration",
+            "description": "10% of Health regeneration continues during combat",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "beast-slaying",
+      "name": "Beast Slaying",
+      "kind": "passive",
+      "order": 3,
+      "description": "Damage to Beasts increased by 5%",
+      "icon": "crop-beast-slaying",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/troll/beast-slaying.icon.png",
+      "classic": {
+        "status": "same",
+        "classicName": "Beast Slaying",
+        "classicText": "Damage dealt to beasts increased by 5%",
+        "note": "5% more damage to beasts in both; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["classic-unchanged"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11744.0,
+        "frame": 704640,
+        "crop": "data/review/races/troll/beast-slaying.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Beast Slaying",
+            "description": "Damage to Beasts increased by 5%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Beast Slaying",
+            "description": "Damage to Beasts increased by 5%",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    }
+  ],
+  "complete": true,
+  "notes": ["BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed."]
+}

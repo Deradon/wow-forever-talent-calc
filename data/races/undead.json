@@ -1,0 +1,222 @@
+{
+  "$schema": "../schema/race.schema.json",
+  "schemaVersion": 1,
+  "race": "undead",
+  "raceName": "Undead",
+  "faction": "horde",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T18:20:52Z",
+  "classes": ["mage", "paladin", "priest", "rogue", "warlock", "warrior"],
+  "classesSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 19422.0,
+    "frame": 1165320,
+    "crop": "data/review/races/undead/_classbar.png",
+    "panel": "class-bar",
+    "confidence": 1.0,
+    "reader": "opencv-classbar",
+    "reviewed": false,
+    "note": "lit/greyed separation margin 22.6"
+  },
+  "lore": "Free of the Lich King's grasp, the Forsaken seek to overthrow his rule. Led by the banshee Sylvanas, they hunger for vengeance against the Scourge. Humans, too, have become the enemy, relentless in their drive to purge all undead from the land. The Forsaken care little even for their allies:",
+  "loreComplete": false,
+  "loreSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 11732.0,
+    "frame": 703920,
+    "crop": "data/review/races/undead/_panel.png",
+    "panel": "race-panel",
+    "confidence": 1.0,
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+    "reviewed": false,
+    "note": "paragraph continues past the box edge"
+  },
+  "traits": [
+    {
+      "id": "will-of-the-forsaken",
+      "name": "Will of the Forsaken",
+      "kind": "active",
+      "order": 0,
+      "description": "Removes Charm, Fear, and Sleep",
+      "icon": "crop-will-of-the-forsaken",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/undead/will-of-the-forsaken.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Will of the Forsaken",
+        "classicText": "Provides immunity to Charm, Fear and Sleep while active, 2 min cooldown",
+        "note": "Classic is a 5 sec immunity to Charm, Fear and Sleep on a 2 min cooldown; Forever removes those effects, with no immunity window in the text; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 13502.5,
+        "frame": 810150,
+        "crop": "data/review/races/undead/will-of-the-forsaken.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Will of the Forsaken",
+            "description": "Removes Charm, Fear, and Sleep",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Will of the Forsaken",
+            "description": "Removes Charm, Fear, and Sleep",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "cannibalize",
+      "name": "Cannibalize",
+      "kind": "active",
+      "order": 1,
+      "description": "Consume corpses to regenerate 35% Health and Mana over time",
+      "icon": "crop-cannibalize",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/undead/cannibalize.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Cannibalize",
+        "classicText": "Regenerates health over 10 sec when used on a nearby corpse",
+        "note": "Classic restores health only; Forever restores 35% Health and Mana; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11706.0,
+        "frame": 702360,
+        "crop": "data/review/races/undead/cannibalize.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Cannibalize",
+            "description": "Consume corpses to regenerate 35% Health and Mana over time",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cannibalize",
+            "description": "Consume corpses to regenerate 35% Health and Mana over time",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Cannibalize",
+            "description": "Consume corpses to regenerate 35% Health and Mana over time",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "underwater-breathing",
+      "name": "Underwater Breathing",
+      "kind": "passive",
+      "order": 2,
+      "description": "Breathe 300% longer underwater",
+      "icon": "crop-underwater-breathing",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/undead/underwater-breathing.icon.png",
+      "classic": {
+        "status": "same",
+        "classicName": "Underwater Breathing",
+        "classicText": "Underwater breath lasts 300% longer than normal",
+        "note": "300% longer underwater breath in both; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["classic-unchanged"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11706.0,
+        "frame": 702360,
+        "crop": "data/review/races/undead/underwater-breathing.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Underwater Breathing",
+            "description": "Breathe 300% longer underwater",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Underwater Breathing",
+            "description": "Breathe 300% longer underwater",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Underwater Breathing",
+            "description": "Breathe 300% longer underwater",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "touch-of-the-grave",
+      "name": "Touch of the Grave",
+      "kind": "passive",
+      "order": 3,
+      "description": "Sometimes drain health with your attacks",
+      "icon": "crop-touch-of-the-grave",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/undead/touch-of-the-grave.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era racial called Touch of the Grave for this race"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11732.0,
+        "frame": 703920,
+        "crop": "data/review/races/undead/touch-of-the-grave.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Touch of the Grave",
+            "description": "Sometimes drain health with your attacks",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Touch of the Grave",
+            "description": "Sometimes drain health with your attacks",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    }
+  ],
+  "complete": true,
+  "notes": [
+    "The survey in data/extracted/other-content.md says the Undead race box was never on screen. It was: 05:23:40-05:24:20 and 03:15:06, windows the 60 s probe grid missed.",
+    "Traits cross-checked against the spellbook General page of the Undead mage at 04:15:00, which lists cannibalize, touch-of-the-grave, underwater-breathing, will-of-the-forsaken.",
+    "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed."
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "source": "Written from memory by the data lead, 2026-09-13. NOT checked against a client, a DB2 dump or Wowhead; see SOURCES.md.",
+  "verified": false,
+  "retrievedAt": "2026-09-13",
+  "game": "World of Warcraft Classic Era (1.15 / patch 1.12 racial set)",
+  "shape": {
+    "races": "race id -> { raceName, faction, classes[], traits[] }",
+    "trait": "name, kind (active|passive), description (short paraphrase of the Classic tooltip, not a verbatim copy), note (optional)"
+  },
+  "caveats": [
+    "Descriptions are short paraphrases written from memory, good enough to answer 'is this the same racial?' and not good enough to quote. Anything that turns into a user-visible Classic text must be replaced by a sourced value first.",
+    "Numbers are the ones the author remembers; several are approximate (Blood Fury's attack power is level-scaled, Cannibalize heals per tick).",
+    "The Classic class lists are the 1.12 ones; Forever's are read from the class bar in data/races/*.json."
+  ],
+  "races": {
+    "human": {
+      "raceName": "Human",
+      "faction": "alliance",
+      "classes": ["mage", "paladin", "priest", "rogue", "warlock", "warrior"],
+      "traits": [
+        { "name": "Perception", "kind": "active", "description": "Greatly increases stealth detection for 20 sec" },
+        { "name": "The Human Spirit", "kind": "passive", "description": "Spirit increased by 5%" },
+        { "name": "Diplomacy", "kind": "passive", "description": "Reputation gains increased by 10%" },
+        { "name": "Sword Specialization", "kind": "passive", "description": "Expertise with Swords and Two-Handed Swords increased by 5 weapon skill" },
+        { "name": "Mace Specialization", "kind": "passive", "description": "Expertise with Maces and Two-Handed Maces increased by 5 weapon skill" }
+      ]
+    },
+    "dwarf": {
+      "raceName": "Dwarf",
+      "faction": "alliance",
+      "classes": ["hunter", "paladin", "priest", "rogue", "warrior"],
+      "traits": [
+        { "name": "Stoneform", "kind": "active", "description": "Removes bleed, poison and disease effects and increases armor by 10% for 8 sec" },
+        { "name": "Find Treasure", "kind": "active", "description": "Shows the location of nearby treasure on the minimap" },
+        { "name": "Frost Resistance", "kind": "passive", "description": "Frost Resistance increased by 10" },
+        { "name": "Gun Specialization", "kind": "passive", "description": "Expertise with Guns increased by 5 weapon skill" }
+      ]
+    },
+    "night-elf": {
+      "raceName": "Night Elf",
+      "faction": "alliance",
+      "classes": ["druid", "hunter", "priest", "rogue", "warrior"],
+      "traits": [
+        { "name": "Shadowmeld", "kind": "active", "description": "Activate to slip into the shadows while standing still" },
+        { "name": "Quickness", "kind": "passive", "description": "Dodge chance increased by 1%" },
+        { "name": "Wisp Spirit", "kind": "passive", "description": "Movement speed increased by 50% while dead" },
+        { "name": "Nature Resistance", "kind": "passive", "description": "Nature Resistance increased by 10" }
+      ]
+    },
+    "gnome": {
+      "raceName": "Gnome",
+      "faction": "alliance",
+      "classes": ["mage", "rogue", "warlock", "warrior"],
+      "traits": [
+        { "name": "Escape Artist", "kind": "active", "description": "Escapes the effects of any immobilization or movement speed reduction effect" },
+        { "name": "Expansive Mind", "kind": "passive", "description": "Intelligence increased by 5%" },
+        { "name": "Arcane Resistance", "kind": "passive", "description": "Arcane Resistance increased by 10" },
+        { "name": "Engineering Specialization", "kind": "passive", "description": "Engineering skill increased by 15" }
+      ]
+    },
+    "orc": {
+      "raceName": "Orc",
+      "faction": "horde",
+      "classes": ["hunter", "rogue", "shaman", "warlock", "warrior"],
+      "traits": [
+        { "name": "Blood Fury", "kind": "active", "description": "Increases melee attack power for 15 sec and reduces healing effects on you", "note": "Classic's bonus is a flat, level-scaled attack power number, not a percentage" },
+        { "name": "Hardiness", "kind": "passive", "description": "Resistance to stun effects increased by 25%" },
+        { "name": "Command", "kind": "passive", "description": "Damage dealt by pets increased by 5%" },
+        { "name": "Axe Specialization", "kind": "passive", "description": "Expertise with Axes and Two-Handed Axes increased by 5 weapon skill" }
+      ]
+    },
+    "undead": {
+      "raceName": "Undead",
+      "faction": "horde",
+      "classes": ["mage", "priest", "rogue", "warlock", "warrior"],
+      "traits": [
+        { "name": "Will of the Forsaken", "kind": "active", "description": "Provides immunity to Charm, Fear and Sleep while active, 2 min cooldown" },
+        { "name": "Cannibalize", "kind": "active", "description": "Regenerates health over 10 sec when used on a nearby corpse" },
+        { "name": "Underwater Breathing", "kind": "passive", "description": "Underwater breath lasts 300% longer than normal" },
+        { "name": "Shadow Resistance", "kind": "passive", "description": "Shadow Resistance increased by 10" }
+      ]
+    },
+    "tauren": {
+      "raceName": "Tauren",
+      "faction": "horde",
+      "classes": ["druid", "hunter", "shaman", "warrior"],
+      "traits": [
+        { "name": "War Stomp", "kind": "active", "description": "Stuns up to 5 nearby enemies for 2 sec" },
+        { "name": "Endurance", "kind": "passive", "description": "Base health increased by 5%" },
+        { "name": "Cultivation", "kind": "passive", "description": "Herbalism skill increased by 15" },
+        { "name": "Nature Resistance", "kind": "passive", "description": "Nature Resistance increased by 10" }
+      ]
+    },
+    "troll": {
+      "raceName": "Troll",
+      "faction": "horde",
+      "classes": ["hunter", "mage", "priest", "rogue", "shaman", "warrior"],
+      "traits": [
+        { "name": "Berserking", "kind": "active", "description": "Increases casting and attack speed by 10% to 30% for 10 sec, more the lower your health" },
+        { "name": "Regeneration", "kind": "passive", "description": "Health regeneration increased by 10%, and 10% of it continues during combat" },
+        { "name": "Beast Slaying", "kind": "passive", "description": "Damage dealt to beasts increased by 5%" },
+        { "name": "Throwing Specialization", "kind": "passive", "description": "Expertise with Throwing Weapons increased by 5 weapon skill" },
+        { "name": "Bow Specialization", "kind": "passive", "description": "Expertise with Bows increased by 5 weapon skill" }
+      ]
+    },
+    "skyborne": {
+      "raceName": "Skyborne",
+      "faction": "neutral",
+      "classes": [],
+      "traits": [],
+      "note": "New in Forever; no Classic Era counterpart exists, so every Skyborne trait is 'new' by construction."
+    }
+  }
+}

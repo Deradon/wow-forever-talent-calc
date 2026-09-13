@@ -9,6 +9,29 @@ with the fragment client and kept under `pipeline/work/probe/extra/<sec>.png`
 from single frames; counts are estimates. Companion brief:
 `docs/briefs/beyond-talents.md`.
 
+## Corrections (2026-09-13, after the stage-12 extraction)
+
+Sections 1 and 2 were read by eye from 60 s probe frames and are wrong in
+three places. `data/races/*.json` and `data/extracted/races.md` supersede them;
+this survey is kept as written so the corrections are visible.
+
+1. **Undead does have a race panel.** It is on screen at 05:23:40-05:24:20 and
+   again around 03:15:06 and 03:45:02 — minutes the 60 s probe grid stepped
+   over. All four Undead racials were read from the box, with descriptions;
+   the spellbook General page at 04:15:00 is only a cross-check now.
+2. **The two Skyborne variants do not share a class list.** High Order
+   (Alliance) plays Warrior, Hunter, Mage, Rogue, Druid; Windshaper (Horde)
+   plays Warrior, Hunter, Rogue, Druid, **Shaman** and not Mage.
+3. **Two more character-creation windows exist**: 05:23:40-05:23:50 and
+   05:50:10, found by classifying all 541 probe minutes for the two faction
+   banners. The full list stage 12 uses is `WINDOWS` in
+   `pipeline/stages/12_races.py`.
+
+Also corrected in passing: Dwarf has **Big Game Hunter** (not seen here),
+Troll has **Rapid Regeneration** (not seen here), and every race has exactly
+four traits except Skyborne, which has five across its two variants — so the
+"~45-55 traits" estimate below is really 37.
+
 ## Summary table
 
 | # | Content | Where (stream time) | Footage | Rough count | Differs from Classic Era | Priority |

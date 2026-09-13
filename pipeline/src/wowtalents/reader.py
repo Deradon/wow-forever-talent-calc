@@ -124,6 +124,90 @@ TREE_SYSTEM = (
 )
 TREE_USER = "Return the tree name as JSON."
 
+# Stage 12 (races): the race box of the character-creation screen. Same contract as the
+# tooltip reader -- copy, never paraphrase -- but the unit is a scrollable list, so the
+# schema carries an array and every entry says whether the box cut it off.
+RACE_PANEL_SCHEMA: dict = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["race_name", "traits", "lore", "lore_cut_off"],
+    "properties": {
+        "race_name": {"type": ["string", "null"]},
+        "traits": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["name", "kind", "description", "cut_off"],
+                "properties": {
+                    "name": {"type": "string"},
+                    "kind": {"type": ["string", "null"], "enum": ["Passive", None]},
+                    "description": {"type": "string"},
+                    "cut_off": {"type": "boolean"},
+                },
+            },
+        },
+        "lore": {"type": "string"},
+        "lore_cut_off": {"type": "boolean"},
+    },
+}
+
+RACE_PANEL_SYSTEM = (
+    "You transcribe the race box of the World of Warcraft character-creation screen. Copy the text exactly, "
+    "including punctuation, capitalisation and numbers. Never paraphrase and never add words that are not in "
+    "the image.\n"
+    "The box scrolls, so the image is a window onto a longer page. Top to bottom it can show:\n"
+    "1. the race name in large white text (only when the box is scrolled to the top);\n"
+    "2. the gold heading 'Racial Traits';\n"
+    "3. one row per racial trait: a round icon on the left, then a line of the form "
+    "'Name: description' or 'Name (Passive): description', the name in white and the description in gold, "
+    "wrapped over two or three lines;\n"
+    "4. a gold lore paragraph about the race, starting at the left edge with no icon.\n"
+    "Fill the JSON fields as follows. race_name: line 1 if present, else null. traits: one entry per trait row "
+    "with an icon, in the order shown. name: the white part before the colon, without the '(Passive)' suffix. "
+    "kind: 'Passive' when the name carries the '(Passive)' suffix, else null. description: the gold text after "
+    "the colon, line breaks joined with single spaces, exactly as written and nothing else -- never the lore "
+    "paragraph. cut_off: true when that row's icon or text is clipped or faded out by the top or bottom edge of "
+    "the box so that words are missing, false when the whole row is legible. lore: the lore paragraph as shown, "
+    "or an empty string when none is visible; lore_cut_off: true when it is clipped. A row is a trait only if it "
+    "has its own round icon. Return JSON only."
+)
+
+RACE_PANEL_USER = (
+    "Example: a box showing 'Dwarf', 'Racial Traits', a row 'Stoneform: Immunity to Bleeds, Poisons, and "
+    "Diseases and reduce Physical damage taken for 8 sec', a row 'Mace Specialization (Passive): Maces "
+    "increase spell and ability critical chance by 1%' and no lore becomes\n"
+    '{"race_name":"Dwarf","traits":[{"name":"Stoneform","kind":null,"description":"Immunity to Bleeds, '
+    'Poisons, and Diseases and reduce Physical damage taken for 8 sec","cut_off":false},'
+    '{"name":"Mace Specialization","kind":"Passive","description":"Maces increase spell and ability critical '
+    'chance by 1%","cut_off":false}],"lore":"","lore_cut_off":false}\n'
+    "Now return the content of this race box as JSON."
+)
+
+RACIAL_LIST_SCHEMA: dict = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["entries"],
+    "properties": {
+        "entries": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["name", "subtitle"],
+                "properties": {"name": {"type": "string"}, "subtitle": {"type": "string"}},
+            },
+        },
+    },
+}
+
+RACIAL_LIST_SYSTEM = (
+    "You read entries of the General page of the World of Warcraft spellbook: a parchment list where each entry "
+    "is a square icon, a name in dark text and a smaller grey subtitle under it ('Racial', 'Racial Passive', "
+    "'Passive', or nothing). Copy both exactly. Return one entry per icon, in reading order, as JSON only."
+)
+RACIAL_LIST_USER = "Return the entries of this spellbook page as JSON."
+
 
 # --------------------------------------------------------------------------- image preparation
 
@@ -469,3 +553,9 @@ class Reader:
 
     def read_tree(self, strip: np.ndarray, factor: float = 2.0) -> dict:
         return self.ask(upscale(strip, factor), TREE_SYSTEM, TREE_USER, TREE_SCHEMA, "tree")
+
+    def read_race_panel(self, panel: np.ndarray, factor: float = 3.0) -> dict:
+        return self.ask(upscale(panel, factor), RACE_PANEL_SYSTEM, RACE_PANEL_USER, RACE_PANEL_SCHEMA, "race_panel")
+
+    def read_racial_list(self, crop: np.ndarray, factor: float = 3.0) -> dict:
+        return self.ask(upscale(crop, factor), RACIAL_LIST_SYSTEM, RACIAL_LIST_USER, RACIAL_LIST_SCHEMA, "racial_list")

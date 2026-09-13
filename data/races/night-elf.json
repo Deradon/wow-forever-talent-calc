@@ -1,0 +1,224 @@
+{
+  "$schema": "../schema/race.schema.json",
+  "schemaVersion": 1,
+  "race": "night-elf",
+  "raceName": "Night Elf",
+  "faction": "alliance",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T18:20:52Z",
+  "classes": ["druid", "hunter", "priest", "rogue", "warrior"],
+  "classesSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 11622.0,
+    "frame": 697320,
+    "crop": "data/review/races/night-elf/_classbar.png",
+    "panel": "class-bar",
+    "confidence": 1.0,
+    "reader": "opencv-classbar",
+    "reviewed": false,
+    "note": "lit/greyed separation margin 16.8"
+  },
+  "lore": "Ten thousand years ago, the night elves founded a vast empire, but their",
+  "loreComplete": false,
+  "loreSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 11624.5,
+    "frame": 697470,
+    "crop": "data/review/races/night-elf/_panel.png",
+    "panel": "race-panel",
+    "confidence": 1.0,
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+    "reviewed": false,
+    "note": "paragraph continues past the box edge"
+  },
+  "traits": [
+    {
+      "id": "elunes-light",
+      "name": "Elune's Light",
+      "kind": "active",
+      "order": 0,
+      "description": "Increases critical chance by 10% for 15 sec",
+      "icon": "crop-elunes-light",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/night-elf/elunes-light.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era racial called Elune's Light for this race"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21004.0,
+        "frame": 1260240,
+        "crop": "data/review/races/night-elf/elunes-light.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Elune's Light",
+            "description": "Increases critical chance by 10% for 15 sec",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Elune's Light",
+            "description": "Increases critical chance by 10% for 15 sec",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shadowmeld",
+      "name": "Shadowmeld",
+      "kind": "active",
+      "order": 1,
+      "description": "Gain Stealth while immobile",
+      "icon": "crop-shadowmeld",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/night-elf/shadowmeld.icon.png",
+      "classic": {
+        "status": "same",
+        "classicName": "Shadowmeld",
+        "classicText": "Activate to slip into the shadows while standing still",
+        "note": "stealth while standing still in both; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["classic-unchanged"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11624.5,
+        "frame": 697470,
+        "crop": "data/review/races/night-elf/shadowmeld.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shadowmeld",
+            "description": "Gain Stealth while immobile",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shadowmeld",
+            "description": "Gain Stealth while immobile",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Shadowmeld",
+            "description": "Gain Stealth while immobile",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "quickness",
+      "name": "Quickness",
+      "kind": "passive",
+      "order": 2,
+      "description": "1% increased Dodge chance and 2% increased run speed",
+      "icon": "crop-quickness",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/night-elf/quickness.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Quickness",
+        "classicText": "Dodge chance increased by 1%",
+        "note": "Classic is 1% dodge only; Forever adds 2% run speed; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11624.5,
+        "frame": 697470,
+        "crop": "data/review/races/night-elf/quickness.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Quickness",
+            "description": "1% increased Dodge chance and 2% increased run speed",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Quickness",
+            "description": "1% increased Dodge chance and 2% increased run speed",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Quickness",
+            "description": "1% increased Dodge chance and 2% increased run speed",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "wisp-spirit",
+      "name": "Wisp Spirit",
+      "kind": "passive",
+      "order": 3,
+      "description": "75% increased run speed while dead",
+      "icon": "crop-wisp-spirit",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/night-elf/wisp-spirit.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Wisp Spirit",
+        "classicText": "Movement speed increased by 50% while dead",
+        "note": "Classic 50% run speed while dead, Forever 75%; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11624.5,
+        "frame": 697470,
+        "crop": "data/review/races/night-elf/wisp-spirit.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Wisp Spirit",
+            "description": "75% increased run speed while dead",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Wisp Spirit",
+            "description": "75% increased run speed while dead",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Wisp Spirit",
+            "description": "75% increased run speed while dead",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    }
+  ],
+  "complete": true,
+  "notes": ["BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed."]
+}

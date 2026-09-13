@@ -1,0 +1,212 @@
+{
+  "$schema": "../schema/race.schema.json",
+  "schemaVersion": 1,
+  "race": "gnome",
+  "raceName": "Gnome",
+  "faction": "alliance",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T18:20:52Z",
+  "classes": ["mage", "priest", "rogue", "warlock", "warrior"],
+  "classesSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 11653.0,
+    "frame": 699180,
+    "crop": "data/review/races/gnome/_classbar.png",
+    "panel": "class-bar",
+    "confidence": 1.0,
+    "reader": "opencv-classbar",
+    "reviewed": false,
+    "note": "lit/greyed separation margin 22.4"
+  },
+  "lore": "Though small in stature, the gnomes of",
+  "loreComplete": false,
+  "loreSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 21998.5,
+    "frame": 1319910,
+    "crop": "data/review/races/gnome/_panel.png",
+    "panel": "race-panel",
+    "confidence": 1.0,
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+    "reviewed": false,
+    "note": "paragraph continues past the box edge"
+  },
+  "traits": [
+    {
+      "id": "escape-artist",
+      "name": "Escape Artist",
+      "kind": "active",
+      "order": 0,
+      "description": "Brief Immunity to Roots and Snares",
+      "icon": "crop-escape-artist",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/gnome/escape-artist.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Escape Artist",
+        "classicText": "Escapes the effects of any immobilization or movement speed reduction effect",
+        "note": "Classic escapes an active root or snare; Forever grants a brief immunity to them; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11666.0,
+        "frame": 699960,
+        "crop": "data/review/races/gnome/escape-artist.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Escape Artist",
+            "description": "Brief Immunity to Roots and Snares",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Escape Artist",
+            "description": "Brief Immunity to Roots and Snares",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Escape Artist",
+            "description": "Brief Immunity to Roots and Snares",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "eureka",
+      "name": "Eureka!",
+      "kind": "active",
+      "order": 1,
+      "description": "Reduced cost and 10% increased damage or healing on next 3 spells or abilities",
+      "icon": "crop-eureka",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/gnome/eureka.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era racial called Eureka! for this race"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21998.5,
+        "frame": 1319910,
+        "crop": "data/review/races/gnome/eureka.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Eureka!",
+            "description": "Reduced cost and 10% increased damage or healing on next 3 spells or abilities",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Eureka!",
+            "description": "Reduced cost and 10% increased damage or healing on next 3 spells or abilities",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "expansive-mind",
+      "name": "Expansive Mind",
+      "kind": "passive",
+      "order": 2,
+      "description": "Maximum Mana, Rage, or Energy increased by 5%",
+      "icon": "crop-expansive-mind",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/gnome/expansive-mind.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Expansive Mind",
+        "classicText": "Intelligence increased by 5%",
+        "note": "Classic is +5% Intellect; Forever is +5% maximum Mana, Rage or Energy, so it works for every class; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21998.5,
+        "frame": 1319910,
+        "crop": "data/review/races/gnome/expansive-mind.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Expansive Mind",
+            "description": "Maximum Mana, Rage, or Energy increased by 5%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Expansive Mind",
+            "description": "Maximum Mana, Rage, or Energy increased by 5%",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "engineering-specialization",
+      "name": "Engineering Specialization",
+      "kind": "passive",
+      "order": 3,
+      "description": "More reliable engineering devices",
+      "icon": "crop-engineering-specialization",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/gnome/engineering-specialization.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Engineering Specialization",
+        "classicText": "Engineering skill increased by 15",
+        "note": "Classic is +15 Engineering skill; Forever makes engineering devices more reliable; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21998.5,
+        "frame": 1319910,
+        "crop": "data/review/races/gnome/engineering-specialization.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Engineering Specialization",
+            "description": "More reliable engineering devices",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Engineering Specialization",
+            "description": "More reliable engineering devices",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    }
+  ],
+  "complete": true,
+  "notes": ["BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed."]
+}

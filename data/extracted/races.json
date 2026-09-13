@@ -1,0 +1,4031 @@
+{
+  "generatedAt": "2026-09-13T18:20:52Z",
+  "video": "DxtVEhjyROU",
+  "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+  "states": 33,
+  "traits": {
+    "dwarf": 4,
+    "gnome": 4,
+    "human": 4,
+    "night-elf": 4,
+    "orc": 4,
+    "skyborne": 5,
+    "tauren": 4,
+    "troll": 4,
+    "undead": 4
+  },
+  "candidates": {
+    "dwarf": [
+      {
+        "id": "stoneform",
+        "name": "Stoneform",
+        "kind": "active",
+        "description": "Immunity to Bleeds, Poisons, and Diseases and reduce Physical damage taken for 8 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "dwarf-11606",
+        "t": 11605.5,
+        "frame": 696330,
+        "sharpness": 2769.17,
+        "codex": true,
+        "block": [
+          367,
+          425
+        ],
+        "icon_band": [
+          373,
+          408
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2769.17,
+          "t": 11605.5,
+          "frame": 696330,
+          "state": "dwarf-11606"
+        },
+        "readings": [
+          {
+            "name": "Stoneform",
+            "kind": "active",
+            "description": "Immunity to Bleeds, Poisons, and Diseases and reduce Physical damage taken for 8 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Stoneform",
+            "kind": "active",
+            "description": "Immunity to Bleeds, Poisons, and Diseases and reduce Physical damage taken for 8 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Stoneform",
+            "kind": "active",
+            "description": "Immunity to Bleeds, Poisons, and Diseases and reduce Physical damage taken for 8 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "find-treasure",
+        "name": "Find Treasure",
+        "kind": "active",
+        "description": "Track nearby treasure chests",
+        "cut_off": false,
+        "variants": [],
+        "state": "dwarf-11606",
+        "t": 11605.5,
+        "frame": 696330,
+        "sharpness": 2769.17,
+        "codex": true,
+        "block": [
+          425,
+          502
+        ],
+        "icon_band": [
+          431,
+          465
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2769.17,
+          "t": 11605.5,
+          "frame": 696330,
+          "state": "dwarf-11606"
+        },
+        "readings": [
+          {
+            "name": "Find Treasure",
+            "kind": "active",
+            "description": "Track nearby treasure chests",
+            "cut_off": false
+          },
+          {
+            "name": "Find Treasure",
+            "kind": "active",
+            "description": "Track nearby treasure chests",
+            "cut_off": false
+          },
+          {
+            "name": "Find Treasure",
+            "kind": "active",
+            "description": "Track nearby treasure chests",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "mace-specialization",
+        "name": "Mace Specialization",
+        "kind": "passive",
+        "description": "",
+        "cut_off": true,
+        "variants": [],
+        "state": "dwarf-11606",
+        "t": 11605.5,
+        "frame": 696330,
+        "sharpness": 2769.17,
+        "codex": true,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2769.17,
+          "t": 11605.5,
+          "frame": 696330,
+          "state": "dwarf-11606"
+        },
+        "readings": [
+          {
+            "name": "Mace Specialization",
+            "kind": "passive",
+            "description": "",
+            "cut_off": true
+          },
+          {
+            "name": "Mace Specialization",
+            "kind": "passive",
+            "description": "",
+            "cut_off": true
+          },
+          {
+            "name": "Mace Specialization",
+            "kind": "passive",
+            "description": "",
+            "cut_off": true
+          }
+        ]
+      },
+      {
+        "id": "find-treasure",
+        "name": "Find Treasure",
+        "kind": "active",
+        "description": "Track nearby treasure chests",
+        "cut_off": false,
+        "variants": [],
+        "state": "dwarf-11608",
+        "t": 11608.5,
+        "frame": 696510,
+        "sharpness": 3498.16,
+        "codex": false,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3498.16,
+          "t": 11608.5,
+          "frame": 696510,
+          "state": "dwarf-11608"
+        },
+        "readings": [
+          {
+            "name": "Find Treasure",
+            "kind": "active",
+            "description": "Track nearby treasure chests",
+            "cut_off": false
+          },
+          {
+            "name": "Find Treasure",
+            "kind": "active",
+            "description": "Track nearby treasure chests",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "mace-specialization",
+        "name": "Mace Specialization",
+        "kind": "passive",
+        "description": "Maces increase spell and ability critical chance by 1%",
+        "cut_off": false,
+        "variants": [],
+        "state": "dwarf-11608",
+        "t": 11608.5,
+        "frame": 696510,
+        "sharpness": 3498.16,
+        "codex": false,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3498.16,
+          "t": 11608.5,
+          "frame": 696510,
+          "state": "dwarf-11608"
+        },
+        "readings": [
+          {
+            "name": "Mace Specialization",
+            "kind": "passive",
+            "description": "Maces increase spell and ability critical chance by 1%",
+            "cut_off": false
+          },
+          {
+            "name": "Mace Specialization",
+            "kind": "passive",
+            "description": "Maces increase spell and ability critical chance by 1%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "big-game-hunter",
+        "name": "Big Game Hunter",
+        "kind": "passive",
+        "description": "Damage to Beasts increased by 5%",
+        "cut_off": false,
+        "variants": [],
+        "state": "dwarf-11608",
+        "t": 11608.5,
+        "frame": 696510,
+        "sharpness": 3498.16,
+        "codex": false,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3498.16,
+          "t": 11608.5,
+          "frame": 696510,
+          "state": "dwarf-11608"
+        },
+        "readings": [
+          {
+            "name": "Big Game Hunter",
+            "kind": "passive",
+            "description": "Damage to Beasts increased by 5%",
+            "cut_off": false
+          },
+          {
+            "name": "Big Game Hunter",
+            "kind": "passive",
+            "description": "Damage to Beasts increased by 5%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "stoneform",
+        "name": "Stoneform",
+        "kind": "active",
+        "description": "Immunity to Bleeds, Poisons, and Diseases and reduce Physical damage taken for 8 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "dwarf-21968",
+        "t": 21968.0,
+        "frame": 1318080,
+        "sharpness": 2817.04,
+        "codex": false,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2817.04,
+          "t": 21968.0,
+          "frame": 1318080,
+          "state": "dwarf-21968"
+        },
+        "readings": [
+          {
+            "name": "Stoneform",
+            "kind": "active",
+            "description": "Immunity to Bleeds, Poisons, and Diseases and reduce Physical damage taken for 8 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Stoneform",
+            "kind": "active",
+            "description": "Immunity to Bleeds, Poisons, and Diseases and reduce Physical damage taken for 8 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "find-treasure",
+        "name": "Find Treasure",
+        "kind": "active",
+        "description": "Track nearby treasure chests",
+        "cut_off": false,
+        "variants": [],
+        "state": "dwarf-21968",
+        "t": 21968.0,
+        "frame": 1318080,
+        "sharpness": 2817.04,
+        "codex": false,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2817.04,
+          "t": 21968.0,
+          "frame": 1318080,
+          "state": "dwarf-21968"
+        },
+        "readings": [
+          {
+            "name": "Find Treasure",
+            "kind": "active",
+            "description": "Track nearby treasure chests",
+            "cut_off": false
+          },
+          {
+            "name": "Find Treasure",
+            "kind": "active",
+            "description": "Track nearby treasure chests",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "mace-specialization",
+        "name": "Mace Specialization",
+        "kind": "passive",
+        "description": "Maces increase spell and ability critical chance by 1%",
+        "cut_off": false,
+        "variants": [],
+        "state": "dwarf-21968",
+        "t": 21968.0,
+        "frame": 1318080,
+        "sharpness": 2817.04,
+        "codex": false,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2817.04,
+          "t": 21968.0,
+          "frame": 1318080,
+          "state": "dwarf-21968"
+        },
+        "readings": [
+          {
+            "name": "Mace Specialization",
+            "kind": "passive",
+            "description": "Maces increase spell and ability critical chance by 1%",
+            "cut_off": false
+          },
+          {
+            "name": "Mace Specialization",
+            "kind": "passive",
+            "description": "Maces increase spell and ability critical chance by 1%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "mace-specialization",
+        "name": "Mace Specialization",
+        "kind": "passive",
+        "description": "Maces increase spell and ability critical chance by 1%",
+        "cut_off": false,
+        "variants": [],
+        "state": "dwarf-21974",
+        "t": 21974.0,
+        "frame": 1318440,
+        "sharpness": 4533.11,
+        "codex": false,
+        "block": [
+          296,
+          347
+        ],
+        "icon_band": [
+          302,
+          336
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 4533.11,
+          "t": 21974.0,
+          "frame": 1318440,
+          "state": "dwarf-21974"
+        },
+        "readings": [
+          {
+            "name": "Mace Specialization",
+            "kind": "passive",
+            "description": "Maces increase spell and ability critical chance by 1%",
+            "cut_off": false
+          },
+          {
+            "name": "Mace Specialization",
+            "kind": "passive",
+            "description": "Maces increase spell and ability critical chance by 1%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "big-game-hunter",
+        "name": "Big Game Hunter",
+        "kind": "passive",
+        "description": "Damage to Beasts increased by 5%",
+        "cut_off": false,
+        "variants": [],
+        "state": "dwarf-21974",
+        "t": 21974.0,
+        "frame": 1318440,
+        "sharpness": 4533.11,
+        "codex": false,
+        "block": [
+          347,
+          502
+        ],
+        "icon_band": [
+          353,
+          386
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 4533.11,
+          "t": 21974.0,
+          "frame": 1318440,
+          "state": "dwarf-21974"
+        },
+        "readings": [
+          {
+            "name": "Big Game Hunter",
+            "kind": "passive",
+            "description": "Damage to Beasts increased by 5%",
+            "cut_off": false
+          },
+          {
+            "name": "Big Game Hunter",
+            "kind": "passive",
+            "description": "Damage to Beasts increased by 5%",
+            "cut_off": false
+          }
+        ]
+      }
+    ],
+    "gnome": [
+      {
+        "id": "escape-artist",
+        "name": "Escape Artist",
+        "kind": "active",
+        "description": "Brief Immunity to Roots and Snares",
+        "cut_off": false,
+        "variants": [],
+        "state": "gnome-11666",
+        "t": 11666.0,
+        "frame": 699960,
+        "sharpness": 3123.02,
+        "codex": true,
+        "block": [
+          358,
+          410
+        ],
+        "icon_band": [
+          364,
+          399
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3123.02,
+          "t": 11666.0,
+          "frame": 699960,
+          "state": "gnome-11666"
+        },
+        "readings": [
+          {
+            "name": "Escape Artist",
+            "kind": "active",
+            "description": "Brief Immunity to Roots and Snares",
+            "cut_off": false
+          },
+          {
+            "name": "Escape Artist",
+            "kind": "active",
+            "description": "Brief Immunity to Roots and Snares",
+            "cut_off": false
+          },
+          {
+            "name": "Escape Artist",
+            "kind": "active",
+            "description": "Brief Immunity to Roots and Snares",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "eureka",
+        "name": "Eureka!",
+        "kind": "active",
+        "description": "Reduced cost and 10% increased damage or healing on next 3 spells or abilities",
+        "cut_off": false,
+        "variants": [],
+        "state": "gnome-11666",
+        "t": 11666.0,
+        "frame": 699960,
+        "sharpness": 3123.02,
+        "codex": true,
+        "block": [
+          410,
+          460
+        ],
+        "icon_band": [
+          416,
+          449
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3123.02,
+          "t": 11666.0,
+          "frame": 699960,
+          "state": "gnome-11666"
+        },
+        "readings": [
+          {
+            "name": "Eureka!",
+            "kind": "active",
+            "description": "Reduced cost and 10% increased damage or healing on next 3 spells or abilities",
+            "cut_off": false
+          },
+          {
+            "name": "Eureka!",
+            "kind": "active",
+            "description": "Reduced cost and 10% increased damage or healing on next 3 spells or abilities",
+            "cut_off": false
+          },
+          {
+            "name": "Eureka!",
+            "kind": "active",
+            "description": "Reduced cost and 10% increased damage or healing on next 3 spells or abilities",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "expansive-mind",
+        "name": "Expansive Mind",
+        "kind": "passive",
+        "description": "Maximum Mana, Rage, or",
+        "cut_off": true,
+        "variants": [],
+        "state": "gnome-11666",
+        "t": 11666.0,
+        "frame": 699960,
+        "sharpness": 3123.02,
+        "codex": true,
+        "block": [
+          460,
+          502
+        ],
+        "icon_band": [
+          466,
+          496
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3123.02,
+          "t": 11666.0,
+          "frame": 699960,
+          "state": "gnome-11666"
+        },
+        "readings": [
+          {
+            "name": "Expansive Mind",
+            "kind": "passive",
+            "description": "Maximum Mana, Rage, or",
+            "cut_off": true
+          },
+          {
+            "name": "Expansive Mind",
+            "kind": "passive",
+            "description": "Maximum Mana, Rage, or",
+            "cut_off": true
+          },
+          {
+            "name": "Expansive Mind",
+            "kind": "passive",
+            "description": "Maximum Mana, Rage, or",
+            "cut_off": true
+          }
+        ]
+      },
+      {
+        "id": "eureka",
+        "name": "Eureka!",
+        "kind": "active",
+        "description": "Reduced cost and 10% increased damage or healing on next 3 spells or abilities",
+        "cut_off": false,
+        "variants": [],
+        "state": "gnome-21998",
+        "t": 21998.5,
+        "frame": 1319910,
+        "sharpness": 3962.64,
+        "codex": false,
+        "block": [
+          314,
+          370
+        ],
+        "icon_band": [
+          320,
+          360
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3962.64,
+          "t": 21998.5,
+          "frame": 1319910,
+          "state": "gnome-21998"
+        },
+        "readings": [
+          {
+            "name": "Eureka!",
+            "kind": "active",
+            "description": "Reduced cost and 10% increased damage or healing on next 3 spells or abilities",
+            "cut_off": false
+          },
+          {
+            "name": "Eureka!",
+            "kind": "active",
+            "description": "Reduced cost and 10% increased damage or healing on next 3 spells or abilities",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "expansive-mind",
+        "name": "Expansive Mind",
+        "kind": "passive",
+        "description": "Maximum Mana, Rage, or Energy increased by 5%",
+        "cut_off": false,
+        "variants": [],
+        "state": "gnome-21998",
+        "t": 21998.5,
+        "frame": 1319910,
+        "sharpness": 3962.64,
+        "codex": false,
+        "block": [
+          370,
+          424
+        ],
+        "icon_band": [
+          376,
+          411
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3962.64,
+          "t": 21998.5,
+          "frame": 1319910,
+          "state": "gnome-21998"
+        },
+        "readings": [
+          {
+            "name": "Expansive Mind",
+            "kind": "passive",
+            "description": "Maximum Mana, Rage, or Energy increased by 5%",
+            "cut_off": false
+          },
+          {
+            "name": "Expansive Mind",
+            "kind": "passive",
+            "description": "Maximum Mana, Rage, or Energy increased by 5%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "engineering-specialization",
+        "name": "Engineering Specialization",
+        "kind": "passive",
+        "description": "More reliable engineering devices",
+        "cut_off": false,
+        "variants": [],
+        "state": "gnome-21998",
+        "t": 21998.5,
+        "frame": 1319910,
+        "sharpness": 3962.64,
+        "codex": false,
+        "block": [
+          424,
+          502
+        ],
+        "icon_band": [
+          430,
+          463
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3962.64,
+          "t": 21998.5,
+          "frame": 1319910,
+          "state": "gnome-21998"
+        },
+        "readings": [
+          {
+            "name": "Engineering Specialization",
+            "kind": "passive",
+            "description": "More reliable engineering devices",
+            "cut_off": false
+          },
+          {
+            "name": "Engineering Specialization",
+            "kind": "passive",
+            "description": "More reliable engineering devices",
+            "cut_off": false
+          }
+        ]
+      }
+    ],
+    "human": [
+      {
+        "id": "perception",
+        "name": "Perception",
+        "kind": "active",
+        "description": "Detect Stealthed enemies for 20 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-11596",
+        "t": 11596.0,
+        "frame": 695760,
+        "sharpness": 3436.19,
+        "codex": true,
+        "block": [
+          309,
+          369
+        ],
+        "icon_band": [
+          315,
+          358
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3436.19,
+          "t": 11596.0,
+          "frame": 695760,
+          "state": "human-11596"
+        },
+        "readings": [
+          {
+            "name": "Perception",
+            "kind": "active",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Perception",
+            "kind": "active",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Perception",
+            "kind": "active",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "sword-specialization",
+        "name": "Sword Specialization",
+        "kind": "passive",
+        "description": "Swords increase spell and ability critical chance by 2%",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-11596",
+        "t": 11596.0,
+        "frame": 695760,
+        "sharpness": 3436.19,
+        "codex": true,
+        "block": [
+          369,
+          417
+        ],
+        "icon_band": [
+          375,
+          407
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3436.19,
+          "t": 11596.0,
+          "frame": 695760,
+          "state": "human-11596"
+        },
+        "readings": [
+          {
+            "name": "Sword Specialization",
+            "kind": "passive",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "cut_off": false
+          },
+          {
+            "name": "Sword Specialization",
+            "kind": "passive",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "cut_off": false
+          },
+          {
+            "name": "Sword Specialization",
+            "kind": "passive",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "the-human-spirit",
+        "name": "The Human Spirit",
+        "kind": "passive",
+        "description": "5% increased Spirit",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-11596",
+        "t": 11596.0,
+        "frame": 695760,
+        "sharpness": 3436.19,
+        "codex": true,
+        "block": [
+          417,
+          502
+        ],
+        "icon_band": [
+          423,
+          458
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3436.19,
+          "t": 11596.0,
+          "frame": 695760,
+          "state": "human-11596"
+        },
+        "readings": [
+          {
+            "name": "The Human Spirit",
+            "kind": "passive",
+            "description": "5% increased Spirit",
+            "cut_off": false
+          },
+          {
+            "name": "The Human Spirit",
+            "kind": "passive",
+            "description": "5% increased Spirit",
+            "cut_off": false
+          },
+          {
+            "name": "The Human Spirit",
+            "kind": "passive",
+            "description": "5% increased Spirit",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "perception",
+        "name": "Perception",
+        "kind": "active",
+        "description": "Detect Stealthed enemies for 20 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-11598",
+        "t": 11598.0,
+        "frame": 695880,
+        "sharpness": 3414.64,
+        "codex": false,
+        "block": [
+          313,
+          369
+        ],
+        "icon_band": [
+          319,
+          358
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3414.64,
+          "t": 11598.0,
+          "frame": 695880,
+          "state": "human-11598"
+        },
+        "readings": [
+          {
+            "name": "Perception",
+            "kind": "active",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Perception",
+            "kind": "active",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "sword-specialization",
+        "name": "Sword Specialization",
+        "kind": "passive",
+        "description": "Swords increase spell and ability critical chance by 2%",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-11598",
+        "t": 11598.0,
+        "frame": 695880,
+        "sharpness": 3414.64,
+        "codex": false,
+        "block": [
+          369,
+          417
+        ],
+        "icon_band": [
+          375,
+          407
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3414.64,
+          "t": 11598.0,
+          "frame": 695880,
+          "state": "human-11598"
+        },
+        "readings": [
+          {
+            "name": "Sword Specialization",
+            "kind": "passive",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "cut_off": false
+          },
+          {
+            "name": "Sword Specialization",
+            "kind": "passive",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "the-human-spirit",
+        "name": "The Human Spirit",
+        "kind": "passive",
+        "description": "5% increased Spirit",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-11598",
+        "t": 11598.0,
+        "frame": 695880,
+        "sharpness": 3414.64,
+        "codex": false,
+        "block": [
+          417,
+          502
+        ],
+        "icon_band": [
+          423,
+          458
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3414.64,
+          "t": 11598.0,
+          "frame": 695880,
+          "state": "human-11598"
+        },
+        "readings": [
+          {
+            "name": "The Human Spirit",
+            "kind": "passive",
+            "description": "5% increased Spirit",
+            "cut_off": false
+          },
+          {
+            "name": "The Human Spirit",
+            "kind": "passive",
+            "description": "5% increased Spirit",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "perception",
+        "name": "Perception",
+        "kind": "active",
+        "description": "Detect Stealthed enemies for 20 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-11600",
+        "t": 11600.0,
+        "frame": 696000,
+        "sharpness": 3447.56,
+        "codex": false,
+        "block": [
+          316,
+          369
+        ],
+        "icon_band": [
+          322,
+          358
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3447.56,
+          "t": 11600.0,
+          "frame": 696000,
+          "state": "human-11600"
+        },
+        "readings": [
+          {
+            "name": "Perception",
+            "kind": "active",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Perception",
+            "kind": "active",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "sword-specialization",
+        "name": "Sword Specialization",
+        "kind": "passive",
+        "description": "Swords increase spell and ability critical chance by 2%",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-11600",
+        "t": 11600.0,
+        "frame": 696000,
+        "sharpness": 3447.56,
+        "codex": false,
+        "block": [
+          369,
+          417
+        ],
+        "icon_band": [
+          375,
+          407
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3447.56,
+          "t": 11600.0,
+          "frame": 696000,
+          "state": "human-11600"
+        },
+        "readings": [
+          {
+            "name": "Sword Specialization",
+            "kind": "passive",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "cut_off": false
+          },
+          {
+            "name": "Sword Specialization",
+            "kind": "passive",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "the-human-spirit",
+        "name": "The Human Spirit",
+        "kind": "passive",
+        "description": "5% increased Spirit",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-11600",
+        "t": 11600.0,
+        "frame": 696000,
+        "sharpness": 3447.56,
+        "codex": false,
+        "block": [
+          417,
+          502
+        ],
+        "icon_band": [
+          423,
+          458
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3447.56,
+          "t": 11600.0,
+          "frame": 696000,
+          "state": "human-11600"
+        },
+        "readings": [
+          {
+            "name": "The Human Spirit",
+            "kind": "passive",
+            "description": "5% increased Spirit",
+            "cut_off": false
+          },
+          {
+            "name": "The Human Spirit",
+            "kind": "passive",
+            "description": "5% increased Spirit",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "will-to-survive",
+        "name": "Will to Survive",
+        "kind": "active",
+        "description": "Remove Stuns",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-21956",
+        "t": 21956.0,
+        "frame": 1317360,
+        "sharpness": 2621.09,
+        "codex": false,
+        "block": [
+          358,
+          407
+        ],
+        "icon_band": [
+          364,
+          399
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2621.09,
+          "t": 21956.0,
+          "frame": 1317360,
+          "state": "human-21956"
+        },
+        "readings": [
+          {
+            "name": "Will to Survive",
+            "kind": "active",
+            "description": "Remove Stuns",
+            "cut_off": false
+          },
+          {
+            "name": "Will to Survive",
+            "kind": "active",
+            "description": "Remove Stuns",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "perception",
+        "name": "Perception",
+        "kind": "active",
+        "description": "Detect Stealthed enemies for 20 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-21956",
+        "t": 21956.0,
+        "frame": 1317360,
+        "sharpness": 2621.09,
+        "codex": false,
+        "block": [
+          407,
+          459
+        ],
+        "icon_band": [
+          413,
+          448
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2621.09,
+          "t": 21956.0,
+          "frame": 1317360,
+          "state": "human-21956"
+        },
+        "readings": [
+          {
+            "name": "Perception",
+            "kind": "active",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Perception",
+            "kind": "active",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "sword-specialization",
+        "name": "Sword Specialization",
+        "kind": "passive",
+        "description": "Swords increase spell and ability critical chance by 2%",
+        "cut_off": true,
+        "variants": [],
+        "state": "human-21956",
+        "t": 21956.0,
+        "frame": 1317360,
+        "sharpness": 2621.09,
+        "codex": false,
+        "block": [
+          459,
+          502
+        ],
+        "icon_band": [
+          465,
+          491
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2621.09,
+          "t": 21956.0,
+          "frame": 1317360,
+          "state": "human-21956"
+        },
+        "readings": [
+          {
+            "name": "Sword Specialization",
+            "kind": "passive",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "cut_off": true
+          },
+          {
+            "name": "Sword Specialization",
+            "kind": "passive",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "cut_off": true
+          }
+        ]
+      },
+      {
+        "id": "swords",
+        "name": "Swords",
+        "kind": "active",
+        "description": "increase spell and ability critical chance by 2%",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-21957",
+        "t": 21957.0,
+        "frame": 1317420,
+        "sharpness": 4634.89,
+        "codex": false,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 4634.89,
+          "t": 21957.0,
+          "frame": 1317420,
+          "state": "human-21957"
+        },
+        "readings": [
+          {
+            "name": "Swords",
+            "kind": "active",
+            "description": "increase spell and ability critical chance by 2%",
+            "cut_off": false
+          },
+          {
+            "name": "Swords",
+            "kind": "active",
+            "description": "increase spell and ability critical chance by 2%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "the-human-spirit",
+        "name": "The Human Spirit",
+        "kind": "passive",
+        "description": "5% increased Spirit",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-21957",
+        "t": 21957.0,
+        "frame": 1317420,
+        "sharpness": 4634.89,
+        "codex": false,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 4634.89,
+          "t": 21957.0,
+          "frame": 1317420,
+          "state": "human-21957"
+        },
+        "readings": [
+          {
+            "name": "The Human Spirit",
+            "kind": "passive",
+            "description": "5% increased Spirit",
+            "cut_off": false
+          },
+          {
+            "name": "The Human Spirit",
+            "kind": "passive",
+            "description": "5% increased Spirit",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "will-to-survive",
+        "name": "Will to Survive",
+        "kind": "active",
+        "description": "Remove Stuns",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-21961",
+        "t": 21961.0,
+        "frame": 1317660,
+        "sharpness": 2566.31,
+        "codex": false,
+        "block": [
+          358,
+          407
+        ],
+        "icon_band": [
+          364,
+          398
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2566.31,
+          "t": 21961.0,
+          "frame": 1317660,
+          "state": "human-21961"
+        },
+        "readings": [
+          {
+            "name": "Will to Survive",
+            "kind": "active",
+            "description": "Remove Stuns",
+            "cut_off": false
+          },
+          {
+            "name": "Will to Survive",
+            "kind": "active",
+            "description": "Remove Stuns",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "perception",
+        "name": "Perception",
+        "kind": "active",
+        "description": "Detect Stealthed enemies for 20 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "human-21961",
+        "t": 21961.0,
+        "frame": 1317660,
+        "sharpness": 2566.31,
+        "codex": false,
+        "block": [
+          407,
+          459
+        ],
+        "icon_band": [
+          413,
+          448
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2566.31,
+          "t": 21961.0,
+          "frame": 1317660,
+          "state": "human-21961"
+        },
+        "readings": [
+          {
+            "name": "Perception",
+            "kind": "active",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Perception",
+            "kind": "active",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "sword-specialization",
+        "name": "Sword Specialization",
+        "kind": "passive",
+        "description": "Swords increase spell and ability critical chance by 2%",
+        "cut_off": true,
+        "variants": [],
+        "state": "human-21961",
+        "t": 21961.0,
+        "frame": 1317660,
+        "sharpness": 2566.31,
+        "codex": false,
+        "block": [
+          459,
+          502
+        ],
+        "icon_band": [
+          465,
+          491
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2566.31,
+          "t": 21961.0,
+          "frame": 1317660,
+          "state": "human-21961"
+        },
+        "readings": [
+          {
+            "name": "Sword Specialization",
+            "kind": "passive",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "cut_off": true
+          },
+          {
+            "name": "Sword Specialization",
+            "kind": "passive",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "cut_off": true
+          }
+        ]
+      }
+    ],
+    "night-elf": [
+      {
+        "id": "shadowmeld",
+        "name": "Shadowmeld",
+        "kind": "active",
+        "description": "Gain Stealth while immobile",
+        "cut_off": false,
+        "variants": [],
+        "state": "night-elf-11624",
+        "t": 11624.5,
+        "frame": 697470,
+        "sharpness": 3367.76,
+        "codex": true,
+        "block": [
+          314,
+          367
+        ],
+        "icon_band": [
+          320,
+          358
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3367.76,
+          "t": 11624.5,
+          "frame": 697470,
+          "state": "night-elf-11624"
+        },
+        "readings": [
+          {
+            "name": "Shadowmeld",
+            "kind": "active",
+            "description": "Gain Stealth while immobile",
+            "cut_off": false
+          },
+          {
+            "name": "Shadowmeld",
+            "kind": "active",
+            "description": "Gain Stealth while immobile",
+            "cut_off": false
+          },
+          {
+            "name": "Shadowmeld",
+            "kind": "active",
+            "description": "Gain Stealth while immobile",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "quickness",
+        "name": "Quickness",
+        "kind": "passive",
+        "description": "1% increased Dodge chance and 2% increased run speed",
+        "cut_off": false,
+        "variants": [],
+        "state": "night-elf-11624",
+        "t": 11624.5,
+        "frame": 697470,
+        "sharpness": 3367.76,
+        "codex": true,
+        "block": [
+          367,
+          418
+        ],
+        "icon_band": [
+          373,
+          408
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3367.76,
+          "t": 11624.5,
+          "frame": 697470,
+          "state": "night-elf-11624"
+        },
+        "readings": [
+          {
+            "name": "Quickness",
+            "kind": "passive",
+            "description": "1% increased Dodge chance and 2% increased run speed",
+            "cut_off": false
+          },
+          {
+            "name": "Quickness",
+            "kind": "passive",
+            "description": "1% increased Dodge chance and 2% increased run speed",
+            "cut_off": false
+          },
+          {
+            "name": "Quickness",
+            "kind": "passive",
+            "description": "1% increased Dodge chance and 2% increased run speed",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "wisp-spirit",
+        "name": "Wisp Spirit",
+        "kind": "passive",
+        "description": "75% increased run speed while dead",
+        "cut_off": false,
+        "variants": [],
+        "state": "night-elf-11624",
+        "t": 11624.5,
+        "frame": 697470,
+        "sharpness": 3367.76,
+        "codex": true,
+        "block": [
+          418,
+          502
+        ],
+        "icon_band": [
+          424,
+          458
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3367.76,
+          "t": 11624.5,
+          "frame": 697470,
+          "state": "night-elf-11624"
+        },
+        "readings": [
+          {
+            "name": "Wisp Spirit",
+            "kind": "passive",
+            "description": "75% increased run speed while dead",
+            "cut_off": false
+          },
+          {
+            "name": "Wisp Spirit",
+            "kind": "passive",
+            "description": "75% increased run speed while dead",
+            "cut_off": false
+          },
+          {
+            "name": "Wisp Spirit",
+            "kind": "passive",
+            "description": "75% increased run speed while dead",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "elunes-light",
+        "name": "Elune's Light",
+        "kind": "active",
+        "description": "Increases critical chance by 10% for 15 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "night-elf-21004",
+        "t": 21004.0,
+        "frame": 1260240,
+        "sharpness": 2741.97,
+        "codex": false,
+        "block": [
+          359,
+          407
+        ],
+        "icon_band": [
+          365,
+          399
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2741.97,
+          "t": 21004.0,
+          "frame": 1260240,
+          "state": "night-elf-21004"
+        },
+        "readings": [
+          {
+            "name": "Elune's Light",
+            "kind": "active",
+            "description": "Increases critical chance by 10% for 15 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Elune's Light",
+            "kind": "active",
+            "description": "Increases critical chance by 10% for 15 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "shadowmeld",
+        "name": "Shadowmeld",
+        "kind": "active",
+        "description": "Gain Stealth while immobile",
+        "cut_off": false,
+        "variants": [],
+        "state": "night-elf-21004",
+        "t": 21004.0,
+        "frame": 1260240,
+        "sharpness": 2741.97,
+        "codex": false,
+        "block": [
+          407,
+          458
+        ],
+        "icon_band": [
+          413,
+          448
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2741.97,
+          "t": 21004.0,
+          "frame": 1260240,
+          "state": "night-elf-21004"
+        },
+        "readings": [
+          {
+            "name": "Shadowmeld",
+            "kind": "active",
+            "description": "Gain Stealth while immobile",
+            "cut_off": false
+          },
+          {
+            "name": "Shadowmeld",
+            "kind": "active",
+            "description": "Gain Stealth while immobile",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "quickness",
+        "name": "Quickness",
+        "kind": "passive",
+        "description": "1% increased Dodge chance and 2% increased run speed",
+        "cut_off": true,
+        "variants": [],
+        "state": "night-elf-21004",
+        "t": 21004.0,
+        "frame": 1260240,
+        "sharpness": 2741.97,
+        "codex": false,
+        "block": [
+          458,
+          502
+        ],
+        "icon_band": [
+          464,
+          494
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2741.97,
+          "t": 21004.0,
+          "frame": 1260240,
+          "state": "night-elf-21004"
+        },
+        "readings": [
+          {
+            "name": "Quickness",
+            "kind": "passive",
+            "description": "1% increased Dodge chance and 2% increased run speed",
+            "cut_off": true
+          },
+          {
+            "name": "Quickness",
+            "kind": "passive",
+            "description": "1% increased Dodge chance and 2% increased run speed",
+            "cut_off": true
+          }
+        ]
+      }
+    ],
+    "orc": [
+      {
+        "id": "shatter-curse",
+        "name": "Shatter Curse",
+        "kind": "active",
+        "description": "Immunity to Curses and Banes and reduce Magical damage taken for 8 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "orc-11698",
+        "t": 11698.0,
+        "frame": 701880,
+        "sharpness": 3837.96,
+        "codex": true,
+        "block": [
+          321,
+          374
+        ],
+        "icon_band": [
+          327,
+          362
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3837.96,
+          "t": 11698.0,
+          "frame": 701880,
+          "state": "orc-11698"
+        },
+        "readings": [
+          {
+            "name": "Shatter Curse",
+            "kind": "active",
+            "description": "Immunity to Curses and Banes and reduce Magical damage taken for 8 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Shatter Curse",
+            "kind": "active",
+            "description": "Immunity to Curses and Banes and reduce Magical damage taken for 8 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Shatter Curse",
+            "kind": "active",
+            "description": "Immunity to Curses and Banes and reduce Magical damage taken for 8 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "axe-specialization",
+        "name": "Axe Specialization",
+        "kind": "passive",
+        "description": "Axes increase spell and ability critical chance by 1%",
+        "cut_off": false,
+        "variants": [],
+        "state": "orc-11698",
+        "t": 11698.0,
+        "frame": 701880,
+        "sharpness": 3837.96,
+        "codex": true,
+        "block": [
+          374,
+          424
+        ],
+        "icon_band": [
+          380,
+          414
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3837.96,
+          "t": 11698.0,
+          "frame": 701880,
+          "state": "orc-11698"
+        },
+        "readings": [
+          {
+            "name": "Axe Specialization",
+            "kind": "passive",
+            "description": "Axes increase spell and ability critical chance by 1%",
+            "cut_off": false
+          },
+          {
+            "name": "Axe Specialization",
+            "kind": "passive",
+            "description": "Axes increase spell and ability critical chance by 1%",
+            "cut_off": false
+          },
+          {
+            "name": "Axe Specialization",
+            "kind": "passive",
+            "description": "Axes increase spell and ability critical chance by 1%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "hardiness",
+        "name": "Hardiness",
+        "kind": "passive",
+        "description": "Stun durations decreased by 20%",
+        "cut_off": false,
+        "variants": [],
+        "state": "orc-11698",
+        "t": 11698.0,
+        "frame": 701880,
+        "sharpness": 3837.96,
+        "codex": true,
+        "block": [
+          424,
+          502
+        ],
+        "icon_band": [
+          430,
+          461
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3837.96,
+          "t": 11698.0,
+          "frame": 701880,
+          "state": "orc-11698"
+        },
+        "readings": [
+          {
+            "name": "Hardiness",
+            "kind": "passive",
+            "description": "Stun durations decreased by 20%",
+            "cut_off": false
+          },
+          {
+            "name": "Hardiness",
+            "kind": "passive",
+            "description": "Stun durations decreased by 20%",
+            "cut_off": false
+          },
+          {
+            "name": "Hardiness",
+            "kind": "passive",
+            "description": "Stun durations decreased by 20%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "blood-fury",
+        "name": "Blood Fury",
+        "kind": "active",
+        "description": "Increases Attack Power and Spell Power by 10% for 15 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "orc-19798",
+        "t": 19798.5,
+        "frame": 1187910,
+        "sharpness": 3309.98,
+        "codex": false,
+        "block": [
+          360,
+          411
+        ],
+        "icon_band": [
+          366,
+          401
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3309.98,
+          "t": 19798.5,
+          "frame": 1187910,
+          "state": "orc-19798"
+        },
+        "readings": [
+          {
+            "name": "Blood Fury",
+            "kind": "active",
+            "description": "Increases Attack Power and Spell Power by 10% for 15 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Blood Fury",
+            "kind": "active",
+            "description": "Increases Attack Power and Spell Power by 10% for 15 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "shatter-curse",
+        "name": "Shatter Curse",
+        "kind": "active",
+        "description": "Immunity to Curses and Banes and reduce Magical damage taken for 8 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "orc-19798",
+        "t": 19798.5,
+        "frame": 1187910,
+        "sharpness": 3309.98,
+        "codex": false,
+        "block": [
+          411,
+          464
+        ],
+        "icon_band": [
+          417,
+          452
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3309.98,
+          "t": 19798.5,
+          "frame": 1187910,
+          "state": "orc-19798"
+        },
+        "readings": [
+          {
+            "name": "Shatter Curse",
+            "kind": "active",
+            "description": "Immunity to Curses and Banes and reduce Magical damage taken for 8 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Shatter Curse",
+            "kind": "active",
+            "description": "Immunity to Curses and Banes and reduce Magical damage taken for 8 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "axe-specialization",
+        "name": "Axe Specialization",
+        "kind": "passive",
+        "description": "Axes increase spell and ability",
+        "cut_off": true,
+        "variants": [],
+        "state": "orc-19798",
+        "t": 19798.5,
+        "frame": 1187910,
+        "sharpness": 3309.98,
+        "codex": false,
+        "block": [
+          464,
+          502
+        ],
+        "icon_band": [
+          470,
+          495
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3309.98,
+          "t": 19798.5,
+          "frame": 1187910,
+          "state": "orc-19798"
+        },
+        "readings": [
+          {
+            "name": "Axe Specialization",
+            "kind": "passive",
+            "description": "Axes increase spell and ability",
+            "cut_off": true
+          },
+          {
+            "name": "Axe Specialization",
+            "kind": "passive",
+            "description": "Axes increase spell and ability",
+            "cut_off": false
+          }
+        ]
+      }
+    ],
+    "skyborne/high-order": [
+      {
+        "id": "read-ley-line",
+        "name": "Read Ley Line",
+        "kind": "active",
+        "description": "Activate a ley line to gain 100% increased Health and Mana regeneration",
+        "cut_off": false,
+        "variants": [
+          "high-order"
+        ],
+        "state": "skyborne-high-order-11488",
+        "t": 11488.0,
+        "frame": 689280,
+        "sharpness": 3914.74,
+        "codex": true,
+        "block": [
+          318,
+          370
+        ],
+        "icon_band": [
+          324,
+          355
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3914.74,
+          "t": 11488.0,
+          "frame": 689280,
+          "state": "skyborne-high-order-11488"
+        },
+        "readings": [
+          {
+            "name": "Read Ley Line",
+            "kind": "active",
+            "description": "Activate a ley line to gain 100% increased Health and Mana regeneration",
+            "cut_off": false
+          },
+          {
+            "name": "Read Ley Line",
+            "kind": "active",
+            "description": "Activate a ley line to gain 100% increased Health and Mana regeneration",
+            "cut_off": false
+          },
+          {
+            "name": "Read Ley Line",
+            "kind": "active",
+            "description": "Activate a ley line to gain 100% increased Health and Mana regeneration",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "wind-blessed",
+        "name": "Wind Blessed",
+        "kind": "passive",
+        "description": "1% increased melee, ranged, and spellcasting Haste",
+        "cut_off": false,
+        "variants": [
+          "high-order"
+        ],
+        "state": "skyborne-high-order-11488",
+        "t": 11488.0,
+        "frame": 689280,
+        "sharpness": 3914.74,
+        "codex": true,
+        "block": [
+          370,
+          422
+        ],
+        "icon_band": [
+          376,
+          411
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3914.74,
+          "t": 11488.0,
+          "frame": 689280,
+          "state": "skyborne-high-order-11488"
+        },
+        "readings": [
+          {
+            "name": "Wind Blessed",
+            "kind": "passive",
+            "description": "1% increased melee, ranged, and spellcasting Haste",
+            "cut_off": false
+          },
+          {
+            "name": "Wind Blessed",
+            "kind": "passive",
+            "description": "1% increased melee, ranged, and spellcasting Haste",
+            "cut_off": false
+          },
+          {
+            "name": "Wind Blessed",
+            "kind": "passive",
+            "description": "1% increased melee, ranged, and spellcasting Haste",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "elemental-insight",
+        "name": "Elemental Insight",
+        "kind": "passive",
+        "description": "Damage to Elementals increased by 5%",
+        "cut_off": false,
+        "variants": [
+          "high-order"
+        ],
+        "state": "skyborne-high-order-11488",
+        "t": 11488.0,
+        "frame": 689280,
+        "sharpness": 3914.74,
+        "codex": true,
+        "block": [
+          422,
+          502
+        ],
+        "icon_band": [
+          428,
+          463
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3914.74,
+          "t": 11488.0,
+          "frame": 689280,
+          "state": "skyborne-high-order-11488"
+        },
+        "readings": [
+          {
+            "name": "Elemental Insight",
+            "kind": "passive",
+            "description": "Damage to Elementals increased by 5%",
+            "cut_off": false
+          },
+          {
+            "name": "Elemental Insight",
+            "kind": "passive",
+            "description": "Damage to Elementals increased by 5%",
+            "cut_off": false
+          },
+          {
+            "name": "Elemental Insight",
+            "kind": "passive",
+            "description": "Damage to Elementals increased by 5%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "walk-on-air",
+        "name": "Walk on Air",
+        "kind": "active",
+        "description": "Glide downward through the air for 10 sec",
+        "cut_off": false,
+        "variants": [
+          "high-order"
+        ],
+        "state": "skyborne-high-order-11680",
+        "t": 11680.5,
+        "frame": 700830,
+        "sharpness": 3606.07,
+        "codex": false,
+        "block": [
+          359,
+          408
+        ],
+        "icon_band": [
+          365,
+          399
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3606.07,
+          "t": 11680.5,
+          "frame": 700830,
+          "state": "skyborne-high-order-11680"
+        },
+        "readings": [
+          {
+            "name": "Walk on Air",
+            "kind": "active",
+            "description": "Glide downward through the air for 10 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Walk on Air",
+            "kind": "active",
+            "description": "Glide downward through the air for 10 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "read-ley-line",
+        "name": "Read Ley Line",
+        "kind": "active",
+        "description": "Activate a ley line to gain 100% increased Health and Mana regeneration",
+        "cut_off": false,
+        "variants": [
+          "high-order"
+        ],
+        "state": "skyborne-high-order-11680",
+        "t": 11680.5,
+        "frame": 700830,
+        "sharpness": 3606.07,
+        "codex": false,
+        "block": [
+          408,
+          460
+        ],
+        "icon_band": [
+          414,
+          444
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3606.07,
+          "t": 11680.5,
+          "frame": 700830,
+          "state": "skyborne-high-order-11680"
+        },
+        "readings": [
+          {
+            "name": "Read Ley Line",
+            "kind": "active",
+            "description": "Activate a ley line to gain 100% increased Health and Mana regeneration",
+            "cut_off": false
+          },
+          {
+            "name": "Read Ley Line",
+            "kind": "active",
+            "description": "Activate a ley line to gain 100% increased Health and Mana regeneration",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "wind-blessed",
+        "name": "Wind Blessed",
+        "kind": "passive",
+        "description": "1% increased melee, ranged, and",
+        "cut_off": true,
+        "variants": [
+          "high-order"
+        ],
+        "state": "skyborne-high-order-11680",
+        "t": 11680.5,
+        "frame": 700830,
+        "sharpness": 3606.07,
+        "codex": false,
+        "block": [
+          460,
+          502
+        ],
+        "icon_band": [
+          466,
+          495
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3606.07,
+          "t": 11680.5,
+          "frame": 700830,
+          "state": "skyborne-high-order-11680"
+        },
+        "readings": [
+          {
+            "name": "Wind Blessed",
+            "kind": "passive",
+            "description": "1% increased melee, ranged, and",
+            "cut_off": true
+          },
+          {
+            "name": "Wind Blessed",
+            "kind": "passive",
+            "description": "1% increased melee, ranged, and",
+            "cut_off": true
+          }
+        ]
+      }
+    ],
+    "skyborne/windshaper": [
+      {
+        "id": "skysight",
+        "name": "Skysight",
+        "kind": "active",
+        "description": "Receive an Elemental Blessing increasing run speed by 10%",
+        "cut_off": false,
+        "variants": [
+          "windshaper"
+        ],
+        "state": "skyborne-windshaper-22088",
+        "t": 22088.0,
+        "frame": 1325280,
+        "sharpness": 3658.76,
+        "codex": true,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3658.76,
+          "t": 22088.0,
+          "frame": 1325280,
+          "state": "skyborne-windshaper-22088"
+        },
+        "readings": [
+          {
+            "name": "Skysight",
+            "kind": "active",
+            "description": "Receive an Elemental Blessing increasing run speed by 10%",
+            "cut_off": false
+          },
+          {
+            "name": "Skysight",
+            "kind": "active",
+            "description": "Receive an Elemental Blessing increasing run speed by 10%",
+            "cut_off": false
+          },
+          {
+            "name": "Skysight",
+            "kind": "active",
+            "description": "Receive an Elemental Blessing increasing run speed by 10%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "wind-blessed",
+        "name": "Wind Blessed",
+        "kind": "passive",
+        "description": "1% increased melee, ranged, and spellcasting Haste",
+        "cut_off": false,
+        "variants": [
+          "windshaper"
+        ],
+        "state": "skyborne-windshaper-22088",
+        "t": 22088.0,
+        "frame": 1325280,
+        "sharpness": 3658.76,
+        "codex": true,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3658.76,
+          "t": 22088.0,
+          "frame": 1325280,
+          "state": "skyborne-windshaper-22088"
+        },
+        "readings": [
+          {
+            "name": "Wind Blessed",
+            "kind": "passive",
+            "description": "1% increased melee, ranged, and spellcasting Haste",
+            "cut_off": false
+          },
+          {
+            "name": "Wind Blessed",
+            "kind": "passive",
+            "description": "1% increased melee, ranged, and spellcasting Haste",
+            "cut_off": false
+          },
+          {
+            "name": "Wind Blessed",
+            "kind": "passive",
+            "description": "1% increased melee, ranged, and spellcasting Haste",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "elemental-insight",
+        "name": "Elemental Insight",
+        "kind": "passive",
+        "description": "Damage to Elementals increased by 5%",
+        "cut_off": false,
+        "variants": [
+          "windshaper"
+        ],
+        "state": "skyborne-windshaper-22088",
+        "t": 22088.0,
+        "frame": 1325280,
+        "sharpness": 3658.76,
+        "codex": true,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3658.76,
+          "t": 22088.0,
+          "frame": 1325280,
+          "state": "skyborne-windshaper-22088"
+        },
+        "readings": [
+          {
+            "name": "Elemental Insight",
+            "kind": "passive",
+            "description": "Damage to Elementals increased by 5%",
+            "cut_off": false
+          },
+          {
+            "name": "Elemental Insight",
+            "kind": "passive",
+            "description": "Damage to Elementals increased by 5%",
+            "cut_off": false
+          },
+          {
+            "name": "Elemental Insight",
+            "kind": "passive",
+            "description": "Damage to Elementals increased by 5%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "walk-on-air",
+        "name": "Walk on Air",
+        "kind": "active",
+        "description": "Glide downward through the air for 10 sec",
+        "cut_off": false,
+        "variants": [
+          "windshaper"
+        ],
+        "state": "skyborne-windshaper-22090",
+        "t": 22090.0,
+        "frame": 1325400,
+        "sharpness": 3322.65,
+        "codex": false,
+        "block": [
+          359,
+          409
+        ],
+        "icon_band": [
+          365,
+          399
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3322.65,
+          "t": 22090.0,
+          "frame": 1325400,
+          "state": "skyborne-windshaper-22090"
+        },
+        "readings": [
+          {
+            "name": "Walk on Air",
+            "kind": "active",
+            "description": "Glide downward through the air for 10 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Walk on Air",
+            "kind": "active",
+            "description": "Glide downward through the air for 10 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "skysight",
+        "name": "Skysight",
+        "kind": "active",
+        "description": "Receive an Elemental Blessing increasing run speed by 10%",
+        "cut_off": false,
+        "variants": [
+          "windshaper"
+        ],
+        "state": "skyborne-windshaper-22090",
+        "t": 22090.0,
+        "frame": 1325400,
+        "sharpness": 3322.65,
+        "codex": false,
+        "block": [
+          409,
+          460
+        ],
+        "icon_band": [
+          415,
+          447
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3322.65,
+          "t": 22090.0,
+          "frame": 1325400,
+          "state": "skyborne-windshaper-22090"
+        },
+        "readings": [
+          {
+            "name": "Skysight",
+            "kind": "active",
+            "description": "Receive an Elemental Blessing increasing run speed by 10%",
+            "cut_off": false
+          },
+          {
+            "name": "Skysight",
+            "kind": "active",
+            "description": "Receive an Elemental Blessing increasing run speed by 10%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "wind-blessed",
+        "name": "Wind Blessed",
+        "kind": "passive",
+        "description": "1% increased melee, ranged, and",
+        "cut_off": true,
+        "variants": [
+          "windshaper"
+        ],
+        "state": "skyborne-windshaper-22090",
+        "t": 22090.0,
+        "frame": 1325400,
+        "sharpness": 3322.65,
+        "codex": false,
+        "block": [
+          460,
+          502
+        ],
+        "icon_band": [
+          466,
+          495
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3322.65,
+          "t": 22090.0,
+          "frame": 1325400,
+          "state": "skyborne-windshaper-22090"
+        },
+        "readings": [
+          {
+            "name": "Wind Blessed",
+            "kind": "passive",
+            "description": "1% increased melee, ranged, and",
+            "cut_off": true
+          },
+          {
+            "name": "Wind Blessed",
+            "kind": "passive",
+            "description": "1% increased melee, ranged, and",
+            "cut_off": true
+          }
+        ]
+      },
+      {
+        "id": "damage-to-elementals",
+        "name": "Damage to Elementals",
+        "kind": "active",
+        "description": "increased by 5%",
+        "cut_off": false,
+        "variants": [
+          "windshaper"
+        ],
+        "state": "skyborne-windshaper-22094",
+        "t": 22094.0,
+        "frame": 1325640,
+        "sharpness": 4796.47,
+        "codex": false,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 4796.47,
+          "t": 22094.0,
+          "frame": 1325640,
+          "state": "skyborne-windshaper-22094"
+        },
+        "readings": [
+          {
+            "name": "Damage to Elementals",
+            "kind": "active",
+            "description": "increased by 5%",
+            "cut_off": false
+          },
+          {
+            "name": "Damage to Elementals",
+            "kind": "active",
+            "description": "increased by 5%",
+            "cut_off": false
+          }
+        ]
+      }
+    ],
+    "tauren": [
+      {
+        "id": "cultivation",
+        "name": "Cultivation",
+        "kind": "active",
+        "description": "Grow bonus herbs that don't require herbalism to gather",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-11717",
+        "t": 11717.0,
+        "frame": 703020,
+        "sharpness": 3725.88,
+        "codex": true,
+        "block": [
+          318,
+          370
+        ],
+        "icon_band": [
+          324,
+          351
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3725.88,
+          "t": 11717.0,
+          "frame": 703020,
+          "state": "tauren-11717"
+        },
+        "readings": [
+          {
+            "name": "Cultivation",
+            "kind": "active",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "cut_off": false
+          },
+          {
+            "name": "Cultivation",
+            "kind": "active",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "cut_off": false
+          },
+          {
+            "name": "Cultivation",
+            "kind": "active",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "plainsrunning",
+        "name": "Plainsrunning",
+        "kind": "passive",
+        "description": "Gain increased movement speed the longer you stay moving",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-11717",
+        "t": 11717.0,
+        "frame": 703020,
+        "sharpness": 3725.88,
+        "codex": true,
+        "block": [
+          370,
+          422
+        ],
+        "icon_band": [
+          376,
+          411
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3725.88,
+          "t": 11717.0,
+          "frame": 703020,
+          "state": "tauren-11717"
+        },
+        "readings": [
+          {
+            "name": "Plainsrunning",
+            "kind": "passive",
+            "description": "Gain increased movement speed the longer you stay moving",
+            "cut_off": false
+          },
+          {
+            "name": "Plainsrunning",
+            "kind": "passive",
+            "description": "Gain increased movement speed the longer you stay moving",
+            "cut_off": false
+          },
+          {
+            "name": "Plainsrunning",
+            "kind": "passive",
+            "description": "Gain increased movement speed the longer you stay moving",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "endurance",
+        "name": "Endurance",
+        "kind": "passive",
+        "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-11717",
+        "t": 11717.0,
+        "frame": 703020,
+        "sharpness": 3725.88,
+        "codex": true,
+        "block": [
+          422,
+          502
+        ],
+        "icon_band": [
+          428,
+          463
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3725.88,
+          "t": 11717.0,
+          "frame": 703020,
+          "state": "tauren-11717"
+        },
+        "readings": [
+          {
+            "name": "Endurance",
+            "kind": "passive",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "cut_off": false
+          },
+          {
+            "name": "Endurance",
+            "kind": "passive",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "cut_off": false
+          },
+          {
+            "name": "Endurance",
+            "kind": "passive",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "cultivation",
+        "name": "Cultivation",
+        "kind": "active",
+        "description": "Grow bonus herbs that don't require herbalism to gather",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-11724",
+        "t": 11724.5,
+        "frame": 703470,
+        "sharpness": 3735.17,
+        "codex": false,
+        "block": [
+          318,
+          370
+        ],
+        "icon_band": [
+          324,
+          350
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3735.17,
+          "t": 11724.5,
+          "frame": 703470,
+          "state": "tauren-11724"
+        },
+        "readings": [
+          {
+            "name": "Cultivation",
+            "kind": "active",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "cut_off": false
+          },
+          {
+            "name": "Cultivation",
+            "kind": "active",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "plainsrunning",
+        "name": "Plainsrunning",
+        "kind": "passive",
+        "description": "Gain increased movement speed the longer you stay moving",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-11724",
+        "t": 11724.5,
+        "frame": 703470,
+        "sharpness": 3735.17,
+        "codex": false,
+        "block": [
+          370,
+          422
+        ],
+        "icon_band": [
+          376,
+          412
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3735.17,
+          "t": 11724.5,
+          "frame": 703470,
+          "state": "tauren-11724"
+        },
+        "readings": [
+          {
+            "name": "Plainsrunning",
+            "kind": "passive",
+            "description": "Gain increased movement speed the longer you stay moving",
+            "cut_off": false
+          },
+          {
+            "name": "Plainsrunning",
+            "kind": "passive",
+            "description": "Gain increased movement speed the longer you stay moving",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "endurance",
+        "name": "Endurance",
+        "kind": "passive",
+        "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-11724",
+        "t": 11724.5,
+        "frame": 703470,
+        "sharpness": 3735.17,
+        "codex": false,
+        "block": [
+          422,
+          502
+        ],
+        "icon_band": [
+          428,
+          463
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3735.17,
+          "t": 11724.5,
+          "frame": 703470,
+          "state": "tauren-11724"
+        },
+        "readings": [
+          {
+            "name": "Endurance",
+            "kind": "passive",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "cut_off": false
+          },
+          {
+            "name": "Endurance",
+            "kind": "passive",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "increased-movement-speed-the-longer-you-stay-moving",
+        "name": "increased movement speed the longer you stay moving",
+        "kind": "active",
+        "description": "increased movement speed the longer you stay moving",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-11730",
+        "t": 11730.5,
+        "frame": 703830,
+        "sharpness": 4684.75,
+        "codex": false,
+        "block": [
+          288,
+          330
+        ],
+        "icon_band": [
+          293,
+          322
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 4684.75,
+          "t": 11730.5,
+          "frame": 703830,
+          "state": "tauren-11730"
+        },
+        "readings": [
+          {
+            "name": "increased movement speed the longer you stay moving",
+            "kind": "active",
+            "description": "increased movement speed the longer you stay moving",
+            "cut_off": false
+          },
+          {
+            "name": "increased movement speed the longer you stay moving",
+            "kind": "active",
+            "description": "increased movement speed the longer you stay moving",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "endurance",
+        "name": "Endurance",
+        "kind": "passive",
+        "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-11730",
+        "t": 11730.5,
+        "frame": 703830,
+        "sharpness": 4684.75,
+        "codex": false,
+        "block": [
+          330,
+          502
+        ],
+        "icon_band": [
+          336,
+          373
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 4684.75,
+          "t": 11730.5,
+          "frame": 703830,
+          "state": "tauren-11730"
+        },
+        "readings": [
+          {
+            "name": "Endurance",
+            "kind": "passive",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "cut_off": false
+          },
+          {
+            "name": "Endurance",
+            "kind": "passive",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "war-stomp",
+        "name": "War Stomp",
+        "kind": "active",
+        "description": "Stuns nearby enemies for 2 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-22076",
+        "t": 22076.0,
+        "frame": 1324560,
+        "sharpness": 2809.1,
+        "codex": false,
+        "block": [
+          358,
+          408
+        ],
+        "icon_band": [
+          364,
+          398
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2809.1,
+          "t": 22076.0,
+          "frame": 1324560,
+          "state": "tauren-22076"
+        },
+        "readings": [
+          {
+            "name": "War Stomp",
+            "kind": "active",
+            "description": "Stuns nearby enemies for 2 sec",
+            "cut_off": false
+          },
+          {
+            "name": "War Stomp",
+            "kind": "active",
+            "description": "Stuns nearby enemies for 2 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "cultivation",
+        "name": "Cultivation",
+        "kind": "active",
+        "description": "Grow bonus herbs that don't require herbalism to gather",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-22076",
+        "t": 22076.0,
+        "frame": 1324560,
+        "sharpness": 2809.1,
+        "codex": false,
+        "block": [
+          408,
+          460
+        ],
+        "icon_band": [
+          414,
+          442
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2809.1,
+          "t": 22076.0,
+          "frame": 1324560,
+          "state": "tauren-22076"
+        },
+        "readings": [
+          {
+            "name": "Cultivation",
+            "kind": "active",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "cut_off": false
+          },
+          {
+            "name": "Cultivation",
+            "kind": "active",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "plainsrunning",
+        "name": "Plainsrunning",
+        "kind": "passive",
+        "description": "Gain increased movement speed the",
+        "cut_off": true,
+        "variants": [],
+        "state": "tauren-22076",
+        "t": 22076.0,
+        "frame": 1324560,
+        "sharpness": 2809.1,
+        "codex": false,
+        "block": [
+          460,
+          502
+        ],
+        "icon_band": [
+          466,
+          497
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 2809.1,
+          "t": 22076.0,
+          "frame": 1324560,
+          "state": "tauren-22076"
+        },
+        "readings": [
+          {
+            "name": "Plainsrunning",
+            "kind": "passive",
+            "description": "Gain increased movement speed the",
+            "cut_off": true
+          },
+          {
+            "name": "Plainsrunning",
+            "kind": "passive",
+            "description": "Gain increased movement speed the",
+            "cut_off": true
+          }
+        ]
+      },
+      {
+        "id": "cultivation",
+        "name": "Cultivation",
+        "kind": "active",
+        "description": "Grow bonus herbs that don't require herbalism to gather",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-22078",
+        "t": 22078.0,
+        "frame": 1324680,
+        "sharpness": 3760.97,
+        "codex": false,
+        "block": [
+          302,
+          370
+        ],
+        "icon_band": [
+          308,
+          351
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3760.97,
+          "t": 22078.0,
+          "frame": 1324680,
+          "state": "tauren-22078"
+        },
+        "readings": [
+          {
+            "name": "Cultivation",
+            "kind": "active",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "cut_off": false
+          },
+          {
+            "name": "Cultivation",
+            "kind": "active",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "plainsrunning",
+        "name": "Plainsrunning",
+        "kind": "passive",
+        "description": "Gain increased movement speed the longer you stay moving",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-22078",
+        "t": 22078.0,
+        "frame": 1324680,
+        "sharpness": 3760.97,
+        "codex": false,
+        "block": [
+          370,
+          422
+        ],
+        "icon_band": [
+          376,
+          412
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3760.97,
+          "t": 22078.0,
+          "frame": 1324680,
+          "state": "tauren-22078"
+        },
+        "readings": [
+          {
+            "name": "Plainsrunning",
+            "kind": "passive",
+            "description": "Gain increased movement speed the longer you stay moving",
+            "cut_off": false
+          },
+          {
+            "name": "Plainsrunning",
+            "kind": "passive",
+            "description": "Gain increased movement speed the longer you stay moving",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "endurance",
+        "name": "Endurance",
+        "kind": "passive",
+        "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-22078",
+        "t": 22078.0,
+        "frame": 1324680,
+        "sharpness": 3760.97,
+        "codex": false,
+        "block": [
+          422,
+          502
+        ],
+        "icon_band": [
+          428,
+          463
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3760.97,
+          "t": 22078.0,
+          "frame": 1324680,
+          "state": "tauren-22078"
+        },
+        "readings": [
+          {
+            "name": "Endurance",
+            "kind": "passive",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "cut_off": false
+          },
+          {
+            "name": "Endurance",
+            "kind": "passive",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "cultivation",
+        "name": "Cultivation",
+        "kind": "active",
+        "description": "Grow bonus herbs that don't require herbalism to gather",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-22080",
+        "t": 22080.0,
+        "frame": 1324800,
+        "sharpness": 3744.01,
+        "codex": false,
+        "block": [
+          312,
+          370
+        ],
+        "icon_band": [
+          318,
+          350
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3744.01,
+          "t": 22080.0,
+          "frame": 1324800,
+          "state": "tauren-22080"
+        },
+        "readings": [
+          {
+            "name": "Cultivation",
+            "kind": "active",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "cut_off": false
+          },
+          {
+            "name": "Cultivation",
+            "kind": "active",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "plainsrunning",
+        "name": "Plainsrunning",
+        "kind": "passive",
+        "description": "Gain increased movement speed the longer you stay moving",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-22080",
+        "t": 22080.0,
+        "frame": 1324800,
+        "sharpness": 3744.01,
+        "codex": false,
+        "block": [
+          370,
+          422
+        ],
+        "icon_band": [
+          376,
+          412
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3744.01,
+          "t": 22080.0,
+          "frame": 1324800,
+          "state": "tauren-22080"
+        },
+        "readings": [
+          {
+            "name": "Plainsrunning",
+            "kind": "passive",
+            "description": "Gain increased movement speed the longer you stay moving",
+            "cut_off": false
+          },
+          {
+            "name": "Plainsrunning",
+            "kind": "passive",
+            "description": "Gain increased movement speed the longer you stay moving",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "endurance",
+        "name": "Endurance",
+        "kind": "passive",
+        "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+        "cut_off": false,
+        "variants": [],
+        "state": "tauren-22080",
+        "t": 22080.0,
+        "frame": 1324800,
+        "sharpness": 3744.01,
+        "codex": false,
+        "block": [
+          422,
+          502
+        ],
+        "icon_band": [
+          428,
+          463
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3744.01,
+          "t": 22080.0,
+          "frame": 1324800,
+          "state": "tauren-22080"
+        },
+        "readings": [
+          {
+            "name": "Endurance",
+            "kind": "passive",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "cut_off": false
+          },
+          {
+            "name": "Endurance",
+            "kind": "passive",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "cut_off": false
+          }
+        ]
+      }
+    ],
+    "troll": [
+      {
+        "id": "damage-to-beasts",
+        "name": "Damage to Beasts",
+        "kind": "active",
+        "description": "increased by 5%",
+        "cut_off": false,
+        "variants": [],
+        "state": "troll-11740",
+        "t": 11740.0,
+        "frame": 704400,
+        "sharpness": 4562.33,
+        "codex": false,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 4562.33,
+          "t": 11740.0,
+          "frame": 704400,
+          "state": "troll-11740"
+        },
+        "readings": [
+          {
+            "name": "Damage to Beasts",
+            "kind": "active",
+            "description": "increased by 5%",
+            "cut_off": false
+          },
+          {
+            "name": "Damage to Beasts",
+            "kind": "active",
+            "description": "increased by 5%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "regeneration",
+        "name": "Regeneration",
+        "kind": "passive",
+        "description": "10% of Health regeneration continues during combat",
+        "cut_off": false,
+        "variants": [],
+        "state": "troll-11740",
+        "t": 11740.0,
+        "frame": 704400,
+        "sharpness": 4562.33,
+        "codex": true,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 4562.33,
+          "t": 11740.0,
+          "frame": 704400,
+          "state": "troll-11740"
+        },
+        "readings": [
+          {
+            "name": "Regeneration",
+            "kind": "passive",
+            "description": "10% of Health regeneration continues during combat",
+            "cut_off": false
+          },
+          {
+            "name": "Regeneration",
+            "kind": "passive",
+            "description": "10% of Health regeneration continues during combat",
+            "cut_off": false
+          },
+          {
+            "name": "Regeneration",
+            "kind": "passive",
+            "description": "10% of Health regeneration continues during combat",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "beast-slaying",
+        "name": "Beast Slaying",
+        "kind": "passive",
+        "description": "Damage to Beasts increased by 5%.",
+        "cut_off": true,
+        "variants": [],
+        "state": "troll-11740",
+        "t": 11740.0,
+        "frame": 704400,
+        "sharpness": 4562.33,
+        "codex": true,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 0.3,
+          "sharpness": 4562.33,
+          "t": 11740.0,
+          "frame": 704400,
+          "state": "troll-11740"
+        },
+        "readings": [
+          {
+            "name": "Beast Slaying",
+            "kind": "passive",
+            "description": "Damage to Beasts increased by 5%.",
+            "cut_off": true
+          }
+        ]
+      },
+      {
+        "id": "berserking",
+        "name": "Berserking",
+        "kind": "active",
+        "description": "Increases casting and attack speed by 10% for 10 sec",
+        "cut_off": false,
+        "variants": [],
+        "state": "troll-11742",
+        "t": 11742.0,
+        "frame": 704520,
+        "sharpness": 3119.37,
+        "codex": false,
+        "block": [
+          360,
+          412
+        ],
+        "icon_band": [
+          366,
+          400
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3119.37,
+          "t": 11742.0,
+          "frame": 704520,
+          "state": "troll-11742"
+        },
+        "readings": [
+          {
+            "name": "Berserking",
+            "kind": "active",
+            "description": "Increases casting and attack speed by 10% for 10 sec",
+            "cut_off": false
+          },
+          {
+            "name": "Berserking",
+            "kind": "active",
+            "description": "Increases casting and attack speed by 10% for 10 sec",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "rapid-regeneration",
+        "name": "Rapid Regeneration",
+        "kind": "active",
+        "description": "Regenerate 50% of maximum Health over time",
+        "cut_off": false,
+        "variants": [],
+        "state": "troll-11742",
+        "t": 11742.0,
+        "frame": 704520,
+        "sharpness": 3119.37,
+        "codex": false,
+        "block": [
+          412,
+          502
+        ],
+        "icon_band": [
+          418,
+          452
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3119.37,
+          "t": 11742.0,
+          "frame": 704520,
+          "state": "troll-11742"
+        },
+        "readings": [
+          {
+            "name": "Rapid Regeneration",
+            "kind": "active",
+            "description": "Regenerate 50% of maximum Health over time",
+            "cut_off": false
+          },
+          {
+            "name": "Rapid Regeneration",
+            "kind": "active",
+            "description": "Regenerate 50% of maximum Health over time",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "beast-slaying",
+        "name": "Beast Slaying",
+        "kind": "passive",
+        "description": "Damage to Beasts increased by",
+        "cut_off": true,
+        "variants": [],
+        "state": "troll-11742",
+        "t": 11742.0,
+        "frame": 704520,
+        "sharpness": 3119.37,
+        "codex": false,
+        "block": null,
+        "icon_band": null,
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3119.37,
+          "t": 11742.0,
+          "frame": 704520,
+          "state": "troll-11742"
+        },
+        "readings": [
+          {
+            "name": "Beast Slaying",
+            "kind": "passive",
+            "description": "Damage to Beasts increased by",
+            "cut_off": true
+          },
+          {
+            "name": "Beast Slaying",
+            "kind": "passive",
+            "description": "Damage to Beasts increased by",
+            "cut_off": true
+          }
+        ]
+      },
+      {
+        "id": "rapid-regeneration",
+        "name": "Rapid Regeneration",
+        "kind": "active",
+        "description": "Regenerate 50% of maximum Health over time",
+        "cut_off": false,
+        "variants": [],
+        "state": "troll-11744",
+        "t": 11744.0,
+        "frame": 704640,
+        "sharpness": 3564.59,
+        "codex": false,
+        "block": [
+          322,
+          374
+        ],
+        "icon_band": [
+          328,
+          363
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3564.59,
+          "t": 11744.0,
+          "frame": 704640,
+          "state": "troll-11744"
+        },
+        "readings": [
+          {
+            "name": "Rapid Regeneration",
+            "kind": "active",
+            "description": "Regenerate 50% of maximum Health over time",
+            "cut_off": false
+          },
+          {
+            "name": "Rapid Regeneration",
+            "kind": "active",
+            "description": "Regenerate 50% of maximum Health over time",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "beast-slaying",
+        "name": "Beast Slaying",
+        "kind": "passive",
+        "description": "Damage to Beasts increased by 5%",
+        "cut_off": false,
+        "variants": [],
+        "state": "troll-11744",
+        "t": 11744.0,
+        "frame": 704640,
+        "sharpness": 3564.59,
+        "codex": false,
+        "block": [
+          374,
+          425
+        ],
+        "icon_band": [
+          380,
+          410
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3564.59,
+          "t": 11744.0,
+          "frame": 704640,
+          "state": "troll-11744"
+        },
+        "readings": [
+          {
+            "name": "Beast Slaying",
+            "kind": "passive",
+            "description": "Damage to Beasts increased by 5%",
+            "cut_off": false
+          },
+          {
+            "name": "Beast Slaying",
+            "kind": "passive",
+            "description": "Damage to Beasts increased by 5%",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "regeneration",
+        "name": "Regeneration",
+        "kind": "passive",
+        "description": "10% of Health regeneration continues during combat",
+        "cut_off": false,
+        "variants": [],
+        "state": "troll-11744",
+        "t": 11744.0,
+        "frame": 704640,
+        "sharpness": 3564.59,
+        "codex": false,
+        "block": [
+          425,
+          502
+        ],
+        "icon_band": [
+          431,
+          466
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3564.59,
+          "t": 11744.0,
+          "frame": 704640,
+          "state": "troll-11744"
+        },
+        "readings": [
+          {
+            "name": "Regeneration",
+            "kind": "passive",
+            "description": "10% of Health regeneration continues during combat",
+            "cut_off": false
+          },
+          {
+            "name": "Regeneration",
+            "kind": "passive",
+            "description": "10% of Health regeneration continues during combat",
+            "cut_off": false
+          }
+        ]
+      }
+    ],
+    "undead": [
+      {
+        "id": "cannibalize",
+        "name": "Cannibalize",
+        "kind": "active",
+        "description": "Consume corpses to regenerate 35% Health and Mana over time",
+        "cut_off": false,
+        "variants": [],
+        "state": "undead-11706",
+        "t": 11706.0,
+        "frame": 702360,
+        "sharpness": 3680.64,
+        "codex": true,
+        "block": [
+          312,
+          370
+        ],
+        "icon_band": [
+          318,
+          360
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3680.64,
+          "t": 11706.0,
+          "frame": 702360,
+          "state": "undead-11706"
+        },
+        "readings": [
+          {
+            "name": "Cannibalize",
+            "kind": "active",
+            "description": "Consume corpses to regenerate 35% Health and Mana over time",
+            "cut_off": false
+          },
+          {
+            "name": "Cannibalize",
+            "kind": "active",
+            "description": "Consume corpses to regenerate 35% Health and Mana over time",
+            "cut_off": false
+          },
+          {
+            "name": "Cannibalize",
+            "kind": "active",
+            "description": "Consume corpses to regenerate 35% Health and Mana over time",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "underwater-breathing",
+        "name": "Underwater Breathing",
+        "kind": "passive",
+        "description": "Breathe 300% longer underwater",
+        "cut_off": false,
+        "variants": [],
+        "state": "undead-11706",
+        "t": 11706.0,
+        "frame": 702360,
+        "sharpness": 3680.64,
+        "codex": true,
+        "block": [
+          370,
+          422
+        ],
+        "icon_band": [
+          376,
+          411
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3680.64,
+          "t": 11706.0,
+          "frame": 702360,
+          "state": "undead-11706"
+        },
+        "readings": [
+          {
+            "name": "Underwater Breathing",
+            "kind": "passive",
+            "description": "Breathe 300% longer underwater",
+            "cut_off": false
+          },
+          {
+            "name": "Underwater Breathing",
+            "kind": "passive",
+            "description": "Breathe 300% longer underwater",
+            "cut_off": false
+          },
+          {
+            "name": "Underwater Breathing",
+            "kind": "passive",
+            "description": "Breathe 300% longer underwater",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "touch-of-the-grave",
+        "name": "Touch of the Grave",
+        "kind": "passive",
+        "description": "Sometimes drain health with your attacks",
+        "cut_off": false,
+        "variants": [],
+        "state": "undead-11706",
+        "t": 11706.0,
+        "frame": 702360,
+        "sharpness": 3680.64,
+        "codex": true,
+        "block": [
+          422,
+          502
+        ],
+        "icon_band": [
+          428,
+          461
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3680.64,
+          "t": 11706.0,
+          "frame": 702360,
+          "state": "undead-11706"
+        },
+        "readings": [
+          {
+            "name": "Touch of the Grave",
+            "kind": "passive",
+            "description": "Sometimes drain health with your attacks",
+            "cut_off": false
+          },
+          {
+            "name": "Touch of the Grave",
+            "kind": "passive",
+            "description": "Sometimes drain health with your attacks",
+            "cut_off": false
+          },
+          {
+            "name": "Touch of the Grave",
+            "kind": "passive",
+            "description": "Sometimes drain health with your attacks",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "breathe-300-longer-underwater",
+        "name": "Breathe 300% longer underwater",
+        "kind": "active",
+        "description": "underwater",
+        "cut_off": false,
+        "variants": [],
+        "state": "undead-11732",
+        "t": 11732.0,
+        "frame": 703920,
+        "sharpness": 4390.23,
+        "codex": false,
+        "block": [
+          288,
+          332
+        ],
+        "icon_band": [
+          294,
+          336
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 4390.23,
+          "t": 11732.0,
+          "frame": 703920,
+          "state": "undead-11732"
+        },
+        "readings": [
+          {
+            "name": "Breathe 300% longer underwater",
+            "kind": "active",
+            "description": "underwater",
+            "cut_off": false
+          },
+          {
+            "name": "Breathe 300% longer underwater",
+            "kind": "active",
+            "description": "underwater",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "touch-of-the-grave",
+        "name": "Touch of the Grave",
+        "kind": "passive",
+        "description": "Sometimes drain health with your attacks",
+        "cut_off": false,
+        "variants": [],
+        "state": "undead-11732",
+        "t": 11732.0,
+        "frame": 703920,
+        "sharpness": 4390.23,
+        "codex": false,
+        "block": [
+          332,
+          502
+        ],
+        "icon_band": [
+          338,
+          370
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 4390.23,
+          "t": 11732.0,
+          "frame": 703920,
+          "state": "undead-11732"
+        },
+        "readings": [
+          {
+            "name": "Touch of the Grave",
+            "kind": "passive",
+            "description": "Sometimes drain health with your attacks",
+            "cut_off": false
+          },
+          {
+            "name": "Touch of the Grave",
+            "kind": "passive",
+            "description": "Sometimes drain health with your attacks",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "will-of-the-forsaken",
+        "name": "Will of the Forsaken",
+        "kind": "active",
+        "description": "Removes Charm, Fear, and Sleep",
+        "cut_off": false,
+        "variants": [],
+        "state": "undead-13502",
+        "t": 13502.5,
+        "frame": 810150,
+        "sharpness": 3304.29,
+        "codex": false,
+        "block": [
+          359,
+          408
+        ],
+        "icon_band": [
+          365,
+          399
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3304.29,
+          "t": 13502.5,
+          "frame": 810150,
+          "state": "undead-13502"
+        },
+        "readings": [
+          {
+            "name": "Will of the Forsaken",
+            "kind": "active",
+            "description": "Removes Charm, Fear, and Sleep",
+            "cut_off": false
+          },
+          {
+            "name": "Will of the Forsaken",
+            "kind": "active",
+            "description": "Removes Charm, Fear, and Sleep",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "cannibalize",
+        "name": "Cannibalize",
+        "kind": "active",
+        "description": "Consume corpses to regenerate 35% Health and Mana over time",
+        "cut_off": false,
+        "variants": [],
+        "state": "undead-13502",
+        "t": 13502.5,
+        "frame": 810150,
+        "sharpness": 3304.29,
+        "codex": false,
+        "block": [
+          408,
+          460
+        ],
+        "icon_band": [
+          414,
+          449
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3304.29,
+          "t": 13502.5,
+          "frame": 810150,
+          "state": "undead-13502"
+        },
+        "readings": [
+          {
+            "name": "Cannibalize",
+            "kind": "active",
+            "description": "Consume corpses to regenerate 35% Health and Mana over time",
+            "cut_off": false
+          },
+          {
+            "name": "Cannibalize",
+            "kind": "active",
+            "description": "Consume corpses to regenerate 35% Health and Mana over time",
+            "cut_off": false
+          }
+        ]
+      },
+      {
+        "id": "underwater-breathing",
+        "name": "Underwater Breathing",
+        "kind": "passive",
+        "description": "Breathe 300% longer",
+        "cut_off": false,
+        "variants": [],
+        "state": "undead-13502",
+        "t": 13502.5,
+        "frame": 810150,
+        "sharpness": 3304.29,
+        "codex": false,
+        "block": [
+          460,
+          502
+        ],
+        "icon_band": [
+          466,
+          494
+        ],
+        "source": {
+          "confidence": 1.0,
+          "sharpness": 3304.29,
+          "t": 13502.5,
+          "frame": 810150,
+          "state": "undead-13502"
+        },
+        "readings": [
+          {
+            "name": "Underwater Breathing",
+            "kind": "passive",
+            "description": "Breathe 300% longer",
+            "cut_off": false
+          },
+          {
+            "name": "Underwater Breathing",
+            "kind": "passive",
+            "description": "Breathe 300% longer",
+            "cut_off": false
+          }
+        ]
+      }
+    ]
+  }
+}

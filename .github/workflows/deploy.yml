@@ -27,6 +27,9 @@ jobs:
       # serializer output byte-for-byte. Fails the deploy on bad data.
       - run: uv run python validate.py --check ../data/talents/*.json
         working-directory: pipeline
+      # Same rule for races (docs/DATA-SCHEMA-RACES.md section 7, R12 and M1-M4).
+      - run: uv run python validate_races.py --check ../data/races/*.json
+        working-directory: pipeline
       - uses: actions/setup-node@v7
         with:
           node-version: 22

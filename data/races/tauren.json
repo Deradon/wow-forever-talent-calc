@@ -1,0 +1,205 @@
+{
+  "$schema": "../schema/race.schema.json",
+  "schemaVersion": 1,
+  "race": "tauren",
+  "raceName": "Tauren",
+  "faction": "horde",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T18:20:52Z",
+  "classes": ["druid", "hunter", "shaman", "warrior"],
+  "classesSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 11720.0,
+    "frame": 703200,
+    "crop": "data/review/races/tauren/_classbar.png",
+    "panel": "class-bar",
+    "confidence": 1.0,
+    "reader": "opencv-classbar",
+    "reviewed": false,
+    "note": "lit/greyed separation margin 23.6"
+  },
+  "lore": "Always the tauren strive to preserve the balance of nature and heed the will of their goddess, the Earth Mother. Recently attacked by murderous centaur, the tauren would have been wiped out, save for a chance encounter with the orcs, who helped defeat the interlopers. To honor this blood-debt.",
+  "loreComplete": true,
+  "loreSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 11730.5,
+    "frame": 703830,
+    "crop": "data/review/races/tauren/_panel.png",
+    "panel": "race-panel",
+    "confidence": 1.0,
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+    "reviewed": false
+  },
+  "traits": [
+    {
+      "id": "war-stomp",
+      "name": "War Stomp",
+      "kind": "active",
+      "order": 0,
+      "description": "Stuns nearby enemies for 2 sec",
+      "icon": "crop-war-stomp",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/tauren/war-stomp.icon.png",
+      "classic": {
+        "status": "same",
+        "classicName": "War Stomp",
+        "classicText": "Stuns up to 5 nearby enemies for 2 sec",
+        "note": "2 sec stun on nearby enemies in both; Classic caps it at 5 targets; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["classic-unchanged"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22076.0,
+        "frame": 1324560,
+        "crop": "data/review/races/tauren/war-stomp.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "War Stomp",
+            "description": "Stuns nearby enemies for 2 sec",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "War Stomp",
+            "description": "Stuns nearby enemies for 2 sec",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "cultivation",
+      "name": "Cultivation",
+      "kind": "active",
+      "order": 1,
+      "description": "Grow bonus herbs that don't require herbalism to gather",
+      "icon": "crop-cultivation",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/tauren/cultivation.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Cultivation",
+        "classicText": "Herbalism skill increased by 15",
+        "note": "Classic Era version is passive; Classic is +15 Herbalism skill; Forever grows bonus herbs that need no Herbalism at all; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22078.0,
+        "frame": 1324680,
+        "crop": "data/review/races/tauren/cultivation.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Cultivation",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cultivation",
+            "description": "Grow bonus herbs that don't require herbalism to gather",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "plainsrunning",
+      "name": "Plainsrunning",
+      "kind": "passive",
+      "order": 2,
+      "description": "Gain increased movement speed the longer you stay moving",
+      "icon": "crop-plainsrunning",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/tauren/plainsrunning.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era racial called Plainsrunning for this race"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22078.0,
+        "frame": 1324680,
+        "crop": "data/review/races/tauren/plainsrunning.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Plainsrunning",
+            "description": "Gain increased movement speed the longer you stay moving",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Plainsrunning",
+            "description": "Gain increased movement speed the longer you stay moving",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "endurance",
+      "name": "Endurance",
+      "kind": "passive",
+      "order": 3,
+      "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+      "icon": "crop-endurance",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/tauren/endurance.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Endurance",
+        "classicText": "Base health increased by 5%",
+        "note": "Classic is +5% base health; Forever adds 1% Hit Chance; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11730.5,
+        "frame": 703830,
+        "crop": "data/review/races/tauren/endurance.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Endurance",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Endurance",
+            "description": "Total Health increased by 5% and Hit Chance increased by 1%",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    }
+  ],
+  "complete": true,
+  "notes": ["BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed."]
+}

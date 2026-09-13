@@ -1,0 +1,51 @@
+{
+  "source": "Hand verdicts by the data lead, 2026-09-13, comparing the Forever text in data/races/*.json against the Classic Era racial the same name denotes.",
+  "verified": false,
+  "why": "racials.json holds paraphrases written from memory, so a machine text diff can only say 'the wording differs', which is true of every entry and therefore useless. These verdicts are the judgement a reader would make, recorded once so the pipeline can attach it. Every one of them is unverified: replace the lot as soon as a sourced Classic racial list or a DB2 dump exists.",
+  "statuses": {
+    "same": "the effect is the Classic one; only the wording was modernised",
+    "changed": "the effect itself differs (numbers, resources or mechanics)",
+    "unknown": "not decidable from memory"
+  },
+  "races": {
+    "human": {
+      "perception": { "status": "same", "note": "Classic also detects stealth for 20 sec; wording modernised" },
+      "sword-specialization": { "status": "changed", "note": "Classic gives +5 sword weapon skill; Forever gives 2% spell and ability critical chance" },
+      "the-human-spirit": { "status": "same", "note": "5% Spirit in both" }
+    },
+    "dwarf": {
+      "stoneform": { "status": "changed", "note": "Classic removes bleed, poison and disease and adds 10% armor; Forever grants immunity to them and reduces physical damage taken" },
+      "find-treasure": { "status": "same", "note": "minimap treasure tracking in both; Classic is a toggle" }
+    },
+    "night-elf": {
+      "shadowmeld": { "status": "same", "note": "stealth while standing still in both" },
+      "quickness": { "status": "changed", "note": "Classic is 1% dodge only; Forever adds 2% run speed" },
+      "wisp-spirit": { "status": "changed", "note": "Classic 50% run speed while dead, Forever 75%" }
+    },
+    "gnome": {
+      "escape-artist": { "status": "changed", "note": "Classic escapes an active root or snare; Forever grants a brief immunity to them" },
+      "expansive-mind": { "status": "changed", "note": "Classic is +5% Intellect; Forever is +5% maximum Mana, Rage or Energy, so it works for every class" },
+      "engineering-specialization": { "status": "changed", "note": "Classic is +15 Engineering skill; Forever makes engineering devices more reliable" }
+    },
+    "orc": {
+      "blood-fury": { "status": "changed", "note": "Classic gives flat, level-scaled melee attack power and reduces healing taken; Forever gives 10% Attack Power and Spell Power with no healing penalty in the text" },
+      "axe-specialization": { "status": "changed", "note": "Classic gives +5 axe weapon skill; Forever gives 1% spell and ability critical chance" },
+      "hardiness": { "status": "changed", "note": "Classic reduces stun duration by 25%, Forever by 20%" }
+    },
+    "undead": {
+      "will-of-the-forsaken": { "status": "changed", "note": "Classic is a 5 sec immunity to Charm, Fear and Sleep on a 2 min cooldown; Forever removes those effects, with no immunity window in the text" },
+      "cannibalize": { "status": "changed", "note": "Classic restores health only; Forever restores 35% Health and Mana" },
+      "underwater-breathing": { "status": "same", "note": "300% longer underwater breath in both" }
+    },
+    "tauren": {
+      "war-stomp": { "status": "same", "note": "2 sec stun on nearby enemies in both; Classic caps it at 5 targets" },
+      "cultivation": { "status": "changed", "note": "Classic is +15 Herbalism skill; Forever grows bonus herbs that need no Herbalism at all" },
+      "endurance": { "status": "changed", "note": "Classic is +5% base health; Forever adds 1% Hit Chance" }
+    },
+    "troll": {
+      "berserking": { "status": "changed", "note": "Classic scales from 10% to 30% with missing health; Forever is a flat 10%" },
+      "regeneration": { "status": "changed", "note": "Classic is +10% health regeneration of which 10% continues in combat; Forever keeps only the in-combat clause" },
+      "beast-slaying": { "status": "same", "note": "5% more damage to beasts in both" }
+    }
+  }
+}

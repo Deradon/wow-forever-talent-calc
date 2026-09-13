@@ -1,0 +1,276 @@
+{
+  "$schema": "../schema/race.schema.json",
+  "schemaVersion": 1,
+  "race": "skyborne",
+  "raceName": "Skyborne",
+  "faction": "neutral",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T18:20:52Z",
+  "variants": [
+    {
+      "id": "high-order",
+      "name": "High Order Skyborne",
+      "faction": "alliance",
+      "classes": ["druid", "hunter", "mage", "rogue", "warrior"],
+      "lore": "The High Order is made up of the",
+      "loreComplete": false
+    },
+    {
+      "id": "windshaper",
+      "name": "Windshaper Skyborne",
+      "faction": "horde",
+      "classes": ["druid", "hunter", "rogue", "shaman", "warrior"],
+      "lore": "The Windshapers are the descendants of the first shen'dorei high elves to receive the wind spirits' gift of elemental skysight. A new generation of Windshapers is called to Azeroth from their home within Skywall to solve the mystery of what became of their missing elemental mentors, and will stop at nothing to see the wind spirits restored and their way of life preserved.",
+      "loreComplete": true
+    }
+  ],
+  "classes": ["druid", "hunter", "mage", "rogue", "shaman", "warrior"],
+  "classesSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 11682.0,
+    "frame": 700920,
+    "crop": "data/review/races/skyborne/_classbar.png",
+    "panel": "class-bar",
+    "confidence": 1.0,
+    "reader": "opencv-classbar",
+    "reviewed": false,
+    "note": "lit/greyed separation margin 21.3"
+  },
+  "traits": [
+    {
+      "id": "walk-on-air",
+      "name": "Walk on Air",
+      "kind": "active",
+      "order": 0,
+      "variants": ["high-order", "windshaper"],
+      "description": "Glide downward through the air for 10 sec",
+      "icon": "crop-walk-on-air",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/skyborne/walk-on-air.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "New in Forever; no Classic Era counterpart exists, so every Skyborne trait is 'new' by construction."
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11680.5,
+        "frame": 700830,
+        "crop": "data/review/races/skyborne/walk-on-air.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Walk on Air",
+            "description": "Glide downward through the air for 10 sec",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Walk on Air",
+            "description": "Glide downward through the air for 10 sec",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "read-ley-line",
+      "name": "Read Ley Line",
+      "kind": "active",
+      "order": 1,
+      "variants": ["high-order"],
+      "description": "Activate a ley line to gain 100% increased Health and Mana regeneration",
+      "icon": "crop-read-ley-line",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/skyborne/read-ley-line.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "New in Forever; no Classic Era counterpart exists, so every Skyborne trait is 'new' by construction."
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11488.0,
+        "frame": 689280,
+        "crop": "data/review/races/skyborne/read-ley-line.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Read Ley Line",
+            "description": "Activate a ley line to gain 100% increased Health and Mana regeneration",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Read Ley Line",
+            "description": "Activate a ley line to gain 100% increased Health and Mana regeneration",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Read Ley Line",
+            "description": "Activate a ley line to gain 100% increased Health and Mana regeneration",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "skysight",
+      "name": "Skysight",
+      "kind": "active",
+      "order": 2,
+      "variants": ["windshaper"],
+      "description": "Receive an Elemental Blessing increasing run speed by 10%",
+      "icon": "crop-skysight",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/skyborne/skysight.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "New in Forever; no Classic Era counterpart exists, so every Skyborne trait is 'new' by construction."
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22088.0,
+        "frame": 1325280,
+        "crop": "data/review/races/skyborne/skysight.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Skysight",
+            "description": "Receive an Elemental Blessing increasing run speed by 10%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Skysight",
+            "description": "Receive an Elemental Blessing increasing run speed by 10%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Skysight",
+            "description": "Receive an Elemental Blessing increasing run speed by 10%",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "wind-blessed",
+      "name": "Wind Blessed",
+      "kind": "passive",
+      "order": 3,
+      "variants": ["high-order", "windshaper"],
+      "description": "1% increased melee, ranged, and spellcasting Haste",
+      "icon": "crop-wind-blessed",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/skyborne/wind-blessed.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "New in Forever; no Classic Era counterpart exists, so every Skyborne trait is 'new' by construction."
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11488.0,
+        "frame": 689280,
+        "crop": "data/review/races/skyborne/wind-blessed.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Wind Blessed",
+            "description": "1% increased melee, ranged, and spellcasting Haste",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Wind Blessed",
+            "description": "1% increased melee, ranged, and spellcasting Haste",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Wind Blessed",
+            "description": "1% increased melee, ranged, and spellcasting Haste",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "elemental-insight",
+      "name": "Elemental Insight",
+      "kind": "passive",
+      "order": 4,
+      "variants": ["high-order", "windshaper"],
+      "description": "Damage to Elementals increased by 5%",
+      "icon": "crop-elemental-insight",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/skyborne/elemental-insight.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "New in Forever; no Classic Era counterpart exists, so every Skyborne trait is 'new' by construction."
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11488.0,
+        "frame": 689280,
+        "crop": "data/review/races/skyborne/elemental-insight.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Elemental Insight",
+            "description": "Damage to Elementals increased by 5%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Elemental Insight",
+            "description": "Damage to Elementals increased by 5%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "name": "Elemental Insight",
+            "description": "Damage to Elementals increased by 5%",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    }
+  ],
+  "complete": true,
+  "notes": [
+    "Skyborne is one race with an Alliance variant (High Order) and a Horde variant (Windshaper). Shared traits carry both variant ids; the class lists differ, see variants[].classes.",
+    "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed."
+  ]
+}

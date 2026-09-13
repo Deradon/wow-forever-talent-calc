@@ -1,0 +1,206 @@
+{
+  "$schema": "../schema/race.schema.json",
+  "schemaVersion": 1,
+  "race": "human",
+  "raceName": "Human",
+  "faction": "alliance",
+  "dataSource": "video",
+  "generatedAt": "2026-09-13T18:20:52Z",
+  "classes": ["hunter", "mage", "paladin", "priest", "rogue", "warlock", "warrior"],
+  "classesSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 11655.5,
+    "frame": 699330,
+    "crop": "data/review/races/human/_classbar.png",
+    "panel": "class-bar",
+    "confidence": 1.0,
+    "reader": "opencv-classbar",
+    "reviewed": false,
+    "note": "lit/greyed separation margin 24.8"
+  },
+  "lore": "Humans are a young race, and thus highly versatile, mastering the arts of combat, craftsmanship, and magic with stunning efficiency. The humans' valor and optimism have led them to build some of the world's greatest kingdoms. In this troubled era, after generations of conflict, humanity seeks to rekindle its",
+  "loreComplete": false,
+  "loreSource": {
+    "kind": "video",
+    "video": "DxtVEhjyROU",
+    "t": 21957.0,
+    "frame": 1317420,
+    "crop": "data/review/races/human/_panel.png",
+    "panel": "race-panel",
+    "confidence": 1.0,
+    "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+    "reviewed": false,
+    "note": "paragraph continues past the box edge"
+  },
+  "traits": [
+    {
+      "id": "will-to-survive",
+      "name": "Will to Survive",
+      "kind": "active",
+      "order": 0,
+      "description": "Remove Stuns",
+      "icon": "crop-will-to-survive",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/human/will-to-survive.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era racial called Will to Survive for this race"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21956.0,
+        "frame": 1317360,
+        "crop": "data/review/races/human/will-to-survive.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Will to Survive",
+            "description": "Remove Stuns",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Will to Survive",
+            "description": "Remove Stuns",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "perception",
+      "name": "Perception",
+      "kind": "active",
+      "order": 1,
+      "description": "Detect Stealthed enemies for 20 sec",
+      "icon": "crop-perception",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/human/perception.icon.png",
+      "classic": {
+        "status": "same",
+        "classicName": "Perception",
+        "classicText": "Greatly increases stealth detection for 20 sec",
+        "note": "Classic also detects stealth for 20 sec; wording modernised; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["classic-unchanged"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11600.0,
+        "frame": 696000,
+        "crop": "data/review/races/human/perception.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Perception",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Perception",
+            "description": "Detect Stealthed enemies for 20 sec",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "sword-specialization",
+      "name": "Sword Specialization",
+      "kind": "passive",
+      "order": 2,
+      "description": "Swords increase spell and ability critical chance by 2%",
+      "icon": "crop-sword-specialization",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/human/sword-specialization.icon.png",
+      "classic": {
+        "status": "changed",
+        "classicName": "Sword Specialization",
+        "classicText": "Expertise with Swords and Two-Handed Swords increased by 5 weapon skill",
+        "note": "Classic gives +5 sword weapon skill; Forever gives 2% spell and ability critical chance; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["reworked"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 11600.0,
+        "frame": 696000,
+        "crop": "data/review/races/human/sword-specialization.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Sword Specialization",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sword Specialization",
+            "description": "Swords increase spell and ability critical chance by 2%",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "the-human-spirit",
+      "name": "The Human Spirit",
+      "kind": "passive",
+      "order": 3,
+      "description": "5% increased Spirit",
+      "icon": "crop-the-human-spirit",
+      "iconSource": "crop",
+      "iconCrop": "data/review/races/human/the-human-spirit.icon.png",
+      "classic": {
+        "status": "same",
+        "classicName": "The Human Spirit",
+        "classicText": "Spirit increased by 5%",
+        "note": "5% Spirit in both; Classic side written from memory and unverified (data/prior/classic-era/racials.json)"
+      },
+      "tags": ["classic-unchanged"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21957.0,
+        "frame": 1317420,
+        "crop": "data/review/races/human/the-human-spirit.png",
+        "panel": "race-panel",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "The Human Spirit",
+            "description": "5% increased Spirit",
+            "confidence": 1.0
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "The Human Spirit",
+            "description": "5% increased Spirit",
+            "confidence": 1.0
+          }
+        ],
+        "reviewed": false
+      }
+    }
+  ],
+  "complete": true,
+  "notes": ["BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed."]
+}

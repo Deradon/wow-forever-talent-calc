@@ -384,3 +384,57 @@ scripts/run_class.sh paladin --second-opinion   # 05, then scripts/second_opinio
 Tests: `tests/test_reader.py` (confidence levels, re-filing of misplaced
 lines, record shape and 0-based indices, cross-segment merge, consensus
 grid, cache keys) and `tests/test_ui.py::test_darkness_*`.
+
+<!-- stage 12 (races); independent of stages 3-9, shares only reader.py and the serializer -->
+## Stage 12: racial traits and the race/class matrix
+
+Phase 2b of `docs/briefs/beyond-talents.md`. Shared code:
+`src/wowtalents/races.py` (screen classification, portrait selection, class
+bar, race box geometry, trait text, fragment and order stitching — all pure),
+the race prompts in `src/wowtalents/reader.py`, the stage
+`stages/12_races.py` and the validator `validate_races.py`. Normative data
+contract: `docs/DATA-SCHEMA-RACES.md`. Needs the mkv and, for `read`,
+llama-server.
+
+```bash
+uv run stages/12_races.py scan                       # -> work/races/states.json + native crops
+uv run stages/12_races.py scan --window 03:11:00-03:16:40 --fps 4
+uv run stages/12_races.py read                       # -> work/races/readings.json
+uv run stages/12_races.py read --codex race          # + one codex opinion per race
+uv run stages/12_races.py build                      # -> data/races/, data/review/races/, data/extracted/races.{json,md}
+uv run python validate_races.py --check ../data/races/*.json
+uv run python validate_races.py --report ../data/races/*.json     # review queue
+```
+
+`scan` decodes seven character-creation windows (the minutes whose stage-0
+probe frame shows both faction banners, padded either side) at 2 fps **by
+frame index**, not with ffmpeg's `fps` filter: `-vf fps=2` returns a frame up
+to a quarter second away from the nominal time, and at stream 11520 that is
+the difference between the Dwarf box and the Human one. `mkv.decode_range(...,
+every=30)` uses `select` plus `-vsync 0` instead and is exact. Each frame is
+classified (both banners), the selected portrait is found by its gold border
+(~125 mean grey against ~58), which gives race and Skyborne variant from a
+fixed 2x5 layout, and frames are grouped into runs of one scroll position by
+dHash of the box; the sharpest frame of each run is written out at native
+resolution. The class bar is read from the same frames without a VLM: a
+greyed-out icon scores under 10 on mean saturation x value, an available one
+19 to 101.
+
+`read` deduplicates scroll positions across windows (119 states -> 33), sends
+each box to llama-server twice (3x and 2x) with `reader.RACE_PANEL_SCHEMA`,
+and scores agreement exactly as stage 5 does. `--codex race|disagree|all`
+adds a third opinion from the `codex` CLI; a codex reading that disagrees with
+two agreeing passes caps the trait at 0.9 instead of lifting it.
+
+`build` drops row fragments (a row whose name scrolled off the edge is read as
+its own trait and is always contained in the row it came from), stitches the
+panel order out of the overlapping windows, merges one record per trait,
+cuts the per-trait and per-icon review crops, diffs against
+`data/prior/classic-era/racials.json` plus the hand verdicts in
+`racial-diff.json`, and writes the race files, `matrix.json` and the
+inventory. `complete: true` needs both anchors: some frame showed the box
+scrolled to the top and some frame showed the lore below the last row.
+
+Tests: `tests/test_races.py` (trait text, fragments, order stitching, band
+alignment, agreement, synthetic-frame geometry, the shipped files against the
+validator, and `decode_cmd`'s two frame-picking modes).
