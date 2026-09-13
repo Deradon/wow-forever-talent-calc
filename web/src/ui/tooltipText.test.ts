@@ -11,9 +11,14 @@ import { describe, expect, it } from 'vitest'
 import { renderDescription, type ClassData, type Talent } from '../data/schema'
 import { parseClass } from '../data/schema.zod'
 import {
+  CHANGE_MAX,
   DETAILS_LABEL,
   TRUST_MAX,
+  changeCardLines,
+  changeCardTitle,
   changeLine,
+  classicSeriesLine,
+  valuesChangedLine,
   derivationLine,
   detailLines,
   fitTrustLine,
@@ -470,8 +475,13 @@ describe('changeLine', () => {
     expect(changeLine({ status: 'moved', prior }, current)).toBe('Moved from row 3.')
   })
 
+  // The reported bug: a tree Forever only renamed is not a move at all, and the
+  // generator never sets `movedTree` for one, so the old tree is never named.
   it('names the old tree only when the talent actually changed tree', () => {
-    expect(changeLine({ status: 'moved', prior }, { tree: 'fury', maxRank: 5 })).toBe('Moved from Arms, row 3.')
+    expect(changeLine({ status: 'moved', prior: { ...prior, movedTree: true } }, { tree: 'fury', maxRank: 5 })).toBe(
+      'Moved from Arms, row 3.',
+    )
+    expect(changeLine({ status: 'moved', prior }, { tree: 'shadow-magic', maxRank: 5 })).toBe('Moved from row 3.')
   })
 
   it('reports a rank change in both directions, with the plural right', () => {
@@ -482,12 +492,84 @@ describe('changeLine', () => {
     )
   })
 
+  it('calls a rewritten talent reworked, and a retuned one by its numbers', () => {
+    expect(changeLine({ status: 'text-changed', prior, textChange: 'text' }, current)).toBe('Reworked.')
+    expect(
+      changeLine({ status: 'values-changed', prior, textChange: 'values', values: [['15%', '20%']] }, current),
+    ).toBe('Values changed: 15% \u2192 20%.')
+  })
+
   it('is one line, always, and carries nothing internal', () => {
-    for (const status of ['new', 'moved', 'rank-changed'] as const) {
-      const line = changeLine({ status, prior }, { tree: 'fury', maxRank: 3 })!
+    const statuses = ['new', 'moved', 'rank-changed', 'text-changed', 'values-changed'] as const
+    for (const status of statuses) {
+      const line = changeLine({ status, prior, values: [['15%', '20%']] }, { tree: 'fury', maxRank: 3 })!
       expect(line.split('\n')).toHaveLength(1)
       expect(line.endsWith('.')).toBe(true)
       expect(internalId(line)).toBe(false)
     }
+  })
+})
+
+describe('valuesChangedLine', () => {
+  it('spells out every pair while they fit on one line', () => {
+    expect(valuesChangedLine([['15%', '20%']])).toBe('Values changed: 15% \u2192 20%.')
+    expect(valuesChangedLine([['1', '2'], ['3', '4']])).toBe('Values changed: 1 \u2192 2, 3 \u2192 4.')
+  })
+
+  it('spells out the real Pyroblast, which is the widest case in the data', () => {
+    const line = valuesChangedLine([['148', '155'], ['195', '185'], ['56', '76']])
+    expect(line).toBe('Values changed: 148 \u2192 155, 195 \u2192 185, 56 \u2192 76.')
+    expect(line.length).toBeLessThanOrEqual(CHANGE_MAX)
+  })
+
+  it('keeps the meta budget: a longer list collapses to the first pair and a count', () => {
+    const many: [string, string][] = [
+      ['1200', '1400'],
+      ['1300', '1500'],
+      ['1400', '1600'],
+      ['1500', '1700'],
+    ]
+    const line = valuesChangedLine(many)
+    expect(line.length).toBeLessThanOrEqual(CHANGE_MAX)
+    expect(line).toBe('Values changed: 1200 \u2192 1400 and 3 more.')
+  })
+
+  it('degrades to a bare sentence rather than an empty list', () => {
+    expect(valuesChangedLine(undefined)).toBe('Values changed.')
+    expect(valuesChangedLine([])).toBe('Values changed.')
+  })
+})
+
+describe('the nested Classic card', () => {
+  it('titles itself by whether Classic had the talent at all', () => {
+    expect(changeCardTitle({ status: 'text-changed' })).toBe('In Classic Era')
+    expect(changeCardTitle({ status: 'new' })).toBe('Not in Classic Era')
+  })
+
+  it('shows the Classic values per rank, and nothing for a one-rank talent', () => {
+    expect(classicSeriesLine('2/4/6/8/10')).toBe('Classic values by rank: 2/4/6/8/10.')
+    expect(classicSeriesLine(undefined)).toBeUndefined()
+    expect(classicSeriesLine('15')).toBeUndefined()
+  })
+
+  it('lists the series, and every pair once there is more than one to list', () => {
+    expect(changeCardLines({ series: '2/4/6', values: [['15%', '20%'], ['1', '2']] })).toEqual([
+      'Classic values by rank: 2/4/6.',
+      'Values: 15% \u2192 20%, 1 \u2192 2.',
+    ])
+    expect(changeCardLines(undefined)).toEqual([])
+    expect(changeCardLines({})).toEqual([])
+  })
+
+  // The change line already spells a single pair out in full, so the card
+  // repeating it two lines below would say nothing.
+  it('does not repeat a single value pair the change line already showed', () => {
+    expect(changeCardLines({ series: '2/4/6', values: [['15%', '20%']] })).toEqual([
+      'Classic values by rank: 2/4/6.',
+    ])
+  })
+
+  it('never lets an internal id through', () => {
+    expect(changeCardLines({ series: '2/4/6' }).every((l) => !internalId(l))).toBe(true)
   })
 })

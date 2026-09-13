@@ -1,0 +1,78 @@
+/*
+ * What changed against Classic Era, round 2
+ * (docs/handover/2026-09-13-classic-diff-v2.md).
+ *
+ * Two things live here, and nothing else does:
+ *
+ *   1. the nested card behind the tooltip's one change line - the Classic Era
+ *      rank-1 sentence with the word diff drawn into it;
+ *   2. the two highlight rings the "what's new" switch needs for the statuses
+ *      round 2 added (`text-changed`, `values-changed`).
+ *
+ * (2) belongs next to its siblings in cells.css and is only here because that
+ * sheet was owned by another work package at the time. The selectors match the
+ * ones there exactly, so moving these four lines across is a cut and paste.
+ *
+ * Imported from Tooltip.tsx, which every cell renders, so the rules load on the
+ * class route whatever order the sheets arrive in.
+ */
+
+/* --- the change line and the card behind it ------------------------------ */
+
+/* `.tooltip .changed` itself is in tooltip.css: the same blue as the cell's
+   new-in-Forever star, so the marker and the sentence read as one claim. The
+   term treatment has to survive that colour, hence the explicit currentColor
+   underline rather than the inherited one. */
+.tooltip .changed .tip-term {
+  text-decoration: underline dotted currentColor;
+  text-underline-offset: 2px;
+}
+
+.tooltip-nest .classic-card {
+  /* Old wording is long; a Classic Pyroblast is three lines on its own. */
+  width: 300px;
+}
+
+.tooltip .classic-title {
+  color: #8f98b3;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+/* The diff is rendered inline inside one paragraph, so the sentence still reads
+   as a sentence: kept words plain, dropped words struck, added words marked. */
+.tooltip .classic-text {
+  color: #ffd;
+  margin: 0 0 6px;
+  line-height: 1.45;
+}
+
+/* .diff-add / .diff-del come from tooltip.css, where the review route already
+   defines them (green added, red struck). Reused deliberately: a diff should
+   look the same wherever the app shows one. Added words get a faint plate as
+   well, because "green" alone is not a difference a colour-blind player sees. */
+.tooltip .classic-text .diff-add {
+  background: rgba(127, 209, 138, 0.14);
+  border-radius: 2px;
+}
+
+.tooltip .classic-text .diff-del {
+  opacity: 0.85;
+}
+
+.tooltip .classic-loading {
+  color: #8f98b3;
+  margin: 0;
+}
+
+/* --- the "what's new" switch: the two statuses round 2 added -------------- */
+
+/* A reworded talent sits in the same cell with the same rank count, so it gets
+   the same blue ring as a move, at half strength: the eye should find it, but
+   after the talents that actually moved. Mirrors the rules in cells.css. */
+.cell[data-highlight='true'][data-change='text-changed'],
+.cell[data-highlight='true'][data-change='values-changed'] {
+  box-shadow: 0 0 0 2px rgba(78, 163, 255, 0.3);
+}

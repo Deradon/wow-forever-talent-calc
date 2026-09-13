@@ -23,10 +23,13 @@ import {
 import { renderDescription, type ClassData, type Talent, type Tree } from '../data/schema'
 import type { Verdict } from '../rules'
 import './tooltip.css'
+import './diff.css'
 import { nestedPlacement, placementFallbacks, type TipPlacement } from './tooltipPlacement'
 import { needsReview } from './review'
-import { changeOf } from './classicDiff'
+import { changeOf, classicTextSync, loadClassicText, type Change, type ClassicText } from './classicDiff'
 import {
+  changeCardLines,
+  changeCardTitle,
   changeLine,
   DETAILS_LABEL,
   detailLines,
@@ -130,8 +133,12 @@ export function TooltipContent({
   })
   const gameReq = gameRequirement(talent.source.note)
   // Exactly one line, and it is part of the card's line budget rather than an
-  // extra appended to it (brief idea 3).
-  const changed = changeLine(changeOf(cls.class, talent.id), { tree: tree.id, maxRank: talent.maxRank })
+  // extra appended to it (brief idea 3). When the Classic sentence differs at
+  // all - whatever the headline status is - the line becomes a term and opens
+  // the card that shows what the talent used to say.
+  const change = changeOf(cls.class, talent.id)
+  const changed = changeLine(change, { tree: tree.id, maxRank: talent.maxRank })
+  const hasClassicCard = Boolean(change?.textChange)
 
   const details = detailLines(talent)
   const trust = fitTrustLine(talent, current, details.length > 0)
@@ -178,7 +185,19 @@ export function TooltipContent({
         {talent.capstone && <div className="text-xs text-[var(--gold-dim)]">Capstone</div>}
         {changed && (
           <div className="changed" data-testid={`changed-${talent.id}`}>
-            {changed}
+            {nests && hasClassicCard ? (
+              <TipTerm
+                termId="classic"
+                placement={nestSide}
+                testId={`term-classic-${talent.id}`}
+                label={`What ${talent.name} said in Classic Era`}
+                content={<ClassicTip classId={cls.class} talentId={talent.id} change={change} />}
+              >
+                {changed}
+              </TipTerm>
+            ) : (
+              changed
+            )}
           </div>
         )}
         {gameReq && <div className="req-game">{gameReq}</div>}
@@ -408,6 +427,54 @@ function Lines({ lines }: { lines: string[] }) {
       {lines.map((line) => (
         <p key={line}>{line}</p>
       ))}
+    </div>
+  )
+}
+
+/**
+ * What the change line opens: the Classic Era rank-1 sentence with the word diff
+ * drawn into it - struck where Forever dropped words, marked where it added
+ * them - plus the Classic per-rank values.
+ *
+ * The sentences and their diffs are a 17 kB gzip file of their own, so they are
+ * fetched with a dynamic `import()` the first time a card is opened, exactly
+ * like the crop registry behind the `?` marker. A player who never opens one
+ * never pays for it, and a failed fetch leaves the card empty rather than
+ * breaking the tooltip.
+ */
+function ClassicTip({ classId, talentId, change }: { classId: string; talentId: string; change: Change | undefined }) {
+  const [classic, setClassic] = useState<ClassicText | undefined>(() => classicTextSync(classId, talentId))
+  useEffect(() => {
+    if (classic) return
+    let alive = true
+    void loadClassicText(classId, talentId).then((c) => {
+      if (alive) setClassic(c)
+    })
+    return () => {
+      alive = false
+    }
+  }, [classId, talentId, classic])
+
+  return (
+    <div className="tooltip nest-body classic-card" data-testid={`classic-${talentId}`}>
+      <div className="classic-title">{changeCardTitle(change)}</div>
+      {classic ? (
+        <>
+          <p className="classic-text">
+            {classic.diff.map(([op, text], i) => (
+              <span key={i} className={op === '-' ? 'diff-del' : op === '+' ? 'diff-add' : undefined}>
+                {i > 0 ? ' ' : ''}
+                {text}
+              </span>
+            ))}
+          </p>
+          {changeCardLines(classic).map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </>
+      ) : (
+        <p className="classic-loading">Fetching the Classic Era wording...</p>
+      )}
     </div>
   )
 }

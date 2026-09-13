@@ -22,6 +22,7 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { compactDiff } from './diffWords.mjs'
 
 const here = dirname(fileURLToPath(import.meta.url))
 export const webRoot = join(here, '..')
@@ -110,6 +111,22 @@ ${entries}
 }
 
 // --- Classic Era diff (brief docs/briefs/ui-improvements.md, idea 3) --------
+//
+// Round 2 (docs/handover/2026-09-13-classic-diff-v2.md). Round 1 compared the
+// raw `(tree id, row, col)` triples and called every priest Shadow and shaman
+// Elemental talent `moved`, because Forever renamed those two trees. It also
+// had nothing to say about the change players actually notice: the wording and
+// the numbers. Both are fixed here:
+//
+//   - trees are matched before cells are compared (`matchTrees`), and rows and
+//     columns are rebased per class (`cellBase`), so a `moved` verdict means
+//     the talent really sits somewhere else;
+//   - descriptions are rendered at rank 1 on both sides and compared through a
+//     normaliser that forgives whitespace, punctuation, case and unit spelling
+//     ("15 sec" == "15 seconds"). What survives that is either a pure value
+//     change (`values-changed`) or a rewrite (`text-changed`), and the entry
+//     carries the Classic rank-1 text plus a compact word diff so the tooltip
+//     can show what the talent used to say.
 
 /**
  * Talent names are the only stable join between the Classic prior and the
@@ -125,35 +142,122 @@ export function normalizeName(name) {
     .trim()
 }
 
+// --- description comparison ------------------------------------------------
+
 /**
- * One talent against its Classic counterpart. Precedence is worst news first:
- * a talent that both moved and changed rank count reports `moved`, because the
- * cell is what the player is looking at; the prior record carries the rank
- * count either way, so the UI can still say both if it ever wants to.
- *
- * `prior` is undefined when no Classic talent of that name exists in the class.
+ * Unit spellings that mean the same thing to a player. The Classic prior was
+ * scraped from a database that writes "15 sec"; the stream reader sometimes
+ * reads "15 seconds". That is not a change and must never be reported as one.
  */
-export function classifyTalent(current, prior) {
-  if (!prior) return { status: 'new' }
-  const entry = {
-    status: 'same',
-    prior: {
-      tree: prior.tree,
-      treeName: prior.treeName,
-      row: prior.row,
-      col: prior.col,
-      maxRank: prior.maxRank,
-    },
-  }
-  if (prior.tree !== current.tree || prior.row !== current.row || prior.col !== current.col) {
-    entry.status = 'moved'
-  } else if (prior.maxRank !== current.maxRank) {
-    entry.status = 'rank-changed'
-  }
-  return entry
+const UNITS = [
+  [/\b(?:seconds?|secs?)\b/g, 'sec'],
+  [/\b(?:minutes?|mins?)\b/g, 'min'],
+  [/\b(?:yards?|yds?)\b/g, 'yd'],
+  [/\bpercent\b/g, '%'],
+]
+
+/**
+ * Both descriptions reduced to what they actually claim: lower case, one
+ * spelling per unit, no punctuation that is not part of a number, single
+ * spaces. Used for the *decision* only - the word diff the tooltip renders is
+ * taken from the untouched sentences, so a player reads real words.
+ */
+export function normalizeText(text) {
+  let s = String(text ?? '').toLowerCase()
+  s = s
+    .replace(/[‘’]/g, "'")
+    .replace(/[“”]/g, '"')
+    .replace(/[‒-―]/g, '-')
+  for (const [re, to] of UNITS) s = s.replace(re, to)
+  s = s.replace(/\s+%/g, '%')
+  // A full stop or comma between digits is part of the number; anywhere else
+  // it is punctuation.
+  s = s.replace(/(?<!\d)[.,](?!\d)/g, ' ')
+  s = s.replace(/[^a-z0-9%+\-./]+/g, ' ')
+  return s.replace(/\s+/g, ' ').trim()
 }
 
-/** Flattens one prior class entry into `{ id, name, tree, treeName, row, col, maxRank }`. */
+/** A number, with its percent sign when it has one: "15", "1.5", "20%". */
+const NUMBER = /\d+(?:\.\d+)?%?/g
+
+/** `"deals 15% more"` -> `{ masked: "deals # more", values: ["15%"] }`. */
+export function maskNumbers(text) {
+  const values = []
+  const masked = String(text ?? '').replace(NUMBER, (m) => {
+    values.push(m)
+    return '#'
+  })
+  return { masked, values }
+}
+
+/**
+ * What changed between the Classic rank-1 sentence and the Forever one.
+ *
+ * `undefined` when they say the same thing. `values` when the sentences are
+ * word for word the same and only numbers moved - the common case, and the one
+ * worth spelling out as "15% -> 20%". `text` otherwise, with the word diff
+ * taken from the raw sentences so the tooltip can strike what went and mark
+ * what arrived.
+ */
+export function compareDescriptions(classicText, foreverText) {
+  const classic = String(classicText ?? '')
+  const forever = String(foreverText ?? '')
+  if (!classic || !forever) return undefined
+  const a = normalizeText(classic)
+  const b = normalizeText(forever)
+  if (a === b) return undefined
+  const ma = maskNumbers(a)
+  const mb = maskNumbers(b)
+  const diff = compactDiff(classic, forever)
+  if (ma.masked === mb.masked) {
+    const values = []
+    for (const [i, was] of ma.values.entries()) {
+      const now = mb.values[i]
+      if (was !== now) values.push([was, now])
+    }
+    // Same words, same numbers, different normalised text is impossible; guard
+    // anyway rather than emit an empty "values changed".
+    if (values.length > 0) return { kind: 'values', values, diff }
+  }
+  return { kind: 'text', diff }
+}
+
+// --- the prior, flattened --------------------------------------------------
+
+/**
+ * Rank `r` (0-based) of a record that carries a `{n}` template plus per-rank
+ * slot values. Mirrors `renderDescription` in src/data/schema.ts, which cannot
+ * be imported here: this script is plain ESM run by node.
+ */
+function renderRank(description, rank) {
+  if (rank === undefined) return String(description ?? '')
+  if (typeof rank === 'string') return rank
+  if (!Array.isArray(rank)) return String(description ?? '')
+  return String(description ?? '').replace(/\{(\d+)\}/g, (_, i) => String(rank[Number(i)] ?? `{${i}}`))
+}
+
+/**
+ * The numbers a rank series shows, e.g. `"20/40/60"`. Picks the slot that
+ * actually changes between ranks, the same rule `foreverSeries` uses in
+ * src/ui/tooltipText.ts, so the Classic series beside ours is read off the same
+ * way. Undefined when the ranks are whole sentences or nothing varies.
+ */
+export function rankSeries(ranks) {
+  if (!Array.isArray(ranks) || ranks.length < 2) return undefined
+  const rows = ranks.filter(Array.isArray)
+  if (rows.length !== ranks.length) return undefined
+  const width = Math.min(...rows.map((r) => r.length))
+  let fallback
+  for (let j = 0; j < width; j++) {
+    const column = rows.map((r) => r[j])
+    if (!column.every((v) => typeof v === 'number')) continue
+    if (fallback === undefined) fallback = j
+    if (new Set(column).size > 1) return column.join('/')
+  }
+  return fallback === undefined ? undefined : rows.map((r) => r[fallback]).join('/')
+}
+
+/** Flattens one prior class entry into comparable talent records. */
 function priorTalents(priorClass) {
   const out = []
   for (const tree of priorClass?.trees ?? []) {
@@ -166,19 +270,206 @@ function priorTalents(priorClass) {
         row: t.row,
         col: t.col,
         maxRank: t.maxRank,
+        text: t.ranks?.[0] ?? renderRank(t.description, t.slots?.[0]),
+        series: rankSeries(t.slots),
       })
     }
   }
   return out
 }
 
+/** Flattens one Forever class file the same way. */
+function currentTalents(cls) {
+  const out = []
+  for (const tree of cls.trees) {
+    for (const t of tree.talents) {
+      out.push({
+        id: t.id,
+        name: t.name,
+        tree: tree.id,
+        treeName: tree.name,
+        row: t.row,
+        col: t.col,
+        maxRank: t.maxRank,
+        text: renderRank(t.description, t.ranks?.[0]),
+      })
+    }
+  }
+  return out
+}
+
+// --- tree identity and the cell base ---------------------------------------
+
 /**
- * Diffs one class. Matching is exclusive and two-pass: same tree first, then
- * anywhere in the class, so a talent that merely moved between trees is
- * `moved` rather than `new` plus a phantom removal.
+ * Which Forever tree each Classic tree became. Forever renamed two of the
+ * twenty-seven (priest Shadow -> Shadow Magic, shaman Elemental -> Elemental
+ * Combat) and round 1 read both renames as thirty-three moved talents.
+ *
+ * A tree is the same tree when it is the same class (the caller only ever
+ * passes one class) and
+ *
+ *   1. the ids match, or
+ *   2. the names match after `normalizeName`, or
+ *   3. the majority of its talents match by name - the fallback that survives
+ *      a rename we have not seen, and the reason the mapping is computed
+ *      rather than hard-coded.
+ *
+ * Pass 3 is greedy on the strongest overlap first, so a tree that merely traded
+ * a talent or two with its neighbour cannot steal the neighbour's identity.
+ *
+ * @returns {Map<string, string>} Classic tree id -> Forever tree id.
+ */
+export function matchTrees(currentTrees, priorTrees) {
+  const map = new Map()
+  const takenCurrent = new Set()
+  const left = []
+
+  for (const p of priorTrees) {
+    const byId = currentTrees.find((c) => c.id === p.id && !takenCurrent.has(c.id))
+    if (byId) {
+      map.set(p.id, byId.id)
+      takenCurrent.add(byId.id)
+      continue
+    }
+    left.push(p)
+  }
+
+  const stillLeft = []
+  for (const p of left) {
+    const byName = currentTrees.find((c) => !takenCurrent.has(c.id) && normalizeName(c.name) === normalizeName(p.name))
+    if (byName) {
+      map.set(p.id, byName.id)
+      takenCurrent.add(byName.id)
+      continue
+    }
+    stillLeft.push(p)
+  }
+
+  // Majority-of-talents fallback, strongest overlap first.
+  const scores = []
+  for (const p of stillLeft) {
+    const names = new Set((p.talents ?? []).map((t) => normalizeName(t.name)))
+    for (const c of currentTrees) {
+      if (takenCurrent.has(c.id)) continue
+      const mine = (c.talents ?? []).map((t) => normalizeName(t.name))
+      const shared = mine.filter((n) => names.has(n)).length
+      const smaller = Math.min(names.size, mine.length) || 1
+      const ratio = shared / smaller
+      if (ratio > 0.5) scores.push({ prior: p.id, current: c.id, ratio })
+    }
+  }
+  scores.sort((a, b) => b.ratio - a.ratio)
+  for (const s of scores) {
+    if (map.has(s.prior) || takenCurrent.has(s.current)) continue
+    map.set(s.prior, s.current)
+    takenCurrent.add(s.current)
+  }
+  return map
+}
+
+/**
+ * Which index a set of talents counts from. Our data is 0-based
+ * (DATA-SCHEMA.md section 3); a prior that counted rows from 1 would otherwise
+ * report every single talent in the game as having moved up one row.
+ * Subtracting each side's own base makes the comparison independent of the
+ * convention. The Classic Era prior turns out to be 0-based too, so the shift
+ * is zero today - the guard is here so that a future prior cannot quietly
+ * invent 470 moves.
+ *
+ * Only an exact minimum of 1 counts as a 1-based origin. A minimum of 2 or more
+ * is a sparse tree - real ones always fill row 0 and column 0 - and rebasing on
+ * it would shift a tree that simply has a gap at the top left.
+ */
+export function cellBase(talents) {
+  if (talents.length === 0) return { row: 0, col: 0 }
+  const base = (key) => (Math.min(...talents.map((t) => t[key])) === 1 ? 1 : 0)
+  return { row: base('row'), col: base('col') }
+}
+
+// --- classification --------------------------------------------------------
+
+/** Statuses in the order they are reported; `same` is never written out. */
+export const STATUSES = ['new', 'moved', 'rank-changed', 'text-changed', 'values-changed', 'same']
+
+/**
+ * One talent against its Classic counterpart, worst news first:
+ *
+ *   new > moved > rank-changed > text-changed > values-changed > same
+ *
+ * The cell wins over the rank count because the cell is what the player is
+ * looking at, and a rewrite wins over a value tweak because it is the larger
+ * claim. The entry carries everything the losing categories would have said -
+ * the old cell, the old rank count, the old sentence - so the tooltip can be
+ * as precise as it likes without a second lookup.
+ *
+ * `current.tree` and `prior.tree` are compared **after** `matchTrees`, which is
+ * what `prior.sameTree` records. `prior.tree` stays the Classic id, because
+ * that is what `removed[]` and the later `#/changes` page speak.
+ *
+ * `prior` is undefined when no Classic talent of that name exists in the class.
+ */
+export function classifyTalent(current, prior) {
+  if (!prior) return { status: 'new' }
+  const sameTree = prior.sameTree ?? prior.tree === current.tree
+  const entry = {
+    status: 'same',
+    prior: {
+      tree: prior.tree,
+      treeName: prior.treeName,
+      row: prior.row,
+      col: prior.col,
+      maxRank: prior.maxRank,
+    },
+  }
+  if (!sameTree) entry.prior.movedTree = true
+
+  const text = compareDescriptions(prior.text, current.text)
+  if (text) {
+    // The sentence and its word diff are bulky and only wanted when a player
+    // opens the card, so they go to the lazily fetched companion file; what
+    // stays here is the flag the change line needs, plus the value pairs,
+    // which the line itself prints.
+    entry.textChange = text.kind
+    if (text.kind === 'values') entry.values = text.values
+    entry.classic = {
+      text: prior.text,
+      ...(prior.series ? { series: prior.series } : {}),
+      diff: text.diff,
+      ...(text.kind === 'values' ? { values: text.values } : {}),
+    }
+  }
+
+  if (!sameTree || prior.row !== current.row || prior.col !== current.col) entry.status = 'moved'
+  else if (prior.maxRank !== current.maxRank) entry.status = 'rank-changed'
+  else if (text?.kind === 'text') entry.status = 'text-changed'
+  else if (text?.kind === 'values') entry.status = 'values-changed'
+  return entry
+}
+
+/**
+ * Diffs one class. Matching is exclusive and two-pass: same tree first (after
+ * `matchTrees`), then anywhere in the class, so a talent that merely moved
+ * between trees is `moved` rather than `new` plus a phantom removal.
  */
 export function diffClass(cls, priorClass) {
+  const treeMap = matchTrees(cls.trees ?? [], priorClass?.trees ?? [])
   const pool = priorTalents(priorClass)
+  const current = currentTalents(cls)
+
+  // Each side rebased on its own origin, so a 1-based prior cannot manufacture
+  // a whole tree of moves. Both are 0-based today, which the tests pin down.
+  const priorBase = cellBase(pool)
+  const currentBase = cellBase(current)
+  for (const p of pool) {
+    p.row -= priorBase.row
+    p.col -= priorBase.col
+    p.mapsTo = treeMap.get(p.tree) ?? p.tree
+  }
+  for (const t of current) {
+    t.row -= currentBase.row
+    t.col -= currentBase.col
+  }
+
   const used = new Set()
   const byName = new Map()
   for (const [i, p] of pool.entries()) {
@@ -187,12 +478,6 @@ export function diffClass(cls, priorClass) {
     byName.get(key).push(i)
   }
 
-  const current = []
-  for (const tree of cls.trees) {
-    for (const t of tree.talents) {
-      current.push({ id: t.id, name: t.name, tree: tree.id, row: t.row, col: t.col, maxRank: t.maxRank })
-    }
-  }
   current.sort((a, b) => a.tree.localeCompare(b.tree) || a.row - b.row || a.col - b.col)
 
   const matched = new Map()
@@ -200,9 +485,9 @@ export function diffClass(cls, priorClass) {
     const candidates = byName.get(normalizeName(t.name)) ?? []
     for (const i of candidates) {
       if (used.has(i)) continue
-      if (sameTreeOnly && pool[i].tree !== t.tree) continue
+      if (sameTreeOnly && pool[i].mapsTo !== t.tree) continue
       used.add(i)
-      matched.set(t.id, pool[i])
+      matched.set(t.id, { ...pool[i], sameTree: pool[i].mapsTo === t.tree })
       return true
     }
     return false
@@ -211,38 +496,73 @@ export function diffClass(cls, priorClass) {
   for (const t of rest) take(t, false)
 
   const talents = {}
-  const counts = { new: 0, moved: 0, 'rank-changed': 0, same: 0 }
+  const text = {}
+  const counts = Object.fromEntries(STATUSES.map((s) => [s, 0]))
   for (const t of current) {
     const entry = classifyTalent(t, matched.get(t.id))
     counts[entry.status] += 1
+    const { classic, ...light } = entry
+    if (classic) text[t.id] = classic
     // `same` is the default: leaving it out keeps the shipped file small.
-    if (entry.status !== 'same') talents[t.id] = entry
+    if (light.status !== 'same') talents[t.id] = light
   }
 
   const removed = pool
     .filter((_, i) => !used.has(i))
-    .map((p) => ({ id: p.id, name: p.name, tree: p.tree, treeName: p.treeName, row: p.row, col: p.col, maxRank: p.maxRank }))
+    .map((p) => ({
+      id: p.id,
+      name: p.name,
+      tree: p.tree,
+      treeName: p.treeName,
+      row: p.row,
+      col: p.col,
+      maxRank: p.maxRank,
+    }))
 
-  return { counts: { ...counts, removed: removed.length }, talents, removed }
+  return { counts: { ...counts, removed: removed.length }, talents, removed, text }
 }
 
 /**
- * The whole index: only classes that have a Classic counterpart appear, so the
- * example classes (tinker) simply carry no diff and the UI shows no markers
+ * Both halves at once: only classes that have a Classic counterpart appear, so
+ * the example classes (tinker) simply carry no diff and the UI shows no markers
  * for them rather than claiming every talent is new.
+ *
+ *   `diff`  the class route's file: statuses, the Classic cell, the value pairs
+ *           the change line prints, and `removed[]`.
+ *   `text`  the Classic sentence, its per-rank values and the word diff, keyed
+ *           by class and talent id and fetched with a dynamic `import()` only
+ *           when a player opens the card - the same deal the 971-entry crop
+ *           registry gets.
  */
-export function buildClassicDiff(classes, prior) {
-  const out = {}
+export function buildClassic(classes, prior) {
+  const per = {}
   for (const { id, data } of classes) {
     const priorClass = prior?.classes?.[id]
     if (!priorClass) continue
-    out[id] = diffClass(data, priorClass)
+    per[id] = diffClass(data, priorClass)
   }
-  const totals = { new: 0, moved: 0, 'rank-changed': 0, same: 0, removed: 0 }
-  for (const entry of Object.values(out)) {
+  const totals = Object.fromEntries([...STATUSES, 'removed'].map((s) => [s, 0]))
+  const light = {}
+  const text = {}
+  for (const [id, entry] of Object.entries(per)) {
     for (const key of Object.keys(totals)) totals[key] += entry.counts[key] ?? 0
+    light[id] = { counts: entry.counts, talents: entry.talents, removed: entry.removed }
+    if (Object.keys(entry.text).length > 0) text[id] = entry.text
   }
-  return { prior: 'Classic Era (data/prior/classic-era/talents.json)', totals, classes: out }
+  return {
+    diff: { prior: 'Classic Era (data/prior/classic-era/talents.json)', totals, classes: light },
+    text,
+  }
+}
+
+/** The class route's half. */
+export function buildClassicDiff(classes, prior) {
+  return buildClassic(classes, prior).diff
+}
+
+/** The lazily fetched half. */
+export function buildClassicText(classes, prior) {
+  return buildClassic(classes, prior).text
 }
 
 function readPrior() {
@@ -257,21 +577,25 @@ function writeIfChanged(path, content) {
   return true
 }
 
-/** Regenerates both files; returns true when anything changed on disk. */
+/** Regenerates all four generated files; true when anything changed on disk. */
 export function generate(root = webRoot) {
   const out = expected()
   const a = writeIfChanged(join(root, 'src/data/classes-index.json'), out.index)
   const b = writeIfChanged(join(root, 'src/data/iconCrops.ts'), out.crops)
   const c = writeIfChanged(join(root, 'src/data/classic-diff.json'), out.classicDiff)
-  return a || b || c
+  const d = writeIfChanged(join(root, 'src/data/classic-text.json'), out.classicText)
+  return a || b || c || d
 }
 
 export function expected() {
   const classes = readClasses()
+  const classic = buildClassic(classes, readPrior())
   return {
     index: `${JSON.stringify(buildClassesIndex(classes), null, 2)}\n`,
     crops: renderIconCrops(collectIconCrops(classes)),
-    classicDiff: `${JSON.stringify(buildClassicDiff(classes, readPrior()), null, 2)}\n`,
+    classicDiff: `${JSON.stringify(classic.diff, null, 2)}\n`,
+    // No indentation: nobody reads this one, and it is fetched over the wire.
+    classicText: `${JSON.stringify(classic.text)}\n`,
   }
 }
 

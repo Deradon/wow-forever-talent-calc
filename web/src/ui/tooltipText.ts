@@ -417,31 +417,112 @@ export function splitOnNames(line: string, names: { id: string; name: string }[]
 
 // --- what changed against Classic Era --------------------------------------
 
+/** A Classic number and what it became: `["15%", "20%"]`. */
+export type ValuePair = [string, string]
+
 /** A talent's standing against the Classic prior; mirrors src/ui/classicDiff.ts. */
 export interface ChangeFacts {
-  status: 'new' | 'moved' | 'rank-changed' | 'same'
-  prior?: { tree: string; treeName: string; row: number; col: number; maxRank: number }
+  status: 'new' | 'moved' | 'rank-changed' | 'text-changed' | 'values-changed' | 'same'
+  prior?: {
+    tree: string
+    treeName: string
+    row: number
+    col: number
+    maxRank: number
+    /** Set only when the talent really changed tree (renames are not moves). */
+    movedTree?: boolean
+  }
+  textChange?: 'text' | 'values'
+  values?: ValuePair[]
 }
 
 /**
- * The single "what changed" line (brief idea 3). Exactly one line, always, so
- * it fits the tooltip's line budget instead of being appended to it: a talent
- * that both moved and changed rank count reports the move, because the cell is
- * what the player is looking at.
- *
- * Rows are stored 0-based and spoken 1-based, the way the tier gutter counts.
+ * The change line's own budget, the same idea as `TRUST_MAX`: one line at
+ * 300 px. A talent whose every number moved (Pyroblast changed three) would
+ * otherwise turn the one-line rule into a paragraph, so the enumeration
+ * collapses to its first pair plus a count.
  */
-export function changeLine(change: ChangeFacts | undefined, current: { tree: string; maxRank: number }): string | undefined {
+export const CHANGE_MAX = 60
+
+/**
+ * The single "what changed" line (brief idea 3). Exactly one line, always, so
+ * it fits the tooltip's line budget instead of being appended to it.
+ *
+ * Precedence is worst news first - new > moved > rank-changed > text-changed >
+ * values-changed - because the player gets one sentence and it should be the
+ * largest true claim. Everything the losing categories would have said is still
+ * on the record, which is what the nested card behind this line shows.
+ *
+ * A tree Forever merely renamed (Shadow -> Shadow Magic) is **not** a move: the
+ * generator matches trees before it compares cells, and only a genuine change
+ * of tree sets `prior.movedTree`. Rows are stored 0-based and spoken 1-based,
+ * the way the tier gutter counts.
+ */
+export function changeLine(
+  change: ChangeFacts | undefined,
+  current: { tree: string; maxRank: number },
+): string | undefined {
   if (!change || change.status === 'same') return undefined
   if (change.status === 'new') return 'New in Forever.'
   const prior = change.prior
   if (!prior) return undefined
-  if (change.status === 'moved') {
-    return prior.tree === current.tree
-      ? `Moved from row ${prior.row + 1}.`
-      : `Moved from ${prior.treeName}, row ${prior.row + 1}.`
+  switch (change.status) {
+    case 'moved':
+      return prior.movedTree ? `Moved from ${prior.treeName}, row ${prior.row + 1}.` : `Moved from row ${prior.row + 1}.`
+    case 'rank-changed':
+      return `Now ${ranksWord(current.maxRank)}, was ${prior.maxRank}.`
+    case 'text-changed':
+      return 'Reworked.'
+    case 'values-changed':
+      return valuesChangedLine(change.values)
+    default:
+      return undefined
   }
-  return `Now ${ranksWord(current.maxRank)}, was ${prior.maxRank}.`
+}
+
+/** `Values changed: 15% -> 20%.`, collapsed when it would run past one line. */
+export function valuesChangedLine(values: ValuePair[] | undefined): string {
+  const pairs = (values ?? []).filter((v) => v?.length === 2)
+  if (pairs.length === 0) return 'Values changed.'
+  const full = `Values changed: ${pairs.map(valuePair).join(', ')}.`
+  if (full.length <= CHANGE_MAX) return full
+  const rest = pairs.length - 1
+  return rest > 0 ? `Values changed: ${valuePair(pairs[0]!)} and ${rest} more.` : `Values changed: ${valuePair(pairs[0]!)}.`
+}
+
+function valuePair([was, now]: ValuePair): string {
+  return `${was} \u2192 ${now}`
+}
+
+/** The heading of the nested card behind the change line. */
+export function changeCardTitle(change: ChangeFacts | undefined): string {
+  return change?.status === 'new' ? 'Not in Classic Era' : 'In Classic Era'
+}
+
+/** `Classic values by rank: 2/4/6/8/10.` - omitted for a one-rank talent. */
+export function classicSeriesLine(series: string | undefined): string | undefined {
+  if (!series || !series.includes('/')) return undefined
+  const line = `Classic values by rank: ${series}.`
+  return internalId(line) ? undefined : line
+}
+
+/**
+ * The lines under the struck-and-marked Classic sentence: the Classic per-rank
+ * values, and the full list of value pairs when there is more than one.
+ *
+ * A single pair is left out on purpose - `valuesChangedLine` always spells one
+ * pair out in full, so repeating it in the card two lines below says nothing.
+ * Several pairs can collapse to "and 3 more" up there, and then the card is the
+ * only place a player can read them all.
+ */
+export function changeCardLines(
+  classic: { series?: string; values?: ValuePair[] } | undefined,
+): string[] {
+  if (!classic) return []
+  const lines: (string | undefined)[] = [classicSeriesLine(classic.series)]
+  const pairs = (classic.values ?? []).filter((v) => v?.length === 2)
+  if (pairs.length > 1) lines.push(`Values: ${pairs.map(valuePair).join(', ')}.`)
+  return lines.filter((l): l is string => Boolean(l) && !internalId(l!))
 }
 
 function ranksWord(n: number): string {

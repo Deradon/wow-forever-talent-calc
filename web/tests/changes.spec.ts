@@ -83,6 +83,11 @@ test('new talents carry a marker and say so in the tooltip', async ({ page }) =>
   const star = await page.getByTestId('new-flag-improved-holy-strike').boundingBox()
   const badge = await isNew.locator('.badge').boundingBox()
   expect(star!.y + star!.height).toBeLessThanOrEqual(badge!.y)
+  // ... and the star is big enough to read as a star. At 14px it was a blue
+  // smudge (round-one review); 18px is flush with the badge, which is the most
+  // the right-hand edge of a 44px cell has to give.
+  expect(star!.height).toBeGreaterThanOrEqual(16)
+  expect(star!.width).toBeGreaterThanOrEqual(16)
 
   await isNew.hover()
   await expect(page.getByTestId('changed-improved-holy-strike')).toHaveText('New in Forever.')
@@ -119,8 +124,10 @@ test('the highlight switch dims what is unchanged, across all three trees', asyn
   await expect(same).toHaveAttribute('data-highlight', 'true')
   expect(await opacity('talent-divine-strength')).toBeLessThan(0.5)
   expect(await opacity('talent-improved-holy-strike')).toBe(1)
-  // A tree the switch does not live in follows it too.
-  await expect(page.locator('[data-testid="tree-retribution"] [data-change="same"]').first()).toHaveAttribute(
+  // A tree the switch does not live in follows it too. Retribution has no
+  // unchanged talent left since the diff learned to read descriptions, so the
+  // probe is a reworded one - which also proves the new status reaches the DOM.
+  await expect(page.locator('[data-testid="tree-retribution"] [data-change="text-changed"]').first()).toHaveAttribute(
     'data-highlight',
     'true',
   )
@@ -168,4 +175,68 @@ test('arrowheads stop short of the talent they point at', async ({ page }) => {
     .first()
     .evaluate((el) => getComputedStyle(el).zIndex)
   expect(Number(z)).toBeGreaterThan(0)
+})
+
+/**
+ * Round 2 of the Classic diff (docs/handover/2026-09-13-classic-diff-v2.md).
+ * Priest Shadowform never left row 7 of the Shadow tree - Forever renamed the
+ * tree and rewrote the tooltip - so the one change line must talk about the
+ * wording, and the card behind it must show what Classic said.
+ */
+test('a reworked talent says so, and its card shows the Classic wording', async ({ page }) => {
+  await page.goto('/#/priest')
+  const cell = page.getByTestId('talent-shadowform')
+  await expect(cell).toHaveAttribute('data-change', 'text-changed')
+  // It is not new, so no star, and it must never claim to have moved.
+  await expect(page.getByTestId('new-flag-shadowform')).toHaveCount(0)
+
+  await cell.hover()
+  const line = page.getByTestId('changed-shadowform')
+  await expect(line).toHaveText('Reworked.')
+
+  // Walk into the tooltip so the layer takes the pointer (stickyTooltip.ts):
+  // dwell first, then approach in small steps, exactly as tooltip.spec.ts does.
+  const layer = page.getByTestId('tooltip-layer-shadowform')
+  await expect(layer).toBeVisible()
+  await page.waitForTimeout(400) // > CELL_DWELL_MS
+  const box = (await layer.boundingBox())!
+  await page.mouse.move(box.x + 40, box.y + 16, { steps: 30 })
+  await expect(layer).toHaveAttribute('data-sticky', 'true')
+
+  const term = page.getByTestId('term-classic-shadowform')
+  const termBox = (await term.boundingBox())!
+  await page.mouse.move(termBox.x + termBox.width / 2, termBox.y + termBox.height / 2, { steps: 10 })
+
+  const card = page.getByTestId('classic-shadowform')
+  await expect(card).toBeVisible()
+  await expect(card).toContainText('In Classic Era')
+  await expect(card.locator('.diff-del').first()).toBeVisible()
+  await expect(card.locator('.diff-add').first()).toBeVisible()
+  // The Classic sentence, not ours: Classic Shadowform blocked Holy spells.
+  await expect(card).toContainText('Holy')
+  await page.screenshot({ path: 'test-results/classic-diff-card.png' })
+})
+
+test('a retuned talent names the numbers that moved, and shows the Classic series', async ({ page }) => {
+  await page.goto('/#/priest')
+  const cell = page.getByTestId('talent-shadow-affinity')
+  await expect(cell).toHaveAttribute('data-change', 'values-changed')
+  await cell.hover()
+  await expect(page.getByTestId('changed-shadow-affinity')).toContainText('Values changed:')
+
+  const layer = page.getByTestId('tooltip-layer-shadow-affinity')
+  await expect(layer).toBeVisible()
+  await page.waitForTimeout(400)
+  const box = (await layer.boundingBox())!
+  await page.mouse.move(box.x + 40, box.y + 16, { steps: 30 })
+  await expect(layer).toHaveAttribute('data-sticky', 'true')
+
+  const term = page.getByTestId('term-classic-shadow-affinity')
+  const termBox = (await term.boundingBox())!
+  await page.mouse.move(termBox.x + termBox.width / 2, termBox.y + termBox.height / 2, { steps: 10 })
+
+  const card = page.getByTestId('classic-shadow-affinity')
+  await expect(card).toBeVisible()
+  await expect(card).toContainText('Classic values by rank:')
+  await page.screenshot({ path: 'test-results/classic-diff-card-values.png' })
 })
