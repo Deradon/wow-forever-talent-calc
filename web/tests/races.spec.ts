@@ -65,7 +65,7 @@ test('a race page shows its traits, their verdicts and the source once', async (
 
   // The provenance is stated once for the page, not on every card.
   await expect(page.getByTestId('race-trust')).toContainText('Read from the stream')
-  await expect(page.getByTestId('race-trust')).toContainText('checked by a reviewer')
+  await expect(page.getByTestId('race-trust')).toContainText('not yet reviewed')
   await expect(page.locator('.races-trust-line')).toHaveCount(0)
 
   // The Classic side is nested and labelled unverified, never shown as game text.

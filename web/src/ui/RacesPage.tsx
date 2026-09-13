@@ -65,9 +65,8 @@ function Matrix() {
     <div className="races-page" data-testid="races-matrix">
       <RacesHeader />
       <p className="races-lead">
-        Every race on the character-creation screen and the classes its class bar offered, read from the lit and greyed
-        icons rather than from any text. {newCombos} of these combinations were not possible in Classic Era; they carry
-        a gold ring. Pick a race for its traits, or a cell for that class's calculator.
+        Races and the classes each can play. {newCombos} combinations are new since Classic Era and carry a gold ring.
+        Pick a race for its traits, or a cell for that class's calculator.
       </p>
       <Legend />
       <div className="races-table-wrap">
@@ -94,12 +93,9 @@ function Matrix() {
         </table>
       </div>
       <ul className="races-notes" data-testid="races-notes">
-        {index.notes.map((note) => (
-          <li key={note}>{note}</li>
-        ))}
         <li>
-          "New in Forever" compares each class bar against the Classic Era racial list, which was written from memory and
-          is <strong>{UNVERIFIED}</strong>; a sourced list will change some of these marks.
+          The Classic Era comparison is <strong>{UNVERIFIED}</strong>: written from memory, not yet checked against a
+          database.
         </li>
       </ul>
     </div>
@@ -271,7 +267,7 @@ function OneRace({ raceId, variant }: { raceId: string; variant?: string }) {
 
         {/* Rule 2: the source is stated once for the page, not on every card. */}
         <p className="races-trust" data-testid="race-trust">
-          {trust.join(' ')} Each card's Details has the timestamp and the frame it was read from.
+          {trust.join(' ')}
         </p>
 
         <ul className="races-notes">

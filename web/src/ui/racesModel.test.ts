@@ -162,17 +162,17 @@ describe('trust', () => {
   it('states the source once for the page and says nothing was reviewed', () => {
     const lines = raceTrustLines([trait(), trait({ id: 'b' })])
     expect(lines).toHaveLength(1)
-    expect(lines[0]).toContain('Read from the stream')
-    expect(lines[0]).toContain('None of the 2 traits')
+    expect(lines[0]).toContain('Read from BlizzCon 2026 footage')
+    expect(lines[0]).toContain('not yet reviewed')
   })
 
   it('counts reviewed traits and flags low-confidence readings', () => {
     const shaky = trait({ id: 'shaky', source: { kind: 'video', t: 1, confidence: 0.3, reviewed: false } })
     const done = trait({ id: 'done', source: { kind: 'video', t: 1, confidence: 1, reviewed: true } })
     const lines = raceTrustLines([shaky, done])
-    expect(lines[0]).toContain('1 of 2 traits has been checked')
-    expect(lines[1]).toContain('low confidence')
-    expect(raceTrustLines([done])[0]).toContain('then checked by a reviewer')
+    expect(lines[0]).toContain('1 of 2 traits reviewed')
+    expect(lines[1]).toContain('uncertain')
+    expect(raceTrustLines([done])[0]).toContain('and reviewed')
     expect(raceTrustLines([])).toEqual([])
   })
 

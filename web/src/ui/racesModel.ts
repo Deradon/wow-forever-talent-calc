@@ -226,21 +226,18 @@ export function raceTrustLines(traits: RaceTrait[]): string[] {
   const lines: string[] = []
   const noun = total === 1 ? 'trait' : 'traits'
   if (reviewed === 0) {
-    lines.push(`Read from the stream by a vision model. ${none(total)} ${noun} here ${total === 1 ? 'has' : 'have'} been checked by a reviewer.`)
+    lines.push(`Read from BlizzCon 2026 footage; not yet reviewed.`)
   } else if (reviewed === total) {
-    lines.push(`Read from the stream by a vision model, then checked by a reviewer.`)
+    lines.push(`Read from BlizzCon 2026 footage and reviewed.`)
   } else {
-    lines.push(`Read from the stream by a vision model. ${reviewed} of ${total} ${noun} ${reviewed === 1 ? 'has' : 'have'} been checked by a reviewer.`)
+    lines.push(`Read from BlizzCon 2026 footage; ${reviewed} of ${total} ${noun} reviewed.`)
   }
   if (shaky > 0) {
-    lines.push(`${shaky} of ${total} ${noun} ${shaky === 1 ? 'was' : 'were'} read with low confidence and ${shaky === 1 ? 'is' : 'are'} marked below.`)
+    lines.push(`${shaky} of ${total} ${noun} ${shaky === 1 ? 'is' : 'are'} uncertain and marked below.`)
   }
   return lines
 }
 
-function none(total: number): string {
-  return total === 1 ? 'The one' : `None of the ${total}`
-}
 
 /**
  * The amber line on a single card, when one applies at all. Delegates to the
