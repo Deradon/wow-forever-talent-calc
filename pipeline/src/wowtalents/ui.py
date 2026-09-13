@@ -49,6 +49,7 @@ TOOLTIP_W_RANGE = (120, 270)            # up to ~228 px wide, narrower for short
 TOOLTIP_H_MIN = 50
 TOOLTIP_MIN_DARK = 0.65                 # fraction of near-black pixels inside a real tooltip (>= 0.69 measured; junk <= 0.59)
 TOOLTIP_DARK_LEVEL = 40
+TOOLTIP_BLACK_LEVEL = 16                # the tooltip body is grey 1-3 in the stream; dark UI panels rarely go below 16
 
 
 @dataclass
@@ -308,30 +309,162 @@ def trim_bbox(mask: np.ndarray, bbox: tuple[int, int, int, int], fill: float = 0
     return (x + int(xs[0]), y + int(ys[0]), int(xs[-1] - xs[0] + 1), int(ys[-1] - ys[0] + 1))
 
 
+def _longest_dark_run(frac: np.ndarray, min_frac: float, smooth: int = 9) -> tuple[int, int] | None:
+    """[start, end) of the longest run where the ``smooth``-px moving average of ``frac`` >= ``min_frac``."""
+    raw = frac
+    if smooth > 1 and len(frac) >= smooth:
+        frac = np.convolve(frac, np.ones(smooth) / smooth, mode="same")
+    ok = frac >= min_frac
+    best = None
+    start = None
+    for i, v in enumerate(list(ok) + [False]):
+        if v and start is None:
+            start = i
+        elif not v and start is not None:
+            if best is None or i - start > best[1] - best[0]:
+                best = (start, i)
+            start = None
+    if best is None:
+        return None
+    # the smoothing widened the run by up to smooth // 2: tighten on the raw profile
+    a, b = best
+    while a < b - 1 and raw[a] < min_frac:
+        a += 1
+    while b > a + 1 and raw[b - 1] < min_frac:
+        b -= 1
+    return (a, b)
+
+
+def dark_trim(gray: np.ndarray, bbox: tuple[int, int, int, int], row_level: int = TOOLTIP_BLACK_LEVEL,
+              row_frac: float = 0.35, col_level: int = TOOLTIP_DARK_LEVEL, col_frac: float = 0.4) -> tuple[int, int, int, int]:
+    """Shrink ``bbox`` to the dark rows/columns of the *frame*.
+
+    The diff mask cannot separate a tooltip from a changed region glued to it
+    (a ghost tooltip left in the median, the game world past the window's
+    right edge, a brightened or dark panel), but the tooltip's own body can.
+    Rows are kept from the outermost ones whose fraction of pixels below
+    ``row_level`` (truly black: a dark panel under the box is not) reaches
+    ``row_frac``; rows through dense text are only about half black, so the
+    bar is low and the outermost rule never cuts a box through its text.
+    Columns take the longest run whose 9 px smoothed fraction below
+    ``col_level`` reaches ``col_frac`` (text is left-aligned, so the left
+    columns are the least black and need the softer level), which drops an
+    appendage on either side. The box is returned unchanged when nothing
+    qualifies; :func:`border_snap` then settles the exact edges.
+    """
+    x, y, w, h = bbox
+    g = gray[y:y + h, x:x + w]
+    if g.size == 0:
+        return bbox
+    ys = np.where((g < row_level).mean(1) >= row_frac)[0]
+    if len(ys) == 0:
+        return bbox
+    y0, y1 = int(ys[0]), int(ys[-1]) + 1
+    cols = _longest_dark_run((g[y0:y1] < col_level).mean(0), col_frac)
+    if cols is None:
+        return bbox
+    x0, x1 = cols
+    return (x + x0, y + y0, x1 - x0, y1 - y0)
+
+
+BORDER_MIN_MEAN = 55        # the tooltip's 1 px border line is grey 80-130 in the stream ...
+BORDER_UNIFORM = 0.85       # ... and uniform: this share of its pixels lies in 40-220 (a text line has black gaps)
+
+
+def border_snap(gray: np.ndarray, bbox: tuple[int, int, int, int], search: int = 60, min_size: int = 40,
+                level: int = TOOLTIP_BLACK_LEVEL) -> tuple[int, int, int, int]:
+    """Snap each edge of ``bbox`` to the tooltip's border line when one is found.
+
+    A border row/column has a mean of at least ``BORDER_MIN_MEAN``, is
+    uniformly grey (``BORDER_UNIFORM`` of its pixels in 40-220, which a
+    bright text line with black gaps between the glyphs is not), and has a
+    black interior neighbour (>= 80 % below ``level``) and a not-black outer
+    neighbour (< 70 %). Scanning from the outside inward over at most
+    ``search`` px finds the outermost such line, so a dark panel or ghost
+    glued to the box is cut off exactly at the border; an edge without a
+    border line keeps its trimmed position.
+    """
+    x, y, w, h = bbox
+    H, W = gray.shape[:2]
+    x0, y0, x1, y1 = max(0, x), max(0, y), min(W, x + w), min(H, y + h)
+
+    def black(a: np.ndarray) -> float:
+        return float((a < level).mean()) if a.size else 0.0
+
+    def is_border(line: np.ndarray, inner: np.ndarray, outer: np.ndarray | None) -> bool:
+        return (line.mean() >= BORDER_MIN_MEAN and ((line >= 40) & (line <= 220)).mean() >= BORDER_UNIFORM
+                and black(inner) >= 0.8 and (outer is None or black(outer) < 0.7))
+
+    # bottom
+    for yy in range(y1 - 1, max(y0 + min_size, y1 - search) - 1, -1):
+        if yy - 1 >= 0 and is_border(gray[yy, x0:x1], gray[yy - 1, x0:x1], gray[yy + 1, x0:x1] if yy + 1 < H else None):
+            y1 = yy
+            break
+    # top
+    for yy in range(y0, min(y1 - min_size, y0 + search)):
+        if yy + 1 < H and is_border(gray[yy, x0:x1], gray[yy + 1, x0:x1], gray[yy - 1, x0:x1] if yy - 1 >= 0 else None):
+            y0 = yy + 1
+            break
+    # right
+    for xx in range(x1 - 1, max(x0 + min_size, x1 - search) - 1, -1):
+        if xx - 1 >= 0 and is_border(gray[y0:y1, xx], gray[y0:y1, xx - 1], gray[y0:y1, xx + 1] if xx + 1 < W else None):
+            x1 = xx
+            break
+    # left
+    for xx in range(x0, min(x1 - min_size, x0 + search)):
+        if xx + 1 < W and is_border(gray[y0:y1, xx], gray[y0:y1, xx + 1], gray[y0:y1, xx - 1] if xx - 1 >= 0 else None):
+            x0 = xx + 1
+            break
+    return (x0, y0, x1 - x0, y1 - y0)
+
+
 def find_tooltip(mask: np.ndarray, w_range: tuple[int, int] = TOOLTIP_W_RANGE,
                  h_min: int = TOOLTIP_H_MIN, min_area: int = 9000,
-                 rejected: list[tuple[int, int, int, int]] | None = None) -> tuple[tuple[int, int, int, int] | None, list[tuple[int, int, int, int]]]:
+                 rejected: list[tuple[int, int, int, int]] | None = None,
+                 gray: np.ndarray | None = None, close: int = 7,
+                 reasons: list[str] | None = None) -> tuple[tuple[int, int, int, int] | None, list[tuple[int, int, int, int]]]:
     """Largest tooltip-shaped blob in ``mask`` plus the other blobs (cursor candidates).
 
-    Returns ``(bbox or None, small_blobs)`` where bbox is (x, y, w, h). Big
-    blobs that fail the shape test are appended to ``rejected`` when given.
+    Returns ``(bbox or None, small_blobs)`` where bbox is (x, y, w, h). A blob
+    is a candidate when its *bounding box* covers ``min_area`` px: over a dark
+    panel the tooltip body hardly differs from the median and only the grey
+    border and the text are in the mask, so the pixel count of a real tooltip
+    can be a third of its box. Each candidate is trimmed on the mask
+    (:func:`trim_bbox`) and, when ``gray`` (the frame) is given, on the
+    frame's dark core (:func:`dark_trim`, then :func:`border_snap` to the
+    tooltip's border line) before the width/height test, and
+    only candidates whose crop is at least ``TOOLTIP_MIN_DARK`` near-black
+    compete (a large sparse blob of game-world change must not outrank the
+    tooltip). Candidates failing a test are appended to ``rejected`` (and a
+    short reason to ``reasons``) when given.
     """
-    closed = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
+    closed = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, np.ones((close, close), np.uint8))
     n, _, stats, _ = cv2.connectedComponentsWithStats(closed, connectivity=8)
     best = None
     best_area = 0
     small: list[tuple[int, int, int, int]] = []
     for i in range(1, n):
         x, y, w, h, area = (int(v) for v in stats[i])
-        if area < min_area:
+        if w * h < min_area:
             if 80 <= area <= 3000:
                 small.append((x, y, w, h))
             continue
         bb = trim_bbox(mask, (x, y, w, h))
+        if gray is not None:
+            bb = border_snap(gray, dark_trim(gray, bb))
         bx, by, bw, bh = bb
+        why = None
         if not (w_range[0] <= bw <= w_range[1] and bh >= h_min):
+            why = "narrow" if bw < w_range[0] else "wide" if bw > w_range[1] else "short"
+        elif gray is not None:
+            dark = darkness(gray[by:by + bh, bx:bx + bw])
+            if dark < TOOLTIP_MIN_DARK:
+                why = f"not_dark {dark:.2f}"
+        if why is not None:
             if rejected is not None:
                 rejected.append(bb)
+            if reasons is not None:
+                reasons.append(why)
             continue
         if bw * bh > best_area:
             best, best_area = bb, bw * bh
@@ -351,6 +484,189 @@ def darkness(crop: np.ndarray, border: int = 4, level: int = TOOLTIP_DARK_LEVEL)
 
 def looks_like_tooltip(crop: np.ndarray, min_dark: float = TOOLTIP_MIN_DARK) -> bool:
     return darkness(crop) >= min_dark
+
+
+# --------------------------------------------------------------------------- median ghosts
+
+
+GHOST_MIN_FRAC = 0.1        # a pixel is unstable when it differs from the median in this share of frames
+GHOST_MIN_FRAMES = 3
+GHOST_BG_LEVEL = 60         # median pixels darker than this can belong to a ghost box (a blend is not fully black)
+GHOST_DARK_LEVEL = 16       # "black box" test for ghosts: a tooltip body is grey 1-3, dark panels rarely go below 16
+GHOST_TOOLTIP_DARK = 0.45   # a region at least this black (at GHOST_DARK_LEVEL) shows a tooltip
+GHOST_FREE_DARK = 0.3       # frames whose region is at most this black are used for the repair
+GHOST_MIN_GAIN = 0.15       # a repair must lower the region's blackness by this much to be kept
+GHOST_SHAPE = ((100, 340), 40, 6000)   # (w_range, h_min, min bbox area) of a ghost candidate
+DONOR_MAX_DIFF = 8.0        # mean |median - donor| over the window (candidate excluded) for the same UI state
+DONOR_MAX_DARK = GHOST_FREE_DARK        # the donor's region must not hold a tooltip itself
+
+
+def blackness(crop: np.ndarray) -> float:
+    """:func:`darkness` at ``GHOST_DARK_LEVEL``: separates a tooltip body from a dark UI panel."""
+    return darkness(crop, level=GHOST_DARK_LEVEL)
+
+
+def unstable_mask(frames: list[np.ndarray], bg: np.ndarray, thresh: int = 25,
+                  min_frac: float = GHOST_MIN_FRAC, min_frames: int = GHOST_MIN_FRAMES) -> np.ndarray:
+    """Pixels that differ from ``bg`` in at least ``max(min_frames, min_frac * n)`` of ``frames``.
+
+    All arrays share one shape (a ROI crop is fine). A tooltip that sat on
+    screen for most of the sampled frames wins the median and then differs in
+    every frame that does *not* show it, while the real background is stable.
+    """
+    cnt = np.zeros(bg.shape[:2], np.int32)
+    bg_gray = cv2.cvtColor(bg, cv2.COLOR_BGR2GRAY)
+    for f in frames:
+        d = cv2.absdiff(cv2.cvtColor(f, cv2.COLOR_BGR2GRAY), bg_gray)
+        cnt += (d > thresh)
+    need = max(min_frames, int(np.ceil(min_frac * len(frames))))
+    return ((cnt >= need).astype(np.uint8) * 255)
+
+
+def _shaped_boxes(mask: np.ndarray, fill: float = 0.45) -> list[tuple[int, int, int, int]]:
+    (w_lo, w_hi), h_min, min_area = GHOST_SHAPE
+    closed = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, np.ones((7, 7), np.uint8))
+    n, _, stats, _ = cv2.connectedComponentsWithStats(closed, connectivity=8)
+    out = []
+    for i in range(1, n):
+        x, y, w, h, _ = (int(v) for v in stats[i])
+        if w * h < min_area:
+            continue
+        bx, by, bw, bh = trim_bbox(mask, (x, y, w, h), fill=fill)
+        if w_lo <= bw <= w_hi and bh >= h_min:
+            out.append((bx, by, bw, bh))
+    return out
+
+
+def _overlaps(a: tuple[int, int, int, int], b: tuple[int, int, int, int]) -> bool:
+    ax, ay, aw, ah = a
+    bx, by, bw, bh = b
+    ix = max(0, min(ax + aw, bx + bw) - max(ax, bx))
+    iy = max(0, min(ay + ah, by + bh) - max(ay, by))
+    return ix * iy > 0.5 * min(aw * ah, bw * bh)
+
+
+def ghost_candidates(bg: np.ndarray, frames: list[np.ndarray], donors: list[np.ndarray] = (),
+                     thresh: int = 25) -> list[dict]:
+    """Tooltip-shaped boxes where the median ``bg`` may hold a ghost tooltip.
+
+    Two sources, deduplicated on overlap: (1) the difference between ``bg``
+    and each donor median (another segment of the same class: the talent
+    window is static, so a tooltip-shaped dark difference is a ghost in one
+    of the two; kept when ``bg`` is dark there and the donor is not), (2) the
+    tooltip-shaped components of the unstable pixels that are dark in ``bg``
+    (the only source when no donor exists). Each dict has ``bbox`` and
+    ``source``.
+    """
+    out: list[dict] = []
+    bg_gray = cv2.cvtColor(bg, cv2.COLOR_BGR2GRAY)
+
+    def add(bbox, source):
+        for o in out:
+            if _overlaps(o["bbox"], bbox):
+                return
+        out.append({"bbox": bbox, "source": source})
+
+    for k, donor in enumerate(donors):
+        if donor.shape != bg.shape:
+            continue
+        d = (cv2.absdiff(bg_gray, cv2.cvtColor(donor, cv2.COLOR_BGR2GRAY)) > thresh).astype(np.uint8) * 255
+        for x, y, w, h in _shaped_boxes(d):
+            if blackness(bg[y:y + h, x:x + w]) >= GHOST_TOOLTIP_DARK and blackness(donor[y:y + h, x:x + w]) <= DONOR_MAX_DARK:
+                add((x, y, w, h), f"donor{k}")
+    if frames:
+        dark_bg = (bg_gray < GHOST_BG_LEVEL).astype(np.uint8) * 255
+        cand = cv2.bitwise_and(unstable_mask(frames, bg, thresh=thresh), dark_bg)
+        for bbox in _shaped_boxes(cand):
+            add(bbox, "frames")
+    return out
+
+
+def ghost_boxes(frames: list[np.ndarray], bg: np.ndarray, donors: list[np.ndarray] = (),
+                min_dark: float = GHOST_TOOLTIP_DARK, min_tooltip_frames: int = 2) -> list[dict]:
+    """:func:`ghost_candidates` that are a black box in at least ``min_tooltip_frames`` frames.
+
+    Adds ``tooltip_frames`` (frames whose region is at least ``min_dark``
+    black, see :func:`blackness`), ``free_frames`` (region at most
+    ``GHOST_FREE_DARK`` black: the in-segment repair source, empty when the
+    spot was under some tooltip in every frame) and ``median_darkness`` (the
+    median's blackness there).
+    """
+    out = []
+    for c in ghost_candidates(bg, frames, donors):
+        bx, by, bw, bh = c["bbox"]
+        darks = [blackness(f[by:by + bh, bx:bx + bw]) for f in frames]
+        tooltip = [k for k, d in enumerate(darks) if d >= min_dark]
+        if len(tooltip) < min_tooltip_frames:
+            continue
+        c.update({"tooltip_frames": tooltip, "free_frames": [k for k, d in enumerate(darks) if d <= GHOST_FREE_DARK],
+                  "median_darkness": round(blackness(bg[by:by + bh, bx:bx + bw]), 2)})
+        out.append(c)
+    return out
+
+
+def patch_from_donor(bg: np.ndarray, donor: np.ndarray, bbox: tuple[int, int, int, int],
+                     window: tuple[int, int, int, int], max_diff: float = DONOR_MAX_DIFF,
+                     max_dark: float = DONOR_MAX_DARK) -> tuple[np.ndarray | None, float, float]:
+    """Region ``bbox`` of ``donor`` (another segment's median of the same class), if usable.
+
+    The donor is accepted when its window (``bbox`` excluded) matches ours
+    within ``max_diff`` mean grey difference (same page, same points spent,
+    no dialog) and its own region is not dark. Returns ``(patch or None,
+    window_diff, donor_darkness)``.
+    """
+    x, y, w, h = bbox
+    wx0, wy0, wx1, wy1 = window
+    a = cv2.cvtColor(bg[wy0:wy1, wx0:wx1], cv2.COLOR_BGR2GRAY).astype(np.float32)
+    b = cv2.cvtColor(donor[wy0:wy1, wx0:wx1], cv2.COLOR_BGR2GRAY).astype(np.float32)
+    keep = np.ones(a.shape, bool)
+    keep[max(0, y - wy0):max(0, y + h - wy0), max(0, x - wx0):max(0, x + w - wx0)] = False
+    diff = float(np.abs(a - b)[keep].mean()) if keep.any() else 255.0
+    region = donor[y:y + h, x:x + w]
+    dark = blackness(region)
+    if diff > max_diff or dark > max_dark or region.shape[:2] != (h, w):
+        return None, round(diff, 1), round(dark, 2)
+    return region.copy(), round(diff, 1), round(dark, 2)
+
+
+def repair_ghosts(bg: np.ndarray, frames: list[np.ndarray], donors: list[np.ndarray] = (),
+                  window: tuple[int, int, int, int] | None = None, boxes: list[dict] | None = None,
+                  min_gain: float = GHOST_MIN_GAIN, min_free_frames: int = 3) -> tuple[np.ndarray, list[dict]]:
+    """Replace every ghost box of ``bg`` by real background.
+
+    Two sources are tried and the blacker-free one wins: the median of this
+    segment's tooltip-free frames (at least ``min_free_frames``; other
+    tooltips half covering the spot leave a residue there) and the same
+    region of the first donor median that :func:`patch_from_donor` accepts
+    (``window`` in the arrays' coordinates). A patch must lower the region's
+    blackness by ``min_gain``. Returns the repaired copy and the boxes, each
+    with ``darkness_after`` and ``repaired`` (``"frames"``, ``"donor"`` +
+    ``donor`` index, or ``False``).
+    """
+    boxes = ghost_boxes(frames, bg, donors) if boxes is None else boxes
+    out = bg.copy()
+    for g in boxes:
+        x, y, w, h = g["bbox"]
+        g["repaired"] = False
+        g["darkness_after"] = g["median_darkness"]
+        options: list[tuple[float, str, np.ndarray, dict]] = []
+        if len(g["free_frames"]) >= min_free_frames:
+            stack = np.stack([frames[k][y:y + h, x:x + w] for k in g["free_frames"]])
+            patch = np.median(stack, axis=0).astype(np.uint8)
+            options.append((blackness(patch), "frames", patch, {}))
+        if window is not None:
+            for k, donor in enumerate(donors):
+                patch, diff, dark = patch_from_donor(out, donor, (x, y, w, h), window)
+                if patch is not None:
+                    options.append((dark, "donor", patch, {"donor": k, "donor_window_diff": diff}))
+                    break
+        if not options:
+            continue
+        dark, how, patch, extra = min(options, key=lambda o: o[0])
+        if dark <= g["median_darkness"] - min_gain:
+            out[y:y + h, x:x + w] = patch
+            g.update({"darkness_after": round(dark, 2), "repaired": how, **extra})
+    return out, boxes
 
 
 # --------------------------------------------------------------------------- hashing / grouping

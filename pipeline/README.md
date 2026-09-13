@@ -68,6 +68,12 @@ rules as stage 0 apply.
 uv run stages/03_calibrate.py run 1
 #   -> work/calib/01-paladin-13640.json, -median.png, -overlay.png (eyeball this),
 #      -header.png, -tree{1,2,3}.png (tree-name strips for the VLM)
+#   A tooltip the streamer rested on for most sampled frames wins the median
+#   ("ghost"); stage 3 detects such boxes (against the other calibrated
+#   segments of the class, or the frames themselves) and replaces them with
+#   the median of tooltip-free frames or the same region of a donor segment
+#   (`ghosts` in the JSON; calibrate the class's other segments first so
+#   donors exist, or run the class twice).
 
 # stage 4: hovers at 15 fps (every 4th frame), one native crop per hovered cell
 uv run stages/04_hovers.py run 1
@@ -177,10 +183,19 @@ Reader contract (schema in `reader.TOOLTIP_SCHEMA`): `name`,
 "Requires"), `description` (gold paragraph only), `footer` ("Click to
 learn"), `cut_off` (text truncated or touching the border). `clean_reading`
 re-files a misplaced Passive / Requires / Click-to-learn line and never
-invents text. Stage 4 now rejects diff blobs whose interior is less than 65 %
+invents text. Stage 4 rejects diff blobs whose interior is less than 65 %
 near-black (`ui.darkness`; real tooltips measure >= 0.69, dimmed-grid junk
-<= 0.59), refuses to guess a cell when the column fallback disagrees with the
-cursor, and flags boxes at the width ceiling as cut off.
+<= 0.59), refuses to guess a cell when the column fallback (or a corner match
+looser than 8 px) disagrees with the cursor, and flags boxes at the width
+ceiling as cut off. Since the missing-cells forensics
+(`docs/handover/2026-09-13-missing-cells-forensics.md`) a diff blob is a
+candidate by the area of its bounding box (over a dark panel only the border
+and the text differ from the median), is trimmed to the frame's black core
+(`ui.dark_trim`) and snapped to the tooltip's border line (`ui.border_snap`)
+before the width test, and only near-black candidates compete, so a ghost,
+the game world past the window edge or a brightened panel glued to the box
+no longer pushes it over the width ceiling or wins the frame as junk.
+`rejected_frames[].reasons` names the failed test per blob.
 
 Second opinion (optional, `scripts/second_opinion.py <class>`): transcribes
 every crop of the candidates file with the local `codex` CLI (about 5 s per

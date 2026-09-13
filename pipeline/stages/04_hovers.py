@@ -4,7 +4,9 @@ Needs the segment's stage-3 calibration (``work/calib/<segment_id>.json`` and
 median). Walks the segment's fragments (cached in ``work/frags/``), decodes
 every ``--every``-th frame (4 -> 15 fps), diffs it against the median inside
 the work ROI with the overlays masked, finds the tooltip blob (about 225 px
-wide, near-black box with a grey border), hashes the crop and groups
+wide, near-black box with a grey border; candidates are trimmed to the
+frame's black core and snapped to the border line so that whatever changed
+next to the tooltip does not widen the box), hashes the crop and groups
 consecutive near-identical frames into hovers. Each hover keeps its sharpest
 frame; the hovered cell is the one whose top-right corner is nearest the
 tooltip's bottom-left corner (cross-checked against the cursor blob). Hovers
@@ -42,6 +44,7 @@ CALIB_DIR = fr.WORK / "calib"
 HOVERS_DIR = fr.WORK / "hovers"
 FPS = 60
 CROP_MARGIN = 2   # px around the trimmed diff box so the grey border is inside the crop
+CORNER_STRICT = 8  # px; a corner match farther than this is only trusted when no cursor contradicts it
 
 
 def tree_slugs(calib: dict) -> dict[int, str]:
@@ -54,9 +57,11 @@ def observe(frame: np.ndarray, bg: np.ndarray, cells: list[ui.Cell], t: float, s
     """One frame -> Observation (or None when no tooltip) plus cursor cross-check info."""
     mask = ui.diff_mask(frame, bg, thresh=thresh)
     rejected: list[tuple[int, int, int, int]] = []
-    bbox, small = ui.find_tooltip(mask, rejected=rejected)
+    reasons: list[str] = []
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    bbox, small = ui.find_tooltip(mask, rejected=rejected, reasons=reasons, gray=gray)
     if bbox is None:
-        return None, {"rejected": rejected}
+        return None, {"rejected": rejected, "reasons": reasons}
     x, y, w, h = bbox
     m = CROP_MARGIN
     x0, y0 = max(0, x - m), max(0, y - m)
@@ -66,7 +71,8 @@ def observe(frame: np.ndarray, bg: np.ndarray, cells: list[ui.Cell], t: float, s
     if dark < ui.TOOLTIP_MIN_DARK:
         # a dimmed part of the grid (search box, spellbook), not a black tooltip box
         rejected.append(bbox)
-        return None, {"rejected": rejected, "not_dark": round(dark, 2)}
+        reasons.append(f"not_dark {dark:.2f}")
+        return None, {"rejected": rejected, "reasons": reasons, "not_dark": round(dark, 2)}
     cell, dist, method = ui.cell_for_tooltip(cells, bbox)
     cursor_cell = None
     for sx, sy, sw, sh in small:
@@ -77,6 +83,9 @@ def observe(frame: np.ndarray, bg: np.ndarray, cells: list[ui.Cell], t: float, s
     if method == "column" and cursor_cell is not None:
         # the corner rule failed and the cursor sits on another cell: do not guess
         cell, method = None, "column-vs-cursor"
+    elif method == "corner" and dist > CORNER_STRICT and cursor_cell is not None:
+        # a loose corner match (the box is glued to something) against a cursor elsewhere: do not guess
+        cell, method = None, "corner-vs-cursor"
     obs = ui.Observation(
         t=t, sq=sq, offset=off, bbox=(x0, y0, x1 - x0, y1 - y0),
         hash=ui.dhash(crop), sharpness=ui.sharpness(crop),
@@ -139,7 +148,8 @@ def run(
                 infos[(sq, off)] = info
             elif info.get("rejected"):
                 rejected_frames.append({"t": round(sq + off / FPS, 3), "sq": sq, "offset": off,
-                                        "blobs": [list(b) for b in info["rejected"]]})
+                                        "blobs": [list(b) for b in info["rejected"]],
+                                        "reasons": info.get("reasons", [])})
             done = tracker.push(obs)
             if done:
                 runs.append(done)
