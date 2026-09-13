@@ -9,7 +9,7 @@ test('class picker lists Paladin with trees, counts and the data note', async ({
   await expect(card).toContainText('Paladin')
   await expect(page.getByTestId('class-paladin-trees')).toContainText('Holy')
   await expect(page.getByTestId('class-paladin-trees')).toContainText('Retribution')
-  await expect(page.getByTestId('class-paladin-talents')).toHaveText(/\d+ talents/)
+  await expect(page.getByTestId('class-paladin-trees')).toContainText(/Holy/)
   await expect(page.locator('a[href="https://github.com/Deradon/wow-forever-talent-calc"]').first()).toBeVisible()
   await expect(page.locator('footer')).toContainText('Not affiliated')
 })

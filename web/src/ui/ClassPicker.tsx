@@ -58,7 +58,7 @@ export function ClassPicker() {
       <div className="panel p-5">
         <h1 className="serif mb-2 text-lg text-[var(--gold)]">Choose a class</h1>
         {/* The one place the caveat is stated: tooltips and class pages must not repeat it. */}
-        <p className="mb-2 max-w-[70ch] text-sm text-[var(--text-dim)]">
+        <p className="mb-2 text-sm text-[var(--text-dim)]">
           Read from BlizzCon 2026 demo footage by a local vision model and <strong>unreviewed</strong> - expect wrong
           names and numbers. Only rank 1 was on screen; higher ranks and the point rules are estimated from Classic Era.
         </p>
@@ -85,6 +85,8 @@ export function ClassPicker() {
 }
 
 function ClassCard({ entry }: { entry: IndexEntry }) {
+  // Provenance and the review queue are deliberately not shown here: the caveat
+  // above states the data source once, and `#/review/<class>` stays reachable by URL.
   return (
     <li className="class-card">
       <a href={`#/${entry.id}`} className="block no-underline" data-testid={`class-${entry.id}`}>
@@ -92,9 +94,6 @@ function ClassCard({ entry }: { entry: IndexEntry }) {
           <ClassIcon classId={entry.id} className={entry.className} size={40} />
           <span className="serif text-lg text-[var(--gold)]">{entry.className}</span>
           {entry.origin !== 'talents' && <span className="text-xs text-[var(--text-dim)]">example</span>}
-          <span className="ml-auto text-xs text-[var(--text-dim)]" data-testid={`class-${entry.id}-talents`}>
-            {entry.talents} talents
-          </span>
         </div>
         <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm" data-testid={`class-${entry.id}-trees`}>
           {entry.trees.map((t) => (
@@ -105,13 +104,6 @@ function ClassCard({ entry }: { entry: IndexEntry }) {
           ))}
         </ul>
       </a>
-      <div className="mt-2 flex flex-wrap gap-x-3 text-xs text-[var(--text-dim)]">
-        <span>{entry.dataSource === 'datamined' ? 'datamined' : `read from ${entry.dataSource}`}</span>
-        <span>{entry.reviewed} reviewed</span>
-        <a href={`#/review/${entry.id}`} data-testid={`review-${entry.id}`}>
-          review queue{entry.needsReview > 0 ? ` (${entry.needsReview})` : ''}
-        </a>
-      </div>
     </li>
   )
 }
