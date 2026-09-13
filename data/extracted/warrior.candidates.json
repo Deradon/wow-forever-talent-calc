@@ -195,6 +195,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_rogue_ambush",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.65,
+        "margin": 0.072,
+        "phash": 18,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -335,6 +346,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_parry",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.908,
+        "margin": 0.146,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -467,6 +489,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_gouge",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.847,
+        "margin": 0.175,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -849,6 +882,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "inv_sword_05",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.972,
+        "margin": 0.121,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -969,7 +1013,18 @@
           "confidence": 0.917,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "spell_holy_blessingofstamina",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.881,
+        "margin": 0.16,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "warrior/arms/r2c2",
@@ -1115,7 +1170,18 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "ability_backstab",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.844,
+        "margin": 0.162,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "warrior/arms/r3c0",
@@ -1237,6 +1303,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "inv_spear_01",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.936,
+        "margin": 0.16,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "classic-era-client",
+        "verified": false
       }
     },
     {
@@ -1378,6 +1455,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "inv_axe_09",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.82,
+        "margin": 0.329,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1513,6 +1601,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_searingarrow",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.922,
+        "margin": 0.162,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1645,6 +1744,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "inv_sword_01",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.98,
+        "margin": 0.121,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "classic-era-client",
+        "verified": false
       }
     },
     {
@@ -1776,6 +1886,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "ability_rogue_slicedice",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.961,
+        "margin": 0.171,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2052,6 +2173,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_warrior_decisivestrike",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.913,
+        "margin": 0.281,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2191,6 +2323,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_shockwave",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.948,
+        "margin": 0.167,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2320,7 +2463,18 @@
           "confidence": 0.985,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "ability_warrior_savageblow",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.944,
+        "margin": 0.194,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "warrior/fury/r0c1",
@@ -2600,6 +2754,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_rogue_eviscerate",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.758,
+        "margin": 0.199,
+        "phash": 18,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2742,6 +2907,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_magic_magearmor",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.83,
+        "margin": 0.085,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2882,6 +3058,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_stoneclawtotem",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.875,
+        "margin": 0.347,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3014,6 +3201,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_warrior_cleave",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.937,
+        "margin": 0.204,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3130,6 +3328,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_shadow_deathscream",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.873,
+        "margin": 0.178,
+        "phash": 24,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3384,6 +3593,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "ability_warrior_intensifyrage",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.812,
+        "margin": 0.14,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -3522,6 +3742,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_dualwield",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.95,
+        "margin": 0.093,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3628,6 +3859,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "ability_whirlwind",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.806,
+        "margin": 0.116,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3769,6 +4011,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_unholyfrenzy",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.905,
+        "margin": 0.311,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3899,6 +4152,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "inv_sword_48",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.906,
+        "margin": 0.238,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4040,6 +4304,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_marksmanship",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.918,
+        "margin": 0.149,
+        "phash": 12,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4168,6 +4443,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_shadow_deathpact",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.791,
+        "margin": 0.428,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4313,6 +4599,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_rogue_sprint",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.648,
+        "margin": 0.052,
+        "phash": 18,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4441,6 +4738,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_ancestralguardian",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.894,
+        "margin": 0.177,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4600,7 +4908,18 @@
           "confidence": 0.879,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "ability_ghoulfrenzy",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.816,
+        "margin": 0.207,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "warrior/fury/r6c1",
@@ -4743,7 +5062,18 @@
           "confidence": 0.962,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "spell_nature_bloodlust",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.832,
+        "margin": 0.097,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "warrior/protection/r0c1",
@@ -4895,6 +5225,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "inv_shield_06",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.832,
+        "margin": 0.064,
+        "phash": 16,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5042,6 +5383,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_mirrorimage",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.684,
+        "margin": 0.103,
+        "phash": 18,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5177,6 +5529,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_racial_bloodrage",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.936,
+        "margin": 0.245,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5324,6 +5687,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_devotion",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.679,
+        "margin": 0.13,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5463,6 +5837,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_thunderclap",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.97,
+        "margin": 0.266,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5586,6 +5971,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_holy_ashestoashes",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.895,
+        "margin": 0.326,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5719,7 +6115,18 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "ability_warrior_shieldguard",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.926,
+        "margin": 0.176,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      }
     },
     {
       "id": "warrior/protection/r2c2",
@@ -5858,6 +6265,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_warrior_revenge",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.953,
+        "margin": 0.408,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6005,6 +6423,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_warrior_innerrage",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.855,
+        "margin": 0.187,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6144,6 +6573,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_warrior_sunder",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.925,
+        "margin": 0.253,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6283,6 +6723,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_warrior_disarm",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.689,
+        "margin": 0.166,
+        "phash": 20,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6520,6 +6971,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_warrior_shieldwall",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.897,
+        "margin": 0.235,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6648,6 +7110,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "ability_thunderbolt",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.954,
+        "margin": 0.149,
+        "phash": 2,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6785,6 +7258,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_warrior_shieldbash",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.892,
+        "margin": 0.364,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6920,6 +7404,17 @@
           "match": "description",
           "similarity": 0.99
         }
+      },
+      "icon": "inv_helmet_21",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.869,
+        "margin": 0.301,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -7040,6 +7535,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "ability_warrior_focusedrage",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.905,
+        "margin": 0.172,
+        "phash": 14,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -7166,6 +7672,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "inv_shield_04",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.964,
+        "margin": 0.136,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "classic-era-client",
+        "verified": false
       }
     },
     {
@@ -7310,7 +7827,18 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "inv_shield_05",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.916,
+        "margin": 0.064,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     }
   ],
   "recovery": {

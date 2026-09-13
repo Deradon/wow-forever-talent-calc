@@ -10,14 +10,14 @@ crop. Talents whose crop matches nothing keep `iconSource: "crop"`.
 | File | Content | Origin |
 |---|---|---|
 | `matches.json` | Per class and `<tree>/<talent-id>`: chosen `icon`, NCC `score`, `margin` to the runner-up, pHash distance, `method` (`classic-prior` / `visual`), `confidence`, reference `tier`, `verified`, the top-3 candidates, the cell of the source candidate record. `icon: null` means keep the crop. | `09_icons.py match all` |
-| `verified.json` (optional) | `{class: {"tree/talent": true|false}}` hand verdicts; `false` retracts a match on the next `match` run, `true` marks it verified. | by hand |
+| `verified.json` (optional) | `{class: {"tree/talent": true \| false \| "<icon name>"}}` hand verdicts, merged on the next `match` run: `false` retracts, `true` confirms (or accepts the best candidate of a rejected talent), an icon name forces that icon (`method: "manual"`). | by hand |
 | `../../web/public/icons/<name>.jpg` | 56 px (`large`) icon per accepted match; only referenced icons are stored. | `09_icons.py fetch` from Wowhead's CDN |
 
 ## Reference set (git-ignored, `pipeline/work/icons/`)
 
 Built by `09_icons.py refs [--fetch-lists]`, 6,631 icon names in three tiers
-(names with spaces, apostrophes or a stray extension are dropped),
-each fetched once as the 36 px `medium` JPG from
+(names with spaces, apostrophes or a stray extension are dropped; 6,628 exist
+on the CDN, retrieved 2026-09-13), each fetched once as the 36 px `medium` JPG from
 `https://wow.zamimg.com/images/wow/icons/medium/<name>.jpg` (one request at a
 time, 0.3 s pause, descriptive User-Agent, run stops on 403/429):
 
@@ -50,6 +50,12 @@ matching altogether (`iconSource: "datamined"`, DATA-SCHEMA.md section 9).
   the top 3 with NCC >= 0.45 (`method: "classic-prior"`). Otherwise a match
   needs NCC >= 0.60 and a 0.04 margin over the runner-up (or NCC >= 0.80),
   and a pHash distance <= 26 unless NCC >= 0.80 (`method: "visual"`).
+- A visual winner that contradicts the Classic prior needs NCC >= 0.85 and a
+  0.10 margin. Two references with NCC >= 0.90 to each other count as
+  variants of one picture and do not veto each other through the margin.
+- `confidence: "high"` = NCC >= 0.80 with margin, or the prior icon ranked
+  first; `medium` otherwise. `apply` and `fetch` take `high` (and hand
+  verified) matches only unless `--min-confidence medium` is given.
 - Everything else keeps the crop.
 
 ## Licensing

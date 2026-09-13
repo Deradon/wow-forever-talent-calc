@@ -291,6 +291,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "inv_wand_01",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.853,
+        "margin": 0.056,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -556,6 +567,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_manaregentotem",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.898,
+        "margin": 0.184,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -690,6 +712,17 @@
           "match": "description",
           "similarity": 0.95
         }
+      },
+      "icon": "spell_holy_divineillumination",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.957,
+        "margin": 0.278,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -824,6 +857,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_powerwordshield",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.801,
+        "margin": 0.151,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -955,6 +999,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_tranquility",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.914,
+        "margin": 0.153,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1090,6 +1145,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_hibernation",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.471,
+        "margin": 0.059,
+        "phash": 30,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1206,6 +1272,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_frost_windwalkon",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.896,
+        "margin": 0.185,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1338,6 +1415,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_sleep",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.885,
+        "margin": 0.294,
+        "phash": 18,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1463,6 +1551,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_innerfire",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.967,
+        "margin": 0.158,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1603,6 +1702,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_enchantarmor",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.893,
+        "margin": 0.001,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1722,7 +1832,18 @@
           "confidence": 0.7,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "spell_holy_pureofheart",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.945,
+        "margin": 0.053,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      }
     },
     {
       "id": "priest/discipline/r3c3",
@@ -1841,6 +1962,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_manaburn",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.938,
+        "margin": 0.182,
+        "phash": 2,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1962,6 +2094,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_holy_penance",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.976,
+        "margin": 0.135,
+        "phash": 12,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -2099,7 +2242,18 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "spell_holy_holyprotection",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.808,
+        "margin": 0.376,
+        "phash": 16,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      }
     },
     {
       "id": "priest/discipline/r5c2",
@@ -2217,6 +2371,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "spell_holy_devineaegis",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.929,
+        "margin": 0.237,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -2351,7 +2516,18 @@
           "confidence": 0.7,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "spell_holy_powerinfusion",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.864,
+        "margin": 0.227,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "priest/holy/r0c0",
@@ -2755,6 +2931,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_sealofsalvation",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.698,
+        "margin": 0.089,
+        "phash": 20,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2895,6 +3082,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_spellwarding",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.931,
+        "margin": 0.329,
+        "phash": 16,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3038,6 +3236,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_sealofwrath",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.855,
+        "margin": 0.281,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3158,6 +3367,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_holy_holynova",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.897,
+        "margin": 0.179,
+        "phash": 16,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3286,6 +3506,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_blessedrecovery",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.927,
+        "margin": 0.223,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3418,6 +3649,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_layonhands",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.92,
+        "margin": 0.035,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3546,6 +3788,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_purify",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.928,
+        "margin": 0.21,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3678,6 +3931,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_heal02",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.979,
+        "margin": 0.136,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3811,7 +4075,18 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "spell_holy_searinglightpriest",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.95,
+        "margin": 0.296,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "priest/holy/r3c3",
@@ -3928,6 +4203,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_holy_blindingheal",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.952,
+        "margin": 0.229,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -4038,6 +4324,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "inv_scroll_07",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.842,
+        "margin": 0.15,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "classic-era-client",
+        "verified": false
       }
     },
     {
@@ -4144,6 +4441,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "inv_enchant_essenceeternallarge",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.935,
+        "margin": 0.055,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4277,6 +4585,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_spiritualguidence",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.932,
+        "margin": 0.13,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4411,6 +4730,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_moonglow",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.982,
+        "margin": 0.124,
+        "phash": 0,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4547,7 +4877,18 @@
           "confidence": 0.879,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "spell_holy_prayerofmendingtga",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.873,
+        "margin": 0.189,
+        "phash": 20,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      }
     },
     {
       "id": "priest/shadow-magic/r0c0",
@@ -4687,6 +5028,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_burningspirit",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.767,
+        "margin": 0.41,
+        "phash": 20,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4827,6 +5179,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_gathershadows",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.81,
+        "margin": 0.186,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4967,6 +5330,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_requiem",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.821,
+        "margin": 0.233,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5099,6 +5473,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_shadowward",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.887,
+        "margin": 0.249,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5227,6 +5612,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_shadowwordpain",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.936,
+        "margin": 0.328,
+        "phash": 2,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5356,6 +5752,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_chilltouch",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.902,
+        "margin": 0.131,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5498,6 +5905,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_unholyfrenzy",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.923,
+        "margin": 0.31,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5638,7 +6056,18 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "spell_shadow_psychicscream",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.97,
+        "margin": 0.262,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "priest/shadow-magic/r2c2",
@@ -5755,6 +6184,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_shadow_siphonmana",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.893,
+        "margin": 0.264,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5870,6 +6310,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "spell_shadow_soulleech_2",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.875,
+        "margin": 0.33,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -5998,6 +6449,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_magic_lesserinvisibilty",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.92,
+        "margin": 0.148,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6120,6 +6582,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_shadow_unsummonbuilding",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.91,
+        "margin": 0.313,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6256,6 +6729,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_blackplague",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.913,
+        "margin": 0.073,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6378,6 +6862,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_shadow_impphaseshift",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.87,
+        "margin": 0.241,
+        "phash": 16,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6603,6 +7098,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "spell_shadow_demonicfortitude",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.935,
+        "margin": 0.26,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -6743,6 +7249,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_twilight",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.953,
+        "margin": 0.279,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6877,7 +7394,18 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "spell_shadow_shadowform",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.969,
+        "margin": 0.303,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     }
   ],
   "arrows": {

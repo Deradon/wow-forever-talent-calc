@@ -454,6 +454,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "inv_weapon_crossbow_10",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.912,
+        "margin": 0.294,
+        "phash": 12,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "classic-era-client",
+        "verified": false
       }
     },
     {
@@ -580,6 +591,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_hunter_aspectofthemonkey",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.583,
+        "margin": 0.032,
+        "phash": 16,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -708,6 +730,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_mount_jungletiger",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.84,
+        "margin": 0.203,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -841,6 +874,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_hunter_beastsoothe",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.946,
+        "margin": 0.092,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -947,6 +991,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "ability_druid_dash",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.895,
+        "margin": 0.369,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1087,6 +1142,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_bullrush",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.878,
+        "margin": 0.101,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1217,6 +1283,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_hunter_mendpet",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.927,
+        "margin": 0.14,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1364,6 +1441,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "inv_misc_monsterclaw_04",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.692,
+        "margin": 0.034,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1494,6 +1582,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "ability_hunter_animalhandler",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.932,
+        "margin": 0.434,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -1622,6 +1721,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "classic_ability_druid_demoralizingroar",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.926,
+        "margin": 0.309,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1757,7 +1867,18 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "ability_devour",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.877,
+        "margin": 0.278,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "hunter/beast-mastery/r4c3",
@@ -1885,6 +2006,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_abolishmagic",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.933,
+        "margin": 0.042,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2037,7 +2169,18 @@
           "confidence": 0.894,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "inv_misc_monsterclaw_03",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.873,
+        "margin": 0.326,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "hunter/beast-mastery/r6c1",
@@ -2171,7 +2314,18 @@
           "confidence": 0.962,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "ability_druid_ferociousbite",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.798,
+        "margin": 0.311,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "hunter/marksmanship/r0c0",
@@ -2303,6 +2457,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_townwatch",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.84,
+        "margin": 0.044,
+        "phash": 20,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2443,6 +2608,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_frost_stun",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.696,
+        "margin": 0.066,
+        "phash": 22,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2583,6 +2759,17 @@
           "match": "description",
           "similarity": 0.9
         }
+      },
+      "icon": "ability_searingarrow",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.813,
+        "margin": 0.089,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2843,6 +3030,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_frost_wizardmark",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.759,
+        "margin": 0.059,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2983,6 +3181,17 @@
           "match": "description",
           "similarity": 0.94
         }
+      },
+      "icon": "ability_hunter_zenarchery",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.86,
+        "margin": 0.251,
+        "phash": 12,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -3247,6 +3456,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_impalingbolt",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.953,
+        "margin": 0.039,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3356,6 +3576,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "ability_mount_whitedirewolf",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.947,
+        "margin": 0.245,
+        "phash": 4,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -3473,6 +3704,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "ability_trueshot",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.872,
+        "margin": 0.066,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3625,7 +3867,18 @@
           "confidence": 0.992,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "ability_piercedamage",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.962,
+        "margin": 0.135,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "hunter/marksmanship/r4c0",
@@ -3751,7 +4004,18 @@
           "confidence": 0.7,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "ability_hunter_rapidregeneration",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.908,
+        "margin": 0.366,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      }
     },
     {
       "id": "hunter/marksmanship/r4c2",
@@ -3883,6 +4147,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_upgrademoonglaive",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.95,
+        "margin": 0.263,
+        "phash": 0,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4005,6 +4280,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "ability_golemstormbolt",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.971,
+        "margin": 0.07,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4145,6 +4431,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "inv_weapon_rifle_06",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.962,
+        "margin": 0.212,
+        "phash": 2,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4391,6 +4688,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "inv_misc_head_dragon_black",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.874,
+        "margin": 0.259,
+        "phash": 14,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4531,6 +4839,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_parry",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.95,
+        "margin": 0.162,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4661,6 +4980,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_stranglevines",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.893,
+        "margin": 0.223,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4789,6 +5119,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_racial_bloodrage",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.948,
+        "margin": 0.261,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4931,6 +5272,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_twilight",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.847,
+        "margin": 0.168,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5196,6 +5548,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_timestop",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.934,
+        "margin": 0.12,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5331,6 +5694,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_kick",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.862,
+        "margin": 0.169,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5937,6 +6311,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "ability_hunter_resourcefulness",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.95,
+        "margin": 0.115,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -6049,6 +6434,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "ability_hunter_swiftstrike",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.944,
+        "margin": 0.182,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6414,6 +6810,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_invisibilty",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.963,
+        "margin": 0.19,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {

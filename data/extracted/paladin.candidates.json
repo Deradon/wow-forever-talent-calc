@@ -412,6 +412,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_golemthunderclap",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.866,
+        "margin": 0.19,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -692,6 +703,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_arcane_blink",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.938,
+        "margin": 0.12,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -826,6 +848,17 @@
           "match": "description",
           "similarity": 0.86
         }
+      },
+      "icon": "ability_thunderbolt",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.94,
+        "margin": 0.125,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -954,6 +987,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_unyieldingfaith",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.916,
+        "margin": 0.18,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1069,6 +1113,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "inv_misc_horn_03",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.932,
+        "margin": 0.219,
+        "phash": 4,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "classic-era-client",
+        "verified": false
       }
     },
     {
@@ -1214,6 +1269,17 @@
           "match": "description",
           "similarity": 0.99
         }
+      },
+      "icon": "spell_holy_divineillumination",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.96,
+        "margin": 0.275,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -1326,6 +1392,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "spell_holy_purifyingpower",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.954,
+        "margin": 0.117,
+        "phash": 12,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -1449,6 +1526,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "ability_paladin_infusionoflight",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.961,
+        "margin": 0.07,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -1594,7 +1682,18 @@
           "confidence": 0.7,
           "medians": 7
         }
-      ]
+      ],
+      "icon": "spell_holy_greaterheal",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.903,
+        "margin": 0.043,
+        "phash": 24,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "paladin/holy/r3c2",
@@ -1992,6 +2091,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_holy_searinglight",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.952,
+        "margin": 0.083,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2105,6 +2215,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "spell_holy_innerfire",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.836,
+        "margin": 0.068,
+        "phash": 16,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2238,6 +2359,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_power",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.969,
+        "margin": 0.108,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2387,7 +2519,18 @@
           "confidence": 1.0,
           "medians": 7
         }
-      ]
+      ],
+      "icon": "ability_paladin_judgementofthepure",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.886,
+        "margin": 0.218,
+        "phash": 16,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      }
     },
     {
       "id": "paladin/protection/r0c1",
@@ -2534,6 +2677,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_devotion",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.647,
+        "margin": 0.123,
+        "phash": 22,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2684,6 +2838,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_defend",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.844,
+        "margin": 0.139,
+        "phash": 16,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2831,6 +2996,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_rogue_ambush",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.922,
+        "margin": 0.215,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2975,6 +3151,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_sealofprotection",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.844,
+        "margin": 0.282,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3130,6 +3317,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_magic_lesserinvisibilty",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.844,
+        "margin": 0.087,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3253,6 +3451,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_holy_righteousnessaura",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.895,
+        "margin": 0.054,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -3392,6 +3601,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_sealoffury",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.814,
+        "margin": 0.247,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3795,7 +4015,18 @@
           "confidence": 0.988,
           "medians": 7
         }
-      ]
+      ],
+      "icon": "ability_paladin_judgementred",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.909,
+        "margin": 0.292,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      }
     },
     {
       "id": "paladin/protection/r3c1",
@@ -3929,6 +4160,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "inv_sword_20",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.977,
+        "margin": 0.22,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4068,6 +4310,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_sealofmight",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.828,
+        "margin": 0.357,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4336,6 +4589,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_blessingofstrength",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.856,
+        "margin": 0.402,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4635,7 +4899,18 @@
           "confidence": 0.902,
           "medians": 7
         }
-      ]
+      ],
+      "icon": "classic_spell_holy_blessingofprotection",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.919,
+        "margin": 0.136,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "paladin/retribution/r0c1",
@@ -4775,6 +5050,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_parry",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.941,
+        "margin": 0.156,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4925,6 +5211,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_frost_windwalkon",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.712,
+        "margin": 0.102,
+        "phash": 18,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5063,6 +5360,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_righteousfury",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.934,
+        "margin": 0.293,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5463,6 +5771,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_vindication",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.87,
+        "margin": 0.32,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5579,6 +5898,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "spell_holy_righteousfury",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.836,
+        "margin": 0.182,
+        "phash": 14,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5707,6 +6037,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "ability_warrior_innerrage",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.835,
+        "margin": 0.246,
+        "phash": 16,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5836,6 +6177,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_persuitofjustice",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.962,
+        "margin": 0.163,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5964,6 +6316,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_eyeforaneye",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.82,
+        "margin": 0.013,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6182,6 +6545,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "spell_holy_crusade",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.942,
+        "margin": 0.159,
+        "phash": 12,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -6314,6 +6688,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "inv_hammer_04",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.943,
+        "margin": 0.111,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6454,7 +6839,18 @@
           "confidence": 0.7,
           "medians": 7
         }
-      ]
+      ],
+      "icon": "ability_racial_avatar",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.919,
+        "margin": 0.232,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "paladin/retribution/r4c2",
@@ -6575,6 +6971,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_holy_prayerofhealing",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.924,
+        "margin": 0.163,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6688,6 +7095,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "ability_paladin_enlightenedjudgements",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.92,
+        "margin": 0.412,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -6807,6 +7225,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "spell_holy_divinepurpose",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.956,
+        "margin": 0.295,
+        "phash": 2,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -7062,6 +7491,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_holybolt",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.921,
+        "margin": 0.103,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     }
   ],

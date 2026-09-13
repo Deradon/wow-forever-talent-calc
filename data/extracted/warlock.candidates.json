@@ -181,6 +181,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_burningspirit",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.796,
+        "margin": 0.296,
+        "phash": 18,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -317,6 +328,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_unsummonbuilding",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.79,
+        "margin": 0.299,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -450,6 +472,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_abominationexplosion",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.825,
+        "margin": 0.167,
+        "phash": 16,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -592,6 +625,17 @@
           "match": "description",
           "similarity": 0.9
         }
+      },
+      "icon": "spell_shadow_curseofachimonde",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.894,
+        "margin": 0.357,
+        "phash": 4,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -706,6 +750,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "inv_elemental_primal_shadow",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.946,
+        "margin": 0.068,
+        "phash": 20,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "classic-era-client",
+        "verified": false
       }
     },
     {
@@ -839,6 +894,17 @@
           "match": "description",
           "similarity": 0.87
         }
+      },
+      "icon": "spell_shadow_haunting",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.951,
+        "margin": 0.16,
+        "phash": 4,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -956,6 +1022,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "spell_shadow_curseofsargeras",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.9,
+        "margin": 0.343,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1098,6 +1175,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_fingerofdeath",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.894,
+        "margin": 0.271,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1222,6 +1310,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_shadow_contagion",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.844,
+        "margin": 0.049,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1354,6 +1453,17 @@
           "match": "description",
           "similarity": 0.89
         }
+      },
+      "icon": "spell_shadow_unstableaffliction_1",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.83,
+        "margin": 0.223,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "classic-era-client",
+        "verified": false
       }
     },
     {
@@ -1501,6 +1611,17 @@
           "match": "description",
           "similarity": 0.88
         }
+      },
+      "icon": "spell_shadow_focusedpower",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.959,
+        "margin": 0.319,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -1636,6 +1757,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_twilight",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.916,
+        "margin": 0.24,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1774,7 +1906,18 @@
           "confidence": 0.929,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "spell_shadow_grimward",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.836,
+        "margin": 0.085,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "warlock/affliction/r4c1",
@@ -1898,6 +2041,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_shadow_requiem",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.786,
+        "margin": 0.188,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2022,6 +2176,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "spell_shadow_lifedrain02",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.867,
+        "margin": 0.234,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2164,6 +2329,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_shadetruesight",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.882,
+        "margin": 0.079,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2428,6 +2604,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_lifedrain",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.802,
+        "margin": 0.181,
+        "phash": 20,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2553,6 +2740,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_summonimp",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.637,
+        "margin": 0.106,
+        "phash": 16,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2691,6 +2889,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_metamorphosis",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.746,
+        "margin": 0.104,
+        "phash": 20,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3074,6 +3283,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_summonvoidwalker",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.9,
+        "margin": 0.275,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3191,6 +3411,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "spell_shadow_demonictactics",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.813,
+        "margin": 0.177,
+        "phash": 18,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -3566,6 +3797,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_shadow_psychicscream",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.958,
+        "margin": 0.26,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3697,6 +3939,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_impphaseshift",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.812,
+        "margin": 0.164,
+        "phash": 24,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3943,7 +4196,18 @@
           "confidence": 0.959,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "spell_nature_removecurse",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.92,
+        "margin": 0.458,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "warlock/demonology/r3c3",
@@ -4184,6 +4448,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "spell_shadow_summonfelhunter",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.88,
+        "margin": 0.327,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -4315,7 +4590,18 @@
           "confidence": 0.7,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "spell_shadow_gathershadows",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.765,
+        "margin": 0.125,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "warlock/demonology/r4c2",
@@ -4428,6 +4714,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "spell_shadow_improvedvampiricembrace",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.884,
+        "margin": 0.099,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4583,6 +4880,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_shadowpact",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.905,
+        "margin": 0.109,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4836,6 +5144,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_corpseexplode",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.798,
+        "margin": 0.221,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4976,6 +5295,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_shadowbolt",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.898,
+        "margin": 0.002,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5121,6 +5451,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_deathpact",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.525,
+        "margin": 0.147,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5256,6 +5597,17 @@
           "match": "description",
           "similarity": 0.93
         }
+      },
+      "icon": "ability_mage_moltenarmor",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.935,
+        "margin": 0.157,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -5399,6 +5751,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_fire_windsofwoe",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.747,
+        "margin": 0.095,
+        "phash": 20,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5545,6 +5908,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_fire_fire",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.985,
+        "margin": 0.067,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5675,6 +6049,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_shadow_shadowwordpain",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.9,
+        "margin": 0.31,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5798,6 +6183,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_shadow_scourgebuild",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.785,
+        "margin": 0.112,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5937,6 +6333,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_fire_lavaspawn",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.914,
+        "margin": 0.201,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6064,6 +6471,17 @@
           "match": "description",
           "similarity": 0.87
         }
+      },
+      "icon": "spell_fire_soulburn",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.875,
+        "margin": 0.1,
+        "phash": 14,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6198,7 +6616,18 @@
           "confidence": 0.7,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "spell_fire_fireball",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.979,
+        "margin": 0.107,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "warlock/destruction/r4c0",
@@ -6343,7 +6772,18 @@
           "confidence": 0.923,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "spell_fire_volcano",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.958,
+        "margin": 0.196,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "warlock/destruction/r4c1",
@@ -6470,6 +6910,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "ability_warlock_baneofhavoc",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.857,
+        "margin": 0.493,
+        "phash": 14,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -6621,7 +7072,18 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "spell_fire_meteorstorm",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.944,
+        "margin": 0.21,
+        "phash": 4,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "warlock/destruction/r5c2",
@@ -6769,6 +7231,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "spell_fire_playingwithfire",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.95,
+        "margin": 0.297,
+        "phash": 2,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -6899,7 +7372,18 @@
           "confidence": 1.0,
           "medians": 2
         }
-      ]
+      ],
+      "icon": "spell_fire_burnout",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.968,
+        "margin": 0.105,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      }
     }
   ],
   "recovery": {

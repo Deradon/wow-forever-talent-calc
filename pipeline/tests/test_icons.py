@@ -150,6 +150,17 @@ def test_runner_up_skips_near_duplicate_variants(ref_dir, ref):
     assert m is not None and m["icon"] in ("icon_11", "icon_11_v2") and m["margin"] >= I.Thresholds().accept_margin
 
 
+def test_visual_winner_contradicting_the_prior_needs_a_clear_lead(ref):
+    crop = make_crop(make_icon(7), locked=True, noise=14.0)
+    sc = I.score_crop(crop, ref)
+    assert I.decide(sc, ref)["icon"] == "icon_07"
+    # the prior names another icon in the set: the visual winner must clear the stricter bar
+    strict = I.Thresholds(disagree_score=0.99, disagree_margin=0.99)
+    assert I.decide(sc, ref, prior_icon="icon_40", th=strict) is None
+    lax = I.Thresholds(disagree_score=0.0, disagree_margin=0.0)
+    assert I.decide(sc, ref, prior_icon="icon_40", th=lax)["icon"] == "icon_07"
+
+
 def test_thresholds_can_reject_everything(ref):
     crop = make_crop(make_icon(3), locked=True)
     sc = I.score_crop(crop, ref)

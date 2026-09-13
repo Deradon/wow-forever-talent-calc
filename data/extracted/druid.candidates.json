@@ -447,6 +447,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_sentinal",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.965,
+        "margin": 0.165,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -578,6 +589,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_starfall",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.971,
+        "margin": 0.096,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -706,6 +728,17 @@
           "match": "description",
           "similarity": 0.85
         }
+      },
+      "icon": "inv_staff_01",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.956,
+        "margin": 0.178,
+        "phash": 4,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -827,6 +860,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_naturetouchgrow",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.916,
+        "margin": 0.081,
+        "phash": 4,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -953,6 +997,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_stranglevines",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.885,
+        "margin": 0.199,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1209,6 +1264,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "ability_druid_balanceofpower",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.899,
+        "margin": 0.208,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -1326,6 +1392,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_nature_insectswarm",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.902,
+        "margin": 0.236,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1480,7 +1557,18 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "spell_nature_purge",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.948,
+        "margin": 0.077,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "druid/balance/r3c2",
@@ -1625,6 +1713,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_arcane_starfire",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.91,
+        "margin": 0.339,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1735,6 +1834,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "inv_misc_herb_15",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.882,
+        "margin": 0.363,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "classic-era-client",
+        "verified": false
       }
     },
     {
@@ -1843,6 +1953,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_nature_naturesblessing",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.786,
+        "margin": 0.12,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -1965,6 +2086,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "ability_druid_eclipse",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.887,
+        "margin": 0.286,
+        "phash": 18,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -2107,6 +2239,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_moonglow",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.962,
+        "margin": 0.111,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2225,6 +2368,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_nature_forceofnature",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.866,
+        "margin": 0.21,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2366,6 +2520,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_hunter_pet_hyena",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.804,
+        "margin": 0.178,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2516,6 +2681,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_blessingofagility",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.688,
+        "margin": 0.267,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2646,6 +2822,17 @@
           "match": "description",
           "similarity": 0.94
         }
+      },
+      "icon": "spell_nature_spiritwolf",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.934,
+        "margin": 0.207,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2774,6 +2961,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_ambush",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.83,
+        "margin": 0.1,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -2895,6 +3093,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_druid_bash",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.76,
+        "margin": 0.194,
+        "phash": 22,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3023,6 +3232,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "inv_misc_pelt_bear_03",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.95,
+        "margin": 0.147,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3151,6 +3371,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_druid_ravage",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.795,
+        "margin": 0.045,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3402,6 +3633,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "inv_misc_monsterclaw_04",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.824,
+        "margin": 0.073,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3518,6 +3760,17 @@
         "confidence": "low",
         "review": true,
         "rule": "proportional"
+      },
+      "icon": "spell_shadow_vampiricaura",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.922,
+        "margin": 0.121,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3796,6 +4049,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_hunter_pet_cat",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.84,
+        "margin": 0.013,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -3931,7 +4195,18 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "ability_racial_cannibalize",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.839,
+        "margin": 0.332,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "druid/feral-combat/r4c0",
@@ -4059,6 +4334,17 @@
           "match": "description",
           "similarity": 0.96
         }
+      },
+      "icon": "ability_druid_predatoryinstincts",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.921,
+        "margin": 0.073,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -4167,6 +4453,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_nature_unyeildingstamina",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.949,
+        "margin": 0.163,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4419,6 +4716,17 @@
         "confidence": "low",
         "review": true,
         "rule": "none"
+      },
+      "icon": "ability_bullrush",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.848,
+        "margin": 0.061,
+        "phash": 12,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4573,7 +4881,18 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "ability_druid_primalagression",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.9,
+        "margin": 0.263,
+        "phash": 16,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      }
     },
     {
       "id": "druid/feral-combat/r6c1",
@@ -4708,7 +5027,18 @@
           "confidence": 1.0,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "ability_druid_berserk",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.877,
+        "margin": 0.246,
+        "phash": 10,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      }
     },
     {
       "id": "druid/restoration/r0c1",
@@ -4848,6 +5178,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_healingwavegreater",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.84,
+        "margin": 0.169,
+        "phash": 10,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -4997,6 +5338,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_blessingofstamina",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.838,
+        "margin": 0.085,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5132,6 +5484,17 @@
           "match": "description",
           "similarity": 0.96
         }
+      },
+      "icon": "spell_nature_healingtouch",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.939,
+        "margin": 0.257,
+        "phash": 6,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5266,6 +5629,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "ability_eyeoftheowl",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.948,
+        "margin": 0.404,
+        "phash": 2,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5398,6 +5772,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_wispsplode",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.973,
+        "margin": 0.073,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5530,6 +5915,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_frost_windwalkon",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.814,
+        "margin": 0.089,
+        "phash": 16,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5670,6 +6066,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_protectionformnature",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.849,
+        "margin": 0.064,
+        "phash": 12,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5776,6 +6183,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "spell_nature_spiritarmor",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.821,
+        "margin": 0.298,
+        "phash": 14,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -5917,6 +6335,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_holy_elunesgrace",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.771,
+        "margin": 0.038,
+        "phash": 16,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6049,6 +6478,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_rejuvenation",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.898,
+        "margin": 0.04,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6168,6 +6608,17 @@
         "confidence": "high",
         "review": false,
         "rule": "none"
+      },
+      "icon": "inv_relics_idolofrejuvenation",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.927,
+        "margin": 0.128,
+        "phash": 8,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6426,6 +6877,17 @@
           "match": "description",
           "similarity": 0.86
         }
+      },
+      "icon": "spell_nature_giftofthewaterspirit",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.858,
+        "margin": 0.401,
+        "phash": 18,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
       }
     },
     {
@@ -6547,6 +7009,17 @@
           "match": "exact-name",
           "similarity": 1.0
         }
+      },
+      "icon": "spell_nature_tranquility",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.898,
+        "margin": 0.15,
+        "phash": 14,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
       }
     },
     {
@@ -6701,7 +7174,18 @@
           "confidence": 0.7,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "spell_nature_resistnature",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.962,
+        "margin": 0.088,
+        "phash": 6,
+        "method": "classic-prior",
+        "confidence": "high",
+        "tier": "prior",
+        "verified": false
+      }
     },
     {
       "id": "druid/restoration/r6c1",
@@ -6846,7 +7330,18 @@
           "confidence": 0.7,
           "medians": 1
         }
-      ]
+      ],
+      "icon": "ability_druid_flourish",
+      "icon_source": "classic",
+      "icon_match": {
+        "score": 0.857,
+        "margin": 0.302,
+        "phash": 8,
+        "method": "visual",
+        "confidence": "high",
+        "tier": "later-talents",
+        "verified": false
+      }
     }
   ],
   "recovery": {

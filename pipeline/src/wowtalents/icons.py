@@ -15,7 +15,8 @@ the repository (the stage does that). Pipeline:
 3. ``match_crop`` scores the crop against every reference (normalised cross
    correlation, best of two trim pairs), re-ranks the top candidates with a
    pHash distance, and applies a Classic-prior hint (the icon of the
-   same-class Classic talent with the same name).
+   same-class Classic talent with the same name; a visual winner that
+   contradicts the hint needs a clearly stronger score).
 4. ``decide`` turns scores into ``{icon, score, margin, method, confidence}``
    or ``None`` (keep the crop).
 """
@@ -53,6 +54,8 @@ class Thresholds:
     phash_max: int = 26             # pHash Hamming distance (of 64) tolerated for an accepted match
     topk: int = 10                  # candidates re-ranked with pHash
     duplicate_ncc: float = 0.90     # two references this similar count as variants of one picture
+    disagree_score: float = 0.85    # a visual winner that contradicts the Classic prior needs this NCC ...
+    disagree_margin: float = 0.10   # ... and this margin; otherwise the crop is kept for review
 
 
 @dataclass
@@ -250,6 +253,11 @@ def decide(sc: Scored, ref: Reference, prior_icon: str | None = None, th: Thresh
                     return _out(pi, "classic-prior", conf)
 
     ph = sc.phash.get(best_i)
+    if prior_icon and ref.index(prior_icon) is not None and ref.names[best_i] != prior_icon:
+        # the Classic talent of the same name has a different icon: either Forever changed it (then the
+        # visual match is unambiguous) or the crop is noisy (then the prior should not be overruled)
+        if best < th.disagree_score or margin < th.disagree_margin:
+            return None
     if best >= th.accept_score and (margin >= th.accept_margin or best >= th.strong_score):
         if ph is not None and ph > th.phash_max and best < th.strong_score:
             return None
