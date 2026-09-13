@@ -64,7 +64,7 @@ contract.
 - Repo, CLAUDE.md, README, license, research, decisions, briefs, this plan.
 - Full stream download running in `pipeline/work/video/` (see Risks).
 
-### Phase 1: first class end to end (target: 2026-09-14)
+### Phase 1: first class end to end (target: 2026-09-14) - done 2026-09-13
 1. Pipeline env: uv project, CUDA toolkit, llama.cpp with CUDA, Qwen3-VL GGUF,
    llama-server smoke test on one tooltip crop.
 2. Segment finder: scan 03:00-06:20 at ~1 frame / 5 s, detect the talent
@@ -156,6 +156,14 @@ workflow then publishes to https://deradon.github.io/wow-forever-talent-calc/
 on every push to `main`.
 
 ## Status log
+
+- 2026-09-13 ~03:30: Phase 1 done. Paladin live at
+  https://deradon.github.io/wow-forever-talent-calc/#/paladin with 45 of 52
+  talents (7 cells never hovered on stream), unreviewed, 7 flagged with an
+  orange badge. Names and ranks correct on all 45 per Codex second opinion;
+  ~15 % of descriptions carry a one-character defect, all routed to review.
+  Remaining eight classes running through `pipeline/scripts/run_class.sh`.
+  Web M2 (crop icons, review route) in progress.
 
 - 2026-09-13 ~01:30: all three workstreams have a first increment. Data:
   schema, validator (17 tests), encoding v1, Classic Era prior (432 talents).
