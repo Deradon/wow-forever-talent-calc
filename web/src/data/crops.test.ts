@@ -9,7 +9,7 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import { cropCount, cropUrl } from './crops'
-import { parseClass } from './schema'
+import { parseClass } from './schema.zod'
 
 const here = fileURLToPath(new URL('.', import.meta.url))
 const dir = join(here, '../../../data/talents')

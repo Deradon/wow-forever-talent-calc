@@ -79,8 +79,9 @@ test('tooltip shows current and next rank plus the anticipated-ranks caveat', as
   await expect(tip).toContainText('by 1 energy point.')
   await expect(tip).toContainText('Next rank:')
   await expect(tip).toContainText('by 2 energy points.')
-  await expect(tip).toContainText('anticipated (classic-prior)')
-  await expect(tip).toContainText('Read from stream at 3:38:30')
+  // Copy owned by work package A1 (Tooltip.tsx); this asserts the meaning, not the wording.
+  await expect(tip).toContainText('Ranks 2-3 estimated.')
+  await expect(tip).toContainText('3:38:30')
 })
 
 test('right click refunds, locked talents explain their requirement', async ({ page }) => {

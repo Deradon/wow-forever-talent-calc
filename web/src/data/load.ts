@@ -5,7 +5,7 @@
  * VITE_INCLUDE_EXAMPLES=1 (set by .env.development and .env.e2e).
  * Precedence per class id: talents > examples > fixtures.
  */
-import { parseClass, type ClassData } from './schema'
+import type { ClassData } from './schema'
 
 type Loader = () => Promise<unknown>
 
@@ -50,6 +50,21 @@ export function hasClass(id: string): boolean {
   return registry.has(id)
 }
 
+/**
+ * Production ships no validator: the class files are validated at build time by
+ * validateData.test.ts and `validate-data` in CI, so re-checking them in every
+ * visitor's browser only cost ~25 kB gzip (performance review P-3). In dev the
+ * zod mirror still runs, and the dynamic import is dead code once
+ * `import.meta.env.DEV` folds to `false`, so zod is dropped from the bundle.
+ */
+async function validated(raw: unknown, label: string): Promise<ClassData> {
+  if (import.meta.env.DEV) {
+    const { parseClass } = await import('./schema.zod')
+    return parseClass(raw, label)
+  }
+  return raw as ClassData
+}
+
 const cache = new Map<string, Promise<ClassData>>()
 
 export function loadClass(id: string): Promise<ClassData> {
@@ -57,7 +72,7 @@ export function loadClass(id: string): Promise<ClassData> {
   if (!entry) return Promise.reject(new Error(`Unknown class "${id}"`))
   let p = cache.get(id)
   if (!p) {
-    p = entry.load().then((raw) => parseClass(raw, `${entry.origin}/${id}.json`))
+    p = entry.load().then((raw) => validated(raw, `${entry.origin}/${id}.json`))
     cache.set(id, p)
   }
   return p

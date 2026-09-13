@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Hash routing means one crawlable URL (performance review S-2). Per-class
+  prerendering is out of scope for this pass; when it lands, one <url> per
+  class goes here.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://deradon.github.io/wow-forever-talent-calc/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

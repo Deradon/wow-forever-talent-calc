@@ -1,0 +1,267 @@
+[
+  {
+    "id": "druid",
+    "origin": "talents",
+    "className": "Druid",
+    "dataSource": "video",
+    "maxPoints": 51,
+    "talents": 52,
+    "reviewed": 8,
+    "needsReview": 0,
+    "trees": [
+      {
+        "id": "balance",
+        "name": "Balance",
+        "talents": 17
+      },
+      {
+        "id": "feral-combat",
+        "name": "Feral Combat",
+        "talents": 19
+      },
+      {
+        "id": "restoration",
+        "name": "Restoration",
+        "talents": 16
+      }
+    ]
+  },
+  {
+    "id": "hunter",
+    "origin": "talents",
+    "className": "Hunter",
+    "dataSource": "video",
+    "maxPoints": 51,
+    "talents": 50,
+    "reviewed": 5,
+    "needsReview": 0,
+    "trees": [
+      {
+        "id": "beast-mastery",
+        "name": "Beast Mastery",
+        "talents": 16
+      },
+      {
+        "id": "marksmanship",
+        "name": "Marksmanship",
+        "talents": 16
+      },
+      {
+        "id": "survival",
+        "name": "Survival",
+        "talents": 18
+      }
+    ]
+  },
+  {
+    "id": "mage",
+    "origin": "talents",
+    "className": "Mage",
+    "dataSource": "video",
+    "maxPoints": 51,
+    "talents": 53,
+    "reviewed": 5,
+    "needsReview": 1,
+    "trees": [
+      {
+        "id": "arcane",
+        "name": "Arcane",
+        "talents": 18
+      },
+      {
+        "id": "fire",
+        "name": "Fire",
+        "talents": 16
+      },
+      {
+        "id": "frost",
+        "name": "Frost",
+        "talents": 19
+      }
+    ]
+  },
+  {
+    "id": "paladin",
+    "origin": "talents",
+    "className": "Paladin",
+    "dataSource": "video",
+    "maxPoints": 51,
+    "talents": 52,
+    "reviewed": 6,
+    "needsReview": 1,
+    "trees": [
+      {
+        "id": "holy",
+        "name": "Holy",
+        "talents": 18
+      },
+      {
+        "id": "protection",
+        "name": "Protection",
+        "talents": 16
+      },
+      {
+        "id": "retribution",
+        "name": "Retribution",
+        "talents": 18
+      }
+    ]
+  },
+  {
+    "id": "priest",
+    "origin": "talents",
+    "className": "Priest",
+    "dataSource": "video",
+    "maxPoints": 51,
+    "talents": 53,
+    "reviewed": 6,
+    "needsReview": 0,
+    "trees": [
+      {
+        "id": "discipline",
+        "name": "Discipline",
+        "talents": 18
+      },
+      {
+        "id": "holy",
+        "name": "Holy",
+        "talents": 17
+      },
+      {
+        "id": "shadow-magic",
+        "name": "Shadow Magic",
+        "talents": 18
+      }
+    ]
+  },
+  {
+    "id": "rogue",
+    "origin": "talents",
+    "className": "Rogue",
+    "dataSource": "video",
+    "maxPoints": 51,
+    "talents": 53,
+    "reviewed": 2,
+    "needsReview": 0,
+    "trees": [
+      {
+        "id": "assassination",
+        "name": "Assassination",
+        "talents": 17
+      },
+      {
+        "id": "combat",
+        "name": "Combat",
+        "talents": 17
+      },
+      {
+        "id": "subtlety",
+        "name": "Subtlety",
+        "talents": 19
+      }
+    ]
+  },
+  {
+    "id": "shaman",
+    "origin": "talents",
+    "className": "Shaman",
+    "dataSource": "video",
+    "maxPoints": 51,
+    "talents": 50,
+    "reviewed": 8,
+    "needsReview": 1,
+    "trees": [
+      {
+        "id": "elemental-combat",
+        "name": "Elemental Combat",
+        "talents": 16
+      },
+      {
+        "id": "enhancement",
+        "name": "Enhancement",
+        "talents": 18
+      },
+      {
+        "id": "restoration",
+        "name": "Restoration",
+        "talents": 16
+      }
+    ]
+  },
+  {
+    "id": "tinker",
+    "origin": "examples",
+    "className": "Tinker",
+    "dataSource": "video",
+    "maxPoints": 51,
+    "talents": 6,
+    "reviewed": 3,
+    "needsReview": 1,
+    "trees": [
+      {
+        "id": "gadgetry",
+        "name": "Gadgetry",
+        "talents": 4
+      },
+      {
+        "id": "chemistry",
+        "name": "Chemistry",
+        "talents": 2
+      }
+    ]
+  },
+  {
+    "id": "warlock",
+    "origin": "talents",
+    "className": "Warlock",
+    "dataSource": "video",
+    "maxPoints": 51,
+    "talents": 52,
+    "reviewed": 13,
+    "needsReview": 2,
+    "trees": [
+      {
+        "id": "affliction",
+        "name": "Affliction",
+        "talents": 17
+      },
+      {
+        "id": "demonology",
+        "name": "Demonology",
+        "talents": 19
+      },
+      {
+        "id": "destruction",
+        "name": "Destruction",
+        "talents": 16
+      }
+    ]
+  },
+  {
+    "id": "warrior",
+    "origin": "talents",
+    "className": "Warrior",
+    "dataSource": "video",
+    "maxPoints": 51,
+    "talents": 54,
+    "reviewed": 4,
+    "needsReview": 2,
+    "trees": [
+      {
+        "id": "arms",
+        "name": "Arms",
+        "talents": 17
+      },
+      {
+        "id": "fury",
+        "name": "Fury",
+        "talents": 18
+      },
+      {
+        "id": "protection",
+        "name": "Protection",
+        "talents": 19
+      }
+    ]
+  }
+]

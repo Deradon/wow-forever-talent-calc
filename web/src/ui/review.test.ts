@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Talent, Tree } from '../data/schema'
-import { needsReview, reviewRows } from './review'
+import { diffWords, filterRows, needsReview, reviewRows } from './review'
 
 function talent(id: string, row: number, confidence: number | undefined, reviewed = false): Talent {
   return {
@@ -43,5 +43,43 @@ describe('review ordering', () => {
   it('ties break by tree order, row, col', () => {
     const trees = [tree('t1', [talent('r1', 1, 1.0), talent('r0', 0, 1.0)]), tree('t2', [talent('s0', 0, 1.0)])]
     expect(reviewRows(trees).map((r) => r.talent.id)).toEqual(['r0', 'r1', 's0'])
+  })
+})
+
+describe('review filters', () => {
+  const trees = [
+    tree('t1', [talent('low', 0, 0.5), talent('hi', 1, 1.0)]),
+    tree('t2', [talent('rev', 0, 1.0, true)]),
+  ]
+  const rows = reviewRows(trees)
+
+  it('flag chips select a subset, "all" keeps the order', () => {
+    expect(filterRows(rows, { flag: 'all', tree: 'all', query: '' }).map((r) => r.talent.id)).toEqual(['low', 'hi', 'rev'])
+    expect(filterRows(rows, { flag: 'queue', tree: 'all', query: '' }).map((r) => r.talent.id)).toEqual(['low'])
+    expect(filterRows(rows, { flag: 'unreviewed', tree: 'all', query: '' }).map((r) => r.talent.id)).toEqual(['low', 'hi'])
+    expect(filterRows(rows, { flag: 'crops', tree: 'all', query: '' })).toHaveLength(3)
+  })
+
+  it('narrows by tree and by free text', () => {
+    expect(filterRows(rows, { flag: 'all', tree: 't2', query: '' }).map((r) => r.talent.id)).toEqual(['rev'])
+    expect(filterRows(rows, { flag: 'all', tree: 'all', query: 'LO' }).map((r) => r.talent.id)).toEqual(['low'])
+    expect(filterRows(rows, { flag: 'all', tree: 'all', query: 'nothing' })).toEqual([])
+  })
+})
+
+describe('reading diff', () => {
+  it('marks what the second reader added and dropped', () => {
+    expect(diffWords('Increases your Defense Skill by 20.', 'Increases your Defense skill by 20.')).toEqual([
+      { type: 'same', text: 'Increases your Defense' },
+      { type: 'del', text: 'Skill' },
+      { type: 'add', text: 'skill' },
+      { type: 'same', text: 'by 20.' },
+    ])
+  })
+
+  it('is empty-safe and collapses whitespace', () => {
+    expect(diffWords('', '')).toEqual([])
+    expect(diffWords('a  b', 'a b')).toEqual([{ type: 'same', text: 'a b' }])
+    expect(diffWords('a b', '')).toEqual([{ type: 'del', text: 'a b' }])
   })
 })

@@ -6,7 +6,7 @@ import { add, remove, validate, type Build } from '../rules'
 import { decode, encode } from './codec'
 import tinkerRaw from '../../tests/fixtures/tinker.json'
 import tinkerEncoding from '../../tests/fixtures/encoding/v1.json'
-import { parseClass } from '../data/schema'
+import { parseClass } from '../data/schema.zod'
 
 const cls = makeClass()
 const registry: EncodingRegistry = buildRegistry([TEST_ORDER_V1, TEST_ORDER_V2], [TEST_MIGRATION_V1_V2])

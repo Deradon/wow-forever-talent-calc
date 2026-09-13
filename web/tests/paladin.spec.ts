@@ -19,14 +19,17 @@ test('crop icons render in the cells and the title carries per-tree points', asy
   await expect(page).toHaveTitle('Paladin 0/0/0 - WoW Forever Talent Calculator')
   const crops = page.locator('[data-talent][data-icon="crop"]')
   await expect(crops.first()).toBeVisible()
-  expect(await crops.count()).toBeGreaterThan(40)
+  // 12 of Paladin's 52 talents fall back to a frame crop; the other 40 matched
+  // a Classic icon file. Both must render, neither may fall back to initials.
+  expect(await crops.count()).toBeGreaterThan(5)
+  expect(await page.locator('[data-talent][data-icon="file"]').count()).toBeGreaterThan(30)
   await expect(page.locator('[data-talent][data-icon="initials"]')).toHaveCount(0)
   // the images actually decoded
   await page.waitForFunction(() =>
     Array.from(document.querySelectorAll<HTMLImageElement>('[data-icon="crop"] img')).every((i) => i.complete),
   )
   const widths = await crops.locator('img').evaluateAll((imgs) => imgs.map((i) => (i as HTMLImageElement).naturalWidth))
-  expect(widths.length).toBeGreaterThan(40)
+  expect(widths.length).toBe(await crops.count())
   for (const w of widths) expect(w).toBeGreaterThan(0)
 
   const first = page.locator('[data-talent][data-addable="true"]').first()
@@ -42,8 +45,9 @@ test('manual-rank talents say higher ranks are unknown', async ({ page }) => {
   const tip = page.getByTestId('tooltip-redoubt')
   await expect(tip).toContainText('Rank 1/5')
   await expect(tip).toContainText('Next rank:')
-  await expect(tip).toContainText('Higher ranks unknown')
-  await expect(tip).toContainText('Ranks 2+ unknown')
+  // Copy owned by work package A1 (Tooltip.tsx); this asserts the meaning, not the wording.
+  await expect(tip).toContainText('Not known yet.')
+  await expect(tip).toContainText('Only rank 1 is known.')
   await expect(tip).not.toContainText('anticipated (manual)')
 })
 
@@ -58,7 +62,9 @@ test('review route lists every talent, worst reading first, with crops and two t
   await expect(rows.last()).toContainText('100%')
   const first = rows.first()
   await expect(first.locator('img.review-frame')).toBeVisible()
-  await expect(first.locator('img.review-icon')).toBeVisible()
+  // The icon column is an `img` for crop icons and a placeholder for matched
+  // ones until work package A1 renders `icons/<icon>.jpg` there (usability 13).
+  await expect(first.locator('img.review-icon, .review-icon.review-missing')).toHaveCount(1)
   await expect(first.locator('.tooltip')).toHaveCount(2)
   await expect(first.locator('.tooltip').first()).toContainText('Rank 1/')
   const frameWidth = await first.locator('img.review-frame').evaluate((i) => (i as HTMLImageElement).naturalWidth)

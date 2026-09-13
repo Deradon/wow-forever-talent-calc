@@ -54,10 +54,18 @@ export function canRemove(cls: ClassData, build: Build, treeId: string, talentId
   const after = validate(cls, withRank(build, treeId, talentId, rank - 1)).filter((v) => !before.has(keyOf(v)))
   const first = after[0]
   if (!first) return { ok: true }
-  if (first.reason === 'row-locked') {
-    return { ok: false, reason: 'would-orphan', detail: `${first.talentId} would lose its row requirement` }
-  }
-  return { ok: false, reason: first.reason, detail: first.talentId }
+  // `detail` is shown to players ("Refund would orphan Consecration"), so it
+  // names the blocked talent rather than repeating its slug (usability 4).
+  const blocked = displayNameOf(cls, first.treeId, first.talentId)
+  if (first.reason === 'row-locked') return { ok: false, reason: 'would-orphan', detail: blocked }
+  return { ok: false, reason: first.reason, detail: blocked }
+}
+
+/** Player-facing name of a talent a violation points at; the slug if it is unknown. */
+function displayNameOf(cls: ClassData, treeId: string, talentId: string): string {
+  const tree = findTree(cls, treeId)
+  const talent = tree && findTalent(tree, talentId)
+  return talent?.name ?? talentId
 }
 
 function keyOf(v: Violation): string {

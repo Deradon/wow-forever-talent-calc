@@ -2,12 +2,26 @@ import { useEffect, useMemo, useState } from 'react'
 import { loadRegistry } from '../data/encoding'
 import { hasClass, loadClass } from '../data/load'
 import type { ClassData } from '../data/schema'
-import { add, pointsInPage, pointsInTree, remove, resetAll, resetTree, type Build } from '../rules'
+import {
+  add,
+  canAdd,
+  canRemove,
+  pointsInPage,
+  pointsInTree,
+  remove,
+  requiredLevel,
+  resetAll,
+  resetTree,
+  totalPoints,
+  type Build,
+  type Verdict,
+} from '../rules'
 import { decode, encode, type Notice } from '../url/codec'
 import { classHash } from '../url/route'
 import { Header } from './Header'
 import { Notices } from './Notice'
 import { PageTabs } from './PageTabs'
+import { blockedMessage } from './interaction'
 import { SITE_TITLE, useTitle } from './title'
 import { TreePanel } from './TreePanel'
 
@@ -15,6 +29,31 @@ interface Props {
   classId: string
   version?: number
   buildString?: string
+}
+
+interface Blocked {
+  treeId: string
+  talentId: string
+  message: string
+  at: number
+}
+
+/**
+ * True on devices without a real hover (phones, tablets). Decides whether a tap
+ * spends a point straight away or opens the tooltip with +/- controls, which is
+ * the only way to read a talent or refund one there (a11y review A-2/A-3).
+ */
+function useCoarsePointer(): boolean {
+  const [coarse, setCoarse] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(hover: none), (pointer: coarse)').matches,
+  )
+  useEffect(() => {
+    const mq = window.matchMedia('(hover: none), (pointer: coarse)')
+    const onChange = () => setCoarse(mq.matches)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
+  return coarse
 }
 
 /**
@@ -27,6 +66,7 @@ export function ClassPage({ classId, version, buildString }: Props) {
   const [cls, setCls] = useState<ClassData>()
   const [error, setError] = useState<string>()
   const registry = loadRegistry()
+  const coarse = useCoarsePointer()
 
   useEffect(() => {
     let alive = true
@@ -51,6 +91,16 @@ export function ClassPage({ classId, version, buildString }: Props) {
   const [edit, setEdit] = useState<{ key: string; build: Build }>()
   const [dismissed, setDismissed] = useState<string>()
   const [page, setPage] = useState<string>()
+  const [query, setQuery] = useState('')
+  const [blocked, setBlocked] = useState<Blocked>()
+
+  // A refused click is otherwise completely silent (usability 4). The message
+  // clears itself so it never becomes permanent page furniture.
+  useEffect(() => {
+    if (!blocked) return
+    const t = window.setTimeout(() => setBlocked(undefined), 4000)
+    return () => window.clearTimeout(t)
+  }, [blocked])
 
   const liveBuild = cls && decoded ? (edit && edit.key === routeKey ? edit.build : decoded.build) : undefined
   useTitle(
@@ -72,12 +122,44 @@ export function ClassPage({ classId, version, buildString }: Props) {
   const encoded = encode(cls, build, registry)
   const hash = classHash(classId, cls.dataVersion, encoded)
   const link = `${window.location.origin}${window.location.pathname}${hash}`
+  const spent = totalPoints(build)
+  const pointsLeft = cls.rules.maxPoints - spent
 
   function commit(next: Build) {
     if (next === build) return
     setEdit({ key: routeKey, build: next })
+    setBlocked(undefined)
     const nextHash = classHash(classId, cls!.dataVersion, encode(cls!, next, registry))
     if (window.location.hash !== nextHash) window.history.replaceState(null, '', nextHash)
+  }
+
+  function refuse(treeId: string, talentId: string, verdict: Verdict, action: 'add' | 'remove') {
+    const tree = cls!.trees.find((t) => t.id === treeId)
+    const talent = tree?.talents.find((t) => t.id === talentId)
+    setBlocked({ treeId, talentId, at: Date.now(), message: blockedMessage(talent?.name ?? talentId, verdict, action) })
+  }
+
+  function handleAdd(treeId: string, talentId: string) {
+    const verdict = canAdd(cls!, build, treeId, talentId)
+    if (!verdict.ok) return refuse(treeId, talentId, verdict, 'add')
+    commit(add(cls!, build, treeId, talentId))
+  }
+
+  function handleRemove(treeId: string, talentId: string) {
+    const verdict = canRemove(cls!, build, treeId, talentId)
+    if (!verdict.ok) return refuse(treeId, talentId, verdict, 'remove')
+    commit(remove(cls!, build, treeId, talentId))
+  }
+
+  /** Search result clicked: switch to the talent's page, then focus its cell. */
+  function jumpTo(treeId: string, talentId: string) {
+    const tree = cls!.trees.find((t) => t.id === treeId)
+    if (tree && tree.page !== activePage) setPage(tree.page)
+    window.setTimeout(() => {
+      const el = document.querySelector<HTMLElement>(`[data-talent="${talentId}"]`)
+      el?.scrollIntoView({ block: 'center', behavior: 'auto' })
+      el?.focus()
+    }, 0)
   }
 
   const activePage = page && cls.pages.some((p) => p.id === page) ? page : cls.pages[0]!.id
@@ -86,7 +168,26 @@ export function ClassPage({ classId, version, buildString }: Props) {
 
   return (
     <div>
-      <Header cls={cls} build={build} link={link} onReset={() => commit(resetAll())} />
+      <Header
+        cls={cls}
+        build={build}
+        link={link}
+        query={query}
+        onQuery={setQuery}
+        onJump={jumpTo}
+        onReset={() => commit(resetAll())}
+      />
+      {/* Polite, so a screen reader hears the effect of every point without
+          interrupting; the blocked line is assertive-by-role="alert". */}
+      <p className="sr-only" aria-live="polite" data-testid="live-status">
+        {cls.trees.map((t) => `${t.name} ${pointsInTree(build, t.id)}`).join(', ')}. {pointsLeft} points left. Required
+        level {requiredLevel(spent, cls.rules)}.
+      </p>
+      {blocked && (
+        <p className="blocked-message" role="alert" data-testid="blocked-message">
+          {blocked.message}
+        </p>
+      )}
       <Notices notices={notices} onDismiss={() => setDismissed(routeKey)} />
       <PageTabs pages={cls.pages} active={activePage} counts={pageCounts} budgets={cls.rules.pointsPerPage} onSelect={setPage} />
       <div className="flex flex-wrap items-start gap-4">
@@ -96,21 +197,20 @@ export function ClassPage({ classId, version, buildString }: Props) {
             cls={cls}
             tree={tree}
             build={build}
-            onAdd={(treeId, talentId) => commit(add(cls, build, treeId, talentId))}
-            onRemove={(treeId, talentId) => commit(remove(cls, build, treeId, talentId))}
+            pointsLeft={pointsLeft}
+            coarse={coarse}
+            query={query}
+            blocked={blocked?.treeId === tree.id ? { talentId: blocked.talentId, at: blocked.at } : undefined}
+            onAdd={handleAdd}
+            onRemove={handleRemove}
             onReset={(treeId) => commit(resetTree(build, treeId))}
           />
         ))}
       </div>
       <div className="mt-3 text-xs text-[var(--text-dim)]">
-        Left click adds a point, right click removes one.
-        {cls.dataSource !== 'datamined' && (
-          <>
-            {' '}
-            Data was read from stream footage ({cls.dataSource}); talent rules are {cls.rules.rulesSource}. Hover a talent for its
-            provenance.
-          </>
-        )}
+        {coarse
+          ? 'Tap a talent for its tooltip, then + to add a point and - to remove one.'
+          : 'Left click adds a point, right click removes one. With a talent focused: Enter or Space adds, Backspace removes, arrow keys move.'}
         {cls.notes?.map((n, i) => (
           <div key={i}>{n}</div>
         ))}

@@ -1,8 +1,14 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { parseHash, type Route } from './url/route'
 import { ClassPicker, REPO_URL } from './ui/ClassPicker'
 import { ClassPage } from './ui/ClassPage'
-import { ReviewPage } from './ui/ReviewPage'
+
+/**
+ * The review route is reviewer-only and drags in the registry of all 971 frame
+ * crops (data/crops.ts, ~92 kB of paths). Loading it lazily keeps that out of
+ * every player's first load (performance review P-2).
+ */
+const ReviewPage = lazy(() => import('./ui/ReviewPage').then((m) => ({ default: m.ReviewPage })))
 
 function useRoute(): Route {
   const [route, setRoute] = useState<Route>(() => parseHash(window.location.hash))
@@ -18,13 +24,28 @@ export default function App() {
   const route = useRoute()
   return (
     <div className="mx-auto max-w-[1200px] px-4 py-4">
+      {/* preventDefault: the app routes on the hash, so #main must not land in it. */}
+      <a
+        className="skip-link"
+        href="#main"
+        onClick={(e) => {
+          e.preventDefault()
+          document.getElementById('main')?.focus()
+        }}
+      >
+        Skip to the talent trees
+      </a>
       <nav className="mb-4 flex items-baseline justify-between gap-4">
         <a href="#/" className="serif text-xl font-semibold text-[var(--gold)] no-underline">
           WoW Forever Talents
         </a>
-        <span className="text-xs text-[var(--text-dim)]">Classic+ talent calculator, data read from BlizzCon 2026 footage</span>
+        <span className="text-xs text-[var(--text-dim)]">Classic+ talent calculator - unofficial, unreviewed data</span>
       </nav>
-      <Body route={route} />
+      <main id="main" tabIndex={-1}>
+        <Suspense fallback={<div className="panel p-4 text-[var(--text-dim)]">Loading...</div>}>
+          <Body route={route} />
+        </Suspense>
+      </main>
       <footer className="mt-8 text-xs text-[var(--text-dim)]">
         Not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft, talent names, descriptions, icons
         and frame crops are property of Blizzard Entertainment. Data read from BlizzCon 2026 demo footage, unreviewed.

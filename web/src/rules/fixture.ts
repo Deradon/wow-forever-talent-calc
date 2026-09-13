@@ -8,7 +8,8 @@
  *   row6  cap(1)
  * * b-one requires a-one 5;  ** c-one requires b-one 3 (chain a -> b -> c)
  */
-import { parseClass, type ClassData, type Talent } from '../data/schema'
+import { parseClass } from '../data/schema.zod'
+import type { ClassData, Talent } from '../data/schema'
 
 function talent(id: string, row: number, col: number, maxRank: number, extra: Partial<Talent> = {}): Talent {
   return {

@@ -1,0 +1,7 @@
+# WoW Forever Talent Calculator
+# The app is a single page with hash routing, so every route shares one URL.
+# The reviewer-only route is #/review/<class> and is not crawlable either way.
+User-agent: *
+Allow: /
+
+Sitemap: https://deradon.github.io/wow-forever-talent-calc/sitemap.xml

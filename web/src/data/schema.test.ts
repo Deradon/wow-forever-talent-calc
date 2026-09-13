@@ -9,7 +9,8 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import { z } from 'zod'
-import { ClassSchema, TalentSchema, parseClass, renderDescription } from './schema'
+import { ClassSchema, TalentSchema, parseClass } from './schema.zod'
+import { renderDescription } from './schema'
 import tinker from '../../tests/fixtures/tinker.json'
 
 const here = fileURLToPath(new URL('.', import.meta.url))
@@ -41,7 +42,7 @@ describe('Zod schema', () => {
     expect(cls.class).toBe('tinker')
     expect(cls.trees).toHaveLength(2)
     // unknown keys pass through
-    const extra = parseClass({ ...tinker, futureField: 42 }) as Record<string, unknown>
+    const extra = parseClass({ ...tinker, futureField: 42 }) as unknown as Record<string, unknown>
     expect(extra.futureField).toBe(42)
   })
 

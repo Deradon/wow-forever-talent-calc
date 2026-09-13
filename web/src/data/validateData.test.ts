@@ -8,7 +8,8 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
-import { parseClass, renderDescription, type ClassData } from './schema'
+import { parseClass } from './schema.zod'
+import { renderDescription, type ClassData } from './schema'
 import { validate } from '../rules'
 
 const here = fileURLToPath(new URL('.', import.meta.url))
