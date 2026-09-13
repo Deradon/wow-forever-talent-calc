@@ -19,6 +19,8 @@ interface Props {
 
 const MAX_RESULTS = 8
 
+import { HighlightNewToggle } from './HighlightNewToggle'
+
 export function Header({ cls, classId, build, query, onQuery, onJump, onReset, resetUndoAt, onUndoReset }: Props) {
   const total = totalPoints(build)
   const left = cls.rules.maxPoints - total
@@ -76,6 +78,7 @@ export function Header({ cls, classId, build, query, onQuery, onJump, onReset, r
         </span>
       </div>
       <div className="ml-auto flex items-center gap-2">
+        <HighlightNewToggle classId={classId} />
         {/* A Reset used to destroy a 51-point build silently (usability 10). It
             is an ordinary commit now, so Ctrl+Z takes it back - and for the
             eight seconds after the click, so does the button itself. */}

@@ -2,8 +2,7 @@ import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } f
 import type { ClassData, Talent, Tree } from '../data/schema'
 import { canAdd, canRemove, pointsInRowsAbove, pointsInTree, rankOf, type Build } from '../rules'
 import { Arrows } from './Arrows'
-import { changedCount, hasClassicDiff } from './classicDiff'
-import { setHighlightNew, useHighlightNew } from './highlightNew'
+import { useHighlightNew } from './highlightNew'
 import { matchesTalent } from './interaction'
 import { TalentCell } from './TalentCell'
 import './tiers.css'
@@ -40,7 +39,7 @@ interface Props {
  *
  * It also owns two things the class-page header cannot: the tier gutter with
  * the row requirements (brief idea 6) and, in the leftmost panel of the page,
- * the "highlight what's new" switch (brief idea 3), whose state lives in
+ * the "highlight what's new" state (the switch itself sits in the header), which lives in
  * `highlightNew.ts` because it applies to all three trees at once.
  */
 export function TreePanel({ cls, tree, build, pointsLeft, coarse, query, blocked, onAdd, onRemove, onReset }: Props) {
@@ -49,8 +48,6 @@ export function TreePanel({ cls, tree, build, pointsLeft, coarse, query, blocked
   const [focused, setFocused] = useState<string>()
   const highlight = useHighlightNew()
   // One switch for the whole page, so only the leftmost panel renders it.
-  const first = cls.trees.filter((t) => t.page === tree.page).sort((a, b) => a.order - b.order)[0]?.id === tree.id
-  const showToggle = first && hasClassicDiff(cls.class)
 
   const rows: Talent[][] = Array.from({ length: tree.rows }, () => [])
   for (const t of tree.talents) rows[t.row]?.push(t)
@@ -152,18 +149,6 @@ export function TreePanel({ cls, tree, build, pointsLeft, coarse, query, blocked
           {tree.name}
         </h2>
         <div className="flex items-center gap-2 text-sm">
-          {showToggle && (
-            <button
-              type="button"
-              className="new-toggle"
-              data-testid="highlight-new"
-              aria-pressed={highlight}
-              title={`Dim the talents that are unchanged since Classic (${changedCount(cls.class)} changed)`}
-              onClick={() => setHighlightNew(!highlight)}
-            >
-              <span aria-hidden="true">&#9733;</span> What's new
-            </button>
-          )}
           <span data-testid={`tree-points-${tree.id}`}>{spent}</span>
           <button className="btn text-xs" onClick={() => onReset(tree.id)} disabled={spent === 0} aria-label={`Reset ${tree.name}`}>
             Reset
