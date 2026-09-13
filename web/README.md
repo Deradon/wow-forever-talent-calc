@@ -17,6 +17,12 @@ with Classic-style talent trees, point rules and shareable build links. Brief:
 | `npm run e2e` | Playwright: `tests/smoke.spec.ts` (example class) and `tests/paladin.spec.ts` (real data: crop icons, titles, manual ranks, review route). Builds with `build:e2e`, then `preview`. First time: `npx playwright install chromium`. |
 | `npm run lint` | oxlint. |
 
+CI (`.github/workflows/deploy.yml`, job `check`) runs `npm ci`, `npx vitest
+run`, `npx playwright install --with-deps chromium` and `npm run e2e`
+alongside the pipeline tests and the data validator; the deploy job waits on
+it. The Playwright step is `continue-on-error` until the suite has proven
+stable on CI runners.
+
 ## Layout
 
 - `src/data/` - `schema.ts` (Zod mirror of the JSON Schema; unknown keys pass through), `load.ts` (class files via `import.meta.glob`; `data/talents/` always, `data/examples/` and `tests/fixtures/` when `VITE_INCLUDE_EXAMPLES=1`), `encoding.ts` (encoding versions and migrations).

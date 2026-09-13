@@ -7,3 +7,25 @@ One file per session that changed state worth passing on, named
 2. State of long-running things (downloads, servers, background jobs).
 3. What is next, in order, pointing at the brief to execute.
 4. Surprises and decisions taken on the way (link an ADR if it matters).
+
+Add a line to the index below in the same commit. The index is chronological,
+oldest first.
+
+## Index
+
+| File | What it passes on |
+|---|---|
+| `2026-09-13-bootstrap.md` | Phase 0: repo, licence, research, decisions, `PLAN.md`, `DATA-SCHEMA.md`, the three briefs. How the stream download was started and how to check it. |
+| `2026-09-13-data.md` | Workstream B first increment: `data/schema/class.schema.json`, `pipeline/validate.py` (rules 1-19 and `canonical_dumps`, the one serializer), encoding v1, the tinker example, the Classic Era prior (432 talents). |
+| `2026-09-13-llama-build.md` | llama.cpp built with CUDA (release b10931) plus the model-download and `llama-server` scripts. Build flags, verification, and why the server runs on port 8089. |
+| `2026-09-13-web.md` | Workstream C, milestones M1 **and** M2: rules engine, hash routing, Pages deploy, then crop icons, class picker, `#/review/<class>` and document titles. The most complete description of the web architecture outside the brief. |
+| `2026-09-13-pipeline-probe.md` | Stage 0 against the live fragment URL while the download ran: 28 talent segments (03:47:20-06:17, all nine classes) and the pixel-exact measurement of the Forever talent UI that every later stage's layout prior comes from. |
+| `2026-09-13-data-ranks-export.md` | Stages 6 and 8: `ranks.py` (Classic match plus slot scaling) and `export.py` (`build_extracted`, `apply_overrides`, `build_talents`, `update_encoding`, `write_validated`). Read this before changing how a class file is produced. |
+| `2026-09-13-pipeline-hovers.md` | Stages 3 and 4: grid calibration from Sobel square-outline search, ffmpeg frame decoding, tooltip blob detection, tab state. The CV foundations. |
+| `2026-09-13-paladin-e2e.md` | First class through the whole pipeline (45 of 52 talents). Documents the VLM prompt, the two-pass reader contract, the confidence model and the codex second opinion — still the reference for all of those. |
+| `2026-09-13-all-classes.md` | Phase 2: all nine classes extracted (434 of 470 at the time), per-class timings, runner fixes, and the coverage table in `data/extracted/SUMMARY.md`. |
+| `2026-09-13-missing-cells-forensics.md` | Why 36 cells looked "never hovered": dark-panel tooltips under the area gate, ghost tooltips baked into the median, merged blobs. 34 recovered, detector fixed generally, and the proof that only mage Fire r1c3 is genuinely absent from the footage. |
+| `2026-09-13-prerequisites.md` | Prerequisite arrows read from the tree backgrounds (67 across 27 trees) because rank-0 tooltips never name a prerequisite. Ridge masks, path templates, the arrowhead test and the confidence vote. |
+| `2026-09-13-rank-scaling.md` | The proportional-scaling rule for anticipated ranks (Meditation 17/34/51, not 17/22/27), the classification of Classic progressions, and the 63 talents it corrected. Cross-referenced from `DATA-SCHEMA.md` section 5 and `pipeline/README.md`. |
+| `2026-09-13-icons.md` | Stage 9: 397 talents matched to clean Classic icon files by NCC plus pHash, 72 kept as crops (24 of them likely new Forever icons). Matching thresholds, the reference set, and how to re-apply. |
+| `2026-09-13-fix-c-ci-docs.md` | Review work package C: the CI `check` job, the CLAUDE.md rewrite, the `DATA-SCHEMA.md` corrections, the `PLAN.md` refresh and this index. |

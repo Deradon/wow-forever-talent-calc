@@ -7,11 +7,14 @@ schema `data/schema/class.schema.json` (JSON Schema draft 2020-12) is derived
 from it; when they disagree, fix the schema.
 
 Status: schema version 1, written 2026-09-13 before any real Forever data
-exists. Unknowns of the Forever talent system (Primary/Secondary tabs, tree
-count, points per row, cap) are modelled as data, not as code assumptions.
+existed, updated 2026-09-13 to match the shipped code. Unknowns of the
+Forever talent system (Primary/Secondary tabs, tree count, points per row,
+cap) are modelled as data, not as code assumptions.
 
 Related: `docs/briefs/data-prior-and-review.md` (implementation brief),
-`docs/research/2026-09-13-*.md` (background).
+`docs/research/2026-09-13-*.md` (background),
+`docs/reviews/2026-09-13-code-and-docs.md` (finding D3, the drift this
+revision fixes).
 
 ## 1. Directory layout
 
@@ -22,7 +25,7 @@ data/
   extracted/<class>.json        pipeline output, same schema, never edited by hand
   overrides/<class>.json        hand corrections applied on top of extracted/
   prior/classic-era/            Classic Era reference data used for rank anticipation
-  encoding/v<N>.json            frozen talent order per data version (build-link strings)
+  encoding/v<N>.json            talent order per data version (build-link strings); `frozen` locks it
   encoding/migrations/v<A>-v<B>.json   id renames/removals between versions
   review/<class>/<tree>/<talent-id>.png   tooltip crops referenced by source.crop
 ```
@@ -31,8 +34,10 @@ Everything under `data/` is committed, crops included (a 64x64 icon crop is
 ~5 KB, a tooltip crop ~40 KB; 500 talents ~20 MB, acceptable). Video and full
 frames stay under `pipeline/work/`.
 
-Flow: `pipeline` -> `data/extracted/` -> (`data/overrides/`, review UI) ->
-`export` -> `data/talents/` -> `validate` -> web app. See section 7.
+Flow: `pipeline` -> `data/extracted/` -> `data/overrides/` (hand-written
+after reading the `#/review/<class>` route, which is read-only) ->
+`08_export.py promote` -> `data/talents/` -> `validate.py` -> web app.
+See section 7.
 
 ## 2. Conventions
 
@@ -133,7 +138,7 @@ Top level of `data/talents/<class>.json` (identical for `data/extracted/`).
 | `col` | integer, `0 <= col < tree.cols` | yes | 0 = left. `(row, col)` unique per tree. |
 | `maxRank` | integer 1..9 | yes | From the tooltip's `Rank 0/N`. Upper bound 9 = Talent.db2 `SpellRank_0..8` width. |
 | `icon` | icon | yes | Canonical icon name. For `iconSource: "crop"` this is a provisional slug `crop-<talent-id>`, resolved when datamined. |
-| `iconSource` | enum `classic`, `crop`, `datamined`, `manual` | yes | `classic` = pHash-matched against the Classic icon set; `crop` = no match, the UI shows `iconCrop`. |
+| `iconSource` | enum `classic`, `crop`, `datamined`, `manual` | yes | Where `icon` came from; see the table below. |
 | `iconCrop` | string (repo-relative path) | iff `iconSource == "crop"` | 64x64 PNG under `data/review/`. |
 | `description` | string | yes | Rank-independent template. Placeholders `{0}`, `{1}`, ... are filled from `ranks[r]`. Braces that are not placeholders are not allowed. |
 | `ranks` | array, length == `maxRank` | yes | `ranks[r]` is either an array of slot values (number or string) whose length equals the number of distinct placeholders in `description`, or a full string when the sentence changes shape at that rank. Index 0 = rank 1. |
@@ -147,12 +152,25 @@ Top level of `data/talents/<class>.json` (identical for `data/extracted/`).
 | `tags` | array of string | no | Free-form (`"new"`, `"reworked"`, `"classic-unchanged"`); the UI may filter on them. |
 | `source` | Source | yes | Provenance (section 4.5). |
 
+`iconSource` values:
+
+| Value | Meaning | `icon` | `iconCrop` |
+|---|---|---|---|
+| `classic` | The 64x64 frame crop was pHash-matched against the Classic Era icon set (`09_icons.py`). | The matched Classic icon name, e.g. `spell_holy_devotionaura`. The web app loads `web/public/icons/<icon>.jpg`. | absent |
+| `crop` | No match above the threshold — usually a genuinely new Forever icon. | Provisional slug `crop-<talent-id>`. | required; the UI renders the PNG instead of an icon file |
+| `datamined` | Icon id taken from DB2/Wowhead once datamined (section 9). | The datamined icon name. | absent |
+| `manual` | A human set the icon name by hand (`data/overrides/`). | Whatever the reviewer wrote; must exist in `web/public/icons/`. | absent |
+
+The pipeline writes only `classic` and `crop`. If the icon file is missing at
+runtime the cell falls back to the talent's initials, so a wrong `classic`
+name degrades visibly rather than silently.
+
 Requirement:
 
 | Field | Type | Req | Description |
 |---|---|---|---|
 | `talent` | talent id | yes | Must exist in the same tree and in a strictly smaller `row`. |
-| `rank` | integer >= 1 | yes | Points required in that talent; usually its `maxRank`. |
+| `rank` | integer >= 1 | yes | Points that must already be spent **in the prerequisite talent** before this talent can be trained — not points in the tree, and not the rank being trained here. `rank: 5` on a `maxRank: 5` prerequisite means "maxed". Validation requires `1 <= rank <= target.maxRank`; extraction writes the target's `maxRank`, since a Classic arrow always means "maxed". |
 
 ### 4.5 Source (provenance)
 
@@ -211,7 +229,8 @@ A `manual` source needs only `kind`, `reviewed: true`, `reviewedBy`,
 
 ### 6.1 `data/extracted/<class>.json`
 
-Same schema. Written by `pipeline/10_export` from the reader output. Every
+Same schema. Written by `pipeline/stages/08_export.py extract` (there is no
+stage 10) from the reader output, via `wowtalents.export`. Every
 talent has `source.kind: "video"`, `source.reviewed: false`,
 `ranksObserved: [1]` and a `ranksSource` of `classic-prior`, `extrapolated`
 or `manual` (in which case `ranks` beyond rank 1 are `null`-free copies of
@@ -221,7 +240,9 @@ edited by hand.
 
 ### 6.2 `data/overrides/<class>.json`
 
-Hand corrections, produced by the review UI or by editing. Structure:
+Hand corrections. Written by editing the file: the `#/review/<class>` route
+is read-only and writes nothing (section 7). Optional — a class with no
+corrections has no override file. Structure:
 
 ```json
 {
@@ -261,8 +282,9 @@ Hand corrections, produced by the review UI or by editing. Structure:
 |---|---|---|---|
 | `talent` | talent id | yes | Target as it appears in `extracted/` (pre-rename). |
 | `tree` | tree id | yes | Disambiguates and catches the pipeline moving a talent between trees. |
-| `set` | partial Talent | one of `set`/`rename`/`delete`/`add` | Shallow merge over the extracted talent; `source` sub-fields merge shallowly too. |
-| `rename` | talent id | | New id. Requires a migration entry if an encoding version already contains the old id. |
+| `set` | partial Talent | one of `set`/`unset`/`rename`/`delete`/`add` | Shallow merge over the extracted talent; `source` sub-fields merge shallowly too. |
+| `unset` | array of field names | | Delete optional fields from the extracted talent (section "Deleting a field"). |
+| `rename` | talent id | | New id. Requires a migration entry if a frozen encoding version already contains the old id. |
 | `delete` | `true` | | Drop the talent. |
 | `add` | full Talent | | Insert a talent that extraction missed. |
 | `reason` | string | yes | Why. Non-empty. |
@@ -272,6 +294,30 @@ Overrides are applied in file order; a later override on the same talent
 wins field-by-field. Applying an override sets `source.reviewed: true`,
 `reviewedBy: by`, `reviewedAt: at` on the resulting talent, and pushes the
 pre-override reading into `source.readings` if it is not already there.
+
+#### Deleting a field
+
+A shallow merge can only add or replace, so `set` cannot remove a wrong
+prerequisite arrow or a stale `ranksNote`. `unset` lists field names to drop:
+
+```json
+{
+  "talent": "shadowburn", "tree": "destruction",
+  "unset": ["requires"],
+  "reason": "the arrow to conflagrate is a background artefact, not a prerequisite",
+  "by": "deradon", "at": "2026-09-14T20:30:00Z"
+}
+```
+
+- Only optional fields may be unset (`requires`, `ranksNote`, `ranksPrior`,
+  `capstone`, `tags`, `spellIds`, `iconCrop` when `iconSource` changes, and
+  `source.note` / `source.readings`). Unsetting a required field is an error.
+- Dotted names address `source` sub-fields: `"source.note"`.
+- Unsetting a field that is not present is a no-op, not an error.
+- `unset` may be combined with `set` in the same entry; `unset` is applied
+  first, so `set` wins on any field named in both.
+- Removing a `requires` entry can orphan nothing (arrows only point upwards),
+  but it changes the rules the app enforces — validate afterwards.
 
 ### 6.3 `data/talents/<class>.json` (canonical)
 
@@ -288,9 +334,11 @@ Written by `export.py`:
    validate, rename).
 
 Direct manual edits to `data/talents/` are allowed as a last resort but
-must set `source.reviewed: true` and `reviewedBy`; CI runs `validate.py`
-and rejects a canonical file that does not round-trip through `export.py`
-(`export.py --check` compares).
+must set `source.reviewed: true` and `reviewedBy`. The `check` job in
+`.github/workflows/deploy.yml` runs
+`validate.py --check ../data/talents/*.json` and the deploy job waits on it,
+so a canonical file that is not byte-identical to the serializer output
+(rule 12) never reaches Pages.
 
 ## 7. Review workflow
 
@@ -298,17 +346,27 @@ and rejects a canonical file that does not round-trip through `export.py`
 2. `validate.py data/extracted/<class>.json --report` prints the review
    queue: every talent with `source.confidence < 0.8`, any structural
    warning, any `ranksSource: "manual"`, and any `iconSource: "crop"`.
-3. Reviewer opens the review UI (`tools/review/`, or the hidden
-   `/review/<class>` route in the web app) which lists the queue by
-   ascending confidence, shows the crop next to the rendered tooltip, and
-   writes accepted/edited records into `data/overrides/<class>.json`.
-4. `export.py <class>` merges and writes `data/talents/<class>.json`.
-5. `validate.py data/talents/<class>.json` must pass; commit extracted,
+3. Reviewer opens `#/review/<class>` in the web app
+   (`web/src/ui/ReviewPage.tsx`, linked from the class picker). It lists
+   every talent worst-reading-first and shows the frame crop, the icon crop,
+   the provenance and the rendered tooltip at rank 1 and max rank. **It is
+   read-only**: it writes nothing.
+4. The reviewer writes the corrections into `data/overrides/<class>.json` by
+   hand (section 6.2). There is no write-back editor; building one is
+   explicitly out of scope for now
+   (`docs/reviews/2026-09-13-consolidated.md`, "Not doing now").
+5. `08_export.py promote <class>` merges and writes
+   `data/talents/<class>.json`.
+6. `validate.py data/talents/<class>.json` must pass; commit extracted,
    overrides, talents and crops together.
 
-Accepting a record unchanged still writes an override with an empty `set`
-(`"set": {}`) so `reviewed: true` gets provenance; there is no other way to
-mark a talent reviewed.
+Accepting a record unchanged still needs an override entry with an empty
+`set` (`"set": {}`) so `reviewed: true` gets provenance; there is no other
+way to mark a talent reviewed.
+
+Current state (2026-09-13): `data/overrides/` is empty and 0 of 469 talents
+are `reviewed: true`. The 77-record review queue has not moved, which is the
+cost of step 4 being manual.
 
 ## 8. Encoding versions and migrations
 
@@ -321,6 +379,7 @@ by `-`, trailing zeros trimmed, plus a data version segment:
 {
   "version": 3,
   "createdAt": "2026-09-15T10:00:00Z",
+  "frozen": true,
   "note": "after rogue/warrior review",
   "classes": {
     "paladin": {
@@ -337,11 +396,24 @@ by `-`, trailing zeros trimmed, plus a data version segment:
 - `trees` lists tree ids in string-segment order (pages flattened: primary
   trees in `order`, then secondary trees). `order[tree]` lists talent ids
   row-major. Every class present in `data/talents/` must be present here.
-- Rules: an encoding file is immutable once merged to `main`. Any change to
-  the set or order of talent ids in any class (add, remove, rename, move)
-  requires a new version `v<N+1>.json` covering all classes, plus a
-  migration file. Text-only corrections (name spelling, description, ranks,
-  icons) do not need a new version.
+- `frozen` (boolean, required): `true` means the file may never change
+  again. Any change to the set or order of talent ids in any class (add,
+  remove, rename, move) then requires a new version `v<N+1>.json` covering
+  all classes, plus a migration file. Text-only corrections (name spelling,
+  description, ranks, icons) never need a new version.
+
+  `frozen: false` means the order is still provisional and may be
+  regenerated in place, at the price of silently invalidating build links
+  shared in the meantime. Only the newest version may be unfrozen, and only
+  before launch is declared: v1 is unfrozen today by owner decision
+  (`docs/reviews/2026-09-13-consolidated.md`), and it was in fact rewritten
+  three times before the flag existed
+  (`docs/reviews/2026-09-13-code-and-docs.md`, finding A1). Freeze it at
+  launch; from then on the invariant is the immutability rule above.
+
+  `08_export.py --update-encoding` regenerates the newest version when it is
+  unfrozen, and refuses to touch it when it is frozen — it creates
+  `v<N+1>.json` plus the migration stub instead.
 - `dataVersion` in each class file must equal the highest version in
   `data/encoding/`; validation checks that the class's talent ids equal the
   version's `order` sets.
@@ -360,15 +432,25 @@ by `-`, trailing zeros trimmed, plus a data version segment:
 }
 ```
 
-Decoder in `web/src/rules/encoding.ts`: read `v`, load `v<N>.json` (all
-versions are shipped, they are small), map digits to ids, apply migrations
-`v -> v+1 -> ... -> current` (renamed: keep points; removed: drop points;
-moved: keep points), re-encode in the current order, then run
-`validateTree` and drop violating points top-down with a "build adjusted"
-notice. Migrations are total: every id in `v<N>` maps to an id in `v<N+1>` or
-appears in `removed`; `validate.py` checks this chain.
+Decoding is split in two: `web/src/data/encoding.ts` loads every shipped
+`v<N>.json` and migration into an `EncodingRegistry` (`loadRegistry`,
+`orderFor`, `migrationChain`; `derivedOrder` is the fallback when the class
+is not in the requested version), and `web/src/url/codec.ts` does the
+`encode` / `decode`. `decode` reads `v`, maps digits to ids in that
+version's order, applies migrations `v -> v+1 -> ... -> current` (renamed:
+keep points; removed: drop points; moved: keep points), then calls
+`sanitize` (`web/src/rules/mutate.ts`), which repeatedly runs `validate`
+(`web/src/rules/validate.ts`) and drops violating points top-down, and
+returns `Notice`s (`unknown-version`, `clamped`, `unknown-talent`,
+`adjusted`, `bad-string`) for the UI. There is no `validateTree` and no
+`web/src/rules/encoding.ts`. Migrations are total: every id in `v<N>` maps
+to an id in `v<N+1>` or appears in `removed`; `validate.py` rule 11 checks
+this chain.
 
-## 9. Datamined import path (drop-in replacement, after 2026-09-17)
+## 9. Datamined import path (planned; drop-in replacement, after 2026-09-17)
+
+Nothing in this section exists yet — `pipeline/import_db2.py` is not written.
+It is the design the schema was shaped for, not a description of the tree.
 
 `pipeline/import_db2.py --build <build> --class <class>` reads the wago.tools
 CSV exports and writes `data/extracted/<class>.json` in this same schema
@@ -416,7 +498,8 @@ Schema (errors):
     iff `reviewed`. `spellIds.length == maxRank` when present.
 11. `dataVersion` encoding file exists; the class's talent id set equals the
     union of `order[*]` for that class; tree list equals the file's tree ids;
-    migration chain from every older version is total (section 8).
+    migration chain from every older version is total (section 8). Every
+    version file carries `frozen`; at most one (the newest) may be `false`.
 12. For `talents/`: no `source.readings`; `generatedAt` present; file equals
     the canonical serializer output byte-for-byte (`--check`; a warning
     without the flag).

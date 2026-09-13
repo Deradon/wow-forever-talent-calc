@@ -6,9 +6,13 @@ available: talent data is extracted from gameplay footage in which every
 talent tooltip is hovered, then reviewed by hand.
 
 Repository: https://github.com/Deradon/wow-forever-talent-calc
-Site (once Pages is enabled): https://deradon.github.io/wow-forever-talent-calc/
+Site: https://deradon.github.io/wow-forever-talent-calc/
 
-Status: **bootstrapping** – see `docs/PLAN.md`, briefs in `docs/briefs/`.
+Status: **live, unreviewed.** All nine classes and 469 of 470 talents are
+published (one mage Fire talent was never hovered on stream). No record has
+passed human review yet, so every tooltip carries its provenance and a
+caveat. Plan and history: `docs/PLAN.md`; open findings:
+`docs/reviews/2026-09-13-consolidated.md`.
 
 ## How it works
 
@@ -25,8 +29,23 @@ Status: **bootstrapping** – see `docs/PLAN.md`, briefs in `docs/briefs/`.
 
 ## Development
 
-Tooling is documented per subfolder once it exists. Requirements so far:
-`git`, `ffmpeg`, `yt-dlp`, `uv` (Python), `node` ≥ 22.
+Requirements: `uv` (Python 3.12) and `node` >= 22; `ffmpeg` and `yt-dlp` only
+to re-run the extraction from video.
+
+```bash
+# web app
+cd web && npm install && npm run dev      # http://localhost:5173
+npm test                                  # vitest
+
+# pipeline
+cd pipeline
+uv run pytest                                              # 171 tests
+uv run python validate.py --check ../data/talents/*.json   # 0 errors
+```
+
+Commands stage by stage: `pipeline/README.md`. Web app details:
+`web/README.md`. Data contract: `docs/DATA-SCHEMA.md`. Conventions for
+working in this repo: `CLAUDE.md`.
 
 ## License
 

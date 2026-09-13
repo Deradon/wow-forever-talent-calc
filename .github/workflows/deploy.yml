@@ -11,7 +11,39 @@ concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv sync --frozen
+        working-directory: pipeline
+      - run: uv run pytest -q
+        working-directory: pipeline
+      # Rule 12 of docs/DATA-SCHEMA.md: the canonical files must equal the
+      # serializer output byte-for-byte. Fails the deploy on bad data.
+      - run: uv run python validate.py --check ../data/talents/*.json
+        working-directory: pipeline
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+        working-directory: web
+      - run: npx vitest run
+        working-directory: web
+      - run: npx playwright install --with-deps chromium
+        working-directory: web
+      # Non-blocking until the suite has run green in CI a few times; see
+      # docs/reviews/2026-09-13-code-and-docs.md finding B2. Drop the flag then.
+      - run: npm run e2e
+        working-directory: web
+        continue-on-error: true
   deploy:
+    needs: check
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -29,7 +61,6 @@ jobs:
         working-directory: web
         env:
           VITE_BASE: /${{ github.event.repository.name }}/
-          # Ship the example class until the first real class lands in data/talents/; then remove.
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

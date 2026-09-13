@@ -3,32 +3,93 @@
 Talent calculator for **World of Warcraft: Forever** (Classic+, announced at
 BlizzCon 2026-09-12). Two halves: a data-extraction pipeline that turns
 gameplay video into talent JSON, and a static web app that renders it.
+Live: https://deradon.github.io/wow-forever-talent-calc/
+
+## State (2026-09-13)
+
+All nine classes published, 469 of 470 talents (mage Fire r1c3 was never
+hovered on stream). Everything is **unreviewed**: 0 talents have
+`source.reviewed: true`, 77 sit below the 0.8 confidence threshold, plus 21
+low-confidence prerequisite arrows. A full review round landed in
+`docs/reviews/` on 2026-09-13; `docs/reviews/2026-09-13-consolidated.md`
+ranks the findings and assigns the work packages. Next: owner review via
+`#/review/<class>`, then Phase 2b (races). History: `docs/PLAN.md`.
 
 ## Layout
 
-- `pipeline/` – Python (uv). Video download, frame extraction, tooltip OCR,
-  JSON assembly, validation. Never edits `data/` by hand; writes to
-  `data/extracted/`.
-- `data/` – Canonical talent data (`data/talents/<class>.json`) plus the raw
-  pipeline output it was reviewed from. Hand corrections go into
-  `data/talents/`, with provenance kept (`source` field).
-- `web/` – Static talent calculator (no backend). Reads `data/talents/`.
-- `docs/` – Plans, briefs, handovers, decisions. Read `docs/PLAN.md` first.
-- `tools/` – One-off scripts (review UI, diffing, icon matching).
+- `pipeline/` – Python (uv). Stages `00, 03, 04, 04b, 05..09` in
+  `pipeline/stages/` (the numbering has gaps; there is no stage 1, 2 or 10),
+  shared code in `pipeline/src/wowtalents/`, one-off scripts in
+  `pipeline/scripts/`, the standalone validator at `pipeline/validate.py`,
+  tests in `pipeline/tests/`. Large artefacts stay under `pipeline/work/`
+  (git-ignored).
+- `data/` – `talents/<class>.json` canonical, `extracted/` raw pipeline
+  output, `overrides/` hand corrections, `review/` tooltip and icon crops,
+  `encoding/` build-link orders, `prior/classic-era/` the Classic prior,
+  `schema/class.schema.json`, `examples/` the fictional tinker class.
+- `web/` – Static calculator, no backend. `src/rules/` pure rules,
+  `src/url/` build-link codec and hash routing, `src/data/` schema, loading
+  and encoding registry, `src/ui/` React, `tests/` Playwright.
+- `docs/` – `PLAN.md` (read first), `DATA-SCHEMA.md` (normative for `data/`),
+  `briefs/`, `decisions/`, `reviews/`, `handover/` (indexed in
+  `docs/handover/README.md`).
+- There is no `tools/` directory. The review UI is the `#/review/<class>`
+  route in the web app; icon matching is `pipeline/stages/09_icons.py`.
 
-## Rules
+## Data contract
 
-- Data source of truth is `data/talents/*.json`. Schema in
-  `docs/DATA-SCHEMA.md`. Run the validator before committing data changes.
+- Source of truth is `data/talents/*.json`. `docs/DATA-SCHEMA.md` is
+  normative; `data/schema/class.schema.json` and `web/src/data/schema.ts`
+  mirror it. Where a brief disagrees, the schema wins.
+- Run the validator before committing any data change, from `pipeline/`:
+  `uv run python validate.py --check ../data/talents/*.json`
+  (about a second, must exit 0). CI runs the same command.
 - Every talent record keeps `source` (video id, timestamp, frame path,
   confidence). Data corrected by hand keeps `source.reviewed: true`.
-- Web app must stay deployable as static files (GitHub/Cloudflare Pages).
-- Pure rules (point allocation, row gating, prerequisites, URL encoding) live
-  in `web/src/rules/` with unit tests. No DOM access there.
-- Large artefacts (video, frames) are git-ignored. Keep them under
-  `pipeline/work/`. Small sample frames used as test fixtures may be committed.
-- Docs in English. Keep `docs/PLAN.md` status section current when a phase
-  finishes; write handovers to `docs/handover/`.
+- The pipeline owns `data/extracted/`, `data/review/`, `data/icons/` and
+  `web/public/icons/`. It writes `data/talents/` only through
+  `08_export.py promote`, which never overwrites a `reviewed: true` record.
+  Never hand-edit `data/extracted/`.
+- Pure rules (point allocation, row gating, prerequisites) live in
+  `web/src/rules/`, the build-link codec and hash routing in `web/src/url/`.
+  No DOM access in either.
+- The web app must stay deployable as static files (GitHub/Cloudflare Pages).
+
+## Encoding freeze
+
+`data/encoding/v<N>.json` fixes the digit position of every talent in a
+build link. Each file carries a `frozen` flag:
+
+- `frozen: false` (v1 today, pre-launch): the order may still be regenerated
+  in place. Shared links can shift; that is the accepted cost until launch.
+- `frozen: true`: the file is immutable. Any change to the set or order of
+  talent ids then needs a new `v<N+1>.json` covering every class, a
+  `migrations/v<N>-v<N+1>.json`, and `dataVersion` bumped in every class
+  file. `08_export.py --update-encoding` refuses to touch a frozen file and
+  creates the next version instead.
+
+Freeze v1 when launch is declared. A published version that is silently
+rewritten breaks every shared build link — it has happened once already
+(`docs/reviews/2026-09-13-code-and-docs.md`, finding A1).
+
+## Commands
+
+```bash
+# web (in web/)
+npm test          # vitest
+npm run build     # tsc -b && vite build
+npm run e2e       # playwright; once: npx playwright install chromium
+
+# pipeline (in pipeline/)
+uv run pytest
+uv run python validate.py --check ../data/talents/*.json
+uv run stages/08_export.py --help
+
+# from the repo root, prefix with --directory (globs must then be absolute):
+uv run --directory pipeline pytest
+```
+
+Stage by stage: `pipeline/README.md`. Web details: `web/README.md`.
 
 ## Decisions (see docs/decisions/)
 
@@ -48,8 +109,6 @@ gameplay video into talent JSON, and a static web app that renders it.
 - Commit messages: a `Co-Authored-By` line for Claude is fine; never add a
   `Claude-Session:` line or any claude.ai session URL. A local commit-msg
   hook rejects them.
-
-## Commands
-
-See `README.md` (filled in as tooling lands). The stream download lives in
-`pipeline/work/video/` (git-ignored); check `download.log` before touching it.
+- Docs in English. Keep the status log in `docs/PLAN.md` current when a phase
+  finishes; write a handover to `docs/handover/` and add its line to
+  `docs/handover/README.md`.

@@ -1,7 +1,9 @@
 # Project plan: WoW Forever Talent Calculator
 
 Last updated: 2026-09-13. Owner: Deradon. Read this first; details live in the
-briefs under `docs/briefs/` and the decisions in `docs/decisions/`.
+briefs under `docs/briefs/`, the decisions in `docs/decisions/`, the ranked
+findings in `docs/reviews/2026-09-13-consolidated.md` and the session
+handovers indexed in `docs/handover/README.md`.
 
 ## Goal
 
@@ -103,7 +105,12 @@ Skyborne starting zone and a new character sheet. Inventory with timestamps:
 - Importer path from DB2/Wowhead data into the same schema; data version bump
   and encoding migrations; addon export; SEO/OG; polish.
 
-## Fast path while the download runs
+## Fast path while the download runs (historical, 2026-09-13)
+
+Kept for the record: the download finished and both questions below were
+settled (Qwen3-VL-4B, llama-server on port 8089). Nothing here is a live
+concern.
+
 
 The format-299 fragment URL in `pipeline/work/video/xaryu-blizzcon-day1.info.json`
 plus `&sq=N` returns one self-contained fragment covering roughly stream
@@ -117,14 +124,33 @@ the pipeline brief).
 
 ## Immediate next actions (in order)
 
-1. Confirm the download finishes and merges (check
-   `pipeline/work/video/download.log`); if the stream is over, a
-   `--download-sections "*03:00:00-06:20:00"` re-download of the VOD is the
-   fallback.
-2. Start workstream A step 1 and 2 in one session; start workstream C M1 in
-   a second session using a hand-written sample class file.
-3. Workstream B: write `data/schema/class.schema.json` and `validate.py`
-   first, since both other streams depend on it.
+Where we are: all nine classes are live with 469 of 470 talents, nothing is
+reviewed, and a full review round (usability, text quality, data audit, code
+and docs, performance and accessibility) landed on 2026-09-13. The ranked
+findings and their work packages are in
+`docs/reviews/2026-09-13-consolidated.md`; read that before picking work.
+
+1. **Work the review packages A1, A2, B and C** from the consolidated review.
+   B is the one that changes the product: the two-reader shape-aware merge
+   and a re-read of the 77-record review queue, where every text error found
+   in the audit sits. A1/A2 are the tooltip and interaction fixes; C is CI
+   and docs (this file included).
+2. **Owner review of the queue** via `#/review/<class>`: 77 talents below the
+   0.8 confidence threshold plus 21 low-confidence prerequisite arrows.
+   Corrections go into `data/overrides/<class>.json` by hand — the review
+   route is read-only (`docs/DATA-SCHEMA.md` section 7) — then
+   `08_export.py promote`. This is the only path to `source.reviewed: true`,
+   and it is at 0 of 469 today.
+3. **Declare launch and freeze the encoding.** By owner decision `v1` stays
+   mutable until then; freezing sets `frozen: true` in
+   `data/encoding/v1.json`, after which any id set or order change needs a
+   `v2` plus a migration (`docs/DATA-SCHEMA.md` section 8).
+4. **Phase 2b: races** (`docs/briefs/beyond-talents.md`) — `data/races/`,
+   route `#/races`. Cheapest complete increment, highest news value. Then 2c
+   ("what changed vs Classic") and 2d (spellbook), in that order.
+5. **Phase 3 groundwork** once the beta opens on 2026-09-17: the DB2 importer
+   (`docs/DATA-SCHEMA.md` section 9, still unwritten) writing the same schema,
+   so datamined data is a drop-in replacement rather than a rewrite.
 
 ## Risks
 
@@ -141,12 +167,30 @@ the pipeline brief).
 
 ## Open questions
 
-- Total talent points and points-per-row in Forever (assume 51 and 5).
-- Meaning of Primary / Secondary tabs; whether both trees on screen belong to
-  the same page.
-- Eventual custom domain (would change the Vite base path from
-  `/wow-forever-talent-calc/` to `/`).
-- Whether any talents were hovered above rank 0 anywhere in the window.
+- **Total talent points and points-per-row.** Still unconfirmed. The
+  assumption (51 points, 5 per row, first point at level 10, level cap 60) is
+  already baked into all nine class files as `rules` with
+  `rulesSource: "assumed"`, so correcting it means editing nine `rules`
+  blocks, not touching code. Confirm from the Deep Dive recap or beta.
+- **Primary / Secondary tabs.** Every class file ships a single page
+  `primary`; no secondary tab was ever opened on stream. If Forever has a
+  second page, it is a new `pages[]` entry plus `pointsPerPage`, and the
+  encoding order gains its trees at the end — a version bump once frozen.
+- **Rank scaling beyond rank 1.** Tooltips only ever showed rank 1, so all
+  higher ranks are anticipated from the Classic prior and marked via
+  `ranksSource`. The data audit found 24 talents above 1.6x the Classic max
+  and cases where a constant (a health threshold) was scaled as if it were a
+  coefficient. Which of these are real Forever changes is unknown until the
+  beta.
+- **Non-rank-0 hovers.** Not "none" as originally assumed: at least
+  `mage/shatter` was captured at a rank above 1, which made its extracted
+  rank-1 values wrong. Whether more exist is unknown; the fix is to never
+  scale from a reading whose rank is not 1 (review package B5).
+- **Eventual custom domain** would change the Vite base path from
+  `/wow-forever-talent-calc/` to `/` (and the `VITE_BASE` env in
+  `.github/workflows/deploy.yml`).
+- **When to declare launch**, which is what freezes the encoding and turns
+  build links into a compatibility promise.
 
 ## Repository
 

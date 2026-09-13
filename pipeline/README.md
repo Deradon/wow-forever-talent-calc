@@ -5,6 +5,10 @@ BlizzCon stream, writes candidates to `../data/extracted/`. Brief:
 `../docs/briefs/pipeline.md`. Shared code in `src/wowtalents/`, stages in
 `stages/NN_name.py`, all artefacts under `work/` (git-ignored).
 
+Every `uv run` command below assumes the working directory is `pipeline/`.
+From the repo root, prefix them: `uv run --directory pipeline pytest`,
+`uv run --directory pipeline stages/08_export.py --help`.
+
 ## Setup
 
 ```bash
@@ -111,11 +115,18 @@ uv run stages/05_read.py run mage --segments 8,m07 --add    # read only the cell
 
 Helpers in `src/wowtalents/mkv.py` (`tests/test_mkv.py`).
 
-## Tests
+## Tests and validation
 
 ```bash
 uv run pytest
+uv run python validate.py --check ../data/talents/*.json   # must exit 0
+uv run python validate.py --report ../data/extracted/warrior.json   # review queue
 ```
+
+`validate.py` is the standalone validator for `docs/DATA-SCHEMA.md` rules
+1-19; `--check` is rule 12 (the file must be byte-identical to the canonical
+serializer output). The `check` job in `.github/workflows/deploy.yml` runs
+`pytest` and the `--check` line above, and the deploy job waits on it.
 
 <!-- data-side stages (ranks + export); keep this section self-contained -->
 ## Stage 6 and 8: rank anticipation and export (data side)
@@ -132,7 +143,8 @@ uv run stages/06_rankfill.py warrior --force --out /path/to/copy.json
 
 # candidates -> data/extracted/warrior.json (raw pipeline output, validated before writing)
 uv run stages/08_export.py extract warrior --update-encoding
-# extracted + data/overrides/warrior.json + reviewed records -> data/talents/warrior.json
+# extracted + data/overrides/warrior.json (optional; no class has one yet) + reviewed records
+# -> data/talents/warrior.json
 uv run stages/08_export.py promote warrior
 uv run stages/08_export.py all warrior --update-encoding  # both; -v prints dedupe/encoding INFO lines
 ```
@@ -240,7 +252,7 @@ Classic-prior hint, decision, `apply_matches`); stage `stages/09_icons.py`.
 Sources, method and licensing: `data/icons/SOURCES.md`.
 
 ```bash
-uv run stages/09_icons.py refs --fetch-lists   # reference list + 36 px icons into work/icons/ (one request per icon, 0.3 s pause)
+uv run stages/09_icons.py refs --fetch-lists   # reference list + 36 px icons into work/icons/ (git-ignored, ~70 min to rebuild; one request per icon, 0.3 s pause)
 uv run stages/09_icons.py match all --sheet    # crops of data/extracted/<class>.json -> data/icons/matches.json, sheets in work/icons/sheets/
 uv run stages/09_icons.py fetch                # 56 px icon per accepted match -> web/public/icons/<name>.jpg
 uv run stages/09_icons.py apply all --dry-run  # then without --dry-run: icon / icon_source into the candidates files
@@ -250,7 +262,8 @@ uv run stages/08_export.py extract <class> && uv run stages/08_export.py promote
 A talent with an accepted match exports as `icon: <name>`, `iconSource:
 "classic"` and no `iconCrop`; everything else stays a crop. Hand verdicts go
 into `data/icons/verified.json` (`true` / `false` / `"<icon name>"` per
-`class -> tree/talent`) and are merged on the next `match`. Tests:
+`class -> tree/talent`) and are merged on the next `match`; the file is
+optional and does not exist yet. Tests:
 `tests/test_icons.py` (synthetic icons and cells) and the icon case in
 `tests/test_export.py`.
 
