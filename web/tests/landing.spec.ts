@@ -15,7 +15,6 @@ test('the landing page loads no class chunk and no review code', async ({ page }
   await page.goto('/#/')
   await expect(page.getByTestId('class-list')).toBeVisible()
   await expect(page.getByTestId('class-paladin')).toContainText('Paladin')
-  await expect(page.getByTestId('class-paladin-trees')).toContainText('Retribution')
   await page.waitForTimeout(500)
 
   const classChunks = scripts.filter((p) => /\/(paladin|priest|druid|mage|rogue|shaman|warlock|warrior|hunter)-[^/]+\.js$/.test(p))

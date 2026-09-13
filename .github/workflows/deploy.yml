@@ -42,7 +42,6 @@ jobs:
       # docs/reviews/2026-09-13-code-and-docs.md finding B2. Drop the flag then.
       - run: npm run e2e
         working-directory: web
-        continue-on-error: true
   deploy:
     needs: check
     environment:
