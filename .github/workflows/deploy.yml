@@ -30,7 +30,6 @@ jobs:
         env:
           VITE_BASE: /${{ github.event.repository.name }}/
           # Ship the example class until the first real class lands in data/talents/; then remove.
-          VITE_INCLUDE_EXAMPLES: '1'
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

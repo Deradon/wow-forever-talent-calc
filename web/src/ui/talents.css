@@ -213,3 +213,24 @@
   padding: 6px 10px;
   border-radius: 3px;
 }
+
+/* --- review flag: low-confidence, unreviewed reading --- */
+.cell[data-review='true']::after {
+  content: '?';
+  position: absolute;
+  left: -7px;
+  top: -8px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #000;
+  background: #f0a020;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.tooltip .prov-review {
+  color: #f0a020;
+}

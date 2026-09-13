@@ -60,6 +60,7 @@ export function TalentCell({ cls, tree, talent, rank, addVerdict, onAdd, onRemov
         data-testid={`talent-${talent.id}`}
         data-talent={talent.id}
         data-state={state}
+        data-review={needsReview(talent) ? 'true' : undefined}
         data-rank={rank}
         data-addable={addVerdict.ok}
         aria-label={`${talent.name}, rank ${rank} of ${talent.maxRank}`}
@@ -96,4 +97,11 @@ export function TalentCell({ cls, tree, talent, rank, addVerdict, onAdd, onRemov
       )}
     </>
   )
+}
+
+
+function needsReview(t: { source?: { confidence?: number; reviewed?: boolean } }): boolean {
+  const s = t.source
+  if (!s || s.reviewed) return false
+  return s.confidence !== undefined && s.confidence < 0.8
 }

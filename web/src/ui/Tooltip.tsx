@@ -46,7 +46,9 @@ export function TooltipContent({ cls, tree, talent, rank, verdict }: Props) {
           {talent.ranksNote ? `: ${talent.ranksNote}` : '.'}
         </div>
       )}
-      <div className="prov">{provenance(talent)}</div>
+      <div className={talent.source && !talent.source.reviewed && (talent.source.confidence ?? 1) < 0.8 ? 'prov prov-review' : 'prov'}>
+        {provenance(talent)}
+      </div>
     </div>
   )
 }
