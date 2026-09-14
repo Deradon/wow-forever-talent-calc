@@ -1,4 +1,5 @@
 import classesIndex from '../data/classes-index.json'
+import './class-switcher.css'
 import { includeExamples } from '../data/load'
 import { ClassIcon } from './ClassIcon'
 import { classColour, classTextColour } from './classIcon'

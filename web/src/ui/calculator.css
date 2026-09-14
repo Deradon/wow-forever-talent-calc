@@ -662,54 +662,6 @@
   padding: 1px 0;
 }
 
-/* --- class switcher (brief idea 2) --- */
-.class-switcher {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-.class-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  height: 32px;
-  padding: 0 3px;
-  border: 1px solid #000;
-  border-radius: 4px;
-  background: linear-gradient(180deg, #1b2136 0%, #0b0f1c 100%);
-  text-decoration: none;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
-}
-.class-chip:hover {
-  border-color: var(--class-colour);
-}
-.class-chip:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 1px;
-}
-.class-chip-name {
-  /* Icon-only below 1320px - the same step at which the summary column drops
-     under the trees. Nine class names are ~700px of chip strip, which on a
-     laptop would push the header to three lines; the `title` and the sr-only
-     name mean nothing is lost when the text goes. */
-  display: none;
-  padding-right: 5px;
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-  color: var(--class-text, var(--class-colour));
-}
-@media (min-width: 1320px) {
-  .class-chip-name {
-    display: inline;
-  }
-}
-.class-chip[data-active='true'] {
-  border-color: var(--class-colour);
-  box-shadow: 0 0 0 1px var(--class-colour);
-  background: linear-gradient(180deg, #2a3350 0%, #141a2c 100%);
-}
-
 /* --- the class-level control row: search, What's new, Reset ---
    All three act on the whole class, so they are one left-aligned group in that
    order, at one height, with the badge legend holding the right edge. Before

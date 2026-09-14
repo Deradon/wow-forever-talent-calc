@@ -36,8 +36,8 @@
    compared down the page, which is the only reason this is a table. */
 .changes-table {
   border-collapse: collapse;
-  width: max-content;
-  min-width: 520px;
+  width: 100%;
+  max-width: 960px;
   font-size: 13px;
 }
 .changes-table th,
