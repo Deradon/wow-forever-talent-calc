@@ -206,6 +206,11 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-14: owner decision: no manual review pass; the current data state
+  (three-reader agreement, review badges on the few uncertain records) is
+  accepted as is. Remaining: beta-day import (from 2026-09-17) and the launch
+  freeze of encoding v1.
+
 - 2026-09-14 ~12:00: priest spells proven absent from the footage (whole-VOD
   keyframe sweep). The sweep's 50 spellbook runs now drive stage 11: spells
   323 -> 410 entries, 112 -> 152 tooltips, every tab of all eight classes
