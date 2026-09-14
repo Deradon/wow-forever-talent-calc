@@ -206,6 +206,17 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-14 ~08:00: review round 2 done and fixed (packages D and E), public
+  repo polish (README with screenshots, CONTRIBUTING, issue templates, About
+  page, review write-back), datamined DB2 importer proven on Classic Era
+  1.15.9 with the beta-day merge policy. Spell tooltips now have an
+  independent second reading (defect shapes at zero, 12 new spell names,
+  spell queue 21). Entry chunk -37 %, entry CSS -47 %, landing first load
+  -35 % vs round 2 measurements. Pipeline 555 tests, web 573 unit + 92
+  browser tests. Remaining: owner review queues (6 talents, 21 spell
+  records, 30 medium icon matches), beta-day import (from 2026-09-17),
+  launch freeze of encoding v1.
+
 - 2026-09-14 ~09:30: review round two, package D (pipeline and data) done.
   Stage 11 gained an `opinions` command that fetches an independent codex
   reading for every spellbook column and tooltip, and `build` now runs the
