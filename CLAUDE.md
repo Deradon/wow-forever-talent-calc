@@ -5,27 +5,41 @@ BlizzCon 2026-09-12). Two halves: a data-extraction pipeline that turns
 gameplay video into talent JSON, and a static web app that renders it.
 Live: https://deradon.github.io/wow-forever-talent-calc/
 
-## State (2026-09-13)
+## State (2026-09-14)
 
-All nine classes published, 469 of 470 talents (mage Fire r1c3 was never
-hovered on stream). Everything is **unreviewed**: 0 talents have
-`source.reviewed: true`, 77 sit below the 0.8 confidence threshold, plus 21
-low-confidence prerequisite arrows. A full review round landed in
-`docs/reviews/` on 2026-09-13; `docs/reviews/2026-09-13-consolidated.md`
-ranks the findings and assigns the work packages. Next: owner review via
-`#/review/<class>`, then Phase 2b (races). History: `docs/PLAN.md`.
+Three datasets are published and all of them are drafts.
+
+- **Talents**: 469 of 470 (mage Fire r1c3 was never hovered on stream), **57
+  reviewed** (`source.reviewed: true`), **6** unreviewed below the 0.8
+  confidence threshold. 22 of the 69 prerequisite arrows were traced below 0.8
+  in `pipeline/work/arrows/` and carry no confidence in the published files.
+- **Races**: 37 traits over 9 races plus the race/class matrix, 0 below 0.8.
+- **Spellbook**: 323 list rows and 112 tooltips over 8 classes (priest was
+  never shown), **21 records below 0.8** (2 rows, 19 tooltips) after the
+  shape-aware reader merge reached stage 11 on 2026-09-14. 12 names have no
+  Classic Era counterpart.
+
+Review round two landed on 2026-09-14;
+`docs/reviews/2026-09-14-consolidated.md` ranks the findings and assigns the
+work packages, and supersedes the 2026-09-13 one. Next: owner review via
+`#/review/<class>` and `validate_spells.py --report`, then
+`data/overrides/{races,spells}/`, which do not exist yet, so a correction to a
+race or spell record cannot survive a rebuild. History: `docs/PLAN.md`.
 
 ## Layout
 
-- `pipeline/` – Python (uv). Stages `00, 03, 04, 04b, 05..09, 11, 12` in
-  `pipeline/stages/` (the numbering has gaps; there is no stage 1, 2, 10 or 13;
-  11 is the spellbook and 12 the races, both independent of 3-9), shared code
-  in `pipeline/src/wowtalents/`, one-off scripts in `pipeline/scripts/`, the
+- `pipeline/` – Python (uv). Stages `00, 03, 04, 04b, 05..12` in
+  `pipeline/stages/` (the numbering has gaps; there is no stage 1, 2 or 13;
+  10 is the datamined DB2 import, 11 the spellbook and 12 the races, all three
+  independent of 3-9), shared code
+  in `pipeline/src/wowtalents/` (`stagekit.py` is what the stage drivers
+  share), one-off scripts in `pipeline/scripts/`, the
   standalone validators `validate.py`, `validate_races.py` and
   `validate_spells.py`, tests in `pipeline/tests/`. Large artefacts stay under
   `pipeline/work/` (git-ignored).
 - `data/` – `talents/<class>.json` canonical, `extracted/` raw pipeline
-  output, `overrides/` hand corrections, `review/` tooltip and icon crops,
+  output, `overrides/` hand corrections, `datamined/<build>/` DB2 import
+  staging (stage 10), `review/` tooltip and icon crops,
   `encoding/` build-link orders, `prior/classic-era/` the Classic prior,
   `schema/` (`class`, `race`, `race-matrix`, `spell`), `examples/` the
   fictional tinker class, plus the non-talent datasets `races/` and `spells/`.
@@ -112,8 +126,9 @@ Stage by stage: `pipeline/README.md`. Web details: `web/README.md`.
   or hardware readouts in tracked files. Commit author identity is the
   owner's normal git identity and is fine.
 - Commit messages: a `Co-Authored-By` line for Claude is fine; never add a
-  `Claude-Session:` line or any claude.ai session URL. A local commit-msg
-  hook rejects them.
+  `Claude-Session:` line or any claude.ai session URL.
+  `scripts/git-hooks/commit-msg` rejects them; wire it up once per clone with
+  `git config core.hooksPath scripts/git-hooks`.
 - Docs in English. Keep the status log in `docs/PLAN.md` current when a phase
   finishes; write a handover to `docs/handover/` and add its line to
   `docs/handover/README.md`.

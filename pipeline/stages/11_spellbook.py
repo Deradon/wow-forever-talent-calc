@@ -12,6 +12,10 @@ Three commands, the shape stage 12 established:
            twice, and turns the readings into entry records with stage 5's
            agreement confidence. ``--codex`` adds a third opinion from the codex
            CLI on one state per page.
+``opinions`` fills that third opinion in for *every* column and tooltip that
+           still lacks one. Two passes of the same VLM agree on their own
+           mistakes, so the merge in ``build`` needs an independent reader
+           before a confidence of 1.0 means anything (review round two, D-1).
 ``build``  merges the states per class into ``data/spells/<class>.json``, diffs
            the names against ``data/prior/classic-era/spells-baseline.json``,
            and writes the review crops, ``data/extracted/spells.json`` and
@@ -26,6 +30,7 @@ Run from ``pipeline/`` with llama-server up (``scripts/llama-server.sh``)::
 
     uv run stages/11_spellbook.py scan
     uv run stages/11_spellbook.py read --codex page
+    uv run stages/11_spellbook.py opinions            # codex CLI, no llama-server needed
     uv run stages/11_spellbook.py build
 """
 
@@ -33,20 +38,26 @@ from __future__ import annotations
 
 import json
 import shutil
-import subprocess
 import sys
 import time
-from datetime import datetime, timezone
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import cv2
 import numpy as np
 import typer
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+# ``wowtalents`` is this project's own installed package (``uv run`` puts it on the path), so no
+# sys.path surgery is needed for it. ``validate_spells`` is a top-level module next to the
+# stages rather than part of the package, and the canonical serializer lives there so that
+# ``--check`` compares bytes against exactly what this stage writes; one path entry, added once
+# at import, is what that costs (round two, K-9).
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from wowtalents import mkv as MK  # noqa: E402
 from wowtalents import reader as RD  # noqa: E402
 from wowtalents import spells as SP  # noqa: E402
+from wowtalents import stagekit as SK  # noqa: E402
 from wowtalents import ui  # noqa: E402
 from wowtalents.fsio import write_json_atomic, write_text_atomic  # noqa: E402
 from wowtalents.text import clean_text, slug  # noqa: E402
@@ -103,29 +114,10 @@ MAX_STATE_FRAMES = 400
 #: Frames taken from a state for the median background.
 BG_SAMPLES = 15
 
-
-def hms(t: float) -> str:
-    s = int(t)
-    return f"{s // 3600:02d}:{s % 3600 // 60:02d}:{s % 60:02d}"
-
-
-def now() -> str:
-    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-
-def parse_window(spec: str) -> tuple[int, int]:
-    a, _, b = spec.partition("-")
-
-    def p(x: str) -> int:
-        x = x.strip()
-        if ":" in x:
-            parts = [int(v) for v in x.split(":")]
-            while len(parts) < 3:
-                parts.insert(0, 0)
-            return parts[0] * 3600 + parts[1] * 60 + parts[2]
-        return int(x)
-
-    return p(a), p(b)
+#: Lowest merged confidence a list row may carry and still be published. A row only one reader
+#: ever saw scores 0.0 and is evidence of nothing; four such rows shipped as "new in Forever"
+#: names before round two's review caught them (D-2). 0.5 keeps every 0.7 row.
+MIN_PUBLISHABLE = 0.5
 
 
 # --------------------------------------------------------------------------- scan
@@ -272,7 +264,7 @@ def scan(
     if window:
         wins = []
         for spec in window:
-            a, b = parse_window(spec)
+            a, b = SK.parse_window(spec)
             match = next((w for w in WINDOWS if w[0] <= a < w[1]), None)
             wins.append((a, b, match[2] if match else "unknown", match[3] if match else ""))
     else:
@@ -285,7 +277,7 @@ def scan(
     seen = open_frames = 0
 
     for t0, t1, cls, note in wins:
-        typer.echo(f"window {hms(t0)}-{hms(t1)} ({cls}) at {fps} fps")
+        typer.echo(f"window {SK.hms(t0)}-{SK.hms(t1)} ({cls}) at {fps} fps")
         run: _StateRun | None = None
         before = len(states)
 
@@ -318,7 +310,7 @@ def scan(
         typer.echo(f"  {len(states) - before} states, {sum(len(s['tooltips']) for s in states[before:])} "
                    f"tooltips ({time.time() - wall:.0f}s)")
 
-    doc = {"generatedAt": now(), "video": VIDEO_ID, "fps": fps,
+    doc = {"generatedAt": SK.now(), "video": VIDEO_ID, "fps": fps,
            "windows": [[a, b, c, n] for a, b, c, n in wins],
            "frames_seen": seen, "spellbook_frames": open_frames, "states": states}
     write_json_atomic(out / "states.json", doc)
@@ -334,55 +326,29 @@ def scan(
 # --------------------------------------------------------------------------- read
 
 
-def codex_opinion(image: Path, out_dir: Path, timeout: int = 420) -> dict | None:
-    """Third opinion from the codex CLI on one list column (best effort)."""
-    out = out_dir / (image.stem + ".codex.json")
-    if out.is_file():
-        try:
-            return json.loads(out.read_text())
-        except json.JSONDecodeError:
-            out.unlink()
-    prompt = (
-        "The image is one column of the World of Warcraft spellbook page: up to seven entries, each a "
-        "square icon, a spell name beside it and a smaller grey subtitle under the name ('Rank N', "
-        "'Passive', 'Racial', 'Racial Passive' or nothing). Transcribe every entry top to bottom. Copy the "
-        "text exactly; do not paraphrase and do not invent entries. Do not create any file and do not "
-        "explain. Your entire final message must be one JSON object and nothing else: "
-        '{"entries":[{"name":"","subtitle":"","cut_off":false}]}'
-    )
-    raw = out.with_suffix(".txt")
-    try:
-        subprocess.run(["codex", "exec", "--ephemeral", "--skip-git-repo-check",
-                        "-o", str(raw), "-i", str(image), "-"],
-                       input=prompt, text=True, capture_output=True, timeout=timeout, check=False)
-    except (OSError, subprocess.TimeoutExpired):
-        return None
-    doc = _json_object(raw.read_text(), "entries") if raw.is_file() else None
-    if doc is not None:
-        write_json_atomic(out, doc)
-    return doc
+#: The codex CLI reads one spellbook list column. It is the *shape authority* of the merge
+#: (``wowtalents.spells.merge_tooltip``): a second, independent reader, not a second pass.
+COLUMN_PROMPT = (
+    "The image is one column of the World of Warcraft spellbook page: up to seven entries, each a "
+    "square icon, a spell name beside it and a smaller grey subtitle under the name ('Rank N', "
+    "'Passive', 'Racial', 'Racial Passive' or nothing). Transcribe every entry top to bottom. Copy the "
+    "text exactly; do not paraphrase and do not invent entries. Do not create any file and do not "
+    "explain. Your entire final message must be one JSON object and nothing else: "
+    '{"entries":[{"name":"","subtitle":"","cut_off":false}]}'
+)
 
-
-def _json_object(text: str, key: str) -> dict | None:
-    """The first balanced JSON object holding ``key`` in a free-form CLI answer."""
-    start = text.find("{")
-    while start != -1:
-        depth = 0
-        for i in range(start, len(text)):
-            if text[i] == "{":
-                depth += 1
-            elif text[i] == "}":
-                depth -= 1
-                if depth == 0:
-                    try:
-                        doc = json.loads(text[start:i + 1])
-                    except json.JSONDecodeError:
-                        break
-                    if isinstance(doc, dict) and key in doc:
-                        return doc
-                    break
-        start = text.find("{", start + 1)
-    return None
+#: The same reader on one hover tooltip. "do not correct spelling" is load-bearing: the point of
+#: the authority is what the pixels say, not what a plausible tooltip would say.
+TOOLTIP_PROMPT = (
+    "The image is one World of Warcraft spell tooltip: a name, optional cost / range / cast time / "
+    "cooldown / tools lines, optional 'Requires ...' lines, a yellow description and sometimes a "
+    "green footer line. Transcribe it verbatim. Copy the text exactly as the pixels show it; do not "
+    "correct spelling, capitalisation or punctuation, do not paraphrase, do not invent. Set cut_off "
+    "true only if the text is clipped at an edge of the image. Do not create any file and do not "
+    "explain. Your entire final message must be one JSON object and nothing else: "
+    '{"name":"","cost":"","range":"","cast_time":"","cooldown":"","tools":"","requires":[],'
+    '"description":"","footer":"","cut_off":false}'
+)
 
 
 def _pair_entries(a: list[dict], b: list[dict]) -> list[dict]:
@@ -422,29 +388,8 @@ def _pair_entries(a: list[dict], b: list[dict]) -> list[dict]:
 
 def _apply_third(entries: list[dict], third: list[dict]) -> list[dict]:
     """A codex reading that matches one of the two passes lifts that row's confidence."""
-    pool = list(third)
-    out = []
-    for e in entries:
-        match = next((c for c in pool if SP.entry_key(c) == SP.entry_key(e)), None)
-        if match is None:
-            match = next((c for c in pool if SP.spell_id(c["name"]) == SP.spell_id(e["name"])), None)
-        if match is None:
-            out.append(e)
-            continue
-        pool.remove(match)
-        best = max(SP.confidence(r, match) for r in e["readings"])
-        conf = e["confidence"]
-        if conf >= 1.0 and best < 1.0:
-            conf = 0.9                      # both VLM passes agree, codex reads it differently
-        elif best >= 1.0:
-            conf = max(conf, 0.85)          # two of three agree verbatim
-        elif best >= 0.7:
-            conf = max(conf, 0.7)
-        out.append({**e, "confidence": conf, "readings": e["readings"] + [match], "codex": True})
-    for c in pool:
-        if not any(SP.spell_id(x["name"]) == SP.spell_id(c["name"]) for x in out):
-            out.append({**c, "confidence": 0.3, "readings": [c], "codex": True})
-    return out
+    return SK.apply_third(entries, third, ident=lambda e: SP.spell_id(e.get("name") or ""),
+                          agreement=SP.confidence)
 
 
 def clean_tooltip(doc: dict) -> dict:
@@ -585,7 +530,7 @@ def read(
                 codex_done.add(key)
                 name = f"{st['id']}.c{col}.png"
                 cv2.imwrite(str(codex_dir / name), strip)
-                extra = codex_opinion(codex_dir / name, codex_dir)
+                extra = SK.codex_opinion(codex_dir / name, codex_dir, COLUMN_PROMPT, "entries")
                 if extra:
                     entries = _apply_third(entries, SP.clean_page_reading(extra))
             columns.append({"col": col, "cells": n_cells, "entries": entries})
@@ -622,7 +567,7 @@ def read(
         typer.echo(f"[tt {i}/{len(tips_todo)}] {tt['_class']:8} {primary['name'][:34]:34} "
                    f"conf {conf} ({time.time() - wall:.0f}s)")
 
-    write_json_atomic(out, {"generatedAt": now(), "reader": model, "server": server,
+    write_json_atomic(out, {"generatedAt": SK.now(), "reader": model, "server": server,
                             "prompt": RD.PROMPT_VERSION, "warnings": warnings, "states": out_states,
                             "tooltips": tooltips})
     for w in warnings:
@@ -642,19 +587,204 @@ def _head_strip(page: np.ndarray, local: SP.Window) -> np.ndarray:
     return out
 
 
+# --------------------------------------------------------------------------- opinions
+
+
+#: Reader labels stored in ``readings[]``. ``pass1``/``pass2`` are the two upscales of the one
+#: VLM; ``codex`` is the independent reader the merge treats as the shape authority.
+PASS_LABEL = "pass"
+CODEX_LABEL = SP.AUTHORITY_READER
+
+
+def _label_readings(readings: list[dict]) -> list[dict]:
+    """Give every stored reading a ``reader`` label, preserving one already set.
+
+    ``read --codex`` appended its codex reading without a label, marking the row ``codex: True``
+    instead; that row's last reading is the authority. Everything else is a VLM pass.
+    """
+    out = []
+    for i, r in enumerate(readings, 1):
+        if not isinstance(r, dict):
+            continue
+        out.append(r if r.get("reader") else {**r, "reader": f"{PASS_LABEL}{i}"})
+    return out
+
+
+def _attach_codex(entries: list[dict], third: list[dict]) -> int:
+    """Match a codex column reading onto the rows of that column; returns how many landed."""
+    pool = list(third)
+    n = 0
+    for e in entries:
+        if any(SP.is_authority(r) for r in e.get("readings") or []):
+            continue
+        match = next((c for c in pool if SP.entry_key(c) == SP.entry_key(e)), None)
+        if match is None:
+            match = next((c for c in pool if SP.spell_id(c["name"]) == SP.spell_id(e["name"])), None)
+        if match is None:
+            continue
+        pool.remove(match)
+        e["readings"] = (e.get("readings") or []) + [{**match, "reader": CODEX_LABEL}]
+        e["codex"] = True
+        n += 1
+    return n
+
+
+def _codex_jobs(rdoc: dict, sdoc: dict, crops: Path, codex_dir: Path, want: set[str],
+                what: str) -> list[tuple]:
+    """``(png, prompt, key, sink)`` per crop still missing an independent reading."""
+    jobs: list[tuple] = []
+    by_state = {st["id"]: st for st in sdoc["states"]}
+    if what in ("all", "columns"):
+        for st in rdoc["states"]:
+            if want and st["class"] not in want:
+                continue
+            page = None
+            for column in st["columns"]:
+                entries = column.get("entries") or []
+                if not entries or all(any(SP.is_authority(r) for r in e.get("readings") or [])
+                                      for e in entries):
+                    continue
+                name = f"{st['id']}.c{column['col']}.png"
+                png = codex_dir / name
+                if not png.is_file():
+                    if page is None:
+                        src = by_state.get(st["id"], {}).get("page_crop")
+                        page = cv2.imread(str(crops / src)) if src else None
+                    if page is None:
+                        typer.echo(f"  warn: no page crop for {st['id']}, column skipped", err=True)
+                        continue
+                    cv2.imwrite(str(png), SP.crop(page, SP.column_box(SP.Window(0, 0, 1.0), column["col"])))
+                jobs.append((png, COLUMN_PROMPT, "entries", ("column", st["id"], column["col"])))
+    if what in ("all", "tooltips"):
+        for tt in rdoc.get("tooltips") or []:
+            if want and tt["class"] not in want:
+                continue
+            if any(SP.is_authority(r) for r in tt.get("readings") or []):
+                continue
+            png = crops / tt["crop"]
+            if not png.is_file():
+                typer.echo(f"  warn: tooltip crop {tt['crop']} is missing, skipped", err=True)
+                continue
+            jobs.append((png, TOOLTIP_PROMPT, "name", ("tooltip", tt["id"], None)))
+    return jobs
+
+
+@app.command()
+def opinions(
+    readings: Path = typer.Option(READINGS_JSON),
+    states: Path = typer.Option(STATES_JSON),
+    only: str = typer.Option("", help="comma-separated class ids"),
+    what: str = typer.Option("all", help="all | columns | tooltips"),
+    jobs: int = typer.Option(6, help="codex CLI processes to run at once"),
+    limit: int = typer.Option(0, help="at most N codex calls (0 = all)"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="list the work, call nothing, write nothing"),
+):
+    """Add an independent codex reading to every list column and tooltip that lacks one.
+
+    Two passes of one VLM over the same pixels agree on their own mistakes, so stage 11's
+    agreement score said 1.0 for tooltips that were wrong (review round two, D-1). The merge in
+    ``build`` needs a *second reader* to have anything to adjudicate; this is where that reading
+    comes from. Results are cached per crop under ``work/spells/codex/``, so a re-run is free.
+    """
+    if not readings.is_file():
+        typer.echo(f"no {readings}; run `read` first", err=True)
+        raise typer.Exit(code=2)
+    if not states.is_file():
+        typer.echo(f"no {states}; run `scan` first", err=True)
+        raise typer.Exit(code=2)
+    rdoc = json.loads(readings.read_text())
+    sdoc = json.loads(states.read_text())
+    crops = states.parent / "crops"
+    codex_dir = SK.ensure(states.parent / "codex")
+    want = {x.strip() for x in only.split(",") if x.strip()}
+
+    for st in rdoc["states"]:
+        for column in st["columns"]:
+            for e in column.get("entries") or []:
+                e["readings"] = _label_readings(e.get("readings") or [])
+    for tt in rdoc.get("tooltips") or []:
+        tt["readings"] = _label_readings(tt.get("readings") or [])
+
+    todo = _codex_jobs(rdoc, sdoc, crops, codex_dir, want, what)
+    if limit:
+        todo = todo[:limit]
+    cached = sum(1 for png, _, _, _ in todo if (codex_dir / (png.stem + ".codex.json")).is_file())
+    typer.echo(f"{len(todo)} crops need an independent reading ({cached} already cached)")
+    if dry_run:
+        typer.echo("dry run, nothing called and nothing written")
+        return
+
+    wall = time.time()
+    results: dict[Path, dict | None] = {}
+    with ThreadPoolExecutor(max_workers=max(1, jobs)) as pool:
+        futures = {pool.submit(SK.codex_opinion, png, codex_dir, prompt, key): png
+                   for png, prompt, key, _ in todo}
+        for i, fut in enumerate(as_completed(futures), 1):
+            png = futures[fut]
+            try:
+                results[png] = fut.result()
+            except Exception as exc:                        # noqa: BLE001 - best effort per crop
+                typer.echo(f"  warn: codex failed on {png.name}: {exc}", err=True)
+                results[png] = None
+            if i % 10 == 0 or i == len(todo):
+                typer.echo(f"  [{i}/{len(todo)}] {time.time() - wall:.0f}s")
+
+    tips = {tt["id"]: tt for tt in rdoc.get("tooltips") or []}
+    by_state = {st["id"]: st for st in rdoc["states"]}
+    rows = tooltips = failed = 0
+    for png, _, _, (what_it_is, ident, col) in todo:
+        doc = results.get(png)
+        if doc is None:
+            failed += 1
+            continue
+        if what_it_is == "column":
+            st = by_state.get(ident)
+            column = next((c for c in (st or {}).get("columns") or [] if c["col"] == col), None)
+            if column is None:
+                continue
+            rows += _attach_codex(column["entries"], SP.clean_page_reading(doc))
+        else:
+            tt = tips.get(ident)
+            if tt is None:
+                continue
+            tt["readings"] = (tt.get("readings") or []) + [{**clean_tooltip(doc), "reader": CODEX_LABEL}]
+            tt["codex"] = True
+            tooltips += 1
+
+    covered = sum(1 for tt in rdoc.get("tooltips") or []
+                  if any(SP.is_authority(r) for r in tt.get("readings") or []))
+    rdoc["opinionsAt"] = SK.now()
+    _write_readings(readings, rdoc)
+    typer.echo(f"attached {rows} list rows and {tooltips} tooltips from codex "
+               f"({failed} crops gave no answer) in {time.time() - wall:.0f}s")
+    typer.echo(f"{covered}/{len(rdoc.get('tooltips') or [])} tooltips now have an independent reading")
+
+
+def _write_readings(path: Path, doc: dict) -> None:
+    """Atomic write of ``readings.json``, refused if the run lost states or tooltips.
+
+    ``readings.json`` is hours of VLM time and is not tracked, so there is no way back from a
+    shorter file. Same guard as ``fsio.write_candidates_atomic`` on the talent side.
+    """
+    if path.is_file():
+        try:
+            old = json.loads(path.read_text())
+        except (OSError, json.JSONDecodeError):
+            old = {}
+        for key in ("states", "tooltips"):
+            before, after = len(old.get(key) or []), len(doc.get(key) or [])
+            if after < before:
+                raise ValueError(f"{path.name}: {key} would shrink {before} -> {after}; refusing to write")
+    write_json_atomic(path, doc)
+
+
 # --------------------------------------------------------------------------- build
 
 
 def _source(t: float, frame: int, crop: str, conf: float, reader: str, panel: str = "spell-list",
             readings: list[dict] | None = None, note: str | None = None) -> dict:
-    src: dict = {"kind": "video", "video": VIDEO_ID, "t": round(float(t), 3), "frame": int(frame),
-                 "crop": crop, "panel": panel, "confidence": round(float(conf), 2), "reader": reader}
-    if readings:
-        src["readings"] = readings
-    src["reviewed"] = False
-    if note:
-        src["note"] = note
-    return src
+    """This stage's video id bound into :func:`wowtalents.stagekit.source`."""
+    return SK.source(VIDEO_ID, t, frame, crop, conf, reader, panel, readings, note)
 
 
 UNVERIFIED = ("Classic side is a baseline spell list written from memory and unverified "
@@ -746,20 +876,27 @@ def _classic_for(prior: dict, cls: str, name: str, talents: dict | None = None,
                     "tooltip side by side. " + UNVERIFIED}
 
 
-def _ensure(p: Path) -> Path:
-    p.mkdir(parents=True, exist_ok=True)
-    return p
-
-
 @app.command()
 def build(
     readings: Path = typer.Option(READINGS_JSON),
     states: Path = typer.Option(STATES_JSON),
     out_dir: Path = typer.Option(SPELLS_DIR),
     review: Path = typer.Option(REVIEW),
-    min_confidence: float = typer.Option(0.0, help="drop entry readings below this confidence"),
+    min_confidence: float = typer.Option(MIN_PUBLISHABLE,
+                                         help="drop list rows below this merged confidence"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="report only; write no file and delete no crop"),
 ):
-    """Merge the page states into data/spells/<class>.json plus the review crops and inventory."""
+    """Merge the page states into data/spells/<class>.json plus the review crops and inventory.
+
+    Two things happen here that did not before round two's review:
+
+    * every list row and every tooltip goes through the shape-aware reader merge
+      (``wowtalents.spells.merge_tooltip`` / ``merge_entry``), so the published text is the
+      adjudicated one and ``source.confidence`` says whether an *independent* reader agreed;
+    * a row no second reader ever saw is **not published**. ``--min-confidence 0`` brings the
+      old behaviour back, which is how the four fabricated "new in Forever" spells of D-2 got
+      onto the site in the first place.
+    """
     if not readings.is_file():
         typer.echo(f"no {readings}; run `read` first", err=True)
         raise typer.Exit(code=2)
@@ -774,6 +911,8 @@ def build(
 
     per_class: dict[str, dict] = {}
     unrowed: list[str] = []
+    unpublishable: list[str] = []
+    merge_shapes: Counter = Counter()
     for st in rdoc["states"]:
         cls = st["class"]
         unit = per_class.setdefault(cls, {"records": [], "states": [], "tooltips": []})
@@ -785,7 +924,11 @@ def build(
             col = column["col"]
             rows = [r for c, r in cells if c == col]
             for k, e in enumerate(column["entries"]):
-                if e["confidence"] < min_confidence:
+                m = SP.merge_entry(e.get("readings") or [])
+                conf = m["confidence"] if (e.get("readings") or []) else float(e["confidence"])
+                name = m["fields"].get("name") or e["name"]
+                if conf < min_confidence:
+                    unpublishable.append(f"{cls}/{name} ({conf}, {len(e.get('readings') or [])} reading(s))")
                     continue
                 if k >= len(rows):
                     # more names than the column has icons: OpenCV counted the discs, the
@@ -794,48 +937,86 @@ def build(
                     unrowed.append(f"{cls}/{st['id']}/c{col}: {e['name']}")
                     continue
                 row = rows[k]
-                rec = {"name": e["name"], "rank": e["rank"], "kind": e["kind"],
+                rec = {"name": name, "rank": e["rank"], "kind": e["kind"],
                        "cut_off": bool(e["cut_off"]), "col": col, "row": row,
                        "tab": st.get("tab"), "title": st.get("title"), "search": bool(st.get("search")),
                        "state": st["id"], "t": st["t"], "frame": st["frame"],
-                       "source": {"confidence": e["confidence"], "sharpness": st["sharpness"],
+                       "source": {"confidence": conf, "sharpness": st["sharpness"],
                                   "t": st["t"], "frame": st["frame"], "state": st["id"]},
-                       "readings": e.get("readings") or [], "codex": bool(e.get("codex"))}
+                       "readings": e.get("readings") or [], "codex": bool(e.get("codex")),
+                       "disputed": m["disputed"], "shapes": m["shapes"]}
+                merge_shapes.update(m["shapes"])
                 unit["records"].append(rec)
-                if page is not None and not e["cut_off"]:
-                    _write_row_crops(page, local, col, row, cls, SP.spell_id(e["name"]), review)
+                # --dry-run must not touch data/review/ either: a crop written for a reading the
+                # merge later discards is the litter _prune_crops exists to remove, and on a dry
+                # run nothing prunes it
+                if page is not None and not e["cut_off"] and not dry_run:
+                    _write_row_crops(page, local, col, row, cls, SP.spell_id(name), review)
 
     by_state = {st["id"]: st for st in rdoc["states"]}
     for tt in rdoc.get("tooltips") or []:
         cls = tt["class"]
         unit = per_class.setdefault(cls, {"records": [], "states": [], "tooltips": []})
         rank = _rank_at_cell(by_state.get(tt.get("state")), tt.get("cell"))
+        m = SP.merge_tooltip(tt.get("readings") or [])
+        tt = {**tt,
+              "name": m["fields"].get("name") or tt.get("name") or "",
+              "description": m["fields"].get("description") or tt.get("description") or "",
+              "footer": m["fields"].get("footer") or None,
+              "confidence": m["confidence"] if (tt.get("readings") or []) else tt.get("confidence", 0.0),
+              "disputed": m["disputed"], "shapes": m["shapes"]}
+        merge_shapes.update(m["shapes"])
         unit["tooltips"].append({**tt, "rank": rank})
         src = crops / tt["crop"]
         sid = SP.spell_id(tt.get("name") or "")
-        if src.is_file() and sid:
+        if src.is_file() and sid and not dry_run:
             suffix = f".r{rank}" if rank else ""
-            cv2.imwrite(str(_ensure(review / cls) / f"{sid}{suffix}.tooltip.png"), cv2.imread(str(src)), PNG)
+            cv2.imwrite(str(SK.ensure(review / cls) / f"{sid}{suffix}.tooltip.png"), cv2.imread(str(src)), PNG)
 
     counts: dict[str, dict] = {}
+    docs: dict[str, dict] = {}
     for cls in sorted(per_class):
-        doc = _class_doc(cls, per_class[cls], prior, reader, review, talents, crops, racials)
-        write_text_atomic(out_dir / f"{cls}.json", canonical_spell_dumps(doc))
+        doc = _class_doc(cls, per_class[cls], prior, reader, review, talents, crops, racials, dry_run)
+        if not doc["spells"]:
+            # an empty class file is never a legitimate outcome; it would pass the schema, the
+            # validator and CI, and _prune_crops would then delete that class's crops (K-1)
+            typer.echo(f"  {cls}: no publishable spells; the existing file is left alone", err=True)
+            continue
+        docs[cls] = doc
         counts[cls] = {"spells": len(doc["spells"]),
                        "tooltips": sum(len(s.get("tooltips") or []) for s in doc["spells"]),
                        "pages": len(doc["tabs"])}
-    write_json_atomic(EXTRACTED / "spells.json",
-                      {"generatedAt": now(), "video": VIDEO_ID, "reader": reader,
-                       "states": len(rdoc["states"]), "counts": counts,
-                       "candidates": {c: u["records"] for c, u in sorted(per_class.items())}})
-    gone = _prune_crops(out_dir, review)
-    write_text_atomic(EXTRACTED / "spells.md", _inventory_md(out_dir, sdoc, rdoc))
-    for g in gone:
-        typer.echo(f"  removed unreferenced crop {g}")
+    if not counts:
+        typer.echo("no class produced a publishable spell list; nothing written", err=True)
+        raise typer.Exit(code=1)
+
     if unrowed:
         typer.echo(f"  dropped {len(unrowed)} readings with no icon behind them")
         for u in unrowed[:10]:
             typer.echo(f"    {u}")
+    if unpublishable:
+        typer.echo(f"  dropped {len(unpublishable)} rows below the {min_confidence} publishable "
+                   f"threshold (no independent reading)")
+        for u in unpublishable[:10]:
+            typer.echo(f"    {u}")
+    typer.echo("  reader merge applied: "
+               + (", ".join(f"{k} {v}" for k, v in sorted(merge_shapes.items())) or "no shape"))
+    if dry_run:
+        typer.echo("dry run: no file written, no crop deleted")
+        for cls, n in sorted(counts.items()):
+            typer.echo(f"  {cls:10} {n['spells']:3} spells, {n['tooltips']} tooltips, {n['pages']} pages")
+        return
+
+    for cls, doc in docs.items():
+        write_text_atomic(out_dir / f"{cls}.json", canonical_spell_dumps(doc))
+    write_json_atomic(EXTRACTED / "spells.json",
+                      {"generatedAt": SK.now(), "video": VIDEO_ID, "reader": reader,
+                       "states": len(rdoc["states"]), "counts": counts,
+                       "candidates": {c: u["records"] for c, u in sorted(per_class.items())}})
+    gone = SK.prune_crops(review, _referenced_crops(out_dir), REPO)
+    write_text_atomic(EXTRACTED / "spells.md", _inventory_md(out_dir, sdoc, rdoc))
+    for g in gone:
+        typer.echo(f"  removed unreferenced crop {g}")
     typer.echo(f"wrote {len(counts)} class files, data/extracted/spells.json and data/extracted/spells.md")
     for cls, n in sorted(counts.items()):
         typer.echo(f"  {cls:10} {n['spells']:3} spells, {n['tooltips']} tooltips, {n['pages']} pages")
@@ -866,7 +1047,7 @@ def _write_row_crops(page: np.ndarray, local: SP.Window, col: int, row: int, cls
     """Per-entry review crops: the list row and its icon, at native resolution."""
     if not sid:
         return
-    d = _ensure(review / cls)
+    d = SK.ensure(review / cls)
     block = SP.crop(page, SP.row_box(local, col, row))
     if block.size == 0:
         return
@@ -887,7 +1068,7 @@ OBSERVED_LEVEL = 38
 
 def _class_doc(cls: str, unit: dict, prior: dict, reader: str, review: Path,
                talents: dict | None = None, crops: Path | None = None,
-               racials: dict | None = None) -> dict:
+               racials: dict | None = None, dry_run: bool = False) -> dict:
     merged = SP.merge_entries(unit["records"])
     tabs: dict[str, dict] = {}
     for st in unit["states"]:
@@ -911,14 +1092,14 @@ def _class_doc(cls: str, unit: dict, prior: dict, reader: str, review: Path,
         if not (review / cls / f"{sid}.png").is_file():
             crop_rel = f"data/review/spells/{cls}/_page-{rec['state']}.png"
             note = "no clean single-row crop; the whole page is the evidence"
-            if crops is not None:
+            if crops is not None and not dry_run:
                 src = crops / f"{rec['state']}.page.png"
                 page_img = cv2.imread(str(src)) if src.is_file() else None
                 if page_img is not None:
                     # heading plus list only: the frame, tabs and search box add half the
                     # bytes and none of the evidence
                     x0, y0, x1, y1 = SP.PAGE_TITLE[0], SP.PAGE_TITLE[1], SP.LIST[2], SP.LIST[3]
-                    cv2.imwrite(str(_ensure(review / cls) / f"_page-{rec['state']}.png"),
+                    cv2.imwrite(str(SK.ensure(review / cls) / f"_page-{rec['state']}.png"),
                                 page_img[y0:y1, x0:x1], PNG)
         if rec.get("cut_off"):
             note = ((note + "; ") if note else "") + "the row was clipped in the best frame"
@@ -958,6 +1139,7 @@ def _class_doc(cls: str, unit: dict, prior: dict, reader: str, review: Path,
                          "pages read, so the rank of the row is unknown")
             else:
                 tnote = "hover tooltip; could not be anchored to a list row, matched to the spell by name"
+            tnote = "; ".join([tnote, *_merge_note(tt)])
             tip["source"] = _source(tt["t"], tt["frame"], tcrop, tt.get("confidence", 0.0), reader,
                                     "tooltip", _readings(tt.get("readings") or [], reader), tnote)
             tips.append(tip)
@@ -966,6 +1148,7 @@ def _class_doc(cls: str, unit: dict, prior: dict, reader: str, review: Path,
         s["classic"] = _classic_for(prior, cls, rec["name"], talents, rec["kind"], racials)
         if s["classic"]["status"] == "new":
             s["tags"] = ["new"]
+        note = "; ".join([x for x in [note, *_merge_note(rec)] if x]) or None
         s["source"] = _source(rec["t"], rec["frame"], crop_rel, conf, reader, "spell-list",
                               _readings(rec.get("readings") or [], reader), note)
         spells.append(s)
@@ -996,7 +1179,7 @@ def _class_doc(cls: str, unit: dict, prior: dict, reader: str, review: Path,
         "tooltipsUnmatched": len(unmatched),
         "showAllSpellRanks": "on" if all_ranks else "not observed",
         "observedLevel": OBSERVED_LEVEL,
-        "windows": sorted({hms(st["t"]) for st in unit["states"]}),
+        "windows": sorted({SK.hms(st["t"]) for st in unit["states"]}),
     }
     notes = [
         "The spellbook never names the class; it comes from the hand-labelled window table in "
@@ -1024,7 +1207,7 @@ def _class_doc(cls: str, unit: dict, prior: dict, reader: str, review: Path,
 
     doc: dict = {"$schema": "../schema/spell.schema.json", "schemaVersion": 1, "class": cls,
                  "className": CLASS_NAMES.get(cls, cls.title()), "dataSource": "video",
-                 "generatedAt": now(), "observedLevel": OBSERVED_LEVEL,
+                 "generatedAt": SK.now(), "observedLevel": OBSERVED_LEVEL,
                  "tabs": sorted(tabs.values(), key=lambda t: (t["id"] != "general", t["id"])),
                  "spells": spells, "coverage": coverage, "complete": False, "notes": notes}
     for i, t in enumerate(doc["tabs"]):
@@ -1032,10 +1215,32 @@ def _class_doc(cls: str, unit: dict, prior: dict, reader: str, review: Path,
     return doc
 
 
-def _readings(raw: list[dict], reader: str) -> list[dict]:
+#: How many stored readings reach ``source.readings``. The shape authority is always one of
+#: them, however many passes ran, because it is the reading a reviewer needs to see.
+MAX_STORED_READINGS = 3
+
+
+def _merge_note(rec: dict) -> list[str]:
+    """The ``source.note`` clauses the reader merge owns, for one record."""
     out = []
-    for i, r in enumerate(raw[:3], 1):
-        entry = {"reader": f"{reader}/pass{i}", "name": clean_text(r.get("name") or "")}
+    if rec.get("disputed"):
+        out.append("the two readers disagree on " + "; ".join(rec["disputed"][:3])
+                   + " - the reading shown is the first reader's")
+    if rec.get("shapes"):
+        out.append("the shape-aware reader merge corrected "
+                   + ", ".join(f"{v} {k}" for k, v in sorted(rec["shapes"].items())))
+    return out
+
+
+def _readings(raw: list[dict], reader: str) -> list[dict]:
+    """``source.readings`` for one record: the VLM passes plus the authority, never truncating it."""
+    passes = [r for r in raw if not SP.is_authority(r)]
+    authority = [r for r in raw if SP.is_authority(r)]
+    raw = passes[:MAX_STORED_READINGS - len(authority[:1])] + authority[:1]
+    out = []
+    for i, r in enumerate(raw, 1):
+        label = SP.AUTHORITY_READER if SP.is_authority(r) else f"{reader}/pass{i}"
+        entry = {"reader": label, "name": clean_text(r.get("name") or "")}
         text = clean_text(r.get("description") or "")
         if text:
             entry["description"] = text
@@ -1050,8 +1255,8 @@ def _missing_tabs(cls: str, tabs: dict) -> set[str]:
     return ({"general"} | trees) - set(tabs)
 
 
-def _prune_crops(out_dir: Path, review: Path) -> list[str]:
-    """Delete row, icon and tooltip crops no class file names any more."""
+def _referenced_crops(out_dir: Path) -> set[str]:
+    """Every review crop the published class files point at."""
     keep: set[str] = set()
     for f in sorted(out_dir.glob("*.json")):
         doc = json.loads(f.read_text())
@@ -1061,15 +1266,7 @@ def _prune_crops(out_dir: Path, review: Path) -> list[str]:
                 keep.add(s["iconCrop"])
             for t in s.get("tooltips") or []:
                 keep.add(t["source"]["crop"])
-    gone = []
-    for png in sorted(review.rglob("*.png")):
-        if png.name.startswith("_"):
-            continue
-        rel = str(png.relative_to(REPO))
-        if rel not in keep:
-            png.unlink()
-            gone.append(rel)
-    return gone
+    return keep
 
 
 def _inventory_md(out_dir: Path, sdoc: dict, rdoc: dict) -> str:
@@ -1082,7 +1279,7 @@ def _inventory_md(out_dir: Path, sdoc: dict, rdoc: dict) -> str:
     lines = [
         "# Spell lists and spellbook tooltips (stage 11, generated)",
         "",
-        f"Generated {now()} by `pipeline/stages/11_spellbook.py build` from "
+        f"Generated {SK.now()} by `pipeline/stages/11_spellbook.py build` from "
         f"{sdoc['spellbook_frames']} spellbook frames ({len(sdoc['states'])} page states, "
         f"{len(rdoc['states'])} distinct pages read). Do not edit by hand; re-run the stage.",
         "",
@@ -1110,7 +1307,7 @@ def _inventory_md(out_dir: Path, sdoc: dict, rdoc: dict) -> str:
             src = s["source"]
             ranks = ",".join(str(r) for r in s.get("ranksSeen") or []) or "-"
             lines.append(f"| {d['class']} | {s.get('tab') or '-'} | {s['name']} | {ranks} | {s['kind']} | "
-                         f"{s['classic']['status']} | {src['confidence']} | {hms(src['t'])} | "
+                         f"{s['classic']['status']} | {src['confidence']} | {SK.hms(src['t'])} | "
                          f"{'yes' if s.get('tooltips') else '-'} |")
     lines += ["", "## Confidence", "",
               "`source.confidence` is the agreement of the two VLM passes (3x and 2x upscale) on the same "
@@ -1129,7 +1326,6 @@ def _inventory_md(out_dir: Path, sdoc: dict, rdoc: dict) -> str:
 
 def canonical_spell_dumps(doc: dict) -> str:
     """The one spell serializer, which lives in ``validate_spells.py`` so ``--check`` compares bytes."""
-    sys.path.insert(0, str(PIPELINE))
     from validate_spells import canonical_dumps  # noqa: PLC0415
     return canonical_dumps(doc)
 

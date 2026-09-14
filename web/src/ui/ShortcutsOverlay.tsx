@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { Modal } from './Modal'
 
 /**
  * The keyboard-shortcut overlay (brief `docs/briefs/ui-improvements.md`, idea
@@ -14,18 +15,16 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 interface Shortcut {
   keys: string[]
   what: string
-  /** Chords that only make sense with a talent under the pointer or focused. */
-  where?: string
 }
 
 const GROUPS: { title: string; items: Shortcut[] }[] = [
   {
     title: 'Spending points',
     items: [
-      { keys: ['Click'], what: 'Add one point', where: 'talent' },
-      { keys: ['Right click'], what: 'Refund one point', where: 'talent' },
-      { keys: ['Shift', 'Click'], what: 'Fill to the last rank', where: 'talent' },
-      { keys: ['Ctrl', 'Click'], what: 'Empty the talent (Alt works too)', where: 'talent' },
+      { keys: ['Click'], what: 'Add one point' },
+      { keys: ['Right click'], what: 'Refund one point' },
+      { keys: ['Shift', 'Click'], what: 'Fill to the last rank' },
+      { keys: ['Ctrl', 'Click'], what: 'Empty the talent (Alt works too)' },
     ],
   },
   {
@@ -44,7 +43,7 @@ const GROUPS: { title: string; items: Shortcut[] }[] = [
     items: [
       { keys: ['/'], what: 'Jump to the search box' },
       { keys: ['Esc'], what: 'Clear the search, or close a tooltip or this dialog' },
-      { keys: ['d'], what: 'Show where a tooltip’s numbers were read from', where: 'tooltip open' },
+      { keys: ['d'], what: 'Show where a tooltip’s numbers were read from' },
       { keys: ['?'], what: 'Open and close this list' },
     ],
   },
@@ -57,8 +56,6 @@ const GROUPS: { title: string; items: Shortcut[] }[] = [
   },
 ]
 
-const FOCUSABLE = 'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
-
 /** True when the key event came from somewhere that owns its own keystrokes. */
 function inTextEntry(target: EventTarget | null): boolean {
   const el = target as HTMLElement | null
@@ -67,7 +64,6 @@ function inTextEntry(target: EventTarget | null): boolean {
 
 export function ShortcutsOverlay() {
   const [open, setOpen] = useState(false)
-  const dialog = useRef<HTMLDivElement>(null)
   const opener = useRef<HTMLElement | null>(null)
   const close = useCallback(() => setOpen(false), [])
 
@@ -87,36 +83,9 @@ export function ShortcutsOverlay() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
-  // Focus in on open, back to the opener on close, and Tab stays inside.
+  // Focus goes back to the opener on close; `Modal` owns the trap itself.
   useEffect(() => {
-    if (!open) {
-      opener.current?.focus?.()
-      return
-    }
-    const root = dialog.current
-    root?.querySelector<HTMLElement>(FOCUSABLE)?.focus()
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') {
-        e.preventDefault()
-        setOpen(false)
-        return
-      }
-      if (e.key !== 'Tab' || !root) return
-      const items = Array.from(root.querySelectorAll<HTMLElement>(FOCUSABLE)).filter((el) => el.offsetParent !== null)
-      if (items.length === 0) return
-      const first = items[0]!
-      const last = items[items.length - 1]!
-      const active = document.activeElement
-      if (e.shiftKey && (active === first || !root.contains(active))) {
-        e.preventDefault()
-        last.focus()
-      } else if (!e.shiftKey && active === last) {
-        e.preventDefault()
-        first.focus()
-      }
-    }
-    document.addEventListener('keydown', onKey, true)
-    return () => document.removeEventListener('keydown', onKey, true)
+    if (!open) opener.current?.focus?.()
   }, [open])
 
   return (
@@ -136,52 +105,31 @@ export function ShortcutsOverlay() {
         ?
       </button>
       {open && (
-        <div className="shortcuts-backdrop" data-testid="shortcuts-backdrop" onPointerDown={close}>
-          <div
-            ref={dialog}
-            className="panel shortcuts-dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="shortcuts-title"
-            data-testid="shortcuts-dialog"
-            onPointerDown={(e) => e.stopPropagation()}
-          >
-            <div className="shortcuts-head">
-              <h2 className="serif text-lg text-[var(--gold)]" id="shortcuts-title">
-                Keyboard and mouse
-              </h2>
-              <button type="button" className="btn" data-testid="shortcuts-close" onClick={close}>
-                Close
-              </button>
-            </div>
-            <div className="shortcuts-groups">
-              {GROUPS.map((group) => (
-                <section key={group.title}>
-                  <h3 className="shortcuts-group-title">{group.title}</h3>
-                  <dl className="shortcuts-list">
-                    {group.items.map((item) => (
-                      <div key={item.what} className="shortcuts-item">
-                        <dt>
-                          {item.keys.map((k, i) => (
-                            <span key={k}>
-                              {i > 0 && <span className="shortcuts-plus">+</span>}
-                              <kbd>{k}</kbd>
-                            </span>
-                          ))}
-                        </dt>
-                        <dd>
-                          {item.what}
-                          {item.where && <span className="shortcuts-where"> ({item.where})</span>}
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                </section>
-              ))}
-            </div>
-            <p className="shortcuts-foot">Press Escape or ? to close.</p>
+        <Modal title="Keyboard and mouse" titleId="shortcuts-title" idBase="shortcuts" width="min(760px, 100%)" onClose={close}>
+          <div className="shortcuts-groups">
+            {GROUPS.map((group) => (
+              <section key={group.title}>
+                <h3 className="shortcuts-group-title">{group.title}</h3>
+                <dl className="shortcuts-list">
+                  {group.items.map((item) => (
+                    <div key={item.what} className="shortcuts-item">
+                      <dt>
+                        {item.keys.map((k, i) => (
+                          <span key={k}>
+                            {i > 0 && <span className="shortcuts-plus">+</span>}
+                            <kbd>{k}</kbd>
+                          </span>
+                        ))}
+                      </dt>
+                      <dd>{item.what}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ))}
           </div>
-        </div>
+          <p className="shortcuts-foot">Press Escape or ? to close.</p>
+        </Modal>
       )}
     </>
   )

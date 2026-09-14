@@ -27,6 +27,8 @@ import './diff.css'
 import { nestedPlacement, placementFallbacks, type TipPlacement } from './tooltipPlacement'
 import { needsReview } from './review'
 import { changeOf, classicTextSync, loadClassicText, type Change, type ClassicText } from './classicDiff'
+import { diffLines } from './changesModel'
+import { DiffLine } from './DiffLine'
 import {
   changeCardLines,
   changeCardTitle,
@@ -38,6 +40,7 @@ import {
   highestObserved,
   rankDerivationLines,
   readerViews,
+  ONE_READING_LINE,
   requirementLine,
   splitOnNames,
 } from './tooltipText'
@@ -460,14 +463,9 @@ function ClassicTip({ classId, talentId, change }: { classId: string; talentId: 
       <div className="classic-title">{changeCardTitle(change)}</div>
       {classic ? (
         <>
-          <p className="classic-text">
-            {classic.diff.map(([op, text], i) => (
-              <span key={i} className={op === '-' ? 'diff-del' : op === '+' ? 'diff-add' : undefined}>
-                {i > 0 ? ' ' : ''}
-                {text}
-              </span>
-            ))}
-          </p>
+          {/* Two lines, never one interleaved run: see `diffLines`. */}
+          <DiffLine label="Classic Era" runs={diffLines(classic).classic} side="classic" />
+          <DiffLine label="Forever" runs={diffLines(classic).forever} side="forever" />
           {changeCardLines(classic).map((line) => (
             <p key={line}>{line}</p>
           ))}
@@ -491,15 +489,12 @@ function ReadingTip({ talent, current }: { talent: Talent; current: string }) {
     <div className="tooltip nest-body" data-testid={`readings-${talent.id}`}>
       {views.map((v) => (
         <div key={v.label} className="reading">
-          <div className="reading-label">
-            {v.label}
-            {v.percent !== undefined && <span className="reading-pct">{v.percent}%</span>}
-          </div>
+          <div className="reading-label">{v.label}</div>
           {v.name && <div className="reading-name">{v.name}</div>}
           {v.text && <div className="reading-text">{v.text}</div>}
         </div>
       ))}
-      {views.length === 1 && <p className="reading-text">Only one reading was recorded.</p>}
+      {views.length === 1 && <p className="reading-text">{ONE_READING_LINE}</p>}
       {crop && <img className="reading-crop" src={crop} alt={`The captured tooltip for ${talent.name}`} loading="lazy" />}
     </div>
   )

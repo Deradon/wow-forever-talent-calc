@@ -1,6 +1,5 @@
 @import 'tailwindcss';
-@import './ui/talents.css';
-@import './ui/print.css';
+@import './ui/shell.css';
 
 :root {
   color-scheme: dark;

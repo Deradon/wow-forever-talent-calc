@@ -128,33 +128,34 @@ the pipeline brief).
 
 ## Immediate next actions (in order)
 
-Where we are: all nine classes are live with 469 of 470 talents, nothing is
-reviewed, and a full review round (usability, text quality, data audit, code
-and docs, performance and accessibility) landed on 2026-09-13. The ranked
-findings and their work packages are in
-`docs/reviews/2026-09-13-consolidated.md`; read that before picking work.
+Where we are: all nine classes are live with 469 of 470 talents, **57 of them
+reviewed and 6 still below the 0.8 confidence threshold**; races (37 traits)
+and the spellbook (323 list rows, 112 tooltips) shipped on 2026-09-14. A second
+review round landed the same day; its ranked findings and work packages are in
+`docs/reviews/2026-09-14-consolidated.md`, which supersedes the 2026-09-13 one.
+Read that before picking work.
 
-1. **Work the review packages A1, A2, B and C** from the consolidated review.
-   B is the one that changes the product: the two-reader shape-aware merge
-   and a re-read of the 77-record review queue, where every text error found
-   in the audit sits. A1/A2 are the tooltip and interaction fixes; C is CI
-   and docs (this file included).
-2. **Owner review of the queue** via `#/review/<class>`: 77 talents below the
-   0.8 confidence threshold plus 21 low-confidence prerequisite arrows.
-   Corrections go into `data/overrides/<class>.json` by hand — the review
-   route is read-only (`docs/DATA-SCHEMA.md` section 7) — then
-   `08_export.py promote`. This is the only path to `source.reviewed: true`,
-   and it is at 0 of 469 today.
-3. **Declare launch and freeze the encoding.** By owner decision `v1` stays
+1. **Work the round-two packages D (pipeline and data) and E (web)** from
+   `docs/reviews/2026-09-14-consolidated.md`. D is done as of
+   `docs/handover/2026-09-14-fix-d-pipeline-data.md`.
+2. **Owner review of the queues.** Talents: 6 below 0.8 via `#/review/<class>`,
+   corrections into `data/overrides/<class>.json` by hand — the review route is
+   read-only (`docs/DATA-SCHEMA.md` section 7) — then `08_export.py promote`.
+   Spells: 21 records below 0.8 (2 list rows, 19 tooltips) from
+   `validate_spells.py --report`; races: 0. 22 of the 69 prerequisite arrows
+   were traced below 0.8 in `pipeline/work/arrows/` and carry no confidence in
+   the published files, so they need an eye rather than a queue.
+3. **Build `data/overrides/races/` and `data/overrides/spells/`** (review D-10).
+   Neither exists, so every correction to the 360 race and spell records is
+   lost on the next rebuild. This blocks step 2 for two of the three datasets.
+4. **Declare launch and freeze the encoding.** By owner decision `v1` stays
    mutable until then; freezing sets `frozen: true` in
    `data/encoding/v1.json`, after which any id set or order change needs a
-   `v2` plus a migration (`docs/DATA-SCHEMA.md` section 8).
-4. **Phase 2b: races** (`docs/briefs/beyond-talents.md`) — `data/races/`,
-   route `#/races`. Cheapest complete increment, highest news value. Then 2c
-   ("what changed vs Classic") and 2d (spellbook), in that order.
-5. **Phase 3 groundwork** once the beta opens on 2026-09-17: the DB2 importer
-   (`docs/DATA-SCHEMA.md` section 9, still unwritten) writing the same schema,
-   so datamined data is a drop-in replacement rather than a rewrite.
+   `v2` plus a migration (`docs/DATA-SCHEMA.md` section 8). The site is public
+   and minting share links, so this is now overdue (review K-5).
+5. **Phase 3**: the DB2 importer against the beta opening on 2026-09-17
+   (`docs/DATA-SCHEMA.md` section 9), writing the same schema so datamined
+   data is a drop-in replacement rather than a rewrite.
 
 ## Risks
 
@@ -204,6 +205,22 @@ workflow then publishes to https://deradon.github.io/wow-forever-talent-calc/
 on every push to `main`.
 
 ## Status log
+
+- 2026-09-14 ~09:30: review round two, package D (pipeline and data) done.
+  Stage 11 gained an `opinions` command that fetches an independent codex
+  reading for every spellbook column and tooltip, and `build` now runs the
+  shape-aware reader merge over both: the published text is adjudicated and
+  `source.confidence` says whether a *second reader* agreed rather than
+  whether one reader repeated itself. Machine-detectable reader defects in the
+  spell data 14 -> 0; the four fabricated "new in Forever" records are gone
+  (16 -> 12 new names, 327 -> 323 rows); `validate_spells.py` now queues
+  tooltips, so the spell review queue is 21 records (2 rows, 19 tooltips)
+  against a previous 14, of which 4 were invisible. Stages 11 and 12 can no
+  longer publish an empty file or delete committed crops on a failed run, and
+  both gained `--dry-run`. Nine duplicated helpers moved to
+  `wowtalents/stagekit.py`; the `sys.path` surgery is gone from every stage.
+  The commit-msg hook is tracked at `scripts/git-hooks/`. Pipeline 555 tests.
+  Details: `docs/handover/2026-09-14-fix-d-pipeline-data.md`.
 
 - 2026-09-14 ~03:30: Phase 2d web half done, so 2b-2d are all live. `#/spells`
   is the coverage overview (eight class cards with entries seen, rows with full

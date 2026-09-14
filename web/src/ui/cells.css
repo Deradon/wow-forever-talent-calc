@@ -4,7 +4,7 @@
  * worth stating in one place:
  *
  *   top-left      the review `?` (uncertain reading)
- *   top-right     the new-in-Forever star
+ *   top-right     the Classic-status marker (star = new, diamond = reworked)
  *   bottom-right  the rank badge (22x22, covering the game's own counter)
  *
  * Three fixed slots, so no two markers can ever land on the same corner.
@@ -18,7 +18,8 @@
  * the top edge it sits beside the 16px `?`: 16 + 18 = 34 of 40.
  */
 
-.cell .new-flag {
+.cell .new-flag,
+.cell .changed-flag {
   position: absolute;
   right: 0;
   top: 0;
@@ -37,6 +38,17 @@
   pointer-events: none;
 }
 
+/* The rewrite marker: same slot, same size, a different claim - and a
+   different colour, so a player never has to read "blue" as two things. A
+   talent has exactly one Classic status, so the two can never collide. */
+.cell .changed-flag {
+  color: #2b1c05;
+  background: #e8a33d;
+  border-color: #2b1c05;
+  font-size: 11px;
+  box-shadow: 0 0 3px rgba(43, 28, 5, 0.9);
+}
+
 /* --- highlight what's new (brief idea 3) ---------------------------------
    The switch dims what is unchanged rather than hiding it: the tree keeps its
    shape, the eye just stops at the talents Forever added or moved. Cells with
@@ -46,12 +58,20 @@
 .cell[data-highlight='true'][data-change='same'][data-rank='0'] {
   opacity: 0.28;
 }
+/* One colour per kind, and each ring is the colour of the marker its cell
+   carries: blue star / blue ring for new, amber diamond / amber ring for a
+   rewrite, violet for a move (which has no marker - "Moved from row 2 to row 1"
+   in the tooltip is the whole story and a fourth corner glyph is not). */
 .cell[data-highlight='true'][data-change='moved'],
 .cell[data-highlight='true'][data-change='rank-changed'] {
-  box-shadow: 0 0 0 2px rgba(78, 163, 255, 0.55);
+  box-shadow: 0 0 0 2px rgba(185, 140, 255, 0.75);
 }
 .cell[data-highlight='true'][data-change='new'] {
   box-shadow: 0 0 0 2px #4ea3ff;
+}
+.cell[data-highlight='true'][data-change='text-changed'],
+.cell[data-highlight='true'][data-change='values-changed'] {
+  box-shadow: 0 0 0 2px #e8a33d;
 }
 /* Search wins over the highlight view: it is the more specific question. */
 .cell[data-match='true'] {

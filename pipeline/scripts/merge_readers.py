@@ -36,7 +36,6 @@ REPO = PIPELINE.parent
 EXTRACTED = REPO / "data" / "extracted"
 PRIOR = REPO / "data" / "prior" / "classic-era" / "talents.json"
 
-sys.path.insert(0, str(PIPELINE / "src"))
 from wowtalents import merge as MG  # noqa: E402
 from wowtalents import ranks as R  # noqa: E402
 from wowtalents.fsio import write_candidates_atomic  # noqa: E402

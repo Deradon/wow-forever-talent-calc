@@ -5,20 +5,26 @@ import tailwindcss from '@tailwindcss/vite'
 import { generate } from './scripts/gen-data-index.mjs'
 
 /**
- * Regenerates src/data/classes-index.json, src/data/iconCrops.ts and
- * src/data/classic-diff.json (the Classic Era comparison) from
- * data/talents|examples, data/prior/classic-era and web/tests/fixtures before
- * anything is resolved, so dev, build and vitest always see the current data.
- * The generated files are committed
- * (tsc runs before vite in `npm run build`); src/data/generated.test.ts fails
- * if a commit forgets to refresh them.
+ * Regenerates the committed indexes under `src/data/` from `data/` while the
+ * dev server is running, so an edit to a talent file shows up on the next
+ * reload without a separate command.
+ *
+ * **Dev only, deliberately.** It used to run from `config()` *and*
+ * `buildStart()`, in every mode - which meant `vitest` rewrote the committed
+ * files before `generated.test.ts` read them, and the test that is supposed to
+ * catch a stale commit compared a file against itself. A `STALE-MARKER`
+ * injected into `classes-index.json` passed 11/11 and was silently erased
+ * (code review K-2). It also meant `npm run build` built from content it had
+ * just regenerated and nobody had reviewed.
+ *
+ * Now: `npm run gen` regenerates, `git diff --exit-code -- src/data` in CI
+ * proves the commit is current, and `generated.test.ts` generates into a
+ * temporary directory and compares - a check vitest cannot rescue.
  */
 function dataIndexes(): Plugin {
   return {
     name: 'wow-forever-data-indexes',
-    config() {
-      generate()
-    },
+    apply: (config, env) => env.command === 'serve' && config.mode !== 'test' && !process.env.VITEST,
     buildStart() {
       generate()
     },

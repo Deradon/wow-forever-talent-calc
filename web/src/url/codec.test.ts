@@ -3,7 +3,7 @@ import fc from 'fast-check'
 import { buildRegistry, derivedOrder, orderFor, type EncodingRegistry } from '../data/encoding'
 import { makeClass, TEST_MIGRATION_V1_V2, TEST_ORDER_V1, TEST_ORDER_V2 } from '../rules/fixture'
 import { add, remove, validate, type Build } from '../rules'
-import { decode, encode } from './codec'
+import { decode, encode, summarizeNotices } from './codec'
 import tinkerRaw from '../../tests/fixtures/tinker.json'
 import tinkerEncoding from '../../tests/fixtures/encoding/v1.json'
 import { parseClass } from '../data/schema.zod'
@@ -100,5 +100,97 @@ describe('tinker fixture', () => {
     const s = encode(tinker, b, reg)
     expect(s).toBe('32-1')
     expect(decode(tinker, s, tinker.dataVersion, reg)).toEqual({ build: b, notices: [] })
+  })
+})
+
+describe('summarizeNotices (UX round two, finding 1)', () => {
+  const summary = (s: string, version = 2) => summarizeNotices(decode(cls, s, version, registry).notices)
+
+  it('says nothing when the link decoded cleanly', () => {
+    expect(summarizeNotices([])).toBeUndefined()
+    expect(summary('3')).toBeUndefined()
+  })
+
+  it('gives one friendly sentence for an unreadable link', () => {
+    expect(summary('abc')).toMatchObject({
+      kind: 'unreadable',
+      message: 'This link could not be read; showing an empty build.',
+    })
+    expect(summary('5', 99)?.message).toBe('This link could not be read; showing an empty build.')
+  })
+
+  it('counts the points dropped and the talents capped, without ids', () => {
+    const s = summary('50000001-0-1')
+    expect(s?.message).toBe(
+      'This link did not fit the current trees: 2 points were dropped. The build below is what fits.',
+    )
+    const capped = summary('7')
+    expect(capped?.message).toBe(
+      'This link did not fit the current trees: 1 talent capped at its Forever rank. The build below is what fits.',
+    )
+  })
+
+  it('keeps ids, slugs and rule reasons in the console detail only', () => {
+    const s = summary('00000-01')
+    expect(s?.message).not.toMatch(/alpha|beta|prereq|row-locked|#\d/)
+    expect(s?.detail.join(' ')).toMatch(/beta\/y-one/)
+  })
+
+  it('never repeats its own title inside the sentence', () => {
+    for (const bad of ['abc', '7', '00000-01', '50000001-0-1', '9999999999-9999999999-9999999999']) {
+      const s = summary(bad)
+      expect(s).toBeDefined()
+      expect(s!.message.match(/This link/g)?.length ?? 0).toBeLessThanOrEqual(1)
+    }
+  })
+})
+
+describe('decode never throws and never leaks ids to the player (fuzz)', () => {
+  /** Shapes a pasted link actually takes: digits, dashes, and junk around them. */
+  const pasted = fc.oneof(
+    fc.string(),
+    fc.string({ unit: fc.constantFrom('0', '1', '5', '9', '-') }),
+    fc.stringMatching(/^[0-9-]{0,40}$/),
+    fc.constantFrom(
+      '',
+      '-',
+      '---',
+      '5553253055532530555325305553',
+      '0503--550340510553151',
+      '99999999999999999999999999999999999999999999',
+      'null',
+      'undefined',
+      '<script>alert(1)</script>',
+      '%2F..%2F',
+      '0'.repeat(5000),
+      '9'.repeat(5000),
+    ),
+  )
+  const version = fc.oneof(fc.integer({ min: -5, max: 5 }), fc.constantFrom(1, 2, 99, NaN, Infinity, 1.5))
+
+  it('returns a valid build and player-safe text for any string', () => {
+    fc.assert(
+      fc.property(pasted, version, (s, v) => {
+        const { build, notices } = decode(cls, s, v, registry)
+        expect(validate(cls, build)).toEqual([])
+        const sum = summarizeNotices(notices)
+        if (!sum) return
+        // No slugs, no encoding positions, no engineering words.
+        expect(sum.message).not.toMatch(/#\d|alpha|beta|a-one|b-two|x-one|y-one|prereq|clamp|sanitiz|maxRank/i)
+        expect(sum.message.endsWith('.')).toBe(true)
+      }),
+      { numRuns: 400 },
+    )
+  })
+
+  it('re-encoding a decoded build always round-trips', () => {
+    fc.assert(
+      fc.property(pasted, (s) => {
+        const { build } = decode(cls, s, cls.dataVersion, registry)
+        const again = encode(cls, build, registry)
+        expect(decode(cls, again, cls.dataVersion, registry).build).toEqual(build)
+      }),
+      { numRuns: 200 },
+    )
   })
 })

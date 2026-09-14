@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "gen": "node scripts/gen-data-index.mjs && node scripts/gen-classic-index.mjs",
     "build": "tsc -b && vite build",
     "build:e2e": "tsc -b && vite build --mode e2e",
     "preview": "vite preview --strictPort",

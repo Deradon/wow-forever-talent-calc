@@ -24,7 +24,6 @@ PIPELINE = Path(__file__).resolve().parents[1]
 REPO = PIPELINE.parent
 CACHE = PIPELINE / "work" / "read" / "codex"
 
-sys.path.insert(0, str(PIPELINE / "src"))
 from wowtalents.fsio import write_json_atomic, write_text_atomic  # noqa: E402
 
 PROMPT = (

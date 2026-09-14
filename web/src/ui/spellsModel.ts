@@ -27,7 +27,7 @@ import { displayName } from '../data/load'
 import type { Spell, SpellData, SpellSource, SpellTooltip } from '../data/schema.spells'
 import { spellsHash } from '../url/route'
 import { initials } from './initials'
-import { needsReview, readingLine, streamStamp, trustLine } from './trust'
+import { datasetTrustLines, readingLine, streamStamp, trustLine } from './trust'
 
 export { initials }
 
@@ -271,19 +271,7 @@ export function spellStamp(source: SpellSource): string | undefined {
  * A row that is genuinely shaky still gets its own amber line below.
  */
 export function spellTrustLines(spells: Spell[]): string[] {
-  const total = spells.length
-  if (total === 0) return []
-  const reviewed = spells.filter((s) => s.source.reviewed).length
-  const shaky = spells.filter((s) => needsReview(s)).length
-  const noun = total === 1 ? 'entry' : 'entries'
-  const lines: string[] = []
-  if (reviewed === 0) lines.push('Read from BlizzCon 2026 footage; not yet reviewed.')
-  else if (reviewed === total) lines.push('Read from BlizzCon 2026 footage and reviewed.')
-  else lines.push(`Read from BlizzCon 2026 footage; ${reviewed} of ${total} ${noun} reviewed.`)
-  if (shaky > 0) {
-    lines.push(`${shaky} of ${total} ${noun} ${shaky === 1 ? 'is' : 'are'} uncertain and marked below.`)
-  }
-  return lines
+  return datasetTrustLines(spells, { one: 'entry', many: 'entries' })
 }
 
 /**
@@ -297,22 +285,11 @@ export function spellTrustLine(spell: Spell): string | undefined {
 }
 
 /**
- * `notes[]` in player words.
- *
- * The races page prints every note; the spellbook's are written for the data
- * owner, not for a player - they name repo paths, field names and the reader,
- * and `docs/reviews/2026-09-13-text-quality.md` rules all three out. A note is
- * therefore shown only when it survives this filter, which today keeps the one
- * that gives the build date and drops the five that explain the pipeline. The
- * caveats those notes carry are stated by the page in its own words instead:
- * `coverageLine`, `levelLine`, `ranksLine` and `NEW_CAVEAT`.
+ * `notes[]` in player words: `trust.playerNotes`, re-exported because every
+ * caller and every test here already looks for it under this name. The guard
+ * list it uses is the one the talent tooltip uses (code review K-24).
  */
-const PIPELINE_WORDS =
-  /pipeline\/|coverage\.|source note|ranksSeen|\.py\b|\.json\b|the reader|hand-labelled|half-drawn|fade-in|\bcrops?\b|this file/i
-
-export function playerNotes(notes: string[] | undefined): string[] {
-  return (notes ?? []).filter((note) => !PIPELINE_WORDS.test(note))
-}
+export { playerNotes } from './trust'
 
 // --- small helpers ---------------------------------------------------------
 

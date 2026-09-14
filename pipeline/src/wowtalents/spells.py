@@ -48,8 +48,12 @@ __all__ = [
     "cell_filled", "filled_cells", "tooltip_cell",
     "parse_rank", "entry_kind", "strip_rank", "spell_id", "normalise_entry",
     "clean_page_reading", "looks_like_prose", "entry_key", "confidence", "merge_entries", "page_slug",
+    "strip_kind",
     "show_all_ranks", "dedupe_states", "dedupe_tooltips", "tab_from_title", "snap_title",
     "SEARCH_TITLES",
+    "AUTHORITY_READER", "is_authority", "split_readings", "merge_tooltip", "merge_entry",
+    "merged_confidence", "SETTLED_CONFIDENCE", "ADJUDICATED_CONFIDENCE",
+    "UNCORROBORATED_CONFIDENCE", "DISPUTED_CONFIDENCE",
 ]
 
 # --------------------------------------------------------------------------- geometry
@@ -411,6 +415,10 @@ def tooltip_cell(win: Window, bbox: tuple[int, int, int, int]) -> tuple[int, int
 
 _RANK_RE = re.compile(r"^\s*rank\s*([0-9]{1,2})\s*$", re.I)
 _RANK_TAIL_RE = re.compile(r"\s*[-,]?\s*rank\s*([0-9]{1,2})\s*$", re.I)
+#: The grey subtitle glued onto the end of the name, the way ``Rank N`` is. ``races.py`` has had
+#: ``strip_kind`` since it shipped; the spellbook did not, which is exactly how the fabricated
+#: ``shaman/reincarnation-passive`` was minted (review round two, K-4 / V-4).
+_KIND_TAIL_RE = re.compile(r"\s*[-,(]?\s*(racial\s+passive|racial|passive)\s*\)?\s*$", re.I)
 #: Subtitles the list shows that are a kind, not a rank.
 _KINDS = {
     "passive": "passive",
@@ -437,8 +445,22 @@ def entry_kind(subtitle: str | None) -> str:
 
 
 def strip_rank(name: str) -> str:
-    """Names sometimes arrive with the subtitle glued on ("Holy Strike Rank 5")."""
-    return clean_text(_RANK_TAIL_RE.sub("", clean_text(name or "")))
+    """Names sometimes arrive with the subtitle glued on ("Holy Strike Rank 5", "Reincarnation Passive")."""
+    return clean_text(_KIND_TAIL_RE.sub("", clean_text(_RANK_TAIL_RE.sub("", clean_text(name or "")))))
+
+
+def strip_kind(name: str) -> tuple[str, str | None]:
+    """``("Reincarnation", "Passive")`` -- the name with its glued-on subtitle taken off.
+
+    The spellbook prints the kind as a smaller grey line under the name; when the two run
+    together in one reading the kind must go back to where it belongs rather than become part
+    of the id. The analogue of ``races.strip_kind``.
+    """
+    text = clean_text(name or "")
+    m = _KIND_TAIL_RE.search(text)
+    if not m:
+        return text, None
+    return clean_text(text[:m.start()]), m.group(1).title()
 
 
 def spell_id(name: str) -> str:
@@ -499,8 +521,8 @@ def normalise_entry(e: dict) -> dict:
     Rank 4") or to put the rank in the subtitle field as a bare number; both are
     repaired here rather than in the prompt, where it would cost a retry.
     """
-    raw_name = clean_text(e.get("name") or "")
-    sub = clean_text(e.get("subtitle") or "")
+    raw_name, glued = strip_kind(clean_text(e.get("name") or ""))
+    sub = clean_text(e.get("subtitle") or "") or (glued or "")
     rank = parse_rank(sub)
     if rank is None and re.fullmatch(r"[0-9]{1,2}", sub):
         rank = int(sub)
@@ -701,3 +723,163 @@ def dedupe_states(states: Sequence[dict], page_of, threshold: float = STATE_CHAN
             continue
         keep.append(st)
     return sorted(keep, key=lambda s: float(s["t"]))
+
+
+# --------------------------------------------------------------------------- reader merge
+#
+# Round two (``docs/reviews/2026-09-14-data-code-perf.md`` D-1) found 10 of 12 sampled
+# ``confidence: 1.0`` tooltips carrying the reader defects round one had already catalogued
+# for talents. The cause is structural: stage 11 scores a tooltip by comparing two passes of
+# *the same* VLM over the same pixels, so when both passes make the same mistake -- and at
+# 1080p a comma and a full stop are the same two-pixel blob for both -- agreeing on the
+# mistake scores 1.0. Two passes of one reader are a repeatability check, never corroboration.
+#
+# So the spellbook uses the shape-aware merge of ``wowtalents.merge``, with one rule tightened
+# for this dataset:
+#
+# * **case, punctuation and percent** hunks go to the shape authority (the codex CLI reading),
+#   exactly as for talents - the audit found it right ~100 % of the time on all three;
+# * a **word** hunk is still voted on, but *any* word hunk left after the merge, settled or
+#   not, drops the record to ``DISPUTED_CONFIDENCE`` and names both variants. The talent merge
+#   could let a vote settle wording because its audit had measured the primary reader at ~70 %
+#   on words; no such audit exists for the spellbook, so a wording disagreement between two
+#   independent readers goes to a human instead of to a coin toss. That is what surfaced
+#   ``mage/dampen-magic`` ("Dampons"), the two wrong footers and the flattened language list,
+#   none of which any regex can find;
+# * a record with **no independent reading at all** is capped at ``UNCORROBORATED_CONFIDENCE``:
+#   still out of the review queue, but no longer claiming certainty it has not earned.
+
+from . import merge as _merge  # noqa: E402
+
+#: Reader label of the shape authority inside ``readings[]``.
+AUTHORITY_READER = "codex"
+#: Confidence of a record every reader agreed on verbatim.
+SETTLED_CONFIDENCE = 1.0
+#: Only shape hunks, all adjudicated by the authority: the text is corrected but unreviewed.
+ADJUDICATED_CONFIDENCE = 0.9
+#: Two passes of one reader agreeing, with no independent reading to corroborate them.
+UNCORROBORATED_CONFIDENCE = 0.9
+#: A word the readers do not agree on: review queue.
+DISPUTED_CONFIDENCE = 0.7
+#: Text fields of a tooltip the merge adjudicates.
+TOOLTIP_TEXT_FIELDS = ("description", "footer")
+#: Non-text tooltip fields; a disagreement here is a doubt the merge cannot settle.
+TOOLTIP_FIELDS = ("cost", "range", "cast_time", "cooldown", "tools")
+
+
+def is_authority(reading: dict) -> bool:
+    return AUTHORITY_READER in str(reading.get("reader") or "").lower()
+
+
+def split_readings(readings: Sequence[dict]) -> tuple[dict | None, dict | None, list[dict]]:
+    """``(primary, authority, others)`` -- the authority is the first non-VLM reading."""
+    rest = [r for r in readings if isinstance(r, dict) and not is_authority(r)]
+    auth = next((r for r in readings if isinstance(r, dict) and is_authority(r)), None)
+    if not rest:
+        # a row only the authority saw: it is the primary and has nothing to merge against
+        return auth, None, []
+    return rest[0], auth, rest[1:]
+
+
+def _merge_field(primary: str, authority: str, others: Sequence[str]) -> tuple[str, list, dict]:
+    res = _merge.merge_readings(primary, authority, others)
+    return res.text, res.hunks, res.counts()
+
+
+def merge_tooltip(readings: Sequence[dict]) -> dict:
+    """Shape-aware merge of one tooltip's readings.
+
+    Returns ``{"fields": {...}, "confidence": float, "shapes": {...}, "disputed": [...]}``.
+    ``fields`` holds only the keys the merge rewrote, so the caller can update the record it
+    already has. Pure: no I/O, no network.
+    """
+    readings = [r for r in readings if isinstance(r, dict)]
+    primary, auth, others = split_readings(readings)
+    fields: dict[str, str] = {}
+    shapes: dict[str, int] = {}
+    disputed: list[str] = []
+    if primary is None:
+        return {"fields": fields, "confidence": 0.0, "shapes": shapes, "disputed": disputed}
+
+    for field in TOOLTIP_TEXT_FIELDS:
+        text = clean_text(primary.get(field) or "")
+        if auth is not None:
+            text, hunks, counts = _merge_field(
+                text, clean_text(auth.get(field) or ""),
+                [clean_text(o.get(field) or "") for o in others])
+            for k, v in counts.items():
+                shapes[k] = shapes.get(k, 0) + v
+            for h in hunks:
+                if h.kind == _merge.WORD:
+                    disputed.append(f"{field} {h.primary!r} vs {h.other!r}")
+        # belt and braces: a capital I both readers agreed on is still wrong
+        text, lowered = _merge.normalise_capital_i(text, min_tail=1)
+        if lowered:
+            shapes["case"] = shapes.get("case", 0) + len(lowered)
+        fields[field] = text
+
+    name = clean_text(primary.get("name") or "")
+    if auth is not None and (auth_name := clean_text(auth.get("name") or "")):
+        if auth_name.lower() == name.lower() and auth_name != name:
+            name = auth_name                    # same name, different case: the authority wins
+            shapes["case"] = shapes.get("case", 0) + 1
+        elif auth_name.lower() != name.lower():
+            disputed.append(f"name {name!r} vs {auth_name!r}")
+    fields["name"] = name
+
+    if auth is not None:
+        for field in TOOLTIP_FIELDS:
+            a, b = clean_text(primary.get(field) or ""), clean_text(auth.get(field) or "")
+            if a and b and a != b:
+                disputed.append(f"{field} {a!r} vs {b!r}")
+
+    return {"fields": fields, "shapes": shapes, "disputed": disputed,
+            "confidence": merged_confidence(readings, disputed, shapes)}
+
+
+def merge_entry(readings: Sequence[dict]) -> dict:
+    """Shape-aware merge of one list row's readings (name only; rank and kind are not text)."""
+    readings = [r for r in readings if isinstance(r, dict)]
+    primary, auth, others = split_readings(readings)
+    shapes: dict[str, int] = {}
+    disputed: list[str] = []
+    if primary is None:
+        return {"fields": {}, "confidence": 0.0, "shapes": shapes, "disputed": disputed}
+    name = strip_rank(primary.get("name") or "")
+    if auth is not None and (auth_name := strip_rank(auth.get("name") or "")):
+        if auth_name.lower() == name.lower():
+            if auth_name != name:
+                shapes["case"] = shapes.get("case", 0) + 1
+            name = auth_name
+        else:
+            # a real name disagreement is never merged away: it is how "Rummel Whirlwind"
+            # and "Evocation Dampen Magic" were minted in the first place
+            disputed.append(f"name {name!r} vs {auth_name!r}")
+    name, lowered = _merge.normalise_capital_i(name, min_tail=1)
+    if lowered:
+        shapes["case"] = shapes.get("case", 0) + len(lowered)
+    if auth is not None:
+        for field in ("rank", "kind"):
+            if primary.get(field) != auth.get(field):
+                disputed.append(f"{field} {primary.get(field)!r} vs {auth.get(field)!r}")
+    return {"fields": {"name": name}, "shapes": shapes, "disputed": disputed,
+            "confidence": merged_confidence(readings, disputed, shapes)}
+
+
+def merged_confidence(readings: Sequence[dict], disputed: Sequence[str],
+                      shapes: dict[str, int]) -> float:
+    """Confidence that reflects *who* agreed, not how many passes ran.
+
+    ``1.0`` needs an independent reading that agreed verbatim. Anything the authority had to
+    correct is ``0.9`` (right, but nobody has looked at it); anything still disputed is ``0.7``
+    and therefore in the review queue; a lone reading stays ``0.0`` as before.
+    """
+    if not readings:
+        return 0.0
+    if len(readings) == 1:
+        return 0.0
+    if disputed:
+        return DISPUTED_CONFIDENCE
+    if not any(is_authority(r) for r in readings):
+        return UNCORROBORATED_CONFIDENCE
+    return ADJUDICATED_CONFIDENCE if shapes else SETTLED_CONFIDENCE

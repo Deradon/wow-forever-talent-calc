@@ -100,6 +100,6 @@ test('right click refunds, locked talents explain their requirement', async ({ p
 
 test('an invalid link is adjusted and says so', async ({ page }) => {
   await page.goto('/#/tinker?v=1&t=0010')
-  await expect(page.getByTestId('notices')).toContainText('Build adjusted')
+  await expect(page.getByTestId('notices')).toContainText('did not fit the current trees')
   await expect(page.getByTestId('points-left')).toHaveText('51')
 })

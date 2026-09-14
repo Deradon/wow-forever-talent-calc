@@ -104,6 +104,8 @@ export declare function collectIconCrops(classes: unknown[]): string[]
 export declare function renderIconCrops(paths: string[]): string
 export declare function normalizeName(name: string): string
 export declare function normalizeText(text: string): string
+/** `normalizeText` plus hyphen, plural and filler-word folding; classification only. */
+export declare function classifierText(text: string): string
 export declare function maskNumbers(text: string): { masked: string; values: string[] }
 export declare function compareDescriptions(
   classicText: string,
@@ -237,6 +239,8 @@ export interface SpellFile {
 }
 
 export declare const SPELL_PRIOR_PATH: string
+/** True when a spell record has evidence behind it and may be counted. */
+export declare function publishable(spell: unknown): boolean
 export declare function readSpells(): SpellFile[]
 export declare function tabCounts(data: unknown): SpellIndexTab[]
 export declare function spellCounts(data: unknown): {
@@ -259,6 +263,22 @@ export declare function expected(): {
   racesIndex: string
   raceCrops: string
   spellsIndex: string
+  facts: string
   /** One module per class, keyed by class id. */
   spellCrops: Record<string, string>
+}
+
+export interface ReviewFactCounts {
+  total: number
+  reviewed: number
+}
+export declare function buildFacts(
+  classes: unknown[],
+  races: unknown[],
+  spells: unknown[],
+): {
+  talents: ReviewFactCounts & { queued: number }
+  racialTraits: ReviewFactCounts
+  spellEntries: ReviewFactCounts
+  spellTooltips: ReviewFactCounts
 }

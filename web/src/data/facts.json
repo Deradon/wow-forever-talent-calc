@@ -1,0 +1,19 @@
+{
+  "talents": {
+    "total": 469,
+    "reviewed": 57,
+    "queued": 6
+  },
+  "racialTraits": {
+    "total": 37,
+    "reviewed": 0
+  },
+  "spellEntries": {
+    "total": 323,
+    "reviewed": 0
+  },
+  "spellTooltips": {
+    "total": 112,
+    "reviewed": 0
+  }
+}

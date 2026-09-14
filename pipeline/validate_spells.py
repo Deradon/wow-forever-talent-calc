@@ -2,7 +2,7 @@
 """Validate WoW Forever spellbook files against data/schema/spell.schema.json.
 
 The third validator next to ``validate.py`` (talents) and ``validate_races.py``
-(races), same shape as the latter: rules S1-S12 are errors, S13-S18 warnings
+(races), same shape as the latter: rules S1-S12 and S16 are errors, S13-S15 warnings
 (``--strict`` makes warnings errors), and ``canonical_dumps`` is the one
 serializer stage 11 writes through, so ``--check`` compares bytes.
 
@@ -36,6 +36,20 @@ except ImportError:  # pragma: no cover
 SCHEMA_VERSION = 1
 SLUG_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 REVIEW_THRESHOLD = 0.8
+#: Below this a video record is not evidence at all: only one reader ever saw it. Stage 11
+#: refuses to publish one (``MIN_PUBLISHABLE``); this is the gate that says so out loud, because
+#: four such records shipped as "new in Forever" spell names before round two's review (D-2).
+PUBLISHABLE_THRESHOLD = 0.5
+#: A full stop, whitespace, then a lower-case letter: the comma the reader turned into a period.
+PERIOD_FOR_COMMA_RE = re.compile(r"[a-z0-9%)]\.\s+[a-z]")
+#: A mid-sentence word capitalised as ``I`` ("proficient In the use", "with Its talons").
+CAPITAL_I_RE = re.compile(r"(?<![.:;!?]\s)(?<!^)\b(?<![A-Za-z])(I[a-z]+)\b")
+#: Words that legitimately start with a capital I mid-sentence in a spellbook tooltip.
+CAPITAL_I_ALLOWED = frozenset({
+    "Intellect", "Imp", "Incubus", "Immolate", "Immolation", "Incinerate", "Intercept", "Insect",
+    "Ice", "Inner", "Invisibility", "Interrupt", "Ignite", "Impact", "Improved", "Innervate",
+    "Intimidation", "Initiative", "Illumination", "Iron", "Ironforge", "Isle",
+})
 CLASSES = {"druid", "hunter", "mage", "paladin", "priest", "rogue", "shaman", "warlock", "warrior"}
 #: The most entries one spellbook page can hold: three columns of seven rows.
 PAGE_CAPACITY = 21
@@ -342,15 +356,38 @@ def rule_10_complete(ctx: Ctx, doc: dict) -> None:
         ctx.err("INCOMPLETE-UNEXPLAINED", "/notes", "complete: false needs a note saying what is missing")
 
 
+def text_defects(text: str) -> list[str]:
+    """The reader defects round one catalogued, as they survive into a published string.
+
+    Cheap post-checks, not a reader: they find the two *machine-detectable* shapes of
+    ``docs/reviews/2026-09-14-data-code-perf.md`` D-1 (6 commas read as full stops, 5 spurious
+    capital ``I``s across 112 tooltips, every one confirmed against its crop). The other shapes
+    - a misspelling, a wrong footer, a list flattened without a separator - no regex can reach;
+    those need the shape-aware merge of stage 11, which is why this is belt and braces.
+    """
+    out: list[str] = []
+    if text != text.strip() or "  " in text:
+        out.append("leading, trailing or double whitespace")
+    if re.search(r"[|\\~]", text):
+        out.append("OCR artefact character")
+    if PERIOD_FOR_COMMA_RE.search(text):
+        out.append("a full stop followed by a lower-case word, which is usually a comma misread")
+    spurious = [w for w in CAPITAL_I_RE.findall(text) if w not in CAPITAL_I_ALLOWED]
+    if spurious:
+        out.append("a mid-sentence capital I in " + ", ".join(repr(w) for w in sorted(set(spurious))))
+    return out
+
+
 def rule_11_tooltips(ctx: Ctx, doc: dict) -> None:
     for i, s in enumerate(doc.get("spells") or []):
         for j, t in enumerate(s.get("tooltips") or []):
             d = t.get("description") or ""
-            if d != d.strip() or "  " in d:
-                ctx.warn("TEXT-HYGIENE", f"/spells/{i}/tooltips/{j}",
-                         "leading, trailing or double whitespace in the description")
-            if re.search(r"[|\\~]", d):
-                ctx.warn("TEXT-HYGIENE", f"/spells/{i}/tooltips/{j}", "OCR artefact character in the description")
+            for field, text in (("description", d), ("footer", t.get("footer") or "")):
+                for defect in text_defects(text) if text else []:
+                    ctx.warn("TEXT-HYGIENE", f"/spells/{i}/tooltips/{j}/{field}", defect)
+            if not d.strip():
+                ctx.err("TOOLTIP-EMPTY", f"/spells/{i}/tooltips/{j}",
+                        "a tooltip with no description is not evidence of anything")
             rank = t.get("rank")
             if rank is not None and s.get("ranksSeen") and rank not in s["ranksSeen"]:
                 ctx.err("TOOLTIP-RANK", f"/spells/{i}/tooltips/{j}",
@@ -366,21 +403,71 @@ def rule_12_canonical(ctx: Ctx, doc: dict, raw: bytes, check: bool) -> None:
 
 
 def rule_13_confidence(ctx: Ctx, doc: dict) -> None:
+    """Review queue and the 0.8 threshold, over list rows **and** tooltips.
+
+    Until round two's review this walked ``doc["spells"]`` only, so a whole field of 112 records
+    escaped the project's review contract: four tooltips sat below 0.8 and appeared in neither
+    ``--check`` nor ``--report`` (D-4 / V-1).
+    """
     for i, s in enumerate(doc.get("spells") or []):
         src = s.get("source") or {}
-        conf = src.get("confidence")
-        if conf is not None and conf < REVIEW_THRESHOLD and not src.get("reviewed"):
-            ctx.warn("NEEDS-REVIEW", f"/spells/{i}", f"confidence {conf} below {REVIEW_THRESHOLD}")
-        if not src.get("reviewed"):
-            ctx.result.queue.append({"spell": s.get("id"), "name": s.get("name"),
-                                     "confidence": conf, "crop": src.get("crop"),
-                                     "status": (s.get("classic") or {}).get("status")})
+        _queue(ctx, f"/spells/{i}", src, s.get("id"), s.get("name"),
+               (s.get("classic") or {}).get("status"))
+        for j, t in enumerate(s.get("tooltips") or []):
+            _queue(ctx, f"/spells/{i}/tooltips/{j}", t.get("source") or {},
+                   s.get("id"), s.get("name"), "tooltip")
+
+
+def _queue(ctx: Ctx, where: str, src: dict, spell: str | None, name: str | None,
+           status: str | None) -> None:
+    conf = src.get("confidence")
+    if conf is not None and conf < REVIEW_THRESHOLD and not src.get("reviewed"):
+        ctx.warn("NEEDS-REVIEW", where, f"confidence {conf} below {REVIEW_THRESHOLD}")
+    if not src.get("reviewed"):
+        ctx.result.queue.append({"spell": spell, "name": name, "where": where,
+                                 "confidence": conf, "crop": src.get("crop"), "status": status})
 
 
 def rule_14_kind(ctx: Ctx, doc: dict) -> None:
+    """A grey subtitle glued onto the end of the name.
+
+    ``Rank N`` was caught from the start; ``(Passive)`` and ``Racial`` were not, which is exactly
+    how ``shaman/reincarnation-passive`` was minted and published (V-4).
+    """
     for i, s in enumerate(doc.get("spells") or []):
-        if re.search(r"\brank\s*\d", (s.get("name") or ""), re.I):
+        name = s.get("name") or ""
+        if re.search(r"\brank\s*\d", name, re.I):
             ctx.warn("RANK-IN-NAME", f"/spells/{i}", "the 'Rank N' subtitle belongs in ranksSeen, not in name")
+        if re.search(r"[\s(]\(?(racial\s+passive|racial|passive)\)?\s*$", name, re.I):
+            ctx.warn("KIND-IN-NAME", f"/spells/{i}",
+                     "the grey subtitle belongs in kind, not in name")
+
+
+def rule_16_publishable(ctx: Ctx, doc: dict) -> None:
+    """A record no second reader ever saw, or with no crop behind it, must not be here.
+
+    ``data/spells`` is published as fact. Four records at confidence 0.0 - a hallucinated name,
+    two rows merged into one, a subtitle glued into a name - were tagged ``new`` and counted in
+    the site's "16 new spell names" headline (D-2). Stage 11 now refuses to write them; this is
+    the gate that keeps a hand edit or an older file from putting them back.
+    """
+    for i, s in enumerate(doc.get("spells") or []):
+        src = s.get("source") or {}
+        if src.get("reviewed") or src.get("kind") != "video":
+            continue
+        conf = src.get("confidence")
+        if conf is not None and conf < PUBLISHABLE_THRESHOLD:
+            ctx.err("UNPUBLISHABLE", f"/spells/{i}",
+                    f"confidence {conf} is below {PUBLISHABLE_THRESHOLD}: only one reader saw this row, "
+                    "so it is not evidence and must not be published")
+        if not src.get("crop"):
+            ctx.err("UNPUBLISHABLE", f"/spells/{i}", "a video record needs the crop it was read from")
+        if src.get("frame") is None:
+            ctx.err("UNPUBLISHABLE", f"/spells/{i}", "a video record needs the frame it was read from")
+        if conf is not None and conf < REVIEW_THRESHOLD and "new" in (s.get("tags") or []):
+            ctx.err("UNPUBLISHABLE", f"/spells/{i}",
+                    f"tagged 'new' at confidence {conf}: a name below the review threshold must not "
+                    "be claimed as new in Forever")
 
 
 def rule_15_counts(ctx: Ctx, doc: dict) -> None:
@@ -445,6 +532,7 @@ def validate_path(path: Path, opts: argparse.Namespace, cache: dict[Path, dict])
     rule_13_confidence(ctx, doc)
     rule_14_kind(ctx, doc)
     rule_15_counts(ctx, doc)
+    rule_16_publishable(ctx, doc)
     return result
 
 

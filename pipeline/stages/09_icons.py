@@ -34,7 +34,6 @@ from pathlib import Path
 import typer
 from PIL import Image, ImageDraw
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import icons as I  # noqa: E402
 from wowtalents.fsio import write_candidates_atomic, write_text_atomic  # noqa: E402
 

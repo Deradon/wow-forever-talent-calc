@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import classesIndex from '../data/classes-index.json'
+import facts from '../data/facts.json'
 import { includeExamples } from '../data/load'
 import { changesHash, classHash, racesHash, spellsHash } from '../url/route'
 import { ClassIcon } from './ClassIcon'
 import { REPO_URL } from './site'
 import { continueLabel, forgetLastBuild, readLastBuild } from './storage'
 import { SITE_TITLE, useTitle } from './title'
+import { checkedLine, RANKS_LINE, SOURCE_LINE } from './trust'
 
 /** Re-exported so the many call sites that already look here keep working. */
 export { REPO_URL } from './site'
@@ -60,9 +62,8 @@ export function ClassPicker() {
       <div className="panel p-5">
         <h1 className="serif mb-2 text-lg text-[var(--gold)]">Choose a class</h1>
         {/* The one place the caveat is stated: tooltips and class pages must not repeat it. */}
-        <p className="mb-2 text-sm text-[var(--text-dim)]">
-          Read from BlizzCon 2026 demo footage by a local vision model and <strong>unreviewed</strong> - expect wrong
-          names and numbers. Only rank 1 was on screen; higher ranks and the point rules are estimated from Classic Era.
+        <p className="mb-2 text-sm text-[var(--text-dim)]" data-testid="landing-caveat">
+          {SOURCE_LINE} {checkedLine(facts.talents, 'talents')} Expect wrong names and numbers. {RANKS_LINE}
         </p>
         {/* The one thing this calculator has that Wowhead cannot: the diff. */}
         <p className="mb-2 text-sm">
@@ -79,7 +80,8 @@ export function ClassPicker() {
           </a>
           <span className="text-[var(--text-dim)]">
             {' '}
-            - 37 racial traits, the Skyborne variants, and the combinations Classic Era never allowed.
+            - {facts.racialTraits.total} racial traits, the Skyborne variants, and the combinations Classic Era never
+            allowed.
           </span>
         </p>
         {/* Phase 2d: the spellbook pages the stream opened, and the coverage
@@ -90,7 +92,8 @@ export function ClassPicker() {
           </a>
           <span className="text-[var(--text-dim)]">
             {' '}
-            - 327 spellbook entries and 112 tooltips read from the demo, with the pages nobody opened named.
+            - {facts.spellEntries.total} spellbook entries and {facts.spellTooltips.total} tooltips read from the demo,
+            with the pages nobody opened named.
           </span>
         </p>
         <p className="mb-4 text-sm text-[var(--text-dim)]">

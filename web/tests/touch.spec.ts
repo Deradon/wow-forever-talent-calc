@@ -48,5 +48,5 @@ test('a tap opens the nested tooltips that replaced the Details disclosure', asy
 
   // and the uncertain marker opens both readings
   await page.getByTestId('term-reading-steady-hands').tap()
-  await expect(page.getByTestId('nest-term-reading-steady-hands')).toContainText('A second reading')
+  await expect(page.getByTestId('nest-term-reading-steady-hands')).toContainText('A second transcription')
 })

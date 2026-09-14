@@ -20,6 +20,7 @@ import {
   matrixRows,
   newComboCount,
   playerNoteLines,
+  playerNotes,
   raceTrustLines,
   traitDetailLines,
   traitStamp,
@@ -276,7 +277,7 @@ function OneRace({ raceId, variant }: { raceId: string; variant?: string }) {
               The trait list is incomplete: some rows of the box were never on screen, so a racial may be missing.
             </li>
           )}
-          {(race.notes ?? []).map((note) => (
+          {playerNotes(race.notes).map((note) => (
             <li key={note}>{note}</li>
           ))}
         </ul>

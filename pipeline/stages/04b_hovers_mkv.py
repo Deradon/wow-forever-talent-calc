@@ -32,7 +32,6 @@ from pathlib import Path
 import cv2
 import typer
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import fragments as fr  # noqa: E402
 from wowtalents import mkv as MK  # noqa: E402
 from wowtalents import ui  # noqa: E402

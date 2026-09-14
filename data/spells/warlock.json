@@ -4,7 +4,7 @@
   "class": "warlock",
   "className": "Warlock",
   "dataSource": "video",
-  "generatedAt": "2026-09-13T20:40:16Z",
+  "generatedAt": "2026-09-14T07:30:45Z",
   "observedLevel": 38,
   "tabs": [
     {
@@ -44,6 +44,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Armor Proficiency"
+          },
+          {
+            "reader": "codex",
+            "name": "Armor Proficiency"
           }
         ],
         "reviewed": false
@@ -81,7 +85,7 @@
             "name": "Attack"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Attack"
           }
         ],
@@ -116,6 +120,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Axe Specialization"
+          },
+          {
+            "reader": "codex",
             "name": "Axe Specialization"
           }
         ],
@@ -153,7 +161,7 @@
             "name": "Blood Fury"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Blood Fury"
           }
         ],
@@ -190,6 +198,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Dodge"
+          },
+          {
+            "reader": "codex",
+            "name": "Dodge"
           }
         ],
         "reviewed": false
@@ -223,6 +235,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Hardiness"
+          },
+          {
+            "reader": "codex",
             "name": "Hardiness"
           }
         ],
@@ -258,6 +274,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Languages"
+          },
+          {
+            "reader": "codex",
             "name": "Languages"
           }
         ],
@@ -295,7 +315,7 @@
             "name": "Shatter Curse"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Shatter Curse"
           }
         ],
@@ -331,6 +351,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shoot"
+          },
+          {
+            "reader": "codex",
             "name": "Shoot"
           }
         ],
@@ -371,7 +395,7 @@
             "rank": 1
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Bane of Agony",
             "rank": 1
           }

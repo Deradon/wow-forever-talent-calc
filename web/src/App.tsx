@@ -1,14 +1,25 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { aboutHash, changesHash, parseHash, racesHash, spellsHash, type Route } from './url/route'
 import { ClassPicker, REPO_URL } from './ui/ClassPicker'
-import { ClassPage } from './ui/ClassPage'
 import { ShortcutsOverlay } from './ui/ShortcutsOverlay'
+import facts from './data/facts.json'
+import { checkedLine, SOURCE_LINE } from './ui/trust'
 
 /**
  * The review route is reviewer-only and drags in the registry of all 971 frame
  * crops (data/crops.ts, ~92 kB of paths). Loading it lazily keeps that out of
  * every player's first load (performance review P-2).
  */
+/**
+ * The calculator itself. Lazy like every other route, and for the same reason
+ * the review route is: its stylesheet is 20 kB of tree grid, cell, tooltip and
+ * summary-column rules that the landing page, `#/changes`, `#/races` and
+ * `#/spells` never draw, and it used to sit in the entry sheet on the critical
+ * path of all of them (performance review R-2). The class data is a separate
+ * lazy chunk already, so a class page fetches this one alongside it.
+ */
+const ClassPage = lazy(() => import('./ui/ClassPage').then((m) => ({ default: m.ClassPage })))
+
 const ReviewPage = lazy(() => import('./ui/ReviewPage').then((m) => ({ default: m.ReviewPage })))
 
 /**
@@ -66,7 +77,9 @@ export default function App() {
     return (
       <div className="app-shell embed-shell px-3 py-3" data-testid="embed-shell">
         <main id="main" tabIndex={-1}>
-          <ClassPage key={route.classId} classId={route.classId} version={route.version} buildString={route.build} sel={route.sel} embed />
+          <Suspense fallback={<div className="panel p-4 text-[var(--text-dim)]">Loading...</div>}>
+            <ClassPage key={route.classId} classId={route.classId} version={route.version} buildString={route.build} sel={route.sel} embed />
+          </Suspense>
         </main>
       </div>
     )
@@ -103,8 +116,8 @@ export default function App() {
           <a href={spellsHash()} data-testid="nav-spells">
             Spells
           </a>
-          {' - '}
-          Classic+ talent calculator, unofficial and unreviewed
+          {' · '}
+          Classic+ talent calculator, unofficial
           <ShortcutsOverlay />
         </span>
       </nav>
@@ -115,8 +128,8 @@ export default function App() {
       </main>
       <footer className="app-footer mt-8 text-xs text-[var(--text-dim)]">
         Not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft, talent names, descriptions, icons
-        and frame crops are property of Blizzard Entertainment. Data read from BlizzCon 2026 demo footage, unreviewed.
-        Code MIT,{' '}
+        and screenshots are property of Blizzard Entertainment. {SOURCE_LINE} {checkedLine(facts.talents, 'talents')} Code
+        MIT,{' '}
         <a href={REPO_URL} target="_blank" rel="noreferrer">
           source on GitHub
         </a>

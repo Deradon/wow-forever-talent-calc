@@ -12,7 +12,8 @@ import {
   removedTalents,
   type ClassicText,
 } from './classicDiff'
-import { changesModel, diffRuns, filterModel, type ChangeRow } from './changesModel'
+import { changesModel, diffLines, filterModel, type ChangeRow } from './changesModel'
+import { DiffLine } from './DiffLine'
 import { ClassSwitcher } from './ClassSwitcher'
 import { ClassIcon } from './ClassIcon'
 import { SITE_TITLE, useTitle } from './title'
@@ -282,20 +283,16 @@ function Row({ classId, row, text }: { classId: string; row: ChangeRow; text: Cl
 }
 
 /**
- * The Classic Era sentence with the diff drawn into it - dropped words struck,
- * added words marked - exactly as the tooltip's nested card draws it, down to
- * the class names, so a diff looks the same wherever the app shows one.
+ * The two sentences, each on its own labelled line with its own highlights -
+ * exactly as the tooltip's nested card draws them, so a diff looks the same
+ * wherever the app shows one.
  */
 function WordDiff({ text, talentId }: { text: ClassicText; talentId: string }) {
   return (
-    <p className="changes-diff classic-text" data-testid={`changes-diff-${talentId}`}>
-      {diffRuns(text).map(([op, run], i) => (
-        <span key={i} className={op === '-' ? 'diff-del' : op === '+' ? 'diff-add' : undefined}>
-          {i > 0 ? ' ' : ''}
-          {run}
-        </span>
-      ))}
-    </p>
+    <div className="changes-diff" data-testid={`changes-diff-${talentId}`}>
+      <DiffLine label="Classic Era" runs={diffLines(text).classic} side="classic" talentId={talentId} />
+      <DiffLine label="Forever" runs={diffLines(text).forever} side="forever" talentId={talentId} />
+    </div>
   )
 }
 

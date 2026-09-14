@@ -35,7 +35,6 @@ from pathlib import Path
 import cv2
 import typer
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import arrows as A  # noqa: E402
 from wowtalents import export as X  # noqa: E402
 from wowtalents.fsio import write_candidates_atomic, write_json_atomic  # noqa: E402

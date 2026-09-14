@@ -4,9 +4,9 @@
     "new": 145,
     "moved": 81,
     "rank-changed": 26,
-    "text-changed": 127,
-    "values-changed": 22,
-    "same": 68,
+    "text-changed": 124,
+    "values-changed": 23,
+    "same": 70,
     "removed": 108
   },
   "classes": {
@@ -417,8 +417,7 @@
             "maxRank": 5,
             "movedRow": true
           },
-          "row": 2,
-          "textChange": "text"
+          "row": 2
         },
         "gift-of-the-earthmother": {
           "status": "new"
@@ -862,8 +861,7 @@
             "maxRank": 5,
             "movedRow": true
           },
-          "row": 1,
-          "textChange": "text"
+          "row": 1
         },
         "improved-wing-clip": {
           "status": "rank-changed",
@@ -1082,9 +1080,9 @@
         "new": 11,
         "moved": 7,
         "rank-changed": 4,
-        "text-changed": 15,
+        "text-changed": 14,
         "values-changed": 3,
-        "same": 13,
+        "same": 14,
         "removed": 7
       },
       "talents": {
@@ -1361,17 +1359,6 @@
             "row": 6,
             "col": 1,
             "maxRank": 1
-          },
-          "textChange": "text"
-        },
-        "frost-warding": {
-          "status": "text-changed",
-          "prior": {
-            "tree": "frost",
-            "treeName": "Frost",
-            "row": 0,
-            "col": 0,
-            "maxRank": 2
           },
           "textChange": "text"
         },
@@ -2758,8 +2745,8 @@
         "new": 10,
         "moved": 9,
         "rank-changed": 5,
-        "text-changed": 15,
-        "values-changed": 1,
+        "text-changed": 14,
+        "values-changed": 2,
         "same": 13,
         "removed": 8
       },
@@ -2977,7 +2964,7 @@
           "status": "new"
         },
         "dual-wield-specialization": {
-          "status": "text-changed",
+          "status": "values-changed",
           "prior": {
             "tree": "combat",
             "treeName": "Combat",
@@ -2985,7 +2972,13 @@
             "col": 2,
             "maxRank": 5
           },
-          "textChange": "text"
+          "textChange": "values",
+          "values": [
+            [
+              "10%",
+              "5%"
+            ]
+          ]
         },
         "blade-flurry": {
           "status": "text-changed",
@@ -4436,9 +4429,9 @@
         "new": 13,
         "moved": 4,
         "rank-changed": 2,
-        "text-changed": 25,
+        "text-changed": 24,
         "values-changed": 3,
-        "same": 7,
+        "same": 8,
         "removed": 11
       },
       "talents": {
@@ -4504,17 +4497,6 @@
             "row": 2,
             "col": 1,
             "maxRank": 1
-          },
-          "textChange": "text"
-        },
-        "deep-wounds": {
-          "status": "text-changed",
-          "prior": {
-            "tree": "arms",
-            "treeName": "Arms",
-            "row": 2,
-            "col": 2,
-            "maxRank": 3
           },
           "textChange": "text"
         },

@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT))
 from wowtalents import mkv  # noqa: E402
 from wowtalents import races as RC  # noqa: E402
+from wowtalents import stagekit as SK  # noqa: E402
 
 import validate_races as VR  # noqa: E402
 
@@ -263,14 +264,14 @@ def test_trait_icon_bands_finds_discs_and_ignores_text_strokes():
     ("5:30-5:40", (330, 340)),
 ])
 def test_parse_window(spec, expected):
-    assert st12.parse_window(spec) == expected
+    assert SK.parse_window(spec) == expected
 
 
 def test_json_object_finds_the_answer_in_a_chatty_cli_reply():
     text = 'Here you go:\n```json\n{"traits": [{"name": "Stoneform"}]}\n```\nDone.'
-    assert st12._json_object(text) == {"traits": [{"name": "Stoneform"}]}
-    assert st12._json_object("no json here") is None
-    assert st12._json_object('{"other": 1}') is None
+    assert SK.json_object(text, "traits") == {"traits": [{"name": "Stoneform"}]}
+    assert SK.json_object("no json here") is None
+    assert SK.json_object('{"other": 1}', "traits") is None
 
 
 def test_classic_status_is_new_only_when_the_name_is_absent():
@@ -367,3 +368,36 @@ def test_decode_cmd_every_selects_frames_by_index():
 def test_decode_cmd_without_every_still_resamples():
     cmd = mkv.decode_cmd(Path("x.mkv"), 10.0, 2.0, fps=2)
     assert "fps=2" in cmd and "-vsync" not in cmd
+
+
+# --------------------------------------------------------------------------- build guards (K-1)
+
+def test_trait_count_reads_the_file_on_disk(tmp_path):
+    (tmp_path / "orc.json").write_text(json.dumps({"traits": [{"id": "a"}, {"id": "b"}]}))
+    assert st12._trait_count(tmp_path / "orc.json") == 2
+    assert st12._trait_count(tmp_path / "missing.json") == 0
+    (tmp_path / "broken.json").write_text("{not json")
+    assert st12._trait_count(tmp_path / "broken.json") == 0
+
+
+def test_previous_matrix_keeps_the_row_of_a_skipped_race(tmp_path):
+    (tmp_path / "matrix.json").write_text(json.dumps({"races": [
+        {"race": "orc", "faction": "horde", "classes": ["warrior"], "byVariant": {}},
+        {"race": "human", "faction": "alliance", "classes": []}]}))
+    prev = st12._previous_matrix(tmp_path)
+    assert prev["orc"] == {"faction": "horde", "classes": ["warrior"], "byVariant": {}}
+    assert prev["human"]["classes"] == []
+    assert st12._previous_matrix(tmp_path / "nowhere") == {}
+
+
+def test_referenced_crops_ignores_the_matrix_file(tmp_path):
+    (tmp_path / "matrix.json").write_text(json.dumps({"races": []}))
+    (tmp_path / "orc.json").write_text(json.dumps({
+        "traits": [{"source": {"crop": "data/review/races/orc/blood-fury.png"},
+                    "iconCrop": "data/review/races/orc/blood-fury.icon.png"}],
+        "classesSource": {"crop": "data/review/races/orc/_classbar.png"}}))
+    assert st12._referenced_crops(tmp_path) == {
+        "data/review/races/orc/blood-fury.png",
+        "data/review/races/orc/blood-fury.icon.png",
+        "data/review/races/orc/_classbar.png",
+    }

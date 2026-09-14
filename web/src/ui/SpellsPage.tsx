@@ -255,7 +255,9 @@ function SpellRow({ spell, crops }: { spell: Spell; crops: SpellCrops }) {
         <details className="spells-text" data-testid={`spell-text-${spell.id}`}>
           <summary>
             Full text
-            {tooltips.length > 1 && <span className="spells-readings"> ({tooltips.length} readings)</span>}
+            {tooltips.length > 1 && (
+              <span className="spells-readings"> ({tooltips.length === 2 ? 'two' : tooltips.length} versions seen)</span>
+            )}
           </summary>
           {tooltips.map((tooltip, i) => (
             <TooltipCard key={`${spell.id}-${i}`} tooltip={tooltip} crops={crops} />

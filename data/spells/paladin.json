@@ -4,7 +4,7 @@
   "class": "paladin",
   "className": "Paladin",
   "dataSource": "video",
-  "generatedAt": "2026-09-13T20:40:16Z",
+  "generatedAt": "2026-09-14T07:30:45Z",
   "observedLevel": 38,
   "tabs": [
     {
@@ -59,6 +59,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Armor Proficiency"
+          },
+          {
+            "reader": "codex",
+            "name": "Armor Proficiency"
           }
         ],
         "reviewed": false
@@ -93,6 +97,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Block"
+          },
+          {
+            "reader": "codex",
             "name": "Block"
           }
         ],
@@ -130,7 +138,7 @@
             "name": "Cannibalize"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Cannibalize"
           }
         ],
@@ -167,6 +175,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Dodge"
+          },
+          {
+            "reader": "codex",
+            "name": "Dodge"
           }
         ],
         "reviewed": false
@@ -201,6 +213,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Languages"
+          },
+          {
+            "reader": "codex",
             "name": "Languages"
           }
         ],
@@ -237,6 +253,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Parry"
+          },
+          {
+            "reader": "codex",
+            "name": "Parry"
           }
         ],
         "reviewed": false
@@ -270,6 +290,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Perception"
+          },
+          {
+            "reader": "codex",
             "name": "Perception"
           }
         ],
@@ -305,6 +329,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Sword Specialization"
+          },
+          {
+            "reader": "codex",
+            "name": "Sword Specialization"
           }
         ],
         "reviewed": false
@@ -338,6 +366,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "The Human Spirit"
+          },
+          {
+            "reader": "codex",
             "name": "The Human Spirit"
           }
         ],
@@ -373,6 +405,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Touch of the Grave"
+          },
+          {
+            "reader": "codex",
+            "name": "Touch of the Grave"
           }
         ],
         "reviewed": false
@@ -406,6 +442,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Underwater Breathing"
+          },
+          {
+            "reader": "codex",
             "name": "Underwater Breathing"
           }
         ],
@@ -443,7 +483,7 @@
             "name": "Will of the Forsaken"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Will of the Forsaken"
           }
         ],
@@ -478,6 +518,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Will to Survive"
+          },
+          {
+            "reader": "codex",
             "name": "Will to Survive"
           }
         ],
@@ -519,7 +563,7 @@
             "rank": 2
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Consecration",
             "rank": 2
           }
@@ -563,6 +607,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Exorcism",
                 "description": "Causes 194 to 218 Holy damage to an Undead or Demon target."
+              },
+              {
+                "reader": "codex",
+                "name": "Exorcism",
+                "description": "Causes 194 to 218 Holy damage to an Undead or Demon target."
               }
             ],
             "reviewed": false,
@@ -596,7 +645,7 @@
             "rank": 3
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Exorcism",
             "rank": 3
           }
@@ -639,7 +688,7 @@
             "rank": 3
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Flash of Light",
             "rank": 3
           }
@@ -682,7 +731,7 @@
             "rank": 6
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Holy Light",
             "rank": 6
           }
@@ -723,6 +772,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Lay on Hands",
             "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Lay on Hands",
+            "rank": 2
           }
         ],
         "reviewed": false
@@ -757,6 +811,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Purify"
+          },
+          {
+            "reader": "codex",
             "name": "Purify"
           }
         ],
@@ -794,6 +852,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Redemption",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
             "name": "Redemption",
             "rank": 3
           }
@@ -834,6 +897,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Seal of Light",
             "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Seal of Light",
+            "rank": 1
           }
         ],
         "reviewed": false
@@ -870,6 +938,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Seal of Righteousness",
+            "rank": 5
+          },
+          {
+            "reader": "codex",
             "name": "Seal of Righteousness",
             "rank": 5
           }
@@ -910,6 +983,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Seal of Wisdom",
             "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Seal of Wisdom",
+            "rank": 1
           }
         ],
         "reviewed": false
@@ -944,6 +1022,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sense Undead"
+          },
+          {
+            "reader": "codex",
             "name": "Sense Undead"
           }
         ],
@@ -983,6 +1065,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Turn Undead",
             "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Turn Undead",
+            "rank": 2
           }
         ],
         "reviewed": false
@@ -1017,6 +1104,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Concentration Aura"
+          },
+          {
+            "reader": "codex",
             "name": "Concentration Aura"
           }
         ],
@@ -1056,6 +1147,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Devotion Aura",
             "rank": 4
+          },
+          {
+            "reader": "codex",
+            "name": "Devotion Aura",
+            "rank": 4
           }
         ],
         "reviewed": false
@@ -1063,7 +1159,7 @@
     },
     {
       "id": "divine-intervention",
-      "name": "Divine Intervention",
+      "name": "Divine intervention",
       "kind": "active",
       "tab": "protection",
       "icon": "crop-divine-intervention",
@@ -1081,7 +1177,7 @@
         "frame": 866595,
         "crop": "data/review/spells/paladin/divine-intervention.png",
         "panel": "spell-list",
-        "confidence": 1.0,
+        "confidence": 0.9,
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
         "readings": [
           {
@@ -1091,9 +1187,14 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Divine Intervention"
+          },
+          {
+            "reader": "codex",
+            "name": "Divine Intervention"
           }
         ],
-        "reviewed": false
+        "reviewed": false,
+        "note": "the shape-aware reader merge corrected 1 case"
       }
     },
     {
@@ -1127,6 +1228,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Divine Protection",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
             "name": "Divine Protection",
             "rank": 2
           }
@@ -1167,6 +1273,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Divine Shield",
             "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Divine Shield",
+            "rank": 1
           }
         ],
         "reviewed": false
@@ -1203,6 +1314,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Fire Resistance Aura",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Fire Resistance Aura",
             "rank": 1
           }
@@ -1243,6 +1359,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Frost Resistance Aura",
             "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Frost Resistance Aura",
+            "rank": 1
           }
         ],
         "reviewed": false
@@ -1279,6 +1400,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Hammer of Justice",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
             "name": "Hammer of Justice",
             "rank": 2
           }
@@ -1318,6 +1444,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Righteous Fury",
                 "description": "Increases the threat generated by your Holy attacks by 90%. Lasts 30 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Righteous Fury",
+                "description": "Increases the threat generated by your Holy attacks by 90%. Lasts 30 min."
               }
             ],
             "reviewed": false,
@@ -1346,6 +1477,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Righteous Fury"
+          },
+          {
+            "reader": "codex",
             "name": "Righteous Fury"
           }
         ],
@@ -1385,6 +1520,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Seal of Fury",
             "rank": 4
+          },
+          {
+            "reader": "codex",
+            "name": "Seal of Fury",
+            "rank": 4
           }
         ],
         "reviewed": false
@@ -1411,7 +1551,7 @@
             "frame": 865005,
             "crop": "data/review/spells/paladin/seal-of-justice.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -1423,10 +1563,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Seal of Justice",
                 "description": "Fills the Paladin with the spirit of justice for 30 sec, giving each melee attack a chance to stun for 2 sec. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 10 sec, preventing them from fleeing. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time."
+              },
+              {
+                "reader": "codex",
+                "name": "Seal of Justice",
+                "description": "Fills the Paladin with the spirit of justice for 30 sec, giving each melee attack a chance to stun for 2 sec. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 10 sec, preventing them from fleeing. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on footer 'bars' vs 'bars.' - the reading shown is the first reader's"
           }
         }
       ],
@@ -1451,6 +1596,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Seal of Justice"
+          },
+          {
+            "reader": "codex",
             "name": "Seal of Justice"
           }
         ],
@@ -1488,6 +1637,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shadow Resistance Aura",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Shadow Resistance Aura",
             "rank": 1
           }
@@ -1530,7 +1684,7 @@
             "rank": 1
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Holy Strike",
             "rank": 1
           }
@@ -1567,6 +1721,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Judgement"
+          },
+          {
+            "reader": "codex",
             "name": "Judgement"
           }
         ],
@@ -1606,6 +1764,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Retribution Aura",
             "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Retribution Aura",
+            "rank": 3
           }
         ],
         "reviewed": false
@@ -1625,7 +1788,7 @@
           "rank": 3,
           "cost": "65 Mana",
           "castTime": "Instant",
-          "description": "Fills the Paladin with the spirit of a crusader for 30 sec, granting 107 melee attack power. The Paladin also attacks 40% faster, but deals less damage with each attack. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 40 sec. Increasing Holy damage taken by up to 58. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time.",
+          "description": "Fills the Paladin with the spirit of a crusader for 30 sec, granting 107 melee attack power. The Paladin also attacks 40% faster, but deals less damage with each attack. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 40 sec, increasing Holy damage taken by up to 58. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time.",
           "footer": "You haven't added this to your action bars",
           "source": {
             "kind": "video",
@@ -1634,7 +1797,7 @@
             "frame": 864600,
             "crop": "data/review/spells/paladin/seal-of-the-crusader.r3.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.9,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -1646,10 +1809,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Seal of the Crusader",
                 "description": "Fills the Paladin with the spirit of a crusader for 30 sec, granting 107 melee attack power. The Paladin also attacks 40% faster, but deals less damage with each attack. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 40 sec. Increasing Holy damage taken by up to 58. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time."
+              },
+              {
+                "reader": "codex",
+                "name": "Seal of the Crusader",
+                "description": "Fills the Paladin with the spirit of a crusader for 30 sec, granting 107 melee attack power. The Paladin also attacks 40% faster, but deals less damage with each attack. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 40 sec, increasing Holy damage taken by up to 58. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+            "note": "hover tooltip; rank taken from the list row the box was anchored to; the shape-aware reader merge corrected 1 case, 1 punct"
           }
         }
       ],
@@ -1675,6 +1843,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Seal of the Crusader",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Seal of the Crusader",
             "rank": 1
           }
@@ -1710,6 +1883,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Attack"
+          },
+          {
+            "reader": "codex",
             "name": "Attack"
           }
         ],
@@ -1750,6 +1927,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Blessing of Freedom",
                 "description": "Places a Blessing on the friendly target, granting immunity to movement impairing effects for 10 sec. Players may only have one Blessing on them per Paladin at any one time."
+              },
+              {
+                "reader": "codex",
+                "name": "Blessing of Freedom",
+                "description": "Places a Blessing on the friendly target, granting immunity to movement impairing effects for 10 sec. Players may only have one Blessing on them per Paladin at any one time."
               }
             ],
             "reviewed": false,
@@ -1778,6 +1960,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blessing of Freedom"
+          },
+          {
+            "reader": "codex",
             "name": "Blessing of Freedom"
           }
         ],
@@ -1813,6 +1999,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blessing of Kings"
+          },
+          {
+            "reader": "codex",
             "name": "Blessing of Kings"
           }
         ],
@@ -1850,6 +2040,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blessing of Might",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Blessing of Might",
             "rank": 1
           }
@@ -1890,6 +2085,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Blessing of Protection",
             "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Blessing of Protection",
+            "rank": 1
           }
         ],
         "reviewed": false,
@@ -1928,6 +2128,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Blessing of Salvation",
                 "description": "Places a Blessing on the party member, reducing the amount of all threat generated by 30% for 1 hour. Players may only have one Blessing on them per Paladin at any one time."
+              },
+              {
+                "reader": "codex",
+                "name": "Blessing of Salvation",
+                "description": "Places a Blessing on the party member, reducing the amount of all threat generated by 30% for 1 hour. Players may only have one Blessing on them per Paladin at any one time."
               }
             ],
             "reviewed": false,
@@ -1956,6 +2161,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blessing of Salvation"
+          },
+          {
+            "reader": "codex",
             "name": "Blessing of Salvation"
           }
         ],
@@ -1993,6 +2202,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blessing of Wisdom",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Blessing of Wisdom",
             "rank": 1
           }

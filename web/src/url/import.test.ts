@@ -4,7 +4,7 @@ import classicIndex from '../data/classic-index.json'
 import { makeClass } from '../rules/fixture'
 import { parseClass } from '../data/schema.zod'
 import { pointsInTree, totalPoints, validate } from '../rules'
-import { importReport, mapClassicBuild, normalizeName, parseImport, splitWowheadCode } from './import'
+import { importReport, mapClassicBuild, normalizeName, parseImport, splitWowheadCode, unplacedLine } from './import'
 import warriorRaw from '../../../data/talents/warrior.json'
 
 const cls = makeClass()
@@ -137,14 +137,14 @@ describe('mapClassicBuild', () => {
     expect(out.build).toEqual({ alpha: { 'a-one': 5, 'b-two': 2 }, beta: { 'x-one': 1 } })
     expect(out.placed).toBe(8)
     expect(out.left).toBe(43)
-    expect(out.unplaced).toEqual([{ name: 'Sword Specialization', points: 3, reason: 'not-in-forever' }])
+    expect(out.unplaced).toEqual([{ name: 'Sword Specialization', requested: 3, kept: 0, reason: 'not-in-forever' }])
   })
 
   it('clamps a rank Forever shortened and says so', () => {
     const short: ClassicClass = { className: 'Test Class', trees: [{ id: 'alpha', name: 'Alpha', talents: [['C One', 4]] }] }
     const out = mapClassicBuild(cls, short, ['4'])
     // c-one is maxRank 1 in Forever and needs b-one 3, so the rules drop it too.
-    expect(out.unplaced.map((u) => u.reason)).toContain('clamped')
+    expect(out.unplaced.map((u) => u.reason)).toContain('rules')
     expect(validate(cls, out.build)).toEqual([])
   })
 
@@ -152,7 +152,7 @@ describe('mapClassicBuild', () => {
     // B Two sits in row 1, which needs 5 points above it; nothing else is spent.
     const out = mapClassicBuild(cls, classic, ['0005'])
     expect(out.placed).toBe(0)
-    expect(out.unplaced).toEqual([{ name: 'b-two', points: 5, reason: 'rules' }])
+    expect(out.unplaced).toEqual([{ name: 'b-two', requested: 5, kept: 0, maxRank: 5, reason: 'rules' }])
     expect(validate(cls, out.build)).toEqual([])
   })
 
@@ -177,22 +177,48 @@ describe('importReport', () => {
         placed: 37,
         left: 4,
         unplaced: [
-          { name: 'Sword Specialization', points: 3, reason: 'not-in-forever' },
-          { name: 'Improved Battle Shout', points: 1, reason: 'not-in-forever' },
+          { name: 'Sword Specialization', requested: 3, kept: 0, reason: 'not-in-forever' },
+          { name: 'Improved Battle Shout', requested: 1, kept: 0, reason: 'not-in-forever' },
         ],
       }),
-    ).toBe(
-      '37 of 41 points placed. Dropped: Sword Specialization (not in Forever), Improved Battle Shout (not in Forever). 4 points left to spend.',
-    )
+    ).toBe('37 of 41 points placed. 2 talents did not fit. 4 points left to spend.')
   })
 
   it('says nothing about drops when there were none', () => {
     expect(importReport({ build: {}, requested: 51, placed: 51, left: 0, unplaced: [] })).toBe('51 of 51 points placed.')
   })
 
-  it('truncates a long drop list', () => {
-    const unplaced = Array.from({ length: 9 }, (_, i) => ({ name: `T${i}`, points: 1, reason: 'not-in-forever' as const }))
-    expect(importReport({ build: {}, requested: 9, placed: 0, left: 51, unplaced })).toContain('and 3 more')
+  it('never truncates and never names a talent: the list below it does both', () => {
+    const unplaced = Array.from({ length: 9 }, (_, i) => ({
+      name: `T${i}`,
+      requested: 1,
+      kept: 0,
+      reason: 'not-in-forever' as const,
+    }))
+    const report = importReport({ build: {}, requested: 9, placed: 0, left: 51, unplaced })
+    expect(report).toBe('0 of 9 points placed. 9 talents did not fit. 51 points left to spend.')
+    expect(report).not.toContain('more')
+    expect(report).not.toContain('T0')
+  })
+})
+
+describe('unplacedLine (UX review round two, finding 3)', () => {
+  it('says what happened, with the real numbers, never just "fewer ranks"', () => {
+    expect(unplacedLine({ name: 'Improved Charge', requested: 3, kept: 2, maxRank: 2, reason: 'fewer-ranks' })).toBe(
+      'Improved Charge: placed 2 of 3 points, Forever has 2 ranks.',
+    )
+    expect(unplacedLine({ name: 'Tactical Mastery', requested: 3, kept: 0, reason: 'not-in-forever' })).toBe(
+      'Tactical Mastery: 3 points lost, not in Forever.',
+    )
+    expect(unplacedLine({ name: 'Anger Management', requested: 1, kept: 0, maxRank: 1, reason: 'rules' })).toBe(
+      'Anger Management: placed 0 of 1 point, the rest does not fit the tree.',
+    )
+  })
+
+  it('never reads as "this talent is gone" for a talent that is still there', () => {
+    const line = unplacedLine({ name: 'Improved Sunder Armor', requested: 3, kept: 1, maxRank: 1, reason: 'fewer-ranks' })
+    expect(line).not.toContain('not in Forever')
+    expect(line).toContain('Forever has 1 rank.')
   })
 })
 
@@ -228,12 +254,15 @@ describe('a real Classic warrior build against the real Forever warrior', () => 
     const out = mapClassicBuild(warrior, classicWarrior, segments)
     expect(out.requested).toBe(51)
     expect(validate(warrior, out.build)).toEqual([])
-    expect(out.placed + out.unplaced.reduce((a, u) => a + u.points, 0)).toBe(51)
+    expect(out.placed + out.unplaced.reduce((a, u) => a + (u.requested - u.kept), 0)).toBe(51)
     // Forever reworked Arms and Fury heavily, so much of a Classic Fury build
     // has nowhere to go; the point of the flow is that the report says so.
     expect(out.placed).toBe(16)
     expect(importReport(out)).toContain('16 of 51 points placed.')
-    expect(importReport(out)).toContain('Tactical Mastery (not in Forever)')
+    const lines = out.unplaced.map(unplacedLine)
+    expect(lines.find((l) => l.startsWith('Tactical Mastery'))).toMatch(/not in Forever\.$/)
+    // One line per talent, never one per point (UX review round two, finding 3).
+    expect(new Set(out.unplaced.map((u) => u.name)).size).toBe(out.unplaced.length)
     expect(importReport(out)).toContain('35 points left to spend.')
   })
 
@@ -245,7 +274,22 @@ describe('a real Classic warrior build against the real Forever warrior', () => 
     expect(out.requested).toBe(51)
     expect(out.placed).toBe(27)
     expect(validate(warrior, out.build)).toEqual([])
-    expect(out.placed + out.unplaced.reduce((a, u) => a + u.points, 0)).toBe(51)
+    expect(out.placed + out.unplaced.reduce((a, u) => a + (u.requested - u.kept), 0)).toBe(51)
+  })
+
+  it('lists each talent once, however many ways it lost points', () => {
+    // The 46-point Arms link from the review, which listed Improved Charge,
+    // Deep Wounds, Impale, Piercing Howl, Improved Slam and Improved Execute
+    // twice each with different numbers beside them.
+    for (const code of ['30305001302-05050005525010051', '03-05050005405010051-502301105', '0503--550340510553151']) {
+      const parsed = parseImport(`https://www.wowhead.com/classic/talent-calc/warrior/${code}`)
+      const split = splitWowheadCode((parsed as { code: string }).code, classicWarrior.trees.map((t) => t.talents.length))
+      const out = mapClassicBuild(warrior, classicWarrior, (split as { segments: string[] }).segments)
+      const names = out.unplaced.map((u) => u.name)
+      expect(new Set(names).size, `duplicate rows for ${code}: ${names.join(', ')}`).toBe(names.length)
+      // Every line accounts for its own points, and the sum is the whole loss.
+      expect(out.unplaced.reduce((a, u) => a + (u.requested - u.kept), 0)).toBe(out.requested - out.placed)
+    }
   })
 
   it('maps a deep Classic build without ever producing an invalid one', () => {

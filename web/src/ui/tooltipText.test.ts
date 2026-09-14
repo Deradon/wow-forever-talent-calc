@@ -220,12 +220,14 @@ describe('details', () => {
 
   it('gives the timestamp, and the confidence only when it is not perfect', () => {
     expect(readingLine(video(1))).toBe('Read from the stream at 5:49:11.')
-    expect(readingLine(video(0.7))).toBe('Read from the stream at 5:49:11, 70% confidence.')
+    // No percentage: a reader score is not something a player can act on.
+    expect(readingLine(video(0.7))).toBe('Read from the stream at 5:49:11.')
+    expect(readingLine(video(1))).toBe('Read from the stream at 5:49:11.')
   })
 
   it('rewords the useful note clauses and drops the pipeline ones', () => {
     expect(noteLines('second reader (codex) differs in name, rank_max, description')).toEqual([
-      'A second reading of this tooltip differs in the name, max rank and description.',
+      'A second transcription of this tooltip differs in the name, max rank and description.',
     ])
     expect(noteLines('arrow confidence 0.70; prerequisite from tree arrow (stage 7): Savage Fury at rank 2')).toEqual([
       'The prerequisite comes from the arrows drawn in the tree, not from the tooltip text.',
@@ -246,8 +248,8 @@ describe('details', () => {
     expect(lines).toHaveLength(4)
     expect(lines[0]).toContain('Rank 1 was read from the stream.')
     expect(lines[1]).toContain('may read 15 in game')
-    expect(lines[2]).toContain('70% confidence')
-    expect(lines[3]).toContain('A second reading')
+    expect(lines[2]).toBe('Read from the stream at 5:49:11.')
+    expect(lines[3]).toContain('A second transcription')
   })
 })
 
@@ -313,8 +315,10 @@ describe('nested tooltips', () => {
     }
     const views = readerViews(source, { name: 'Steady Hands', text: 'Increases your chance by 1%.' })
     expect(views).toHaveLength(2)
-    expect(views[0]).toMatchObject({ label: 'The reading in use', name: 'Steady Hands', percent: 71 })
-    expect(views[1]).toMatchObject({ label: 'A second reading', name: 'Steady Hand', percent: 62 })
+    expect(views[0]).toMatchObject({ label: 'The version shown', name: 'Steady Hands' })
+    expect(views[1]).toMatchObject({ label: 'A second transcription', name: 'Steady Hand' })
+    // No score travels with a transcription any more (UX round two, finding 6).
+    expect(views.every((v) => !('percent' in v))).toBe(true)
     expect(JSON.stringify(views)).not.toMatch(/qwen|rapidocr/i)
   })
 
@@ -362,7 +366,7 @@ describe('helpers', () => {
     for (const good of [
       'Ranks 2-5 estimated.',
       'Requires Bear Form, Dire Bear Form.',
-      'Read from the stream at 4:09:33, 70% confidence.',
+      'Read from the stream at 4:09:33.',
       'Rank 2 may read 45 in game; the value shown is the unrounded 46.',
     ]) {
       expect(internalId(good), good).toBe(false)

@@ -67,7 +67,7 @@ const HEADINGS: { id: SectionId; title: string; blurb: string }[] = [
   {
     id: 'text-changed',
     title: 'Reworked',
-    blurb: 'The wording changed beyond its numbers. Classic wording below, dropped words struck, added words marked.',
+    blurb: 'The wording changed beyond its numbers. Both sentences are below: dropped words struck on the Classic line, added words marked on the Forever one.',
   },
   { id: 'values-changed', title: 'Values changed', blurb: 'The same sentence with different numbers.' },
   { id: 'gone', title: 'Gone from Classic', blurb: 'Classic Era talents with no counterpart in Forever.' },
@@ -184,9 +184,39 @@ export function filterModel(model: ChangesModel, query: string): ChangesModel {
   return { ...model, sections, total: sections.reduce((n, s) => n + s.rows.length, 0) }
 }
 
-/** The word diff as the page renders it, with a plain-text fallback. */
+/** The word diff as one interleaved run, with a plain-text fallback. */
 export function diffRuns(text: ClassicText | undefined): [string, string][] {
   if (!text) return []
   if (text.diff.length > 0) return text.diff.map(([op, run]) => [op, run] as [string, string])
   return text.text ? [['=', text.text]] : []
+}
+
+export interface DiffLines {
+  /** The Classic Era sentence: kept words plus the ones Forever dropped. */
+  classic: [string, string][]
+  /** The Forever sentence: kept words plus the ones Forever added. */
+  forever: [string, string][]
+}
+
+/**
+ * The same ops, split into the two sentences they were made from.
+ *
+ * One interleaved run is unreadable at the length these descriptions run to -
+ * Defiance came out as "Increases ~~the~~ all threat generated ~~by your
+ * attacks by 3%~~ ~~while~~ in Defensive ~~Stance.~~ stance by an additional 5%
+ * while a shield is equipped", and `#/changes/warrior` has 25 of them (UX
+ * review round two, finding 7). Neither sentence can be read without mentally
+ * filtering every other word, so each is given its own line and the diff
+ * becomes emphasis inside it rather than the structure of it.
+ *
+ * Nothing is recomputed: `compactDiff` already keeps the ops, and a `-` run
+ * belongs to the Classic line, a `+` run to the Forever line, a `=` run to
+ * both. A talent with no diff (no Classic counterpart) yields one Forever line.
+ */
+export function diffLines(text: ClassicText | undefined): DiffLines {
+  const runs = diffRuns(text)
+  return {
+    classic: runs.filter(([op]) => op !== '+'),
+    forever: runs.filter(([op]) => op !== '-'),
+  }
 }

@@ -4,7 +4,7 @@
   "class": "rogue",
   "className": "Rogue",
   "dataSource": "video",
-  "generatedAt": "2026-09-13T20:40:16Z",
+  "generatedAt": "2026-09-14T07:30:45Z",
   "observedLevel": 38,
   "tabs": [
     {
@@ -44,6 +44,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Armor Proficiency"
+          },
+          {
+            "reader": "codex",
+            "name": "Armor Proficiency"
           }
         ],
         "reviewed": false
@@ -81,7 +85,7 @@
             "name": "Attack"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Attack"
           }
         ],
@@ -118,6 +122,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Dodge"
+          },
+          {
+            "reader": "codex",
+            "name": "Dodge"
           }
         ],
         "reviewed": false
@@ -152,6 +160,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dual Wield"
+          },
+          {
+            "reader": "codex",
             "name": "Dual Wield"
           }
         ],
@@ -189,7 +201,7 @@
             "name": "Elune's Light"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Elune's Light"
           }
         ],
@@ -226,6 +238,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Languages"
+          },
+          {
+            "reader": "codex",
+            "name": "Languages"
           }
         ],
         "reviewed": false
@@ -260,6 +276,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Parry"
+          },
+          {
+            "reader": "codex",
             "name": "Parry"
           }
         ],
@@ -298,7 +318,7 @@
             "name": "Pick Lock"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Pick Lock"
           }
         ],
@@ -334,6 +354,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Quickness"
+          },
+          {
+            "reader": "codex",
+            "name": "Quickness"
           }
         ],
         "reviewed": false
@@ -342,7 +366,7 @@
     {
       "id": "shadowmeld",
       "name": "Shadowmeld",
-      "kind": "active",
+      "kind": "racial",
       "tab": "general",
       "icon": "crop-shadowmeld",
       "iconSource": "crop",
@@ -351,8 +375,8 @@
         {
           "castTime": "Instant",
           "cooldown": "10 sec cooldown",
-          "description": "Activate to slip into the shadows. reducing the chance for enemies to detect your presence. Lasts until cancelled or upon moving. Night Elf Rogues and Druids with Shadowmeld gain increased Stealth as if they were 1 level higher. If activated in combat, enemies are discouraged from attacking you while active, but cooldown is increased to 2 min",
-          "footer": "You haven't added this to your action bars",
+          "description": "Activate to slip into the shadows, reducing the chance for enemies to detect your presence. Lasts until cancelled or upon moving. Night Elf Rogues and Druids with Shadowmeld gain increased Stealth as if they were 1 level higher. If activated in combat, enemies are discouraged from attacking you while active, but cooldown is increased to 2 min",
+          "footer": "You haven't added this to your action",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -360,7 +384,7 @@
             "frame": 1347900,
             "crop": "data/review/spells/rogue/shadowmeld.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -372,10 +396,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Shadowmeld",
                 "description": "Activate to slip into the shadows. reducing the chance for enemies to detect your presence. Lasts until cancelled or upon moving. Night Elf Rogues and Druids with Shadowmeld gain increased Stealth as if they were 1 level higher. If activated in combat, enemies are discouraged from attacking you while active, but cooldown is increased to 2 min"
+              },
+              {
+                "reader": "codex",
+                "name": "Shadowmeld",
+                "description": "Activate to slip into the shadows, reducing the chance for enemies to detect your presence. Lasts until cancelled or upon moving. Night Elf Rogues and Druids with Shadowmeld gain increased Stealth as if they were 1 level higher. If activated in combat, enemies are discouraged from attacking you while active, but cooldown is increased to 2 min."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on description 'min' vs 'min.'; footer 'bars' vs '' - the reading shown is the first reader's; the shape-aware reader merge corrected 1 punct, 1 word"
           }
         }
       ],
@@ -386,8 +415,8 @@
       "source": {
         "kind": "video",
         "video": "DxtVEhjyROU",
-        "t": 22463.5,
-        "frame": 1347810,
+        "t": 22425.0,
+        "frame": 1345500,
         "crop": "data/review/spells/rogue/shadowmeld.png",
         "panel": "spell-list",
         "confidence": 1.0,
@@ -399,6 +428,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shadowmeld"
+          },
+          {
+            "reader": "codex",
             "name": "Shadowmeld"
           }
         ],
@@ -435,6 +468,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Shoot Bow"
+          },
+          {
+            "reader": "codex",
+            "name": "Shoot Bow"
           }
         ],
         "reviewed": false
@@ -461,7 +498,7 @@
         "frame": 1345500,
         "crop": "data/review/spells/rogue/shoot-crossbow.png",
         "panel": "spell-list",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
         "readings": [
           {
@@ -470,6 +507,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shoot Crossbow"
+          },
+          {
+            "reader": "codex",
             "name": "Shoot Crossbow"
           }
         ],
@@ -497,7 +538,7 @@
         "frame": 1345500,
         "crop": "data/review/spells/rogue/shoot-gun.png",
         "panel": "spell-list",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
         "readings": [
           {
@@ -506,6 +547,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shoot Gun"
+          },
+          {
+            "reader": "codex",
             "name": "Shoot Gun"
           }
         ],
@@ -533,7 +578,7 @@
         "frame": 1345500,
         "crop": "data/review/spells/rogue/throw.png",
         "panel": "spell-list",
-        "confidence": 0.7,
+        "confidence": 1.0,
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
         "readings": [
           {
@@ -542,6 +587,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Throw"
+          },
+          {
+            "reader": "codex",
             "name": "Throw"
           }
         ],
@@ -576,6 +625,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Wisp Spirit"
+          },
+          {
+            "reader": "codex",
             "name": "Wisp Spirit"
           }
         ],

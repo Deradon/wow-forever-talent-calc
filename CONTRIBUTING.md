@@ -108,3 +108,14 @@ attribution: use a handle you are happy to publish, or a role name.
 
 Commit messages are English and describe the change; a `Co-Authored-By` line
 for an AI assistant is fine, but never a session URL of any kind.
+
+That last rule is enforced by a tracked hook. Run this once after cloning:
+
+```bash
+git config core.hooksPath scripts/git-hooks
+```
+
+`scripts/git-hooks/commit-msg` then rejects any commit message carrying a
+`Claude-Session:` trailer or a `claude.ai/code/session` URL. The hook lives in
+the repository rather than in `.git/hooks`, so a fresh clone is protected as
+soon as that one command has run.

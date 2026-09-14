@@ -25,7 +25,7 @@ share a build as a link, and see what changed against Classic Era.
   different rank count, 127 reworded and 108 gone, with an inline word diff.
 - **Races** — 37 racial traits for 9 races (both Skyborne variants) and the
   race/class matrix, with the 16 combinations Classic Era never allowed.
-- **The spellbook as the stream showed it** — 327 entries and 112 full
+- **The spellbook as the stream showed it** — 323 entries and 112 full
   tooltips over eight classes, with the pages nobody opened named as such.
 - **Keyboard and touch**: arrow keys across the grid, shift-click to max,
   ctrl-click to clear, undo/redo, tap-to-open tooltips with +/− controls.
@@ -77,6 +77,9 @@ Requires `node` >= 22 and, for the data half, [`uv`](https://docs.astral.sh/uv/)
 from video, which also wants an NVIDIA GPU for the local vision model.
 
 ```bash
+# once per clone: the tracked hook that keeps AI session links out of commits
+git config core.hooksPath scripts/git-hooks
+
 # the site
 cd web
 npm install
@@ -95,6 +98,7 @@ uv run stages/08_export.py --help                          # extract / promote
 `data/talents/<class>.json` is the source of truth; the site reads nothing
 else. Stage by stage: `pipeline/README.md`. Web details: `web/README.md`. The
 data contract: `docs/DATA-SCHEMA.md`. Plan and history: `docs/PLAN.md`.
+Contributor rules, including the commit-message hook: `CONTRIBUTING.md`.
 
 ## License and affiliation
 

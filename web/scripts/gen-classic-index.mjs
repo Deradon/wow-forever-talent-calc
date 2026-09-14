@@ -7,13 +7,13 @@
  * that - the mapping into Forever is by name - so this strips the 500 kB prior
  * down to ~12 kB that can be fetched on demand.
  *
- * Run by hand from web/:  node scripts/gen-classic-index.mjs
- * src/data/classicIndex.test.ts regenerates and compares, so a stale commit
- * fails the unit suite.
+ * Run by hand from web/:  npm run gen
+ * src/data/classicIndex.test.ts generates into a temporary directory and
+ * compares, so a stale commit fails the unit suite.
  */
-import { readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import { dirname, resolve } from 'node:path'
+import { dirname, join, resolve } from 'node:path'
 
 const here = dirname(fileURLToPath(import.meta.url))
 const PRIOR = resolve(here, '../../data/prior/classic-era/talents.json')
@@ -39,17 +39,32 @@ export function buildIndex(prior) {
   return { source: 'data/prior/classic-era/talents.json', classes }
 }
 
-export function generate() {
+/**
+ * `root` defaults to `web/`. `src/data/classicIndex.test.ts` passes a temporary
+ * directory so that it compares a fresh generation against the committed file
+ * instead of against a file it has just rewritten.
+ */
+export function generate(root = resolve(here, '..')) {
   const prior = JSON.parse(readFileSync(PRIOR, 'utf8'))
   const index = buildIndex(prior)
   const text = JSON.stringify(index, null, 1) + '\n'
+  const out = join(root, 'src/data/classic-index.json')
   let before = ''
   try {
-    before = readFileSync(OUT, 'utf8')
+    before = readFileSync(out, 'utf8')
   } catch {
     /* first run */
   }
-  if (before !== text) writeFileSync(OUT, text)
+  if (before !== text) {
+    mkdirSync(dirname(out), { recursive: true })
+    const tmp = `${out}.tmp-${process.pid}`
+    try {
+      writeFileSync(tmp, text)
+      renameSync(tmp, out)
+    } finally {
+      if (existsSync(tmp)) rmSync(tmp)
+    }
+  }
   return { text, changed: before !== text }
 }
 

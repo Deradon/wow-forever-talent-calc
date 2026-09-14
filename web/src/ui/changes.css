@@ -189,13 +189,25 @@ a.changes-name:hover {
 }
 
 /* The Classic sentence with the word diff drawn into it. Same treatment as the
-   tooltip's nested card (diff.css): dropped words struck, added words marked on
+   tooltip's nested card (diff.css): two labelled lines, dropped words struck on
+   the Classic one and added words marked on the Forever one, on
    a faint plate, because colour alone is not a difference every player sees. */
 .changes-diff {
   margin: 4px 0 0;
   color: #ded5c0;
   font-size: 12px;
   line-height: 1.45;
+}
+.changes-diff .classic-line {
+  margin: 0 0 3px;
+}
+.changes-diff .classic-line-label {
+  display: inline;
+  color: #8f98b3;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-right: 6px;
 }
 .changes-diff .diff-add {
   color: #7fd18a;

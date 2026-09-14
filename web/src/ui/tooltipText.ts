@@ -31,6 +31,12 @@ export {
   highestObserved,
   internalId,
   readingLine,
+  ONE_READING_LINE,
+  RANKS_LINE,
+  SOURCE_LINE,
+  TWO_READINGS_LINE,
+  checkedLine,
+  playerNotes,
   trustKind,
   trustLine,
   withPeriod,
@@ -207,7 +213,7 @@ export function noteLines(note: string | undefined): string[] {
 
 function noteClauseLine(clause: string): string | undefined {
   const differs = /^second reader\b.*\bdiffers in (.+)$/i.exec(clause)
-  if (differs) return `A second reading of this tooltip differs in the ${fieldList(differs[1]!)}.`
+  if (differs) return `A second transcription of this tooltip differs in the ${fieldList(differs[1]!)}.`
   if (/^text may not be rank 1$/i.test(clause)) return 'The captured tooltip may not be rank 1.'
   if (/^every crop of this cell shows rank .*points already spent/i.test(clause)) {
     return 'Every capture of this cell already had points spent in it.'
@@ -311,32 +317,29 @@ export interface ReaderView {
   label: string
   name?: string
   text?: string
-  /** Whole percent, omitted when the record does not record one. */
-  percent?: number
 }
 
-const READING_LABELS = ['The reading in use', 'A second reading', 'A third reading']
+const READING_LABELS = ['The version shown', 'A second transcription', 'A third transcription']
 
 /**
- * Both (or all) readings of a tooltip, for the nested tooltip behind the
- * uncertain marker. The first entry is what the calculator shows; the rest come
- * from `source.readings`. Reader ids stay on `#/review/<class>`: a player gets
- * "a second reading", not "rapidocr-1.4".
+ * Every transcription of a tooltip, for the nested card behind the uncertain
+ * marker. The first entry is what the calculator shows; the rest come from
+ * `source.readings`.
+ *
+ * No percentage travels with them any more. A score out of the reader's
+ * internals told a player nothing they could act on, and the amber line above
+ * already says in words that the reading is shaky (UX review round two,
+ * finding 6). Reader ids stay on `#/review/<class>`.
  */
 export function readerViews(source: Source, current: { name: string; text: string }): ReaderView[] {
-  const label = (i: number) => READING_LABELS[i] ?? `Reading ${i + 1}`
-  const views: ReaderView[] = [
-    { label: label(0), name: current.name, text: current.text, percent: percent(source.confidence) },
-  ]
+  const label = (i: number) => READING_LABELS[i] ?? `Transcription ${i + 1}`
+  const views: ReaderView[] = [{ label: label(0), name: current.name, text: current.text }]
   for (const [i, r] of (source.readings ?? []).entries()) {
-    views.push({ label: label(i + 1), name: r.name, text: r.description, percent: percent(r.confidence) })
+    views.push({ label: label(i + 1), name: r.name, text: r.description })
   }
   return views.map((v) => ({ ...v, text: v.text && !internalId(v.text) ? v.text : undefined }))
 }
 
-function percent(confidence: number | undefined): number | undefined {
-  return confidence === undefined ? undefined : Math.round(confidence * 100)
-}
 
 /** A requirement line cut at the talent names it mentions, so they can be terms. */
 export interface NameSegment {

@@ -46,9 +46,15 @@ CAPITAL_I_ALLOWED = frozenset({
     "Intellect", "Imp", "Incubus", "Immolate", "Immolation", "Immolates", "Incinerate",
     "Intercept", "Insect", "Ice", "Inner", "Invisibility", "Interrupt", "Ignite", "Impact",
     "Improved", "Innervate", "Intimidation", "Initiative", "Illumination", "Iron",
+    # place names the spellbook's teleport and portal tooltips name (stage 11)
+    "Ironforge", "Isle",
 })
 
-_CAPITAL_I_RE = re.compile(r"(?<![.:;!?]\s)(?<!^)\b(I[a-z]{2,})\b")
+#: ``min_tail=2`` is the talent default (``Increases``, ``Instant``). The spellbook needs
+#: ``min_tail=1`` as well, because its commonest defect is a two-letter ``In``/``It``/``Is``
+#: ("proficient In the use", "with Its talons"), which the talent audit never saw.
+_CAPITAL_I_RES = {n: re.compile(r"(?<![.:;!?]\s)(?<!^)\b(I[a-z]{%d,})\b" % n) for n in (1, 2)}
+_CAPITAL_I_RE = _CAPITAL_I_RES[2]
 _SENTENCE_START_RE = re.compile(r"(?:^|[.:;!?]\s+|\"\s*)$")
 _WORD_RE = re.compile(r"\S+")
 _CAP_RUN_RE = re.compile(r"\b[A-Z][A-Za-z']*(?:\s+(?:of|the|and)\s+[A-Z][A-Za-z']*|\s+[A-Z][A-Za-z']*)*")
@@ -170,7 +176,8 @@ def merge_readings(primary: str, authority: str, others: Iterable[str] = ()) -> 
     return MergeResult(" ".join(w for w in out if w), hunks)
 
 
-def normalise_capital_i(text: str, allowed: Iterable[str] = CAPITAL_I_ALLOWED) -> tuple[str, list[str]]:
+def normalise_capital_i(text: str, allowed: Iterable[str] = CAPITAL_I_ALLOWED,
+                        *, min_tail: int = 2) -> tuple[str, list[str]]:
     """Lowercase a mid-sentence ``I<word>`` unless it is a game term (audit 8.1.2).
 
     Belt and braces behind the merge: it also catches records where *both* readers agreed
@@ -179,6 +186,7 @@ def normalise_capital_i(text: str, allowed: Iterable[str] = CAPITAL_I_ALLOWED) -
     """
     allowed = set(allowed)
     fixed: list[str] = []
+    pattern = _CAPITAL_I_RES[1 if min_tail <= 1 else 2]
 
     def repl(m: re.Match) -> str:
         word = m.group(1)
@@ -190,7 +198,7 @@ def normalise_capital_i(text: str, allowed: Iterable[str] = CAPITAL_I_ALLOWED) -
         fixed.append(word)
         return word[0].lower() + word[1:]
 
-    return _CAPITAL_I_RE.sub(repl, text), fixed
+    return pattern.sub(repl, text), fixed
 
 
 def spell_vocabulary(texts: Iterable[str]) -> set[str]:

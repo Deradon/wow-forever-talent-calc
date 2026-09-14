@@ -16,6 +16,7 @@ import {
   matchTrees,
   maskNumbers,
   normalizeName,
+  classifierText,
   normalizeText,
   rankSeries,
 } from '../../scripts/gen-data-index.mjs'
@@ -184,6 +185,45 @@ describe('normalizeText and maskNumbers', () => {
       masked: 'by # and # for # sec',
       values: ['15%', '2.5', '30'],
     })
+  })
+})
+
+describe('classifierText (data review D-6: the five normalisation misses)', () => {
+  it('folds an inner hyphen, a trailing plural and the filler words', () => {
+    expect(classifierText('your off-hand weapon')).toBe(classifierText('your offhand weapon'))
+    expect(classifierText('the armor and resistances given')).toBe(classifierText('the Armor and resistance given'))
+    expect(classifierText('all healing spells')).toBe(classifierText('all your healing spells'))
+    expect(classifierText('Increases total health')).toBe(classifierText('Increases your total Health'))
+    expect(classifierText('cause the opponent to bleed')).toBe(classifierText('cause your opponent to Bleed'))
+  })
+
+  it('keeps a hyphen that joins numbers and a word that only looks plural', () => {
+    // The hyphen between two numbers survives; the plural on a verb does not,
+    // which is harmless - a grammatical variant is not a change either.
+    expect(classifierText('deals 3-5 damage')).toBe('deal 3-5 damage')
+    expect(classifierText('deals 3-5 damage')).not.toBe(classifierText('deals 35 damage'))
+    expect(classifierText('miss')).toBe('miss')
+    expect(classifierText('is')).toBe('is')
+  })
+
+  it('still separates two sentences that really differ', () => {
+    expect(classifierText('Stuns the target')).not.toBe(classifierText('Slows the target'))
+    expect(classifierText('by 10%')).not.toBe(classifierText('by 5%'))
+  })
+
+  it('the whole point: a hyphen no longer hides a 10% -> 5% nerf', () => {
+    // rogue/dual-wield-specialization, reported as "Reworked" before the fix.
+    const change = compareDescriptions(
+      'Increases the damage done by your offhand weapon by 10%.',
+      'Increases the damage done by your off-hand weapon by 5%.',
+    )
+    expect(change?.kind).toBe('values')
+    expect(change?.kind === 'values' && change.values).toEqual([['10%', '5%']])
+  })
+
+  it('reports nothing at all when the only difference is an article or a plural', () => {
+    expect(compareDescriptions('Increases the armor and resistances given', 'Increases the Armor and resistance given')).toBeUndefined()
+    expect(compareDescriptions('Increases all healing spells by 2%', 'Increases all your healing spells by 2%')).toBeUndefined()
   })
 })
 
@@ -397,7 +437,7 @@ describe('diffClass', () => {
             id: 'shadow',
             name: 'Shadow',
             talents: [
-              { id: 'shadowform', name: 'Shadowform', row: 6, col: 1, maxRank: 1, ranks: ['Assume a Shadowform.'] },
+              { id: 'shadowform', name: 'Shadowform', row: 6, col: 1, maxRank: 1, ranks: ['Become a Shadowform.'] },
               { id: 'silence', name: 'Silence', row: 4, col: 0, maxRank: 1, ranks: ['Silences.'] },
               { id: 'mind-flay', name: 'Mind Flay', row: 2, col: 2, maxRank: 1, ranks: ['Flays.'] },
             ],

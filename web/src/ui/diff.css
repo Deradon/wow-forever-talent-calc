@@ -6,12 +6,10 @@
  *
  *   1. the nested card behind the tooltip's one change line - the Classic Era
  *      rank-1 sentence with the word diff drawn into it;
- *   2. the two highlight rings the "what's new" switch needs for the statuses
- *      round 2 added (`text-changed`, `values-changed`).
+ *   2. the two labelled diff lines, shared with `#/changes`.
  *
- * (2) belongs next to its siblings in cells.css and is only here because that
- * sheet was owned by another work package at the time. The selectors match the
- * ones there exactly, so moving these four lines across is a cut and paste.
+ * The highlight rings that used to live here now sit beside their siblings in
+ * cells.css, so one sheet owns the whole marker vocabulary.
  *
  * Imported from Tooltip.tsx, which every cell renders, so the rules load on the
  * class route whatever order the sheets arrive in.
@@ -41,12 +39,31 @@
   margin-bottom: 4px;
 }
 
-/* The diff is rendered inline inside one paragraph, so the sentence still reads
-   as a sentence: kept words plain, dropped words struck, added words marked. */
+/* Two lines, one per sentence, so each of them still reads as a sentence:
+   kept words plain, and only that side's changes marked. One interleaved run
+   was unreadable at these lengths (UX review round two, finding 7). */
 .tooltip .classic-text {
   color: #ffd;
   margin: 0 0 6px;
   line-height: 1.45;
+}
+
+/* Shared by the tooltip card and `#/changes`, which is why it is not scoped to
+   `.tooltip`: one diff, one appearance, wherever the app draws it. */
+.classic-line {
+  margin: 0 0 4px;
+}
+.classic-line-label {
+  display: block;
+  color: #8f98b3;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+/* The old sentence steps back: it is context for the new one, not a claim
+   about the game as it is now. */
+.classic-line-classic {
+  opacity: 0.82;
 }
 
 /* .diff-add / .diff-del come from tooltip.css, where the review route already
@@ -67,12 +84,6 @@
   margin: 0;
 }
 
-/* --- the "what's new" switch: the two statuses round 2 added -------------- */
-
-/* A reworded talent sits in the same cell with the same rank count, so it gets
-   the same blue ring as a move, at half strength: the eye should find it, but
-   after the talents that actually moved. Mirrors the rules in cells.css. */
-.cell[data-highlight='true'][data-change='text-changed'],
-.cell[data-highlight='true'][data-change='values-changed'] {
-  box-shadow: 0 0 0 2px rgba(78, 163, 255, 0.3);
-}
+/* The highlight rings for `text-changed` and `values-changed` moved to
+   cells.css, next to the other three: one sheet owns the marker vocabulary, so
+   a ring and the marker in the same cell cannot drift apart again. */

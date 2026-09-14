@@ -38,7 +38,7 @@
  *                       spellbook crops land in no chunk but the one class the
  *                       visitor opened.
  */
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { compactDiff } from './diffWords.mjs'
@@ -89,6 +89,22 @@ function needsReview(source) {
   return typeof source.confidence === 'number' && source.confidence < REVIEW_THRESHOLD
 }
 
+/**
+ * A spell record the site may state anything about. Round two found four
+ * fabricated entries in `data/spells` at `confidence: 0` with no crop and no
+ * frame, counted as "new in Forever" on `#/spells` and in the Classic diff
+ * (data review D-2). The pipeline is dropping them; until then, and for
+ * anything like them later, nothing generated here counts a record that has no
+ * evidence behind it.
+ */
+export function publishable(spell) {
+  const s = spell.source
+  if (!s) return false
+  if (s.reviewed) return true
+  if (typeof s.confidence === 'number' && s.confidence <= 0) return false
+  return Boolean(s.crop || s.frame || s.kind === 'manual' || s.kind === 'datamined')
+}
+
 export function buildClassesIndex(classes) {
   return classes.map(({ id, origin, data }) => {
     const talents = data.trees.flatMap((t) => t.talents)
@@ -107,6 +123,32 @@ export function buildClassesIndex(classes) {
         .map((t) => ({ id: t.id, name: t.name, talents: t.talents.length })),
     }
   })
+}
+
+/**
+ * The site-wide review facts, in one small file (~220 B) so that any route can
+ * state them without importing an index it does not otherwise need.
+ *
+ * Only `origin: 'talents'` classes count: the fictional tinker class and the
+ * arrow fixture are present in dev and e2e builds and must not move the number
+ * a player reads. The counts exist because round two found 57 talents saying
+ * "Checked by a reviewer" on a site whose header, landing page and footer all
+ * said "unreviewed" (UX review finding 5); a number that the build computes
+ * cannot drift the way a hand-written adjective does.
+ */
+export function buildFacts(classes, races, spells) {
+  const real = classes.filter((c) => c.origin === 'talents')
+  const talents = real.flatMap((c) => c.data.trees.flatMap((t) => t.talents))
+  const traits = races.flatMap((r) => r.data.traits ?? [])
+  const entries = spells.flatMap((s) => (s.data.spells ?? []).filter(publishable))
+  const tooltips = entries.flatMap((s) => s.tooltips ?? [])
+  const reviewed = (rs) => rs.filter((r) => r.source?.reviewed).length
+  return {
+    talents: { total: talents.length, reviewed: reviewed(talents), queued: talents.filter((t) => needsReview(t.source)).length },
+    racialTraits: { total: traits.length, reviewed: reviewed(traits) },
+    spellEntries: { total: entries.length, reviewed: reviewed(entries) },
+    spellTooltips: { total: tooltips.length, reviewed: reviewed(tooltips) },
+  }
 }
 
 /** Repo-relative crop paths for talents the calculator renders as a crop icon. */
@@ -212,6 +254,33 @@ export function normalizeText(text) {
   return s.replace(/\s+/g, ' ').trim()
 }
 
+/**
+ * Words that carry no claim about the game. Dropping them makes "all healing
+ * spells" and "all your healing spells" the same sentence.
+ */
+const FILLER = new Set(['a', 'an', 'the', 'your', 'all', 'of'])
+
+/**
+ * `normalizeText` plus the three differences that are spelling rather than
+ * change: an inner hyphen ("off-hand" == "offhand"), a trailing plural
+ * ("resistances" == "resistance") and a filler word.
+ *
+ * Used for the *classification* only, never for what a player reads: the word
+ * diff is still taken from the untouched sentences. Round two found five
+ * talents reported as "Reworked" for a hyphen, a plural or a single article,
+ * and one of those five - `rogue/dual-wield-specialization`, "offhand ... 10%"
+ * against "off-hand ... 5%" - hid a real 10 % -> 5 % nerf behind the word
+ * "Reworked" (data review D-6).
+ */
+export function classifierText(text) {
+  return normalizeText(text)
+    .replace(/(?<=[a-z])-(?=[a-z])/g, '')
+    .split(' ')
+    .filter((w) => w !== '' && !FILLER.has(w))
+    .map((w) => (/^[a-z]{4,}s$/.test(w) && !/ss$/.test(w) ? w.slice(0, -1) : w))
+    .join(' ')
+}
+
 /** A number, with its percent sign when it has one: "15", "1.5", "20%". */
 const NUMBER = /\d+(?:\.\d+)?%?/g
 
@@ -238,8 +307,8 @@ export function compareDescriptions(classicText, foreverText) {
   const classic = String(classicText ?? '')
   const forever = String(foreverText ?? '')
   if (!classic || !forever) return undefined
-  const a = normalizeText(classic)
-  const b = normalizeText(forever)
+  const a = classifierText(classic)
+  const b = classifierText(forever)
   if (a === b) return undefined
   const ma = maskNumbers(a)
   const mb = maskNumbers(b)
@@ -779,7 +848,7 @@ function readSpellPrior() {
  */
 export function tabCounts(data) {
   const byTab = new Map()
-  for (const spell of data.spells ?? []) {
+  for (const spell of (data.spells ?? []).filter(publishable)) {
     if (!spell.tab) continue
     byTab.set(spell.tab, (byTab.get(spell.tab) ?? 0) + 1)
   }
@@ -791,7 +860,10 @@ export function tabCounts(data) {
 
 /** Entries, spells with a full tooltip, tooltips read, and new names. */
 export function spellCounts(data) {
-  const spells = data.spells ?? []
+  // Records with no evidence behind them are counted nowhere: a fabricated
+  // name is otherwise *guaranteed* to be counted as "new in Forever", because
+  // "new" means "not in our Classic list" (data review D-2, UX finding 18).
+  const spells = (data.spells ?? []).filter(publishable)
   return {
     entries: spells.length,
     withText: spells.filter((s) => (s.tooltips ?? []).length > 0).length,
@@ -881,10 +953,24 @@ function readPrior() {
   return JSON.parse(readFileSync(PRIOR, 'utf8'))
 }
 
+/**
+ * Write through a temporary file in the same directory and rename over the
+ * target. `classic-diff.json` is 120 kB and `classic-text.json` 84 kB, both
+ * tracked: a truncating write interrupted halfway leaves a corrupt file in the
+ * working tree. The pipeline fixed this class of defect on the Python side in
+ * round one (`wowtalents/fsio.py`); the generator repeated it (code review
+ * K-19).
+ */
 function writeIfChanged(path, content) {
   if (existsSync(path) && readFileSync(path, 'utf8') === content) return false
   mkdirSync(dirname(path), { recursive: true })
-  writeFileSync(path, content)
+  const tmp = `${path}.tmp-${process.pid}`
+  try {
+    writeFileSync(tmp, content)
+    renameSync(tmp, path)
+  } finally {
+    if (existsSync(tmp)) rmSync(tmp)
+  }
   return true
 }
 
@@ -900,6 +986,7 @@ export function generate(root = webRoot) {
     writeIfChanged(join(root, 'src/data/races-index.json'), out.racesIndex),
     writeIfChanged(join(root, 'src/data/raceCrops.ts'), out.raceCrops),
     writeIfChanged(join(root, 'src/data/spells-index.json'), out.spellsIndex),
+    writeIfChanged(join(root, 'src/data/facts.json'), out.facts),
     ...Object.entries(out.spellCrops).map(([id, content]) =>
       writeIfChanged(join(cropDir, `spells-${id}.ts`), content),
     ),
@@ -929,6 +1016,7 @@ export function expected() {
     racesIndex: `${JSON.stringify(buildRacesIndex(races, readMatrix(), readRacePrior()), null, 2)}\n`,
     raceCrops: renderRaceCrops(collectRaceCrops(races)),
     spellsIndex: `${JSON.stringify(buildSpellsIndex(spells, classes, readSpellPrior()), null, 2)}\n`,
+    facts: `${JSON.stringify(buildFacts(classes, races, spells), null, 2)}\n`,
     spellCrops: Object.fromEntries(
       spells.map(({ id, data }) => [id, renderSpellCrops(id, collectSpellCrops(data))]),
     ),

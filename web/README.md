@@ -16,19 +16,20 @@ with Classic-style talent trees, point rules and shareable build links. Brief:
 | `npm test` | Vitest: rules engine table (points and levels), codec, routing, Zod-vs-JSON-Schema, `validate-data`, crop registry, review ordering, the Classic diff, the `#/changes` model, the race files against a Zod mirror and the `#/races` model, the spellbook files against their own Zod mirror and the `#/spells` model. |
 | `npm run e2e` | Playwright: `tests/smoke.spec.ts` (example class) and `tests/paladin.spec.ts` (real data: crop icons, titles, manual ranks, review route). Builds with `build:e2e`, then `preview`. First time: `npx playwright install chromium`. |
 | `npm run lint` | oxlint. |
+| `npm run gen` | Regenerate the committed indexes under `src/data/` from `data/`. The dev server does it for you; `npm run build` and `vitest` deliberately do not, so a stale commit is caught rather than papered over. |
 
-CI (`.github/workflows/deploy.yml`, job `check`) runs `npm ci`, `npx vitest
-run`, `npx playwright install --with-deps chromium` and `npm run e2e`
-alongside the pipeline tests and the data validator; the deploy job waits on
-it. The Playwright step is `continue-on-error` until the suite has proven
-stable on CI runners.
+CI (`.github/workflows/deploy.yml`, job `check`) runs `npm ci`, `npm run gen &&
+git diff --exit-code -- src/data`, `npm run typecheck`, `npx vitest run`,
+`npx playwright install --with-deps chromium` and `npm run e2e` alongside the
+pipeline tests and the data validators; the deploy job waits on it. Nothing in
+`check` is `continue-on-error`.
 
 ## Layout
 
 - `src/data/` - `schema.ts` (Zod mirror of the JSON Schema; unknown keys pass through), `load.ts` (class files via `import.meta.glob`; `data/talents/` always, `data/examples/` and `tests/fixtures/` when `VITE_INCLUDE_EXAMPLES=1`), `encoding.ts` (encoding versions and migrations). Races are the same arrangement one folder over: `schema.races.ts` and `races.zod.ts` mirror `docs/DATA-SCHEMA-RACES.md`, `races.ts` loads `data/races/<race>.json` lazily, `raceCrop.ts` resolves the racial icon and row crops. Spellbooks are the same arrangement again: `schema.spells.ts` and `spells.zod.ts` mirror `data/schema/spell.schema.json`, `spells.ts` loads `data/spells/<class>.json` lazily, and `spellCrop.ts` reaches the generated per-class crop modules in `spellCrops/` - one lazy chunk each, because the spellbook crops are 14 MB and no other route may carry them.
 - `src/rules/` - pure rules engine (`points`, `level`, `validate`, `mutate`); no DOM.
 - `src/url/` - `codec.ts` (Wowhead-style tree strings) and `route.ts` (hash routing).
-- `src/ui/` - React components and `talents.css` (the skin), plus `print.css` (the print view), `changes.css` (the `#/changes` page), `races.css` (the `#/races` pages) and `spells.css` (the `#/spells` pages). `changesModel.ts` is the pure model behind `#/changes`, `racesModel.ts` the one behind `#/races`, `spellsModel.ts` the one behind `#/spells`, `classicDiff.ts` the read side of the generated Classic diff, `trust.ts` the trust line and the internal-id guard every one of them shares.
+- `src/ui/` - React components and the stylesheets, split so each route's rules travel in that route's chunk: `shell.css` (the chrome every page draws, imported by `index.css`), `calculator.css` and `print.css` (the class route, imported by `ClassPage`, which is lazy), `cells.css`/`tooltip.css`/`diff.css`/`tiers.css` (imported by the components that draw them), `changes.css` (`#/changes`), `races.css` (`#/races`), `spells.css` (`#/spells`) and `review.css` (`#/review/<class>`). `changesModel.ts` is the pure model behind `#/changes`, `racesModel.ts` the one behind `#/races`, `spellsModel.ts` the one behind `#/spells`, `classicDiff.ts` the read side of the generated Classic diff, `trust.ts` the trust line and the internal-id guard every one of them shares.
 - `tests/` - Playwright smoke test and JSON fixtures.
 
 ## Routes
@@ -75,10 +76,12 @@ above 960 px.
 
 ## Printing
 
-`@media print` in `src/ui/print.css` is the whole print view - there is no
+`@media print` in `src/ui/print.css` (imported by `ClassPage`) is the whole print view - there is no
 `?view=print` route. It drops every control, the navigation and the tooltips,
-puts the trees on white at 34 px cells, sets the summary list in three columns
-and prints the build URL under the title. The **Print** button in the summary
+puts the trees on white at 34 px cells (backgrounds, arrows and the whole
+colour palette re-pointed to ink by overriding the tokens on `:root:root`),
+drops the change markers, sets the summary list in two columns and prints the
+build URL under the title at body size. The **Print** button in the summary
 column calls `window.print()`; Ctrl+P from anywhere does the same.
 
 ## Icons and crops

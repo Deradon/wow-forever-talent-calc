@@ -21,6 +21,7 @@ import { iconCropUrl } from '../data/iconCrop'
 import { cellState } from './cellState'
 import './cells.css'
 import { changeOf } from './classicDiff'
+import { changeMarker, type ChangeMarker } from './highlightNew'
 import { needsReview } from './review'
 import {
   APPROACH_TICKS,
@@ -267,7 +268,7 @@ export function TalentCell({
   const outOfPoints = !addVerdict.ok && addVerdict.reason === 'no-points'
   const flagged = needsReview(talent)
   const change = changeOf(cls.class, talent.id)
-  const isNew = change?.status === 'new'
+  const marker = changeMarker(change?.status)
   // Unmatched icons render their frame crop; matched ones the fetched icon file.
   const iconUrl =
     talent.iconSource === 'crop' ? iconCropUrl(talent.iconCrop) : `${import.meta.env.BASE_URL}icons/${talent.icon}.jpg`
@@ -313,7 +314,7 @@ export function TalentCell({
         data-highlight={highlight ? 'true' : undefined}
         data-selected={selected ? 'true' : undefined}
         tabIndex={tabIndex}
-        aria-label={cellLabel(talent, rank, state, addVerdict, flagged, isNew)}
+        aria-label={cellLabel(talent, rank, state, addVerdict, flagged, marker)}
         aria-describedby={open ? tooltipId : undefined}
         aria-disabled={state === 'locked' || outOfPoints ? true : undefined}
         onFocus={onGridFocus}
@@ -357,10 +358,17 @@ export function TalentCell({
           </span>
         )}
         {/* Three markers, three slots that cannot collide: `?` top-left, the
-            new-in-Forever star top-right, the rank badge bottom-right. */}
-        {isNew && (
+            Classic-status marker top-right, the rank badge bottom-right. A
+            talent has one status, so the star and the amber mark share the one
+            slot and can never both be drawn. */}
+        {marker === 'new' && (
           <span className="new-flag" data-testid={`new-flag-${talent.id}`} aria-hidden="true">
             &#9733;
+          </span>
+        )}
+        {marker === 'reworked' && (
+          <span className="changed-flag" data-testid={`reworked-flag-${talent.id}`} aria-hidden="true">
+            &#9670;
           </span>
         )}
         {/* Remounting on every refusal replays the flash; honours prefers-reduced-motion. */}
@@ -447,7 +455,7 @@ function cellLabel(
   state: string,
   addVerdict: Verdict,
   flagged: boolean,
-  isNew: boolean,
+  marker: ChangeMarker | undefined,
 ): string {
   const parts = [`${talent.name}, rank ${rank} of ${talent.maxRank}`]
   if (state === 'maxed') parts.push('maxed')
@@ -457,7 +465,8 @@ function cellLabel(
     } else if (addVerdict.reason === 'no-points') parts.push('no talent points left')
     else if (addVerdict.reason === 'page-full') parts.push(`page full: ${addVerdict.detail ?? 'budget reached'}`)
   }
-  if (isNew) parts.push('new in Forever')
+  if (marker === 'new') parts.push('new in Forever')
+  else if (marker === 'reworked') parts.push('reworked in Forever')
   if (flagged) parts.push('uncertain reading, check it')
   return parts.join(', ')
 }

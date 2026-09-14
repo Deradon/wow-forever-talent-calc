@@ -54,16 +54,8 @@
   align-items: center;
   gap: 5px;
 }
-.new-toggle .new-toggle-star {
-  font-size: 13px;
-  line-height: 1;
-  color: #6bb6ff;
-}
 .new-toggle[aria-pressed='true'] {
   border-color: #4ea3ff;
   background: linear-gradient(180deg, #1d3a5c 0%, #0f2138 100%);
-  color: #cfe6ff;
-}
-.new-toggle[aria-pressed='true'] .new-toggle-star {
   color: #cfe6ff;
 }

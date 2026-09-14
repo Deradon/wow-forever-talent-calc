@@ -437,6 +437,49 @@ name, diffs the names against `data/prior/classic-era/spells-baseline.json`
 (racials go to `data/races/` instead, hunter pet rows to the prior's `_pet`
 bucket), and writes the class files, the review crops and the inventory.
 
+### `opinions`: the second reader (added 2026-09-14, review round two D-1)
+
+`read` scores a row or a tooltip by comparing two passes of the *same* VLM over
+the same pixels. Two passes agree on their own mistakes, so ten of twelve
+sampled `confidence: 1.0` tooltips were wrong. `opinions` fetches an
+independent reading of every list column and every tooltip crop from the codex
+CLI and stores it in `readings.json` with `reader: "codex"`; `build` then runs
+the shape-aware merge of `src/wowtalents/spells.py` over both readings:
+
+* **case, punctuation and `%`** go to the codex reading — the 2026-09-13 audit
+  found it right ~100 % of the time on all three shapes;
+* a **word** the two readers spell differently is *never* merged away. It keeps
+  the first reader's text, drops the record to 0.7 and names both variants in
+  `source.note`, so it lands in `validate_spells.py --report`;
+* `source.confidence` is therefore about *who* agreed: 1.0 needs an independent
+  reading that agreed verbatim, 0.9 means the authority corrected a shape or
+  that no independent reading exists, 0.7 means the readers still differ.
+
+```bash
+uv run stages/11_spellbook.py opinions --dry-run   # what is missing a second reading
+uv run stages/11_spellbook.py opinions --jobs 6    # needs the codex CLI, not llama-server
+```
+
+Answers are cached per crop under `work/spells/codex/`, so a re-run is free.
+
+### What `build` refuses to do
+
+Both `build` commands **delete committed PNGs** under `data/review/` that no
+published file references any more, and both write over tracked JSON. Since
+round two they refuse the two ways that could destroy data:
+
+* a class (stage 11) or race (stage 12) that produced no records, or fewer
+  records than the file already on disk, is **skipped** with a message on
+  stderr; its file and its crops are left alone. A run in which *no* unit
+  produced a record exits non-zero instead of writing anything.
+* `--dry-run` on either `build` reports the outcome and writes nothing, deletes
+  nothing. Use it before any run with `--only` or `--limit`, which are exactly
+  the flags that used to empty a file.
+
+Exit codes: `0` success, `1` nothing publishable, `2` a prerequisite artefact is
+missing (`run scan/read first`). Warnings go to stdout, anything fatal to
+stderr.
+
 <!-- stage 12 (races); independent of stages 3-9, shares only reader.py and the serializer -->
 ## Stage 12: racial traits and the race/class matrix
 
@@ -490,3 +533,30 @@ scrolled to the top and some frame showed the lore below the last row.
 Tests: `tests/test_races.py` (trait text, fragments, order stitching, band
 alignment, agreement, synthetic-frame geometry, the shipped files against the
 validator, and `decode_cmd`'s two frame-picking modes).
+
+<!-- datamined import; independent of stages 0-9 -->
+## Stage 10: datamined import (wago.tools DB2)
+
+Shared code: `src/wowtalents/db2.py`. Turns the wago.tools CSV exports into
+class files in the canonical schema (`DATA-SCHEMA.md` section 9). Proven on
+Classic Era `1.15.9.69722`; on beta day only `--build` changes. Runbook and
+formatter coverage: `../docs/handover/2026-09-14-datamined-importer.md`.
+
+```bash
+uv run stages/10_import_db2.py builds                    # wago.tools products and builds
+uv run stages/10_import_db2.py fetch --build 1.15.9.69722   # -> work/db2/<build>/ + manifest.json
+uv run stages/10_import_db2.py check --build 1.15.9.69722   # re-hash the cache
+uv run stages/10_import_db2.py build --build 1.15.9.69722   # -> ../data/datamined/<build>/
+uv run stages/10_import_db2.py compare-prior --build 1.15.9.69722   # vs the Classic prior
+uv run stages/10_import_db2.py diff  --build 1.15.9.69722   # vs ../data/talents/
+uv run stages/10_import_db2.py promote --from datamined/1.15.9.69722          # plan only
+uv run stages/10_import_db2.py promote --from datamined/1.15.9.69722 --apply  # writes data/talents
+
+uv run python validate.py --check --no-files --no-encoding ../data/datamined/1.15.9.69722/*.json
+```
+
+Downloads are sequential, ~1.5 s apart, cached, and stop on the first error;
+`--force` re-downloads. `data/datamined/<build>/` is staging, so no encoding
+version covers it and rule 11 is skipped with `--no-encoding` — never pass that
+flag for `data/talents/`. `promote` writes nothing without `--apply` and prints
+one `DROPPED-REVIEW` line per reviewed record the datamined text contradicts.

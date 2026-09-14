@@ -4,7 +4,7 @@
   "class": "shaman",
   "className": "Shaman",
   "dataSource": "video",
-  "generatedAt": "2026-09-13T20:40:16Z",
+  "generatedAt": "2026-09-14T07:30:45Z",
   "observedLevel": 38,
   "tabs": [
     {
@@ -61,7 +61,7 @@
             "name": "Call of the Ancestors"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Call of the Ancestors"
           }
         ],
@@ -100,7 +100,7 @@
             "name": "Call of the Elements"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Call of the Elements"
           }
         ],
@@ -142,7 +142,7 @@
             "rank": 1
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Chain Lightning",
             "rank": 1
           }
@@ -185,7 +185,7 @@
             "rank": 5
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Earth Shock",
             "rank": 5
           }
@@ -225,7 +225,7 @@
             "name": "Earthbind Totem"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Earthbind Totem"
           }
         ],
@@ -263,6 +263,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Fire Nova",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
             "name": "Fire Nova",
             "rank": 3
           }
@@ -305,6 +310,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Flame Shock",
                 "description": "Instantly sears the target with fire, causing 66 Fire damage immediately and 89 Fire damage over 12 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Flame Shock",
+                "description": "Instantly sears the target with fire, causing 66 Fire damage immediately and 89 Fire damage over 12 sec."
               }
             ],
             "reviewed": false,
@@ -337,6 +347,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Flame Shock",
                 "description": "Instantly sears the target with fire, causing 66 Fire damage immediately and 89 Fire damage over 12 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Flame Shock",
+                "description": "Instantly sears the target with fire, causing 66 Fire damage immediately and 89 Fire damage over 12 sec."
               }
             ],
             "reviewed": false,
@@ -366,6 +381,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Flame Shock",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
             "name": "Flame Shock",
             "rank": 3
           }
@@ -406,6 +426,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Frost Shock",
             "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Frost Shock",
+            "rank": 2
           }
         ],
         "reviewed": false
@@ -442,6 +467,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Lightning Bolt",
+            "rank": 7
+          },
+          {
+            "reader": "codex",
             "name": "Lightning Bolt",
             "rank": 7
           }
@@ -482,6 +512,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Magma Totem",
             "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Magma Totem",
+            "rank": 2
           }
         ],
         "reviewed": false
@@ -520,6 +555,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Purge",
             "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Purge",
+            "rank": 2
           }
         ],
         "reviewed": false
@@ -556,6 +596,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Searing Totem",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
             "name": "Searing Totem",
             "rank": 3
           }
@@ -599,6 +644,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Stoneclaw Totem",
                 "description": "Summons a Stoneclaw Totem with 280 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it."
+              },
+              {
+                "reader": "codex",
+                "name": "Stoneclaw Totem",
+                "description": "Summons a Stoneclaw Totem with 280 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it."
               }
             ],
             "reviewed": false,
@@ -628,6 +678,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Stoneclaw Totem",
+            "rank": 4
+          },
+          {
+            "reader": "codex",
             "name": "Stoneclaw Totem",
             "rank": 4
           }
@@ -664,6 +719,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Totemic Recall"
+          },
+          {
+            "reader": "codex",
             "name": "Totemic Recall"
           }
         ],
@@ -702,7 +761,7 @@
             "name": "Astral Recall"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Astral Recall"
           }
         ],
@@ -726,8 +785,8 @@
       "source": {
         "kind": "video",
         "video": "DxtVEhjyROU",
-        "t": 20432.0,
-        "frame": 1225920,
+        "t": 20061.5,
+        "frame": 1203690,
         "crop": "data/review/spells/shaman/far-sight.png",
         "panel": "spell-list",
         "confidence": 1.0,
@@ -735,13 +794,15 @@
         "readings": [
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
-            "name": "Far Sight",
-            "rank": 1
+            "name": "Far Sight"
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
-            "name": "Far Sight",
-            "rank": 1
+            "name": "Far Sight"
+          },
+          {
+            "reader": "codex",
+            "name": "Far Sight"
           }
         ],
         "reviewed": false
@@ -764,8 +825,8 @@
       "source": {
         "kind": "video",
         "video": "DxtVEhjyROU",
-        "t": 20061.5,
-        "frame": 1203690,
+        "t": 20432.0,
+        "frame": 1225920,
         "crop": "data/review/spells/shaman/fire-resistance-totem.png",
         "panel": "spell-list",
         "confidence": 1.0,
@@ -777,12 +838,7 @@
             "rank": 1
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
-            "name": "Fire Resistance Totem",
-            "rank": 1
-          },
-          {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Fire Resistance Totem",
             "rank": 1
           }
@@ -823,6 +879,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Flametongue Totem",
             "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Flametongue Totem",
+            "rank": 2
           }
         ],
         "reviewed": false
@@ -859,6 +920,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Flametongue Weapon",
+            "rank": 4
+          },
+          {
+            "reader": "codex",
             "name": "Flametongue Weapon",
             "rank": 4
           }
@@ -899,6 +965,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Frost Resistance Totem",
             "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Frost Resistance Totem",
+            "rank": 2
           }
         ],
         "reviewed": false
@@ -935,6 +1006,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Frostbrand Weapon"
+          },
+          {
+            "reader": "codex",
+            "name": "Frostbrand Weapon"
           }
         ],
         "reviewed": false
@@ -956,8 +1031,8 @@
       "source": {
         "kind": "video",
         "video": "DxtVEhjyROU",
-        "t": 20061.5,
-        "frame": 1203690,
+        "t": 20432.0,
+        "frame": 1225920,
         "crop": "data/review/spells/shaman/ghost-wolf.png",
         "panel": "spell-list",
         "confidence": 1.0,
@@ -968,7 +1043,7 @@
             "name": "Ghost Wolf"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "reader": "codex",
             "name": "Ghost Wolf"
           }
         ],
@@ -1006,6 +1081,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Grounding Totem"
+          },
+          {
+            "reader": "codex",
+            "name": "Grounding Totem"
           }
         ],
         "reviewed": false
@@ -1042,6 +1121,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Lightning Shield",
+            "rank": 4
+          },
+          {
+            "reader": "codex",
             "name": "Lightning Shield",
             "rank": 4
           }
@@ -1087,6 +1171,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Nature Resistance Totem",
                 "description": "Summons a Nature Resistance Totem with 5 health at the feet of the caster for 5 min that increases the nature resistance of party and raid members within 30 yards by 30."
+              },
+              {
+                "reader": "codex",
+                "name": "Nature Resistance Totem",
+                "description": "Summons a Nature Resistance Totem with 5 health at the feet of the caster for 5 min that increases the nature resistance of party and raid members within 30 yards by 30."
               }
             ],
             "reviewed": false,
@@ -1116,6 +1205,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Nature Resistance Totem",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Nature Resistance Totem",
             "rank": 1
           }
@@ -1156,6 +1250,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Rockbiter Weapon",
             "rank": 5
+          },
+          {
+            "reader": "codex",
+            "name": "Rockbiter Weapon",
+            "rank": 5
           }
         ],
         "reviewed": false
@@ -1190,6 +1289,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sentry Totem"
+          },
+          {
+            "reader": "codex",
             "name": "Sentry Totem"
           }
         ],
@@ -1231,6 +1334,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Stoneskin Totem",
                 "description": "Summons a Stoneskin Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing Physical damage taken by 16. Lasts 5 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Stoneskin Totem",
+                "description": "Summons a Stoneskin Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing Physical damage taken by 16. Lasts 5 min."
               }
             ],
             "reviewed": false,
@@ -1260,6 +1368,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Stoneskin Totem",
+            "rank": 4
+          },
+          {
+            "reader": "codex",
             "name": "Stoneskin Totem",
             "rank": 4
           }
@@ -1298,6 +1411,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Strength of Earth Totem",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
             "name": "Strength of Earth Totem",
             "rank": 3
           }
@@ -1340,6 +1458,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Totemic Projection",
                 "description": "Relocates your active totems to the specified location."
+              },
+              {
+                "reader": "codex",
+                "name": "Totemic Projection",
+                "description": "Relocates your active totems to the specified location."
               }
             ],
             "reviewed": false,
@@ -1368,6 +1491,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Totemic Projection"
+          },
+          {
+            "reader": "codex",
             "name": "Totemic Projection"
           }
         ],
@@ -1404,6 +1531,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Water Breathing"
+          },
+          {
+            "reader": "codex",
+            "name": "Water Breathing"
           }
         ],
         "reviewed": false
@@ -1438,6 +1569,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Water Walking"
+          },
+          {
+            "reader": "codex",
             "name": "Water Walking"
           }
         ],
@@ -1479,6 +1614,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Windfury Totem",
                 "description": "Summons a Windfury Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party members within 0 yards. Each main hand hit has a 20% chance of granting the attacker 1 extra attack with 95 extra melee attack power. Lasts 5 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Windfury Totem",
+                "description": "Summons a Windfury Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party members within 0 yards. Each main hand hit has a 20% chance of granting the attacker 1 extra attack with 95 extra melee attack power. Lasts 5 min."
               }
             ],
             "reviewed": false,
@@ -1508,6 +1648,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Windfury Totem",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Windfury Totem",
             "rank": 1
           }
@@ -1546,6 +1691,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Windfury Weapon",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Windfury Weapon",
             "rank": 1
           }
@@ -1588,6 +1738,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Windwall Totem",
                 "description": "Summons a Windwall Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing ranged damage taken by 32. Lasts 5 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Windwall Totem",
+                "description": "Summons a Windwall Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing ranged damage taken by 32. Lasts 5 min."
               }
             ],
             "reviewed": false,
@@ -1617,6 +1772,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Windwall Totem",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Windwall Totem",
             "rank": 1
           }
@@ -1653,6 +1813,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Armor Proficiency"
+          },
+          {
+            "reader": "codex",
             "name": "Armor Proficiency"
           }
         ],
@@ -1691,7 +1855,7 @@
             "name": "Attack"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Attack"
           }
         ],
@@ -1727,6 +1891,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Axe Specialization"
+          },
+          {
+            "reader": "codex",
+            "name": "Axe Specialization"
           }
         ],
         "reviewed": false
@@ -1761,6 +1929,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Block"
+          },
+          {
+            "reader": "codex",
             "name": "Block"
           }
         ],
@@ -1798,7 +1970,7 @@
             "name": "Blood Fury"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Blood Fury"
           }
         ],
@@ -1833,6 +2005,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cultivation"
+          },
+          {
+            "reader": "codex",
             "name": "Cultivation"
           }
         ],
@@ -1869,6 +2045,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Dodge"
+          },
+          {
+            "reader": "codex",
+            "name": "Dodge"
           }
         ],
         "reviewed": false
@@ -1903,6 +2083,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Endurance"
+          },
+          {
+            "reader": "codex",
+            "name": "Endurance"
           }
         ],
         "reviewed": false
@@ -1936,6 +2120,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Hardiness"
+          },
+          {
+            "reader": "codex",
             "name": "Hardiness"
           }
         ],
@@ -1972,6 +2160,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Languages"
+          },
+          {
+            "reader": "codex",
+            "name": "Languages"
           }
         ],
         "reviewed": false
@@ -1987,7 +2179,7 @@
       "iconCrop": "data/review/spells/shaman/plainsrunning.icon.png",
       "tooltips": [
         {
-          "description": "Gain 1% increased movement speed every 5 sec spent moving, up to a maximum of 30% Increase. Taking damage or standing still will reduce this effect.",
+          "description": "Gain 1% increased movement speed every 5 sec spent moving, up to a maximum of 30% increase. Taking damage or standing still will reduce this effect.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1995,7 +2187,7 @@
             "frame": 1230945,
             "crop": "data/review/spells/shaman/plainsrunning.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.9,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -2007,10 +2199,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Plainsrunning",
                 "description": "Gain 1% increased movement speed every 5 sec spent moving, up to a maximum of 30% Increase. Taking damage or standing still will reduce this effect."
+              },
+              {
+                "reader": "codex",
+                "name": "Plainsrunning",
+                "description": "Gain 1% increased movement speed every 5 sec spent moving, up to a maximum of 30% increase. Taking damage or standing still will reduce this effect."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the shape-aware reader merge corrected 1 case"
           }
         }
       ],
@@ -2034,6 +2231,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Plainsrunning"
+          },
+          {
+            "reader": "codex",
             "name": "Plainsrunning"
           }
         ],
@@ -2071,7 +2272,7 @@
             "name": "Shatter Curse"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Shatter Curse"
           }
         ],
@@ -2106,6 +2307,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "War Stomp"
+          },
+          {
+            "reader": "codex",
             "name": "War Stomp"
           }
         ],
@@ -2147,7 +2352,7 @@
             "rank": 3
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Ancestral Spirit",
             "rank": 3
           }
@@ -2187,7 +2392,7 @@
             "name": "Cure Disease"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Cure Disease"
           }
         ],
@@ -2226,7 +2431,7 @@
             "name": "Cure Poison"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Cure Poison"
           }
         ],
@@ -2265,7 +2470,7 @@
             "name": "Disease Cleansing Totem"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Disease Cleansing Totem"
           }
         ],
@@ -2303,6 +2508,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Healing Stream Totem",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
             "name": "Healing Stream Totem",
             "rank": 2
           }
@@ -2343,6 +2553,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Healing Wave",
             "rank": 6
+          },
+          {
+            "reader": "codex",
+            "name": "Healing Wave",
+            "rank": 6
           }
         ],
         "reviewed": false
@@ -2379,6 +2594,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Lesser Healing Wave",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
             "name": "Lesser Healing Wave",
             "rank": 3
           }
@@ -2419,6 +2639,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Mana Spring Totem",
             "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Mana Spring Totem",
+            "rank": 2
           }
         ],
         "reviewed": false
@@ -2455,40 +2680,14 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Poison Cleansing Totem",
             "rank": 1
-          }
-        ],
-        "reviewed": false
-      }
-    },
-    {
-      "id": "reincarnation-passive",
-      "name": "Reincarnation Passive",
-      "kind": "passive",
-      "tab": "restoration",
-      "icon": "crop-reincarnation-passive",
-      "iconSource": "crop",
-      "iconCrop": "data/review/spells/shaman/reincarnation-passive.icon.png",
-      "classic": {
-        "status": "new",
-        "note": "no Classic Era spell called Reincarnation Passive for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
-      },
-      "tags": ["new"],
-      "source": {
-        "kind": "video",
-        "video": "DxtVEhjyROU",
-        "t": 20052.5,
-        "frame": 1203150,
-        "crop": "data/review/spells/shaman/reincarnation-passive.png",
-        "panel": "spell-list",
-        "confidence": 0.0,
-        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
-        "readings": [
+          },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
-            "name": "Reincarnation Passive"
+            "reader": "codex",
+            "name": "Poison Cleansing Totem"
           }
         ],
-        "reviewed": false
+        "reviewed": false,
+        "note": "the two readers disagree on kind 'passive' vs 'active' - the reading shown is the first reader's"
       }
     },
     {
@@ -2522,9 +2721,14 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Tremor Totem",
             "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Tremor Totem"
           }
         ],
-        "reviewed": false
+        "reviewed": false,
+        "note": "the two readers disagree on kind 'passive' vs 'active' - the reading shown is the first reader's"
       }
     }
   ],
@@ -2533,7 +2737,7 @@
     "tabsSeen": ["elemental-combat", "enhancement", "general", "restoration"],
     "tabsMissing": [],
     "states": 16,
-    "entriesRead": 59,
+    "entriesRead": 58,
     "tooltipsRead": 9,
     "tooltipsUnmatched": 0,
     "showAllSpellRanks": "on",
@@ -2560,6 +2764,7 @@
   "notes": [
     "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
     "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
-    "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed."
+    "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
+    "Entries with a source note were read from a clipped row or a search page; check the crop before quoting them."
   ]
 }

@@ -24,7 +24,6 @@ from pathlib import Path
 
 import typer
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import fragments as fr  # noqa: E402
 from wowtalents.fsio import write_json_atomic, write_text_atomic  # noqa: E402
 

@@ -4,7 +4,7 @@
   "class": "hunter",
   "className": "Hunter",
   "dataSource": "video",
-  "generatedAt": "2026-09-13T20:40:16Z",
+  "generatedAt": "2026-09-14T07:30:45Z",
   "observedLevel": 38,
   "tabs": [
     {
@@ -69,6 +69,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Aspect of the Hawk",
                 "description": "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 70. Only one Aspect can be active at a time."
+              },
+              {
+                "reader": "codex",
+                "name": "Aspect of the Hawk",
+                "description": "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 70. Only one Aspect can be active at a time."
               }
             ],
             "reviewed": false,
@@ -102,7 +107,7 @@
             "rank": 4
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Aspect of the Hawk",
             "rank": 4
           }
@@ -144,6 +149,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Beast Lore",
                 "description": "Gather information about the target beast. The tooltip will display damage, health, armor, any special resistances, and diet."
+              },
+              {
+                "reader": "codex",
+                "name": "Beast Lore",
+                "description": "Gather information about the target beast. The tooltip will display damage, health, armor, any special resistances, and diet."
               }
             ],
             "reviewed": false,
@@ -175,7 +185,7 @@
             "name": "Beast Lore"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Beast Lore"
           }
         ],
@@ -214,6 +224,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Dismiss Pet",
                 "description": "Dismiss your pet. Dismissing your pet will reduce its happiness by 50."
+              },
+              {
+                "reader": "codex",
+                "name": "Dismiss Pet",
+                "description": "Dismiss your pet. Dismissing your pet will reduce its happiness by 50."
               }
             ],
             "reviewed": false,
@@ -242,6 +257,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dismiss Pet"
+          },
+          {
+            "reader": "codex",
             "name": "Dismiss Pet"
           }
         ],
@@ -282,6 +301,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Eagle Eye",
                 "description": "Zooms in the hunter's vision. Only usable outdoors. Lasts 1 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Eagle Eye",
+                "description": "Zooms in the hunter's vision. Only usable outdoors. Lasts 1 min."
               }
             ],
             "reviewed": false,
@@ -310,6 +334,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Eagle Eye"
+          },
+          {
+            "reader": "codex",
             "name": "Eagle Eye"
           }
         ],
@@ -350,6 +378,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Eyes of the Beast",
                 "description": "Take direct control of your pet and see through its eyes for 2 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Eyes of the Beast",
+                "description": "Take direct control of your pet and see through its eyes for 2 min."
               }
             ],
             "reviewed": false,
@@ -378,6 +411,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Eyes of the Beast"
+          },
+          {
+            "reader": "codex",
             "name": "Eyes of the Beast"
           }
         ],
@@ -417,6 +454,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Feed Pet",
                 "description": "Feed your pet the selected item. Feeding your pet increases happiness. Using food close to the pet's level will have a better result."
+              },
+              {
+                "reader": "codex",
+                "name": "Feed Pet",
+                "description": "Feed your pet the selected item. Feeding your pet increases happiness. Using food close to the pet's level will have a better result."
               }
             ],
             "reviewed": false,
@@ -445,6 +487,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Feed Pet"
+          },
+          {
+            "reader": "codex",
             "name": "Feed Pet"
           }
         ],
@@ -485,6 +531,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Mend Pet",
                 "description": "Heals your pet 103 health every second while you focus. Lasts 5 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Mend Pet",
+                "description": "Heals your pet 103 health every second while you focus. Lasts 5 sec."
               }
             ],
             "reviewed": false,
@@ -514,6 +565,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Mend Pet",
+            "rank": 4
+          },
+          {
+            "reader": "codex",
             "name": "Mend Pet",
             "rank": 4
           }
@@ -553,6 +609,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Revive Pet",
                 "description": "Revive your pet, returning it to life with 15% of its health."
+              },
+              {
+                "reader": "codex",
+                "name": "Revive Pet",
+                "description": "Revive your pet, returning it to life with 15% of its health."
               }
             ],
             "reviewed": false,
@@ -582,6 +643,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Revive Pet"
+          },
+          {
+            "reader": "codex",
+            "name": "Revive Pet"
           }
         ],
         "reviewed": false
@@ -603,7 +668,7 @@
           "range": "10 yd range",
           "castTime": "1.5 sec cast",
           "cooldown": "30 sec cooldown",
-          "description": "Scares a beast. causing it to run in fear for up to 15 sec. Damage caused may interrupt the effect. Only one beast can be feared at a time.",
+          "description": "Scares a beast, causing it to run in fear for up to 15 sec. Damage caused may interrupt the effect. Only one beast can be feared at a time.",
           "footer": "You've added this to an action bar that is hidden or disabled",
           "source": {
             "kind": "video",
@@ -612,7 +677,7 @@
             "frame": 1279845,
             "crop": "data/review/spells/hunter/scare-beast.r2.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.9,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -624,10 +689,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Scare Beast",
                 "description": "Scares a beast. causing it to run in fear for up to 15 sec. Damage caused may interrupt the effect. Only one beast can be feared at a time."
+              },
+              {
+                "reader": "codex",
+                "name": "Scare Beast",
+                "description": "Scares a beast, causing it to run in fear for up to 15 sec. Damage caused may interrupt the effect. Only one beast can be feared at a time."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+            "note": "hover tooltip; rank taken from the list row the box was anchored to; the shape-aware reader merge corrected 1 punct"
           }
         }
       ],
@@ -653,6 +723,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Scare Beast",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
             "name": "Scare Beast",
             "rank": 2
           }
@@ -682,7 +757,7 @@
             "frame": 1279890,
             "crop": "data/review/spells/hunter/tame-beast.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -694,10 +769,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Tame Beast",
                 "description": "Begins taming a beast to be your companion. Your armor is reduced by 100% while you focus on taming the beast for 20 sec. If you lose the beast's attention for any reason, the taming process will fall. Once tamed, the beast will be very unhappy and disloyal. Try feeding the pet immediately to make it happy."
+              },
+              {
+                "reader": "codex",
+                "name": "Tame Beast",
+                "description": "Begins taming a beast to be your companion. Your armor is reduced by 100% while you focus on taming the beast for 20 sec. If you lose the beast's attention for any reason, the taming process will fail. Once tamed, the beast will be very unhappy and disloyal. Try feeding the pet immediately to make it happy."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on description 'fall.' vs 'fail.' - the reading shown is the first reader's"
           }
         }
       ],
@@ -722,6 +802,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Tame Beast"
+          },
+          {
+            "reader": "codex",
             "name": "Tame Beast"
           }
         ],
@@ -757,6 +841,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Armor Proficiency"
+          },
+          {
+            "reader": "codex",
             "name": "Armor Proficiency"
           }
         ],
@@ -795,7 +883,7 @@
             "name": "Beast Training"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Beast Training"
           }
         ],
@@ -832,6 +920,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Dodge"
+          },
+          {
+            "reader": "codex",
+            "name": "Dodge"
           }
         ],
         "reviewed": false
@@ -866,6 +958,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dual Wield"
+          },
+          {
+            "reader": "codex",
             "name": "Dual Wield"
           }
         ],
@@ -902,6 +998,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Languages"
+          },
+          {
+            "reader": "codex",
+            "name": "Languages"
           }
         ],
         "reviewed": false
@@ -936,6 +1036,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Parry"
+          },
+          {
+            "reader": "codex",
             "name": "Parry"
           }
         ],
@@ -973,7 +1077,7 @@
             "name": "Perception"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Perception"
           }
         ],
@@ -1009,6 +1113,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Sword Specialization"
+          },
+          {
+            "reader": "codex",
+            "name": "Sword Specialization"
           }
         ],
         "reviewed": false
@@ -1042,6 +1150,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "The Human Spirit"
+          },
+          {
+            "reader": "codex",
             "name": "The Human Spirit"
           }
         ],
@@ -1080,7 +1192,7 @@
             "name": "Throw"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Throw"
           }
         ],
@@ -1115,6 +1227,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Will to Survive"
+          },
+          {
+            "reader": "codex",
             "name": "Will to Survive"
           }
         ],
@@ -1156,7 +1272,7 @@
             "rank": 3
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Aimed Shot",
             "rank": 3
           }
@@ -1199,6 +1315,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Arcane Shot",
                 "description": "An instant shot that causes 94 Arcane damage."
+              },
+              {
+                "reader": "codex",
+                "name": "Arcane Shot",
+                "description": "An instant shot that causes 94 Arcane damage."
               }
             ],
             "reviewed": false,
@@ -1232,7 +1353,7 @@
             "rank": 5
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Arcane Shot",
             "rank": 5
           }
@@ -1273,6 +1394,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Auto Shot",
                 "description": "Automatically shoots the target until cancelled."
+              },
+              {
+                "reader": "codex",
+                "name": "Auto Shot",
+                "description": "Automatically shoots the target until cancelled."
               }
             ],
             "reviewed": false,
@@ -1304,7 +1430,7 @@
             "name": "Auto Shot"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Auto Shot"
           }
         ],
@@ -1345,6 +1471,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Concussive Shot",
                 "description": "Dazes the target, slowing movement speed by 50% for 4 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Concussive Shot",
+                "description": "Dazes the target, slowing movement speed by 50% for 4 sec."
               }
             ],
             "reviewed": false,
@@ -1376,7 +1507,7 @@
             "name": "Concussive Shot"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Concussive Shot"
           }
         ],
@@ -1414,6 +1545,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Distracting Shot",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
             "name": "Distracting Shot",
             "rank": 3
           }
@@ -1456,6 +1592,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Flare",
                 "description": "Exposes all hidden and invisible enemies within 10 yards of the targeted area for 30 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Flare",
+                "description": "Exposes all hidden and invisible enemies within 10 yards of the targeted area for 30 sec."
               }
             ],
             "reviewed": false,
@@ -1485,6 +1626,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Flare"
+          },
+          {
+            "reader": "codex",
+            "name": "Flare"
           }
         ],
         "reviewed": false
@@ -1505,7 +1650,7 @@
           "cost": "30 Mana",
           "range": "100 yd range",
           "castTime": "Instant",
-          "description": "Places the Hunter's Mark on the target. Increasing the Ranged Attack Power of all attackers against that target by 59. In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible. The target also appears on the mini-map. Lasts for 2 min.",
+          "description": "Places the Hunter's Mark on the target, increasing the Ranged Attack Power of all attackers against that target by 59. In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible. The target also appears on the mini-map. Lasts for 2 min.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -1513,7 +1658,7 @@
             "frame": 1281045,
             "crop": "data/review/spells/hunter/hunters-mark.r2.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.9,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -1525,10 +1670,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Hunter's Mark",
                 "description": "Places the Hunter's Mark on the target. Increasing the Ranged Attack Power of all attackers against that target by 59. In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible. The target also appears on the mini-map. Lasts for 2 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Hunter's Mark",
+                "description": "Places the Hunter's Mark on the target, increasing the Ranged Attack Power of all attackers against that target by 59. In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible. The target also appears on the mini-map. Lasts for 2 min."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+            "note": "hover tooltip; rank taken from the list row the box was anchored to; the shape-aware reader merge corrected 1 case, 1 punct"
           }
         }
       ],
@@ -1554,6 +1704,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Hunter's Mark",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
             "name": "Hunter's Mark",
             "rank": 2
           }
@@ -1594,6 +1749,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Multi-Shot",
             "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Multi-Shot",
+            "rank": 1
           }
         ],
         "reviewed": false
@@ -1632,6 +1792,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Rapid Fire",
                 "description": "Increases ranged and melee attack speed by 40% for 15 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Rapid Fire",
+                "description": "Increases ranged and melee attack speed by 40% for 15 sec."
               }
             ],
             "reviewed": false,
@@ -1660,6 +1825,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Rapid Fire"
+          },
+          {
+            "reader": "codex",
             "name": "Rapid Fire"
           }
         ],
@@ -1702,6 +1871,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Scorpid Sting",
                 "description": "Stings the target, reducing the target's chance to hit with all attacks by 2% for 20 sec. Only one Sting per Hunter can be active on any one target."
+              },
+              {
+                "reader": "codex",
+                "name": "Scorpid Sting",
+                "description": "Stings the target, reducing the target's chance to hit with all attacks by 2% for 20 sec. Only one Sting per Hunter can be active on any one target."
               }
             ],
             "reviewed": false,
@@ -1731,6 +1905,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Scorpid Sting",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Scorpid Sting",
             "rank": 1
           }
@@ -1773,6 +1952,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Serpent Sting",
                 "description": "Stings the target, causing 170 Nature damage over 15 sec. Only one Sting per Hunter can be active on any one target."
+              },
+              {
+                "reader": "codex",
+                "name": "Serpent Sting",
+                "description": "Stings the target, causing 170 Nature damage over 15 sec. Only one Sting per Hunter can be active on any one target."
               }
             ],
             "reviewed": false,
@@ -1802,6 +1986,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Serpent Sting",
+            "rank": 5
+          },
+          {
+            "reader": "codex",
             "name": "Serpent Sting",
             "rank": 5
           }
@@ -1846,6 +2035,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Viper Sting",
                 "description": "Stings the target, draining 616 mana over 8 sec. Only one Sting per Hunter can be active on any one target."
+              },
+              {
+                "reader": "codex",
+                "name": "Viper Sting",
+                "description": "Stings the target, draining 616 mana over 8 sec. Only one Sting per Hunter can be active on any one target."
               }
             ],
             "reviewed": false,
@@ -1875,6 +2069,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Viper Sting",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Viper Sting",
             "rank": 1
           }
@@ -1914,7 +2113,7 @@
             "name": "Assist"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Assist"
           }
         ],
@@ -1953,7 +2152,7 @@
             "name": "Attack"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Attack"
           }
         ],
@@ -1995,7 +2194,7 @@
             "rank": 5
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Claw",
             "rank": 5
           }
@@ -2035,7 +2234,7 @@
             "name": "Defensive"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Defensive"
           }
         ],
@@ -2077,7 +2276,7 @@
             "rank": 1
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Dive",
             "rank": 1
           }
@@ -2114,6 +2313,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Follow"
+          },
+          {
+            "reader": "codex",
             "name": "Follow"
           }
         ],
@@ -2152,6 +2355,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Great Stamina",
                 "description": "Stamina increased by 17."
+              },
+              {
+                "reader": "codex",
+                "name": "Great Stamina",
+                "description": "Stamina increased by 17."
               }
             ],
             "reviewed": false,
@@ -2183,6 +2391,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Great Stamina",
             "rank": 6
+          },
+          {
+            "reader": "codex",
+            "name": "Great Stamina",
+            "rank": 6
           }
         ],
         "reviewed": false
@@ -2204,7 +2417,7 @@
           "range": "Melee Range",
           "castTime": "Instant",
           "cooldown": "1 min cooldown",
-          "description": "Grabs an enemy's weapon with Its talons, causing 20 to 24 damage and disarming them for 4 sec.",
+          "description": "Grabs an enemy's weapon with its talons, causing 20 to 24 damage and disarming them for 4 sec.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2212,7 +2425,7 @@
             "frame": 1282695,
             "crop": "data/review/spells/hunter/mine.r3.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.9,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -2224,10 +2437,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Mine!",
                 "description": "Grabs an enemy's weapon with Its talons, causing 20 to 24 damage and disarming them for 4 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Mine!",
+                "description": "Grabs an enemy's weapon with its talons, causing 20 to 24 damage and disarming them for 4 sec."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+            "note": "hover tooltip; rank taken from the list row the box was anchored to; the shape-aware reader merge corrected 1 case"
           }
         }
       ],
@@ -2243,18 +2461,18 @@
         "frame": 1282620,
         "crop": "data/review/spells/hunter/mine.png",
         "panel": "spell-list",
-        "confidence": 1.0,
+        "confidence": 0.9,
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
         "readings": [
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
             "name": "Mine!",
-            "rank": 4
+            "rank": 3
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Mine!",
-            "rank": 4
+            "rank": 3
           }
         ],
         "reviewed": false
@@ -2290,6 +2508,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Move To",
                 "description": "Orders your pet to move to a target location."
+              },
+              {
+                "reader": "codex",
+                "name": "Move To",
+                "description": "Orders your pet to move to a target location."
               }
             ],
             "reviewed": false,
@@ -2318,6 +2541,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Move To"
+          },
+          {
+            "reader": "codex",
             "name": "Move To"
           }
         ],
@@ -2357,6 +2584,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Natural Armor",
             "rank": 6
+          },
+          {
+            "reader": "codex",
+            "name": "Natural Armor",
+            "rank": 6
           }
         ],
         "reviewed": false
@@ -2393,6 +2625,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Stay",
                 "description": "Orders your pet to stay at its current location."
+              },
+              {
+                "reader": "codex",
+                "name": "Stay",
+                "description": "Orders your pet to stay at its current location."
               }
             ],
             "reviewed": false,
@@ -2421,6 +2658,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Stay"
+          },
+          {
+            "reader": "codex",
             "name": "Stay"
           }
         ],
@@ -2458,6 +2699,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Disengage",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
             "name": "Disengage",
             "rank": 2
           }
@@ -2500,7 +2746,7 @@
             "rank": 1
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Explosive Trap",
             "rank": 1
           }
@@ -2541,6 +2787,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Feign Death",
                 "description": "Feign death which may trick enemies into ignoring you. Lasts 6 min. If not cancelled, after 6 min you will actually die."
+              },
+              {
+                "reader": "codex",
+                "name": "Feign Death",
+                "description": "Feign death which may trick enemies into ignoring you. Lasts 6 min. If not cancelled, after 6 min you will actually die."
               }
             ],
             "reviewed": false,
@@ -2572,7 +2823,7 @@
             "name": "Feign Death"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Feign Death"
           }
         ],
@@ -2593,7 +2844,7 @@
           "cost": "50 Mana",
           "castTime": "Instant",
           "cooldown": "30 sec cooldown",
-          "description": "Place a Frost trap that freezes the first enemy that approaches, preventing all action for up to 10 sec. Any damage caused will break the ice. Trap will exist for 1 min. Only one Frost trap can be active at a time.",
+          "description": "Place a frost trap that freezes the first enemy that approaches, preventing all action for up to 10 sec. Any damage caused will break the ice. Trap will exist for 1 min. Only one Frost trap can be active at a time.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2601,7 +2852,7 @@
             "frame": 1280265,
             "crop": "data/review/spells/hunter/freezing-trap.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.9,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -2613,10 +2864,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Freezing Trap",
                 "description": "Place a Frost trap that freezes the first enemy that approaches, preventing all action for up to 10 sec. Any damage caused will break the ice. Trap will exist for 1 min. Only one Frost trap can be active at a time."
+              },
+              {
+                "reader": "codex",
+                "name": "Freezing Trap",
+                "description": "Place a frost trap that freezes the first enemy that approaches, preventing all action for up to 10 sec. Any damage caused will break the ice. Trap will exist for 1 min. Only one Frost trap can be active at a time."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the shape-aware reader merge corrected 1 case"
           }
         }
       ],
@@ -2646,7 +2902,7 @@
             "rank": 1
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Freezing Trap",
             "rank": 1
           }
@@ -2667,7 +2923,7 @@
           "cost": "60 Mana",
           "castTime": "Instant",
           "cooldown": "30 sec cooldown",
-          "description": "Place a Frost trap that creates an Ice slick around itself for 30 sec when the first enemy approaches it. All enemies within 10 yards will be slowed by 60% while in the area of effect. Trap will exist for 1 min. Only one Frost trap can be active at a time.",
+          "description": "Place a frost trap that creates an ice slick around itself for 30 sec when the first enemy approaches it. All enemies within 10 yards will be slowed by 60% while in the area of effect. Trap will exist for 1 min. Only one Frost trap can be active at a time.",
           "source": {
             "kind": "video",
             "video": "DxtVEhjyROU",
@@ -2675,7 +2931,7 @@
             "frame": 1280295,
             "crop": "data/review/spells/hunter/frost-trap.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.9,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -2687,10 +2943,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Frost Trap",
                 "description": "Place a Frost trap that creates an Ice slick around itself for 30 sec when the first enemy approaches it. All enemies within 10 yards will be slowed by 60% while in the area of effect. Trap will exist for 1 min. Only one Frost trap can be active at a time."
+              },
+              {
+                "reader": "codex",
+                "name": "Frost Trap",
+                "description": "Place a frost trap that creates an ice slick around itself for 30 sec when the first enemy approaches it. All enemies within 10 yards will be slowed by 60% while in the area of effect. Trap will exist for 1 min. Only one Frost trap can be active at a time."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the shape-aware reader merge corrected 2 case"
           }
         }
       ],
@@ -2718,7 +2979,7 @@
             "name": "Frost Trap"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Frost Trap"
           }
         ],
@@ -2758,6 +3019,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Immolation Trap",
             "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Immolation Trap",
+            "rank": 3
           }
         ],
         "reviewed": false
@@ -2765,7 +3031,7 @@
     },
     {
       "id": "mongoose-bite",
-      "name": "MongOOSE Bite",
+      "name": "Mongoose Bite",
       "kind": "active",
       "tab": "survival",
       "ranksSeen": [2],
@@ -2798,6 +3064,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Mongoose Bite",
                 "description": "Counterattack the enemy for melee weapon damage plus 22. Can only be performed after you dodge."
+              },
+              {
+                "reader": "codex",
+                "name": "Mongoose Bite",
+                "description": "Counterattack the enemy for melee weapon damage plus 22. Can only be performed after you dodge."
               }
             ],
             "reviewed": false,
@@ -2813,8 +3084,8 @@
       "source": {
         "kind": "video",
         "video": "DxtVEhjyROU",
-        "t": 21336.25,
-        "frame": 1280175,
+        "t": 21342.0,
+        "frame": 1280520,
         "crop": "data/review/spells/hunter/mongoose-bite.png",
         "panel": "spell-list",
         "confidence": 1.0,
@@ -2822,11 +3093,16 @@
         "readings": [
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
-            "name": "MongOOSE Bite",
+            "name": "Mongoose Bite",
             "rank": 2
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Mongoose Bite",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
             "name": "Mongoose Bite",
             "rank": 2
           }
@@ -2868,6 +3144,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Raptor Strike",
                 "description": "A strong attack that deals melee weapon damage plus 35."
+              },
+              {
+                "reader": "codex",
+                "name": "Raptor Strike",
+                "description": "A strong attack that deals melee weapon damage plus 35."
               }
             ],
             "reviewed": false,
@@ -2897,6 +3178,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Raptor Strike",
+            "rank": 5
+          },
+          {
+            "reader": "codex",
             "name": "Raptor Strike",
             "rank": 5
           }
@@ -2936,6 +3222,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Track Beasts",
                 "description": "Shows the location of all nearby beasts on the minimap. Only one form of tracking can be active at a time."
+              },
+              {
+                "reader": "codex",
+                "name": "Track Beasts",
+                "description": "Shows the location of all nearby beasts on the minimap. Only one form of tracking can be active at a time."
               }
             ],
             "reviewed": false,
@@ -2964,6 +3255,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Track Beasts"
+          },
+          {
+            "reader": "codex",
             "name": "Track Beasts"
           }
         ],
@@ -3002,6 +3297,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Track Demons",
                 "description": "Shows the location of all nearby demons on the minimap. Only one form of tracking can be active at a time."
+              },
+              {
+                "reader": "codex",
+                "name": "Track Demons",
+                "description": "Shows the location of all nearby demons on the minimap. Only one form of tracking can be active at a time."
               }
             ],
             "reviewed": false,
@@ -3031,6 +3331,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Track Demons"
+          },
+          {
+            "reader": "codex",
+            "name": "Track Demons"
           }
         ],
         "reviewed": false
@@ -3056,7 +3360,7 @@
             "frame": 1280580,
             "crop": "data/review/spells/hunter/track-elementals.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -3068,10 +3372,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Track Elementals",
                 "description": "Shows the location of all nearby elementals on the minimap. Only one form of tracking can be active at a time."
+              },
+              {
+                "reader": "codex",
+                "name": "Track Elementals",
+                "description": "Shows the location of all nearby elementals on the minimap. Only one form of tracking can be active at a time."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on footer 'bars' vs 'bars.' - the reading shown is the first reader's"
           }
         }
       ],
@@ -3083,8 +3392,8 @@
       "source": {
         "kind": "video",
         "video": "DxtVEhjyROU",
-        "t": 21344.25,
-        "frame": 1280655,
+        "t": 21336.25,
+        "frame": 1280175,
         "crop": "data/review/spells/hunter/track-elementals.png",
         "panel": "spell-list",
         "confidence": 1.0,
@@ -3096,6 +3405,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Track Elementals",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Track Elementals"
           }
         ],
@@ -3105,7 +3419,7 @@
     {
       "id": "track-hidden",
       "name": "Track Hidden",
-      "kind": "passive",
+      "kind": "active",
       "tab": "survival",
       "icon": "crop-track-hidden",
       "iconSource": "crop",
@@ -3134,6 +3448,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Track Hidden",
                 "description": "Increases stealth detection and shows hidden units within detection range on the minimap. Only one form of tracking can be active at a time."
+              },
+              {
+                "reader": "codex",
+                "name": "Track Hidden",
+                "description": "Increases stealth detection and shows hidden units within detection range on the minimap. Only one form of tracking can be active at a time."
               }
             ],
             "reviewed": false,
@@ -3149,8 +3468,8 @@
       "source": {
         "kind": "video",
         "video": "DxtVEhjyROU",
-        "t": 21344.25,
-        "frame": 1280655,
+        "t": 21336.25,
+        "frame": 1280175,
         "crop": "data/review/spells/hunter/track-hidden.png",
         "panel": "spell-list",
         "confidence": 1.0,
@@ -3162,6 +3481,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Track Hidden",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Track Hidden"
           }
         ],
@@ -3171,7 +3495,7 @@
     {
       "id": "track-humanoids",
       "name": "Track Humanoids",
-      "kind": "passive",
+      "kind": "active",
       "tab": "survival",
       "icon": "crop-track-humanoids",
       "iconSource": "crop",
@@ -3200,6 +3524,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Track Humanoids",
                 "description": "Shows the location of all nearby humanoids on the minimap. Only one form of tracking can be active at a time."
+              },
+              {
+                "reader": "codex",
+                "name": "Track Humanoids",
+                "description": "Shows the location of all nearby humanoids on the minimap. Only one form of tracking can be active at a time."
               }
             ],
             "reviewed": false,
@@ -3215,8 +3544,8 @@
       "source": {
         "kind": "video",
         "video": "DxtVEhjyROU",
-        "t": 21344.25,
-        "frame": 1280655,
+        "t": 21336.25,
+        "frame": 1280175,
         "crop": "data/review/spells/hunter/track-humanoids.png",
         "panel": "spell-list",
         "confidence": 1.0,
@@ -3228,6 +3557,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Track Humanoids",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Track Humanoids"
           }
         ],
@@ -3237,7 +3571,7 @@
     {
       "id": "track-undead",
       "name": "Track Undead",
-      "kind": "passive",
+      "kind": "active",
       "tab": "survival",
       "icon": "crop-track-undead",
       "iconSource": "crop",
@@ -3250,8 +3584,8 @@
       "source": {
         "kind": "video",
         "video": "DxtVEhjyROU",
-        "t": 21344.25,
-        "frame": 1280655,
+        "t": 21336.25,
+        "frame": 1280175,
         "crop": "data/review/spells/hunter/track-undead.png",
         "panel": "spell-list",
         "confidence": 1.0,
@@ -3263,6 +3597,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Track Undead",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
             "name": "Track Undead"
           }
         ],
@@ -3304,6 +3643,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Wing Clip",
                 "description": "Inflicts 25 damage and reduces the enemy target's movement speed by 55% for 10 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Wing Clip",
+                "description": "Inflicts 25 damage and reduces the enemy target's movement speed by 55% for 10 sec."
               }
             ],
             "reviewed": false,
@@ -3333,6 +3677,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Wing Clip",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
             "name": "Wing Clip",
             "rank": 2
           }
@@ -3374,7 +3723,7 @@
             "rank": 1
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Aspect of the Beast",
             "rank": 1
           }
@@ -3414,7 +3763,7 @@
             "name": "Aspect of the Cheetah"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Aspect of the Cheetah"
           }
         ],
@@ -3443,7 +3792,7 @@
             "frame": 1279980,
             "crop": "data/review/spells/hunter/aspect-of-the-monkey.tooltip.png",
             "panel": "tooltip",
-            "confidence": 1.0,
+            "confidence": 0.7,
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
             "readings": [
               {
@@ -3455,10 +3804,15 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Aspect of the Monkey",
                 "description": "The hunter takes on the aspects of a monkey, increasing chance to dodge by 8%. Only one Aspect can be active at a time."
+              },
+              {
+                "reader": "codex",
+                "name": "Aspect of the Monkey",
+                "description": "The hunter takes on the aspects of a monkey, increasing chance to dodge by 8%. Only one Aspect can be active at a time."
               }
             ],
             "reviewed": false,
-            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on footer 'disabled' vs 'disabled.' - the reading shown is the first reader's"
           }
         }
       ],
@@ -3486,7 +3840,7 @@
             "name": "Aspect of the Monkey"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Aspect of the Monkey"
           }
         ],
@@ -3524,6 +3878,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Call Owl",
                 "description": "Summons your pet to you."
+              },
+              {
+                "reader": "codex",
+                "name": "Call Owl",
+                "description": "Summons your pet to you."
               }
             ],
             "reviewed": false,
@@ -3552,6 +3911,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Call Owl"
+          },
+          {
+            "reader": "codex",
             "name": "Call Owl"
           }
         ],

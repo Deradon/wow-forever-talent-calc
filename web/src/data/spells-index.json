@@ -6,10 +6,10 @@
       "id": "druid",
       "className": "Druid",
       "observedLevel": 38,
-      "entries": 41,
+      "entries": 40,
       "withText": 27,
       "tooltips": 27,
-      "new": 2,
+      "new": 1,
       "searchOnly": 0,
       "tabs": [
         {
@@ -20,7 +20,7 @@
         {
           "id": "feral-combat",
           "name": "Feral Combat",
-          "spells": 22
+          "spells": 21
         },
         {
           "id": "restoration",
@@ -78,10 +78,10 @@
       "id": "mage",
       "className": "Mage",
       "observedLevel": 38,
-      "entries": 45,
+      "entries": 44,
       "withText": 29,
       "tooltips": 32,
-      "new": 3,
+      "new": 2,
       "searchOnly": 0,
       "tabs": [
         {
@@ -92,7 +92,7 @@
         {
           "id": "arcane",
           "name": "Arcane",
-          "spells": 23
+          "spells": 22
         },
         {
           "id": "fire",
@@ -172,10 +172,10 @@
       "id": "shaman",
       "className": "Shaman",
       "observedLevel": 38,
-      "entries": 59,
+      "entries": 58,
       "withText": 8,
       "tooltips": 9,
-      "new": 6,
+      "new": 5,
       "searchOnly": 0,
       "tabs": [
         {
@@ -196,7 +196,7 @@
         {
           "id": "restoration",
           "name": "Restoration",
-          "spells": 11
+          "spells": 10
         }
       ],
       "tabsMissing": [],
@@ -231,10 +231,10 @@
       "id": "warrior",
       "className": "Warrior",
       "observedLevel": 38,
-      "entries": 46,
+      "entries": 45,
       "withText": 1,
       "tooltips": 1,
-      "new": 2,
+      "new": 1,
       "searchOnly": 2,
       "tabs": [
         {
@@ -250,7 +250,7 @@
         {
           "id": "fury",
           "name": "Fury",
-          "spells": 11
+          "spells": 10
         },
         {
           "id": "protection",

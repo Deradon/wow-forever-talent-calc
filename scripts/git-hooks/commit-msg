@@ -1,0 +1,19 @@
+#!/bin/sh
+# Reject commit messages carrying a Claude session link.
+#
+# CLAUDE.md states this rule most firmly of all, and until now it was enforced by an untracked
+# hook in one checkout: a fresh clone had no protection at all (review round two, PR-1). This
+# file is tracked, so it travels with the repository; it is wired up by
+#
+#     git config core.hooksPath scripts/git-hooks
+#
+# which CONTRIBUTING.md and README.md tell every contributor to run once after cloning.
+#
+# A `Co-Authored-By` line for Claude is fine and is not matched here. Only the session URL and
+# the `Claude-Session:` trailer are rejected, because they leak a private transcript link out of
+# a public repository.
+if grep -qiE "claude\.ai/code/session|^Claude-Session:" "$1"; then
+  echo "commit-msg: a Claude session link must not go into a commit message (see CLAUDE.md)." >&2
+  echo "commit-msg: drop the 'Claude-Session:' trailer and any claude.ai/code/session URL." >&2
+  exit 1
+fi

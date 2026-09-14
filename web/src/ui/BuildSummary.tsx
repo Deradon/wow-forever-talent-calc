@@ -109,8 +109,8 @@ export function BuildSummary({ cls, build, link, code, canUndo, canRedo, onUndo,
               too.
             </li>
             <li>
-              <strong className="text-[var(--text)]">What's new</strong> in the header dims everything Classic already
-              had.
+              <strong className="text-[var(--text)]">Highlight changes</strong> in the header dims everything Classic
+              already had.
             </li>
           </ul>
         </div>
@@ -163,7 +163,13 @@ export function BuildSummary({ cls, build, link, code, canUndo, canRedo, onUndo,
         >
           {label(textCopy, 'Copy as text')}
         </button>
-        <button className="btn" data-testid="open-import" aria-expanded={importing} onClick={() => setImporting((v) => !v)}>
+        <button
+          className="btn"
+          data-testid="open-import"
+          aria-haspopup="dialog"
+          aria-expanded={importing}
+          onClick={() => setImporting((v) => !v)}
+        >
           Import
         </button>
         {/* The print stylesheet hides every control and lays the trees and this

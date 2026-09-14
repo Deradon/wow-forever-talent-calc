@@ -10,6 +10,32 @@
  * out for one page on white.
  */
 @media print {
+  /*
+   * The whole palette, once. Every colour in the app is either one of these
+   * tokens or a Tailwind arbitrary value reading one of them
+   * (`text-[var(--text-dim)]`), so re-pointing the tokens turns the entire
+   * page print-safe in one place - which is why the previous per-selector
+   * approach kept missing things (UX review round two, finding 2: the points
+   * line, the required level, the rank column and the build URL all printed
+   * in pale gold or light grey on white).
+   */
+  /* `:root:root` and not `:root`: print.css is @imported before index.css
+     declares the tokens, so at equal specificity the screen palette would win
+     on source order. */
+  :root:root {
+    --gold: #000;
+    --gold-dim: #333;
+    --gold-border: #999;
+    --green: #000;
+    --grey: #444;
+    --red: #000;
+    --panel: #fff;
+    --panel-2: #fff;
+    --bg: #fff;
+    --text: #000;
+    --text-dim: #333;
+  }
+
   html,
   body {
     background: #fff !important;
@@ -43,7 +69,7 @@
   .notice,
   .blocked-message,
   .tooltip-layer,
-  .shortcuts-backdrop,
+  .modal-backdrop,
   .shortcuts-open,
   .tree-columns .btn,
   .embed-bar a {
@@ -69,10 +95,22 @@
     break-inside: avoid;
   }
 
-  .panel {
+  .panel,
+  .tree-body,
+  .tree-grid {
     border-color: #999 !important;
     background: #fff !important;
+    background-image: none !important;
     box-shadow: none !important;
+  }
+
+  /* Prerequisite arrows are drawn with literal hex in the SVG. */
+  svg.arrows polyline {
+    stroke: #333 !important;
+  }
+  svg.arrows marker path {
+    fill: #333 !important;
+    stroke: none !important;
   }
   .serif,
   .text-\[var\(--gold\)\],
@@ -100,6 +138,31 @@
   .cell[data-state='locked'] .icon-clip {
     opacity: 0.45;
   }
+
+  /* No stars, no diamonds, no rings. The blue "new in Forever" star was the
+     loudest thing on the sheet and neither it nor the amber rewrite mark has a
+     legend on paper; the highlight rings and the hover outline are screen
+     affordances with nothing to say there either. */
+  .cell .new-flag,
+  .cell .changed-flag,
+  .cell-blocked {
+    display: none !important;
+  }
+  .cell[data-highlight='true'],
+  .cell[data-match='true'],
+  .cell-linked {
+    box-shadow: none !important;
+  }
+  .cell[data-highlight='true'][data-change='same'][data-rank='0'] {
+    opacity: 1;
+  }
+  /* The `?` stays - "check this reading" is worth carrying to paper - but as
+     ink, not as an amber chip. */
+  .cell .review-flag {
+    color: #000 !important;
+    background: #fff !important;
+    border: 1px solid #666 !important;
+  }
   .tier {
     color: #444 !important;
   }
@@ -112,8 +175,18 @@
     border: 0;
   }
   .summary-trees {
-    columns: 3;
-    column-gap: 18px;
+    columns: 2;
+    column-gap: 24px;
+  }
+  .summary-trees > li {
+    break-inside: avoid;
+  }
+  .summary-tree-name {
+    border-bottom: 1px solid #999;
+  }
+  .summary-talent,
+  .summary-talent-rank {
+    color: #000 !important;
   }
   .summary-trees > li {
     break-inside: avoid;
@@ -134,9 +207,9 @@
   .summary-head::after {
     content: attr(data-print-link);
     display: block;
-    margin-top: 2px;
-    color: #444;
-    font-size: 9px;
+    margin-top: 3px;
+    color: #000;
+    font-size: inherit;
     word-break: break-all;
   }
 }

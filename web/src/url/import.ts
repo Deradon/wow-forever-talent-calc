@@ -107,10 +107,40 @@ export function splitWowheadCode(code: string, tabSizes: number[]): { segments: 
   return { segments }
 }
 
+/**
+ * One talent that did not arrive whole, stated once per talent rather than
+ * once per lost point. The round-two UX review (finding 3) found `Improved
+ * Charge`, `Deep Wounds` and four others listed twice on one 46-point link,
+ * because a talent that Forever shortened *and* the rules then refused wrote
+ * two rows with two different numbers beside them.
+ */
 export interface UnplacedTalent {
   name: string
-  points: number
-  reason: 'not-in-forever' | 'clamped' | 'rules'
+  /** Points the pasted build put on this talent. */
+  requested: number
+  /** Points that survived onto it. */
+  kept: number
+  /** Ranks the talent has in Forever; `undefined` when it has none. */
+  maxRank?: number
+  reason: 'not-in-forever' | 'fewer-ranks' | 'rules'
+}
+
+function points(n: number): string {
+  return `${n} point${n === 1 ? '' : 's'}`
+}
+
+/**
+ * The player-facing line for one such talent. It says what happened and with
+ * which numbers - "fewer ranks in Forever" alone read as "this talent is gone"
+ * when the talent is there and only the surplus was dropped.
+ */
+export function unplacedLine(u: UnplacedTalent): string {
+  if (u.reason === 'not-in-forever') return `${u.name}: ${points(u.requested)} lost, not in Forever.`
+  if (u.reason === 'fewer-ranks') {
+    const ranks = u.maxRank ?? u.kept
+    return `${u.name}: placed ${u.kept} of ${points(u.requested)}, Forever has ${ranks} rank${ranks === 1 ? '' : 's'}.`
+  }
+  return `${u.name}: placed ${u.kept} of ${points(u.requested)}, the rest does not fit the tree.`
 }
 
 export interface ImportOutcome {
@@ -131,6 +161,7 @@ export function normalizeName(name: string): string {
 interface ForeverTalent {
   treeId: string
   talentId: string
+  name: string
   maxRank: number
 }
 
@@ -139,7 +170,7 @@ function foreverByName(cls: ClassData): Map<string, ForeverTalent> {
   for (const tree of cls.trees) {
     for (const talent of tree.talents) {
       const key = normalizeName(talent.name)
-      if (!map.has(key)) map.set(key, { treeId: tree.id, talentId: talent.id, maxRank: talent.maxRank })
+      if (!map.has(key)) map.set(key, { treeId: tree.id, talentId: talent.id, name: talent.name, maxRank: talent.maxRank })
     }
   }
   return map
@@ -156,7 +187,7 @@ function foreverByName(cls: ClassData): Map<string, ForeverTalent> {
 export function mapClassicBuild(cls: ClassData, classic: ClassicClass, segments: string[]): ImportOutcome {
   const byName = foreverByName(cls)
   const unplaced: UnplacedTalent[] = []
-  const wanted = new Map<string, { treeId: string; talentId: string; rank: number }>()
+  const wanted = new Map<string, { treeId: string; talentId: string; name: string; rank: number; maxRank: number }>()
   let requested = 0
 
   segments.forEach((segment, tab) => {
@@ -171,12 +202,16 @@ export function mapClassicBuild(cls: ClassData, classic: ClassicClass, segments:
       requested += rank
       const target = byName.get(normalizeName(name))
       if (!target) {
-        unplaced.push({ name, points: rank, reason: 'not-in-forever' })
+        unplaced.push({ name, requested: rank, kept: 0, reason: 'not-in-forever' })
         continue
       }
-      const capped = Math.min(rank, target.maxRank)
-      if (capped < rank) unplaced.push({ name, points: rank - capped, reason: 'clamped' })
-      wanted.set(`${target.treeId}/${target.talentId}`, { treeId: target.treeId, talentId: target.talentId, rank: capped })
+      wanted.set(`${target.treeId}/${target.talentId}`, {
+        treeId: target.treeId,
+        talentId: target.talentId,
+        name: target.name,
+        rank,
+        maxRank: target.maxRank,
+      })
     }
   })
 
@@ -192,7 +227,8 @@ export function mapClassicBuild(cls: ClassData, classic: ClassicClass, segments:
   for (let pass = 0; pass < 3; pass++) {
     let changed = false
     for (const want of order) {
-      while (rankOf(build, want.treeId, want.talentId) < want.rank && canAdd(cls, build, want.treeId, want.talentId).ok) {
+      const target = Math.min(want.rank, want.maxRank)
+      while (rankOf(build, want.treeId, want.talentId) < target && canAdd(cls, build, want.treeId, want.talentId).ok) {
         build = add(cls, build, want.treeId, want.talentId)
         changed = true
       }
@@ -200,35 +236,39 @@ export function mapClassicBuild(cls: ClassData, classic: ClassicClass, segments:
     if (!changed) break
   }
 
+  // One row per talent: the shortfall is stated once, with the reason that
+  // accounts for most of it.
   for (const want of order) {
-    const short = want.rank - rankOf(build, want.treeId, want.talentId)
-    if (short <= 0) continue
-    const tree = cls.trees.find((t) => t.id === want.treeId)
-    const talent = tree?.talents.find((t) => t.id === want.talentId)
-    unplaced.push({ name: talent?.name ?? want.talentId, points: short, reason: 'rules' })
+    const kept = rankOf(build, want.treeId, want.talentId)
+    if (kept >= want.rank) continue
+    const shortened = want.rank > want.maxRank
+    unplaced.push({
+      name: want.name,
+      requested: want.rank,
+      kept,
+      maxRank: want.maxRank,
+      reason: shortened && kept === want.maxRank ? 'fewer-ranks' : 'rules',
+    })
   }
 
   const placed = totalPoints(build)
   return { build, requested, placed, left: cls.rules.maxPoints - placed, unplaced }
 }
 
-const REASON_TEXT: Record<UnplacedTalent['reason'], string> = {
-  'not-in-forever': 'not in Forever',
-  clamped: 'fewer ranks in Forever',
-  rules: 'does not fit the tree',
-}
-
 /**
- * "37 of 41 points placed. Dropped: Sword Specialization (not in Forever),
- * Improved Battle Shout (not in Forever). 4 points left to spend."
+ * The headline above the list: "21 of 51 points placed. 6 talents did not fit.
+ * 30 points left to spend."
+ *
+ * It no longer names talents. The names used to be squeezed into it, truncated
+ * at six with "and N more", and then the full list was printed underneath
+ * anyway - so the truncation bought nothing and the reasons were stated twice
+ * in two different shapes (UX review round two, finding 3). One line per talent
+ * now lives in the list; `unplacedLine` writes it.
  */
 export function importReport(outcome: ImportOutcome): string {
-  const parts = [`${outcome.placed} of ${outcome.requested} point${outcome.requested === 1 ? '' : 's'} placed.`]
-  if (outcome.unplaced.length > 0) {
-    const listed = outcome.unplaced.slice(0, 6).map((u) => `${u.name} (${REASON_TEXT[u.reason]})`)
-    const rest = outcome.unplaced.length - listed.length
-    parts.push(`Dropped: ${listed.join(', ')}${rest > 0 ? `, and ${rest} more` : ''}.`)
-  }
-  if (outcome.left > 0) parts.push(`${outcome.left} point${outcome.left === 1 ? '' : 's'} left to spend.`)
+  const parts = [`${outcome.placed} of ${points(outcome.requested)} placed.`]
+  const n = outcome.unplaced.length
+  if (n > 0) parts.push(`${n} talent${n === 1 ? '' : 's'} did not fit.`)
+  if (outcome.left > 0) parts.push(`${points(outcome.left)} left to spend.`)
   return parts.join(' ')
 }

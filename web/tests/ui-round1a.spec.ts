@@ -77,6 +77,8 @@ test.describe('class switcher', () => {
 
   test('every chip is keyboard reachable and names its class', async ({ page }) => {
     await page.goto('/#/paladin')
+    // The class route is a lazy chunk, so wait for it before counting.
+    await expect(page.getByTestId('class-switcher')).toBeVisible()
     const chips = page.getByTestId('class-switcher').locator('a')
     expect(await chips.count()).toBeGreaterThanOrEqual(9)
     await expect(page.getByTestId('class-chip-warrior')).toHaveAttribute('href', '#/warrior')

@@ -1,31 +1,31 @@
-import type { Notice as NoticeData } from '../url/codec'
+import { useEffect } from 'react'
+import { summarizeNotices, type Notice as NoticeData } from '../url/codec'
 
+/**
+ * The one bar a player sees when a shared link did not survive the current
+ * trees. It is deliberately a summary: encoding positions (`arms #18`), talent
+ * slugs, rule reasons and the word "clamped" are internal, and a truncated or
+ * hand-edited link used to stack three bars of them above the trees (UX review
+ * round two, finding 1). They now go to the console, once per link, for
+ * whoever is debugging the link rather than reading the build.
+ */
 export function Notices({ notices, onDismiss }: { notices: NoticeData[]; onDismiss: () => void }) {
-  if (notices.length === 0) return null
+  const summary = summarizeNotices(notices)
+  const detail = summary?.detail.join('\n')
+
+  useEffect(() => {
+    if (detail) console.info(`[build link] ${detail}`)
+  }, [detail])
+
+  if (!summary) return null
   return (
     <div className="mb-3 flex flex-col gap-2" data-testid="notices">
-      {notices.map((n, i) => (
-        <div key={i} className="notice flex items-start justify-between gap-3" data-notice={n.kind}>
-          <div>
-            <strong>{n.kind === 'adjusted' ? 'Build adjusted. ' : ''}</strong>
-            {n.message}
-            {n.violations && n.violations.length > 0 && (
-              <ul className="mt-1 list-disc pl-5 text-xs opacity-80">
-                {n.violations.slice(0, 8).map((v, j) => (
-                  <li key={j}>
-                    {v.treeId}/{v.talentId}: {v.reason}
-                    {v.detail ? ` (${v.detail})` : ''}
-                  </li>
-                ))}
-                {n.violations.length > 8 && <li>and {n.violations.length - 8} more</li>}
-              </ul>
-            )}
-          </div>
-          <button className="btn text-xs" onClick={onDismiss} aria-label="Dismiss notices">
-            Dismiss
-          </button>
-        </div>
-      ))}
+      <div className="notice flex items-start justify-between gap-3" data-notice={summary.kind}>
+        <div data-testid="notice-message">{summary.message}</div>
+        <button className="btn text-xs" onClick={onDismiss} aria-label="Dismiss notice">
+          Dismiss
+        </button>
+      </div>
     </div>
   )
 }

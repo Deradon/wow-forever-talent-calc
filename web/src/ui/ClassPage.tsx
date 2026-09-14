@@ -27,6 +27,12 @@ import { blockedMessage } from './interaction'
 import { readLastBuild, writeLastBuild, continueLabel, type LastBuild } from './storage'
 
 import { SITE_TITLE, useTitle } from './title'
+/* The calculator's own stylesheet and the print rules travel in this chunk:
+   nothing outside `#/<class>` draws a tree, a cell or a build summary, and the
+   Print button is in the summary column (performance review R-2). */
+import './calculator.css'
+import './print.css'
+import { playerNotes, RANKS_LINE } from './trust'
 import { TreePanel } from './TreePanel'
 
 interface Props {
@@ -368,8 +374,13 @@ export function ClassPage({ classId, version, buildString, sel: selParam, embed 
             {coarse
               ? 'Tap a talent for its tooltip, then + to add a point and - to remove one.'
               : 'Left click adds a point, right click removes one. Ctrl+Z undoes, Ctrl+Shift+Z redoes. With a talent focused: Enter or Space adds, Backspace removes, arrow keys move. Move the pointer into a tooltip to keep it open, or press d to show where its numbers come from.'}
-            {cls.notes?.map((n, i) => (
-              <div key={i}>{n}</div>
+            {/* The class file's own notes are the pipeline's prose ("rank-0
+                tooltips only; ranks 2+ are anticipated"), so the page states
+                the fact in a player's words and prints only the notes that
+                survive the guard (UX review round two, finding 6). */}
+            <div data-testid="class-ranks-line">{RANKS_LINE}</div>
+            {playerNotes(cls.notes).map((n) => (
+              <div key={n}>{n}</div>
             ))}
           </div>
           )}

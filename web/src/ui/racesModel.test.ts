@@ -159,21 +159,23 @@ describe('one race', () => {
 })
 
 describe('trust', () => {
-  it('states the source once for the page and says nothing was reviewed', () => {
-    const lines = raceTrustLines([trait(), trait({ id: 'b' })])
-    expect(lines).toHaveLength(1)
-    expect(lines[0]).toContain('Read from BlizzCon 2026 footage')
-    expect(lines[0]).toContain('not yet reviewed')
+  it('states the source once for the page and counts what has been checked', () => {
+    expect(raceTrustLines([trait(), trait({ id: 'b' })])).toEqual([
+      'Read from BlizzCon 2026 footage.',
+      'None of the 2 racial traits has been checked by hand yet; they are as read.',
+    ])
   })
 
   it('counts reviewed traits and flags low-confidence readings', () => {
     const shaky = trait({ id: 'shaky', source: { kind: 'video', t: 1, confidence: 0.3, reviewed: false } })
     const done = trait({ id: 'done', source: { kind: 'video', t: 1, confidence: 1, reviewed: true } })
     const lines = raceTrustLines([shaky, done])
-    expect(lines[0]).toContain('1 of 2 traits reviewed')
-    expect(lines[1]).toContain('uncertain')
-    expect(raceTrustLines([done])[0]).toContain('and reviewed')
+    expect(lines[1]).toBe('1 of 2 racial traits have been checked by hand; the rest are as read.')
+    expect(lines[2]).toContain('uncertain')
+    expect(raceTrustLines([done])[1]).toBe('All 1 racial trait have been checked by hand.')
     expect(raceTrustLines([])).toEqual([])
+    // No page may say "unreviewed" of a dataset that is partly reviewed.
+    expect(lines.join(' ')).not.toMatch(/unreviewed|not yet reviewed/i)
   })
 
   it('puts the tooltip’s own amber line on a shaky card, and nothing on a solid one', () => {

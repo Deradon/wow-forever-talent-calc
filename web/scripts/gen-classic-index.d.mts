@@ -16,6 +16,6 @@ export interface ClassicIndexFile {
 }
 
 export declare function buildIndex(prior: unknown): ClassicIndexFile
-export declare function generate(): { text: string; changed: boolean }
+export declare function generate(root?: string): { text: string; changed: boolean }
 export declare function priorPath(): string
 export declare function outPath(): string

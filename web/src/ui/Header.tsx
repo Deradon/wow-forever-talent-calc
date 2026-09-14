@@ -127,12 +127,23 @@ export function Header({ cls, classId, build, query, onQuery, onJump, onReset, r
             Reset
           </button>
         )}
-        {/* The `?` badge is otherwise an unexplained glyph floating over the grid (usability 7). */}
+        {/* Every marker the grid draws, explained once. The star and the
+            diamond are the two most frequent glyphs on the grid - 21 stars on
+            paladin alone - and neither was in the legend (UX review round two,
+            finding 10). */}
         <p className="control-legend" data-testid="badge-legend">
           <span className="legend-flag" aria-hidden="true">
             ?
           </span>{' '}
-          = uncertain reading, check it. The corner number is rank / max rank.
+          = uncertain reading, check it.{' '}
+          <span className="legend-new" aria-hidden="true">
+            &#9733;
+          </span>{' '}
+          = new in Forever.{' '}
+          <span className="legend-changed" aria-hidden="true">
+            &#9670;
+          </span>{' '}
+          = reworked in Forever. The corner number is rank / max rank.
         </p>
       </div>
 

@@ -28,7 +28,6 @@ from pathlib import Path
 
 import typer
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import export as X  # noqa: E402
 from wowtalents import ranks as R  # noqa: E402
 

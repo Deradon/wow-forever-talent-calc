@@ -1,21 +1,21 @@
 # Spell lists and spellbook tooltips (stage 11, generated)
 
-Generated 2026-09-13T20:40:16Z by `pipeline/stages/11_spellbook.py build` from 2463 spellbook frames (213 page states, 90 distinct pages read). Do not edit by hand; re-run the stage.
+Generated 2026-09-14T07:30:45Z by `pipeline/stages/11_spellbook.py build` from 2463 spellbook frames (213 page states, 90 distinct pages read). Do not edit by hand; re-run the stage.
 
-**327 spell entries over 8 classes, 112 full hover tooltips, 16 names with no Classic Era counterpart.** Classes never shown on stream: Priest.
+**323 spell entries over 8 classes, 112 full hover tooltips, 12 names with no Classic Era counterpart.** Classes never shown on stream: Priest.
 
 ## Coverage
 
 | Class | Pages seen | Tabs missing | Entries | Tooltips | Show all ranks | Min confidence |
 |---|---|---|---|---|---|---|
-| Druid | Balance, Feral Combat, Restoration | general | 41 | 27 | not observed | 0.0 |
-| Hunter | Beast Mastery, General, Marksmanship, Pet, Survival | - | 63 | 36 | on | 1.0 |
-| Mage | Arcane, Fire, Frost, General | - | 45 | 32 | not observed | 0.0 |
-| Paladin | Exact Matches, General, Holy, Name Matches, Protection, Retribution | - | 48 | 6 | on | 1.0 |
-| Rogue | General | assassination, combat, subtlety | 15 | 1 | not observed | 0.7 |
-| Shaman | Elemental Combat, Enhancement, General, Name Matches, Restoration | - | 59 | 9 | on | 0.0 |
+| Druid | Balance, Feral Combat, Restoration | general | 40 | 27 | not observed | 1.0 |
+| Hunter | Beast Mastery, General, Marksmanship, Pet, Survival | - | 63 | 36 | on | 0.9 |
+| Mage | Arcane, Fire, Frost, General | - | 44 | 32 | not observed | 1.0 |
+| Paladin | Exact Matches, General, Holy, Name Matches, Protection, Retribution | - | 48 | 6 | on | 0.9 |
+| Rogue | General | assassination, combat, subtlety | 15 | 1 | not observed | 1.0 |
+| Shaman | Elemental Combat, Enhancement, General, Name Matches, Restoration | - | 58 | 9 | on | 0.7 |
 | Warlock | Exact Matches, General | affliction, demonology, destruction | 10 | 0 | on | 1.0 |
-| Warrior | Arms, Exact Matches, Fury, General, Name Matches, Protection | - | 46 | 1 | not observed | 0.0 |
+| Warrior | Arms, Exact Matches, Fury, General, Name Matches, Protection | - | 45 | 1 | not observed | 0.9 |
 
 ## Entries
 
@@ -50,7 +50,6 @@ Generated 2026-09-13T20:40:16Z by `pipeline/stages/11_spellbook.py build` from 2
 | druid | feral-combat | Rake | 2 | active | unknown | 1.0 | 05:48:49 | yes |
 | druid | feral-combat | Ravage | 1 | active | unknown | 1.0 | 05:48:49 | - |
 | druid | feral-combat | Rip | 3 | active | unknown | 1.0 | 05:48:49 | - |
-| druid | feral-combat | Shapeshift | - | active | new | 0.0 | 05:48:43 | - |
 | druid | feral-combat | Shred | 3 | active | unknown | 1.0 | 05:48:49 | - |
 | druid | feral-combat | Swipe | 3 | active | unknown | 1.0 | 05:48:49 | - |
 | druid | restoration | Abolish Poison | - | active | unknown | 1.0 | 05:49:11 | - |
@@ -102,7 +101,7 @@ Generated 2026-09-13T20:40:16Z by `pipeline/stages/11_spellbook.py build` from 2
 | hunter | pet | Dive | 1 | active | unknown | 1.0 | 05:56:17 | - |
 | hunter | pet | Follow | - | active | unknown | 1.0 | 05:56:17 | - |
 | hunter | pet | Great Stamina | 6 | active | unknown | 1.0 | 05:56:17 | yes |
-| hunter | pet | Mine! | 3,4 | active | unknown | 1.0 | 05:56:17 | yes |
+| hunter | pet | Mine! | 3,4 | active | unknown | 0.9 | 05:56:17 | yes |
 | hunter | pet | Move To | - | active | unknown | 1.0 | 05:56:17 | yes |
 | hunter | pet | Natural Armor | 6 | active | unknown | 1.0 | 05:56:17 | - |
 | hunter | pet | Stay | - | active | unknown | 1.0 | 05:56:17 | yes |
@@ -112,14 +111,14 @@ Generated 2026-09-13T20:40:16Z by `pipeline/stages/11_spellbook.py build` from 2
 | hunter | survival | Freezing Trap | 1 | active | unknown | 1.0 | 05:55:36 | yes |
 | hunter | survival | Frost Trap | - | active | unknown | 1.0 | 05:55:36 | yes |
 | hunter | survival | Immolation Trap | 3 | active | unknown | 1.0 | 05:55:42 | - |
-| hunter | survival | MongOOSE Bite | 2 | active | unknown | 1.0 | 05:55:36 | yes |
+| hunter | survival | Mongoose Bite | 2 | active | unknown | 1.0 | 05:55:42 | yes |
 | hunter | survival | Raptor Strike | 5 | active | unknown | 1.0 | 05:55:36 | yes |
 | hunter | survival | Track Beasts | - | active | unknown | 1.0 | 05:55:36 | yes |
 | hunter | survival | Track Demons | - | active | unknown | 1.0 | 05:55:36 | yes |
-| hunter | survival | Track Elementals | - | active | unknown | 1.0 | 05:55:44 | yes |
-| hunter | survival | Track Hidden | - | passive | unknown | 1.0 | 05:55:44 | yes |
-| hunter | survival | Track Humanoids | - | passive | unknown | 1.0 | 05:55:44 | yes |
-| hunter | survival | Track Undead | - | passive | unknown | 1.0 | 05:55:44 | - |
+| hunter | survival | Track Elementals | - | active | unknown | 1.0 | 05:55:36 | yes |
+| hunter | survival | Track Hidden | - | active | unknown | 1.0 | 05:55:36 | yes |
+| hunter | survival | Track Humanoids | - | active | unknown | 1.0 | 05:55:36 | yes |
+| hunter | survival | Track Undead | - | active | unknown | 1.0 | 05:55:36 | - |
 | hunter | survival | Wing Clip | 2 | active | unknown | 1.0 | 05:55:36 | yes |
 | hunter | - | Aspect of the Beast | 1 | active | unknown | 1.0 | 05:55:23 | - |
 | hunter | - | Aspect of the Cheetah | - | active | unknown | 1.0 | 05:55:23 | - |
@@ -138,7 +137,6 @@ Generated 2026-09-13T20:40:16Z by `pipeline/stages/11_spellbook.py build` from 2
 | mage | arcane | Counterspell | - | active | unknown | 1.0 | 06:09:05 | yes |
 | mage | arcane | Dampen Magic | 3 | active | unknown | 1.0 | 06:09:05 | yes |
 | mage | arcane | Evocation | - | active | unknown | 1.0 | 06:09:05 | yes |
-| mage | arcane | Evocation Dampen Magic | 3 | active | new | 0.0 | 06:09:11 | - |
 | mage | arcane | Mage Armor | 1 | active | unknown | 1.0 | 06:09:05 | yes |
 | mage | arcane | Mana Shield | 3 | active | unknown | 1.0 | 06:09:05 | yes |
 | mage | arcane | Polymorph | 2 | active | unknown | 1.0 | 06:09:05 | - |
@@ -197,7 +195,7 @@ Generated 2026-09-13T20:40:16Z by `pipeline/stages/11_spellbook.py build` from 2
 | paladin | holy | Turn Undead | 2 | active | unknown | 1.0 | 03:59:38 | - |
 | paladin | protection | Concentration Aura | - | active | unknown | 1.0 | 04:00:43 | - |
 | paladin | protection | Devotion Aura | 4 | active | unknown | 1.0 | 04:00:43 | - |
-| paladin | protection | Divine Intervention | - | active | unknown | 1.0 | 04:00:43 | - |
+| paladin | protection | Divine intervention | - | active | unknown | 0.9 | 04:00:43 | - |
 | paladin | protection | Divine Protection | 2 | active | unknown | 1.0 | 04:00:43 | - |
 | paladin | protection | Divine Shield | 1 | active | unknown | 1.0 | 04:00:43 | - |
 | paladin | protection | Fire Resistance Aura | 1 | active | unknown | 1.0 | 04:00:43 | - |
@@ -227,11 +225,11 @@ Generated 2026-09-13T20:40:16Z by `pipeline/stages/11_spellbook.py build` from 2
 | rogue | general | Parry | - | passive | unknown | 1.0 | 06:14:23 | - |
 | rogue | general | Pick Lock | - | active | unknown | 1.0 | 06:13:45 | - |
 | rogue | general | Quickness | - | racial-passive | unknown | 1.0 | 06:14:23 | - |
-| rogue | general | Shadowmeld | - | active | unknown | 1.0 | 06:14:23 | yes |
+| rogue | general | Shadowmeld | - | racial | unknown | 1.0 | 06:13:45 | yes |
 | rogue | general | Shoot Bow | - | active | unknown | 1.0 | 06:14:23 | - |
-| rogue | general | Shoot Crossbow | 1 | active | unknown | 0.7 | 06:13:45 | - |
-| rogue | general | Shoot Gun | 1 | active | unknown | 0.7 | 06:13:45 | - |
-| rogue | general | Throw | 1 | active | unknown | 0.7 | 06:13:45 | - |
+| rogue | general | Shoot Crossbow | 1 | active | unknown | 1.0 | 06:13:45 | - |
+| rogue | general | Shoot Gun | 1 | active | unknown | 1.0 | 06:13:45 | - |
+| rogue | general | Throw | 1 | active | unknown | 1.0 | 06:13:45 | - |
 | rogue | general | Wisp Spirit | - | racial-passive | unknown | 1.0 | 06:14:23 | - |
 | shaman | elemental-combat | Call of the Ancestors | - | active | new | 1.0 | 05:33:35 | - |
 | shaman | elemental-combat | Call of the Elements | - | active | new | 1.0 | 05:33:35 | - |
@@ -248,13 +246,13 @@ Generated 2026-09-13T20:40:16Z by `pipeline/stages/11_spellbook.py build` from 2
 | shaman | elemental-combat | Stoneclaw Totem | 4 | active | unknown | 1.0 | 05:33:35 | yes |
 | shaman | elemental-combat | Totemic Recall | - | active | new | 1.0 | 05:33:35 | - |
 | shaman | enhancement | Astral Recall | - | active | unknown | 1.0 | 05:34:21 | - |
-| shaman | enhancement | Far Sight | 1 | active | unknown | 1.0 | 05:40:32 | - |
-| shaman | enhancement | Fire Resistance Totem | 1 | active | unknown | 1.0 | 05:34:21 | - |
+| shaman | enhancement | Far Sight | 1 | active | unknown | 1.0 | 05:34:21 | - |
+| shaman | enhancement | Fire Resistance Totem | 1 | active | unknown | 1.0 | 05:40:32 | - |
 | shaman | enhancement | Flametongue Totem | 2 | active | unknown | 1.0 | 05:40:32 | - |
 | shaman | enhancement | Flametongue Weapon | 4 | active | unknown | 1.0 | 05:40:32 | - |
 | shaman | enhancement | Frost Resistance Totem | 2 | active | unknown | 1.0 | 05:40:32 | - |
 | shaman | enhancement | Frostbrand Weapon | 3 | active | unknown | 1.0 | 05:40:32 | - |
-| shaman | enhancement | Ghost Wolf | - | active | unknown | 1.0 | 05:34:21 | - |
+| shaman | enhancement | Ghost Wolf | - | active | unknown | 1.0 | 05:40:32 | - |
 | shaman | enhancement | Grounding Totem | 4 | active | unknown | 1.0 | 05:34:21 | - |
 | shaman | enhancement | Lightning Shield | 4 | active | unknown | 1.0 | 05:40:32 | - |
 | shaman | enhancement | Nature Resistance Totem | 1,4 | active | unknown | 1.0 | 05:40:32 | yes |
@@ -290,7 +288,6 @@ Generated 2026-09-13T20:40:16Z by `pipeline/stages/11_spellbook.py build` from 2
 | shaman | restoration | Lesser Healing Wave | 3 | active | unknown | 1.0 | 05:34:12 | - |
 | shaman | restoration | Mana Spring Totem | 2 | active | unknown | 1.0 | 05:34:12 | - |
 | shaman | restoration | Poison Cleansing Totem | - | passive | unknown | 0.7 | 05:34:12 | - |
-| shaman | restoration | Reincarnation Passive | - | passive | new | 0.0 | 05:34:12 | - |
 | shaman | restoration | Tremor Totem | - | passive | unknown | 0.7 | 05:34:12 | - |
 | warlock | general | Armor Proficiency | - | passive | unknown | 1.0 | 05:18:38 | - |
 | warlock | general | Attack | - | active | unknown | 1.0 | 05:18:38 | - |
@@ -320,14 +317,13 @@ Generated 2026-09-13T20:40:16Z by `pipeline/stages/11_spellbook.py build` from 2
 | warrior | fury | Demoralizing Shout | 3 | active | unknown | 1.0 | 05:01:29 | - |
 | warrior | fury | Execute | 2 | active | unknown | 1.0 | 05:01:29 | - |
 | warrior | fury | Intimidating Shout | - | active | unknown | 1.0 | 05:01:29 | - |
-| warrior | fury | Rummel Whirlwind | 1 | active | new | 0.0 | 05:01:29 | - |
-| warrior | fury | Slam | 3 | active | unknown | 0.0 | 05:01:29 | - |
+| warrior | fury | Slam | 3 | active | unknown | 1.0 | 05:01:29 | - |
 | warrior | fury | Whirlwind | - | active | unknown | 1.0 | 05:01:29 | yes |
 | warrior | general | Armor Proficiency | - | passive | unknown | 1.0 | 05:01:27 | - |
 | warrior | general | Block | - | passive | unknown | 1.0 | 05:01:27 | - |
 | warrior | general | Dodge | - | passive | unknown | 1.0 | 05:01:27 | - |
 | warrior | general | Dual Wield | - | passive | unknown | 1.0 | 05:01:27 | - |
-| warrior | general | Elemental Insight | - | racial-passive | unknown | 1.0 | 05:01:27 | - |
+| warrior | general | Elemental insight | - | racial-passive | unknown | 0.9 | 05:01:27 | - |
 | warrior | general | Languages | - | passive | unknown | 1.0 | 05:01:27 | - |
 | warrior | general | Parry | - | passive | unknown | 1.0 | 05:01:27 | - |
 | warrior | general | Read Ley Line | - | racial | unknown | 1.0 | 05:01:27 | - |

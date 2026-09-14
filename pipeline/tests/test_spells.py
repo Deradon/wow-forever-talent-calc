@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT))
 from wowtalents import spells as SP  # noqa: E402
+from wowtalents import stagekit as SK  # noqa: E402
 
 import validate_spells as VS  # noqa: E402
 
@@ -522,11 +523,11 @@ def test_rank_at_cell_lines_the_entries_up_with_the_icons():
     ("59:00-1:02:00", (3540, 3720)),
 ])
 def test_parse_window(spec, want):
-    assert st11.parse_window(spec) == want
+    assert SK.parse_window(spec) == want
 
 
 def test_hms():
-    assert st11.hms(14380.5) == "03:59:40"
+    assert SK.hms(14380.5) == "03:59:40"
 
 
 def test_classic_for_marks_an_unknown_name_new_and_a_known_one_unknown():
@@ -555,8 +556,8 @@ def test_classic_for_claims_nothing_without_a_prior():
 
 def test_json_object_finds_a_fenced_answer():
     text = 'Sure!\n```json\n{"entries":[{"name":"Attack","subtitle":"","cut_off":false}]}\n```\n'
-    assert st11._json_object(text, "entries")["entries"][0]["name"] == "Attack"
-    assert st11._json_object('{"other":1}', "entries") is None
+    assert SK.json_object(text, "entries")["entries"][0]["name"] == "Attack"
+    assert SK.json_object('{"other":1}', "entries") is None
 
 
 # --------------------------------------------------------------------------- validator
@@ -675,3 +676,287 @@ def test_canonical_dumps_sorts_spells_by_tab_then_id():
                      dict(base, id="blink", name="Blink", tab="arcane")]
     out = json.loads(VS.canonical_dumps(doc))
     assert [s["id"] for s in out["spells"]] == ["blink", "scorch"]
+
+
+# --------------------------------------------------------------------------- reader merge (D-1)
+
+def _tt(reader: str, desc: str, *, name: str = "Dampen Magic", footer: str | None = None,
+        cost: str | None = None) -> dict:
+    return {"reader": reader, "name": name, "description": desc, "footer": footer, "cost": cost}
+
+
+def test_merge_tooltip_gives_punctuation_to_the_authority():
+    """A comma read as a full stop: six of these shipped at confidence 1.0 (review D-1)."""
+    readings = [_tt("pass1", "Scares a beast. causing it to run in fear."),
+                _tt("pass2", "Scares a beast. causing it to run in fear."),
+                _tt("codex", "Scares a beast, causing it to run in fear.")]
+    out = SP.merge_tooltip(readings)
+    assert out["fields"]["description"] == "Scares a beast, causing it to run in fear."
+    assert out["shapes"] == {"punct": 1}
+    assert out["disputed"] == []
+    assert out["confidence"] == SP.ADJUDICATED_CONFIDENCE
+
+
+def test_merge_tooltip_lowercases_a_capital_i_both_readers_agreed_on():
+    readings = [_tt("pass1", "You are proficient In the use of cloth armor."),
+                _tt("pass2", "You are proficient In the use of cloth armor."),
+                _tt("codex", "You are proficient In the use of cloth armor.")]
+    out = SP.merge_tooltip(readings)
+    assert out["fields"]["description"] == "You are proficient in the use of cloth armor."
+    assert out["shapes"] == {"case": 1}
+
+
+def test_merge_tooltip_leaves_a_sentence_opening_capital_i_alone():
+    text = "Increases your Intellect by 5. Instant cast."
+    readings = [_tt("pass1", text), _tt("pass2", text), _tt("codex", text)]
+    out = SP.merge_tooltip(readings)
+    assert out["fields"]["description"] == text
+    assert out["confidence"] == SP.SETTLED_CONFIDENCE
+
+
+def test_merge_tooltip_queues_a_word_the_readers_split_on_instead_of_voting_it_away():
+    """``mage/dampen-magic`` shipped "Dampons" at 1.0 because both passes made the mistake."""
+    readings = [_tt("pass1", "Dampons magic used against the target."),
+                _tt("pass2", "Dampons magic used against the target."),
+                _tt("codex", "Dampens magic used against the target.")]
+    out = SP.merge_tooltip(readings)
+    assert out["confidence"] == SP.DISPUTED_CONFIDENCE
+    assert out["disputed"] == ["description 'Dampons' vs 'Dampens'"]
+    # the first reader's text still stands: nothing is switched on an unaudited authority
+    assert out["fields"]["description"].startswith("Dampons")
+
+
+def test_merge_tooltip_flags_a_footer_the_readers_word_differently():
+    readings = [_tt("pass1", "d", footer="You haven't added this to your action bars"),
+                _tt("codex", "d", footer="You haven't added this to your Action Bar yet.")]
+    out = SP.merge_tooltip(readings)
+    assert out["confidence"] == SP.DISPUTED_CONFIDENCE
+    assert any(d.startswith("footer ") for d in out["disputed"])
+
+
+def test_merge_tooltip_flags_a_cost_line_the_readers_disagree_on():
+    readings = [_tt("pass1", "d", cost="280 Mana"), _tt("codex", "d", cost="200 Mana")]
+    assert "cost '280 Mana' vs '200 Mana'" in SP.merge_tooltip(readings)["disputed"]
+
+
+def test_merge_tooltip_takes_the_authoritys_casing_of_the_name():
+    readings = [_tt("pass1", "d", name="dampen magic"), _tt("codex", "d", name="Dampen Magic")]
+    out = SP.merge_tooltip(readings)
+    assert out["fields"]["name"] == "Dampen Magic"
+    assert out["disputed"] == []
+
+
+def test_two_passes_of_one_reader_no_longer_reach_full_confidence():
+    """The defect behind D-1: agreeing with yourself is repeatability, not corroboration."""
+    readings = [_tt("pass1", "same text"), _tt("pass2", "same text")]
+    assert SP.merge_tooltip(readings)["confidence"] == SP.UNCORROBORATED_CONFIDENCE
+
+
+def test_a_single_reading_is_evidence_of_nothing():
+    assert SP.merge_tooltip([_tt("pass1", "only one pass saw this")])["confidence"] == 0.0
+    assert SP.merge_tooltip([])["confidence"] == 0.0
+
+
+def test_split_readings_treats_an_authority_only_record_as_its_own_primary():
+    primary, auth, others = SP.split_readings([{"reader": "codex", "name": "Whirlwind"}])
+    assert primary["name"] == "Whirlwind" and auth is None and others == []
+
+
+def test_merge_entry_never_merges_a_real_name_disagreement_away():
+    """"Rummel Whirlwind" was minted by one reader and published as a new Forever spell."""
+    out = SP.merge_entry([{"reader": "pass1", "name": "Rummel Whirlwind", "rank": 1, "kind": "active"},
+                          {"reader": "codex", "name": "Whirlwind", "rank": 1, "kind": "active"}])
+    assert out["fields"]["name"] == "Rummel Whirlwind"
+    assert out["confidence"] == SP.DISPUTED_CONFIDENCE
+    assert out["disputed"] == ["name 'Rummel Whirlwind' vs 'Whirlwind'"]
+
+
+def test_merge_entry_agrees_verbatim():
+    out = SP.merge_entry([{"reader": "pass1", "name": "Slam", "rank": 3, "kind": "active"},
+                          {"reader": "pass2", "name": "Slam", "rank": 3, "kind": "active"},
+                          {"reader": "codex", "name": "Slam", "rank": 3, "kind": "active"}])
+    assert out["confidence"] == SP.SETTLED_CONFIDENCE and out["disputed"] == []
+
+
+def test_merge_entry_flags_a_rank_the_readers_disagree_on():
+    out = SP.merge_entry([{"reader": "pass1", "name": "Slam", "rank": 3, "kind": "active"},
+                          {"reader": "codex", "name": "Slam", "rank": 2, "kind": "active"}])
+    assert out["disputed"] == ["rank 3 vs 2"] and out["confidence"] == SP.DISPUTED_CONFIDENCE
+
+
+@pytest.mark.parametrize("raw,name,kind", [
+    ("Reincarnation Passive", "Reincarnation", "Passive"),
+    ("Blood Fury (Racial)", "Blood Fury", "Racial"),
+    ("Cannibalize Racial Passive", "Cannibalize", "Racial Passive"),
+    ("Shoot Gun", "Shoot Gun", None),
+    ("Bear Form", "Bear Form", None),
+])
+def test_strip_kind_takes_a_glued_subtitle_off_the_name(raw, name, kind):
+    assert SP.strip_kind(raw) == (name, kind)
+
+
+def test_normalise_entry_puts_a_glued_passive_back_where_it_belongs():
+    """``shaman/reincarnation-passive``: the whole id came from a subtitle (K-4 / V-4)."""
+    assert SP.normalise_entry({"name": "Reincarnation Passive", "subtitle": ""}) == {
+        "name": "Reincarnation", "rank": None, "kind": "passive", "cut_off": False}
+    assert SP.spell_id("Reincarnation Passive") == "reincarnation"
+
+
+def test_strip_rank_still_wins_over_strip_kind():
+    assert SP.normalise_entry({"name": "Holy Strike", "subtitle": "Rank 5"})["rank"] == 5
+    assert SP.spell_id("Holy Strike Rank 5") == "holy-strike"
+
+
+# --------------------------------------------------------------------------- validator, round two
+
+def _tooltip(conf: float = 1.0, **over) -> dict:
+    tip = {"description": "Blinks you forward.",
+           "source": {"kind": "video", "video": "X", "t": 1.0, "frame": 60,
+                      "crop": "data/review/spells/mage/blink.tooltip.png", "panel": "tooltip",
+                      "confidence": conf, "reader": "r", "reviewed": False}}
+    tip.update(over)
+    return tip
+
+
+def test_validator_queues_a_low_confidence_tooltip():
+    """Four tooltips below 0.8 were in no queue at all before round two (D-4 / V-1)."""
+    doc = _doc()
+    doc["spells"][0]["tooltips"] = [_tooltip(0.3)]
+    doc["coverage"]["tooltipsRead"] = 1
+    ctx = VS.Ctx(VS.FileResult(Path("mage.json")), None)
+    VS.rule_13_confidence(ctx, doc)
+    assert [f.code for f in ctx.result.findings] == ["NEEDS-REVIEW"]
+    assert ctx.result.findings[0].where == "/spells/0/tooltips/0"
+    assert [q["where"] for q in ctx.result.queue] == ["/spells/0", "/spells/0/tooltips/0"]
+
+
+def test_validator_does_not_queue_a_reviewed_tooltip():
+    doc = _doc()
+    tip = _tooltip(0.3)
+    tip["source"].update(reviewed=True, reviewedBy="someone", reviewedAt="2026-09-14T00:00:00Z")
+    doc["spells"][0]["tooltips"] = [tip]
+    ctx = VS.Ctx(VS.FileResult(Path("mage.json")), None)
+    VS.rule_13_confidence(ctx, doc)
+    assert [f.code for f in ctx.result.findings] == []
+    assert [q["where"] for q in ctx.result.queue] == ["/spells/0"]
+
+
+@pytest.mark.parametrize("text,expected", [
+    ("Scares a beast. causing it to run.", "comma misread"),
+    ("Grabs the weapon with Its talons.", "capital I"),
+    ("Teleports the caster to Ironforge.", None),
+    ("Increases your Intellect. Instant cast.", None),
+    ("Blinks  you forward.", "whitespace"),
+    ("Deals 10 damage |r to the target.", "OCR artefact"),
+])
+def test_text_defects_finds_the_two_machine_detectable_shapes(text, expected):
+    found = VS.text_defects(text)
+    if expected is None:
+        assert found == []
+    else:
+        assert any(expected in f for f in found), found
+
+
+def test_validator_flags_a_defect_in_the_footer_too():
+    doc = _doc()
+    doc["spells"][0]["tooltips"] = [_tooltip(footer="Learned. and added to your spellbook")]
+    doc["coverage"]["tooltipsRead"] = 1
+    codes = _findings(doc, VS.rule_11_tooltips)
+    assert codes == ["TEXT-HYGIENE"]
+
+
+def test_validator_rejects_a_record_only_one_reader_saw():
+    """The four fabricated "new in Forever" spells, as a gate (D-2)."""
+    doc = _doc()
+    doc["spells"][0]["source"]["confidence"] = 0.0
+    doc["spells"][0]["tags"] = ["new"]
+    doc["spells"][0]["classic"] = {"status": "new", "note": "unverified"}
+    codes = _findings(doc, VS.rule_16_publishable)
+    assert codes.count("UNPUBLISHABLE") == 2      # below the floor, and tagged new below 0.8
+
+
+def test_validator_rejects_a_video_record_with_no_crop_or_frame():
+    doc = _doc()
+    doc["spells"][0]["source"].pop("crop")
+    doc["spells"][0]["source"].pop("frame")
+    assert _findings(doc, VS.rule_16_publishable).count("UNPUBLISHABLE") == 2
+
+
+def test_validator_leaves_a_reviewed_low_confidence_record_alone():
+    doc = _doc()
+    doc["spells"][0]["source"].update(confidence=0.0, reviewed=True, reviewedBy="a",
+                                      reviewedAt="2026-09-14T00:00:00Z")
+    assert _findings(doc, VS.rule_16_publishable) == []
+
+
+def test_validator_catches_a_kind_glued_into_the_name():
+    doc = _doc()
+    doc["spells"][0]["name"] = "Reincarnation Passive"
+    assert "KIND-IN-NAME" in _findings(doc, VS.rule_14_kind)
+    doc["spells"][0]["name"] = "Blink"
+    assert _findings(doc, VS.rule_14_kind) == []
+
+
+def test_validator_rejects_an_empty_tooltip_description():
+    doc = _doc()
+    doc["spells"][0]["tooltips"] = [_tooltip(description="   ")]
+    doc["coverage"]["tooltipsRead"] = 1
+    assert "TOOLTIP-EMPTY" in _findings(doc, VS.rule_11_tooltips)
+
+
+# --------------------------------------------------------------------------- stage 11 plumbing
+
+def test_label_readings_keeps_a_label_and_invents_one_for_the_passes():
+    out = st11._label_readings([{"name": "A"}, {"name": "A"}, {"reader": "codex", "name": "B"}])
+    assert [r["reader"] for r in out] == ["pass1", "pass2", "codex"]
+
+
+def test_attach_codex_matches_by_key_then_by_name():
+    entries = [{"name": "Slam", "rank": 3, "kind": "active", "readings": [{"reader": "pass1"}]},
+               {"name": "Blink", "rank": None, "kind": "active", "readings": [{"reader": "pass1"}]}]
+    third = [{"name": "Blink", "rank": None, "kind": "active"},
+             {"name": "Slam", "rank": 2, "kind": "active"}]
+    assert st11._attach_codex(entries, third) == 2
+    assert all(SP.is_authority(e["readings"][-1]) for e in entries)
+    assert entries[0]["readings"][-1]["rank"] == 2      # same spell, different rank: still the match
+
+
+def test_attach_codex_skips_a_row_that_already_has_an_authority():
+    entries = [{"name": "Slam", "rank": 3, "kind": "active",
+                "readings": [{"reader": "pass1"}, {"reader": "codex", "name": "Slam"}]}]
+    assert st11._attach_codex(entries, [{"name": "Slam", "rank": 3, "kind": "active"}]) == 0
+
+
+def test_readings_never_drops_the_authority():
+    raw = [{"reader": "pass1", "name": "A"}, {"reader": "pass2", "name": "A"},
+           {"reader": "pass3", "name": "A"}, {"reader": "codex", "name": "A"}]
+    out = st11._readings(raw, "qwen")
+    assert [r["reader"] for r in out] == ["qwen/pass1", "qwen/pass2", "codex"]
+
+
+def test_merge_note_names_the_dispute_and_the_corrections():
+    note = st11._merge_note({"disputed": ["description 'a' vs 'b'"], "shapes": {"punct": 2}})
+    assert "the two readers disagree on description 'a' vs 'b'" in note[0]
+    assert "2 punct" in note[1]
+    assert st11._merge_note({}) == []
+
+
+def test_write_readings_refuses_to_shrink_the_file(tmp_path):
+    path = tmp_path / "readings.json"
+    st11._write_readings(path, {"states": [1, 2], "tooltips": [1]})
+    with pytest.raises(ValueError, match="tooltips would shrink"):
+        st11._write_readings(path, {"states": [1, 2], "tooltips": []})
+    assert json.loads(path.read_text())["tooltips"] == [1]     # the old file survives
+
+
+def test_referenced_crops_collects_rows_icons_and_tooltips(tmp_path):
+    doc = _doc()
+    doc["spells"][0]["iconCrop"] = "data/review/spells/mage/blink.icon.png"
+    doc["spells"][0]["iconSource"] = "crop"
+    doc["spells"][0]["tooltips"] = [_tooltip()]
+    (tmp_path / "mage.json").write_text(json.dumps(doc))
+    assert st11._referenced_crops(tmp_path) == {
+        "data/review/spells/mage/a.png",
+        "data/review/spells/mage/blink.icon.png",
+        "data/review/spells/mage/blink.tooltip.png",
+    }

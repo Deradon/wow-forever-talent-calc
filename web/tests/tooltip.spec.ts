@@ -136,8 +136,8 @@ test('the uncertain marker shows both readings and the captured crop', async ({ 
   await makeSticky(page, 'steady-hands')
 
   const nest = await openNested(page, 'term-reading-steady-hands')
-  await expect(nest).toContainText('The reading in use')
-  await expect(nest).toContainText('A second reading')
+  await expect(nest).toContainText('The version shown')
+  await expect(nest).toContainText('A second transcription')
   await expect(nest).toContainText('Steady Hand')
   await expect(nest).not.toContainText(/qwen|rapidocr/i)
 

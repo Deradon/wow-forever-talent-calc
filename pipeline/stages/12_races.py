@@ -33,20 +33,21 @@ from __future__ import annotations
 
 import json
 import shutil
-import subprocess
 import sys
 import time
-from datetime import datetime, timezone
 from pathlib import Path
 
 import cv2
 import typer
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+# ``wowtalents`` is this project's installed package; only ``validate_races``, a top-level module
+# next to the stages, needs a path entry, and it is added once here rather than inside the
+# function that imports it (round two, K-9).
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from wowtalents import mkv as MK  # noqa: E402
 from wowtalents import races as RC  # noqa: E402
 from wowtalents import reader as RD  # noqa: E402
-from wowtalents import fsio as _fsio  # noqa: E402
+from wowtalents import stagekit as SK  # noqa: E402
 from wowtalents import ui  # noqa: E402
 from wowtalents.fsio import write_json_atomic, write_text_atomic  # noqa: E402
 from wowtalents.text import clean_text  # noqa: E402
@@ -90,28 +91,6 @@ UNDEAD_FRAME = 15300
 UNDEAD_BOX = (300, 190, 940, 440)
 
 
-def hms(t: float) -> str:
-    s = int(t)
-    return f"{s // 3600:02d}:{s % 3600 // 60:02d}:{s % 60:02d}"
-
-
-def parse_window(spec: str) -> tuple[int, int]:
-    a, _, b = spec.partition("-")
-    def p(x: str) -> int:
-        x = x.strip()
-        if ":" in x:
-            parts = [int(v) for v in x.split(":")]
-            while len(parts) < 3:
-                parts.insert(0, 0)
-            return parts[0] * 3600 + parts[1] * 60 + parts[2]
-        return int(x)
-    return p(a), p(b)
-
-
-def now() -> str:
-    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-
 def state_id(sel: RC.Selection, t: float) -> str:
     return f"{sel.key.replace('/', '-')}-{int(round(t))}"
 
@@ -135,7 +114,7 @@ def scan(
     min_frames: int = typer.Option(2, help="frames a scroll position must survive to be kept"),
 ):
     """Find the distinct (race, scroll position) states in the character-creation windows."""
-    wins = [parse_window(w) for w in window] if window else WINDOWS
+    wins = [SK.parse_window(w) for w in window] if window else WINDOWS
     if MK.STREAM_FPS % fps:
         typer.echo(f"--fps must divide {MK.STREAM_FPS}", err=True)
         raise typer.Exit(code=2)
@@ -149,7 +128,7 @@ def scan(
     seen_frames = cc_frames = 0
 
     for t0, t1 in wins:
-        typer.echo(f"window {hms(t0)}-{hms(t1)} at {fps} fps")
+        typer.echo(f"window {SK.hms(t0)}-{SK.hms(t1)} at {fps} fps")
         run: dict | None = None
 
         def close(run: dict | None) -> None:
@@ -196,7 +175,7 @@ def scan(
         close(run)
         typer.echo(f"  {len(states)} states so far ({time.time() - wall:.0f}s)")
 
-    doc = {"generatedAt": now(), "video": VIDEO_ID, "fps": fps,
+    doc = {"generatedAt": SK.now(), "video": VIDEO_ID, "fps": fps,
            "windows": [[a, b] for a, b in wins],
            "frames_seen": seen_frames, "character_creation_frames": cc_frames,
            "states": states, "class_bars": bars}
@@ -234,55 +213,20 @@ def distinct_states(states: list[dict], max_hamming: int) -> list[dict]:
     return sorted(keep, key=lambda s: (s["race"], s.get("variant") or "", s["t"]))
 
 
+#: The codex CLI reads one race box of the character-creation screen.
+RACE_PROMPT = (
+    "The image is the race box of the World of Warcraft character-creation screen. "
+    "Transcribe every racial trait row (round icon, then 'Name: description' or "
+    "'Name (Passive): description'). Copy the text exactly; do not paraphrase. Ignore the "
+    "lore paragraph and the race name. Do not create any file and do not explain. Your entire "
+    "final message must be one JSON object and nothing else: "
+    '{"traits":[{"name":"","kind":"Passive" or null,"description":"","cut_off":false}]}'
+)
+
+
 def codex_opinion(image: Path, out_dir: Path) -> dict | None:
-    """Second opinion from the codex CLI on one race box crop (best effort)."""
-    out = out_dir / (image.stem + ".codex.json")
-    if out.is_file():
-        try:
-            return json.loads(out.read_text())
-        except json.JSONDecodeError:
-            out.unlink()
-    prompt = (
-        "The image is the race box of the World of Warcraft character-creation screen. "
-        "Transcribe every racial trait row (round icon, then 'Name: description' or "
-        "'Name (Passive): description'). Copy the text exactly; do not paraphrase. Ignore the "
-        "lore paragraph and the race name. Do not create any file and do not explain. Your entire "
-        "final message must be one JSON object and nothing else: "
-        '{"traits":[{"name":"","kind":"Passive" or null,"description":"","cut_off":false}]}'
-    )
-    raw = out.with_suffix(".txt")
-    try:
-        subprocess.run(["codex", "exec", "--ephemeral", "--skip-git-repo-check",
-                        "-o", str(raw), "-i", str(image), "-"],
-                       input=prompt, text=True, capture_output=True, timeout=420, check=False)
-    except (OSError, subprocess.TimeoutExpired):
-        return None
-    doc = _json_object(raw.read_text()) if raw.is_file() else None
-    if doc is not None:
-        _fsio.write_json_atomic(out, doc)
-    return doc
-
-
-def _json_object(text: str) -> dict | None:
-    """The first balanced JSON object in a free-form CLI answer (fenced or bare)."""
-    start = text.find("{")
-    while start != -1:
-        depth = 0
-        for i in range(start, len(text)):
-            if text[i] == "{":
-                depth += 1
-            elif text[i] == "}":
-                depth -= 1
-                if depth == 0:
-                    try:
-                        doc = json.loads(text[start:i + 1])
-                    except json.JSONDecodeError:
-                        break
-                    if isinstance(doc, dict) and "traits" in doc:
-                        return doc
-                    break
-        start = text.find("{", start + 1)
-    return None
+    """Second opinion from the codex CLI on one race box crop (best effort, cached)."""
+    return SK.codex_opinion(image, out_dir, RACE_PROMPT, "traits")
 
 
 @app.command()
@@ -346,7 +290,7 @@ def read(
                    f"{len(st['icon_bands'])} icons ({time.time() - wall:.0f}s)")
 
     undead = _read_undead(rd, mkv, undead_frame, offset, crops)
-    write_json_atomic(out, {"generatedAt": now(), "reader": model, "server": server,
+    write_json_atomic(out, {"generatedAt": SK.now(), "reader": model, "server": server,
                             "prompt": RD.PROMPT_VERSION, "states": out_states, "undead": undead})
     typer.echo(f"{len(out_states)} states read by {model} in {time.time() - wall:.0f}s "
                f"({rd.calls} calls, {rd.cache_hits} cached) -> {out}")
@@ -370,27 +314,8 @@ def _pair_traits(a: list[dict], b: list[dict]) -> list[dict]:
 
 def _apply_third(traits: list[dict], third: list[dict]) -> list[dict]:
     """A codex reading that matches one of the two passes lifts that trait's confidence."""
-    by_id = {RC.trait_id(t["name"]): t for t in third if RC.trait_id(t["name"])}
-    out = []
-    for t in traits:
-        c = by_id.get(RC.trait_id(t["name"]))
-        if c is None:
-            out.append(t)
-            continue
-        readings = t["readings"] + [c]
-        best = max(RC.confidence(r, c) for r in t["readings"])
-        conf = t["confidence"]
-        if conf >= 1.0 and best < 1.0:
-            conf = 0.9                      # both VLM passes agree, codex words it differently
-        elif best >= 1.0:
-            conf = max(conf, 0.85)          # two of three agree verbatim
-        elif best >= 0.7:
-            conf = max(conf, 0.7)
-        out.append({**t, "confidence": conf, "readings": readings, "codex": True})
-    for tid, c in by_id.items():
-        if not any(RC.trait_id(t["name"]) == tid for t in traits):
-            out.append({**c, "confidence": 0.3, "readings": [c], "codex": True})
-    return out
+    return SK.apply_third(traits, third, ident=lambda t: RC.trait_id(t.get("name") or ""),
+                          agreement=RC.confidence)
 
 
 def _read_undead(rd: RD.Reader, mkv: Path, second: int, offset: float, crops: Path) -> dict | None:
@@ -430,14 +355,8 @@ def _read_undead(rd: RD.Reader, mkv: Path, second: int, offset: float, crops: Pa
 
 def _source(t: float, frame: int, crop: str, conf: float, reader: str, panel: str = "race-panel",
             readings: list[dict] | None = None, note: str | None = None) -> dict:
-    src: dict = {"kind": "video", "video": VIDEO_ID, "t": round(float(t), 3), "frame": int(frame),
-                 "crop": crop, "panel": panel, "confidence": round(float(conf), 2), "reader": reader}
-    if readings:
-        src["readings"] = readings
-    src["reviewed"] = False
-    if note:
-        src["note"] = note
-    return src
+    """This stage's video id bound into :func:`wowtalents.stagekit.source`."""
+    return SK.source(VIDEO_ID, t, frame, crop, conf, reader, panel, readings, note)
 
 
 def _prior() -> tuple[dict, dict]:
@@ -495,8 +414,17 @@ def build(
     out_dir: Path = typer.Option(RACES_DIR),
     review: Path = typer.Option(REVIEW),
     min_confidence: float = typer.Option(0.0, help="drop trait readings below this confidence"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="report only; write no file and delete no crop"),
 ):
-    """Merge the panel states into data/races/<race>.json plus matrix.json and the review crops."""
+    """Merge the panel states into data/races/<race>.json plus matrix.json and the review crops.
+
+    A race the run produced no traits for is **skipped**, not emptied. The loop below is driven
+    by the union of races with readings and races that merely have a class bar, so after
+    ``read --only <race>``, after ``read --limit N``, or after a ``scan`` whose ffmpeg produced
+    nothing, a race can reach here with no units at all. Until round two's review it then wrote
+    ``traits: []`` over the good file and ``_prune_crops`` deleted that race's committed crops,
+    all with exit code 0 and a document that passed the schema, the validator and CI (K-1).
+    """
     if not readings.is_file():
         typer.echo(f"no {readings}; run `read` first", err=True)
         raise typer.Exit(code=2)
@@ -538,14 +466,17 @@ def build(
                 "source": {"confidence": t["confidence"], "sharpness": st["sharpness"],
                            "t": st["t"], "frame": st["frame"], "state": st["id"]},
                 "readings": t.get("readings") or []})
-        if blocks and panel is not None:
+        # --dry-run must not touch data/review/ either: a crop written for a reading the merge
+        # later discards is exactly the litter _prune_crops exists to remove, and on a dry run
+        # nothing prunes it
+        if blocks and panel is not None and not dry_run:
             norm_traits = [RC.normalise_trait(x) for x in st["traits"]]
             _write_block_crops(panel, [(norm_traits[k], blocks[k], band_of[k]) for k in sorted(blocks)],
                                st["race"], review)
-        if panel is not None:
+        if panel is not None and not dry_run:
             box = cv2.imread(str(crops / st["box_crop"]))
             if box is not None and (st.get("race_name_read") or unit["lore"] is None):
-                cv2.imwrite(str(_ensure(review / st["race"]) / "_panel.png"), box)
+                cv2.imwrite(str(SK.ensure(review / st["race"]) / "_panel.png"), box)
         if st.get("lore"):
             cur = unit["lore"]
             if cur is None or len(st["lore"]) > len(cur["text"]):
@@ -554,44 +485,81 @@ def build(
                                 "confidence": st.get("lore_agreement", 0.5)}
 
     undead_extra = rdoc.get("undead")
-    if undead_extra and (crops / undead_extra["crop"]).is_file():
-        shutil.copyfile(crops / undead_extra["crop"], _ensure(review / "undead") / "_general.png")
+    if undead_extra and not dry_run and (crops / undead_extra["crop"]).is_file():
+        shutil.copyfile(crops / undead_extra["crop"], SK.ensure(review / "undead") / "_general.png")
     bars = sdoc.get("class_bars") or {}
     matrix: dict[str, dict] = {}
     counts: dict[str, int] = {}
+    docs: dict[str, dict] = {}
+    skipped: list[str] = []
+    previous = _previous_matrix(out_dir)
     for race in sorted({r for r, _ in per_unit} | {k.split("/")[0] for k in bars}):
         units = {v: u for (r, v), u in per_unit.items() if r == race}
         doc, mrow = _race_doc(race, units, bars, prior, reader, review, undead_extra, crops)
-        write_text_atomic(out_dir / f"{race}.json", canonical_race_dumps(doc))
+        before = _trait_count(out_dir / f"{race}.json")
+        if not doc["traits"] or len(doc["traits"]) < before:
+            skipped.append(race)
+            typer.echo(f"  {race}: {len(doc['traits'])} traits against {before} in the existing file; "
+                       f"the file and its crops are left alone", err=True)
+            if race in previous:
+                matrix[race] = previous[race]
+            continue
+        docs[race] = doc
         matrix[race] = mrow
         counts[race] = len(doc["traits"])
+    if not counts:
+        typer.echo("no race produced a trait; nothing written", err=True)
+        raise typer.Exit(code=1)
+    if dry_run:
+        typer.echo(f"dry run: {len(counts)} race file(s) would be written, {len(skipped)} skipped; "
+                   "no file written, no crop deleted")
+        for race, n in sorted(counts.items()):
+            typer.echo(f"  {race:12} {n} traits")
+        return
+    for race, doc in docs.items():
+        write_text_atomic(out_dir / f"{race}.json", canonical_race_dumps(doc))
     write_text_atomic(out_dir / "matrix.json", canonical_race_dumps(_matrix_doc(matrix, bars)))
     write_json_atomic(EXTRACTED / "races.json",
-                      {"generatedAt": now(), "video": VIDEO_ID, "reader": reader,
+                      {"generatedAt": SK.now(), "video": VIDEO_ID, "reader": reader,
                        "states": len(rdoc["states"]), "traits": counts,
                        "candidates": {f"{r}/{v}" if v else r: u["records"]
                                       for (r, v), u in sorted(per_unit.items(), key=lambda kv: (kv[0][0], kv[0][1] or ""))}})
-    gone = _prune_crops(out_dir, review)
+    gone = SK.prune_crops(review, _referenced_crops(out_dir), REPO)
     write_text_atomic(EXTRACTED / "races.md", _inventory_md(out_dir, sdoc, rdoc))
     for g in gone:
         typer.echo(f"  removed unreferenced crop {g}")
     typer.echo(f"wrote {len(counts)} race files ({sum(counts.values())} traits), matrix.json, "
                f"data/extracted/races.json and data/extracted/races.md")
+    if skipped:
+        typer.echo(f"  {len(skipped)} race(s) skipped and left untouched: {', '.join(skipped)}", err=True)
     for race, n in sorted(counts.items()):
         typer.echo(f"  {race:12} {n} traits")
 
 
-def _ensure(p: Path) -> Path:
-    p.mkdir(parents=True, exist_ok=True)
-    return p
+def _trait_count(path: Path) -> int:
+    """Traits in the race file already on disk, or 0 when there is none."""
+    try:
+        return len(json.loads(path.read_text(encoding="utf-8")).get("traits") or [])
+    except (OSError, json.JSONDecodeError):
+        return 0
 
 
-def _prune_crops(out_dir: Path, review: Path) -> list[str]:
-    """Delete row and icon crops no race file names any more.
+def _previous_matrix(out_dir: Path) -> dict[str, dict]:
+    """The committed matrix rows, so a skipped race keeps the row it already had."""
+    try:
+        doc = json.loads((out_dir / "matrix.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return {r["race"]: {"faction": r.get("faction"), "classes": r.get("classes") or [],
+                        "byVariant": r.get("byVariant") or {}}
+            for r in doc.get("races") or [] if r.get("race")}
 
-    A fragment ("damage-to-beasts") gets a crop written before the merge knows it
-    is a fragment. Files whose name starts with ``_`` are the box, class bar and
-    spellbook evidence that the notes and docs point at, and are kept.
+
+def _referenced_crops(out_dir: Path) -> set[str]:
+    """Every review crop the published race files point at.
+
+    A fragment ("damage-to-beasts") gets a crop written before the merge knows it is a fragment,
+    so the set is computed from the files rather than from the run.
     """
     keep: set[str] = set()
     for f in sorted(out_dir.glob("*.json")):
@@ -605,15 +573,7 @@ def _prune_crops(out_dir: Path, review: Path) -> list[str]:
         for k in ("classesSource", "loreSource"):
             if doc.get(k):
                 keep.add(doc[k]["crop"])
-    gone = []
-    for png in sorted(review.rglob("*.png")):
-        if png.name.startswith("_"):
-            continue
-        rel = str(png.relative_to(REPO))
-        if rel not in keep:
-            png.unlink()
-            gone.append(rel)
-    return gone
+    return keep
 
 
 def _inventory_md(out_dir: Path, sdoc: dict, rdoc: dict) -> str:
@@ -628,7 +588,7 @@ def _inventory_md(out_dir: Path, sdoc: dict, rdoc: dict) -> str:
     lines = [
         "# Racial traits and the race/class matrix (stage 12, generated)",
         "",
-        f"Generated {now()} by `pipeline/stages/12_races.py build` from "
+        f"Generated {SK.now()} by `pipeline/stages/12_races.py build` from "
         f"{sdoc['character_creation_frames']} character-creation frames "
         f"({len(sdoc['states'])} panel states, {len(rdoc['states'])} distinct scroll positions read). "
         "Do not edit by hand; re-run the stage.",
@@ -656,7 +616,7 @@ def _inventory_md(out_dir: Path, sdoc: dict, rdoc: dict) -> str:
         for t in d["traits"]:
             src = t["source"]
             lines.append(f"| {d['race']} | {t['order']} | {t['name']} | {t['kind']} | "
-                         f"{t['classic']['status']} | {src['confidence']} | {hms(src['t'])} | "
+                         f"{t['classic']['status']} | {src['confidence']} | {SK.hms(src['t'])} | "
                          f"`{src['crop'].split('/')[-1]}` |")
     lines += ["", "## Race/class matrix", "",
               "| Race | " + " | ".join(c.title() for c in RC.CLASS_ORDER) + " |",
@@ -685,7 +645,7 @@ def _inventory_md(out_dir: Path, sdoc: dict, rdoc: dict) -> str:
 
 def _write_block_crops(panel, rows, race: str, review: Path) -> None:
     """Per-trait review crops: the text block and the icon, at native resolution."""
-    d = _ensure(review / race)
+    d = SK.ensure(review / race)
     px0, py0, _, _ = RC.PANEL
     ix0, ix1 = RC.ICON_COLUMN
     for t, (b0, b1), (i0, i1) in rows:
@@ -797,7 +757,7 @@ def _race_doc(race: str, units: dict, bars: dict, prior: dict, reader: str, revi
 
     doc: dict = {"$schema": "../schema/race.schema.json", "schemaVersion": 1, "race": race,
                  "raceName": RC.RACE_NAMES[race], "faction": faction, "dataSource": "video",
-                 "generatedAt": now()}
+                 "generatedAt": SK.now()}
     if variants:
         doc["variants"] = variants
     doc["classes"] = classes
@@ -805,7 +765,7 @@ def _race_doc(race: str, units: dict, bars: dict, prior: dict, reader: str, revi
         b = bars[sorted(keys)[0]]
         src = crops / b["crop"]
         if src.is_file():
-            shutil.copyfile(src, _ensure(review / race) / "_classbar.png")
+            shutil.copyfile(src, SK.ensure(review / race) / "_classbar.png")
         doc["classesSource"] = _source(b["t"], b["frame"], f"data/review/races/{race}/_classbar.png",
                                        1.0 if b["margin"] >= 5 else 0.5, "opencv-classbar", "class-bar",
                                        None, f"lit/greyed separation margin {b['margin']}")
@@ -862,7 +822,7 @@ def _matrix_doc(matrix: dict, bars: dict) -> dict:
                 row["agreement"] = "confirmed on screen"
         rows.append(row)
     return {"$schema": "../schema/race-matrix.schema.json", "schemaVersion": 1, "dataSource": "video",
-            "generatedAt": now(), "classes": RC.CLASS_ORDER, "races": rows,
+            "generatedAt": SK.now(), "classes": RC.CLASS_ORDER, "races": rows,
             "notes": ["Read from the lit/greyed class icons under the character preview; no VLM involved.",
                       "Cross-checked against the combinations Warcraft Tavern reported "
                       "(docs/research/2026-09-13-talent-system.md); disagreements are recorded per race."]}
@@ -872,7 +832,6 @@ def _matrix_doc(matrix: dict, bars: dict) -> dict:
 
 def canonical_race_dumps(doc: dict) -> str:
     """The one race serializer, which lives in ``validate_races.py`` so ``--check`` compares bytes."""
-    sys.path.insert(0, str(PIPELINE))
     from validate_races import canonical_dumps  # noqa: PLC0415
     return canonical_dumps(doc)
 

@@ -4,7 +4,16 @@ import { hasClass } from '../data/load'
 import type { ClassData } from '../data/schema'
 import { encode } from '../url/codec'
 import { loadRegistry } from '../data/encoding'
-import { importReport, mapClassicBuild, parseImport, splitWowheadCode, type ImportOutcome } from '../url/import'
+import { importReport, mapClassicBuild, parseImport, splitWowheadCode, unplacedLine, type ImportOutcome } from '../url/import'
+import { Modal } from './Modal'
+
+/**
+ * The list is one line per talent and one screen tall at 640 px, so it is
+ * shown whole. "and N more" is emitted only from here, and only when this cap
+ * actually bit - the round-two UX review found the old report truncating at six
+ * and then printing the full list underneath anyway.
+ */
+const MAX_UNPLACED = 24
 
 interface Props {
   cls: ClassData
@@ -88,63 +97,62 @@ export function ImportDialog({ cls, onClose, onImport }: Props) {
   }
 
   return (
-    <div className="import-box" data-testid="import-box">
-      <label className="text-xs text-[var(--text-dim)]" htmlFor={fieldId}>
-        Paste a link to this site, a build code like <code>30250-005-32</code>, or a Wowhead Classic talent link.
-      </label>
-      <textarea
-        id={fieldId}
-        className="import-input"
-        rows={3}
-        spellCheck={false}
-        autoFocus
-        value={text}
-        data-testid="import-input"
-        onChange={(e) => setText(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === 'Escape') onClose()
-          if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) void check()
-        }}
-      />
-      <div className="import-actions">
-        <button className="btn" data-testid="import-check" onClick={() => void check()} disabled={busy || text.trim() === ''}>
-          {busy ? 'Reading...' : 'Check'}
-        </button>
-        <button
-          className="btn"
-          data-testid="import-apply"
-          disabled={!preview}
-          onClick={() => {
-            if (!preview) return
-            onImport(preview.classId, preview.version, preview.build)
-            onClose()
+    <Modal title={`Import a build into ${cls.className}`} titleId="import-title" idBase="import" width="min(640px, 100%)" onClose={onClose}>
+      <div className="import-box" data-testid="import-box">
+        <label className="text-xs text-[var(--text-dim)]" htmlFor={fieldId}>
+          Paste a link to this site, a build code like <code>30250-005-32</code>, or a Wowhead Classic talent link.
+        </label>
+        <textarea
+          id={fieldId}
+          className="import-input"
+          rows={3}
+          spellCheck={false}
+          autoFocus
+          value={text}
+          data-testid="import-input"
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) void check()
           }}
-        >
-          Use this build
-        </button>
-        <button className="btn" data-testid="import-close" onClick={onClose}>
-          Close
-        </button>
-      </div>
-      {error && (
-        <p className="import-error" role="alert" data-testid="import-error">
-          {error}
-        </p>
-      )}
-      {preview && (
-        <div className="import-report" data-testid="import-report">
-          <p>{preview.report}</p>
-          {preview.outcome && preview.outcome.unplaced.length > 0 && (
-            <ul className="import-unplaced" data-testid="import-unplaced">
-              {preview.outcome.unplaced.map((u, i) => (
-                <li key={`${u.name}-${i}`}>
-                  {u.name} <span className="text-[var(--text-dim)]">{u.points}</span>
-                </li>
-              ))}
-            </ul>
-          )}
+        />
+        <div className="import-actions">
+          <button className="btn" data-testid="import-check" onClick={() => void check()} disabled={busy || text.trim() === ''}>
+            {busy ? 'Reading...' : 'Check'}
+          </button>
+          <button
+            className="btn"
+            data-testid="import-apply"
+            disabled={!preview}
+            onClick={() => {
+              if (!preview) return
+              onImport(preview.classId, preview.version, preview.build)
+              onClose()
+            }}
+          >
+            Use this build
+          </button>
         </div>
-      )}
-    </div>
+        {error && (
+          <p className="import-error" role="alert" data-testid="import-error">
+            {error}
+          </p>
+        )}
+        {preview && (
+          <div className="import-report" data-testid="import-report">
+            <p>{preview.report}</p>
+            {preview.outcome && preview.outcome.unplaced.length > 0 && (
+              <ul className="import-unplaced" data-testid="import-unplaced">
+                {preview.outcome.unplaced.slice(0, MAX_UNPLACED).map((u, i) => (
+                  <li key={`${u.name}-${i}`}>{unplacedLine(u)}</li>
+                ))}
+                {preview.outcome.unplaced.length > MAX_UNPLACED && (
+                  <li>and {preview.outcome.unplaced.length - MAX_UNPLACED} more</li>
+                )}
+              </ul>
+            )}
+          </div>
+        )}
+      </div>
+    </Modal>
   )
 }

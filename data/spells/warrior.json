@@ -4,7 +4,7 @@
   "class": "warrior",
   "className": "Warrior",
   "dataSource": "video",
-  "generatedAt": "2026-09-13T20:40:16Z",
+  "generatedAt": "2026-09-14T07:30:45Z",
   "observedLevel": 38,
   "tabs": [
     {
@@ -61,7 +61,7 @@
             "name": "Battle Stance"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Battle Stance"
           }
         ],
@@ -103,7 +103,7 @@
             "rank": 2
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Charge",
             "rank": 2
           }
@@ -146,7 +146,7 @@
             "rank": 2
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Hamstring",
             "rank": 2
           }
@@ -189,7 +189,7 @@
             "rank": 5
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Heroic Strike",
             "rank": 5
           }
@@ -230,6 +230,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Mocking Blow",
             "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Mocking Blow",
+            "rank": 3
           }
         ],
         "reviewed": false
@@ -266,6 +271,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Overpower",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
             "name": "Overpower",
             "rank": 2
           }
@@ -306,6 +316,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Rend",
             "rank": 4
+          },
+          {
+            "reader": "codex",
+            "name": "Rend",
+            "rank": 4
           }
         ],
         "reviewed": false
@@ -340,6 +355,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Retaliation"
+          },
+          {
+            "reader": "codex",
             "name": "Retaliation"
           }
         ],
@@ -376,6 +395,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Tactical Mastery"
+          },
+          {
+            "reader": "codex",
+            "name": "Tactical Mastery"
           }
         ],
         "reviewed": false
@@ -410,6 +433,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Victory Rush"
+          },
+          {
+            "reader": "codex",
             "name": "Victory Rush"
           }
         ],
@@ -451,7 +478,7 @@
             "rank": 4
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Battle Shout",
             "rank": 4
           }
@@ -491,7 +518,7 @@
             "name": "Berserker Rage"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Berserker Rage"
           }
         ],
@@ -530,7 +557,7 @@
             "name": "Berserker Stance"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Berserker Stance"
           }
         ],
@@ -569,7 +596,7 @@
             "name": "Challenging Shout"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Challenging Shout"
           }
         ],
@@ -607,6 +634,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cleave",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
             "name": "Cleave",
             "rank": 2
           }
@@ -647,6 +679,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Demoralizing Shout",
             "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Demoralizing Shout",
+            "rank": 3
           }
         ],
         "reviewed": false
@@ -685,6 +722,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Execute",
             "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Execute",
+            "rank": 2
           }
         ],
         "reviewed": false
@@ -720,39 +762,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Intimidating Shout"
-          }
-        ],
-        "reviewed": false
-      }
-    },
-    {
-      "id": "rummel-whirlwind",
-      "name": "Rummel Whirlwind",
-      "kind": "active",
-      "tab": "fury",
-      "ranksSeen": [1],
-      "icon": "crop-rummel-whirlwind",
-      "iconSource": "crop",
-      "iconCrop": "data/review/spells/warrior/rummel-whirlwind.icon.png",
-      "classic": {
-        "status": "new",
-        "note": "no Classic Era spell called Rummel Whirlwind for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
-      },
-      "tags": ["new"],
-      "source": {
-        "kind": "video",
-        "video": "DxtVEhjyROU",
-        "t": 18089.75,
-        "frame": 1085385,
-        "crop": "data/review/spells/warrior/rummel-whirlwind.png",
-        "panel": "spell-list",
-        "confidence": 0.0,
-        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
-        "readings": [
+          },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
-            "name": "Rummel Whirlwind",
-            "rank": 1
+            "reader": "codex",
+            "name": "Intimidating Shout"
           }
         ],
         "reviewed": false
@@ -779,11 +792,16 @@
         "frame": 1085385,
         "crop": "data/review/spells/warrior/slam.png",
         "panel": "spell-list",
-        "confidence": 0.0,
+        "confidence": 1.0,
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
         "readings": [
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Slam",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
             "name": "Slam",
             "rank": 3
           }
@@ -826,6 +844,11 @@
                 "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
                 "name": "Whirlwind",
                 "description": "In a whirlwind of steel you attack up to 4 enemies within 8 yards, causing weapon damage to each enemy."
+              },
+              {
+                "reader": "codex",
+                "name": "Whirlwind",
+                "description": "In a whirlwind of steel you attack up to 4 enemies within 8 yards, causing weapon damage to each enemy."
               }
             ],
             "reviewed": false,
@@ -854,6 +877,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Whirlwind"
+          },
+          {
+            "reader": "codex",
             "name": "Whirlwind"
           }
         ],
@@ -890,6 +917,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Armor Proficiency"
+          },
+          {
+            "reader": "codex",
+            "name": "Armor Proficiency"
           }
         ],
         "reviewed": false
@@ -924,6 +955,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Block"
+          },
+          {
+            "reader": "codex",
             "name": "Block"
           }
         ],
@@ -960,6 +995,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Dodge"
+          },
+          {
+            "reader": "codex",
+            "name": "Dodge"
           }
         ],
         "reviewed": false
@@ -995,6 +1034,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Dual Wield"
+          },
+          {
+            "reader": "codex",
+            "name": "Dual Wield"
           }
         ],
         "reviewed": false
@@ -1002,7 +1045,7 @@
     },
     {
       "id": "elemental-insight",
-      "name": "Elemental Insight",
+      "name": "Elemental insight",
       "kind": "racial-passive",
       "tab": "general",
       "icon": "crop-elemental-insight",
@@ -1019,7 +1062,7 @@
         "frame": 1085235,
         "crop": "data/review/spells/warrior/elemental-insight.png",
         "panel": "spell-list",
-        "confidence": 1.0,
+        "confidence": 0.9,
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
         "readings": [
           {
@@ -1029,9 +1072,14 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Elemental Insight"
+          },
+          {
+            "reader": "codex",
+            "name": "Elemental Insight"
           }
         ],
-        "reviewed": false
+        "reviewed": false,
+        "note": "the shape-aware reader merge corrected 1 case"
       }
     },
     {
@@ -1063,6 +1111,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Languages"
+          },
+          {
+            "reader": "codex",
             "name": "Languages"
           }
         ],
@@ -1098,6 +1150,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Parry"
+          },
+          {
+            "reader": "codex",
             "name": "Parry"
           }
         ],
@@ -1135,7 +1191,7 @@
             "name": "Read Ley Line"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Read Ley Line"
           }
         ],
@@ -1174,7 +1230,7 @@
             "name": "Shoot Bow"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Shoot Bow"
           }
         ],
@@ -1213,7 +1269,7 @@
             "name": "Shoot Crossbow"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Shoot Crossbow"
           }
         ],
@@ -1252,7 +1308,7 @@
             "name": "Shoot Gun"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Shoot Gun"
           }
         ],
@@ -1289,6 +1345,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Throw"
+          },
+          {
+            "reader": "codex",
+            "name": "Throw"
           }
         ],
         "reviewed": false
@@ -1323,6 +1383,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Walk on Air"
+          },
+          {
+            "reader": "codex",
+            "name": "Walk on Air"
           }
         ],
         "reviewed": false
@@ -1356,6 +1420,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Wind Blessed"
+          },
+          {
+            "reader": "codex",
             "name": "Wind Blessed"
           }
         ],
@@ -1394,7 +1462,7 @@
             "name": "Bloodrage"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Bloodrage"
           }
         ],
@@ -1433,7 +1501,7 @@
             "name": "Defensive Stance"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Defensive Stance"
           }
         ],
@@ -1472,7 +1540,7 @@
             "name": "Disarm"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Disarm"
           }
         ],
@@ -1510,6 +1578,11 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Revenge",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
             "name": "Revenge",
             "rank": 3
           }
@@ -1550,6 +1623,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Shield Bash",
             "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Shield Bash",
+            "rank": 2
           }
         ],
         "reviewed": false
@@ -1585,6 +1663,10 @@
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Shield Block"
+          },
+          {
+            "reader": "codex",
+            "name": "Shield Block"
           }
         ],
         "reviewed": false
@@ -1619,6 +1701,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shield Wall"
+          },
+          {
+            "reader": "codex",
             "name": "Shield Wall"
           }
         ],
@@ -1658,6 +1744,11 @@
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
             "name": "Sunder Armor",
             "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Sunder Armor",
+            "rank": 3
           }
         ],
         "reviewed": false
@@ -1692,6 +1783,10 @@
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Taunt"
+          },
+          {
+            "reader": "codex",
             "name": "Taunt"
           }
         ],
@@ -1729,7 +1824,7 @@
             "name": "Attack"
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Attack"
           }
         ],
@@ -1771,7 +1866,7 @@
             "rank": 4
           },
           {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass3",
+            "reader": "codex",
             "name": "Thunder Clap",
             "rank": 4
           }
@@ -1786,7 +1881,7 @@
     "tabsSeen": ["arms", "fury", "general", "protection"],
     "tabsMissing": [],
     "states": 11,
-    "entriesRead": 46,
+    "entriesRead": 45,
     "tooltipsRead": 1,
     "tooltipsUnmatched": 0,
     "showAllSpellRanks": "not observed",

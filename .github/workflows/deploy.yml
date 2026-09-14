@@ -40,12 +40,18 @@ jobs:
           cache-dependency-path: web/package-lock.json
       - run: npm ci
         working-directory: web
+      # The generated indexes under web/src/data are committed and the build
+      # reads them, so a stale commit would deploy content nobody reviewed.
+      # The generator no longer runs from vite.config.ts outside `npm run dev`,
+      # which is what makes this check meaningful (code review K-2).
+      - run: npm run gen && git diff --exit-code -- src/data
+        working-directory: web
+      - run: npm run typecheck
+        working-directory: web
       - run: npx vitest run
         working-directory: web
       - run: npx playwright install --with-deps chromium
         working-directory: web
-      # Non-blocking until the suite has run green in CI a few times; see
-      # docs/reviews/2026-09-13-code-and-docs.md finding B2. Drop the flag then.
       - run: npm run e2e
         working-directory: web
   deploy:
@@ -63,7 +69,7 @@ jobs:
           cache-dependency-path: web/package-lock.json
       - run: npm ci
         working-directory: web
-      - run: npx vitest run && npm run build
+      - run: npm run build
         working-directory: web
         env:
           VITE_BASE: /${{ github.event.repository.name }}/

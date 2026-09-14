@@ -33,7 +33,6 @@ import cv2
 import numpy as np
 import typer
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from wowtalents import fragments as fr  # noqa: E402
 from wowtalents import ui  # noqa: E402
 from wowtalents.fsio import write_json_atomic  # noqa: E402
