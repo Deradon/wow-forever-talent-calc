@@ -1,6 +1,7 @@
 /**
  * Hash routing: `#/`, `#/<class>?v=<N>&t=<build>`, `#/changes[/<class>]`,
- * `#/races[/<race>][?variant=<id>]`, `#/spells[/<class>]`, `#/review/<class>`.
+ * `#/races[/<race>][?variant=<id>]`, `#/spells[/<class>]`, `#/about`,
+ * `#/review/<class>`.
  * No router library: parseHash plus a `hashchange` listener in App.tsx.
  *
  * Two optional parameters ride along on the class route and are ignored by the
@@ -27,6 +28,8 @@ export type Route =
    * the page says so rather than rendering an empty book.
    */
   | { kind: 'spells'; classId?: string }
+  /** `#/about`: what this is, how the data was made, what to distrust. */
+  | { kind: 'about' }
   | { kind: 'review'; classId: string }
   | { kind: 'unknown'; hash: string }
 
@@ -62,6 +65,9 @@ export function parseHash(hash: string): Route {
     if (segments.length === 1) return { kind: 'spells' }
     if (segments[1] && SLUG.test(segments[1])) return { kind: 'spells', classId: segments[1] }
   }
+  // Before the class branch: `about` is a slug and would otherwise be read as a
+  // class id and 404 as "Unknown class".
+  if (segments.length === 1 && segments[0] === 'about') return { kind: 'about' }
   if (segments.length === 1 && segments[0] && SLUG.test(segments[0])) {
     const v = params.get('v')
     const t = params.get('t')
@@ -89,6 +95,8 @@ export function buildHash(route: Route): string {
       return route.classId ? `#/changes/${route.classId}` : '#/changes'
     case 'spells':
       return route.classId ? `#/spells/${route.classId}` : '#/spells'
+    case 'about':
+      return '#/about'
     case 'races': {
       if (!route.raceId) return '#/races'
       // The variant only means something on a race that has variants, so it is
@@ -141,6 +149,11 @@ export function changesHash(classId?: string): string {
 /** `#/spells` or `#/spells/<class>`. */
 export function spellsHash(classId?: string): string {
   return buildHash({ kind: 'spells', classId })
+}
+
+/** `#/about`. */
+export function aboutHash(): string {
+  return buildHash({ kind: 'about' })
 }
 
 /** `#/races`, `#/races/<race>` or `#/races/<race>?variant=<id>`. */

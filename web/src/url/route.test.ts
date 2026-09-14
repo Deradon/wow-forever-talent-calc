@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildHash, changesHash, classHash, parseHash, racesHash, spellsHash } from './route'
+import { aboutHash, buildHash, changesHash, classHash, parseHash, racesHash, spellsHash } from './route'
 
 describe('hash routing', () => {
   it('parses the documented forms', () => {
@@ -10,6 +10,14 @@ describe('hash routing', () => {
     expect(parseHash('#/warrior?v=3&t=--3')).toMatchObject({ build: '--3' })
     expect(parseHash('#/review/warrior')).toEqual({ kind: 'review', classId: 'warrior' })
     expect(parseHash('#/Warrior/extra')).toMatchObject({ kind: 'unknown' })
+  })
+
+  it('reads #/about as the about page, not as a class called "about"', () => {
+    expect(parseHash('#/about')).toEqual({ kind: 'about' })
+    expect(aboutHash()).toBe('#/about')
+    expect(parseHash(aboutHash())).toEqual({ kind: 'about' })
+    // Only the bare form; anything deeper is still unknown.
+    expect(parseHash('#/about/us')).toMatchObject({ kind: 'unknown' })
   })
 
   it('parses the round-2 routes and their view parameters', () => {

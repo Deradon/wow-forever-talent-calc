@@ -1,0 +1,77 @@
+name: Wrong reading
+description: A talent, spell or racial trait shows the wrong name, wording or numbers.
+title: "Wrong reading: "
+labels: ["data", "wrong-reading"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every line on this site was read out of a video by a vision model and
+        most of it has not been checked by a human yet, so a wrong reading is
+        expected, not a surprise. Thank you for pinning one down.
+
+        The fastest report names the record and what it should say. If you came
+        here from the "Report on GitHub" link on a review page, the first
+        fields are already filled in.
+  - type: dropdown
+    id: class
+    attributes:
+      label: Where
+      description: The class, or the page if it is not a talent.
+      options:
+        - druid
+        - hunter
+        - mage
+        - paladin
+        - priest
+        - rogue
+        - shaman
+        - warlock
+        - warrior
+        - races
+        - spells
+        - other
+    validations:
+      required: true
+  - type: input
+    id: record
+    attributes:
+      label: Which record
+      description: >-
+        A talent as `tree/talent-id` (for example `arms/improved-rend`), or the
+        name of the spell or the racial trait.
+      placeholder: arms/improved-rend
+    validations:
+      required: true
+  - type: textarea
+    id: shown
+    attributes:
+      label: What the site shows
+      description: Copy the name and the text as they appear now.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What the crop or the game shows
+      description: >-
+        What it should say, and where you got that from - the tooltip crop on
+        the site, a screenshot, a frame of the stream with its timestamp, or the
+        game itself. A screenshot can be pasted straight into this box.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: The page you were on, ideally with the talent pinned.
+      placeholder: https://deradon.github.io/wow-forever-talent-calc/#/warrior?sel=improved-rend
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before you send it
+      options:
+        - label: >-
+            My screenshots and pasted text carry no personal data - no real
+            names, e-mail addresses, home paths or account names.
+          required: true

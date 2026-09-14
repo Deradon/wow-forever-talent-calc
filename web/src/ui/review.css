@@ -1,0 +1,43 @@
+/* Write-back controls on #/review/<class>. The route stays read-only; these
+   only put text on the clipboard (see overrideEntry.ts). */
+
+.review-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.review-actions .btn {
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+.review-paste {
+  width: 100%;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: var(--text);
+  background: #05070f;
+  border: 1px solid var(--grey);
+  border-radius: 3px;
+  padding: 6px;
+}
+
+.review-hint {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.review-hint code {
+  font-size: 11px;
+  color: var(--gold);
+}

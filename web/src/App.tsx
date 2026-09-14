@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
-import { changesHash, parseHash, racesHash, spellsHash, type Route } from './url/route'
+import { aboutHash, changesHash, parseHash, racesHash, spellsHash, type Route } from './url/route'
 import { ClassPicker, REPO_URL } from './ui/ClassPicker'
 import { ClassPage } from './ui/ClassPage'
 import { ShortcutsOverlay } from './ui/ShortcutsOverlay'
@@ -33,6 +33,13 @@ const RacesPage = lazy(() => import('./ui/RacesPage').then((m) => ({ default: m.
  * `spellCrop.ts` and no other route ever touches them.
  */
 const SpellsPage = lazy(() => import('./ui/SpellsPage').then((m) => ({ default: m.SpellsPage })))
+
+/**
+ * `#/about`: three paragraphs and three links, reached from the footer of every
+ * page. Lazy for the same reason as the rest - a visitor who came to spend
+ * talent points should not download it to see the link.
+ */
+const AboutPage = lazy(() => import('./ui/AboutPage').then((m) => ({ default: m.AboutPage })))
 
 function useRoute(): Route {
   const [route, setRoute] = useState<Route>(() => parseHash(window.location.hash))
@@ -113,6 +120,10 @@ export default function App() {
         <a href={REPO_URL} target="_blank" rel="noreferrer">
           source on GitHub
         </a>
+        .{' '}
+        <a href={aboutHash()} data-testid="footer-about">
+          About this calculator
+        </a>
         .
       </footer>
     </div>
@@ -139,6 +150,8 @@ function Body({ route }: { route: Route }) {
       return <RacesPage key={route.raceId ?? ''} raceId={route.raceId} variant={route.variant} />
     case 'spells':
       return <SpellsPage key={route.classId ?? ''} classId={route.classId} />
+    case 'about':
+      return <AboutPage />
     case 'review':
       return <ReviewPage classId={route.classId} />
     default:

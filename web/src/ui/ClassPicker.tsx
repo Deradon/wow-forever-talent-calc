@@ -3,10 +3,12 @@ import classesIndex from '../data/classes-index.json'
 import { includeExamples } from '../data/load'
 import { changesHash, classHash, racesHash, spellsHash } from '../url/route'
 import { ClassIcon } from './ClassIcon'
+import { REPO_URL } from './site'
 import { continueLabel, forgetLastBuild, readLastBuild } from './storage'
 import { SITE_TITLE, useTitle } from './title'
 
-export const REPO_URL = 'https://github.com/Deradon/wow-forever-talent-calc'
+/** Re-exported so the many call sites that already look here keep working. */
+export { REPO_URL } from './site'
 
 interface IndexEntry {
   id: string

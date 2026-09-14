@@ -2,6 +2,10 @@ import { useEffect, useMemo, useState } from 'react'
 import { cropUrl } from '../data/crops'
 import { hasClass, listClasses, loadClass } from '../data/load'
 import type { ClassData, Talent } from '../data/schema'
+import { copyLabel, useCopy } from './copy'
+import { buildOverrideEntry, overrideEntriesText, overrideEntryText, wrongReadingUrl } from './overrideEntry'
+import './review.css'
+import { REPO_URL } from './site'
 import {
   ALL_FLAGS,
   diffWords,
@@ -29,8 +33,13 @@ const FLAG_LABEL: Record<ReviewFlag, string> = {
  * `#/review/<class>`: every talent, worst reading first, with the frame crop
  * beside the rendered tooltip at rank 1 and at max rank. This is the one place
  * where pipeline internals (Classic ids, similarity scores, reader names, crop
- * paths) are allowed on screen. Read-only; edits go through data/overrides/
- * (DATA-SCHEMA.md section 7).
+ * paths) are allowed on screen.
+ *
+ * Still read-only in the sense that matters: nothing here writes to the
+ * repository, and every correction goes through `data/overrides/<class>.json`
+ * and the exporter (DATA-SCHEMA.md section 7). What it does do is hand the
+ * reviewer the override entry on the clipboard, prefilled from the record, so
+ * the id, the tree, the name and the description are not retyped by hand.
  */
 export function ReviewPage({ classId }: { classId: string }) {
   const [cls, setCls] = useState<ClassData>()
@@ -39,6 +48,8 @@ export function ReviewPage({ classId }: { classId: string }) {
   const [tree, setTree] = useState('all')
   const [query, setQuery] = useState('')
   const [compact, setCompact] = useState(false)
+  const [allState, copyAll] = useCopy()
+  const [allText, setAllText] = useState('')
   useTitle(cls ? `Review ${cls.className} - ${SITE_TITLE}` : undefined)
 
   useEffect(() => {
@@ -153,12 +164,46 @@ export function ReviewPage({ classId }: { classId: string }) {
             <input type="checkbox" checked={compact} onChange={(e) => setCompact(e.target.checked)} />
             <span className="text-[var(--text-dim)]">Compact rows</span>
           </label>
+          {/* "Flagged" is whatever the filter above shows: pick `queue`, a tree
+              or a search term first, then take the whole set in one go. */}
+          <button
+            type="button"
+            className="btn"
+            data-testid="copy-all-overrides"
+            disabled={shown.length === 0}
+            onClick={() => {
+              const text = overrideEntriesText(shown.map((r) => buildOverrideEntry(r)))
+              setAllText(text)
+              copyAll(text)
+            }}
+          >
+            {copyLabel(allState, `Copy all flagged (${shown.length})`)}
+          </button>
         </div>
+        {allState === 'failed' && (
+          <textarea
+            className="review-paste"
+            readOnly
+            rows={6}
+            value={allText}
+            data-testid="copy-all-fallback"
+            onFocus={(e) => e.currentTarget.select()}
+          />
+        )}
       </header>
 
-      <p className="mb-3 text-xs text-[var(--text-dim)]">
-        Sorted worst reading first: unreviewed below 80% confidence, then other unreviewed, then reviewed. Read-only;
-        corrections go into <code>data/overrides/{classId}.json</code>.
+      <p className="review-hint mb-3 text-[var(--text-dim)]">
+        Sorted worst reading first: unreviewed below 80% confidence, then other unreviewed, then reviewed. Nothing on
+        this page writes to the repository. <strong className="text-[var(--text)]">Copy override</strong> puts one entry
+        on the clipboard; paste it inside the <code>"overrides": [ ... ]</code> array of{' '}
+        <code>data/overrides/{classId}.json</code>, correct the name and the description in the <code>set</code> block,
+        and replace the two <code>TODO</code>s (<code>reason</code>, <code>by</code>). Then, from{' '}
+        <code>pipeline/</code>: <code>uv run stages/08_export.py promote {classId}</code> and{' '}
+        <code>uv run python validate.py --check ../data/talents/{classId}.json</code>. The full workflow is in{' '}
+        <a href={`${REPO_URL}/blob/main/CONTRIBUTING.md`} target="_blank" rel="noreferrer">
+          CONTRIBUTING.md
+        </a>
+        .
       </p>
       <ol className="flex flex-col gap-3" data-testid="review-rows">
         {shown.map((row) => (
@@ -211,7 +256,8 @@ function Row({ cls, row, compact }: { cls: ClassData; row: ReviewRow; compact: b
         </div>
       )}
 
-      <dl className="review-meta">
+      <div className="review-body">
+        <dl className="review-meta">
         <dt>Talent</dt>
         <dd>
           <strong>{talent.name}</strong> <code>{talent.id}</code>
@@ -280,7 +326,9 @@ function Row({ cls, row, compact }: { cls: ClassData; row: ReviewRow; compact: b
             <dd>{talent.requires.map((r) => `${r.talent} ${r.rank}`).join(', ')}</dd>
           </>
         )}
-      </dl>
+        </dl>
+        <RowActions cls={cls} row={row} />
+      </div>
 
       <div className="review-tips">
         <TooltipContent
@@ -303,6 +351,54 @@ function Row({ cls, row, compact }: { cls: ClassData; row: ReviewRow; compact: b
         )}
       </div>
     </li>
+  )
+}
+
+/**
+ * Per row: the override entry on the clipboard, and the same record as a
+ * pre-filled issue for someone who is not going to open a pull request. The
+ * textarea only appears when the clipboard refused, which is the common case
+ * over plain http.
+ */
+function RowActions({ cls, row }: { cls: ClassData; row: ReviewRow }) {
+  const [state, copy] = useCopy()
+  const [text, setText] = useState('')
+  return (
+    <div className="review-actions">
+      <button
+        type="button"
+        className="btn"
+        data-testid={`copy-override-${row.talent.id}`}
+        onClick={() => {
+          const entry = overrideEntryText(buildOverrideEntry(row))
+          setText(entry)
+          copy(entry)
+        }}
+      >
+        {copyLabel(state, 'Copy override')}
+      </button>
+      <a
+        href={wrongReadingUrl(row, cls.class, REPO_URL)}
+        target="_blank"
+        rel="noreferrer"
+        data-testid={`report-${row.talent.id}`}
+      >
+        Report on GitHub
+      </a>
+      <span className="text-[var(--text-dim)]">
+        into <code>data/overrides/{cls.class}.json</code>
+      </span>
+      {state === 'failed' && (
+        <textarea
+          className="review-paste"
+          readOnly
+          rows={8}
+          value={text}
+          data-testid={`copy-fallback-${row.talent.id}`}
+          onFocus={(e) => e.currentTarget.select()}
+        />
+      )}
+    </div>
   )
 }
 

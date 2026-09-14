@@ -1,0 +1,15 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or idea
+    url: https://github.com/Deradon/wow-forever-talent-calc/discussions
+    about: >-
+      Anything that is not a wrong reading or a bug - how the extraction works,
+      whether a talent really changed, what to build next. Ask in Discussions.
+  - name: How to fix a reading yourself
+    url: https://github.com/Deradon/wow-forever-talent-calc/blob/main/CONTRIBUTING.md
+    about: >-
+      The override workflow - find the record on the review page, copy the
+      override, run the export and the validator, open a pull request.
+  - name: Where the data comes from
+    url: https://deradon.github.io/wow-forever-talent-calc/#/about
+    about: How the talent data was made, and what to distrust in it.

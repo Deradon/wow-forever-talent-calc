@@ -1,0 +1,56 @@
+name: Bug
+description: The site or the tooling misbehaves - a broken link, a wrong point total, a crash.
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For wrong talent text or numbers use "Wrong reading" instead - that is
+        data, not code.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where
+      options:
+        - the calculator (talent trees, points, tooltips)
+        - build links and import
+        - the changes page
+        - the races page
+        - the spells page
+        - the pipeline or the validator
+        - something else
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: What you did
+      description: The steps, in order, and the link or the command you ran.
+      placeholder: |
+        1. Open #/warrior
+        2. Shift-click Mortal Strike
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected, and what happened instead
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser or OS
+      description: Only what is needed to reproduce it. No hardware readouts, please.
+      placeholder: Firefox 142 on Linux
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before you send it
+      options:
+        - label: >-
+            My screenshots, logs and pasted text carry no personal data - no
+            real names, e-mail addresses, home paths or account names.
+          required: true

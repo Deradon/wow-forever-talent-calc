@@ -1,54 +1,107 @@
 # WoW Forever Talent Calculator
 
-A community talent calculator for **World of Warcraft: Forever** (Classic+),
-announced at BlizzCon 2026. Built to exist *before* official data is
-available: talent data is extracted from gameplay footage in which every
-talent tooltip is hovered, then reviewed by hand.
+A fan-made talent calculator for **World of Warcraft: Forever** (Classic+),
+announced at BlizzCon 2026. The talent trees were on stream months before
+anyone could log in, so this site was built from that footage: spend points,
+share a build as a link, and see what changed against Classic Era.
 
-Repository: https://github.com/Deradon/wow-forever-talent-calc
-Site: https://deradon.github.io/wow-forever-talent-calc/
+**[deradon.github.io/wow-forever-talent-calc](https://deradon.github.io/wow-forever-talent-calc/)**
+— static site, no account, no tracking, no backend.
 
-Status: **live, unreviewed.** All nine classes and 469 of 470 talents are
-published (one mage Fire talent was never hovered on stream). No record has
-passed human review yet, so every tooltip carries its provenance and a
-caveat. Plan and history: `docs/PLAN.md`; open findings:
-`docs/reviews/2026-09-13-consolidated.md`.
+[![The class picker](docs/images/landing.webp)](https://deradon.github.io/wow-forever-talent-calc/)
 
-## How it works
+## What it does
 
-1. `pipeline/` downloads the source video, finds the segments per class,
-   extracts one clean frame per hovered talent, reads the tooltip (OCR /
-   vision model) and writes candidate JSON with provenance.
-2. `data/` holds reviewed talent data, one file per class.
-3. `web/` is a static talent calculator (Classic-style trees, point rules,
-   shareable build links) deployed as plain files.
+- **All nine classes**, 469 of 470 talents, with the Classic-style rules:
+  51 points, five per row, prerequisite arrows, tier gating.
+- **Shareable builds.** `#/warrior?v=1&t=...` is the whole build; also a short
+  build code, a Discord-ready text summary, a print view and `embed=1` for
+  forums. Wowhead Classic strings can be imported by talent name.
+- **Honest tooltips.** Every talent says how well it was read. Open a tooltip
+  and press `d` (or move into it) for where the numbers come from: the frame it
+  was read from, the Classic talent its higher ranks were scaled from, and the
+  second reader's wording when the two disagreed.
+- **What changed vs Classic Era** — 145 new talents, 81 moved, 26 with a
+  different rank count, 127 reworded and 108 gone, with an inline word diff.
+- **Races** — 37 racial traits for 9 races (both Skyborne variants) and the
+  race/class matrix, with the 16 combinations Classic Era never allowed.
+- **The spellbook as the stream showed it** — 327 entries and 112 full
+  tooltips over eight classes, with the pages nobody opened named as such.
+- **Keyboard and touch**: arrow keys across the grid, shift-click to max,
+  ctrl-click to clear, undo/redo, tap-to-open tooltips with +/− controls.
 
-## Source
+| A class page, tooltip pinned | What changed against Classic |
+|---|---|
+| [![A class page](docs/images/class.webp)](https://deradon.github.io/wow-forever-talent-calc/#/druid) | [![The changes page](docs/images/changes.webp)](https://deradon.github.io/wow-forever-talent-calc/#/changes) |
 
-- Xaryu, BlizzCon 2026 day 1 stream: https://www.youtube.com/watch?v=DxtVEhjyROU
+[![The race and class matrix](docs/images/races.webp)](https://deradon.github.io/wow-forever-talent-calc/#/races)
 
-## Development
+## Where the data comes from
 
-Requirements: `uv` (Python 3.12) and `node` >= 22; `ffmpeg` and `yt-dlp` only
-to re-run the extraction from video.
+A local vision model read every talent tooltip out of the BlizzCon 2026 demo
+stream, one hovered cell at a time, and OpenCV placed each reading in its grid
+cell, matched its icon and traced the prerequisite arrows. Only rank 1 was ever
+on screen, so higher ranks are scaled from the matching Classic Era talent and
+the point rules are assumed to be the Classic ones. Every record keeps the
+video timestamp, the frame and the reader's confidence, and nothing claims to
+be official.
+
+The honest caveats, in order of how much they should worry you:
+
+- **Numbers are the least reliable part.** Rank 1 was read from a screenshot;
+  ranks 2+ are arithmetic on a Classic scaling pattern, which is wrong wherever
+  Forever retuned a talent.
+- **57 of 469 records have been checked by a human**, 6 are still below the
+  0.8 confidence threshold. The rest are a good draft.
+- **One talent is missing** (mage, Fire, row 1 column 3): it was never hovered
+  on stream.
+- **The rules are assumed**: 51 points, 5 per row, first point at level 10.
+  Nobody has confirmed them for Forever.
+- **The Classic Era comparison is a reference dataset**, not a database dump.
+
+## Report a wrong reading
+
+Open **[a wrong-reading issue](https://github.com/Deradon/wow-forever-talent-calc/issues/new?template=wrong-reading.yml)**
+with the talent and what it should say. The fastest route is the review page —
+`#/review/<class>`, for example
+[`#/review/warrior`](https://deradon.github.io/wow-forever-talent-calc/#/review/warrior) —
+which shows every record beside the tooltip crop it was read from and has a
+"Report on GitHub" link per row that fills the form in for you.
+
+Fixing it yourself is one JSON entry and a pull request: `CONTRIBUTING.md`.
+
+## Run it yourself
+
+Requires `node` >= 22 and, for the data half, [`uv`](https://docs.astral.sh/uv/)
+(Python 3.12). `ffmpeg` and `yt-dlp` are only needed to re-run the extraction
+from video, which also wants an NVIDIA GPU for the local vision model.
 
 ```bash
-# web app
-cd web && npm install && npm run dev      # http://localhost:5173
-npm test                                  # vitest
+# the site
+cd web
+npm install
+npm run dev          # http://localhost:5173
+npm test             # vitest, 542 unit tests
+npm run e2e          # playwright, 80 browser tests (once: npx playwright install chromium)
+npm run build        # static files in web/dist, deployable anywhere
 
-# pipeline
+# the data
 cd pipeline
-uv run pytest                                              # 171 tests
-uv run python validate.py --check ../data/talents/*.json   # 0 errors
+uv run pytest                                              # 461 tests
+uv run python validate.py --check ../data/talents/*.json   # must exit 0
+uv run stages/08_export.py --help                          # extract / promote
 ```
 
-Commands stage by stage: `pipeline/README.md`. Web app details:
-`web/README.md`. Data contract: `docs/DATA-SCHEMA.md`. Conventions for
-working in this repo: `CLAUDE.md`.
+`data/talents/<class>.json` is the source of truth; the site reads nothing
+else. Stage by stage: `pipeline/README.md`. Web details: `web/README.md`. The
+data contract: `docs/DATA-SCHEMA.md`. Plan and history: `docs/PLAN.md`.
 
-## License
+## License and affiliation
 
-Code: MIT (see `LICENSE`). Talent names, descriptions and icons are
-© Blizzard Entertainment and not covered by the license. Not affiliated with
-Blizzard Entertainment.
+Code is MIT (`LICENSE`). Talent names, descriptions, icons and the frame crops
+under `data/review/` are © Blizzard Entertainment and are not covered by it;
+they are included as a factual reference to a publicly broadcast demo.
+
+**Not affiliated with, endorsed by, or connected to Blizzard Entertainment.**
+World of Warcraft is a trademark of Blizzard Entertainment, Inc. This is an
+unofficial fan project, and its data is unofficial and partly unverified.
