@@ -1,0 +1,90 @@
+{
+  "build": "1.15.9.69722",
+  "generatedAt": "2026-09-14T07:02:11Z",
+  "classes": {
+    "druid": {
+      "trees": 3,
+      "talents": 47
+    },
+    "hunter": {
+      "trees": 3,
+      "talents": 46
+    },
+    "mage": {
+      "trees": 3,
+      "talents": 49
+    },
+    "paladin": {
+      "trees": 3,
+      "talents": 44
+    },
+    "priest": {
+      "trees": 3,
+      "talents": 47
+    },
+    "rogue": {
+      "trees": 3,
+      "talents": 51
+    },
+    "shaman": {
+      "trees": 3,
+      "talents": 46
+    },
+    "warlock": {
+      "trees": 3,
+      "talents": 50
+    },
+    "warrior": {
+      "trees": 3,
+      "talents": 52
+    }
+  },
+  "unsupportedFormatters": {
+    "$b1": [
+      "rogue/assassination/relentless-strikes"
+    ],
+    "$19718d": [
+      "rogue/combat/riposte"
+    ]
+  },
+  "conditionalTalents": [
+    "druid/balance/natural-weapons",
+    "druid/balance/omen-of-clarity",
+    "druid/balance/moonfury",
+    "druid/balance/moonkin-form",
+    "druid/feral-combat/feline-swiftness",
+    "druid/restoration/improved-enrage",
+    "druid/restoration/swiftmend",
+    "hunter/marksmanship/efficiency",
+    "hunter/marksmanship/lethal-shots",
+    "hunter/marksmanship/mortal-shots",
+    "hunter/marksmanship/trueshot-aura",
+    "mage/arcane/improved-arcane-missiles",
+    "paladin/protection/holy-shield",
+    "paladin/retribution/vindication",
+    "paladin/retribution/vengeance",
+    "priest/holy/inspiration",
+    "priest/shadow/mind-flay",
+    "priest/shadow/vampiric-embrace",
+    "priest/shadow/shadowform",
+    "shaman/enhancement/stormstrike",
+    "shaman/restoration/purification",
+    "warlock/affliction/nightfall",
+    "warlock/demonology/master-demonologist",
+    "warlock/demonology/soul-link",
+    "warrior/fury/booming-voice",
+    "warrior/protection/shield-slam"
+  ],
+  "stringFormRanks": [
+    "rogue/combat/endurance",
+    "rogue/subtlety/master-of-deception",
+    "rogue/subtlety/elusiveness",
+    "rogue/subtlety/heightened-senses"
+  ],
+  "missingIcons": [],
+  "totals": {
+    "classes": 9,
+    "trees": 27,
+    "talents": 432
+  }
+}

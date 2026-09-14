@@ -1,0 +1,1151 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "schemaVersion": 1,
+  "class": "rogue",
+  "className": "Rogue",
+  "dataVersion": 1,
+  "dataSource": "datamined",
+  "generatedAt": "2026-09-14T07:02:11Z",
+  "rules": {
+    "pointsPerRow": 5,
+    "maxPoints": 51,
+    "firstPointLevel": 10,
+    "maxLevel": 60,
+    "rulesSource": "classic-prior"
+  },
+  "pages": [
+    {
+      "id": "primary",
+      "name": "Primary"
+    }
+  ],
+  "trees": [
+    {
+      "id": "assassination",
+      "name": "Assassination",
+      "page": "primary",
+      "order": 0,
+      "icon": "ability_rogue_eviscerate",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 182,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-eviscerate",
+          "name": "Improved Eviscerate",
+          "row": 0,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "ability_rogue_eviscerate",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Eviscerate ability by {0}%.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [14162, 14163, 14164],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 276,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "remorseless-attacks",
+          "name": "Remorseless Attacks",
+          "row": 0,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "ability_fiegndead",
+          "iconSource": "datamined",
+          "description": "After killing an opponent that yields experience or honor, gives you a {0}% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike. Lasts 20 sec.",
+          "ranks": [[20], [40]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [14144, 14148],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 272,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "malice",
+          "name": "Malice",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_racial_bloodrage",
+          "iconSource": "datamined",
+          "description": "Increases your critical strike chance by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [14138, 14139, 14140, 14141, 14142],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 270,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "ruthlessness",
+          "name": "Ruthlessness",
+          "row": 1,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "ability_druid_disembowel",
+          "iconSource": "datamined",
+          "description": "Gives your finishing moves a {0}% chance to add a combo point to your target.",
+          "ranks": [[20], [40], [60]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [14156, 14160, 14161],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 273,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "murder",
+          "name": "Murder",
+          "row": 1,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_shadow_deathscream",
+          "iconSource": "datamined",
+          "description": "Increases all damage caused against Humanoid, Giant, Beast and Dragonkin targets by {0}%.",
+          "ranks": [[1], [2]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [14158, 14159],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 274,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-slice-and-dice",
+          "name": "Improved Slice and Dice",
+          "row": 1,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "ability_rogue_slicedice",
+          "iconSource": "datamined",
+          "description": "Increases the duration of your Slice and Dice ability by {0}%.",
+          "ranks": [[15], [30], [45]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [14165, 14166, 14167],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 277,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "relentless-strikes",
+          "name": "Relentless Strikes",
+          "row": 2,
+          "col": 0,
+          "maxRank": 1,
+          "icon": "ability_warrior_decisivestrike",
+          "iconSource": "datamined",
+          "description": "Your finishing moves have a $b1% chance per combo point to restore 25 energy.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [14179],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 281,
+            "reviewed": false,
+            "note": "unrendered formatter(s): $b1"
+          }
+        },
+        {
+          "id": "improved-expose-armor",
+          "name": "Improved Expose Armor",
+          "row": 2,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "ability_warrior_riposte",
+          "iconSource": "datamined",
+          "description": "Increases the armor reduced by your Expose Armor ability by {0}%.",
+          "ranks": [[25], [50]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [14168, 14169],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 278,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "lethality",
+          "name": "Lethality",
+          "row": 2,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_criticalstrike",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, and Hemorrhage abilities by {0}%.",
+          "ranks": [[6], [12], [18], [24], [30]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "malice",
+              "rank": 5
+            }
+          ],
+          "spellIds": [14128, 14132, 14135, 14136, 14137],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 269,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "vile-poisons",
+          "name": "Vile Poisons",
+          "row": 3,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "ability_rogue_feigndeath",
+          "iconSource": "datamined",
+          "description": "Increases the damage dealt by your poisons by {0}% and gives your poisons an additional {1}% chance to resist dispel effects.",
+          "ranks": [[4, 8], [8, 16], [12, 24], [16, 32], [20, 40]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16513, 16514, 16515, 16719, 16720],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 682,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-poisons",
+          "name": "Improved Poisons",
+          "row": 3,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_poisons",
+          "iconSource": "datamined",
+          "description": "Increases the chance to apply poisons to your target by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [14113, 14114, 14115, 14116, 14117],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 268,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "cold-blood",
+          "name": "Cold Blood",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_ice_lament",
+          "iconSource": "datamined",
+          "description": "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, or Eviscerate by 100%.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [14177],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 280,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-kidney-shot",
+          "name": "Improved Kidney Shot",
+          "row": 4,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "ability_rogue_kidneyshot",
+          "iconSource": "datamined",
+          "description": "While affected by your Kidney Shot ability, the target receives an additional {0}% damage from all sources.",
+          "ranks": [[3], [6], [9]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [14174, 14175, 14176],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 279,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "seal-fate",
+          "name": "Seal Fate",
+          "row": 5,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_shadow_chilltouch",
+          "iconSource": "datamined",
+          "description": "Your critical strikes from abilities that add combo points have a {0}% chance to add an additional combo point.",
+          "ranks": [[20], [40], [60], [80], [100]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "cold-blood",
+              "rank": 1
+            }
+          ],
+          "spellIds": [14186, 14190, 14193, 14194, 14195],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 283,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "vigor",
+          "name": "Vigor",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_nature_earthbindtotem",
+          "iconSource": "datamined",
+          "description": "Increases your maximum Energy by 10.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [14983],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 382,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "combat",
+      "name": "Combat",
+      "page": "primary",
+      "order": 1,
+      "icon": "ability_backstab",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 181,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-gouge",
+          "name": "Improved Gouge",
+          "row": 0,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "ability_gouge",
+          "iconSource": "datamined",
+          "description": "Increases the effect duration of your Gouge ability by {0} sec.",
+          "ranks": [[0.5], [1], [1.5]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [13741, 13793, 13792],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 203,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-sinister-strike",
+          "name": "Improved Sinister Strike",
+          "row": 0,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_shadow_ritualofsacrifice",
+          "iconSource": "datamined",
+          "description": "Reduces the Energy cost of your Sinister Strike ability by {0}.",
+          "ranks": [[3], [5]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [13732, 13863],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 201,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "lightning-reflexes",
+          "name": "Lightning Reflexes",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_nature_invisibilty",
+          "iconSource": "datamined",
+          "description": "Increases your Dodge chance by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [13712, 13788, 13789, 13790, 13791],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 186,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-backstab",
+          "name": "Improved Backstab",
+          "row": 1,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "ability_backstab",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of your Backstab ability by {0}%.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [13733, 13865, 13866],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 202,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "deflection",
+          "name": "Deflection",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "ability_parry",
+          "iconSource": "datamined",
+          "description": "Increases your Parry chance by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [13713, 13853, 13854, 13855, 13856],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 187,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "precision",
+          "name": "Precision",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_marksmanship",
+          "iconSource": "datamined",
+          "description": "Increases your chance to hit with melee weapons by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [13705, 13832, 13843, 13844, 13845],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 181,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "endurance",
+          "name": "Endurance",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_shadow_shadowward",
+          "iconSource": "datamined",
+          "description": "Reduces the cooldown of your Sprint and Evasion abilities by 45 sec.",
+          "ranks": [
+            "Reduces the cooldown of your Sprint and Evasion abilities by 45 sec.",
+            "Reduces the cooldown of your Sprint and Evasion abilities by 1.5 min."
+          ],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [13742, 13872],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 204,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "riposte",
+          "name": "Riposte",
+          "row": 2,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "ability_warrior_challange",
+          "iconSource": "datamined",
+          "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for $19718d.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "deflection",
+              "rank": 5
+            }
+          ],
+          "spellIds": [14251],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 301,
+            "reviewed": false,
+            "note": "unrendered formatter(s): $19718d"
+          }
+        },
+        {
+          "id": "improved-sprint",
+          "name": "Improved Sprint",
+          "row": 2,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "ability_rogue_sprint",
+          "iconSource": "datamined",
+          "description": "Gives a {0}% chance to remove all movement impairing effects when you activate your Sprint ability.",
+          "ranks": [[50], [100]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [13743, 13875],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 222,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-kick",
+          "name": "Improved Kick",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "ability_kick",
+          "iconSource": "datamined",
+          "description": "Gives your Kick ability a {0}% chance to silence the target for 2 sec.",
+          "ranks": [[50], [100]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [13754, 13867],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 206,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "dagger-specialization",
+          "name": "Dagger Specialization",
+          "row": 3,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "inv_weapon_shortblade_05",
+          "iconSource": "datamined",
+          "description": "Increases your chance to get a critical strike with Daggers by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [13706, 13804, 13805, 13806, 13807],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 182,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "dual-wield-specialization",
+          "name": "Dual Wield Specialization",
+          "row": 3,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_dualwield",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your offhand weapon by {0}%.",
+          "ranks": [[10], [20], [30], [40], [50]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "precision",
+              "rank": 5
+            }
+          ],
+          "spellIds": [13715, 13848, 13849, 13851, 13852],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 221,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "mace-specialization",
+          "name": "Mace Specialization",
+          "row": 4,
+          "col": 0,
+          "maxRank": 5,
+          "icon": "inv_mace_01",
+          "iconSource": "datamined",
+          "description": "Increases your skill with Maces by {0}, and gives you a {1}% chance to stun your target for 3 sec with a mace.",
+          "ranks": [[1, 1], [2, 2], [3, 3], [4, 4], [5, 6]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [13709, 13800, 13801, 13802, 13803],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 184,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "blade-flurry",
+          "name": "Blade Flurry",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "ability_warrior_punishingblow",
+          "iconSource": "datamined",
+          "description": "Increases your attack speed by 20%. In addition, attacks strike an additional nearby opponent. Lasts 15 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [13877],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 223,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "sword-specialization",
+          "name": "Sword Specialization",
+          "row": 4,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "inv_sword_27",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to get an extra attack on the same target after dealing damage with your Sword.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [13960, 13961, 13962, 13963, 13964],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 242,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "fist-weapon-specialization",
+          "name": "Fist Weapon Specialization",
+          "row": 4,
+          "col": 3,
+          "maxRank": 5,
+          "icon": "inv_gauntlets_04",
+          "iconSource": "datamined",
+          "description": "Increases your chance to get a critical strike with Fist Weapons by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [13707, 13966, 13967, 13968, 13969],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 183,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "weapon-expertise",
+          "name": "Weapon Expertise",
+          "row": 5,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_holy_blessingofstrength",
+          "iconSource": "datamined",
+          "description": "Increases your skill with Sword, Fist and Dagger weapons by {0}.",
+          "ranks": [[3], [5]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "blade-flurry",
+              "rank": 1
+            }
+          ],
+          "spellIds": [30919, 30920],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1703,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "aggression",
+          "name": "Aggression",
+          "row": 5,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "ability_racial_avatar",
+          "iconSource": "datamined",
+          "description": "Increases the damage of your Sinister Strike and Eviscerate abilities by {0}%.",
+          "ranks": [[2], [4], [6]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [18427, 18428, 18429],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1122,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "adrenaline-rush",
+          "name": "Adrenaline Rush",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_shadow_shadowworddominate",
+          "iconSource": "datamined",
+          "description": "Increases your Energy regeneration rate by 100% for 15 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [13750],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 205,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "subtlety",
+      "name": "Subtlety",
+      "page": "primary",
+      "order": 2,
+      "icon": "ability_stealth",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 183,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "master-of-deception",
+          "name": "Master of Deception",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_shadow_charm",
+          "iconSource": "datamined",
+          "description": "Reduces the chance enemies have to detect you while in Stealth mode.",
+          "ranks": [
+            "Reduces the chance enemies have to detect you while in Stealth mode.",
+            "Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (Rank 1).",
+            "Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (Rank 2).",
+            "Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (Rank 3).",
+            "Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (Rank 4)."
+          ],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [13958, 13970, 13971, 13972, 13973],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 241,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "opportunity",
+          "name": "Opportunity",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_warrior_warcry",
+          "iconSource": "datamined",
+          "description": "Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by {0}%.",
+          "ranks": [[4], [8], [12], [16], [20]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [14057, 14072, 14073, 14074, 14075],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 261,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "sleight-of-hand",
+          "name": "Sleight of Hand",
+          "row": 1,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "ability_rogue_feint",
+          "iconSource": "datamined",
+          "description": "Reduces the chance you are critically hit by melee and ranged attacks by {0}% and increases the threat reduction of your Feint ability by {1}%.",
+          "ranks": [[1, 10], [2, 20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [30892, 30893],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1700,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "elusiveness",
+          "name": "Elusiveness",
+          "row": 1,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_magic_lesserinvisibilty",
+          "iconSource": "datamined",
+          "description": "Reduces the cooldown of your Vanish and Blind abilities by 45 sec.",
+          "ranks": [
+            "Reduces the cooldown of your Vanish and Blind abilities by 45 sec.",
+            "Reduces the cooldown of your Vanish and Blind abilities by 1.5 min."
+          ],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [13981, 14066],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 247,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "camouflage",
+          "name": "Camouflage",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_stealth",
+          "iconSource": "datamined",
+          "description": "Increases your speed while stealthed by {0}% and reduces the cooldown of your Stealth ability by {1} sec.",
+          "ranks": [[3, 1], [6, 2], [9, 3], [12, 4], [15, 5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [13975, 14062, 14063, 14064, 14065],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 244,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "initiative",
+          "name": "Initiative",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_shadow_fumble",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
+          "ranks": [[25], [50], [75]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [13976, 13979, 13980],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 245,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "ghostly-strike",
+          "name": "Ghostly Strike",
+          "row": 2,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_shadow_curse",
+          "iconSource": "datamined",
+          "description": "A strike that deals 125% weapon damage and increases your chance to dodge by 15% for 7 sec. Awards 1 combo point.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [14278],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 303,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-ambush",
+          "name": "Improved Ambush",
+          "row": 2,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "ability_rogue_ambush",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of your Ambush ability by {0}%.",
+          "ranks": [[15], [30], [45]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [14079, 14080, 14081],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 263,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "setup",
+          "name": "Setup",
+          "row": 3,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_nature_mirrorimage",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells.",
+          "ranks": [[15], [30], [45]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [13983, 14070, 14071],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 246,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-sap",
+          "name": "Improved Sap",
+          "row": 3,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "ability_sap",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to return to stealth mode after using your Sap ability.",
+          "ranks": [[30], [60], [90]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [14076, 14094, 14095],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 262,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "serrated-blades",
+          "name": "Serrated Blades",
+          "row": 3,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "inv_sword_17",
+          "iconSource": "datamined",
+          "description": "Causes your attacks to ignore 0 of your target's Armor and increases the damage dealt by your Rupture ability by {0}%. The amount of Armor reduced increases with your level.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [14171, 14172, 14173],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1123,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "heightened-senses",
+          "name": "Heightened Senses",
+          "row": 4,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "ability_ambush",
+          "iconSource": "datamined",
+          "description": "Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 2%.",
+          "ranks": [
+            "Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 2%.",
+            "Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 4%. More effective than Heightened Senses (Rank 1)."
+          ],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [30894, 30895],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1701,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "preparation",
+          "name": "Preparation",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_shadow_antishadow",
+          "iconSource": "datamined",
+          "description": "When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [14185],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 284,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "dirty-deeds",
+          "name": "Dirty Deeds",
+          "row": 4,
+          "col": 2,
+          "maxRank": 2,
+          "icon": "spell_shadow_summonsuccubus",
+          "iconSource": "datamined",
+          "description": "Reduces the Energy cost of your Cheap Shot and Garrote abilities by {0}.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [14082, 14083],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 265,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "hemorrhage",
+          "name": "Hemorrhage",
+          "row": 4,
+          "col": 3,
+          "maxRank": 1,
+          "icon": "spell_shadow_lifedrain",
+          "iconSource": "datamined",
+          "description": "An instant strike that damages the opponent and causes the target to hemorrhage, increasing any Physical damage dealt to the target by up to 3. Lasts 30 charges or 15 sec. Awards 1 combo point.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "serrated-blades",
+              "rank": 3
+            }
+          ],
+          "spellIds": [16511],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 681,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "deadliness",
+          "name": "Deadliness",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "inv_weapon_crossbow_11",
+          "iconSource": "datamined",
+          "description": "Increases your Attack Power by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [30902, 30903, 30904, 30905, 30906],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1702,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "premeditation",
+          "name": "Premeditation",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_shadow_possession",
+          "iconSource": "datamined",
+          "description": "When used, adds 2 combo points to your target. You must add to or use those combo points within 10 sec or the combo points are lost.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "preparation",
+              "rank": 1
+            }
+          ],
+          "spellIds": [14183],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 381,
+            "reviewed": false
+          }
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Datamined from wago.tools DB2 exports for build 1.15.9.69722; point rules (51/5/10/60) are the Classic prior, not DB2."
+  ]
+}

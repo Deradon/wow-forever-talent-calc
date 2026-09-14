@@ -1,0 +1,1032 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "schemaVersion": 1,
+  "class": "hunter",
+  "className": "Hunter",
+  "dataVersion": 1,
+  "dataSource": "datamined",
+  "generatedAt": "2026-09-14T07:02:11Z",
+  "rules": {
+    "pointsPerRow": 5,
+    "maxPoints": 51,
+    "firstPointLevel": 10,
+    "maxLevel": 60,
+    "rulesSource": "classic-prior"
+  },
+  "pages": [
+    {
+      "id": "primary",
+      "name": "Primary"
+    }
+  ],
+  "trees": [
+    {
+      "id": "beast-mastery",
+      "name": "Beast Mastery",
+      "page": "primary",
+      "order": 0,
+      "icon": "ability_hunter_beasttaming",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 361,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-aspect-of-the-hawk",
+          "name": "Improved Aspect of the Hawk",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_nature_ravenform",
+          "iconSource": "datamined",
+          "description": "While Aspect of the Hawk is active, all normal ranged attacks have a {0}% chance of increasing ranged attack speed by 30% for 12 sec.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19552, 19553, 19554, 19555, 19556],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1382,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "endurance-training",
+          "name": "Endurance Training",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_nature_reincarnation",
+          "iconSource": "datamined",
+          "description": "Increases the Health of your pets by {0}%.",
+          "ranks": [[3], [6], [9], [12], [15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19583, 19584, 19585, 19586, 19587],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1389,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-eyes-of-the-beast",
+          "name": "Improved Eyes of the Beast",
+          "row": 1,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "ability_eyeoftheowl",
+          "iconSource": "datamined",
+          "description": "Increases the duration of your Eyes of the Beast by {0} sec.",
+          "ranks": [[30], [60]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [19557, 19558],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1624,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-aspect-of-the-monkey",
+          "name": "Improved Aspect of the Monkey",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "ability_hunter_aspectofthemonkey",
+          "iconSource": "datamined",
+          "description": "Increases the Dodge bonus of your Aspect of the Monkey by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19549, 19550, 19551, 24386, 24387],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1381,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "thick-hide",
+          "name": "Thick Hide",
+          "row": 1,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "inv_misc_pelt_bear_03",
+          "iconSource": "datamined",
+          "description": "Increases the Armor rating of your pets by {0}%.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [19609, 19610, 19612],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1395,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-revive-pet",
+          "name": "Improved Revive Pet",
+          "row": 1,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "ability_hunter_beastsoothe",
+          "iconSource": "datamined",
+          "description": "Revive Pet's casting time is reduced by {0} sec, mana cost is reduced by {1}%, and increases the health your pet returns with by an additional {2}%.",
+          "ranks": [[3, 20, 15], [6, 40, 30]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [24443, 19575],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1625,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "pathfinding",
+          "name": "Pathfinding",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "ability_mount_jungletiger",
+          "iconSource": "datamined",
+          "description": "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by {0}%.",
+          "ranks": [[3], [6]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [19559, 19560],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1384,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bestial-swiftness",
+          "name": "Bestial Swiftness",
+          "row": 2,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "ability_druid_dash",
+          "iconSource": "datamined",
+          "description": "Increases the outdoor movement speed of your pets by 30%.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [19596],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1391,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "unleashed-fury",
+          "name": "Unleashed Fury",
+          "row": 2,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_bullrush",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your pets by {0}%.",
+          "ranks": [[4], [8], [12], [16], [20]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19616, 19617, 19618, 19619, 19620],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1396,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-mend-pet",
+          "name": "Improved Mend Pet",
+          "row": 3,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "ability_hunter_mendpet",
+          "iconSource": "datamined",
+          "description": "Gives the Mend Pet spell a {0}% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick.",
+          "ranks": [[15], [50]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [19572, 19573],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1385,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "ferocity",
+          "name": "Ferocity",
+          "row": 3,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "inv_misc_monsterclaw_04",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of your pets by {0}%.",
+          "ranks": [[3], [6], [9], [12], [15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19598, 19599, 19600, 19601, 19602],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1393,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "spirit-bond",
+          "name": "Spirit Bond",
+          "row": 4,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "ability_druid_demoralizingroar",
+          "iconSource": "datamined",
+          "description": "While your pet is active, you and your pet will regenerate {0}% of total health every 10 sec.",
+          "ranks": [[1], [2]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [19578, 20895],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1388,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "intimidation",
+          "name": "Intimidation",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "ability_devour",
+          "iconSource": "datamined",
+          "description": "Command your pet to intimidate the target on the next successful melee attack, causing a high amount of threat and stunning the target for 3 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [19577],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1387,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bestial-discipline",
+          "name": "Bestial Discipline",
+          "row": 4,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "spell_nature_abolishmagic",
+          "iconSource": "datamined",
+          "description": "Increases the Focus regeneration of your pets by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [19590, 19592],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1390,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "frenzy",
+          "name": "Frenzy",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "inv_misc_monsterclaw_03",
+          "iconSource": "datamined",
+          "description": "Gives your pet a {0}% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike.",
+          "ranks": [[20], [40], [60], [80], [100]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "ferocity",
+              "rank": 5
+            }
+          ],
+          "spellIds": [19621, 19622, 19623, 19624, 19625],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1397,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bestial-wrath",
+          "name": "Bestial Wrath",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "ability_druid_ferociousbite",
+          "iconSource": "datamined",
+          "description": "Send your pet into a rage causing 50% additional damage for 18 sec. While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "intimidation",
+              "rank": 1
+            }
+          ],
+          "spellIds": [19574],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1386,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "marksmanship",
+      "name": "Marksmanship",
+      "page": "primary",
+      "order": 1,
+      "icon": "ability_marksmanship",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 363,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-concussive-shot",
+          "name": "Improved Concussive Shot",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_frost_stun",
+          "iconSource": "datamined",
+          "description": "Gives your Concussive Shot a {0}% chance to stun the target for 3 sec.",
+          "ranks": [[4], [8], [12], [16], [20]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19407, 19412, 19413, 19414, 19415],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1341,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "efficiency",
+          "name": "Efficiency",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_frost_wizardmark",
+          "iconSource": "datamined",
+          "description": "Reduces the Mana cost of your Shots and Stings by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19416, 19417, 19418, 19419, 19420],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1342,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "improved-hunters-mark",
+          "name": "Improved Hunter's Mark",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "ability_hunter_snipershot",
+          "iconSource": "datamined",
+          "description": "Increases the Ranged Attack Power bonus of your Hunter's Mark spell by {0}%.",
+          "ranks": [[3], [6], [9], [12], [15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19421, 19422, 19423, 19424, 19425],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1343,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "lethal-shots",
+          "name": "Lethal Shots",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_searingarrow",
+          "iconSource": "datamined",
+          "description": "Increases your critical strike chance with ranged weapons by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19426, 19427, 19429, 19430, 19431],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1344,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "aimed-shot",
+          "name": "Aimed Shot",
+          "row": 2,
+          "col": 0,
+          "maxRank": 1,
+          "icon": "inv_spear_07",
+          "iconSource": "datamined",
+          "description": "An aimed shot that increases ranged damage by 70.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [19434],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1345,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-arcane-shot",
+          "name": "Improved Arcane Shot",
+          "row": 2,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "ability_impalingbolt",
+          "iconSource": "datamined",
+          "description": "Reduces the cooldown of your Arcane Shot by {0} sec.",
+          "ranks": [[0.2], [0.4], [0.6], [0.8], [1]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19454, 19455, 19456, 19457, 19458],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1346,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "hawk-eye",
+          "name": "Hawk Eye",
+          "row": 2,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "ability_townwatch",
+          "iconSource": "datamined",
+          "description": "Increases the range of your ranged weapons by {0} yards.",
+          "ranks": [[2], [4], [6]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [19498, 19499, 19500],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1352,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-serpent-sting",
+          "name": "Improved Serpent Sting",
+          "row": 3,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "ability_hunter_quickshot",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Serpent Sting by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19464, 19465, 19466, 19467, 19468],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1348,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "mortal-shots",
+          "name": "Mortal Shots",
+          "row": 3,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_piercedamage",
+          "iconSource": "datamined",
+          "description": "Increases your ranged weapon critical strike damage bonus by {0}%.",
+          "ranks": [[6], [12], [18], [24], [30]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "lethal-shots",
+              "rank": 5
+            }
+          ],
+          "spellIds": [19485, 19487, 19488, 19489, 19490],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1349,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "scatter-shot",
+          "name": "Scatter Shot",
+          "row": 4,
+          "col": 0,
+          "maxRank": 1,
+          "icon": "ability_golemstormbolt",
+          "iconSource": "datamined",
+          "description": "A short-range shot that deals 50% weapon damage and disorients the target for 4 sec. Any damage caused will remove the effect. Turns off your attack when used.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [19503],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1353,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "barrage",
+          "name": "Barrage",
+          "row": 4,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "ability_upgrademoonglaive",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Multi-Shot and Volley spells by {0}%.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [19461, 19462, 24691],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1347,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-scorpid-sting",
+          "name": "Improved Scorpid Sting",
+          "row": 4,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "ability_hunter_criticalshot",
+          "iconSource": "datamined",
+          "description": "Reduces the Stamina of targets affected by your Scorpid Sting by {0}% of the amount of Strength reduced.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [19491, 19493, 19494],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1351,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "ranged-weapon-specialization",
+          "name": "Ranged Weapon Specialization",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "inv_weapon_rifle_06",
+          "iconSource": "datamined",
+          "description": "Increases the damage you deal with ranged weapons by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19507, 19508, 19509, 19510, 19511],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1362,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "trueshot-aura",
+          "name": "Trueshot Aura",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "ability_trueshot",
+          "iconSource": "datamined",
+          "description": "Increases the attack power of party members within 45 yards by 50. Lasts 30 min.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "barrage",
+              "rank": 3
+            }
+          ],
+          "spellIds": [19506],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1361,
+            "reviewed": false,
+            "note": "2 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        }
+      ]
+    },
+    {
+      "id": "survival",
+      "name": "Survival",
+      "page": "primary",
+      "order": 2,
+      "icon": "ability_hunter_swiftstrike",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 362,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "monster-slaying",
+          "name": "Monster Slaying",
+          "row": 0,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "inv_misc_head_dragon_black",
+          "iconSource": "datamined",
+          "description": "Increases all damage caused against Beasts, Giants and Dragonkin targets by {0}% and increases critical damage caused against Beasts, Giants and Dragonkin targets by an additional {1}%.",
+          "ranks": [[1, 1], [2, 2], [3, 3]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [24293, 24294, 24295],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1623,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "humanoid-slaying",
+          "name": "Humanoid Slaying",
+          "row": 0,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_holy_prayerofhealing",
+          "iconSource": "datamined",
+          "description": "Increases all damage caused against Humanoid targets by {0}% and increases critical damage caused against Humanoid targets by an additional {1}%.",
+          "ranks": [[1, 1], [2, 2], [3, 3]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [19151, 19152, 19153],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1301,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "deflection",
+          "name": "Deflection",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_parry",
+          "iconSource": "datamined",
+          "description": "Increases your Parry chance by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19295, 19297, 19298, 19301, 19300],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1311,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "entrapment",
+          "name": "Entrapment",
+          "row": 1,
+          "col": 0,
+          "maxRank": 5,
+          "icon": "spell_nature_stranglevines",
+          "iconSource": "datamined",
+          "description": "Gives your Immolation Trap, Frost Trap, and Explosive Trap a {0}% chance to entrap the target, preventing them from moving for 5 sec.",
+          "ranks": [[5], [10], [15], [20], [25]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19184, 19387, 19388, 19389, 19390],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1304,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "savage-strikes",
+          "name": "Savage Strikes",
+          "row": 1,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "ability_racial_bloodrage",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of Raptor Strike and Mongoose Bite by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [19159, 19160],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1621,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-wing-clip",
+          "name": "Improved Wing Clip",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_rogue_trip",
+          "iconSource": "datamined",
+          "description": "Gives your Wing Clip ability a {0}% chance to immobilize the target for 5 sec.",
+          "ranks": [[4], [8], [12], [16], [20]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19228, 19232, 19233, 19234, 19235],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1305,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "clever-traps",
+          "name": "Clever Traps",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_nature_timestop",
+          "iconSource": "datamined",
+          "description": "Increases the duration of Freezing and Frost trap effects by {0}% and the damage of Immolation and Explosive trap effects by {1}%.",
+          "ranks": [[15, 15], [30, 30]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [19239, 19245],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1306,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "survivalist",
+          "name": "Survivalist",
+          "row": 2,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_shadow_twilight",
+          "iconSource": "datamined",
+          "description": "Increases total health by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19255, 19256, 19257, 19258, 19259],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1622,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "deterrence",
+          "name": "Deterrence",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "ability_whirlwind",
+          "iconSource": "datamined",
+          "description": "When activated, increases your Dodge and Parry chance by 25% for 10 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [19263],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1308,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "trap-mastery",
+          "name": "Trap Mastery",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "ability_ensnare",
+          "iconSource": "datamined",
+          "description": "Decreases the chance enemies will resist trap effects by {0}%.",
+          "ranks": [[5], [10]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [19376, 19377],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1322,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "surefooted",
+          "name": "Surefooted",
+          "row": 3,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "ability_kick",
+          "iconSource": "datamined",
+          "description": "Increases hit chance by {0}% and increases the chance movement impairing effects will be resisted by an additional {1}%.",
+          "ranks": [[1, 5], [2, 10], [3, 15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [19290, 19294, 24283],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1310,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-feign-death",
+          "name": "Improved Feign Death",
+          "row": 3,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "ability_rogue_feigndeath",
+          "iconSource": "datamined",
+          "description": "Reduces the chance your Feign Death ability will be resisted by {0}%.",
+          "ranks": [[2], [4]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [19286, 19287],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1309,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "killer-instinct",
+          "name": "Killer Instinct",
+          "row": 4,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_holy_blessingofstamina",
+          "iconSource": "datamined",
+          "description": "Increases your critical strike chance with all attacks by {0}%.",
+          "ranks": [[1], [2], [3]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [19370, 19371, 19373],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1321,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "counterattack",
+          "name": "Counterattack",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "ability_warrior_challange",
+          "iconSource": "datamined",
+          "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 40 damage and immobilizes the target for 5 sec. Counterattack cannot be blocked, dodged, or parried.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "deterrence",
+              "rank": 1
+            }
+          ],
+          "spellIds": [19306],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1312,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "lightning-reflexes",
+          "name": "Lightning Reflexes",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_nature_invisibilty",
+          "iconSource": "datamined",
+          "description": "Increases your Agility by {0}%.",
+          "ranks": [[3], [6], [9], [12], [15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [19168, 19180, 19181, 24296, 24297],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1303,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "wyvern-sting",
+          "name": "Wyvern Sting",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "inv_spear_02",
+          "iconSource": "datamined",
+          "description": "A stinging shot that puts the target to sleep for 12 sec. Any damage will cancel the effect. When the target wakes up, the Sting causes 300 Nature damage over 6 sec. Only usable out of combat. Only one Sting per Hunter can be active on the target at a time.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "killer-instinct",
+              "rank": 3
+            }
+          ],
+          "spellIds": [19386],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1325,
+            "reviewed": false
+          }
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Datamined from wago.tools DB2 exports for build 1.15.9.69722; point rules (51/5/10/60) are the Classic prior, not DB2."
+  ]
+}

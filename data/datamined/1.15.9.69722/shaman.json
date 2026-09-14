@@ -1,0 +1,1024 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "schemaVersion": 1,
+  "class": "shaman",
+  "className": "Shaman",
+  "dataVersion": 1,
+  "dataSource": "datamined",
+  "generatedAt": "2026-09-14T07:02:11Z",
+  "rules": {
+    "pointsPerRow": 5,
+    "maxPoints": 51,
+    "firstPointLevel": 10,
+    "maxLevel": 60,
+    "rulesSource": "classic-prior"
+  },
+  "pages": [
+    {
+      "id": "primary",
+      "name": "Primary"
+    }
+  ],
+  "trees": [
+    {
+      "id": "elemental",
+      "name": "Elemental",
+      "page": "primary",
+      "order": 0,
+      "icon": "spell_nature_lightning",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 261,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "convection",
+          "name": "Convection",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_nature_wispsplode",
+          "iconSource": "datamined",
+          "description": "Reduces the mana cost of your Shock, Lightning Bolt and Chain Lightning spells by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16039, 16109, 16110, 16111, 16112],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 564,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "concussion",
+          "name": "Concussion",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_fire_fireball",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Lightning Bolt, Chain Lightning and Shock spells by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16035, 16105, 16106, 16107, 16108],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 563,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "earths-grasp",
+          "name": "Earth's Grasp",
+          "row": 1,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_nature_stoneclawtotem",
+          "iconSource": "datamined",
+          "description": "Increases the health of your Stoneclaw Totem by {0}% and the radius of your Earthbind Totem by {1}%.",
+          "ranks": [[25, 10], [50, 20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [16043, 16130],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 572,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "elemental-warding",
+          "name": "Elemental Warding",
+          "row": 1,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_nature_spiritarmor",
+          "iconSource": "datamined",
+          "description": "Reduces damage taken from Fire, Frost and Nature effects by {0}%.",
+          "ranks": [[4], [7], [10]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [28996, 28997, 28998],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1640,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "call-of-flame",
+          "name": "Call of Flame",
+          "row": 1,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "spell_fire_immolation",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Fire Totems by {0}%.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [16038, 16160, 16161],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 561,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "elemental-focus",
+          "name": "Elemental Focus",
+          "row": 2,
+          "col": 0,
+          "maxRank": 1,
+          "icon": "spell_shadow_manaburn",
+          "iconSource": "datamined",
+          "description": "Gives you a 10% chance to enter a Clearcasting state after casting any Fire, Frost, or Nature damage spell. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [16164],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 574,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "reverberation",
+          "name": "Reverberation",
+          "row": 2,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_frost_frostward",
+          "iconSource": "datamined",
+          "description": "Reduces the cooldown of your Shock spells by {0} sec.",
+          "ranks": [[0.2], [0.4], [0.6], [0.8], [1]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16040, 16113, 16114, 16115, 16116],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 575,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "call-of-thunder",
+          "name": "Call of Thunder",
+          "row": 2,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_nature_callstorm",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by an additional {0}%.",
+          "ranks": [[1], [2], [3], [4], [6]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16041, 16117, 16118, 16119, 16120],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 562,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-fire-totems",
+          "name": "Improved Fire Totems",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_fire_sealoffire",
+          "iconSource": "datamined",
+          "description": "Reduces the delay before your Fire Nova Totem activates by {0} sec. and decreases the threat generated by your Magma Totem by {1}%.",
+          "ranks": [[1, 25], [2, 50]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [16086, 16544],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 567,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "eye-of-the-storm",
+          "name": "Eye of the Storm",
+          "row": 3,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_nature_eyeofthestorm",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to gain the Focused Casting effect that lasts for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing casting time when taking damage.",
+          "ranks": [[33], [66], [100]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [29062, 29064, 29065],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1642,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "elemental-devastation",
+          "name": "Elemental Devastation",
+          "row": 3,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "spell_fire_elementaldevastation",
+          "iconSource": "datamined",
+          "description": "Your offensive spell crits will increase your chance to get a critical strike with melee attacks by {0}% for 10 sec.",
+          "ranks": [[3], [6], [9]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [30160, 29179, 29180],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1645,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "storm-reach",
+          "name": "Storm Reach",
+          "row": 4,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_nature_stormreach",
+          "iconSource": "datamined",
+          "description": "Increases the range of your Lightning Bolt and Chain Lightning spells by {0} yards.",
+          "ranks": [[3], [6]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [28999, 29000],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1641,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "elemental-fury",
+          "name": "Elemental Fury",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_fire_volcano",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike damage bonus of your Searing, Magma, and Fire Nova Totems and your Fire, Frost, and Nature spells by 100%.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [16089],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 565,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "lightning-mastery",
+          "name": "Lightning Mastery",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_lightning_lightningbolt01",
+          "iconSource": "datamined",
+          "description": "Reduces the cast time of your Lightning Bolt and Chain Lightning spells by {0} sec.",
+          "ranks": [[0.2], [0.4], [0.6], [0.8], [1]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "call-of-thunder",
+              "rank": 5
+            }
+          ],
+          "spellIds": [16578, 16579, 16580, 16581, 16582],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 721,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "elemental-mastery",
+          "name": "Elemental Mastery",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_nature_wispheal",
+          "iconSource": "datamined",
+          "description": "When activated, this spell gives your next Fire, Frost, or Nature damage spell a 100% critical strike chance and reduces the mana cost by 100%.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "elemental-fury",
+              "rank": 1
+            }
+          ],
+          "spellIds": [16166],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 573,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "enhancement",
+      "name": "Enhancement",
+      "page": "primary",
+      "order": 1,
+      "icon": "spell_nature_lightningshield",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 263,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "ancestral-knowledge",
+          "name": "Ancestral Knowledge",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_shadow_grimward",
+          "iconSource": "datamined",
+          "description": "Increases your maximum Mana by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17485, 17486, 17487, 17488, 17489],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 614,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "shield-specialization",
+          "name": "Shield Specialization",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "inv_shield_06",
+          "iconSource": "datamined",
+          "description": "Increases your chance to block attacks with a shield by {0}% and increases the amount blocked by {1}%.",
+          "ranks": [[1, 5], [2, 10], [3, 15], [4, 20], [5, 25]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16253, 16298, 16299, 16300, 16301],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 612,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "guardian-totems",
+          "name": "Guardian Totems",
+          "row": 1,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_nature_stoneskintotem",
+          "iconSource": "datamined",
+          "description": "Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by {0}% and reduces the cooldown of your Grounding Totem by {1} sec.",
+          "ranks": [[10, 1], [20, 2]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [16258, 16293],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 609,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "thundering-strikes",
+          "name": "Thundering Strikes",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "ability_thunderbolt",
+          "iconSource": "datamined",
+          "description": "Improves your chance to get a critical strike with your weapon attacks by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16255, 16302, 16303, 16304, 16305],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 613,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-ghost-wolf",
+          "name": "Improved Ghost Wolf",
+          "row": 1,
+          "col": 2,
+          "maxRank": 2,
+          "icon": "spell_nature_spiritwolf",
+          "iconSource": "datamined",
+          "description": "Reduces the cast time of your Ghost Wolf spell by {0} sec.",
+          "ranks": [[1], [2]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [16262, 16287],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 605,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-lightning-shield",
+          "name": "Improved Lightning Shield",
+          "row": 1,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "spell_nature_lightningshield",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Lightning Shield orbs by {0}%.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [16261, 16290, 16291],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 607,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "enhancing-totems",
+          "name": "Enhancing Totems",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_nature_earthbindtotem",
+          "iconSource": "datamined",
+          "description": "Increases the effect of your Strength of Earth and Grace of Air Totems by {0}%.",
+          "ranks": [[8], [15]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [16259, 16295],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 610,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "two-handed-axes-and-maces",
+          "name": "Two-Handed Axes and Maces",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "inv_axe_10",
+          "iconSource": "datamined",
+          "description": "Allows you to use Two-Handed Axes and Two-Handed Maces.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [16269],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 617,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "anticipation",
+          "name": "Anticipation",
+          "row": 2,
+          "col": 3,
+          "maxRank": 5,
+          "icon": "spell_nature_mirrorimage",
+          "iconSource": "datamined",
+          "description": "Increases your chance to dodge by an additional {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16254, 16271, 16272, 16273, 16274],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 601,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "flurry",
+          "name": "Flurry",
+          "row": 3,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "ability_ghoulfrenzy",
+          "iconSource": "datamined",
+          "description": "Increases your attack speed by {0}% for your next 3 swings after dealing a critical strike.",
+          "ranks": [[10], [15], [20], [25], [30]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "thundering-strikes",
+              "rank": 5
+            }
+          ],
+          "spellIds": [16256, 16281, 16282, 16283, 16284],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 602,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "toughness",
+          "name": "Toughness",
+          "row": 3,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_holy_devotion",
+          "iconSource": "datamined",
+          "description": "Increases your armor value from items by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16252, 16306, 16307, 16308, 16309],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 615,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-weapon-totems",
+          "name": "Improved Weapon Totems",
+          "row": 4,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_fire_enchantweapon",
+          "iconSource": "datamined",
+          "description": "Increases the melee attack power bonus of your Windfury Totem by {0}% and increases the damage caused by your Flametongue Totem by {1}%.",
+          "ranks": [[15, 6], [30, 12]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [29192, 29193],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1647,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "elemental-weapons",
+          "name": "Elemental Weapons",
+          "row": 4,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_fire_flametounge",
+          "iconSource": "datamined",
+          "description": "Increases the melee attack power bonus of your Rockbiter Weapon by {0}%, your Windfury Weapon effect by {1}% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by {2}%.",
+          "ranks": [[7, 13, 5], [14, 27, 10], [20, 40, 15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [16266, 29079, 29080],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 611,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "parry",
+          "name": "Parry",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "ability_parry",
+          "iconSource": "datamined",
+          "description": "Gives a chance to parry enemy melee attacks.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [16268],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 616,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "weapon-mastery",
+          "name": "Weapon Mastery",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_hunter_swiftstrike",
+          "iconSource": "datamined",
+          "description": "Increases the damage you deal with all weapons by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [29082, 29084, 29086, 29087, 29088],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1643,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "stormstrike",
+          "name": "Stormstrike",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_holy_sealofmight",
+          "iconSource": "datamined",
+          "description": "Gives you an extra attack. In addition, the next 2 sources of Nature damage dealt to the target are increased by 20%. Lasts 12 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "elemental-weapons",
+              "rank": 3
+            }
+          ],
+          "spellIds": [17364],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 901,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        }
+      ]
+    },
+    {
+      "id": "restoration",
+      "name": "Restoration",
+      "page": "primary",
+      "order": 2,
+      "icon": "spell_nature_magicimmunity",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 262,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-healing-wave",
+          "name": "Improved Healing Wave",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_nature_magicimmunity",
+          "iconSource": "datamined",
+          "description": "Reduces the casting time of your Healing Wave spell by {0} sec.",
+          "ranks": [[0.1], [0.2], [0.3], [0.4], [0.5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16182, 16226, 16227, 16228, 16229],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 586,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "tidal-focus",
+          "name": "Tidal Focus",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_frost_manarecharge",
+          "iconSource": "datamined",
+          "description": "Reduces the Mana cost of your healing spells by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16179, 16214, 16215, 16216, 16217],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 593,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-reincarnation",
+          "name": "Improved Reincarnation",
+          "row": 1,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_nature_reincarnation",
+          "iconSource": "datamined",
+          "description": "Reduces the cooldown of your Reincarnation spell by {0} min and increases the amount of health and mana you reincarnate with by an additional {1}%.",
+          "ranks": [[10, 10], [20, 20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [16184, 16209],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 589,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "ancestral-healing",
+          "name": "Ancestral Healing",
+          "row": 1,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_nature_undyingstrength",
+          "iconSource": "datamined",
+          "description": "Increases your target's armor value by {0}% for 15 sec after getting a critical effect from one of your healing spells.",
+          "ranks": [[8], [16], [25]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [16176, 16235, 16240],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 581,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "totemic-focus",
+          "name": "Totemic Focus",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_nature_moonglow",
+          "iconSource": "datamined",
+          "description": "Reduces the Mana cost of your totems by {0}%.",
+          "ranks": [[5], [10], [15], [20], [25]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16173, 16222, 16223, 16224, 16225],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 595,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "natures-guidance",
+          "name": "Nature's Guidance",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_frost_stun",
+          "iconSource": "datamined",
+          "description": "Increases your chance to hit with melee attacks and spells by {0}%.",
+          "ranks": [[1], [2], [3]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [16180, 16196, 16198],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 583,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "healing-focus",
+          "name": "Healing Focus",
+          "row": 2,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_nature_healingwavelesser",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to avoid interruption caused by damage while casting any healing spell.",
+          "ranks": [[14], [28], [42], [56], [70]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16181, 16230, 16232, 16233, 16234],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 587,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "totemic-mastery",
+          "name": "Totemic Mastery",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_nature_nullward",
+          "iconSource": "datamined",
+          "description": "The radius of your totems that affect friendly targets is increased to 30 yd.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [16189],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 582,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "healing-grace",
+          "name": "Healing Grace",
+          "row": 2,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "spell_nature_healingtouch",
+          "iconSource": "datamined",
+          "description": "Reduces the threat generated by your healing spells by {0}%.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [29187, 29189, 29191],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1646,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "restorative-totems",
+          "name": "Restorative Totems",
+          "row": 3,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_nature_manaregentotem",
+          "iconSource": "datamined",
+          "description": "Increases the effect of your Mana Spring and Healing Stream Totems by {0}%.",
+          "ranks": [[5], [10], [15], [20], [25]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16187, 16205, 16206, 16207, 16208],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 588,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "tidal-mastery",
+          "name": "Tidal Mastery",
+          "row": 3,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_nature_tranquility",
+          "iconSource": "datamined",
+          "description": "Increases the critical effect chance of your healing and lightning spells by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16194, 16218, 16219, 16220, 16221],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 594,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "healing-way",
+          "name": "Healing Way",
+          "row": 4,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_nature_healingway",
+          "iconSource": "datamined",
+          "description": "Your Healing Wave spells have a {0}% chance to increase the effect of subsequent Healing Wave spells on that target by 6% for 15 sec. This effect will stack up to 3 times.",
+          "ranks": [[33], [66], [100]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [29206, 29205, 29202],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1648,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "natures-swiftness",
+          "name": "Nature's Swiftness",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_nature_ravenform",
+          "iconSource": "datamined",
+          "description": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an instant cast spell.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [16188],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 591,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "purification",
+          "name": "Purification",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_frost_wizardmark",
+          "iconSource": "datamined",
+          "description": "Increases the effectiveness of your healing spells by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16178, 16210, 16211, 16212, 16213],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 592,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "mana-tide-totem",
+          "name": "Mana Tide Totem",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_frost_summonwaterelemental",
+          "iconSource": "datamined",
+          "description": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 170 mana every 3 seconds to group members within 20 yards.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "restorative-totems",
+              "rank": 5
+            }
+          ],
+          "spellIds": [16190],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 590,
+            "reviewed": false
+          }
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Datamined from wago.tools DB2 exports for build 1.15.9.69722; point rules (51/5/10/60) are the Classic prior, not DB2."
+  ]
+}

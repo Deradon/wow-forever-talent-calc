@@ -1,0 +1,985 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "schemaVersion": 1,
+  "class": "paladin",
+  "className": "Paladin",
+  "dataVersion": 1,
+  "dataSource": "datamined",
+  "generatedAt": "2026-09-14T07:02:11Z",
+  "rules": {
+    "pointsPerRow": 5,
+    "maxPoints": 51,
+    "firstPointLevel": 10,
+    "maxLevel": 60,
+    "rulesSource": "classic-prior"
+  },
+  "pages": [
+    {
+      "id": "primary",
+      "name": "Primary"
+    }
+  ],
+  "trees": [
+    {
+      "id": "holy",
+      "name": "Holy",
+      "page": "primary",
+      "order": 0,
+      "icon": "spell_holy_holybolt",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 382,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "divine-strength",
+          "name": "Divine Strength",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "ability_golemthunderclap",
+          "iconSource": "datamined",
+          "description": "Increases your Strength by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20262, 20263, 20264, 20265, 20266],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1450,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "divine-intellect",
+          "name": "Divine Intellect",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_nature_sleep",
+          "iconSource": "datamined",
+          "description": "Increases your total Intellect by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20257, 20258, 20259, 20260, 20261],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1449,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "spiritual-focus",
+          "name": "Spiritual Focus",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_arcane_blink",
+          "iconSource": "datamined",
+          "description": "Gives your Flash of Light and Holy Light spells a {0}% chance to not lose casting time when you take damage.",
+          "ranks": [[14], [28], [42], [56], [70]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20205, 20206, 20207, 20209, 20208],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1432,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-seal-of-righteousness",
+          "name": "Improved Seal of Righteousness",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_thunderbolt",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Seal of Righteousness and Judgement of Righteousness by {0}%.",
+          "ranks": [[3], [6], [9], [12], [15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20224, 20225, 20330, 20331, 20332],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1463,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "healing-light",
+          "name": "Healing Light",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_holy_holybolt",
+          "iconSource": "datamined",
+          "description": "Increases the amount healed by your Holy Light and Flash of Light spells by {0}%.",
+          "ranks": [[4], [8], [12]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [20237, 20238, 20239],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1444,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "consecration",
+          "name": "Consecration",
+          "row": 2,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_holy_innerfire",
+          "iconSource": "datamined",
+          "description": "Consecrates the land beneath Paladin, doing 64 Holy damage over 8 sec to enemies who enter the area.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [26573],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1435,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-lay-on-hands",
+          "name": "Improved Lay on Hands",
+          "row": 2,
+          "col": 2,
+          "maxRank": 2,
+          "icon": "spell_holy_layonhands",
+          "iconSource": "datamined",
+          "description": "Gives the target of your Lay on Hands spell a {0}% bonus to their armor value from items for 2 min. In addition, the cooldown for your Lay on Hands spell is reduced by {1} min.",
+          "ranks": [[15, 10], [30, 20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [20234, 20235],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1443,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "unyielding-faith",
+          "name": "Unyielding Faith",
+          "row": 2,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "spell_holy_unyieldingfaith",
+          "iconSource": "datamined",
+          "description": "Increases your chance to resist Fear and Disorient effects by an additional {0}%.",
+          "ranks": [[5], [10]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [9453, 25836],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1628,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "illumination",
+          "name": "Illumination",
+          "row": 3,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_holy_greaterheal",
+          "iconSource": "datamined",
+          "description": "After getting a critical effect from your Flash of Light, Holy Light, or Holy Shock heal spell, gives you a {0}% chance to gain Mana equal to the base cost of the spell.",
+          "ranks": [[20], [40], [60], [80], [100]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20210, 20212, 20213, 20214, 20215],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1461,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-blessing-of-wisdom",
+          "name": "Improved Blessing of Wisdom",
+          "row": 3,
+          "col": 2,
+          "maxRank": 2,
+          "icon": "spell_holy_sealofwisdom",
+          "iconSource": "datamined",
+          "description": "Increases the effect of your Blessing of Wisdom spell by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [20244, 20245],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1446,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "divine-favor",
+          "name": "Divine Favor",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_holy_heal",
+          "iconSource": "datamined",
+          "description": "When activated, gives your next Flash of Light, Holy Light, or Holy Shock spell a 100% critical effect chance.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "illumination",
+              "rank": 5
+            }
+          ],
+          "spellIds": [20216],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1433,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "lasting-judgement",
+          "name": "Lasting Judgement",
+          "row": 4,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "spell_holy_healingaura",
+          "iconSource": "datamined",
+          "description": "Increases the duration of your Judgement of Light and Judgement of Wisdom by {0} sec.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [20359, 20360, 20361],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1465,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "holy-power",
+          "name": "Holy Power",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_holy_power",
+          "iconSource": "datamined",
+          "description": "Increases the critical effect chance of your Holy spells by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [5923, 5924, 5925, 5926, 25829],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1627,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "holy-shock",
+          "name": "Holy Shock",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_holy_searinglight",
+          "iconSource": "datamined",
+          "description": "Blasts the target with Holy energy, causing 204 to 220 Holy damage to an enemy, or 204 to 220 healing to an ally.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "divine-favor",
+              "rank": 1
+            }
+          ],
+          "spellIds": [20473],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1502,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "protection",
+      "name": "Protection",
+      "page": "primary",
+      "order": 1,
+      "icon": "spell_holy_devotionaura",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 383,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-devotion-aura",
+          "name": "Improved Devotion Aura",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_holy_devotionaura",
+          "iconSource": "datamined",
+          "description": "Increases the armor bonus of your Devotion Aura by {0}%.",
+          "ranks": [[5], [10], [15], [20], [25]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20138, 20139, 20140, 20141, 20142],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1422,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "redoubt",
+          "name": "Redoubt",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_defend",
+          "iconSource": "datamined",
+          "description": "Increases your chance to block attacks with your shield by {0}% after being the victim of a critical strike. Lasts 10 sec or 5 blocks.",
+          "ranks": [[6], [12], [18], [24], [30]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20127, 20130, 20135, 20136, 20137],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1421,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "precision",
+          "name": "Precision",
+          "row": 1,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "ability_rogue_ambush",
+          "iconSource": "datamined",
+          "description": "Increases your chance to hit with melee weapons by {0}%.",
+          "ranks": [[1], [2], [3]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [20189, 20192, 20193],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1630,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "guardians-favor",
+          "name": "Guardian's Favor",
+          "row": 1,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_holy_sealofprotection",
+          "iconSource": "datamined",
+          "description": "Reduces the cooldown of your Blessing of Protection by {0} sec and increases the duration of your Blessing of Freedom by {1} sec.",
+          "ranks": [[60, 3], [120, 6]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [20174, 20175],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1425,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "toughness",
+          "name": "Toughness",
+          "row": 1,
+          "col": 3,
+          "maxRank": 5,
+          "icon": "spell_holy_devotion",
+          "iconSource": "datamined",
+          "description": "Increases your armor value from items by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20143, 20144, 20145, 20146, 20147],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1423,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "blessing-of-kings",
+          "name": "Blessing of Kings",
+          "row": 2,
+          "col": 0,
+          "maxRank": 1,
+          "icon": "spell_magic_magearmor",
+          "iconSource": "datamined",
+          "description": "Places a Blessing on the friendly target, increasing total stats by 10% for 5 min. Players may only have one Blessing on them per Paladin at any one time.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [20217],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1442,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-righteous-fury",
+          "name": "Improved Righteous Fury",
+          "row": 2,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_holy_sealoffury",
+          "iconSource": "datamined",
+          "description": "Increases the amount of threat generated by your Righteous Fury spell by {0}%.",
+          "ranks": [[16], [33], [50]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [20468, 20469, 20470],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1501,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "shield-specialization",
+          "name": "Shield Specialization",
+          "row": 2,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "inv_shield_06",
+          "iconSource": "datamined",
+          "description": "Increases the amount of damage absorbed by your shield by {0}%.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "redoubt",
+              "rank": 5
+            }
+          ],
+          "spellIds": [20148, 20149, 20150],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1424,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "anticipation",
+          "name": "Anticipation",
+          "row": 2,
+          "col": 3,
+          "maxRank": 5,
+          "icon": "spell_magic_lesserinvisibilty",
+          "iconSource": "datamined",
+          "description": "Increases your Defense skill by {0}.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20096, 20097, 20098, 20099, 20100],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1629,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-hammer-of-justice",
+          "name": "Improved Hammer of Justice",
+          "row": 3,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_holy_sealofmight",
+          "iconSource": "datamined",
+          "description": "Decreases the cooldown of your Hammer of Justice spell by {0} sec.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [20487, 20488, 20489],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1521,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-concentration-aura",
+          "name": "Improved Concentration Aura",
+          "row": 3,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "spell_holy_mindsooth",
+          "iconSource": "datamined",
+          "description": "Increases the effect of your Concentration Aura by an additional {0}% and gives all group members affected by the aura an additional {1}% chance to resist Silence and Interrupt effects.",
+          "ranks": [[5, 5], [10, 10], [15, 15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [20254, 20255, 20256],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1626,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "blessing-of-sanctuary",
+          "name": "Blessing of Sanctuary",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_nature_lightningshield",
+          "iconSource": "datamined",
+          "description": "Places a Blessing on the friendly target, reducing damage dealt from all sources by up to 10 for 5 min. In addition, when the target blocks a melee attack the attacker will take 14 Holy damage. Players may only have one Blessing on them per Paladin at any one time.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [20911],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1431,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "reckoning",
+          "name": "Reckoning",
+          "row": 4,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_holy_blessingofstrength",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to gain an extra attack after being the victim of a critical strike.",
+          "ranks": [[20], [40], [60], [80], [100]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20177, 20179, 20181, 20180, 20182],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1426,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "one-handed-weapon-specialization",
+          "name": "One-Handed Weapon Specialization",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "inv_sword_20",
+          "iconSource": "datamined",
+          "description": "Increases the damage you deal with one-handed melee weapons by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20196, 20197, 20198, 20199, 20200],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1429,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "holy-shield",
+          "name": "Holy Shield",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_holy_blessingofprotection",
+          "iconSource": "datamined",
+          "description": "Increases chance to block by 30% for 10 sec, and deals 65 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "blessing-of-sanctuary",
+              "rank": 1
+            }
+          ],
+          "spellIds": [20925],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1430,
+            "reviewed": false,
+            "note": "2 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        }
+      ]
+    },
+    {
+      "id": "retribution",
+      "name": "Retribution",
+      "page": "primary",
+      "order": 2,
+      "icon": "spell_holy_auraoflight",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 381,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-blessing-of-might",
+          "name": "Improved Blessing of Might",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_holy_fistofjustice",
+          "iconSource": "datamined",
+          "description": "Increases the melee attack power bonus of your Blessing of Might by {0}%.",
+          "ranks": [[4], [8], [12], [16], [20]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20042, 20045, 20046, 20047, 20048],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1401,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "benediction",
+          "name": "Benediction",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_frost_windwalkon",
+          "iconSource": "datamined",
+          "description": "Reduces the Mana cost of your Judgement and Seal spells by {0}%.",
+          "ranks": [[3], [6], [9], [12], [15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20101, 20102, 20103, 20104, 20105],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1407,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-judgement",
+          "name": "Improved Judgement",
+          "row": 1,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_holy_righteousfury",
+          "iconSource": "datamined",
+          "description": "Decreases the cooldown of your Judgement spell by {0} sec.",
+          "ranks": [[1], [2]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [25956, 25957],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1631,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-seal-of-the-crusader",
+          "name": "Improved Seal of the Crusader",
+          "row": 1,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_holy_holysmite",
+          "iconSource": "datamined",
+          "description": "Increases the melee attack power bonus of your Seal of the Crusader and the Holy damage increase of your Judgement of the Crusader by {0}%.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [20335, 20336, 20337],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1464,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "deflection",
+          "name": "Deflection",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_parry",
+          "iconSource": "datamined",
+          "description": "Increases your Parry chance by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20060, 20061, 20062, 20063, 20064],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1403,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "vindication",
+          "name": "Vindication",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_holy_vindication",
+          "iconSource": "datamined",
+          "description": "Gives the Paladin's damaging melee attacks a chance to reduce the target's Strength and Agility by {0}%10 sec.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [9452, 26016, 26021],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1633,
+            "reviewed": false,
+            "note": "3 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "conviction",
+          "name": "Conviction",
+          "row": 2,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_holy_retributionaura",
+          "iconSource": "datamined",
+          "description": "Increases your chance to get a critical strike with melee weapons by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [20117, 20118, 20119, 20120, 20121],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1411,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "seal-of-command",
+          "name": "Seal of Command",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "ability_warrior_innerrage",
+          "iconSource": "datamined",
+          "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an enemy, instantly causing 46.5 to 50.5 Holy damage, 93 to 101 if the target is stunned or incapacitated.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [20375],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1481,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "pursuit-of-justice",
+          "name": "Pursuit of Justice",
+          "row": 2,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "spell_holy_persuitofjustice",
+          "iconSource": "datamined",
+          "description": "Increases movement and mounted movement speed by {0}%. This does not stack with other movement speed increasing effects.",
+          "ranks": [[4], [8]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [26022, 26023],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1634,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "eye-for-an-eye",
+          "name": "Eye for an Eye",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_holy_eyeforaneye",
+          "iconSource": "datamined",
+          "description": "All spell criticals against you cause {0}% of the damage taken to the caster as well. The damage caused by Eye for an Eye will not exceed 50% of the Paladin's total health.",
+          "ranks": [[15], [30]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [9799, 25988],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1632,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-retribution-aura",
+          "name": "Improved Retribution Aura",
+          "row": 3,
+          "col": 2,
+          "maxRank": 2,
+          "icon": "spell_holy_auraoflight",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Retribution Aura by {0}%.",
+          "ranks": [[25], [50]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [20091, 20092],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1405,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "two-handed-weapon-specialization",
+          "name": "Two-Handed Weapon Specialization",
+          "row": 4,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "inv_hammer_04",
+          "iconSource": "datamined",
+          "description": "Increases the damage you deal with two-handed melee weapons by {0}%.",
+          "ranks": [[2], [4], [6]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [20111, 20112, 20113],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1410,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "sanctity-aura",
+          "name": "Sanctity Aura",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_holy_mindvision",
+          "iconSource": "datamined",
+          "description": "Increases Holy damage done by party members within 30 yards by 10%. Players may only have one Aura on them per Paladin at any one time.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [20218],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1409,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "vengeance",
+          "name": "Vengeance",
+          "row": 5,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "ability_racial_avatar",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% bonus to Physical and Holy damage you deal for 8 sec after dealing a critical strike from a weapon swing, spell, or ability.",
+          "ranks": [[3], [6], [9], [12], [15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "conviction",
+              "rank": 5
+            }
+          ],
+          "spellIds": [20049, 20056, 20057, 20058, 20059],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1402,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "repentance",
+          "name": "Repentance",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_holy_prayerofhealing",
+          "iconSource": "datamined",
+          "description": "Puts the enemy target in a state of meditation, incapacitating them for up to 6 sec. Any damage caused will awaken the target. Only works against Humanoids.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [20066],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1441,
+            "reviewed": false
+          }
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Datamined from wago.tools DB2 exports for build 1.15.9.69722; point rules (51/5/10/60) are the Classic prior, not DB2."
+  ]
+}

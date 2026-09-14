@@ -1,0 +1,1129 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "schemaVersion": 1,
+  "class": "warlock",
+  "className": "Warlock",
+  "dataVersion": 1,
+  "dataSource": "datamined",
+  "generatedAt": "2026-09-14T07:02:11Z",
+  "rules": {
+    "pointsPerRow": 5,
+    "maxPoints": 51,
+    "firstPointLevel": 10,
+    "maxLevel": 60,
+    "rulesSource": "classic-prior"
+  },
+  "pages": [
+    {
+      "id": "primary",
+      "name": "Primary"
+    }
+  ],
+  "trees": [
+    {
+      "id": "affliction",
+      "name": "Affliction",
+      "page": "primary",
+      "order": 0,
+      "icon": "spell_shadow_deathcoil",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 302,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "suppression",
+          "name": "Suppression",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_shadow_unsummonbuilding",
+          "iconSource": "datamined",
+          "description": "Reduces the chance for enemies to resist your Affliction spells by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [18174, 18175, 18176, 18177, 18178],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1005,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-corruption",
+          "name": "Improved Corruption",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_shadow_abominationexplosion",
+          "iconSource": "datamined",
+          "description": "Reduces the casting time of your Corruption spell by {0} sec.",
+          "ranks": [[0.4], [0.8], [1.2], [1.6], [2]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17810, 17811, 17812, 17813, 17814],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1003,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-curse-of-weakness",
+          "name": "Improved Curse of Weakness",
+          "row": 1,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_shadow_curseofmannoroth",
+          "iconSource": "datamined",
+          "description": "Increases the effect of your Curse of Weakness by {0}%.",
+          "ranks": [[6], [13], [20]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [18179, 18180, 18181],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1006,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-drain-soul",
+          "name": "Improved Drain Soul",
+          "row": 1,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_shadow_haunting",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to get a 100% increase to your Mana regeneration for 10 sec if the target is killed by you while you drain its soul. In addition your Mana may continue to regenerate while casting at 50% of normal.",
+          "ranks": [[50], [100]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18213, 18372],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1101,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-life-tap",
+          "name": "Improved Life Tap",
+          "row": 1,
+          "col": 2,
+          "maxRank": 2,
+          "icon": "spell_shadow_burningspirit",
+          "iconSource": "datamined",
+          "description": "Increases the amount of Mana awarded by your Life Tap spell by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18182, 18183],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1007,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-drain-life",
+          "name": "Improved Drain Life",
+          "row": 1,
+          "col": 3,
+          "maxRank": 5,
+          "icon": "spell_shadow_lifedrain02",
+          "iconSource": "datamined",
+          "description": "Increases the Health drained by your Drain Life spell by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17804, 17805, 17806, 17807, 17808],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1004,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-curse-of-agony",
+          "name": "Improved Curse of Agony",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_shadow_curseofsargeras",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Curse of Agony by {0}%.",
+          "ranks": [[2], [4], [6]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [18827, 18829, 18830],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1284,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "fel-concentration",
+          "name": "Fel Concentration",
+          "row": 2,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_shadow_fingerofdeath",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.",
+          "ranks": [[14], [28], [42], [56], [70]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17783, 17784, 17785, 17786, 17787],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1001,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "amplify-curse",
+          "name": "Amplify Curse",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_shadow_contagion",
+          "iconSource": "datamined",
+          "description": "Increases the effect of your next Curse of Weakness or Curse of Agony by 50%, or your next Curse of Exhaustion by 20%. Lasts 30 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [18288],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1061,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "grim-reach",
+          "name": "Grim Reach",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_shadow_callofbone",
+          "iconSource": "datamined",
+          "description": "Increases the range of your Affliction spells by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18218, 18219],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1021,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "nightfall",
+          "name": "Nightfall",
+          "row": 3,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_shadow_twilight",
+          "iconSource": "datamined",
+          "description": "Gives your Corruption and Drain Life spells a {0}% chance to cause you to enter a Shadow Trance state after damaging the opponent. The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%.",
+          "ranks": [[2], [4]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18094, 18095],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1002,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "improved-drain-mana",
+          "name": "Improved Drain Mana",
+          "row": 3,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "spell_shadow_siphonmana",
+          "iconSource": "datamined",
+          "description": "Causes {0}% of the Mana drained by your Drain Mana spell to damage the opponent.",
+          "ranks": [[15], [30]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [17864, 18393],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1121,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "siphon-life",
+          "name": "Siphon Life",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_shadow_requiem",
+          "iconSource": "datamined",
+          "description": "Transfers 15 health from the target to the caster every 3 sec. Lasts 30 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [18265],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1041,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "curse-of-exhaustion",
+          "name": "Curse of Exhaustion",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_shadow_grimward",
+          "iconSource": "datamined",
+          "description": "Reduces the target's movement speed by 10% for 12 sec. Only one Curse per Warlock can be active on any one target.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "amplify-curse",
+              "rank": 1
+            }
+          ],
+          "spellIds": [18223],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1081,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-curse-of-exhaustion",
+          "name": "Improved Curse of Exhaustion",
+          "row": 4,
+          "col": 3,
+          "maxRank": 4,
+          "icon": "spell_shadow_grimward",
+          "iconSource": "datamined",
+          "description": "Increases the speed reduction of your Curse of Exhaustion by {0}%.",
+          "ranks": [[5], [10], [15], [20]],
+          "ranksObserved": [1, 2, 3, 4],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "curse-of-exhaustion",
+              "rank": 1
+            }
+          ],
+          "spellIds": [18310, 18311, 18312, 18313],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1082,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "shadow-mastery",
+          "name": "Shadow Mastery",
+          "row": 5,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_shadow_shadetruesight",
+          "iconSource": "datamined",
+          "description": "Increases the damage dealt or life drained by your Shadow spells by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "siphon-life",
+              "rank": 1
+            }
+          ],
+          "spellIds": [18271, 18272, 18273, 18274, 18275],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1042,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "dark-pact",
+          "name": "Dark Pact",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_shadow_darkritual",
+          "iconSource": "datamined",
+          "description": "Drains 150 of your pet's Mana, returning 100% to you.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [18220],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1022,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "demonology",
+      "name": "Demonology",
+      "page": "primary",
+      "order": 1,
+      "icon": "spell_shadow_metamorphosis",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 303,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-healthstone",
+          "name": "Improved Healthstone",
+          "row": 0,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "inv_stone_04",
+          "iconSource": "datamined",
+          "description": "Increases the amount of Health restored by your Healthstone by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18692, 18693],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1221,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-imp",
+          "name": "Improved Imp",
+          "row": 0,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_shadow_summonimp",
+          "iconSource": "datamined",
+          "description": "Increases the effect of your Imp's Firebolt, Fire Shield, and Blood Pact spells by {0}%.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [18694, 18695, 18696],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1222,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "demonic-embrace",
+          "name": "Demonic Embrace",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_shadow_metamorphosis",
+          "iconSource": "datamined",
+          "description": "Increases your total Stamina by {0}% but reduces your total Spirit by {1}%.",
+          "ranks": [[3, 1], [6, 2], [9, 3], [12, 4], [15, 5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [18697, 18698, 18699, 18700, 18701],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1223,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-health-funnel",
+          "name": "Improved Health Funnel",
+          "row": 1,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_shadow_lifedrain",
+          "iconSource": "datamined",
+          "description": "Increases the amount of Health transferred by your Health Funnel spell by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18703, 18704],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1224,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-voidwalker",
+          "name": "Improved Voidwalker",
+          "row": 1,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_shadow_summonvoidwalker",
+          "iconSource": "datamined",
+          "description": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, Sacrifice and Suffering spells by {0}%.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [18705, 18706, 18707],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1225,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "fel-intellect",
+          "name": "Fel Intellect",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_holy_magicalsentry",
+          "iconSource": "datamined",
+          "description": "Increases the maximum Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by {0}%.",
+          "ranks": [[3], [6], [9], [12], [15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [18731, 18743, 18744, 18745, 18746],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1242,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-sayaad",
+          "name": "Improved Sayaad",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "ability_warlock_randomizesuccubusincubus",
+          "iconSource": "datamined",
+          "description": "Increases the effect of your Succubus' and Incubus' Lash of Pain and Soothing Kiss spells by {0}%, and increases the duration of your Succubus' and Incubus' Seduction and Lesser Invisibility spells by {1}%.",
+          "ranks": [[10, 10], [20, 20], [30, 30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [18754, 18755, 18756],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1243,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "fel-domination",
+          "name": "Fel Domination",
+          "row": 2,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_nature_removecurse",
+          "iconSource": "datamined",
+          "description": "Your next Imp, Voidwalker, Succubus, Incubus, or Felhunter Summon spell has its casting time reduced by 5.5 sec and its Mana cost reduced by 50%.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [18708],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1226,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "fel-stamina",
+          "name": "Fel Stamina",
+          "row": 2,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_shadow_antishadow",
+          "iconSource": "datamined",
+          "description": "Increases the maximum Health of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by {0}%.",
+          "ranks": [[3], [6], [9], [12], [15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [18748, 18749, 18750, 18751, 18752],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1241,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "master-summoner",
+          "name": "Master Summoner",
+          "row": 3,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_shadow_impphaseshift",
+          "iconSource": "datamined",
+          "description": "Reduces the casting time of your Imp, Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by {0} sec and the Mana cost by {1}%.",
+          "ranks": [[2, 20], [4, 40]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "fel-domination",
+              "rank": 1
+            }
+          ],
+          "spellIds": [18709, 18710],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1227,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "unholy-power",
+          "name": "Unholy Power",
+          "row": 3,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_shadow_shadowworddominate",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Voidwalker, Succubus, Incubus, and Felhunter's melee attacks by {0}%.",
+          "ranks": [[4], [8], [12], [16], [20]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [18769, 18770, 18771, 18772, 18773],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1262,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-subjugate-demon",
+          "name": "Improved Subjugate Demon",
+          "row": 4,
+          "col": 0,
+          "maxRank": 5,
+          "icon": "spell_shadow_enslavedemon",
+          "iconSource": "datamined",
+          "description": "Reduces the Attack Speed and Casting Speed penalty of your Subjugate Demon spell by {0}% and reduces the resist chance by {1}%.",
+          "ranks": [[2, 2], [4, 4], [6, 6], [8, 8], [10, 10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [18821, 18822, 18823, 18824, 18825],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1283,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "demonic-sacrifice",
+          "name": "Demonic Sacrifice",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_shadow_psychicscream",
+          "iconSource": "datamined",
+          "description": "When activated, sacrifices your summoned demon to grant you an effect that lasts 30 min. The effect is canceled if any Demon is summoned. Imp: Increases your Fire damage by 15%. Voidwalker: Restores 3% of total Health every 4 sec. Succubus/Incubus: Increases your Shadow damage by 15%. Felhunter: Restores 2% of total Mana every 4 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [18788],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1281,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-firestone",
+          "name": "Improved Firestone",
+          "row": 4,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "inv_ammo_firetar",
+          "iconSource": "datamined",
+          "description": "Increases the bonus Fire damage from Firestones and the Firestone effect by {0}%.",
+          "ranks": [[15], [30]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18767, 18768],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1261,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "master-demonologist",
+          "name": "Master Demonologist",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_shadow_shadowpact",
+          "iconSource": "datamined",
+          "description": "Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Reduces threat caused by {0}%. Voidwalker - Reduces physical damage taken by {1}%. Succubus/Incubus - Increases all damage caused by {2}%. Felhunter - Increases all resistances by {3} per level.",
+          "ranks": [[4, 2, 2, 0.2], [8, 4, 4, 0.4], [12, 6, 6, 0.6], [16, 8, 8, 0.8], [20, 10, 10, 1]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "unholy-power",
+              "rank": 5
+            }
+          ],
+          "spellIds": [23785, 23822, 23823, 23824, 23825],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1244,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "soul-link",
+          "name": "Soul Link",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_shadow_gathershadows",
+          "iconSource": "datamined",
+          "description": "When active, 30% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, Incubus, or Felhunter demon instead. In addition, both the demon and master will inflict 3% more damage. Lasts as long as the demon is active.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "demonic-sacrifice",
+              "rank": 1
+            }
+          ],
+          "spellIds": [19028],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1282,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "improved-spellstone",
+          "name": "Improved Spellstone",
+          "row": 6,
+          "col": 2,
+          "maxRank": 2,
+          "icon": "inv_misc_gem_sapphire_01",
+          "iconSource": "datamined",
+          "description": "Increases the amount of damage absorbed by your Spellstone by {0}%.",
+          "ranks": [[15], [30]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18774, 18775],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1263,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "destruction",
+      "name": "Destruction",
+      "page": "primary",
+      "order": 2,
+      "icon": "spell_shadow_rainoffire",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 301,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-shadow-bolt",
+          "name": "Improved Shadow Bolt",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_shadow_shadowbolt",
+          "iconSource": "datamined",
+          "description": "Your Shadow Bolt critical strikes increase Shadow damage dealt to the target by {0}% until 4 non-periodic damage sources are applied. Effect lasts a maximum of 12 sec.",
+          "ranks": [[4], [8], [12], [16], [20]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17793, 17796, 17801, 17802, 17803],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 944,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "cataclysm",
+          "name": "Cataclysm",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_fire_windsofwoe",
+          "iconSource": "datamined",
+          "description": "Reduces the Mana cost of your Destruction spells by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17778, 17779, 17780, 17781, 17782],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 941,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bane",
+          "name": "Bane",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_shadow_deathpact",
+          "iconSource": "datamined",
+          "description": "Reduces the casting time of your Shadow Bolt and Immolate spells by {0} sec and your Soul Fire spell by {1} sec.",
+          "ranks": [[0.1, 0.4], [0.2, 0.8], [0.3, 1.2], [0.4, 1.6], [0.5, 2]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17788, 17789, 17790, 17791, 17792],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 943,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "aftermath",
+          "name": "Aftermath",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_fire_fire",
+          "iconSource": "datamined",
+          "description": "Gives your Destruction spells a {0}% chance to daze the target for 5 sec.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [18119, 18120, 18121, 18122, 18123],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 982,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-firebolt",
+          "name": "Improved Firebolt",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_fire_firebolt",
+          "iconSource": "datamined",
+          "description": "Reduces the casting time of your Imp's Firebolt spell by {0} sec.",
+          "ranks": [[0.5], [1]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18126, 18127],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 983,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-lash-of-pain",
+          "name": "Improved Lash of Pain",
+          "row": 2,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_shadow_curse",
+          "iconSource": "datamined",
+          "description": "Reduces the cooldown of your Succubus' and Incubus' Lash of Pain spell by {0} sec.",
+          "ranks": [[3], [6]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18128, 18129],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 984,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "devastation",
+          "name": "Devastation",
+          "row": 2,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_fire_flameshock",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of your Destruction spells by {0}%.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [18130, 18131, 18132, 18133, 18134],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 981,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "shadowburn",
+          "name": "Shadowburn",
+          "row": 2,
+          "col": 3,
+          "maxRank": 1,
+          "icon": "spell_shadow_scourgebuild",
+          "iconSource": "datamined",
+          "description": "Instantly blasts the target for 87 to 99 Shadow damage. If the target dies within 5 sec of Shadowburn, and yields experience or honor, the caster gains a Soul Shard.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [17877],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 963,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "intensity",
+          "name": "Intensity",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_fire_lavaspawn",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to resist interruption caused by damage while channeling the Rain of Fire, Hellfire or Soul Fire spell.",
+          "ranks": [[35], [70]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18135, 18136],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 985,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "destructive-reach",
+          "name": "Destructive Reach",
+          "row": 3,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_shadow_corpseexplode",
+          "iconSource": "datamined",
+          "description": "Increases the range of your Destruction spells by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [17917, 17918],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 964,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-searing-pain",
+          "name": "Improved Searing Pain",
+          "row": 3,
+          "col": 3,
+          "maxRank": 5,
+          "icon": "spell_fire_soulburn",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of your Searing Pain spell by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17927, 17929, 17930, 17931, 17932],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 965,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "pyroclasm",
+          "name": "Pyroclasm",
+          "row": 4,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_fire_volcano",
+          "iconSource": "datamined",
+          "description": "Gives your Rain of Fire, Hellfire, and Soul Fire spells a {0}% chance to stun the target for 3 sec.",
+          "ranks": [[13], [26]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "intensity",
+              "rank": 2
+            }
+          ],
+          "spellIds": [18096, 18073],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 986,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-immolate",
+          "name": "Improved Immolate",
+          "row": 4,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_fire_immolation",
+          "iconSource": "datamined",
+          "description": "Increases the initial damage of your Immolate spell by {0}%.",
+          "ranks": [[5], [10], [15], [20], [25]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17815, 17833, 17834, 17835, 17836],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 961,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "ruin",
+          "name": "Ruin",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_shadow_shadowwordpain",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike damage bonus of your Destruction spells by 100%.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "devastation",
+              "rank": 5
+            }
+          ],
+          "spellIds": [17959],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 967,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "emberstorm",
+          "name": "Emberstorm",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_fire_selfdestruct",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Fire spells by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17954, 17955, 17956, 17957, 17958],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 966,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "conflagrate",
+          "name": "Conflagrate",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_fire_fireball",
+          "iconSource": "datamined",
+          "description": "Ignites a target that is already afflicted by Immolate, dealing 240 to 306 Fire damage and consuming the Immolate spell.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "improved-immolate",
+              "rank": 5
+            }
+          ],
+          "spellIds": [17962],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 968,
+            "reviewed": false
+          }
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Datamined from wago.tools DB2 exports for build 1.15.9.69722; point rules (51/5/10/60) are the Classic prior, not DB2."
+  ]
+}

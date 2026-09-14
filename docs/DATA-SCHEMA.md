@@ -30,6 +30,7 @@ data/
   talents/<class>.json          canonical, reviewed data; the web app reads only this
   extracted/<class>.json        pipeline output, same schema, never edited by hand
   overrides/<class>.json        hand corrections applied on top of extracted/
+  datamined/<build>/<class>.json  DB2 import staging, same schema (section 9)
   prior/classic-era/            Classic Era reference data used for rank anticipation
   encoding/v<N>.json            talent order per data version (build-link strings); `frozen` locks it
   encoding/migrations/v<A>-v<B>.json   id renames/removals between versions
@@ -462,23 +463,88 @@ returns `Notice`s (`unknown-version`, `clamped`, `unknown-talent`,
 to an id in `v<N+1>` or appears in `removed`; `validate.py` rule 11 checks
 this chain.
 
-## 9. Datamined import path (planned; drop-in replacement, after 2026-09-17)
+## 9. Datamined import path
 
-Nothing in this section exists yet — `pipeline/import_db2.py` is not written.
-It is the design the schema was shaped for, not a description of the tree.
+`pipeline/stages/10_import_db2.py` implements this. It was proven end to end on
+Classic Era `1.15.9.69722` as a stand-in for the Forever beta build: 9 classes,
+27 trees, 432 talents, 0 validation errors, 95.95 % of the 1357 per-rank texts
+identical to `data/prior/classic-era/talents.json` after normalisation, and 0
+differences in position, `maxRank` and prerequisites. On beta day only the build
+number changes. Details and the runbook:
+`docs/handover/2026-09-14-datamined-importer.md`.
 
-`pipeline/import_db2.py --build <build> --class <class>` reads the wago.tools
-CSV exports and writes `data/extracted/<class>.json` in this same schema
-with `source.kind: "datamined"`, `ranksObserved` = all, `ranksSource:
-"observed"`, `spellIds` filled, `iconSource: "datamined"`. Then the usual
-`export.py` run applies. Reviewed video records are still kept by rule 6.3/2
-until the reviewer accepts the datamined version (bulk accept: `export.py
---prefer datamined` writes overrides with reason "datamined <build>"). Field
-mapping and verified table names are in the brief, section (e).
+### 9.1 The four commands
 
-Talent ids stay slugs of the datamined `SpellName.Name_lang`; the importer
-uses the migration mechanism for any id that differs from the video-era id
-(it proposes `renamed` entries by matching `(tree, row, col)`).
+```bash
+cd pipeline
+uv run stages/10_import_db2.py builds                            # find the Forever build id
+uv run stages/10_import_db2.py fetch   --build <build>           # -> pipeline/work/db2/<build>/
+uv run stages/10_import_db2.py build   --build <build>           # -> data/datamined/<build>/<class>.json
+uv run stages/10_import_db2.py diff    --build <build>           # vs data/talents/, Markdown + JSON
+uv run stages/10_import_db2.py promote --from datamined/<build>  # -> data/talents/ (needs --apply)
+```
+
+`fetch` downloads ten tables (`TalentTab`, `Talent`, `SpellName`, `Spell`,
+`SpellEffect`, `SpellMisc`, `ManifestInterfaceData`, plus `SpellDuration`,
+`SpellRadius` and `SpellAuraOptions` for the `$d`, `$a1` and `$h`/`$n`/`$u`
+formatters) sequentially into `pipeline/work/db2/<build>/` with a `manifest.json`
+carrying row counts and a sha256 per file; `check --build <build>` re-verifies
+them. Field mapping and verified column names: the brief, section (e).
+
+`build` writes **staging** files under `data/datamined/<build>/`, never straight
+into `data/talents/`. Every talent gets `source.kind: "datamined"` with `build`
+and `talentId`, `ranksObserved` = all ranks, `ranksSource: "observed"`,
+`spellIds` filled and `iconSource: "datamined"`; the tree gets
+`datamined: { talentTabId, build }`; the file gets `dataSource: "datamined"`.
+`rules` stays `classic-prior` — no DB2 table carries "51 points, 5 per row".
+A `report/` subdirectory holds `import.md` (formatter coverage, conditional
+text, string-form ranks) and `diff.md` / `compare-prior.md` when those ran.
+
+Because `data/datamined/<build>/` is staging, no encoding version covers it;
+validate it with `validate.py --no-encoding` (rule 11 is then skipped, see
+section 10).
+
+### 9.2 Merge policy on beta day (`promote`)
+
+1. **Datamined data replaces video data per class, as a whole.** Not
+   talent-by-talent: a tree whose layout moved cannot be merged cell-wise, and a
+   half-datamined class is harder to reason about than a fully replaced one. The
+   unit is the class file.
+2. **Video-only fields survive only as fallbacks.** The one video-era field with
+   no datamined counterpart is the icon crop. Where the datamined
+   `SpellIconFileDataID` did not resolve to a name in `ManifestInterfaceData`,
+   the talent keeps the video record's `iconSource: "crop"` and `iconCrop` (with
+   `source.note` saying so) so the cell still renders. It disappears by itself
+   the moment the icon resolves. Everything else video-only — `confidence`,
+   `reader`, `crop`, `t`/`frame` — is dropped with the record.
+3. **Reviewed overrides that contradict datamined text are dropped, with a log.**
+   Rule 6.3/2 ("never overwrite `reviewed: true`") is a rule about *our own*
+   readings of a video frame. The client's own data outranks it. `promote` prints
+   one `DROPPED-REVIEW <talent>: ...` line per record whose rendered per-rank
+   text differs from the datamined text, and writes the datamined record.
+   A reviewed record that agrees is replaced silently. Reviewers keep their work
+   by re-reviewing the datamined record, not by blocking it — and the log is the
+   list of what to look at first.
+4. **Encoding: new ids mean a new version, with migrations by name.** `promote`
+   reports `newIds`, `goneIds` and `renamed` (matched by normalised talent name,
+   so a video-era `crop-r3c2` maps to `sanctified-light` without guesswork).
+   If any of the three is non-empty and `v<N>` is frozen, the change needs
+   `data/encoding/v<N+1>.json` covering every class plus
+   `data/encoding/migrations/v<N>-v<N+1>.json` whose `renamed` starts from
+   `promote`'s proposal, and `dataVersion` bumped in every class file
+   (section 8). While v1 is still unfrozen the order is regenerated in place by
+   `08_export.py --update-encoding` and no migration is needed — freezing before
+   beta day is therefore a deliberate choice about shared links, not a formality.
+5. **`promote` writes nothing without `--apply`.** Without it, it prints the plan
+   per class (talent count, crops kept, reviews dropped, new/gone ids) and the
+   reminder about the encoding step. With `--apply` each merged file goes through
+   `write_validated`, i.e. the canonical serializer plus the full rule set, and a
+   validation error leaves the old file in place.
+
+Talent ids are slugs of the datamined `SpellName.Name_lang`, unique per class
+file, with `-<treeId>` appended on a collision inside one class (section 3).
+Ids collide across classes freely: warrior and paladin may both have
+`shield-specialization`.
 
 ## 10. Validation rules (`pipeline/validate.py`)
 
@@ -542,7 +608,9 @@ Content (warnings, `--strict` makes them errors):
 
 Output: human-readable list `LEVEL CODE file:class/tree/talent: message`
 and `--json` for the review UI. `--no-files` skips the file-existence part of
-rule 9, `--root <dir>` sets the repo root (default: found by walking up from
+rule 9, `--no-encoding` skips rule 11 entirely (for staging files such as
+`data/datamined/<build>/<class>.json`, which no `data/encoding/v<N>.json`
+covers; never pass it for `data/talents/`), `--root <dir>` sets the repo root (default: found by walking up from
 the file to `data/schema/class.schema.json`). Rules 14 (prior pattern) and 15
 need `data/prior/classic-era/talents.json` and are skipped without it.
 

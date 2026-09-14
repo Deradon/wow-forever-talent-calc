@@ -27,6 +27,7 @@ import json
 import os
 import re
 import shutil
+import tempfile
 import sys
 from collections import Counter, OrderedDict
 from dataclasses import dataclass, field
@@ -610,6 +611,66 @@ def build_talents(extracted: dict, overrides: dict | None, existing: dict | None
 
 
 # ----------------------------------------------------------------------------
+# Datamined merge (DATA-SCHEMA.md section 9)
+# ----------------------------------------------------------------------------
+
+def _norm(s: str) -> str:
+    return re.sub(r"\s+", " ", (s or "")).strip().lower().rstrip(". ")
+
+
+def _rendered_ranks(t: dict) -> list[str]:
+    out = []
+    for r in t.get("ranks") or []:
+        out.append(r if isinstance(r, str) else re.sub(r"\{(\d+)\}", lambda m: str(r[int(m.group(1))]), t["description"]))
+    return out
+
+
+def merge_datamined(new: dict, old: dict | None, log: Log) -> tuple[dict, dict]:
+    """Section 9: datamined data replaces the class as a whole; two things survive.
+
+    1. ``iconCrop``: where the datamined icon did not resolve to a real icon name, the
+       video-era 64x64 crop is kept as the fallback (``iconSource: "crop"``) so the cell
+       still renders. It disappears by itself the moment the icon resolves.
+    2. Nothing else. A ``reviewed: true`` record whose text contradicts the datamined
+       text is **dropped**, one ``DROPPED-REVIEW`` line per record, because the client's
+       own data outranks a human reading of a video frame. Records that agree are also
+       replaced, but silently (the reviewer confirmed what the data says).
+
+    Returns ``(merged document, plan)``; ``plan`` carries the counts and the id sets the
+    encoding step needs (``newIds`` / ``goneIds``, matched by talent name).
+    """
+    doc = copy.deepcopy(new)
+    plan = {"class": doc["class"], "talents": sum(len(t["talents"]) for t in doc["trees"]),
+            "cropsKept": 0, "overridesDropped": 0, "newIds": [], "goneIds": [], "renamed": {}}
+    if old is None:
+        log.info(f"{doc['class']}: no existing canonical file; datamined data written as is")
+        return validate.order_class_doc(doc), plan
+
+    old_by_name = {_norm(t["name"]): t for tree in old["trees"] for t in tree["talents"]}
+    new_by_name = {_norm(t["name"]): t for tree in doc["trees"] for t in tree["talents"]}
+    for name, t in sorted(new_by_name.items()):
+        prev = old_by_name.get(name)
+        if prev is None:
+            plan["newIds"].append(t["id"])
+            continue
+        if prev["id"] != t["id"]:
+            plan["renamed"][prev["id"]] = t["id"]
+        if t["icon"] == "inv_misc_questionmark" and prev.get("iconSource") == "crop" and prev.get("iconCrop"):
+            t["icon"], t["iconSource"], t["iconCrop"] = prev["icon"], "crop", prev["iconCrop"]
+            t["source"]["note"] = "; ".join(filter(None, [t["source"].get("note"),
+                                                          "icon not datamined; video crop kept as fallback"]))
+            plan["cropsKept"] += 1
+        if (prev.get("source") or {}).get("reviewed") and _rendered_ranks(prev) != _rendered_ranks(t):
+            plan["overridesDropped"] += 1
+            log.warn(f"DROPPED-REVIEW {t['id']}: reviewed text {prev['description']!r} replaced by the datamined "
+                     f"text {t['description']!r} (reviewed by {(prev['source'] or {}).get('reviewedBy', '?')})")
+    plan["goneIds"] = sorted(t["id"] for name, t in old_by_name.items() if name not in new_by_name)
+    plan["newIds"].sort()
+    doc["generatedAt"] = now_rfc3339()
+    return validate.order_class_doc(doc), plan
+
+
+# ----------------------------------------------------------------------------
 # encoding helpers, validation, writing
 # ----------------------------------------------------------------------------
 
@@ -738,14 +799,29 @@ def prune_review_crops(root: Path, docs: Iterable[dict], log: Log, *, dry_run: b
     return gone
 
 
-def run_validator(path: Path, root: Path, *, check: bool = False, no_files: bool = False, strict: bool = False):
+def run_validator(path: Path, root: Path, *, check: bool = False, no_files: bool = False, strict: bool = False,
+                  no_encoding: bool = False):
     opts = validate.argparse.Namespace(files=[str(path)], strict=strict, json=False, report=False, overrides=False,
-                                       check=check, no_files=no_files, root=str(root))
+                                       check=check, no_files=no_files, no_encoding=no_encoding, root=str(root))
     return validate.validate_path(path, opts, {}, {})
 
 
+def run_validator_doc(doc: dict, cls: str, kind_dir: Path, root: Path, *, check: bool = True,
+                      no_files: bool = True, strict: bool = False, no_encoding: bool = True):
+    """Validate an in-memory class document (``--dry-run``), writing nothing durable.
+
+    ``kind_dir`` only names the directory the file *would* live in, so the validator sees
+    the same file kind it would see after a real write.
+    """
+    with tempfile.TemporaryDirectory() as td:
+        probe = Path(td) / (kind_dir.name or "extracted") / f"{cls}.json"
+        probe.parent.mkdir(parents=True, exist_ok=True)
+        probe.write_text(validate.canonical_dumps(doc), encoding="utf-8")
+        return run_validator(probe, root, check=check, no_files=no_files, strict=strict, no_encoding=no_encoding)
+
+
 def write_validated(doc: dict, dest: Path, root: Path, log: Log, *, check: bool = True, no_files: bool = False,
-                    strict: bool = False) -> bool:
+                    strict: bool = False, no_encoding: bool = False) -> bool:
     """Serialize canonically, validate a temp copy, rename into place. False (nothing written) on errors.
 
     The validator takes the file kind from the parent directory name and the class from the stem,
@@ -757,7 +833,7 @@ def write_validated(doc: dict, dest: Path, root: Path, log: Log, *, check: bool 
     probe.parent.mkdir(parents=True, exist_ok=True)
     try:
         probe.write_text(validate.canonical_dumps(doc), encoding="utf-8")
-        result = run_validator(probe, root, check=check, no_files=no_files, strict=strict)
+        result = run_validator(probe, root, check=check, no_files=no_files, strict=strict, no_encoding=no_encoding)
         for f in sorted(result.findings, key=lambda f: (validate.LEVEL_ORDER.get(f.level, 9), f.path, f.code)):
             log(f.level, f"{f.code} {f.path}: {f.message}")
         if result.count("ERROR"):

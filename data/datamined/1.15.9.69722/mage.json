@@ -1,0 +1,1095 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "schemaVersion": 1,
+  "class": "mage",
+  "className": "Mage",
+  "dataVersion": 1,
+  "dataSource": "datamined",
+  "generatedAt": "2026-09-14T07:02:11Z",
+  "rules": {
+    "pointsPerRow": 5,
+    "maxPoints": 51,
+    "firstPointLevel": 10,
+    "maxLevel": 60,
+    "rulesSource": "classic-prior"
+  },
+  "pages": [
+    {
+      "id": "primary",
+      "name": "Primary"
+    }
+  ],
+  "trees": [
+    {
+      "id": "arcane",
+      "name": "Arcane",
+      "page": "primary",
+      "order": 0,
+      "icon": "spell_holy_magicalsentry",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 81,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "arcane-subtlety",
+          "name": "Arcane Subtlety",
+          "row": 0,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_holy_dispelmagic",
+          "iconSource": "datamined",
+          "description": "Reduces your target's resistance to all your spells by {0} and reduces the threat caused by your Arcane spells by {1}%.",
+          "ranks": [[5, 20], [10, 40]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [11210, 12592],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 74,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "arcane-focus",
+          "name": "Arcane Focus",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_holy_devotion",
+          "iconSource": "datamined",
+          "description": "Reduces the chance that the opponent can resist your Arcane spells by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [11222, 12839, 12840, 12841, 12842],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 76,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-arcane-missiles",
+          "name": "Improved Arcane Missiles",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_nature_starfall",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to avoid interruption caused by damage while channeling Arcane Missiles.",
+          "ranks": [[20], [40], [60], [80], [100]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [11237, 12463, 12464, 16769, 16770],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 80,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "wand-specialization",
+          "name": "Wand Specialization",
+          "row": 1,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "inv_wand_01",
+          "iconSource": "datamined",
+          "description": "Increases your damage with Wands by {0}%.",
+          "ranks": [[13], [25]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [6057, 6085],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 78,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "magic-absorption",
+          "name": "Magic Absorption",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_nature_astralrecalgroup",
+          "iconSource": "datamined",
+          "description": "Increases all resistances by {0} and causes all spells you fully resist to restore {1}% of your total mana. 1 sec. cooldown.",
+          "ranks": [[2, 1], [4, 2], [6, 3], [8, 4], [10, 5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [29441, 29444, 29445, 29446, 29447],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1650,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "arcane-concentration",
+          "name": "Arcane Concentration",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_shadow_manaburn",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [11213, 12574, 12575, 12576, 12577],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 75,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "magic-attunement",
+          "name": "Magic Attunement",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_nature_abolishmagic",
+          "iconSource": "datamined",
+          "description": "Increases the effect of your Amplify Magic and Dampen Magic spells by {0}%.",
+          "ranks": [[25], [50]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [11247, 12606],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 82,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-arcane-explosion",
+          "name": "Improved Arcane Explosion",
+          "row": 2,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_nature_wispsplode",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of your Arcane Explosion spell by an additional {0}%.",
+          "ranks": [[2], [4], [6]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [11242, 12467, 12469],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 81,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "arcane-resilience",
+          "name": "Arcane Resilience",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_arcane_arcaneresilience",
+          "iconSource": "datamined",
+          "description": "Increases your armor by an amount equal to 50% of your Intellect.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [28574],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 85,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-mana-shield",
+          "name": "Improved Mana Shield",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_shadow_detectlesserinvisibility",
+          "iconSource": "datamined",
+          "description": "Decreases the mana lost per point of damage taken when Mana Shield is active by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [11252, 12605],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 83,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-counterspell",
+          "name": "Improved Counterspell",
+          "row": 3,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_frost_iceshock",
+          "iconSource": "datamined",
+          "description": "Gives your Counterspell a {0}% chance to silence the target for 4 sec.",
+          "ranks": [[50], [100]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [11255, 12598],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 88,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "arcane-meditation",
+          "name": "Arcane Meditation",
+          "row": 3,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "spell_shadow_siphonmana",
+          "iconSource": "datamined",
+          "description": "Allows {0}% of your Mana regeneration to continue while casting.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [18462, 18463, 18464],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1142,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "presence-of-mind",
+          "name": "Presence of Mind",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_nature_enchantarmor",
+          "iconSource": "datamined",
+          "description": "When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [12043],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 86,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "arcane-mind",
+          "name": "Arcane Mind",
+          "row": 4,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_shadow_charm",
+          "iconSource": "datamined",
+          "description": "Increases your maximum Mana by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "arcane-resilience",
+              "rank": 1
+            }
+          ],
+          "spellIds": [11232, 12500, 12501, 12502, 12503],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 77,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "arcane-instability",
+          "name": "Arcane Instability",
+          "row": 5,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_shadow_teleport",
+          "iconSource": "datamined",
+          "description": "Increases your spell damage and critical strike chance by {0}%.",
+          "ranks": [[1], [2], [3]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "presence-of-mind",
+              "rank": 1
+            }
+          ],
+          "spellIds": [15058, 15059, 15060],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 421,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "arcane-power",
+          "name": "Arcane Power",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_nature_lightning",
+          "iconSource": "datamined",
+          "description": "When activated, your spells deal 30% more damage while costing 30% more mana to cast. This effect lasts 15 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "arcane-instability",
+              "rank": 3
+            }
+          ],
+          "spellIds": [12042],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 87,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "fire",
+      "name": "Fire",
+      "page": "primary",
+      "order": 1,
+      "icon": "spell_fire_firebolt02",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 41,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-fireball",
+          "name": "Improved Fireball",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_fire_flamebolt",
+          "iconSource": "datamined",
+          "description": "Reduces the casting time of your Fireball spell by {0} sec.",
+          "ranks": [[0.1], [0.2], [0.3], [0.4], [0.5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [11069, 12338, 12339, 12340, 12341],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 26,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "impact",
+          "name": "Impact",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_fire_meteorstorm",
+          "iconSource": "datamined",
+          "description": "Gives your Fire spells a {0}% chance to stun the target for 2 sec.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [11103, 12357, 12358, 12359, 12360],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 30,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "ignite",
+          "name": "Ignite",
+          "row": 1,
+          "col": 0,
+          "maxRank": 5,
+          "icon": "spell_fire_incinerate",
+          "iconSource": "datamined",
+          "description": "Your critical strikes from Fire damage spells cause the target to burn for an additional {0}% of your spell's damage over 4 sec.",
+          "ranks": [[8], [16], [24], [32], [40]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [11119, 11120, 12846, 12847, 12848],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 34,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "flame-throwing",
+          "name": "Flame Throwing",
+          "row": 1,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_fire_flare",
+          "iconSource": "datamined",
+          "description": "Increases the range of your Fire spells by {0} yards.",
+          "ranks": [[3], [6]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [11100, 12353],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 28,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-fire-blast",
+          "name": "Improved Fire Blast",
+          "row": 1,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "spell_fire_fireball",
+          "iconSource": "datamined",
+          "description": "Reduces the cooldown of your Fire Blast spell by {0} sec.",
+          "ranks": [[0.5], [1], [1.5]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [11078, 11080, 12342],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 27,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "incinerate",
+          "name": "Incinerate",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_fire_flameshock",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of your Fire Blast and Scorch spells by {0}%.",
+          "ranks": [[2], [4]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [18459, 18460],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1141,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-flamestrike",
+          "name": "Improved Flamestrike",
+          "row": 2,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_fire_selfdestruct",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of your Flamestrike spell by {0}%.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [11108, 12349, 12350],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 31,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "pyroblast",
+          "name": "Pyroblast",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_fire_fireball02",
+          "iconSource": "datamined",
+          "description": "Hurls an immense fiery boulder that causes 141 to 187 Fire damage and an additional 56 Fire damage over 12 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [11366],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 29,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "burning-soul",
+          "name": "Burning Soul",
+          "row": 2,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "spell_fire_fire",
+          "iconSource": "datamined",
+          "description": "Gives your Fire spells a {0}% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by {1}%.",
+          "ranks": [[35, 15], [70, 30]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [11083, 12351],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 23,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-scorch",
+          "name": "Improved Scorch",
+          "row": 3,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_fire_soulburn",
+          "iconSource": "datamined",
+          "description": "Your Scorch spells have a {0}% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases the Fire damage dealt to your target by 3% and lasts 30 sec. Stacks up to 5 times.",
+          "ranks": [[33], [66], [100]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [11095, 12872, 12873],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 25,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-fire-ward",
+          "name": "Improved Fire Ward",
+          "row": 3,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "spell_fire_firearmor",
+          "iconSource": "datamined",
+          "description": "Causes your Fire Ward to have a {0}% chance to reflect Fire spells while active.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [11094, 13043],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 24,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "master-of-elements",
+          "name": "Master of Elements",
+          "row": 3,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "spell_fire_masterofelements",
+          "iconSource": "datamined",
+          "description": "Your Fire and Frost spell criticals will refund {0}% of their base mana cost.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [29074, 29075, 29076],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1639,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "critical-mass",
+          "name": "Critical Mass",
+          "row": 4,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_nature_wispheal",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of your Fire spells by {0}%.",
+          "ranks": [[2], [4], [6]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [11115, 11367, 11368],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 33,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "blast-wave",
+          "name": "Blast Wave",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_holy_excorcism_02",
+          "iconSource": "datamined",
+          "description": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 154 to 186 Fire damage, and dazing them for 6 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "pyroblast",
+              "rank": 1
+            }
+          ],
+          "spellIds": [11113],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 32,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "fire-power",
+          "name": "Fire Power",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_fire_immolation",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Fire spells by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [11124, 12378, 12398, 12399, 12400],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 35,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "combustion",
+          "name": "Combustion",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_fire_sealoffire",
+          "iconSource": "datamined",
+          "description": "When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%. This effect lasts until you have caused 3 critical strikes with Fire spells.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "critical-mass",
+              "rank": 3
+            }
+          ],
+          "spellIds": [11129],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 36,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "frost",
+      "name": "Frost",
+      "page": "primary",
+      "order": 2,
+      "icon": "spell_frost_frostbolt02",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 61,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "frost-warding",
+          "name": "Frost Warding",
+          "row": 0,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_frost_frostward",
+          "iconSource": "datamined",
+          "description": "Increases the armor and resistances given by your Frost Armor and Ice Armor spells by {0}%. In addition, gives your Frost Ward a {1}% chance to reflect Frost spells and effects while active.",
+          "ranks": [[15, 10], [30, 20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [11189, 28332],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 70,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-frostbolt",
+          "name": "Improved Frostbolt",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_frost_frostbolt02",
+          "iconSource": "datamined",
+          "description": "Reduces the casting time of your Frostbolt spell by {0} sec.",
+          "ranks": [[0.1], [0.2], [0.3], [0.4], [0.5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [11070, 12473, 16763, 16765, 16766],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 37,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "elemental-precision",
+          "name": "Elemental Precision",
+          "row": 0,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "spell_ice_magicdamage",
+          "iconSource": "datamined",
+          "description": "Reduces the chance that the opponent can resist your Frost and Fire spells by {0}%.",
+          "ranks": [[2], [4], [6]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [29438, 29439, 29440],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1649,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "ice-shards",
+          "name": "Ice Shards",
+          "row": 1,
+          "col": 0,
+          "maxRank": 5,
+          "icon": "spell_frost_iceshard",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike damage bonus of your Frost spells by {0}%.",
+          "ranks": [[20], [40], [60], [80], [100]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [11207, 12672, 15047, 15052, 15053],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 73,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "frostbite",
+          "name": "Frostbite",
+          "row": 1,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_frost_frostarmor",
+          "iconSource": "datamined",
+          "description": "Gives your Chill effects a {0}% chance to freeze the target for 5 sec.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [11071, 12496, 12497],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 38,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-frost-nova",
+          "name": "Improved Frost Nova",
+          "row": 1,
+          "col": 2,
+          "maxRank": 2,
+          "icon": "spell_frost_freezingbreath",
+          "iconSource": "datamined",
+          "description": "Reduces the cooldown of your Frost Nova spell by {0} sec.",
+          "ranks": [[2], [4]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [11165, 12475],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 62,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "permafrost",
+          "name": "Permafrost",
+          "row": 1,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "spell_frost_wisp",
+          "iconSource": "datamined",
+          "description": "Increases the duration of your Chill effects by {0} sec{1} and reduces the target's speed by an additional {2}%.",
+          "ranks": [[1, "", 4], [2, "s", 7], [3, "s", 10]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [11175, 12569, 12571],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 65,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "piercing-ice",
+          "name": "Piercing Ice",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_frost_frostbolt",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Frost spells by {0}%.",
+          "ranks": [[2], [4], [6]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [11151, 12952, 12953],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 61,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "cold-snap",
+          "name": "Cold Snap",
+          "row": 2,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_frost_wizardmark",
+          "iconSource": "datamined",
+          "description": "When activated, this spell finishes the cooldown on all of your Frost spells.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [12472],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 69,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-blizzard",
+          "name": "Improved Blizzard",
+          "row": 2,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "spell_frost_icestorm",
+          "iconSource": "datamined",
+          "description": "Adds a chill effect to your Blizzard spell. This effect lowers the target's movement speed by {0}%. Lasts 1.5 sec.",
+          "ranks": [[30], [50], [65]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [11185, 12487, 12488],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 63,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "arctic-reach",
+          "name": "Arctic Reach",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_shadow_darkritual",
+          "iconSource": "datamined",
+          "description": "Increases the range of your Frostbolt and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [16757, 16758],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 741,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "frost-channeling",
+          "name": "Frost Channeling",
+          "row": 3,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_frost_stun",
+          "iconSource": "datamined",
+          "description": "Reduces the mana cost of your Frost spells by {0}% and reduces the threat caused by your Frost spells by {1}%.",
+          "ranks": [[5, 10], [10, 20], [15, 30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [11160, 12518, 12519],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 66,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "shatter",
+          "name": "Shatter",
+          "row": 3,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_frost_frostshock",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike chance of all your spells against frozen targets by {0}%.",
+          "ranks": [[10], [20], [30], [40], [50]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "improved-frost-nova",
+              "rank": 2
+            }
+          ],
+          "spellIds": [11170, 12982, 12983, 12984, 12985],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 67,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "ice-block",
+          "name": "Ice Block",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_frost_frost",
+          "iconSource": "datamined",
+          "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec, but during that time you cannot attack, move or cast spells.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [11958],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 72,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-cone-of-cold",
+          "name": "Improved Cone of Cold",
+          "row": 4,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "spell_frost_glacier",
+          "iconSource": "datamined",
+          "description": "Increases the damage dealt by your Cone of Cold spell by {0}%.",
+          "ranks": [[15], [25], [35]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [11190, 12489, 12490],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 64,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "winters-chill",
+          "name": "Winter's Chill",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_frost_chillingblast",
+          "iconSource": "datamined",
+          "description": "Gives your Frost damage spells a {0}% chance to apply the Winter's Chill effect, which increases the chance a Frost spell will critically hit the target by 2% for 15 sec. Stacks up to 5 times.",
+          "ranks": [[20], [40], [60], [80], [100]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [11180, 28592, 28593, 28594, 28595],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 68,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "ice-barrier",
+          "name": "Ice Barrier",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_ice_lament",
+          "iconSource": "datamined",
+          "description": "Instantly shields you, absorbing 438 damage. Lasts 1 min. While the shield holds, spells will not be interrupted.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "ice-block",
+              "rank": 1
+            }
+          ],
+          "spellIds": [11426],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 71,
+            "reviewed": false
+          }
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Datamined from wago.tools DB2 exports for build 1.15.9.69722; point rules (51/5/10/60) are the Classic prior, not DB2."
+  ]
+}

@@ -1,0 +1,1079 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "schemaVersion": 1,
+  "class": "druid",
+  "className": "Druid",
+  "dataVersion": 1,
+  "dataSource": "datamined",
+  "generatedAt": "2026-09-14T07:02:11Z",
+  "rules": {
+    "pointsPerRow": 5,
+    "maxPoints": 51,
+    "firstPointLevel": 10,
+    "maxLevel": 60,
+    "rulesSource": "classic-prior"
+  },
+  "pages": [
+    {
+      "id": "primary",
+      "name": "Primary"
+    }
+  ],
+  "trees": [
+    {
+      "id": "balance",
+      "name": "Balance",
+      "page": "primary",
+      "order": 0,
+      "icon": "spell_nature_starfall",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 283,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-wrath",
+          "name": "Improved Wrath",
+          "row": 0,
+          "col": 0,
+          "maxRank": 5,
+          "icon": "spell_nature_abolishmagic",
+          "iconSource": "datamined",
+          "description": "Reduces the cast time of your Wrath spell by {0} sec.",
+          "ranks": [[0.1], [0.2], [0.3], [0.4], [0.5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16814, 16815, 16816, 16817, 16818],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 762,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "natures-grasp",
+          "name": "Nature's Grasp",
+          "row": 0,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_nature_natureswrath",
+          "iconSource": "datamined",
+          "description": "While active, any time an enemy strikes the caster they have a 35% chance to become afflicted by Entangling Roots (Rank 1). Only useable outdoors. 1 charge. Lasts 45 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [16689],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 761,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-natures-grasp",
+          "name": "Improved Nature's Grasp",
+          "row": 0,
+          "col": 2,
+          "maxRank": 4,
+          "icon": "spell_nature_natureswrath",
+          "iconSource": "datamined",
+          "description": "Increases the chance for your Nature's Grasp to entangle an enemy by {0}%.",
+          "ranks": [[15], [30], [45], [65]],
+          "ranksObserved": [1, 2, 3, 4],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "natures-grasp",
+              "rank": 1
+            }
+          ],
+          "spellIds": [17245, 17247, 17248, 17249],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 921,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-entangling-roots",
+          "name": "Improved Entangling Roots",
+          "row": 1,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_nature_stranglevines",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to avoid interruption caused by damage while casting Entangling Roots.",
+          "ranks": [[40], [70], [100]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [16918, 16919, 16920],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 787,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-moonfire",
+          "name": "Improved Moonfire",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_nature_starfall",
+          "iconSource": "datamined",
+          "description": "Increases the damage and critical strike chance of your Moonfire spell by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16821, 16822, 16823, 16824, 16825],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 763,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "natural-weapons",
+          "name": "Natural Weapons",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "inv_staff_01",
+          "iconSource": "datamined",
+          "description": "Increases the damage you deal with physical attacks in all forms by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16902, 16903, 16904, 16905, 16906],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 791,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "natural-shapeshifter",
+          "name": "Natural Shapeshifter",
+          "row": 1,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "spell_nature_wispsplode",
+          "iconSource": "datamined",
+          "description": "Reduces the mana cost of all shapeshifting by {0}%.",
+          "ranks": [[10], [20], [30]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [16833, 16834, 16835],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 781,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-thorns",
+          "name": "Improved Thorns",
+          "row": 2,
+          "col": 0,
+          "maxRank": 3,
+          "icon": "spell_nature_thorns",
+          "iconSource": "datamined",
+          "description": "Increases damage caused by your Thorns spell by {0}%.",
+          "ranks": [[25], [50], [75]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [16836, 16839, 16840],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 782,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "omen-of-clarity",
+          "name": "Omen of Clarity",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_nature_crystalball",
+          "iconSource": "datamined",
+          "description": "Imbues the Druid with natural energy. Each of the Druid's melee attacks has a chance of causing the caster to enter a Clearcasting state. The Clearcasting state reduces the Mana, Rage or Energy cost of your next damage or healing spell or offensive ability by 100%. Lasts 10 min.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "natural-weapons",
+              "rank": 5
+            }
+          ],
+          "spellIds": [16864],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 788,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "natures-reach",
+          "name": "Nature's Reach",
+          "row": 2,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "spell_nature_naturetouchgrow",
+          "iconSource": "datamined",
+          "description": "Increases the range of your Wrath, Entangling Roots, Faerie Fire, Moonfire, Starfire, and Hurricane spells by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [16819, 16820],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 764,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "vengeance",
+          "name": "Vengeance",
+          "row": 3,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_nature_purge",
+          "iconSource": "datamined",
+          "description": "Increases the critical strike damage bonus of your Starfire, Moonfire, and Wrath spells by {0}%.",
+          "ranks": [[20], [40], [60], [80], [100]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "improved-moonfire",
+              "rank": 5
+            }
+          ],
+          "spellIds": [16909, 16910, 16911, 16912, 16913],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 792,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-starfire",
+          "name": "Improved Starfire",
+          "row": 3,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_arcane_starfire",
+          "iconSource": "datamined",
+          "description": "Reduces the cast time of Starfire by {0} sec and has a {1}% chance to stun the target for 3 sec.",
+          "ranks": [[0.1, 3], [0.2, 6], [0.3, 9], [0.4, 12], [0.5, 15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16850, 16923, 16924, 16925, 16926],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 784,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "natures-grace",
+          "name": "Nature's Grace",
+          "row": 4,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_nature_naturesblessing",
+          "iconSource": "datamined",
+          "description": "All spell criticals grace you with a blessing of nature, reducing the casting time of your next spell by 0.5 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [16880],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 789,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "moonglow",
+          "name": "Moonglow",
+          "row": 4,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "spell_nature_sentinal",
+          "iconSource": "datamined",
+          "description": "Reduces the Mana cost of your Moonfire, Starfire, Wrath, Healing Touch, Regrowth and Rejuvenation spells by {0}%.",
+          "ranks": [[3], [6], [9]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [16845, 16846, 16847],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 783,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "moonfury",
+          "name": "Moonfury",
+          "row": 5,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_nature_moonglow",
+          "iconSource": "datamined",
+          "description": "Increases the damage done by your Starfire, Moonfire and Wrath spells by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "natures-grace",
+              "rank": 1
+            }
+          ],
+          "spellIds": [16896, 16897, 16899, 16900, 16901],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 790,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "moonkin-form",
+          "name": "Moonkin Form",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_nature_forceofnature",
+          "iconSource": "datamined",
+          "description": "Transforms the Druid into Moonkin Form. While in this form the armor contribution from items is increased by 360% and all party members within 30 yards have their spell critical chance increased by 3%. The Moonkin can only cast Balance spells while shapeshifted. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [24858],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 793,
+            "reviewed": false,
+            "note": "3 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feral-combat",
+      "name": "Feral Combat",
+      "page": "primary",
+      "order": 1,
+      "icon": "ability_racial_bearform",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 281,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "ferocity",
+          "name": "Ferocity",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "ability_hunter_pet_hyena",
+          "iconSource": "datamined",
+          "description": "Reduces the cost of your Maul, Swipe, Claw, and Rake abilities by {0} Rage or Energy.",
+          "ranks": [[1], [2], [3], [4], [5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16934, 16935, 16936, 16937, 16938],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 796,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "feral-aggression",
+          "name": "Feral Aggression",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "ability_druid_demoralizingroar",
+          "iconSource": "datamined",
+          "description": "Increases the Attack Power reduction of your Demoralizing Roar by {0}% and the damage caused by your Ferocious Bite by {1}%.",
+          "ranks": [[8, 3], [16, 6], [24, 9], [32, 12], [40, 15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16858, 16859, 16860, 16861, 16862],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 795,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "feral-instinct",
+          "name": "Feral Instinct",
+          "row": 1,
+          "col": 0,
+          "maxRank": 5,
+          "icon": "ability_ambush",
+          "iconSource": "datamined",
+          "description": "Increases threat caused in Bear and Dire Bear Form by {0}% and reduces the chance enemies have to detect you while Prowling.",
+          "ranks": [[3], [6], [9], [12], [15]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16947, 16948, 16949, 16950, 16951],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 799,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "brutal-impact",
+          "name": "Brutal Impact",
+          "row": 1,
+          "col": 1,
+          "maxRank": 2,
+          "icon": "ability_druid_bash",
+          "iconSource": "datamined",
+          "description": "Increases the stun duration of your Bash and Pounce abilities by {0} sec.",
+          "ranks": [[0.5], [1]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [16940, 16941],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 797,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "thick-hide",
+          "name": "Thick Hide",
+          "row": 1,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "inv_misc_pelt_bear_03",
+          "iconSource": "datamined",
+          "description": "Increases your Armor contribution from items by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [16929, 16930, 16931, 16932, 16933],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 794,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "feline-swiftness",
+          "name": "Feline Swiftness",
+          "row": 2,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_nature_spiritwolf",
+          "iconSource": "datamined",
+          "description": "Increases your movement speed by {0}% while outdoors in Cat Form and increases your chance to dodge while in Cat Form by {1}%.",
+          "ranks": [[15, 2], [30, 4]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [17002, 24866],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 807,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "feral-charge",
+          "name": "Feral Charge",
+          "row": 2,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "ability_hunter_pet_bear",
+          "iconSource": "datamined",
+          "description": "Causes you to charge an enemy, immobilizing and interrupting any spell being cast for 4 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [16979],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 804,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "sharpened-claws",
+          "name": "Sharpened Claws",
+          "row": 2,
+          "col": 2,
+          "maxRank": 3,
+          "icon": "inv_misc_monsterclaw_04",
+          "iconSource": "datamined",
+          "description": "Increases your critical strike chance while in Bear, Dire Bear or Cat Form by {0}%.",
+          "ranks": [[2], [4], [6]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [16942, 16943, 16944],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 798,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-shred",
+          "name": "Improved Shred",
+          "row": 3,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "spell_shadow_vampiricaura",
+          "iconSource": "datamined",
+          "description": "Reduces the Energy cost of your Shred ability by {0}.",
+          "ranks": [[6], [12]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [16966, 16968],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 802,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "predatory-strikes",
+          "name": "Predatory Strikes",
+          "row": 3,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "ability_hunter_pet_cat",
+          "iconSource": "datamined",
+          "description": "Increases your melee attack power in Cat, Bear and Dire Bear Forms by {0}% of your level.",
+          "ranks": [[50], [100], [150]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [16972, 16974, 16975],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 803,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "blood-frenzy",
+          "name": "Blood Frenzy",
+          "row": 3,
+          "col": 2,
+          "maxRank": 2,
+          "icon": "ability_ghoulfrenzy",
+          "iconSource": "datamined",
+          "description": "Your critical strikes from Cat Form abilities that add combo points have a {0}% chance to add an additional combo point.",
+          "ranks": [[50], [100]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "sharpened-claws",
+              "rank": 3
+            }
+          ],
+          "spellIds": [16952, 16954],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 800,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "primal-fury",
+          "name": "Primal Fury",
+          "row": 3,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "ability_racial_cannibalize",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear and Dire Bear Form.",
+          "ranks": [[50], [100]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "sharpened-claws",
+              "rank": 3
+            }
+          ],
+          "spellIds": [16958, 16961],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 801,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "savage-fury",
+          "name": "Savage Fury",
+          "row": 4,
+          "col": 0,
+          "maxRank": 2,
+          "icon": "ability_druid_ravage",
+          "iconSource": "datamined",
+          "description": "Increases the damage caused by your Claw, Rake, Maul and Swipe abilities by {0}%.",
+          "ranks": [[10], [20]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [16998, 16999],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 805,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "faerie-fire-feral",
+          "name": "Faerie Fire (Feral)",
+          "row": 4,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_nature_faeriefire",
+          "iconSource": "datamined",
+          "description": "Decrease the armor of the target by 175 for 40 sec. While affected, the target cannot stealth or turn invisible.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [16857],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 1162,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "heart-of-the-wild",
+          "name": "Heart of the Wild",
+          "row": 5,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_holy_blessingofagility",
+          "iconSource": "datamined",
+          "description": "Increases your Intellect by {0}%. In addition, while in Bear or Dire Bear Form your Stamina is increased by {1}% and while in Cat Form your Strength is increased by {2}%.",
+          "ranks": [[4, 4, 4], [8, 8, 8], [12, 12, 12], [16, 16, 16], [20, 20, 20]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "predatory-strikes",
+              "rank": 3
+            }
+          ],
+          "spellIds": [17003, 17004, 17005, 17006, 24894],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 808,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "leader-of-the-pack",
+          "name": "Leader of the Pack",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "spell_nature_unyeildingstamina",
+          "iconSource": "datamined",
+          "description": "While in Cat, Bear or Dire Bear Form, the Leader of the Pack increases ranged and melee critical chance of all party members within 45 yards by 3%.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [17007],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 809,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "restoration",
+      "name": "Restoration",
+      "page": "primary",
+      "order": 2,
+      "icon": "spell_nature_healingtouch",
+      "rows": 7,
+      "cols": 4,
+      "datamined": {
+        "talentTabId": 282,
+        "build": "1.15.9.69722"
+      },
+      "talents": [
+        {
+          "id": "improved-mark-of-the-wild",
+          "name": "Improved Mark of the Wild",
+          "row": 0,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_nature_regeneration",
+          "iconSource": "datamined",
+          "description": "Increases the effects of your Mark of the Wild and Gift of the Wild spells by {0}%.",
+          "ranks": [[7], [14], [21], [28], [35]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17050, 17051, 17053, 17054, 17055],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 821,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "furor",
+          "name": "Furor",
+          "row": 0,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_holy_blessingofstamina",
+          "iconSource": "datamined",
+          "description": "Gives you {0}% chance to gain 10 Rage when you shapeshift into Bear and Dire Bear Form or 40 Energy when you shapeshift into Cat Form.",
+          "ranks": [[20], [40], [60], [80], [100]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17056, 17058, 17059, 17060, 17061],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 822,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-healing-touch",
+          "name": "Improved Healing Touch",
+          "row": 1,
+          "col": 0,
+          "maxRank": 5,
+          "icon": "spell_nature_healingtouch",
+          "iconSource": "datamined",
+          "description": "Reduces the cast time of your Healing Touch spell by {0} sec.",
+          "ranks": [[0.1], [0.2], [0.3], [0.4], [0.5]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17069, 17070, 17071, 17072, 17073],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 824,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "natures-focus",
+          "name": "Nature's Focus",
+          "row": 1,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_nature_healingwavegreater",
+          "iconSource": "datamined",
+          "description": "Gives you a {0}% chance to avoid interruption caused by damage while casting the Healing Touch, Regrowth and Tranquility spells.",
+          "ranks": [[14], [28], [42], [56], [70]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17063, 17065, 17066, 17067, 17068],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 823,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-enrage",
+          "name": "Improved Enrage",
+          "row": 1,
+          "col": 2,
+          "maxRank": 2,
+          "icon": "ability_druid_enrage",
+          "iconSource": "datamined",
+          "description": "The Enrage ability now instantly generates {0} Rage.",
+          "ranks": [[5], [10]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [17079, 17082],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 826,
+            "reviewed": false,
+            "note": "2 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        },
+        {
+          "id": "reflection",
+          "name": "Reflection",
+          "row": 2,
+          "col": 1,
+          "maxRank": 3,
+          "icon": "spell_frost_windwalkon",
+          "iconSource": "datamined",
+          "description": "Allows {0}% of your Mana regeneration to continue while casting.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [17106, 17107, 17108],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 829,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "insect-swarm",
+          "name": "Insect Swarm",
+          "row": 2,
+          "col": 2,
+          "maxRank": 1,
+          "icon": "spell_nature_insectswarm",
+          "iconSource": "datamined",
+          "description": "The enemy target is swarmed by insects, decreasing their chance to hit by 2% and causing 66 Nature damage over 12 sec.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "spellIds": [5570],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 827,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "subtlety",
+          "name": "Subtlety",
+          "row": 2,
+          "col": 3,
+          "maxRank": 5,
+          "icon": "ability_eyeoftheowl",
+          "iconSource": "datamined",
+          "description": "Reduces the threat generated by your Healing spells by {0}%.",
+          "ranks": [[4], [8], [12], [16], [20]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17118, 17119, 17120, 17121, 17122],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 841,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "tranquil-spirit",
+          "name": "Tranquil Spirit",
+          "row": 3,
+          "col": 1,
+          "maxRank": 5,
+          "icon": "spell_holy_elunesgrace",
+          "iconSource": "datamined",
+          "description": "Reduces the mana cost of your Healing Touch and Tranquility spells by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [24968, 24969, 24970, 24971, 24972],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 843,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-rejuvenation",
+          "name": "Improved Rejuvenation",
+          "row": 3,
+          "col": 3,
+          "maxRank": 3,
+          "icon": "spell_nature_rejuvenation",
+          "iconSource": "datamined",
+          "description": "Increases the effect of your Rejuvenation spell by {0}%.",
+          "ranks": [[5], [10], [15]],
+          "ranksObserved": [1, 2, 3],
+          "ranksSource": "observed",
+          "spellIds": [17111, 17112, 17113],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 830,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "natures-swiftness",
+          "name": "Nature's Swiftness",
+          "row": 4,
+          "col": 0,
+          "maxRank": 1,
+          "icon": "spell_nature_ravenform",
+          "iconSource": "datamined",
+          "description": "When activated, your next Nature spell becomes an instant cast spell.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "improved-healing-touch",
+              "rank": 5
+            }
+          ],
+          "spellIds": [17116],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 831,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "gift-of-nature",
+          "name": "Gift of Nature",
+          "row": 4,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_nature_protectionformnature",
+          "iconSource": "datamined",
+          "description": "Increases the effect of all healing spells by {0}%.",
+          "ranks": [[2], [4], [6], [8], [10]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "insect-swarm",
+              "rank": 1
+            }
+          ],
+          "spellIds": [17104, 24943, 24944, 24945, 24946],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 828,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-tranquility",
+          "name": "Improved Tranquility",
+          "row": 4,
+          "col": 3,
+          "maxRank": 2,
+          "icon": "spell_nature_tranquility",
+          "iconSource": "datamined",
+          "description": "Reduces threat caused by Tranquility by {0}%.",
+          "ranks": [[50], [100]],
+          "ranksObserved": [1, 2],
+          "ranksSource": "observed",
+          "spellIds": [17123, 17124],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 842,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "improved-regrowth",
+          "name": "Improved Regrowth",
+          "row": 5,
+          "col": 2,
+          "maxRank": 5,
+          "icon": "spell_nature_resistnature",
+          "iconSource": "datamined",
+          "description": "Increases the critical effect chance of your Regrowth spell by {0}%.",
+          "ranks": [[10], [20], [30], [40], [50]],
+          "ranksObserved": [1, 2, 3, 4, 5],
+          "ranksSource": "observed",
+          "spellIds": [17074, 17075, 17076, 17077, 17078],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 825,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "swiftmend",
+          "name": "Swiftmend",
+          "row": 6,
+          "col": 1,
+          "maxRank": 1,
+          "icon": "inv_relics_idolofrejuvenation",
+          "iconSource": "datamined",
+          "description": "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec. of Rejuvenation or 18 sec. of Regrowth.",
+          "ranks": [[]],
+          "ranksObserved": [1],
+          "ranksSource": "observed",
+          "requires": [
+            {
+              "talent": "tranquil-spirit",
+              "rank": 5
+            }
+          ],
+          "spellIds": [18562],
+          "source": {
+            "kind": "datamined",
+            "build": "1.15.9.69722",
+            "talentId": 844,
+            "reviewed": false,
+            "note": "1 $?cond[..][..] conditional(s) rendered as the else branch"
+          }
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Datamined from wago.tools DB2 exports for build 1.15.9.69722; point rules (51/5/10/60) are the Classic prior, not DB2."
+  ]
+}

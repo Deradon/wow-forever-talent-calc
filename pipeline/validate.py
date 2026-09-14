@@ -18,6 +18,9 @@ Options:
     --overrides   the given files are data/overrides/<class>.json files
     --check       rule 12: file must equal the canonical serializer output
     --no-files    skip file-existence checks (rule 9)
+    --no-encoding skip the encoding cross-check (rule 11), for staging files
+                  such as data/datamined/<build>/ that no data/encoding version
+                  covers yet
     --root DIR    repo root (default: found by walking up from each file
                   until data/schema/class.schema.json exists)
 
@@ -1192,7 +1195,8 @@ def validate_path(path: Path, opts: argparse.Namespace, schema_cache: dict[Path,
     rule_8_requires(ctx, doc)
     rule_9_files(ctx, doc)
     rule_10_source(ctx, doc)
-    rule_11_encoding(ctx, doc)
+    if not getattr(opts, "no_encoding", False):
+        rule_11_encoding(ctx, doc)
     rule_12_canonical(ctx, doc, raw, kind)
     rule_13_row_gating(ctx, doc)
     rule_14_progression(ctx, doc)
@@ -1235,6 +1239,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--overrides", action="store_true", help="files are data/overrides files")
     ap.add_argument("--check", action="store_true", help="fail unless the file is byte-identical to the canonical serializer output")
     ap.add_argument("--no-files", action="store_true", help="skip crop file existence checks (rule 9)")
+    ap.add_argument("--no-encoding", action="store_true",
+                    help="skip the encoding-version cross-check (rule 11); for staging files such as "
+                         "data/datamined/<build>/ that no data/encoding version covers yet")
     ap.add_argument("--root", help="repository root (default: auto-detect)")
     opts = ap.parse_args(argv)
 
