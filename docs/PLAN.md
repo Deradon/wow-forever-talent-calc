@@ -206,6 +206,13 @@ on every push to `main`.
 
 ## Status log
 
+- 2026-09-14 ~12:00: priest spells proven absent from the footage (whole-VOD
+  keyframe sweep). The sweep's 50 spellbook runs now drive stage 11: spells
+  323 -> 410 entries, 112 -> 152 tooltips, every tab of all eight classes
+  covered; the level-1 Skyborne character was a mage. Changes page class
+  strip fixed (styles travel with the component). Web spells tests moved to
+  fixtures. Pipeline 571 tests, web 575 unit + 92 browser tests.
+
 - 2026-09-14 ~08:00: review round 2 done and fixed (packages D and E), public
   repo polish (README with screenshots, CONTRIBUTING, issue templates, About
   page, review write-back), datamined DB2 importer proven on Classic Era
