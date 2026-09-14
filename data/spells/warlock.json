@@ -4,16 +4,1049 @@
   "class": "warlock",
   "className": "Warlock",
   "dataSource": "video",
-  "generatedAt": "2026-09-14T07:30:45Z",
+  "generatedAt": "2026-09-14T10:35:55Z",
   "observedLevel": 38,
   "tabs": [
     {
       "id": "general",
       "name": "General",
       "order": 0
+    },
+    {
+      "id": "affliction",
+      "name": "Affliction",
+      "order": 1
+    },
+    {
+      "id": "demonology",
+      "name": "Demonology",
+      "order": 2
+    },
+    {
+      "id": "destruction",
+      "name": "Destruction",
+      "order": 3
     }
   ],
   "spells": [
+    {
+      "id": "bane-of-agony",
+      "name": "Bane of Agony",
+      "kind": "active",
+      "tab": "affliction",
+      "ranksSeen": [1, 2, 3, 4],
+      "icon": "crop-bane-of-agony",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/bane-of-agony.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Bane of Agony for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 19121.0,
+        "frame": 1147260,
+        "crop": "data/review/spells/warlock/bane-of-agony.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Bane of Agony",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Bane of Agony",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Bane of Agony",
+            "rank": 1
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Exact), so it has no tab"
+      }
+    },
+    {
+      "id": "corruption",
+      "name": "Corruption",
+      "kind": "active",
+      "tab": "affliction",
+      "ranksSeen": [4],
+      "icon": "crop-corruption",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/corruption.icon.png",
+      "tooltips": [
+        {
+          "cost": "160 Mana",
+          "range": "30 yd range",
+          "castTime": "2 sec cast",
+          "description": "Corrupts the target, causing 270 Shadow damage over 18 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22890.5,
+            "frame": 1373430,
+            "crop": "data/review/spells/warlock/corruption.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Corruption",
+                "description": "Corrupts the target, causing 270 Shadow damage over 18 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Corruption",
+                "description": "Corrupts the target, causing 270 Shadow damage over 18 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Corruption",
+                "description": "Corrupts the target, causing 270 Shadow damage over 18 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Corruption",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22898.5,
+        "frame": 1373910,
+        "crop": "data/review/spells/warlock/corruption.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Corruption",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Corruption",
+            "rank": 4
+          },
+          {
+            "reader": "codex",
+            "name": "Corruption",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "curse-of-recklessness",
+      "name": "Curse of Recklessness",
+      "kind": "active",
+      "tab": "affliction",
+      "ranksSeen": [2],
+      "icon": "crop-curse-of-recklessness",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/curse-of-recklessness.icon.png",
+      "tooltips": [
+        {
+          "cost": "60 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "description": "Curses the target with recklessness, reducing the target's armor by 285 for 2 min. Cursed enemies will not flee and will ignore Fear and Horror effects. Only one Curse per Warlock can be active on any one target.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22891.25,
+            "frame": 1373475,
+            "crop": "data/review/spells/warlock/curse-of-recklessness.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Curse of Recklessness",
+                "description": "Curses the target with recklessness, reducing the target's armor by 285 for 2 min. Cursed enemies will not flee and will ignore Fear and Horror effects. Only one Curse per Warlock can be active on any one target."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Curse of Recklessness",
+                "description": "Curses the target with recklessness, reducing the target's armor by 285 for 2 min. Cursed enemies will not flee and will ignore Fear and Horror effects. Only one Curse per Warlock can be active on any one target."
+              },
+              {
+                "reader": "codex",
+                "name": "Curse of Recklessness",
+                "description": "Curses the target with recklessness, reducing the target's armor by 285 for 2 min. Cursed enemies will not flee and will ignore Fear and Horror effects. Only one Curse per Warlock can be active on any one target."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Curse of Recklessness",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22898.5,
+        "frame": 1373910,
+        "crop": "data/review/spells/warlock/curse-of-recklessness.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Curse of Recklessness",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Curse of Recklessness",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Curse of Recklessness",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "curse-of-the-elements",
+      "name": "Curse of the Elements",
+      "kind": "active",
+      "tab": "affliction",
+      "ranksSeen": [2],
+      "icon": "crop-curse-of-the-elements",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/curse-of-the-elements.icon.png",
+      "tooltips": [
+        {
+          "cost": "100 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "description": "Curses the target for 5 min, reducing Magic resistances by 45 and increases Magic damage taken by 6%. Only one Curse per Warlock can be active on any one target",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22891.5,
+            "frame": 1373490,
+            "crop": "data/review/spells/warlock/curse-of-the-elements.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Curse of the Elements",
+                "description": "Curses the target for 5 min, reducing Magic resistances by 45 and increases Magic damage taken by 6%. Only one Curse per Warlock can be active on any one target."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Curse of the Elements",
+                "description": "Curses the target for 5 min, reducing Magic resistances by 45 and increases Magic damage taken by 6%. Only one Curse per Warlock can be active on any one target."
+              },
+              {
+                "reader": "codex",
+                "name": "Curse of the Elements",
+                "description": "Curses the target for 5 min, reducing Magic resistances by 45 and increases Magic damage taken by 6%. Only one Curse per Warlock can be active on any one target"
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on description 'target.' vs 'target' - the reading shown is the first reader's; the shape-aware reader merge corrected 1 word"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Curse of the Elements",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22898.5,
+        "frame": 1373910,
+        "crop": "data/review/spells/warlock/curse-of-the-elements.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Curse of the Elements",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Curse of the Elements",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Curse of the Elements",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "curse-of-tongues",
+      "name": "Curse of Tongues",
+      "kind": "active",
+      "tab": "affliction",
+      "ranksSeen": [1],
+      "icon": "crop-curse-of-tongues",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/curse-of-tongues.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Curse of Tongues",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22898.5,
+        "frame": 1373910,
+        "crop": "data/review/spells/warlock/curse-of-tongues.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Curse of Tongues",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Curse of Tongues",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Curse of Tongues",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "curse-of-weakness",
+      "name": "Curse of Weakness",
+      "kind": "active",
+      "tab": "affliction",
+      "ranksSeen": [4],
+      "icon": "crop-curse-of-weakness",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/curse-of-weakness.icon.png",
+      "tooltips": [
+        {
+          "cost": "95 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "description": "Physical damage caused by the target is reduced by 18 for 2 min. Only one Curse per Warlock can be active on any one target.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22895.25,
+            "frame": 1373715,
+            "crop": "data/review/spells/warlock/curse-of-weakness.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Curse of Weakness",
+                "description": "Physical damage caused by the target is reduced by 18 for 2 min. Only one Curse per Warlock can be active on any one target."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Curse of Weakness",
+                "description": "Physical damage caused by the target is reduced by 18 for 2 min. Only one Curse per Warlock can be active on any one target."
+              },
+              {
+                "reader": "codex",
+                "name": "Curse of Weakness",
+                "description": "Physical damage caused by the target is reduced by 18 for 2 min. Only one Curse per Warlock can be active on any one target."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Curse of Weakness",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22898.5,
+        "frame": 1373910,
+        "crop": "data/review/spells/warlock/curse-of-weakness.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Curse of Weakness",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Curse of Weakness",
+            "rank": 4
+          },
+          {
+            "reader": "codex",
+            "name": "Curse of Weakness",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "drain-life",
+      "name": "Drain Life",
+      "kind": "active",
+      "tab": "affliction",
+      "ranksSeen": [4],
+      "icon": "crop-drain-life",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/drain-life.icon.png",
+      "tooltips": [
+        {
+          "cost": "185 Mana",
+          "range": "20 yd range",
+          "castTime": "Channeled",
+          "description": "Transfers 36 health every 1 second from the target to the caster. Lasts 5 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22894.0,
+            "frame": 1373640,
+            "crop": "data/review/spells/warlock/drain-life.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Drain Life",
+                "description": "Transfers 36 health every 1 second from the target to the caster. Lasts 5 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Drain Life",
+                "description": "Transfers 36 health every 1 second from the target to the caster. Lasts 5 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Drain Life",
+                "description": "Transfers 36 health every 1 second from the target to the caster. Lasts 5 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Drain Life",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22898.5,
+        "frame": 1373910,
+        "crop": "data/review/spells/warlock/drain-life.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Drain Life",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Drain Life",
+            "rank": 4
+          },
+          {
+            "reader": "codex",
+            "name": "Drain Life",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "drain-mana",
+      "name": "Drain Mana",
+      "kind": "active",
+      "tab": "affliction",
+      "ranksSeen": [2],
+      "icon": "crop-drain-mana",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/drain-mana.icon.png",
+      "tooltips": [
+        {
+          "cost": "155 Mana",
+          "range": "20 yd range",
+          "castTime": "Channeled",
+          "description": "Transfers 70 Mana every 1 sec from the target to the caster. Lasts 5 sec.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22893.0,
+            "frame": 1373580,
+            "crop": "data/review/spells/warlock/drain-mana.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Drain Mana",
+                "description": "Transfers 70 Mana every 1 sec from the target to the caster. Lasts 5 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Drain Mana",
+                "description": "Transfers 70 Mana every 1 sec from the target to the caster. Lasts 5 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Drain Mana",
+                "description": "Transfers 70 Mana every 1 sec from the target to the caster. Lasts 5 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Drain Mana",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22898.5,
+        "frame": 1373910,
+        "crop": "data/review/spells/warlock/drain-mana.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Drain Mana",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Drain Mana",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Drain Mana",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "drain-soul",
+      "name": "Drain Soul",
+      "kind": "active",
+      "tab": "affliction",
+      "ranksSeen": [3],
+      "icon": "crop-drain-soul",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/drain-soul.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Drain Soul",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22898.5,
+        "frame": 1373910,
+        "crop": "data/review/spells/warlock/drain-soul.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Drain Soul",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Drain Soul",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Drain Soul",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "fear",
+      "name": "Fear",
+      "kind": "active",
+      "tab": "affliction",
+      "ranksSeen": [2],
+      "icon": "crop-fear",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/fear.icon.png",
+      "tooltips": [
+        {
+          "rank": 2,
+          "cost": "130 Mana",
+          "range": "20 yd range",
+          "castTime": "1.5 sec cast",
+          "description": "Strikes fear in the enemy, causing it to run in fear for up to 15 sec. Damage caused may interrupt the effect. Only 1 target can be feared at a time.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22899.5,
+            "frame": 1373970,
+            "crop": "data/review/spells/warlock/fear.r2.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Fear",
+                "description": "Strikes fear in the enemy, causing it to run in fear for up to 15 sec. Damage caused may interrupt the effect. Only 1 target can be feared at a time."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Fear",
+                "description": "Strikes fear in the enemy, causing it to run in fear for up to 15 sec. Damage caused may interrupt the effect. Only 1 target can be feared at a time."
+              },
+              {
+                "reader": "codex",
+                "name": "Fear",
+                "description": "Strikes fear in the enemy, causing it to run in fear for up to 15 sec. Damage caused may interrupt the effect. Only 1 target can be feared at a time."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Fear",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22898.5,
+        "frame": 1373910,
+        "crop": "data/review/spells/warlock/fear.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Fear",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Fear",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Fear",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "life-tap",
+      "name": "Life Tap",
+      "kind": "active",
+      "tab": "affliction",
+      "ranksSeen": [2, 4],
+      "icon": "crop-life-tap",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/life-tap.icon.png",
+      "tooltips": [
+        {
+          "rank": 4,
+          "castTime": "Instant",
+          "description": "Converts 212 health into 237 Mana for you. Spirit increases the amount of Mana converted.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22899.75,
+            "frame": 1373985,
+            "crop": "data/review/spells/warlock/life-tap.r4.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Life Tap",
+                "description": "Converts 212 health into 237 Mana for you. Spirit increases the amount of Mana converted."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Life Tap",
+                "description": "Converts 212 health into 237 Mana for you. Spirit increases the amount of Mana converted."
+              },
+              {
+                "reader": "codex",
+                "name": "Life Tap",
+                "description": "Converts 212 health into 237 Mana for you. Spirit increases the amount of Mana converted."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Life Tap",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22898.5,
+        "frame": 1373910,
+        "crop": "data/review/spells/warlock/life-tap.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Life Tap",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Life Tap",
+            "rank": 4
+          },
+          {
+            "reader": "codex",
+            "name": "Life Tap",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "banish",
+      "name": "Banish",
+      "kind": "active",
+      "tab": "demonology",
+      "ranksSeen": [1],
+      "icon": "crop-banish",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/banish.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Banish",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22879.75,
+        "frame": 1372785,
+        "crop": "data/review/spells/warlock/banish.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Banish",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Banish",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Banish",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "immolate",
+      "name": "Immolate",
+      "kind": "active",
+      "tab": "destruction",
+      "ranksSeen": [1, 4],
+      "icon": "crop-immolate",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/immolate.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Immolate",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22901.5,
+        "frame": 1374090,
+        "crop": "data/review/spells/warlock/immolate.png",
+        "panel": "spell-list",
+        "confidence": 0.9,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Immolate",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Immolate",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "rain-of-fire",
+      "name": "Rain of Fire",
+      "kind": "active",
+      "tab": "destruction",
+      "ranksSeen": [2],
+      "icon": "crop-rain-of-fire",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/rain-of-fire.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Rain of Fire",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22901.5,
+        "frame": 1374090,
+        "crop": "data/review/spells/warlock/rain-of-fire.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Rain of Fire",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Rain of Fire",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Rain of Fire",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "searing-pain",
+      "name": "Searing Pain",
+      "kind": "active",
+      "tab": "destruction",
+      "ranksSeen": [3],
+      "icon": "crop-searing-pain",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/searing-pain.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Searing Pain",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22901.5,
+        "frame": 1374090,
+        "crop": "data/review/spells/warlock/searing-pain.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Searing Pain",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Searing Pain",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Searing Pain",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "shadow-bolt",
+      "name": "Shadow Bolt",
+      "kind": "active",
+      "tab": "destruction",
+      "ranksSeen": [6],
+      "icon": "crop-shadow-bolt",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/shadow-bolt.icon.png",
+      "tooltips": [
+        {
+          "cost": "210 Mana",
+          "range": "30 yd range",
+          "castTime": "3 sec cast",
+          "description": "Sends a shadow bolt at the enemy, causing 170 to 183 Shadow damage.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22903.25,
+            "frame": 1374195,
+            "crop": "data/review/spells/warlock/shadow-bolt.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Shadow Bolt",
+                "description": "Sends a shadowy bolt at the enemy, causing 170 to 183 Shadow damage."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Shadow Bolt",
+                "description": "Sends a shadowy bolt at the enemy, causing 170 to 183 Shadow damage."
+              },
+              {
+                "reader": "codex",
+                "name": "Shadow Bolt",
+                "description": "Sends a shadow bolt at the enemy, causing 170 to 183 Shadow damage."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on description 'shadowy' vs 'shadow' - the reading shown is the first reader's; the shape-aware reader merge corrected 1 word"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Shadow Bolt",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22901.5,
+        "frame": 1374090,
+        "crop": "data/review/spells/warlock/shadow-bolt.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shadow Bolt",
+            "rank": 6
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shadow Bolt",
+            "rank": 6
+          },
+          {
+            "reader": "codex",
+            "name": "Shadow Bolt",
+            "rank": 6
+          }
+        ],
+        "reviewed": false
+      }
+    },
     {
       "id": "armor-proficiency",
       "name": "Armor Proficiency",
@@ -208,6 +1241,158 @@
       }
     },
     {
+      "id": "engineering-specialization",
+      "name": "Engineering Specialization",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-engineering-specialization",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/engineering-specialization.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/gnome.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22873.25,
+        "frame": 1372395,
+        "crop": "data/review/spells/warlock/engineering-specialization.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Engineering Specialization"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Engineering Specialization"
+          },
+          {
+            "reader": "codex",
+            "name": "Engineering Specialization"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "escape-artist",
+      "name": "Escape Artist",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-escape-artist",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/escape-artist.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/gnome.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22873.25,
+        "frame": 1372395,
+        "crop": "data/review/spells/warlock/escape-artist.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Escape Artist"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Escape Artist"
+          },
+          {
+            "reader": "codex",
+            "name": "Escape Artist"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "eureka",
+      "name": "Eureka!",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-eureka",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/eureka.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/gnome.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22873.25,
+        "frame": 1372395,
+        "crop": "data/review/spells/warlock/eureka.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Eureka!"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Eureka!"
+          },
+          {
+            "reader": "codex",
+            "name": "Eureka!"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "expansive-mind",
+      "name": "Expansive Mind",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-expansive-mind",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/expansive-mind.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/gnome.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22873.25,
+        "frame": 1372395,
+        "crop": "data/review/spells/warlock/expansive-mind.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Expansive Mind"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Expansive Mind"
+          },
+          {
+            "reader": "codex",
+            "name": "Expansive Mind"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
       "id": "hardiness",
       "name": "Hardiness",
       "kind": "racial-passive",
@@ -362,67 +1547,1235 @@
       }
     },
     {
-      "id": "bane-of-agony",
-      "name": "Bane of Agony",
+      "id": "create-firestone",
+      "name": "Create Firestone",
       "kind": "active",
-      "ranksSeen": [1, 2, 3, 4],
-      "icon": "crop-bane-of-agony",
+      "ranksSeen": [2],
+      "icon": "crop-create-firestone",
       "iconSource": "crop",
-      "iconCrop": "data/review/spells/warlock/bane-of-agony.icon.png",
+      "iconCrop": "data/review/spells/warlock/create-firestone.icon.png",
       "classic": {
-        "status": "new",
-        "note": "no Classic Era spell called Bane of Agony for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+        "status": "unknown",
+        "classicName": "Create Firestone",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
       },
-      "tags": ["new"],
       "source": {
         "kind": "video",
         "video": "DxtVEhjyROU",
-        "t": 19121.0,
-        "frame": 1147260,
-        "crop": "data/review/spells/warlock/bane-of-agony.png",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/create-firestone.png",
         "panel": "spell-list",
         "confidence": 1.0,
         "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
         "readings": [
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
-            "name": "Bane of Agony",
+            "name": "Create Firestone",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Create Firestone",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Create Firestone",
+            "rank": 2
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "create-healthstone",
+      "name": "Create Healthstone",
+      "kind": "active",
+      "ranksSeen": [3],
+      "icon": "crop-create-healthstone",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/create-healthstone.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Create Healthstone",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/create-healthstone.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Create Healthstone",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Create Healthstone",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Create Healthstone",
+            "rank": 3
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "create-soulstone",
+      "name": "Create Soulstone",
+      "kind": "active",
+      "ranksSeen": [1, 2],
+      "icon": "crop-create-soulstone",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/create-soulstone.icon.png",
+      "tooltips": [
+        {
+          "rank": 2,
+          "cost": "736 Mana",
+          "castTime": "3 sec cast",
+          "tools": "Soul Shard",
+          "description": "Creates a Lesser Soulstone. The Soulstone can be used to store one target's soul. If the target dies while their soul is stored, they will be able to resurrect with 750 health and 1200 mana.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22876.5,
+            "frame": 1372590,
+            "crop": "data/review/spells/warlock/create-soulstone.r2.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Create Soulstone",
+                "description": "Creates a Lesser Soulstone. The Soulstone can be used to store one target's soul. If the target dies while their soul is stored, they will be able to resurrect with 750 health and 1200 mana. Conjured items disappear if logged out for more than 15 minutes."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Create Soulstone",
+                "description": "Creates a Lesser Soulstone. The Soulstone can be used to store one target's soul. If the target dies while their soul is stored, they will be able to resurrect with 750 health and 1200 mana. Conjured items disappear if logged out for more than 15 minutes."
+              },
+              {
+                "reader": "codex",
+                "name": "Create Soulstone",
+                "description": "Creates a Lesser Soulstone. The Soulstone can be used to store one target's soul. If the target dies while their soul is stored, they will be able to resurrect with 750 health and 1200 mana."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to; the two readers disagree on description 'Conjured items disappear if logged out for more than 15 minutes.' vs ''; footer \"You haven't added this to your action bars\" vs 'Conjured items disappear if logged out for more than 15 minutes.' - the reading shown is the first reader's; the shape-aware reader merge corrected 1 word"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Create Soulstone",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/create-soulstone.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Create Soulstone",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Create Soulstone",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Create Soulstone",
+            "rank": 2
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "create-spellstone",
+      "name": "Create Spellstone",
+      "kind": "active",
+      "ranksSeen": [1],
+      "icon": "crop-create-spellstone",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/create-spellstone.icon.png",
+      "tooltips": [
+        {
+          "cost": "500 Mana",
+          "castTime": "5 sec cast",
+          "tools": "Soul Shard",
+          "description": "Creates a Spellstone which can be used to enchant your weapon with Shadow, increasing your spell haste by 1% and the damage done by your Shadow spells by up to 14.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22877.5,
+            "frame": 1372650,
+            "crop": "data/review/spells/warlock/create-spellstone.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Create Spellstone",
+                "description": "Creates a Spellstone which can be used to enchant your weapon with Shadow, increasing your spell haste by 1% and the damage done by your Shadow spells by up to 14. Conjured Items disappear if logged out for more than 15 minutes."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Create Spellstone",
+                "description": "Creates a Spellstone which can be used to enchant your weapon with Shadow, increasing your spell haste by 1% and the damage done by your Shadow spells by up to 14. Conjured Items disappear if logged out for more than 15 minutes."
+              },
+              {
+                "reader": "codex",
+                "name": "Create Spellstone",
+                "description": "Creates a Spellstone which can be used to enchant your weapon with Shadow, increasing your spell haste by 1% and the damage done by your Shadow spells by up to 14."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on description 'Conjured Items disappear if logged out for more than 15 minutes.' vs ''; footer 'You' vs \"Conjured items disappear if logged out for more than 15 minutes. You've\" - the reading shown is the first reader's; the shape-aware reader merge corrected 1 word"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Create Spellstone",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/create-spellstone.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Create Spellstone",
             "rank": 1
           },
           {
             "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
-            "name": "Bane of Agony",
+            "name": "Create Spellstone",
             "rank": 1
           },
           {
             "reader": "codex",
-            "name": "Bane of Agony",
+            "name": "Create Spellstone",
             "rank": 1
           }
         ],
         "reviewed": false,
-        "note": "read from a page whose heading did not name a tab (Exact), so it has no tab"
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "demon-armor",
+      "name": "Demon Armor",
+      "kind": "active",
+      "ranksSeen": [2],
+      "icon": "crop-demon-armor",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/demon-armor.icon.png",
+      "tooltips": [
+        {
+          "rank": 2,
+          "cost": "520 Mana",
+          "castTime": "Instant",
+          "description": "Protects the caster, increasing armor by 300. Shadow resistance by 6 and increases health regeneration by 9 health per 5 sec. for 30 min.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22877.75,
+            "frame": 1372665,
+            "crop": "data/review/spells/warlock/demon-armor.r2.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.9,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Demon Armor",
+                "description": "Protects the caster, Increasing armor by 300, Shadow resistance by 6 and increases health regeneration by 9 health per 5 sec. for 30 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Demon Armor",
+                "description": "Protects the caster, Increasing armor by 300, Shadow resistance by 6 and increases health regeneration by 9 health per 5 sec. for 30 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Demon Armor",
+                "description": "Protects the caster, increasing armor by 300. Shadow resistance by 6 and increases health regeneration by 9 health per 5 sec. for 30 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to; the shape-aware reader merge corrected 1 case, 1 punct"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Demon Armor",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/demon-armor.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Demon Armor",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Demon Armor",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Demon Armor",
+            "rank": 2
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "demon-skin",
+      "name": "Demon Skin",
+      "kind": "active",
+      "icon": "crop-demon-skin",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/demon-skin.icon.png",
+      "tooltips": [
+        {
+          "cost": "120 Mana",
+          "castTime": "Instant",
+          "description": "Protects the caster, increasing armor by 120 and increases health regeneration by 5 health per 5 sec. for 30 min.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22878.5,
+            "frame": 1372710,
+            "crop": "data/review/spells/warlock/demon-skin.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Demon Skin",
+                "description": "Protects the caster, increasing armor by 120 and increases health regeneration by 5 health per 5 sec. for 30 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Demon Skin",
+                "description": "Protects the caster, increasing armor by 120 and increases health regeneration by 5 health per 5 sec, for 30 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Demon Skin",
+                "description": "Protects the caster, increasing armor by 120 and increases health regeneration by 5 health per 5 sec. for 30 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Demon Skin",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/demon-skin.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Demon Skin"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Demon Skin"
+          },
+          {
+            "reader": "codex",
+            "name": "Demon Skin"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "detect-invisibility",
+      "name": "Detect Invisibility",
+      "kind": "active",
+      "ranksSeen": [2],
+      "icon": "crop-detect-invisibility",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/detect-invisibility.icon.png",
+      "tooltips": [
+        {
+          "rank": 2,
+          "cost": "90 Mana",
+          "range": "30 yd range",
+          "castTime": "Instant",
+          "description": "Allows the friendly target to detect invisibility for 10 min.",
+          "footer": "You haven't added this to your action",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22884.25,
+            "frame": 1373055,
+            "crop": "data/review/spells/warlock/detect-invisibility.r2.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Detect Invisibility",
+                "description": "Allows the friendly target to detect invisibility for 10 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Detect Invisibility",
+                "description": "Allows the friendly target to detect invisibility for 10 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Detect Invisibility",
+                "description": "Allows the friendly target to detect invisibility for 10 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to; the two readers disagree on footer 'bars' vs '' - the reading shown is the first reader's; the shape-aware reader merge corrected 1 word"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Detect Invisibility",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/detect-invisibility.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Detect Invisibility",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Detect Invisibility",
+            "rank": 2
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "eye-of-kilrogg",
+      "name": "Eye of Kilrogg",
+      "kind": "active",
+      "icon": "crop-eye-of-kilrogg",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/eye-of-kilrogg.icon.png",
+      "tooltips": [
+        {
+          "cost": "00 Mana",
+          "range": "Unlimited range",
+          "castTime": "sec cast",
+          "description": "ummons an Eye of Kilrogg and Binds our vision to it. The eye moves uickly but is very fragile.",
+          "footer": "ou haven't added this to your action ars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22884.0,
+            "frame": 1373040,
+            "crop": "data/review/spells/warlock/eye-of-kilrogg.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Eye of Kilrogg",
+                "description": "Summons an Eye of Kilrogg and binds your vision to it. The eye moves quickly but is very fragile."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Eye of Kilrogg",
+                "description": "Summons an Eye of Kilrogg and binds your vision to it. The eye moves quickly but is very fragile."
+              },
+              {
+                "reader": "codex",
+                "name": "ye of Kilrogg",
+                "description": "ummons an Eye of Kilrogg and Binds our vision to it. The eye moves uickly but is very fragile."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on description 'Summons' vs 'ummons'; description 'your' vs 'our'; description 'quickly' vs 'uickly' - the reading shown is the first reader's; the shape-aware reader merge corrected 1 case, 5 word"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Eye of Kilrogg",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/eye-of-kilrogg.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Eye of Kilrogg"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Eye of Kilrogg"
+          },
+          {
+            "reader": "codex",
+            "name": "Eye of Kilrogg"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "health-funnel",
+      "name": "Health Funnel",
+      "kind": "active",
+      "ranksSeen": [2, 4],
+      "icon": "crop-health-funnel",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/health-funnel.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Health Funnel",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/health-funnel.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Health Funnel",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Health Funnel",
+            "rank": 4
+          },
+          {
+            "reader": "codex",
+            "name": "Health Funnel",
+            "rank": 4
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "ritual-of-summoning",
+      "name": "Ritual of Summoning",
+      "kind": "active",
+      "icon": "crop-ritual-of-summoning",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/ritual-of-summoning.icon.png",
+      "tooltips": [
+        {
+          "cost": "300 Mana",
+          "range": "30 yd range",
+          "castTime": "5 sec cast",
+          "tools": "Soul Shard",
+          "requires": ["Requires the caster and 2 additional party members to complete the ritual."],
+          "description": "Begins a ritual that summons the targeted group member. Requires the caster and 2 additional party members to complete the ritual. In order to participate, all players must be out of combat and right-click the portal and not move until the ritual is complete.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22883.0,
+            "frame": 1372980,
+            "crop": "data/review/spells/warlock/ritual-of-summoning.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Ritual of Summoning",
+                "description": "Begins a ritual that summons the targeted group member. Requires the caster and 2 additional party members to complete the ritual. In order to participate, all players must be out of combat and right-click the portal and not move until the ritual is complete."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Ritual of Summoning",
+                "description": "Begins a ritual that summons the targeted group member. Requires the caster and 2 additional party members to complete the ritual. In order to participate, all players must be out of combat and right-click the portal and not move until the ritual is complete."
+              },
+              {
+                "reader": "codex",
+                "name": "Ritual of Summoning",
+                "description": "Begins a ritual that summons the targeted group member. Requires the caster and 2 additional party members to complete the ritual. In order to participate, all players must be out of combat and right-click the portal and not move until the ritual is complete."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Ritual of Summoning",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/ritual-of-summoning.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Ritual of Summoning"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Ritual of Summoning"
+          },
+          {
+            "reader": "codex",
+            "name": "Ritual of Summoning"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "sense-demons",
+      "name": "Sense Demons",
+      "kind": "active",
+      "icon": "crop-sense-demons",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/sense-demons.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Sense Demons",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/sense-demons.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Sense Demons"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sense Demons"
+          },
+          {
+            "reader": "codex",
+            "name": "Sense Demons"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "shadow-ward",
+      "name": "Shadow Ward",
+      "kind": "active",
+      "ranksSeen": [1],
+      "icon": "crop-shadow-ward",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/shadow-ward.icon.png",
+      "tooltips": [
+        {
+          "cost": "135 Mana",
+          "castTime": "Instant",
+          "cooldown": "30 sec cooldown",
+          "description": "Absorbs 290 shadow damage. Lasts 30 sec.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22880.5,
+            "frame": 1372830,
+            "crop": "data/review/spells/warlock/shadow-ward.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Shadow Ward",
+                "description": "Absorbs 290 shadow damage. Lasts 30 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Shadow Ward",
+                "description": "Absorbs 290 shadow damage. Lasts 30 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Shadow Ward",
+                "description": "Absorbs 290 shadow damage. Lasts 30 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Shadow Ward",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/shadow-ward.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Shadow Ward",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Shadow Ward",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Shadow Ward",
+            "rank": 1
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "subjugate-demon",
+      "name": "Subjugate Demon",
+      "kind": "active",
+      "ranksSeen": [1],
+      "icon": "crop-subjugate-demon",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/subjugate-demon.icon.png",
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Subjugate Demon for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/subjugate-demon.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Subjugate Demon",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Subjugate Demon",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Subjugate Demon",
+            "rank": 1
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "summon-felhunter",
+      "name": "Summon Felhunter",
+      "kind": "active",
+      "icon": "crop-summon-felhunter",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/summon-felhunter.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Summon Felhunter",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/summon-felhunter.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Summon Felhunter"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Summon Felhunter"
+          },
+          {
+            "reader": "codex",
+            "name": "Summon Felhunter"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "summon-imp",
+      "name": "Summon Imp",
+      "kind": "active",
+      "icon": "crop-summon-imp",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/summon-imp.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Summon Imp",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/summon-imp.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Summon Imp"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Summon Imp"
+          },
+          {
+            "reader": "codex",
+            "name": "Summon Imp"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "summon-incubus",
+      "name": "Summon Incubus",
+      "kind": "active",
+      "icon": "crop-summon-incubus",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/summon-incubus.icon.png",
+      "tooltips": [
+        {
+          "cost": "866 Mana",
+          "castTime": "10 sec cast",
+          "tools": "Soul Shard",
+          "description": "Summons an Incubus under the command of the Warlock.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22886.25,
+            "frame": 1373175,
+            "crop": "data/review/spells/warlock/summon-incubus.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Summon Incubus",
+                "description": "Summons an Incubus under the command of the Warlock."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Summon Incubus",
+                "description": "Summons an Incubus under the command of the Warlock."
+              },
+              {
+                "reader": "codex",
+                "name": "Summon Incubus",
+                "description": "Summons an Incubus under the command of the Warlock."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "new",
+        "note": "no Classic Era spell called Summon Incubus for this class; Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "tags": ["new"],
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/summon-incubus.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Summon Incubus"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Summon Incubus"
+          },
+          {
+            "reader": "codex",
+            "name": "Summon Incubus"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "summon-succubus",
+      "name": "Summon Succubus",
+      "kind": "active",
+      "icon": "crop-summon-succubus",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/summon-succubus.icon.png",
+      "tooltips": [
+        {
+          "cost": "866 Mana",
+          "castTime": "10 sec cast",
+          "tools": "Soul Shard",
+          "description": "Summons a Succubus under the command of the Warlock.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22886.75,
+            "frame": 1373205,
+            "crop": "data/review/spells/warlock/summon-succubus.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Summon Succubus",
+                "description": "Summons a Succubus under the command of the Warlock."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Summon Succubus",
+                "description": "Summons a Succubus under the command of the Warlock."
+              },
+              {
+                "reader": "codex",
+                "name": "Summon Succubus",
+                "description": "Summons a Succubus under the command of the Warlock."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        },
+        {
+          "cost": "866 Mana",
+          "castTime": "10 sec cast",
+          "tools": "Soul Shard",
+          "description": "Summons a Succubus under the command of the Warlock.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22887.0,
+            "frame": 1373220,
+            "crop": "data/review/spells/warlock/summon-succubus.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Summon Succubus",
+                "description": "Summons a Succubus under the command of the Warlock."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Summon Succubus",
+                "description": "Summons a Succubus under the command of the Warlock."
+              },
+              {
+                "reader": "codex",
+                "name": "Summon Succubus",
+                "description": "Summons a Succubus under the command of the Warlock."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "classicName": "Summon Succubus",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/summon-succubus.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Summon Succubus"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Summon Succubus"
+          },
+          {
+            "reader": "codex",
+            "name": "Summon Succubus"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "summon-voidwalker",
+      "name": "Summon Voidwalker",
+      "kind": "active",
+      "icon": "crop-summon-voidwalker",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/summon-voidwalker.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Summon Voidwalker",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/summon-voidwalker.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Summon Voidwalker"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Summon Voidwalker"
+          },
+          {
+            "reader": "codex",
+            "name": "Summon Voidwalker"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
+      }
+    },
+    {
+      "id": "unending-breath",
+      "name": "Unending Breath",
+      "kind": "active",
+      "icon": "crop-unending-breath",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warlock/unending-breath.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Unending Breath",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22875.25,
+        "frame": 1372515,
+        "crop": "data/review/spells/warlock/unending-breath.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Unending Breath"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Unending Breath"
+          },
+          {
+            "reader": "codex",
+            "name": "Unending Breath"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Dem), so it has no tab"
       }
     }
   ],
   "coverage": {
-    "pagesSeen": ["Exact Matches", "General"],
-    "tabsSeen": ["general"],
-    "tabsMissing": ["affliction", "demonology", "destruction"],
-    "states": 4,
-    "entriesRead": 10,
-    "tooltipsRead": 0,
-    "tooltipsUnmatched": 0,
+    "pagesSeen": ["Affliction", "Demonology", "Destruction", "Exact Matches", "General"],
+    "tabsSeen": ["affliction", "demonology", "destruction", "general"],
+    "tabsMissing": [],
+    "states": 19,
+    "entriesRead": 48,
+    "tooltipsRead": 20,
+    "tooltipsUnmatched": 2,
     "showAllSpellRanks": "on",
     "observedLevel": 38,
-    "windows": ["05:18:38", "05:18:41", "05:18:42", "05:18:43"]
+    "windows": [
+      "05:18:38",
+      "05:18:41",
+      "05:18:42",
+      "05:18:43",
+      "06:21:13",
+      "06:21:15",
+      "06:21:16",
+      "06:21:17",
+      "06:21:18",
+      "06:21:19",
+      "06:21:22",
+      "06:21:24",
+      "06:21:25",
+      "06:21:28",
+      "06:21:29",
+      "06:21:36",
+      "06:21:38",
+      "06:21:39",
+      "06:21:41"
+    ]
   },
   "complete": false,
   "notes": [
-    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "The spellbook never names the class; it comes from the window table in pipeline/work/spells/windows.json, derived from a 1 fps keyframe sweep of the whole VOD and hand-labelled from the page headings, the tab icons and the General page's racials. Every label is cross-checked against the page headings.",
     "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
     "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
-    "Page headings the reader could not resolve to a tab, because a hover tooltip stood over them: Exact. Their entries are in this file without a tab and say so in source.note.",
+    "Page headings the reader could not resolve to a tab, because a hover tooltip stood over them: Affili, Dem, Exact. Their entries are in this file without a tab and say so in source.note.",
+    "Hover tooltips whose header matched no list entry, so they are not in this file: Conjured Items disappear if logged out for more than 15 minutes., Immolatate. Most are a half-drawn box caught during the fade-in; the crops are in pipeline/work/spells/crops/.",
     "Entries with a source note were read from a clipped row or a search page; check the crop before quoting them."
   ]
 }

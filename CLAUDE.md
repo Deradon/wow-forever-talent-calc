@@ -14,10 +14,11 @@ Three datasets are published and all of them are drafts.
   confidence threshold. 22 of the 69 prerequisite arrows were traced below 0.8
   in `pipeline/work/arrows/` and carry no confidence in the published files.
 - **Races**: 37 traits over 9 races plus the race/class matrix, 0 below 0.8.
-- **Spellbook**: 323 list rows and 112 tooltips over 8 classes (priest was
-  never shown), **21 records below 0.8** (2 rows, 19 tooltips) after the
-  shape-aware reader merge reached stage 11 on 2026-09-14. 12 names have no
-  Classic Era counterpart.
+- **Spellbook**: 410 list rows and 152 tooltips over 8 classes (priest was
+  never shown), **35 records below 0.8** (2 rows, 33 tooltips) after the
+  keyframe-sweep window table reached stage 11 on 2026-09-14. Every class now
+  has its General page and all three tree pages; 14 names have no Classic Era
+  counterpart.
 
 Review round two landed on 2026-09-14;
 `docs/reviews/2026-09-14-consolidated.md` ranks the findings and assigns the

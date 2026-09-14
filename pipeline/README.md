@@ -398,21 +398,31 @@ list text, merging and dedupe — all pure), the spellbook prompts in
 llama-server.
 
 ```bash
+uv run python scripts/spell_windows.py               # -> work/spells/windows.json (from the keyframe sweep)
 uv run stages/11_spellbook.py scan                   # -> work/spells/states.json + native crops
+uv run stages/11_spellbook.py scan --windows work/spells/windows.json
 uv run stages/11_spellbook.py scan --window 03:59:00-04:02:00 --fps 4
 uv run stages/11_spellbook.py read                   # -> work/spells/readings.json
 uv run stages/11_spellbook.py read --codex page      # + one codex opinion per class and tab
-uv run stages/11_spellbook.py build                  # -> data/spells/, data/review/spells/, data/extracted/spells.{json,md}
+uv run stages/11_spellbook.py build                  # merges into data/spells/, data/review/spells/, data/extracted/spells.{json,md}
+uv run stages/11_spellbook.py build --no-merge       # replace the published files instead (shrink guard still applies)
 uv run python validate_spells.py --check ../data/spells/*.json
 uv run python validate_spells.py --report ../data/spells/*.json   # review queue
 ```
 
-`scan` decodes the fifteen spellbook windows (the minutes whose stage-0 probe
-frame matches the title bar, padded either side) at 4 fps by frame index and
+`scan` decodes the thirty-one spellbook windows of
+`work/spells/windows.json` at 4 fps by frame index and
 **locates the window in every frame**: unlike the character-creation screen it
 moves, so all geometry is relative to a normalised cross-correlation match of
 `assets/spellbook-title.png` (>= 0.85 on every spellbook frame seen, <= 0.82 on
-everything else in the 541 probe minutes). Frames are grouped into *page states*
+everything else in the 541 probe minutes). The window table itself is derived by
+`scripts/spell_windows.py` from the whole-VOD 1 fps keyframe sweep — 50 spellbook
+runs, each padded by 30 s and merged, with the fifteen ranges the stage shipped
+with copied through unchanged so their state ids and review crops survive; the
+class of each window is the one thing the spellbook never shows and stays
+hand-labelled. Without that file `scan` falls back to the built-in `WINDOWS`
+list, which was built from the 541 probe minutes and misses 21 of the 50 runs.
+Frames are grouped into *page states*
 by three changed-pixel tests — heading, search text, and the median of the 21
 per-cell list changes — because a dHash of flat parchment is noise and because a
 hover tooltip must not end a state. Each state's page is the per-pixel 85th
@@ -436,6 +446,14 @@ was listed at), drops readings the column has no icon for, attaches tooltips by
 name, diffs the names against `data/prior/classic-era/spells-baseline.json`
 (racials go to `data/races/` instead, hunter pet rows to the prior's `_pet`
 bucket), and writes the class files, the review crops and the inventory.
+
+Since the window table grew (2026-09-14) `build` **merges into** the published
+class files rather than replacing them: a spell id already in
+`data/spells/<class>.json` keeps its name, tab, icon and `source` (so the review
+crop a reviewer has already looked at stays valid), a `reviewed: true` record is
+not touched at all, and only new tabs, new entries, new tooltips and wider
+coverage are added. A class file can therefore not shrink. `--no-merge` restores
+the old replace-in-place behaviour and keeps the shrink guard below as a check.
 
 ### `opinions`: the second reader (added 2026-09-14, review round two D-1)
 
@@ -470,7 +488,8 @@ round two they refuse the two ways that could destroy data:
 
 * a class (stage 11) or race (stage 12) that produced no records, or fewer
   records than the file already on disk, is **skipped** with a message on
-  stderr; its file and its crops are left alone. A run in which *no* unit
+  stderr; its file and its crops are left alone (stage 11's default `--merge`
+  makes the second case unreachable by construction). A run in which *no* unit
   produced a record exits non-zero instead of writing anything.
 * `--dry-run` on either `build` reports the outcome and writes nothing, deletes
   nothing. Use it before any run with `--only` or `--limit`, which are exactly

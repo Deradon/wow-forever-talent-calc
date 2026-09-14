@@ -960,3 +960,148 @@ def test_referenced_crops_collects_rows_icons_and_tooltips(tmp_path):
         "data/review/spells/mage/blink.icon.png",
         "data/review/spells/mage/blink.tooltip.png",
     }
+
+
+# --------------------------------------------------------------------------- window table
+
+
+def test_load_windows_reads_the_object_shape_the_sweep_writes(tmp_path):
+    path = tmp_path / "windows.json"
+    path.write_text(json.dumps({"generatedAt": "now", "runs": 2, "windows": [
+        {"t0": 22840, "t1": 22933, "class": "warlock", "note": "Demonology, after the 06:20 cutoff"},
+        {"t0": 12265, "t1": 12420, "class": "mage", "note": "level-1 Skyborne mage"},
+    ]}))
+    assert st11.load_windows(path) == [
+        (12265, 12420, "mage", "level-1 Skyborne mage"),
+        (22840, 22933, "warlock", "Demonology, after the 06:20 cutoff"),
+    ]
+
+
+def test_load_windows_also_reads_a_bare_list_of_rows(tmp_path):
+    path = tmp_path / "windows.json"
+    path.write_text(json.dumps([[100, 200, "rogue", "General"], [300, 400, "druid"]]))
+    assert st11.load_windows(path) == [(100, 200, "rogue", "General"), (300, 400, "druid", "")]
+
+
+@pytest.mark.parametrize("payload", [
+    {"windows": []},
+    {"windows": [{"t0": 100, "class": "mage"}]},
+    {"windows": [{"t0": 200, "t1": 100, "class": "mage"}]},
+    {"windows": [["nonsense"]]},
+    [],
+])
+def test_load_windows_refuses_a_table_it_cannot_scan(tmp_path, payload):
+    path = tmp_path / "windows.json"
+    path.write_text(json.dumps(payload))
+    with pytest.raises(ValueError):
+        st11.load_windows(path)
+
+
+def test_windows_from_prefers_the_file_and_falls_back_to_the_hand_built_table(tmp_path):
+    path = tmp_path / "windows.json"
+    table, source = st11.windows_from(path)
+    assert table == list(st11.WINDOWS) and "fallback" in source
+
+    path.write_text(json.dumps({"windows": [{"t0": 1, "t1": 2, "class": "mage", "note": "n"}]}))
+    table, source = st11.windows_from(path)
+    assert table == [(1, 2, "mage", "n")] and source == "windows.json"
+
+    assert st11.windows_from(None)[0] == list(st11.WINDOWS)
+
+
+# --------------------------------------------------------------------------- additive merge
+
+
+def test_merge_class_doc_adds_entries_tabs_and_tooltips_without_touching_the_old_ones():
+    old = _doc()
+    fresh = _doc(generatedAt="2026-09-14T12:00:00Z")
+    fresh["tabs"] = [{"id": "fire", "name": "Fire", "order": 0}]
+    fresh["spells"] = [
+        {**old["spells"][0], "source": {**old["spells"][0]["source"], "crop": "somewhere/else.png"},
+         "tooltips": [_tooltip()]},
+        {"id": "fireball", "name": "Fireball", "kind": "active", "tab": "fire",
+         "classic": {"status": "unknown", "note": "u"}, "source": dict(old["spells"][0]["source"])},
+    ]
+    fresh["coverage"] = {**old["coverage"], "pagesSeen": ["Fire"], "tabsSeen": ["fire"],
+                         "windows": ["04:39:30"], "states": 4}
+    out = st11.merge_class_doc("mage", old, fresh)
+
+    assert [s["id"] for s in out["spells"]] == ["blink", "fireball"]
+    assert out["spells"][0]["source"]["crop"] == "data/review/spells/mage/a.png"   # crop untouched
+    assert len(out["spells"][0]["tooltips"]) == 1                                   # tooltip added
+    assert [t["id"] for t in out["tabs"]] == ["arcane", "fire"]
+    assert [t["order"] for t in out["tabs"]] == [0, 1]
+    assert out["coverage"]["pagesSeen"] == ["Arcane", "Fire"]
+    assert out["coverage"]["tabsSeen"] == ["arcane", "fire"]
+    assert out["coverage"]["windows"] == ["04:18:00", "04:39:30"]
+    assert out["coverage"]["entriesRead"] == 2 and out["coverage"]["tooltipsRead"] == 1
+    assert out["coverage"]["states"] == 4
+    assert out["generatedAt"] == "2026-09-14T12:00:00Z"
+
+
+def test_merge_class_doc_never_shrinks_a_class_file():
+    old = _doc()
+    old["spells"].append({"id": "frostbolt", "name": "Frostbolt", "kind": "active",
+                          "classic": {"status": "unknown", "note": "u"},
+                          "source": dict(old["spells"][0]["source"])})
+    fresh = _doc()
+    fresh["spells"] = []
+    out = st11.merge_class_doc("mage", old, fresh)
+    assert [s["id"] for s in out["spells"]] == ["blink", "frostbolt"]
+
+
+def test_merge_class_doc_leaves_a_reviewed_record_completely_alone():
+    old = _doc()
+    old["spells"][0]["source"].update(reviewed=True, reviewedBy="owner",
+                                      reviewedAt="2026-09-14T00:00:00Z")
+    old["spells"][0]["name"] = "Blink (corrected by hand)"
+    fresh = _doc()
+    fresh["spells"][0]["name"] = "Blynk"
+    fresh["spells"][0]["tooltips"] = [_tooltip()]
+    fresh["spells"][0]["ranksSeen"] = [2]
+    out = st11.merge_class_doc("mage", old, fresh)
+    assert out["spells"][0]["name"] == "Blink (corrected by hand)"
+    assert "tooltips" not in out["spells"][0] and "ranksSeen" not in out["spells"][0]
+
+
+def test_merge_class_doc_does_not_duplicate_a_tooltip_it_already_published():
+    old = _doc()
+    old["spells"][0]["tooltips"] = [_tooltip()]
+    fresh = _doc()
+    fresh["spells"][0]["tooltips"] = [_tooltip(0.7), _tooltip(1.0, description="Ranks 2 text.")]
+    out = st11.merge_class_doc("mage", old, fresh)
+    descriptions = [t["description"] for t in out["spells"][0]["tooltips"]]
+    assert descriptions == ["Blinks you forward.", "Ranks 2 text."]
+    assert out["spells"][0]["tooltips"][0]["source"]["confidence"] == 1.0    # the published one
+
+
+def test_merge_class_doc_drops_a_note_the_new_run_rewrote_and_keeps_the_rest():
+    """A note whose opening clause the new run also writes is superseded, not doubled."""
+    was = "The spellbook never names the class; it comes from the hand-labelled window table."
+    now = "The spellbook never names the class; it comes from the table the sweep derived."
+    old = _doc(notes=[was, "Fire and Frost were never opened."])
+    fresh = _doc(notes=[now])
+    out = st11.merge_class_doc("mage", old, fresh)
+    assert out["notes"] == [now, "Fire and Frost were never opened."]
+
+
+def test_merge_class_doc_gives_an_entry_a_tab_it_did_not_have():
+    old = _doc()
+    del old["spells"][0]["tab"]
+    fresh = _doc()
+    out = st11.merge_class_doc("mage", old, fresh)
+    assert out["spells"][0]["tab"] == "arcane"
+
+
+def test_merge_entry_does_not_lowercase_a_capital_i_word_of_the_name():
+    """'Elemental Insight' is a name, not a misread sentence (the Skyborne racial, 2026-09-14)."""
+    readings = [{"name": "Elemental Insight"}, {"name": "Elemental Insight", "reader": "codex"}]
+    out = SP.merge_entry(readings)
+    assert out["fields"]["name"] == "Elemental Insight"
+    assert out["shapes"] == {}
+
+
+def test_merge_entry_still_lowercases_the_two_letter_misread_the_rule_exists_for():
+    out = SP.merge_entry([{"name": "Shadow It"}, {"name": "Shadow It", "reader": "codex"}])
+    assert out["fields"]["name"] == "Shadow it"
+    assert out["shapes"] == {"case": 1}

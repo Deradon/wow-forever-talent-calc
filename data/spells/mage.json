@@ -4,7 +4,7 @@
   "class": "mage",
   "className": "Mage",
   "dataSource": "video",
-  "generatedAt": "2026-09-14T07:30:45Z",
+  "generatedAt": "2026-09-14T10:35:55Z",
   "observedLevel": 38,
   "tabs": [
     {
@@ -34,7 +34,7 @@
       "name": "Amplify Magic",
       "kind": "active",
       "tab": "arcane",
-      "ranksSeen": [2],
+      "ranksSeen": [1, 2],
       "icon": "crop-amplify-magic",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/amplify-magic.icon.png",
@@ -77,7 +77,7 @@
       "name": "Arcane Blast",
       "kind": "active",
       "tab": "arcane",
-      "ranksSeen": [5],
+      "ranksSeen": [1, 2, 3, 4, 5],
       "icon": "crop-arcane-blast",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/arcane-blast.icon.png",
@@ -120,11 +120,46 @@
       "name": "Arcane Explosion",
       "kind": "active",
       "tab": "arcane",
-      "ranksSeen": [4],
+      "ranksSeen": [1, 2, 3, 4],
       "icon": "crop-arcane-explosion",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/arcane-explosion.icon.png",
       "tooltips": [
+        {
+          "cost": "185 Mana",
+          "castTime": "Instant",
+          "description": "Causes an explosion of arcane magic around the caster, causing 107 to 117 Arcane damage to all targets within 10 yards.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 16774.75,
+            "frame": 1006485,
+            "crop": "data/review/spells/mage/arcane-explosion.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Arcane Explosion",
+                "description": "Causes an explosion of arcane magic around the caster, causing 107 to 117 Arcane damage to all targets within 10 yards."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Arcane Explosion",
+                "description": "Causes an explosion of arcane magic around the caster, causing 107 to 117 Arcane damage to all targets within 10 yards."
+              },
+              {
+                "reader": "codex",
+                "name": "Arcane Explosion",
+                "description": "Causes an explosion of arcane magic around the caster, causing 107 to 117 Arcane damage to all targets within 10 yards."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        },
         {
           "cost": "250 Mana",
           "castTime": "Instant",
@@ -234,7 +269,7 @@
       "name": "Arcane Intellect",
       "kind": "active",
       "tab": "arcane",
-      "ranksSeen": [3],
+      "ranksSeen": [1, 2, 3],
       "icon": "crop-arcane-intellect",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/arcane-intellect.icon.png",
@@ -314,7 +349,7 @@
       "name": "Arcane Missiles",
       "kind": "active",
       "tab": "arcane",
-      "ranksSeen": [4],
+      "ranksSeen": [1, 2, 3, 4],
       "icon": "crop-arcane-missiles",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/arcane-missiles.icon.png",
@@ -352,6 +387,78 @@
             ],
             "reviewed": false,
             "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        },
+        {
+          "cost": "320 Mana",
+          "range": "36 yd range",
+          "castTime": "Channeled",
+          "description": "Launches Arcane Missiles at the enemy, causing 91 Arcane damage each second for 5 sec.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 16774.5,
+            "frame": 1006470,
+            "crop": "data/review/spells/mage/arcane-missiles.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Arcane Missiles",
+                "description": "Launches Arcane Missiles at the enemy, causing 91 Arcane damage each second for 5 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Arcane Missiles",
+                "description": "Launches Arcane Missiles at the enemy, causing 91 Arcane damage each second for 5 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Arcane Missiles",
+                "description": "Launches Arcane Missiles at the enemy, causing 91 Arcane damage each second for 5 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on range '36 yd range' vs '30 yd range' - the reading shown is the first reader's"
+          }
+        },
+        {
+          "rank": 3,
+          "cost": "235 Mana",
+          "range": "36 yd range",
+          "castTime": "Channeled",
+          "description": "Launches Arcane Missiles at the enemy, causing 58 Arcane damage each second for 5 sec.",
+          "footer": "You haven't is this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 16774.25,
+            "frame": 1006455,
+            "crop": "data/review/spells/mage/arcane-missiles.r3.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Arcane Missiles",
+                "description": "Launches Arcane Missiles at the enemy. Causing 58 Arcane damage each second for 5 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Arcane Missiles",
+                "description": "Launches Arcane Missiles at the enemy. Causing 58 Arcane damage each second for 5 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Arcane Missiles",
+                "description": "Launches Arcane Missiles at the enemy, causing 30 Arcane damage each second for 5 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to; the two readers disagree on description '58' vs '30'; footer 'You' vs 'Your'; footer \"haven't\" vs 'target' - the reading shown is the first reader's; the shape-aware reader merge corrected 1 case, 1 punct, 1 word"
           }
         }
       ],
@@ -470,7 +577,7 @@
       "name": "Conjure Food",
       "kind": "active",
       "tab": "arcane",
-      "ranksSeen": [4],
+      "ranksSeen": [1, 2, 4],
       "icon": "crop-conjure-food",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/conjure-food.icon.png",
@@ -701,7 +808,7 @@
       "name": "Conjure Water",
       "kind": "active",
       "tab": "arcane",
-      "ranksSeen": [4],
+      "ranksSeen": [1, 2, 3, 4],
       "icon": "crop-conjure-water",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/conjure-water.icon.png",
@@ -740,6 +847,44 @@
             ],
             "reviewed": false,
             "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on footer 'bars' vs 'bars.' - the reading shown is the first reader's; the shape-aware reader merge corrected 1 case"
+          }
+        },
+        {
+          "rank": 1,
+          "cost": "50 Mana",
+          "range": "6 yd range",
+          "castTime": "3 sec cast",
+          "cooldown": "Cooldown remaining: 1 sec",
+          "description": "Conjures 20 bottles of water, providing the mage and hit allies with something to drink. Conjured items disappear if logged out for more than 15 minutes.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 16780.5,
+            "frame": 1006830,
+            "crop": "data/review/spells/mage/conjure-water.r1.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Conjure Water",
+                "description": "Conjures 20 bottles of water, providing the mage and hit allies with something to drink. Conjured items disappear if logged out for more than 15 minutes."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Conjure Water",
+                "description": "Conjures 20 bottles of water, providing the mage and hit allies with something to drink. Conjured items disappear if logged out for more than 15 minutes."
+              },
+              {
+                "reader": "codex",
+                "name": "Conjure Water",
+                "description": "Conjures 20 bottles of crystal water, providing the mage and his allies with something to drink. Conjured items disappear if logged out for more than 15 minutes."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to; the two readers disagree on description '' vs 'crystal'; description 'hit' vs 'his'; footer 'bars' vs 'bars.' - the reading shown is the first reader's"
           }
         }
       ],
@@ -859,7 +1004,7 @@
       "name": "Dampen Magic",
       "kind": "active",
       "tab": "arcane",
-      "ranksSeen": [3],
+      "ranksSeen": [1, 2, 3],
       "icon": "crop-dampen-magic",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/dampen-magic.icon.png",
@@ -1093,7 +1238,7 @@
       "name": "Mana Shield",
       "kind": "active",
       "tab": "arcane",
-      "ranksSeen": [3],
+      "ranksSeen": [1, 2, 3],
       "icon": "crop-mana-shield",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/mana-shield.icon.png",
@@ -1173,7 +1318,7 @@
       "name": "Polymorph",
       "kind": "active",
       "tab": "arcane",
-      "ranksSeen": [2],
+      "ranksSeen": [1, 2],
       "icon": "crop-polymorph",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/polymorph.icon.png",
@@ -1635,7 +1780,7 @@
       "name": "Fire Blast",
       "kind": "active",
       "tab": "fire",
-      "ranksSeen": [5],
+      "ranksSeen": [1, 2, 3, 4, 5],
       "icon": "crop-fire-blast",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/fire-blast.icon.png",
@@ -1678,7 +1823,7 @@
       "name": "Fire Ward",
       "kind": "active",
       "tab": "fire",
-      "ranksSeen": [2],
+      "ranksSeen": [1, 2],
       "icon": "crop-fire-ward",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/fire-ward.icon.png",
@@ -1721,7 +1866,7 @@
       "name": "Fireball",
       "kind": "active",
       "tab": "fire",
-      "ranksSeen": [7],
+      "ranksSeen": [1, 2, 3, 4, 5, 6, 7],
       "icon": "crop-fireball",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/fireball.icon.png",
@@ -1802,7 +1947,7 @@
       "name": "Flamestrike",
       "kind": "active",
       "tab": "fire",
-      "ranksSeen": [3],
+      "ranksSeen": [1, 2, 3],
       "icon": "crop-flamestrike",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/flamestrike.icon.png",
@@ -1883,11 +2028,47 @@
       "name": "Scorch",
       "kind": "active",
       "tab": "fire",
-      "ranksSeen": [3],
+      "ranksSeen": [1, 2, 3],
       "icon": "crop-scorch",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/scorch.icon.png",
       "tooltips": [
+        {
+          "cost": "50 Mana",
+          "range": "30 yd range",
+          "castTime": "1.5 sec cast",
+          "description": "Scorch the enemy for 66 to 75 Fire damage.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 16786.0,
+            "frame": 1007160,
+            "crop": "data/review/spells/mage/scorch.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Scorch",
+                "description": "Scorch the enemy for 66 to 75 Fire damage."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Scorch",
+                "description": "Scorch the enemy for 66 to 75 Fire damage."
+              },
+              {
+                "reader": "codex",
+                "name": "Scorch",
+                "description": "Scorch the enemy for 66 to 75 Fire damage."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        },
         {
           "rank": 3,
           "cost": "80 Mana",
@@ -1918,6 +2099,42 @@
                 "reader": "codex",
                 "name": "Scorch",
                 "description": "Scorch the enemy for 90 to 103 Fire damage."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip; rank taken from the list row the box was anchored to"
+          }
+        },
+        {
+          "rank": 3,
+          "cost": "80 Mana",
+          "range": "30 yd range",
+          "castTime": "1.5 sec cast",
+          "description": "Scorch the enemy for 96 to 109 Fire damage.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 16786.5,
+            "frame": 1007190,
+            "crop": "data/review/spells/mage/scorch.r3.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Scorch",
+                "description": "Scorch the enemy for 96 to 109 Fire damage."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Scorch",
+                "description": "Scorch the enemy for 96 to 109 Fire damage."
+              },
+              {
+                "reader": "codex",
+                "name": "Scorch",
+                "description": "Scorch the enemy for 96 to 109 Fire damage."
               }
             ],
             "reviewed": false,
@@ -1964,7 +2181,7 @@
       "name": "Blizzard",
       "kind": "active",
       "tab": "frost",
-      "ranksSeen": [3],
+      "ranksSeen": [1, 2, 3],
       "icon": "crop-blizzard",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/blizzard.icon.png",
@@ -2007,7 +2224,7 @@
       "name": "Cone of Cold",
       "kind": "active",
       "tab": "frost",
-      "ranksSeen": [2],
+      "ranksSeen": [1, 2],
       "icon": "crop-cone-of-cold",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/cone-of-cold.icon.png",
@@ -2087,7 +2304,7 @@
       "name": "Frost Armor",
       "kind": "active",
       "tab": "frost",
-      "ranksSeen": [3],
+      "ranksSeen": [1, 2, 3],
       "icon": "crop-frost-armor",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/frost-armor.icon.png",
@@ -2125,6 +2342,41 @@
             ],
             "reviewed": false,
             "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        },
+        {
+          "cost": "60 Mana",
+          "castTime": "Instant",
+          "description": "Increases Armor by 30. If an enemy strikes the caster, they may have their movement slowed by 30% and the time between their attacks increased by 25% for 5 sec. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 15550.25,
+            "frame": 933015,
+            "crop": "data/review/spells/mage/frost-armor.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Frost Armor",
+                "description": "Increases Armor by 30. If an enemy strikes the caster, they may have their movement slowed by 30% and the time between their attacks increased by 25% for 5 sec. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Frost Armor",
+                "description": "Increases Armor by 30. If an enemy strikes the caster, they may have their movement slowed by 30% and the time between their attacks increased by 25% for 5 sec. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Frost Armor",
+                "description": "Increases Armor by 30. If an enemy strikes the caster, they may have their movement slowed by 30% and the time between their attacks increased by 25% for 5 sec. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on footer 'added this to your action bars' vs 'unlearn the previous ability yet.' - the reading shown is the first reader's"
           }
         }
       ],
@@ -2167,7 +2419,7 @@
       "name": "Frost Nova",
       "kind": "active",
       "tab": "frost",
-      "ranksSeen": [2],
+      "ranksSeen": [1, 2],
       "icon": "crop-frost-nova",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/frost-nova.icon.png",
@@ -2210,7 +2462,7 @@
       "name": "Frost Ward",
       "kind": "active",
       "tab": "frost",
-      "ranksSeen": [2],
+      "ranksSeen": [1, 2],
       "icon": "crop-frost-ward",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/frost-ward.icon.png",
@@ -2292,11 +2544,47 @@
       "name": "Frostbolt",
       "kind": "active",
       "tab": "frost",
-      "ranksSeen": [7],
+      "ranksSeen": [1, 2, 3, 4, 5, 6, 7],
       "icon": "crop-frostbolt",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/mage/frostbolt.icon.png",
       "tooltips": [
+        {
+          "cost": "65 Mana",
+          "range": "30 yd range",
+          "castTime": "2.6 sec cast",
+          "description": "Launches a bolt of frost at the enemy, causing 108 to 115 Frost damage and slowing movement speed by 40% for 7 sec.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 15704.0,
+            "frame": 942240,
+            "crop": "data/review/spells/mage/frostbolt.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Frostbolt",
+                "description": "Launches a bolt of frost at the enemy, causing 108 to 115 Frost damage and slowing movement speed by 40% for 7 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Frostbolt",
+                "description": "Launches a bolt of frost at the enemy, causing 108 to 115 Frost damage and slowing movement speed by 40% for 7 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Frostbolt",
+                "description": "Launches a bolt of frost at the enemy, causing 108 to 115 Frost damage and slowing movement speed by 40% for 7 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        },
         {
           "cost": "80 Mana",
           "range": "30 yd range",
@@ -2326,6 +2614,42 @@
                 "reader": "codex",
                 "name": "Frostbolt",
                 "description": "Launches a bolt of frost at the enemy, causing 280 to 297 Frost damage and slowing movement speed by 40% for 8 sec."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        },
+        {
+          "cost": "25 Mana",
+          "range": "30 yd range",
+          "castTime": "1.5 sec cast",
+          "description": "Launches a bolt of frost at the enemy, causing 47 to 49 Frost damage and slowing movement speed by 40% for 5 sec.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 15705.5,
+            "frame": 942330,
+            "crop": "data/review/spells/mage/frostbolt.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Frostbolt",
+                "description": "Launches a bolt of frost at the enemy, causing 47 to 49 Frost damage and slowing movement speed by 40% for 5 sec."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Frostbolt",
+                "description": "Launches a bolt of frost at the enemy, causing 47 to 49 Frost damage and slowing movement speed by 40% for 5 sec."
+              },
+              {
+                "reader": "codex",
+                "name": "Frostbolt",
+                "description": "Launches a bolt of frost at the enemy, causing 47 to 49 Frost damage and slowing movement speed by 40% for 5 sec."
               }
             ],
             "reviewed": false,
@@ -2523,6 +2847,44 @@
       }
     },
     {
+      "id": "cannibalize",
+      "name": "Cannibalize",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-cannibalize",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/cannibalize.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/undead.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 16771.25,
+        "frame": 1006275,
+        "crop": "data/review/spells/mage/cannibalize.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Cannibalize"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cannibalize"
+          },
+          {
+            "reader": "codex",
+            "name": "Cannibalize"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
       "id": "comprehend-scroll",
       "name": "Comprehend Scroll",
       "kind": "active",
@@ -2631,6 +2993,44 @@
           {
             "reader": "codex",
             "name": "Dodge"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "elemental-insight",
+      "name": "Elemental Insight",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-elemental-insight",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/elemental-insight.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 12308.5,
+        "frame": 738510,
+        "crop": "data/review/spells/mage/elemental-insight.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Elemental Insight"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Elemental Insight"
+          },
+          {
+            "reader": "codex",
+            "name": "Elemental Insight"
           }
         ],
         "reviewed": false
@@ -2967,6 +3367,78 @@
       }
     },
     {
+      "id": "lindenwater-breathing",
+      "name": "Lindenwater Breathing",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-lindenwater-breathing",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/lindenwater-breathing.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 15587.0,
+        "frame": 935220,
+        "crop": "data/review/spells/mage/lindenwater-breathing.png",
+        "panel": "spell-list",
+        "confidence": 0.9,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Lindenwater Breathing"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Lindenwater Breathing"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "read-ley-line",
+      "name": "Read Ley Line",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-read-ley-line",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/read-ley-line.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 12308.5,
+        "frame": 738510,
+        "crop": "data/review/spells/mage/read-ley-line.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Read Ley Line"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Read Ley Line"
+          },
+          {
+            "reader": "codex",
+            "name": "Read Ley Line"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
       "id": "shoot",
       "name": "Shoot",
       "kind": "active",
@@ -3004,20 +3476,234 @@
         ],
         "reviewed": false
       }
+    },
+    {
+      "id": "touch-of-the-grave",
+      "name": "Touch of the Grave",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-touch-of-the-grave",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/touch-of-the-grave.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/undead.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 16771.25,
+        "frame": 1006275,
+        "crop": "data/review/spells/mage/touch-of-the-grave.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Touch of the Grave"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Touch of the Grave"
+          },
+          {
+            "reader": "codex",
+            "name": "Touch of the Grave"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "underwater-breathing",
+      "name": "Underwater Breathing",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-underwater-breathing",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/underwater-breathing.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/undead.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 16771.25,
+        "frame": 1006275,
+        "crop": "data/review/spells/mage/underwater-breathing.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Underwater Breathing"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Underwater Breathing"
+          },
+          {
+            "reader": "codex",
+            "name": "Underwater Breathing"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "walk-on-air",
+      "name": "Walk on Air",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-walk-on-air",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/walk-on-air.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 12389.75,
+        "frame": 743385,
+        "crop": "data/review/spells/mage/walk-on-air.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Walk on Air"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Walk on Air"
+          },
+          {
+            "reader": "codex",
+            "name": "Walk on Air"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "will-of-the-forsaken",
+      "name": "Will of the Forsaken",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-will-of-the-forsaken",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/will-of-the-forsaken.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/undead.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 16771.25,
+        "frame": 1006275,
+        "crop": "data/review/spells/mage/will-of-the-forsaken.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Will of the Forsaken"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Will of the Forsaken"
+          },
+          {
+            "reader": "codex",
+            "name": "Will of the Forsaken"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "wind-blessed",
+      "name": "Wind Blessed",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-wind-blessed",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/mage/wind-blessed.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 12308.5,
+        "frame": 738510,
+        "crop": "data/review/spells/mage/wind-blessed.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Wind Blessed"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Wind Blessed"
+          },
+          {
+            "reader": "codex",
+            "name": "Wind Blessed"
+          }
+        ],
+        "reviewed": false
+      }
     }
   ],
   "coverage": {
-    "pagesSeen": ["Arcane", "Fire", "Frost", "General"],
+    "pagesSeen": ["Arcane", "Fire", "Frost", "General", "Name Matches"],
     "tabsSeen": ["arcane", "fire", "frost", "general"],
     "tabsMissing": [],
-    "states": 12,
-    "entriesRead": 44,
-    "tooltipsRead": 32,
+    "states": 36,
+    "entriesRead": 53,
+    "tooltipsRead": 41,
     "tooltipsUnmatched": 1,
-    "showAllSpellRanks": "not observed",
+    "showAllSpellRanks": "on",
     "observedLevel": 38,
     "windows": [
+      "03:25:08",
+      "03:25:12",
+      "03:25:21",
+      "03:26:29",
+      "03:30:19",
+      "03:36:45",
       "04:17:56",
+      "04:19:06",
+      "04:19:08",
+      "04:19:14",
+      "04:19:18",
+      "04:19:19",
+      "04:19:47",
+      "04:20:20",
+      "04:20:22",
+      "04:21:45",
+      "04:38:18",
+      "04:39:31",
+      "04:39:34",
+      "04:39:38",
+      "04:39:41",
+      "04:39:42",
+      "04:39:43",
+      "04:39:47",
+      "04:47:26",
       "06:08:39",
       "06:08:54",
       "06:08:58",
@@ -3033,11 +3719,12 @@
   },
   "complete": false,
   "notes": [
-    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "The spellbook never names the class; it comes from the window table in pipeline/work/spells/windows.json, derived from a 1 fps keyframe sweep of the whole VOD and hand-labelled from the page headings, the tab icons and the General page's racials. Every label is cross-checked against the page headings.",
     "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
     "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
-    "No page listed one spell at two ranks, so 'Show all spell ranks' was off or the character knew one rank; ranksSeen is the highest rank known, not the full set.",
-    "Page headings the reader could not resolve to a tab, because a hover tooltip stood over them: Blizzard. Their entries are in this file without a tab and say so in source.note.",
-    "Hover tooltips whose header matched no list entry, so they are not in this file: Dodge Proficiency. Most are a half-drawn box caught during the fade-in; the crops are in pipeline/work/spells/crops/."
+    "Page headings the reader could not resolve to a tab, because a hover tooltip stood over them: Blizzard, Conjure Food. Their entries are in this file without a tab and say so in source.note.",
+    "Hover tooltips whose header matched no list entry, so they are not in this file: Dodge Proficiency. Most are a half-drawn box caught during the fade-in; the crops are in pipeline/work/spells/crops/.",
+    "Entries with a source note were read from a clipped row or a search page; check the crop before quoting them.",
+    "No page listed one spell at two ranks, so 'Show all spell ranks' was off or the character knew one rank; ranksSeen is the highest rank known, not the full set."
   ]
 }

@@ -4,16 +4,668 @@
   "class": "rogue",
   "className": "Rogue",
   "dataSource": "video",
-  "generatedAt": "2026-09-14T07:30:45Z",
+  "generatedAt": "2026-09-14T10:35:55Z",
   "observedLevel": 38,
   "tabs": [
     {
       "id": "general",
       "name": "General",
       "order": 0
+    },
+    {
+      "id": "assassination",
+      "name": "Assassination",
+      "order": 1
+    },
+    {
+      "id": "combat",
+      "name": "Combat",
+      "order": 2
+    },
+    {
+      "id": "subtlety",
+      "name": "Subtlety",
+      "order": 3
     }
   ],
   "spells": [
+    {
+      "id": "ambush",
+      "name": "Ambush",
+      "kind": "active",
+      "tab": "assassination",
+      "ranksSeen": [3],
+      "icon": "crop-ambush",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/ambush.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Ambush",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21430.25,
+        "frame": 1285815,
+        "crop": "data/review/spells/rogue/ambush.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Ambush",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Ambush",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Ambush",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "cheap-shot",
+      "name": "Cheap Shot",
+      "kind": "active",
+      "tab": "assassination",
+      "icon": "crop-cheap-shot",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/cheap-shot.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Cheap Shot",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21430.25,
+        "frame": 1285815,
+        "crop": "data/review/spells/rogue/cheap-shot.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Cheap Shot"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cheap Shot"
+          },
+          {
+            "reader": "codex",
+            "name": "Cheap Shot"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "eviscerate",
+      "name": "Eviscerate",
+      "kind": "active",
+      "tab": "assassination",
+      "ranksSeen": [5],
+      "icon": "crop-eviscerate",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/eviscerate.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Eviscerate",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21430.25,
+        "frame": 1285815,
+        "crop": "data/review/spells/rogue/eviscerate.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Eviscerate",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Eviscerate",
+            "rank": 5
+          },
+          {
+            "reader": "codex",
+            "name": "Eviscerate",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "expose-armor",
+      "name": "Expose Armor",
+      "kind": "active",
+      "tab": "assassination",
+      "ranksSeen": [3],
+      "icon": "crop-expose-armor",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/expose-armor.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Expose Armor",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21430.25,
+        "frame": 1285815,
+        "crop": "data/review/spells/rogue/expose-armor.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Expose Armor",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Expose Armor",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Expose Armor",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "garrote",
+      "name": "Garrote",
+      "kind": "active",
+      "tab": "assassination",
+      "ranksSeen": [4],
+      "icon": "crop-garrote",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/garrote.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Garrote",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21430.25,
+        "frame": 1285815,
+        "crop": "data/review/spells/rogue/garrote.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Garrote",
+            "rank": 4
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Garrote",
+            "rank": 4
+          },
+          {
+            "reader": "codex",
+            "name": "Garrote",
+            "rank": 4
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "kidney-shot",
+      "name": "Kidney Shot",
+      "kind": "active",
+      "tab": "assassination",
+      "ranksSeen": [1],
+      "icon": "crop-kidney-shot",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/kidney-shot.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Kidney Shot",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21430.25,
+        "frame": 1285815,
+        "crop": "data/review/spells/rogue/kidney-shot.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Kidney Shot",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Kidney Shot",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Kidney Shot",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "rupture",
+      "name": "Rupture",
+      "kind": "active",
+      "tab": "assassination",
+      "ranksSeen": [3],
+      "icon": "crop-rupture",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/rupture.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Rupture",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21430.25,
+        "frame": 1285815,
+        "crop": "data/review/spells/rogue/rupture.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Rupture",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Rupture",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Rupture",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "slice-and-dice",
+      "name": "Slice and Dice",
+      "kind": "active",
+      "tab": "assassination",
+      "ranksSeen": [1],
+      "icon": "crop-slice-and-dice",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/slice-and-dice.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Slice and Dice",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21430.25,
+        "frame": 1285815,
+        "crop": "data/review/spells/rogue/slice-and-dice.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Slice and Dice",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Slice and Dice",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Slice and Dice",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "backstab",
+      "name": "Backstab",
+      "kind": "active",
+      "tab": "combat",
+      "ranksSeen": [5],
+      "icon": "crop-backstab",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/backstab.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Backstab",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21425.75,
+        "frame": 1285545,
+        "crop": "data/review/spells/rogue/backstab.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Backstab",
+            "rank": 5
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Backstab",
+            "rank": 5
+          },
+          {
+            "reader": "codex",
+            "name": "Backstab",
+            "rank": 5
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "evasion",
+      "name": "Evasion",
+      "kind": "active",
+      "tab": "combat",
+      "icon": "crop-evasion",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/evasion.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Evasion",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21425.75,
+        "frame": 1285545,
+        "crop": "data/review/spells/rogue/evasion.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Evasion"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Evasion"
+          },
+          {
+            "reader": "codex",
+            "name": "Evasion"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "feint",
+      "name": "Feint",
+      "kind": "active",
+      "tab": "combat",
+      "ranksSeen": [2],
+      "icon": "crop-feint",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/feint.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Feint",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21425.75,
+        "frame": 1285545,
+        "crop": "data/review/spells/rogue/feint.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Feint",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Feint",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Feint",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "gouge",
+      "name": "Gouge",
+      "kind": "active",
+      "tab": "combat",
+      "ranksSeen": [3],
+      "icon": "crop-gouge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/gouge.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Gouge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21425.75,
+        "frame": 1285545,
+        "crop": "data/review/spells/rogue/gouge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Gouge",
+            "rank": 3
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Gouge",
+            "rank": 3
+          },
+          {
+            "reader": "codex",
+            "name": "Gouge",
+            "rank": 3
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "kick",
+      "name": "Kick",
+      "kind": "active",
+      "tab": "combat",
+      "ranksSeen": [2],
+      "icon": "crop-kick",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/kick.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Kick",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21425.75,
+        "frame": 1285545,
+        "crop": "data/review/spells/rogue/kick.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Kick",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Kick",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Kick",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "sinister-strike",
+      "name": "Sinister Strike",
+      "kind": "active",
+      "tab": "combat",
+      "ranksSeen": [6],
+      "icon": "crop-sinister-strike",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/sinister-strike.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Sinister Strike",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21425.75,
+        "frame": 1285545,
+        "crop": "data/review/spells/rogue/sinister-strike.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Sinister Strike",
+            "rank": 6
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sinister Strike",
+            "rank": 6
+          },
+          {
+            "reader": "codex",
+            "name": "Sinister Strike",
+            "rank": 6
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "sprint",
+      "name": "Sprint",
+      "kind": "active",
+      "tab": "combat",
+      "ranksSeen": [2],
+      "icon": "crop-sprint",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/sprint.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Sprint",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21425.75,
+        "frame": 1285545,
+        "crop": "data/review/spells/rogue/sprint.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Sprint",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sprint",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Sprint",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
     {
       "id": "armor-proficiency",
       "name": "Armor Proficiency",
@@ -22,6 +674,40 @@
       "icon": "crop-armor-proficiency",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/rogue/armor-proficiency.icon.png",
+      "tooltips": [
+        {
+          "description": "You are proficient in the use of the following armor types: Cloth Leather",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22237.5,
+            "frame": 1334250,
+            "crop": "data/review/spells/rogue/armor-proficiency.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Armor Proficiency",
+                "description": "You are proficient in the use of the following armor types: Cloth Leather"
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Armor Proficiency",
+                "description": "You are proficient in the use of the following armor types: Cloth Leather."
+              },
+              {
+                "reader": "codex",
+                "name": "Armor Proficiency",
+                "description": "You are proficient in the use of the following armor types: Cloth Leather"
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
       "classic": {
         "status": "unknown",
         "classicName": "Armor Proficiency",
@@ -87,6 +773,116 @@
           {
             "reader": "codex",
             "name": "Attack"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "beast-slaying",
+      "name": "Beast Slaying",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-beast-slaying",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/beast-slaying.icon.png",
+      "tooltips": [
+        {
+          "description": "Damage dealt versus Beasts increased by 5%.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21434.75,
+            "frame": 1286085,
+            "crop": "data/review/spells/rogue/beast-slaying.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Beast Slaying",
+                "description": "Damage dealt versus Beasts increased by 5%."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Beast Slaying",
+                "description": "Damage dealt versus Beasts increased by 5%."
+              },
+              {
+                "reader": "codex",
+                "name": "Beast Slaying",
+                "description": "Damage dealt versus Beasts increased by 5%."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/troll.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21435.75,
+        "frame": 1286145,
+        "crop": "data/review/spells/rogue/beast-slaying.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Beast Slaying"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Beast Slaying"
+          },
+          {
+            "reader": "codex",
+            "name": "Beast Slaying"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "berserking",
+      "name": "Berserking",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-berserking",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/berserking.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/troll.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21435.75,
+        "frame": 1286145,
+        "crop": "data/review/spells/rogue/berserking.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Berserking"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Berserking"
+          },
+          {
+            "reader": "codex",
+            "name": "Berserking"
           }
         ],
         "reviewed": false
@@ -216,6 +1012,40 @@
       "icon": "crop-languages",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/rogue/languages.icon.png",
+      "tooltips": [
+        {
+          "description": "You are fluent in the following languages: Common Darnassian",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22233.5,
+            "frame": 1334010,
+            "crop": "data/review/spells/rogue/languages.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Languages",
+                "description": "You are fluent in the following languages: Common Darnassian"
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Languages",
+                "description": "You are fluent in the following languages: Common Darnassian"
+              },
+              {
+                "reader": "codex",
+                "name": "Languages",
+                "description": "Passive You are fluent in the following languages: Common Darnassian"
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on description '' vs 'Passive' - the reading shown is the first reader's"
+          }
+        }
+      ],
       "classic": {
         "status": "unknown",
         "classicName": "Languages",
@@ -255,6 +1085,40 @@
       "icon": "crop-parry",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/rogue/parry.icon.png",
+      "tooltips": [
+        {
+          "description": "Gives a chance to parry enemy melee attacks.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22239.25,
+            "frame": 1334355,
+            "crop": "data/review/spells/rogue/parry.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Parry",
+                "description": "Gives a chance to parry enemy melee attacks."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Parry",
+                "description": "Gives a chance to parry enemy melee attacks."
+              },
+              {
+                "reader": "codex",
+                "name": "Parry",
+                "description": "Gives a chance to parry enemy melee attacks."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
       "classic": {
         "status": "unknown",
         "classicName": "Parry",
@@ -333,6 +1197,40 @@
       "icon": "crop-quickness",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/rogue/quickness.icon.png",
+      "tooltips": [
+        {
+          "description": "Dodge chance increased by 1% and movement speed increased by 2%.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22239.5,
+            "frame": 1334370,
+            "crop": "data/review/spells/rogue/quickness.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Quickness",
+                "description": "Dodge chance increased by 1% and movement speed increased by 2%."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Quickness",
+                "description": "Dodge chance increased by 1% and movement speed increased by 2%."
+              },
+              {
+                "reader": "codex",
+                "name": "Quickness",
+                "description": "Dodge chance increased by 1% and movement speed increased by 2%."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
       "classic": {
         "status": "unknown",
         "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/night-elf.json"
@@ -358,6 +1256,153 @@
           {
             "reader": "codex",
             "name": "Quickness"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "rapid-regeneration",
+      "name": "Rapid Regeneration",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-rapid-regeneration",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/rapid-regeneration.icon.png",
+      "tooltips": [
+        {
+          "castTime": "Channeled",
+          "cooldown": "3 min cooldown",
+          "description": "Regenerate 50% of your maximum Health over 6 sec. Any movement, action, or damage taken will cancel the effect.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21432.25,
+            "frame": 1285935,
+            "crop": "data/review/spells/rogue/rapid-regeneration.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Rapid Regeneration",
+                "description": "Regenerate 50% of your maximum Health over 6 sec. Any movement, action, or damage taken will cancel the effect."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Rapid Regeneration",
+                "description": "Regenerate 50% of your maximum Health over 6 sec. Any movement, action, or damage taken will cancel the effect."
+              },
+              {
+                "reader": "codex",
+                "name": "Rapid Regeneration",
+                "description": "Regenerate 50% of your maximum Health over 6 sec. Any movement, action, or damage taken will cancel the effect."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on footer 'bars' vs 'bars.' - the reading shown is the first reader's"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/troll.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21435.75,
+        "frame": 1286145,
+        "crop": "data/review/spells/rogue/rapid-regeneration.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Rapid Regeneration"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Rapid Regeneration"
+          },
+          {
+            "reader": "codex",
+            "name": "Rapid Regeneration"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "regeneration",
+      "name": "Regeneration",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-regeneration",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/regeneration.icon.png",
+      "tooltips": [
+        {
+          "description": "Health regeneration rate increased by 10%. In addition, 10% of total Health regeneration will continue during combat.",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21434.0,
+            "frame": 1286040,
+            "crop": "data/review/spells/rogue/regeneration.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Regeneration",
+                "description": "Health regeneration rate increased by 10%. In addition, 10% of total Health regeneration will continue during combat."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Regeneration",
+                "description": "Health regeneration rate increased by 10%. In addition, 10% of total Health regeneration will continue during combat."
+              },
+              {
+                "reader": "codex",
+                "name": "Regeneration",
+                "description": "Health regeneration rate increased by 10%. In addition, 10% of total Health regeneration will continue during combat."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/troll.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21435.75,
+        "frame": 1286145,
+        "crop": "data/review/spells/rogue/regeneration.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Regeneration"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Regeneration"
+          },
+          {
+            "reader": "codex",
+            "name": "Regeneration"
           }
         ],
         "reviewed": false
@@ -405,6 +1450,41 @@
             ],
             "reviewed": false,
             "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on description 'min' vs 'min.'; footer 'bars' vs '' - the reading shown is the first reader's; the shape-aware reader merge corrected 1 punct, 1 word"
+          }
+        },
+        {
+          "castTime": "Instant",
+          "cooldown": "10 sec cooldown",
+          "description": "Activate to slip into the shadows, reducing the chance for enemies to detect your presence. Lasts until cancelled or upon moving. Night Elf Rogues and Druids with Shadowmeld gain increased Stealth as if they were 1 level higher. If activated in combat, enemies are discouraged from attacking you while active, but cooldown is increased to 2 min.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 22242.0,
+            "frame": 1334520,
+            "crop": "data/review/spells/rogue/shadowmeld.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Shadowmeld",
+                "description": "Activate to slip into the shadows. reducing the chance for enemies to detect your presence. Lasts until cancelled or upon moving. Night Elf Rogues and Druids with Shadowmeld gain increased Stealth as if they were 1 level higher. If activated in combat, enemies are discouraged from attacking you while active, but cooldown is increased to 2 min."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Shadowmeld",
+                "description": "Activate to slip into the shadows. reducing the chance for enemies to detect your presence. Lasts until cancelled or upon moving. Night Elf Rogues and Druids with Shadowmeld gain increased Stealth as if they were 1 level higher. If activated in combat, enemies are discouraged from attacking you while active, but cooldown is increased to 2 min."
+              },
+              {
+                "reader": "codex",
+                "name": "Shadowmeld",
+                "description": "Activate to slip into the shadows, reducing the chance for enemies to detect your presence. Lasts until cancelled or upon moving. Night Elf Rogues and Druids with Shadowmeld gain increased Stealth as if they were 1 level higher. If activated in combat, enemies are discouraged from attacking you while active, but cooldown is increased to 2 min."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on footer 'bars' vs 'bars.' - the reading shown is the first reader's; the shape-aware reader merge corrected 1 punct"
           }
         }
       ],
@@ -566,6 +1646,45 @@
       "icon": "crop-throw",
       "iconSource": "crop",
       "iconCrop": "data/review/spells/rogue/throw.icon.png",
+      "tooltips": [
+        {
+          "range": "8-30 yd range",
+          "castTime": "0.5 sec cast",
+          "cooldown": "1.7 sec cooldown",
+          "requires": ["Requires Thrown"],
+          "description": "Hurl a thrown weapon at the target.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21432.75,
+            "frame": 1285965,
+            "crop": "data/review/spells/rogue/throw.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Throw",
+                "description": "Hurl a thrown weapon at the target."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Throw",
+                "description": "Hurl a thrown weapon at the target."
+              },
+              {
+                "reader": "codex",
+                "name": "Throw",
+                "description": "Hurl a thrown weapon at the target."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
       "classic": {
         "status": "unknown",
         "classicName": "Throw",
@@ -634,23 +1753,358 @@
         ],
         "reviewed": false
       }
+    },
+    {
+      "id": "blind",
+      "name": "Blind",
+      "kind": "active",
+      "tab": "subtlety",
+      "icon": "crop-blind",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/blind.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Blind",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21428.75,
+        "frame": 1285725,
+        "crop": "data/review/spells/rogue/blind.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Blind"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Blind"
+          },
+          {
+            "reader": "codex",
+            "name": "Blind"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "detect-traps",
+      "name": "Detect Traps",
+      "kind": "passive",
+      "tab": "subtlety",
+      "icon": "crop-detect-traps",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/detect-traps.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Detect Traps",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21428.75,
+        "frame": 1285725,
+        "crop": "data/review/spells/rogue/detect-traps.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Detect Traps"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Detect Traps"
+          },
+          {
+            "reader": "codex",
+            "name": "Detect Traps"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "disarm-trap",
+      "name": "Disarm Trap",
+      "kind": "active",
+      "tab": "subtlety",
+      "icon": "crop-disarm-trap",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/disarm-trap.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Disarm Trap",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21428.75,
+        "frame": 1285725,
+        "crop": "data/review/spells/rogue/disarm-trap.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Disarm Trap"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Disarm Trap"
+          },
+          {
+            "reader": "codex",
+            "name": "Disarm Trap"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "distract",
+      "name": "Distract",
+      "kind": "active",
+      "tab": "subtlety",
+      "icon": "crop-distract",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/distract.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Distract",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21428.75,
+        "frame": 1285725,
+        "crop": "data/review/spells/rogue/distract.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Distract"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Distract"
+          },
+          {
+            "reader": "codex",
+            "name": "Distract"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "pick-pocket",
+      "name": "Pick Pocket",
+      "kind": "active",
+      "tab": "subtlety",
+      "icon": "crop-pick-pocket",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/pick-pocket.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Pick Pocket",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21428.75,
+        "frame": 1285725,
+        "crop": "data/review/spells/rogue/pick-pocket.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Pick Pocket"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Pick Pocket"
+          },
+          {
+            "reader": "codex",
+            "name": "Pick Pocket"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "sap",
+      "name": "Sap",
+      "kind": "active",
+      "tab": "subtlety",
+      "ranksSeen": [2],
+      "icon": "crop-sap",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/sap.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Sap",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21428.75,
+        "frame": 1285725,
+        "crop": "data/review/spells/rogue/sap.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Sap",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Sap",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Sap",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "stealth",
+      "name": "Stealth",
+      "kind": "active",
+      "tab": "subtlety",
+      "ranksSeen": [2],
+      "icon": "crop-stealth",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/stealth.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Stealth",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21428.75,
+        "frame": 1285725,
+        "crop": "data/review/spells/rogue/stealth.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Stealth",
+            "rank": 2
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Stealth",
+            "rank": 2
+          },
+          {
+            "reader": "codex",
+            "name": "Stealth",
+            "rank": 2
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "vanish",
+      "name": "Vanish",
+      "kind": "active",
+      "tab": "subtlety",
+      "ranksSeen": [1],
+      "icon": "crop-vanish",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/rogue/vanish.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Vanish",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21428.75,
+        "frame": 1285725,
+        "crop": "data/review/spells/rogue/vanish.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Vanish",
+            "rank": 1
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Vanish",
+            "rank": 1
+          },
+          {
+            "reader": "codex",
+            "name": "Vanish",
+            "rank": 1
+          }
+        ],
+        "reviewed": false
+      }
     }
   ],
   "coverage": {
-    "pagesSeen": ["General"],
-    "tabsSeen": ["general"],
-    "tabsMissing": ["assassination", "combat", "subtlety"],
-    "states": 2,
-    "entriesRead": 15,
-    "tooltipsRead": 1,
+    "pagesSeen": ["Assassination", "Combat", "General", "Subtlety"],
+    "tabsSeen": ["assassination", "combat", "general", "subtlety"],
+    "tabsMissing": [],
+    "states": 10,
+    "entriesRead": 42,
+    "tooltipsRead": 10,
     "tooltipsUnmatched": 1,
     "showAllSpellRanks": "not observed",
     "observedLevel": 38,
-    "windows": ["06:13:45", "06:14:23"]
+    "windows": [
+      "05:57:05",
+      "05:57:08",
+      "05:57:10",
+      "05:57:15",
+      "05:57:24",
+      "06:10:22",
+      "06:10:32",
+      "06:10:35",
+      "06:13:45",
+      "06:14:23"
+    ]
   },
   "complete": false,
   "notes": [
-    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "The spellbook never names the class; it comes from the window table in pipeline/work/spells/windows.json, derived from a 1 fps keyframe sweep of the whole VOD and hand-labelled from the page headings, the tab icons and the General page's racials. Every label is cross-checked against the page headings.",
     "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
     "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
     "No page listed one spell at two ranks, so 'Show all spell ranks' was off or the character knew one rank; ranksSeen is the highest rank known, not the full set.",

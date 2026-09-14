@@ -4,23 +4,28 @@
   "class": "druid",
   "className": "Druid",
   "dataSource": "video",
-  "generatedAt": "2026-09-14T07:30:45Z",
+  "generatedAt": "2026-09-14T10:35:55Z",
   "observedLevel": 38,
   "tabs": [
     {
+      "id": "general",
+      "name": "General",
+      "order": 0
+    },
+    {
       "id": "balance",
       "name": "Balance",
-      "order": 0
+      "order": 1
     },
     {
       "id": "feral-combat",
       "name": "Feral Combat",
-      "order": 1
+      "order": 2
     },
     {
       "id": "restoration",
       "name": "Restoration",
-      "order": 2
+      "order": 3
     }
   ],
   "spells": [
@@ -2082,6 +2087,381 @@
       }
     },
     {
+      "id": "armor-proficiency",
+      "name": "Armor Proficiency",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-armor-proficiency",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/druid/armor-proficiency.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Armor Proficiency",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21913.25,
+        "frame": 1314795,
+        "crop": "data/review/spells/druid/armor-proficiency.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Armor Proficiency"
+          },
+          {
+            "reader": "codex",
+            "name": "Armor Proficiency"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "attack",
+      "name": "Attack",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-attack",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/druid/attack.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Attack",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21909.0,
+        "frame": 1314540,
+        "crop": "data/review/spells/druid/attack.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Attack"
+          },
+          {
+            "reader": "codex",
+            "name": "Attack"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "dodge",
+      "name": "Dodge",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-dodge",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/druid/dodge.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Dodge",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21913.25,
+        "frame": 1314795,
+        "crop": "data/review/spells/druid/dodge.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Dodge"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Dodge"
+          },
+          {
+            "reader": "codex",
+            "name": "Dodge"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "elemental-insight",
+      "name": "Elemental Insight",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-elemental-insight",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/druid/elemental-insight.icon.png",
+      "tooltips": [
+        {
+          "description": "Damage dealt versus Elementals increased by 5%",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21917.25,
+            "frame": 1315035,
+            "crop": "data/review/spells/druid/elemental-insight.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 0.7,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Elemental Insight",
+                "description": "Damage dealt versus Elementals Increased by 5%."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Elemental Insight",
+                "description": "Damage dealt versus Elementals Increased by 5%."
+              },
+              {
+                "reader": "codex",
+                "name": "Elemental Insight",
+                "description": "Damage dealt versus Elementals Increased by 5%"
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown; the two readers disagree on description '5%.' vs '5%' - the reading shown is the first reader's; the shape-aware reader merge corrected 1 case, 1 word"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21913.25,
+        "frame": 1314795,
+        "crop": "data/review/spells/druid/elemental-insight.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Elemental Insight"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Elemental Insight"
+          },
+          {
+            "reader": "codex",
+            "name": "Elemental Insight"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "languages",
+      "name": "Languages",
+      "kind": "passive",
+      "tab": "general",
+      "icon": "crop-languages",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/druid/languages.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Languages",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21913.25,
+        "frame": 1314795,
+        "crop": "data/review/spells/druid/languages.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Languages"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Languages"
+          },
+          {
+            "reader": "codex",
+            "name": "Languages"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "skysight",
+      "name": "Skysight",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-skysight",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/druid/skysight.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21913.25,
+        "frame": 1314795,
+        "crop": "data/review/spells/druid/skysight.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Skysight"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Skysight"
+          },
+          {
+            "reader": "codex",
+            "name": "Skysight"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "walk-on-air",
+      "name": "Walk on Air",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-walk-on-air",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/druid/walk-on-air.icon.png",
+      "tooltips": [
+        {
+          "castTime": "Instant",
+          "cooldown": "2 min cooldown",
+          "description": "Glide downward through the air for 10 sec while controlling your direction of travel.",
+          "footer": "You haven't added this to your action bars",
+          "source": {
+            "kind": "video",
+            "video": "DxtVEhjyROU",
+            "t": 21909.25,
+            "frame": 1314555,
+            "crop": "data/review/spells/druid/walk-on-air.tooltip.png",
+            "panel": "tooltip",
+            "confidence": 1.0,
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+            "readings": [
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+                "name": "Walk on Air",
+                "description": "Glide downward through the air for 10 sec while controlling your direction of travel."
+              },
+              {
+                "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+                "name": "Walk on Air",
+                "description": "Glide downward through the air for 10 sec while controlling your direction of travel."
+              },
+              {
+                "reader": "codex",
+                "name": "Walk on Air",
+                "description": "Glide downward through the air for 10 sec while controlling your direction of travel."
+              }
+            ],
+            "reviewed": false,
+            "note": "hover tooltip, anchored to a list row, but that page state was not one of the pages read, so the rank of the row is unknown"
+          }
+        }
+      ],
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21913.25,
+        "frame": 1314795,
+        "crop": "data/review/spells/druid/walk-on-air.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Walk on Air"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Walk on Air"
+          },
+          {
+            "reader": "codex",
+            "name": "Walk on Air"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "wind-blessed",
+      "name": "Wind Blessed",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-wind-blessed",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/druid/wind-blessed.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/skyborne.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 21913.25,
+        "frame": 1314795,
+        "crop": "data/review/spells/druid/wind-blessed.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Wind Blessed"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Wind Blessed"
+          },
+          {
+            "reader": "codex",
+            "name": "Wind Blessed"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
       "id": "abolish-poison",
       "name": "Abolish Poison",
       "kind": "active",
@@ -2723,17 +3103,18 @@
     }
   ],
   "coverage": {
-    "pagesSeen": ["Balance", "Feral Combat", "Restoration"],
-    "tabsSeen": ["balance", "feral-combat", "restoration"],
-    "tabsMissing": ["general"],
-    "states": 15,
-    "entriesRead": 40,
-    "tooltipsRead": 27,
-    "tooltipsUnmatched": 0,
+    "pagesSeen": ["Balance", "Feral Combat", "General", "Restoration"],
+    "tabsSeen": ["balance", "feral-combat", "general", "restoration"],
+    "tabsMissing": [],
+    "states": 18,
+    "entriesRead": 48,
+    "tooltipsRead": 29,
+    "tooltipsUnmatched": 2,
     "showAllSpellRanks": "not observed",
     "observedLevel": 38,
     "windows": [
       "05:42:34",
+      "05:42:43",
       "05:48:42",
       "05:48:43",
       "05:48:49",
@@ -2746,16 +3127,19 @@
       "05:49:05",
       "05:49:06",
       "05:49:11",
-      "05:49:16"
+      "05:49:16",
+      "06:05:09",
+      "06:05:13"
     ]
   },
   "complete": false,
   "notes": [
-    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "The spellbook never names the class; it comes from the window table in pipeline/work/spells/windows.json, derived from a 1 fps keyframe sweep of the whole VOD and hand-labelled from the page headings, the tab icons and the General page's racials. Every label is cross-checked against the page headings.",
     "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
     "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
     "No page listed one spell at two ranks, so 'Show all spell ranks' was off or the character knew one rank; ranksSeen is the highest rank known, not the full set.",
     "Page headings the reader could not resolve to a tab, because a hover tooltip stood over them: Bal, Tiger's Fury. Their entries are in this file without a tab and say so in source.note.",
+    "Hover tooltips whose header matched no list entry, so they are not in this file: Dodge Proficiency, Plainsrunning. Most are a half-drawn box caught during the fade-in; the crops are in pipeline/work/spells/crops/.",
     "Entries with a source note were read from a clipped row or a search page; check the crop before quoting them."
   ]
 }

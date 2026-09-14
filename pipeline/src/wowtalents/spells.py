@@ -837,6 +837,24 @@ def merge_tooltip(readings: Sequence[dict]) -> dict:
             "confidence": merged_confidence(readings, disputed, shapes)}
 
 
+#: Longest word the mid-sentence capital-I rule may lowercase inside a *spell name*.
+#: The rule exists for the two-letter ``In``/``Its`` a reader mints inside a sentence; a
+#: name is title case from end to end, so anything longer is a word of the name itself.
+#: Without this, the Skyborne racial ``Elemental Insight`` was published as
+#: ``Elemental insight`` (found by the 2026-09-14 window sweep).
+NAME_CAPITAL_I_MAX = 3
+
+
+def _normalise_name_capital_i(name: str) -> tuple[str, list[str]]:
+    """``normalise_capital_i`` restricted to the short function words it was written for."""
+    fixed, lowered = _merge.normalise_capital_i(name, min_tail=1)
+    keep = [w for w in lowered if len(w) > NAME_CAPITAL_I_MAX]
+    if keep:
+        fixed, lowered = _merge.normalise_capital_i(
+            name, allowed=set(_merge.CAPITAL_I_ALLOWED) | set(keep), min_tail=1)
+    return fixed, lowered
+
+
 def merge_entry(readings: Sequence[dict]) -> dict:
     """Shape-aware merge of one list row's readings (name only; rank and kind are not text)."""
     readings = [r for r in readings if isinstance(r, dict)]
@@ -855,7 +873,7 @@ def merge_entry(readings: Sequence[dict]) -> dict:
             # a real name disagreement is never merged away: it is how "Rummel Whirlwind"
             # and "Evocation Dampen Magic" were minted in the first place
             disputed.append(f"name {name!r} vs {auth_name!r}")
-    name, lowered = _merge.normalise_capital_i(name, min_tail=1)
+    name, lowered = _normalise_name_capital_i(name)
     if lowered:
         shapes["case"] = shapes.get("case", 0) + len(lowered)
     if auth is not None:

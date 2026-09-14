@@ -21,10 +21,13 @@ Three commands, the shape stage 12 established:
            and writes the review crops, ``data/extracted/spells.json`` and
            ``data/extracted/spells.md``.
 
-The class is not written anywhere in the spellbook, so it comes from the
-hand-labelled :data:`WINDOWS` table (the demo character of that stream minute);
-``read`` cross-checks every label against the page headings, which are the
-class's talent tree names.
+The windows themselves come from ``work/spells/windows.json``, which
+``scripts/spell_windows.py`` derives from the whole-VOD keyframe sweep (50
+spellbook runs, none missed); :data:`WINDOWS`, the hand-built table the stage
+shipped with, is the fallback when that file is absent. The class is not written
+anywhere in the spellbook, so it comes from the window table either way (the
+demo character of that stream minute); ``read`` cross-checks every label against
+the page headings, which are the class's talent tree names.
 
 Run from ``pipeline/`` with llama-server up (``scripts/llama-server.sh``)::
 
@@ -69,6 +72,7 @@ REPO = PIPELINE.parent
 WORK = PIPELINE / "work"
 SPELLS_WORK = WORK / "spells"
 STATES_JSON = SPELLS_WORK / "states.json"
+WINDOWS_JSON = SPELLS_WORK / "windows.json"
 READINGS_JSON = SPELLS_WORK / "readings.json"
 DATA = REPO / "data"
 EXTRACTED = DATA / "extracted"
@@ -79,12 +83,17 @@ PRIOR = DATA / "prior" / "classic-era" / "spells-baseline.json"
 VIDEO_ID = RD.VIDEO_ID
 FPS = RD.FPS
 
-#: Every stream range whose stage-0 probe minute matches the spellbook title bar
-#: (normalised cross-correlation >= 0.85 over all 541 probe frames), padded by
-#: 30 s either side and merged. ``cls`` is the demo character of that minute,
-#: labelled by hand from the page headings and the General page's racials; it is
-#: the only thing the spellbook itself never shows. ``read`` re-checks it against
-#: the tree names in data/talents/<class>.json and complains on a mismatch.
+#: **Fallback only.** Every stream range whose stage-0 probe minute matches the
+#: spellbook title bar (normalised cross-correlation >= 0.85 over all 541 probe
+#: frames), padded by 30 s either side and merged. A spellbook open for less than
+#: a probe step is invisible to it: the 2026-09-14 keyframe sweep found 50 runs in
+#: the VOD and this table covers 29 of them, missing among others the warlock
+#: Demonology page at 06:21 and mage Arcane page 2/2 at 04:39. ``scan`` prefers
+#: :data:`WINDOWS_JSON` and only falls back here when that file is missing.
+#: ``cls`` is the demo character of that minute, labelled by hand from the page
+#: headings and the General page's racials; it is the only thing the spellbook
+#: itself never shows. ``read`` re-checks it against the tree names in
+#: data/talents/<class>.json and complains on a mismatch.
 WINDOWS: list[tuple[int, int, str, str]] = [
     (14340, 14520, "paladin", "Horde paladin in Durotar: Retribution, Holy, and a 'seal of fury' search"),
     (15270, 15340, "mage", "Undead mage: General page"),
@@ -103,6 +112,42 @@ WINDOWS: list[tuple[int, int, str, str]] = [
     (22620, 22720, "warrior", "warrior: 'thunder clap' search"),
     (22760, 22840, "warrior", "warrior: 'whirl' search, window dragged to the right"),
 ]
+
+def load_windows(path: Path) -> list[tuple[int, int, str, str]]:
+    """The window table in ``path``, as ``(t0, t1, class, note)`` tuples.
+
+    Accepts both shapes a windows file can carry: the object
+    ``scripts/spell_windows.py`` writes (``{"windows": [{"t0", "t1", "class",
+    "note"}, ...]}``) and a bare list of 4-element arrays. Raises ``ValueError``
+    on anything else rather than silently scanning the wrong ranges.
+    """
+    doc = json.loads(path.read_text(encoding="utf-8"))
+    rows = doc.get("windows") if isinstance(doc, dict) else doc
+    if not isinstance(rows, list) or not rows:
+        raise ValueError(f"{path}: no windows in the file")
+    out: list[tuple[int, int, str, str]] = []
+    for i, row in enumerate(rows):
+        if isinstance(row, dict):
+            t0, t1 = row.get("t0"), row.get("t1")
+            cls, note = row.get("class") or "unknown", row.get("note") or ""
+        elif isinstance(row, (list, tuple)) and len(row) >= 3:
+            t0, t1, cls = row[0], row[1], row[2]
+            note = row[3] if len(row) > 3 else ""
+        else:
+            raise ValueError(f"{path}: window {i} is neither an object nor a [t0, t1, class, note] row")
+        if not isinstance(t0, (int, float)) or not isinstance(t1, (int, float)) or t1 <= t0:
+            raise ValueError(f"{path}: window {i} has no usable range ({t0!r}, {t1!r})")
+        out.append((int(t0), int(t1), str(cls), str(note)))
+    out.sort()
+    return out
+
+
+def windows_from(path: Path | None) -> tuple[list[tuple[int, int, str, str]], str]:
+    """``(windows, source)``: the file when it exists, else the hand-built fallback."""
+    if path is not None and path.is_file():
+        return load_windows(path), str(path.name)
+    return list(WINDOWS), "WINDOWS (hand-built fallback)"
+
 
 #: Review crops are evidence, not artwork: maximum lossless compression.
 PNG = [cv2.IMWRITE_PNG_COMPRESSION, 9]
@@ -245,6 +290,8 @@ def _find_tooltips(frames: list[np.ndarray], bg: np.ndarray, local: SP.Window, r
 def scan(
     fps: int = typer.Option(4, help="frames per second analysed inside each window (must divide 60)"),
     window: list[str] = typer.Option(None, help="stream-time range HH:MM:SS-HH:MM:SS (repeatable); default: all"),
+    windows: Path = typer.Option(WINDOWS_JSON, help="window table to scan; falls back to the built-in "
+                                                    "WINDOWS list when the file does not exist"),
     mkv: Path = typer.Option(MK.MKV),
     offset: float = typer.Option(MK.OFFSET, help="file time minus stream time"),
     out: Path = typer.Option(SPELLS_WORK),
@@ -260,15 +307,17 @@ def scan(
     if not mkv.is_file():
         typer.echo(f"no mkv at {mkv}", err=True)
         raise typer.Exit(code=2)
+    table, source = windows_from(windows)
+    typer.echo(f"{len(table)} windows from {source}")
     wins: list[tuple[int, int, str, str]]
     if window:
         wins = []
         for spec in window:
             a, b = SK.parse_window(spec)
-            match = next((w for w in WINDOWS if w[0] <= a < w[1]), None)
+            match = next((w for w in table if w[0] <= a < w[1]), None)
             wins.append((a, b, match[2] if match else "unknown", match[3] if match else ""))
     else:
-        wins = WINDOWS
+        wins = table
     crops = out / "crops"
     crops.mkdir(parents=True, exist_ok=True)
     template = SP.load_template()
@@ -310,7 +359,7 @@ def scan(
         typer.echo(f"  {len(states) - before} states, {sum(len(s['tooltips']) for s in states[before:])} "
                    f"tooltips ({time.time() - wall:.0f}s)")
 
-    doc = {"generatedAt": SK.now(), "video": VIDEO_ID, "fps": fps,
+    doc = {"generatedAt": SK.now(), "video": VIDEO_ID, "fps": fps, "windowsFrom": source,
            "windows": [[a, b, c, n] for a, b, c, n in wins],
            "frames_seen": seen, "spellbook_frames": open_frames, "states": states}
     write_json_atomic(out / "states.json", doc)
@@ -876,6 +925,90 @@ def _classic_for(prior: dict, cls: str, name: str, talents: dict | None = None,
                     "tooltip side by side. " + UNVERIFIED}
 
 
+# --------------------------------------------------------------------------- additive merge
+
+
+#: Characters of a coverage note that decide whether a published note and a freshly
+#: generated one are about the same thing.
+NOTE_HEAD = 48
+
+
+def _tip_key(tip: dict) -> str:
+    """What makes two published tooltips the same tooltip: their description text."""
+    return clean_text(tip.get("description") or "")
+
+
+def _merge_spell(old: dict, fresh: dict | None) -> dict:
+    """One published spell, brought forward. Everything the old record has, it keeps.
+
+    The old record owns its id, name, tab, icon and ``source`` (which names the review
+    crop a reviewer has already looked at), so a re-run cannot renumber a record or
+    re-point it at a crop that no longer exists. A ``reviewed`` record is returned
+    untouched, full stop; any other one may gain ranks, a tab it did not have and
+    tooltips whose text is new.
+    """
+    out = dict(old)
+    if fresh is None or (old.get("source") or {}).get("reviewed"):
+        return out
+    ranks = sorted(set(old.get("ranksSeen") or []) | set(fresh.get("ranksSeen") or []))
+    if ranks:
+        out["ranksSeen"] = ranks
+    if not out.get("tab") and fresh.get("tab"):
+        out["tab"] = fresh["tab"]
+    seen = {_tip_key(t) for t in old.get("tooltips") or []}
+    added = [t for t in (fresh.get("tooltips") or []) if _tip_key(t) and _tip_key(t) not in seen]
+    if added:
+        out["tooltips"] = (old.get("tooltips") or []) + added
+    return out
+
+
+def merge_class_doc(cls: str, old: dict, fresh: dict) -> dict:
+    """Merge a freshly built class document *into* the published one, additively.
+
+    A wider window table makes ``build`` see pages it has never seen, but it must not
+    make it forget the ones it has: a state id is a timestamp, so a scan at a different
+    fps or over slightly different ranges renames states, and a wholesale rewrite would
+    then drop every record and crop that came from the old ids. The merge is therefore
+    union-only -- new tabs, new entries, new tooltips, wider coverage -- and never
+    rewrites, reorders or removes what is already published (D-3's "a class file may
+    never shrink", now enforced by construction).
+    """
+    out = dict(fresh)
+    tabs: dict[str, dict] = {}
+    for t in (old.get("tabs") or []) + (fresh.get("tabs") or []):
+        tabs.setdefault(t["id"], dict(t))
+    ordered = sorted(tabs.values(), key=lambda t: (t["id"] != "general", t["id"]))
+    for i, t in enumerate(ordered):
+        t["order"] = i
+    out["tabs"] = ordered
+
+    by_id = {s["id"]: s for s in fresh.get("spells") or []}
+    old_ids = {s["id"] for s in old.get("spells") or []}
+    spells = [_merge_spell(s, by_id.get(s["id"])) for s in old.get("spells") or []]
+    spells += [s for s in (fresh.get("spells") or []) if s["id"] not in old_ids]
+    out["spells"] = spells
+
+    cov_old, cov = old.get("coverage") or {}, dict(fresh.get("coverage") or {})
+    cov["pagesSeen"] = sorted(set(cov_old.get("pagesSeen") or []) | set(cov.get("pagesSeen") or []))
+    cov["tabsSeen"] = sorted(tabs)
+    cov["tabsMissing"] = sorted(_missing_tabs(cls, tabs))
+    cov["windows"] = sorted(set(cov_old.get("windows") or []) | set(cov.get("windows") or []))
+    cov["states"] = max(int(cov_old.get("states") or 0), int(cov.get("states") or 0))
+    cov["entriesRead"] = len(spells)
+    cov["tooltipsRead"] = sum(len(s.get("tooltips") or []) for s in spells)
+    if "on" in {cov_old.get("showAllSpellRanks"), cov.get("showAllSpellRanks")}:
+        cov["showAllSpellRanks"] = "on"
+    out["coverage"] = cov
+
+    # notes are prose, so an old note is kept only when the new run has nothing on the same
+    # subject; matching on the opening clause is what tells "superseded" from "additional"
+    heads = {n[:NOTE_HEAD]: True for n in fresh.get("notes") or []}
+    notes = list(fresh.get("notes") or [])
+    notes += [n for n in (old.get("notes") or []) if n[:NOTE_HEAD] not in heads and n not in notes]
+    out["notes"] = notes
+    return out
+
+
 @app.command()
 def build(
     readings: Path = typer.Option(READINGS_JSON),
@@ -884,6 +1017,8 @@ def build(
     review: Path = typer.Option(REVIEW),
     min_confidence: float = typer.Option(MIN_PUBLISHABLE,
                                          help="drop list rows below this merged confidence"),
+    merge: bool = typer.Option(True, "--merge/--no-merge",
+                               help="merge into the published class files instead of replacing them"),
     dry_run: bool = typer.Option(False, "--dry-run", help="report only; write no file and delete no crop"),
 ):
     """Merge the page states into data/spells/<class>.json plus the review crops and inventory.
@@ -982,10 +1117,26 @@ def build(
             # validator and CI, and _prune_crops would then delete that class's crops (K-1)
             typer.echo(f"  {cls}: no publishable spells; the existing file is left alone", err=True)
             continue
+        published = out_dir / f"{cls}.json"
+        before = {"spells": 0, "tooltips": 0, "tabs": 0}
+        if published.is_file():
+            old_doc = json.loads(published.read_text())
+            before = {"spells": len(old_doc.get("spells") or []),
+                      "tooltips": sum(len(s.get("tooltips") or []) for s in old_doc.get("spells") or []),
+                      "tabs": len(old_doc.get("tabs") or [])}
+            if merge:
+                doc = merge_class_doc(cls, old_doc, doc)
+            elif len(doc["spells"]) < before["spells"]:
+                # D-3: a shorter file is a regression, not a result. --no-merge keeps the guard.
+                typer.echo(f"  {cls}: {len(doc['spells'])} spells against {before['spells']} on disk; "
+                           f"the existing file is left alone", err=True)
+                continue
         docs[cls] = doc
         counts[cls] = {"spells": len(doc["spells"]),
                        "tooltips": sum(len(s.get("tooltips") or []) for s in doc["spells"]),
-                       "pages": len(doc["tabs"])}
+                       "pages": len(doc["tabs"]),
+                       "spellsBefore": before["spells"], "tooltipsBefore": before["tooltips"],
+                       "tabsBefore": before["tabs"]}
     if not counts:
         typer.echo("no class produced a publishable spell list; nothing written", err=True)
         raise typer.Exit(code=1)
@@ -1004,7 +1155,9 @@ def build(
     if dry_run:
         typer.echo("dry run: no file written, no crop deleted")
         for cls, n in sorted(counts.items()):
-            typer.echo(f"  {cls:10} {n['spells']:3} spells, {n['tooltips']} tooltips, {n['pages']} pages")
+            typer.echo(f"  {cls:10} {n['spellsBefore']:3} -> {n['spells']:3} spells, "
+                       f"{n['tooltipsBefore']:3} -> {n['tooltips']:3} tooltips, "
+                       f"{n['tabsBefore']} -> {n['pages']} tabs")
         return
 
     for cls, doc in docs.items():
@@ -1017,9 +1170,12 @@ def build(
     write_text_atomic(EXTRACTED / "spells.md", _inventory_md(out_dir, sdoc, rdoc))
     for g in gone:
         typer.echo(f"  removed unreferenced crop {g}")
-    typer.echo(f"wrote {len(counts)} class files, data/extracted/spells.json and data/extracted/spells.md")
+    typer.echo(f"wrote {len(counts)} class files ({'merged into' if merge else 'replacing'} the published "
+               f"ones), data/extracted/spells.json and data/extracted/spells.md")
     for cls, n in sorted(counts.items()):
-        typer.echo(f"  {cls:10} {n['spells']:3} spells, {n['tooltips']} tooltips, {n['pages']} pages")
+        typer.echo(f"  {cls:10} {n['spellsBefore']:3} -> {n['spells']:3} spells, "
+                   f"{n['tooltipsBefore']:3} -> {n['tooltips']:3} tooltips, "
+                   f"{n['tabsBefore']} -> {n['pages']} tabs")
 
 
 def _rank_at_cell(state: dict | None, cell: list | None) -> int | None:
@@ -1182,8 +1338,10 @@ def _class_doc(cls: str, unit: dict, prior: dict, reader: str, review: Path,
         "windows": sorted({SK.hms(st["t"]) for st in unit["states"]}),
     }
     notes = [
-        "The spellbook never names the class; it comes from the hand-labelled window table in "
-        "pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+        "The spellbook never names the class; it comes from the window table in "
+        "pipeline/work/spells/windows.json, derived from a 1 fps keyframe sweep of the whole VOD "
+        "and hand-labelled from the page headings, the tab icons and the General page's racials. "
+        "Every label is cross-checked against the page headings.",
         f"Lists are bounded by the demo character's level ({OBSERVED_LEVEL}) and by which tabs were "
         "opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, "
         "not missing from the game.",

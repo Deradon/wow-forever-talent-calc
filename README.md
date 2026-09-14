@@ -25,8 +25,8 @@ share a build as a link, and see what changed against Classic Era.
   different rank count, 127 reworded and 108 gone, with an inline word diff.
 - **Races** — 37 racial traits for 9 races (both Skyborne variants) and the
   race/class matrix, with the 16 combinations Classic Era never allowed.
-- **The spellbook as the stream showed it** — 323 entries and 112 full
-  tooltips over eight classes, with the pages nobody opened named as such.
+- **The spellbook as the stream showed it** — 410 entries and 152 full
+  tooltips over eight classes, every tab of all eight opened at least once.
 - **Keyboard and touch**: arrow keys across the grid, shift-click to max,
   ctrl-click to clear, undo/redo, tap-to-open tooltips with +/− controls.
 

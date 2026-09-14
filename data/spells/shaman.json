@@ -4,7 +4,7 @@
   "class": "shaman",
   "className": "Shaman",
   "dataSource": "video",
-  "generatedAt": "2026-09-14T07:30:45Z",
+  "generatedAt": "2026-09-14T10:35:55Z",
   "observedLevel": 38,
   "tabs": [
     {
@@ -2691,6 +2691,45 @@
       }
     },
     {
+      "id": "reincarnation",
+      "name": "Reincarnation",
+      "kind": "passive",
+      "tab": "restoration",
+      "icon": "crop-reincarnation",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/shaman/reincarnation.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Reincarnation",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 20052.5,
+        "frame": 1203150,
+        "crop": "data/review/spells/shaman/reincarnation.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Reincarnation"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Reincarnation"
+          },
+          {
+            "reader": "codex",
+            "name": "Reincarnation"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
       "id": "tremor-totem",
       "name": "Tremor Totem",
       "kind": "passive",
@@ -2737,7 +2776,7 @@
     "tabsSeen": ["elemental-combat", "enhancement", "general", "restoration"],
     "tabsMissing": [],
     "states": 16,
-    "entriesRead": 58,
+    "entriesRead": 59,
     "tooltipsRead": 9,
     "tooltipsUnmatched": 0,
     "showAllSpellRanks": "on",
@@ -2762,7 +2801,7 @@
   },
   "complete": false,
   "notes": [
-    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "The spellbook never names the class; it comes from the window table in pipeline/work/spells/windows.json, derived from a 1 fps keyframe sweep of the whole VOD and hand-labelled from the page headings, the tab icons and the General page's racials. Every label is cross-checked against the page headings.",
     "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
     "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
     "Entries with a source note were read from a clipped row or a search page; check the crop before quoting them."

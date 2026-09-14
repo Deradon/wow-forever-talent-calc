@@ -8,24 +8,37 @@ interface SpellCard {
   entries: number
   withText: number
   new: number
+  searchOnly: number
+  tabs: { id: string; name: string; spells: number }[]
+  tabsMissing: string[]
 }
 const index = JSON.parse(
   readFileSync(fileURLToPath(new URL('../src/data/spells-index.json', import.meta.url)), 'utf8'),
 ) as { classes: SpellCard[] }
 const card = (id: string) => index.classes.find((c) => c.id === id)!
 
+/** `feral-combat` -> `Feral Combat`, the way `spellsModel.tabName` spells it. */
+const tabName = (id: string) =>
+  id.replace(/(^|-)([a-z])/g, (_, sep: string, c: string) => `${sep ? ' ' : ''}${c.toUpperCase()}`)
+const joinNames = (names: string[]) =>
+  names.length <= 1 ? (names[0] ?? '') : `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
+
 /**
  * Phase 2d's web half: `#/spells` (what each class's spellbook showed) and
  * `#/spells/<class>` (the entries and the full tooltips), spec in
  * `docs/handover/2026-09-13-spells-data.md` section 5.
  *
- * Mage is the fixture for a class page: four tabs, and more tooltips than rows
- * with text - some spells were hovered twice, which is why the card counts rows
- * with text rather than tooltips. The entry counts come from
- * `src/data/spells-index.json` rather than being typed in, because the spell
- * data is still being corrected and a stale number here fails for a reason that
- * has nothing to do with the sentence under test. Warlock and rogue are the fixtures for a gap - one tab open,
- * three never - and priest for a class the stream never showed at all.
+ * Mage is the fixture for a class page: several tabs, and more tooltips than
+ * rows with text - some spells were hovered twice, which is why the card counts
+ * rows with text rather than tooltips.
+ *
+ * Nothing about the coverage record is typed in here. Counts, tab names and
+ * which tabs are missing all come from `src/data/spells-index.json`, which is
+ * regenerated with the data, so an extraction round that adds rows or opens a
+ * tab that used to be a gap cannot fail a case about the page's wiring. The
+ * exact sentences those facts are phrased into are `spellsModel.test.ts`'s job,
+ * against fixtures; this file only proves the page renders them. Priest is the
+ * fixture for a class the stream never showed at all.
  */
 
 test('the overview cards say what was seen and what was never opened', async ({ page }) => {
@@ -36,8 +49,14 @@ test('the overview cards say what was seen and what was never opened', async ({ 
   await expect(page.getByTestId('spells-card-counts-mage')).toHaveText(
     `${card('mage').entries} entries seen, ${card('mage').withText} with full text`,
   )
-  await expect(page.getByTestId('spells-card-gap-rogue')).toHaveText('Assassination, Combat and Subtlety never opened')
-  await expect(page.getByTestId('spells-card-gap-hunter')).toHaveCount(0)
+  // A card names the pages nobody opened, and carries no gap line when they all
+  // were. Which classes are in which state is read from the index, because the
+  // footage keeps filling gaps in - today there are none left.
+  for (const c of index.classes) {
+    const gap = page.getByTestId(`spells-card-gap-${c.id}`)
+    if (c.tabsMissing.length === 0) await expect(gap).toHaveCount(0)
+    else await expect(gap).toHaveText(`${joinNames(c.tabsMissing.map(tabName))} never opened`)
+  }
   await expect(page.getByTestId('spells-card-new-shaman')).toHaveText(`${card('shaman').new} new`)
 
   // The class the footage never showed is named, not silently missing.
@@ -52,20 +71,28 @@ test('the overview cards say what was seen and what was never opened', async ({ 
 })
 
 test('a class page leads with the coverage record and groups the list by tab', async ({ page }) => {
+  const druidCard = card('druid')
   await page.goto('/#/spells/druid')
-  await expect(page.getByTestId('spells-coverage')).toHaveText(
-    `Spells seen on stream: ${card('druid').entries} entries across Balance, Feral Combat, Restoration; ${card('druid').withText} with full text. The General page was not shown.`,
-  )
+  // The header carries the coverage record: how much was seen, in which tabs,
+  // how much of it has full text, and - when there is one - the gap.
+  const coverage = page.getByTestId('spells-coverage')
+  await expect(coverage).toContainText(`Spells seen on stream: ${druidCard.entries} entries`)
+  for (const tab of druidCard.tabs) await expect(coverage).toContainText(tab.name)
+  await expect(coverage).toContainText(`${druidCard.withText} with full text`)
+  if (druidCard.tabsMissing.length === 0) await expect(coverage).not.toContainText('not shown')
+  else await expect(coverage).toContainText(`${joinNames(druidCard.tabsMissing.map(tabName))}`)
   // One sentence with a number in it, not the word "unreviewed" (E4/E5).
   await expect(page.getByTestId('spells-trust')).toContainText('Read from BlizzCon 2026 footage.')
   await expect(page.getByTestId('spells-trust')).toContainText('has been checked by hand yet')
   await expect(page.getByTestId('spells-trust')).not.toContainText('not yet reviewed')
 
-  // The groups are the spellbook's tabs, in the spellbook's order.
+  // The groups are the spellbook's tabs that hold something, in the spellbook's
+  // order, plus the search-only group when the class has one.
+  const opened = druidCard.tabs.filter((t) => t.spells > 0)
   const groups = page.locator('[data-testid^="spells-group-"]')
-  await expect(groups).toHaveCount(3)
-  await expect(groups.first()).toContainText('Balance')
-  await expect(page.getByTestId('spells-group-restoration')).toContainText('Restoration')
+  await expect(groups).toHaveCount(opened.length + (druidCard.searchOnly > 0 ? 1 : 0))
+  await expect(groups.first()).toContainText(opened[0]!.name)
+  for (const tab of opened) await expect(page.getByTestId(`spells-group-${tab.id}`)).toContainText(tab.name)
 
   // A row: icon crop, name, the rank that was on screen.
   const healingTouch = page.getByTestId('spell-healing-touch')

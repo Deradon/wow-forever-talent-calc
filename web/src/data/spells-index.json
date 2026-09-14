@@ -6,12 +6,17 @@
       "id": "druid",
       "className": "Druid",
       "observedLevel": 38,
-      "entries": 40,
-      "withText": 27,
-      "tooltips": 27,
+      "entries": 48,
+      "withText": 29,
+      "tooltips": 29,
       "new": 1,
       "searchOnly": 0,
       "tabs": [
+        {
+          "id": "general",
+          "name": "General",
+          "spells": 8
+        },
         {
           "id": "balance",
           "name": "Balance",
@@ -28,9 +33,7 @@
           "spells": 9
         }
       ],
-      "tabsMissing": [
-        "general"
-      ],
+      "tabsMissing": [],
       "showAllSpellRanks": "not observed",
       "complete": false
     },
@@ -78,16 +81,16 @@
       "id": "mage",
       "className": "Mage",
       "observedLevel": 38,
-      "entries": 44,
+      "entries": 53,
       "withText": 29,
-      "tooltips": 32,
+      "tooltips": 41,
       "new": 2,
       "searchOnly": 0,
       "tabs": [
         {
           "id": "general",
           "name": "General",
-          "spells": 10
+          "spells": 19
         },
         {
           "id": "arcane",
@@ -106,7 +109,7 @@
         }
       ],
       "tabsMissing": [],
-      "showAllSpellRanks": "not observed",
+      "showAllSpellRanks": "on",
       "complete": false
     },
     {
@@ -148,23 +151,34 @@
       "id": "rogue",
       "className": "Rogue",
       "observedLevel": 38,
-      "entries": 15,
-      "withText": 1,
-      "tooltips": 1,
+      "entries": 42,
+      "withText": 9,
+      "tooltips": 10,
       "new": 0,
       "searchOnly": 0,
       "tabs": [
         {
           "id": "general",
           "name": "General",
-          "spells": 15
+          "spells": 19
+        },
+        {
+          "id": "assassination",
+          "name": "Assassination",
+          "spells": 8
+        },
+        {
+          "id": "combat",
+          "name": "Combat",
+          "spells": 7
+        },
+        {
+          "id": "subtlety",
+          "name": "Subtlety",
+          "spells": 8
         }
       ],
-      "tabsMissing": [
-        "assassination",
-        "combat",
-        "subtlety"
-      ],
+      "tabsMissing": [],
       "showAllSpellRanks": "not observed",
       "complete": false
     },
@@ -172,7 +186,7 @@
       "id": "shaman",
       "className": "Shaman",
       "observedLevel": 38,
-      "entries": 58,
+      "entries": 59,
       "withText": 8,
       "tooltips": 9,
       "new": 5,
@@ -196,7 +210,7 @@
         {
           "id": "restoration",
           "name": "Restoration",
-          "spells": 10
+          "spells": 11
         }
       ],
       "tabsMissing": [],
@@ -207,23 +221,34 @@
       "id": "warlock",
       "className": "Warlock",
       "observedLevel": 38,
-      "entries": 10,
-      "withText": 0,
-      "tooltips": 0,
-      "new": 1,
-      "searchOnly": 1,
+      "entries": 48,
+      "withText": 19,
+      "tooltips": 20,
+      "new": 3,
+      "searchOnly": 19,
       "tabs": [
         {
           "id": "general",
           "name": "General",
-          "spells": 9
+          "spells": 13
+        },
+        {
+          "id": "affliction",
+          "name": "Affliction",
+          "spells": 11
+        },
+        {
+          "id": "demonology",
+          "name": "Demonology",
+          "spells": 1
+        },
+        {
+          "id": "destruction",
+          "name": "Destruction",
+          "spells": 4
         }
       ],
-      "tabsMissing": [
-        "affliction",
-        "demonology",
-        "destruction"
-      ],
+      "tabsMissing": [],
       "showAllSpellRanks": "on",
       "complete": false
     },
@@ -231,16 +256,16 @@
       "id": "warrior",
       "className": "Warrior",
       "observedLevel": 38,
-      "entries": 45,
+      "entries": 49,
       "withText": 1,
       "tooltips": 1,
       "new": 1,
-      "searchOnly": 2,
+      "searchOnly": 1,
       "tabs": [
         {
           "id": "general",
           "name": "General",
-          "spells": 14
+          "spells": 19
         },
         {
           "id": "arms",

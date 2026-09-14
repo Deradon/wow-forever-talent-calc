@@ -4,7 +4,7 @@
   "class": "warrior",
   "className": "Warrior",
   "dataSource": "video",
-  "generatedAt": "2026-09-14T07:30:45Z",
+  "generatedAt": "2026-09-14T10:35:55Z",
   "observedLevel": 38,
   "tabs": [
     {
@@ -927,6 +927,46 @@
       }
     },
     {
+      "id": "attack",
+      "name": "Attack",
+      "kind": "active",
+      "tab": "general",
+      "icon": "crop-attack",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/attack.icon.png",
+      "classic": {
+        "status": "unknown",
+        "classicName": "Attack",
+        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22676.5,
+        "frame": 1360590,
+        "crop": "data/review/spells/warrior/attack.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Attack"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Attack"
+          },
+          {
+            "reader": "codex",
+            "name": "Attack"
+          }
+        ],
+        "reviewed": false,
+        "note": "read from a page whose heading did not name a tab (Exac), so it has no tab"
+      }
+    },
+    {
       "id": "block",
       "name": "Block",
       "kind": "passive",
@@ -960,6 +1000,44 @@
           {
             "reader": "codex",
             "name": "Block"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "cultivation",
+      "name": "Cultivation",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-cultivation",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/cultivation.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/tauren.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22534.25,
+        "frame": 1352055,
+        "crop": "data/review/spells/warrior/cultivation.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Cultivation"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Cultivation"
+          },
+          {
+            "reader": "codex",
+            "name": "Cultivation"
           }
         ],
         "reviewed": false
@@ -1083,6 +1161,44 @@
       }
     },
     {
+      "id": "endurance",
+      "name": "Endurance",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-endurance",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/endurance.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/tauren.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22534.25,
+        "frame": 1352055,
+        "crop": "data/review/spells/warrior/endurance.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Endurance"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Endurance"
+          },
+          {
+            "reader": "codex",
+            "name": "Endurance"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
       "id": "languages",
       "name": "Languages",
       "kind": "passive",
@@ -1155,6 +1271,44 @@
           {
             "reader": "codex",
             "name": "Parry"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "plainsrunning",
+      "name": "Plainsrunning",
+      "kind": "racial-passive",
+      "tab": "general",
+      "icon": "crop-plainsrunning",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/plainsrunning.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/tauren.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22534.25,
+        "frame": 1352055,
+        "crop": "data/review/spells/warrior/plainsrunning.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "Plainsrunning"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "Plainsrunning"
+          },
+          {
+            "reader": "codex",
+            "name": "Plainsrunning"
           }
         ],
         "reviewed": false
@@ -1387,6 +1541,44 @@
           {
             "reader": "codex",
             "name": "Walk on Air"
+          }
+        ],
+        "reviewed": false
+      }
+    },
+    {
+      "id": "war-stomp",
+      "name": "War Stomp",
+      "kind": "racial",
+      "tab": "general",
+      "icon": "crop-war-stomp",
+      "iconSource": "crop",
+      "iconCrop": "data/review/spells/warrior/war-stomp.icon.png",
+      "classic": {
+        "status": "unknown",
+        "note": "a racial ability, not a class spell; whether it is new or changed versus Classic Era is recorded in data/races/tauren.json"
+      },
+      "source": {
+        "kind": "video",
+        "video": "DxtVEhjyROU",
+        "t": 22534.25,
+        "frame": 1352055,
+        "crop": "data/review/spells/warrior/war-stomp.png",
+        "panel": "spell-list",
+        "confidence": 1.0,
+        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
+        "readings": [
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
+            "name": "War Stomp"
+          },
+          {
+            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
+            "name": "War Stomp"
+          },
+          {
+            "reader": "codex",
+            "name": "War Stomp"
           }
         ],
         "reviewed": false
@@ -1794,45 +1986,6 @@
       }
     },
     {
-      "id": "attack",
-      "name": "Attack",
-      "kind": "active",
-      "icon": "crop-attack",
-      "iconSource": "crop",
-      "iconCrop": "data/review/spells/warrior/attack.icon.png",
-      "classic": {
-        "status": "unknown",
-        "classicName": "Attack",
-        "note": "name exists in Classic Era; whether the text or the numbers changed needs the tooltip side by side. Classic side is a baseline spell list written from memory and unverified (data/prior/classic-era/spells-baseline.json)"
-      },
-      "source": {
-        "kind": "video",
-        "video": "DxtVEhjyROU",
-        "t": 22676.5,
-        "frame": 1360590,
-        "crop": "data/review/spells/warrior/attack.png",
-        "panel": "spell-list",
-        "confidence": 1.0,
-        "reader": "Qwen3VL-4B-Instruct-Q4_K_M",
-        "readings": [
-          {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass1",
-            "name": "Attack"
-          },
-          {
-            "reader": "Qwen3VL-4B-Instruct-Q4_K_M/pass2",
-            "name": "Attack"
-          },
-          {
-            "reader": "codex",
-            "name": "Attack"
-          }
-        ],
-        "reviewed": false,
-        "note": "read from a page whose heading did not name a tab (Exac), so it has no tab"
-      }
-    },
-    {
       "id": "thunder-clap",
       "name": "Thunder Clap",
       "kind": "active",
@@ -1880,8 +2033,8 @@
     "pagesSeen": ["Arms", "Exact Matches", "Fury", "General", "Name Matches", "Protection"],
     "tabsSeen": ["arms", "fury", "general", "protection"],
     "tabsMissing": [],
-    "states": 11,
-    "entriesRead": 45,
+    "states": 19,
+    "entriesRead": 49,
     "tooltipsRead": 1,
     "tooltipsUnmatched": 0,
     "showAllSpellRanks": "not observed",
@@ -1891,22 +2044,31 @@
       "05:01:28",
       "05:01:29",
       "05:03:05",
+      "06:15:29",
+      "06:15:34",
+      "06:15:35",
+      "06:15:38",
+      "06:16:22",
+      "06:16:23",
+      "06:16:24",
       "06:17:37",
       "06:17:51",
       "06:17:56",
       "06:18:01",
       "06:18:20",
+      "06:18:45",
+      "06:19:12",
       "06:19:25",
       "06:19:46"
     ]
   },
   "complete": false,
   "notes": [
-    "The spellbook never names the class; it comes from the hand-labelled window table in pipeline/stages/11_spellbook.py and is cross-checked against the page headings.",
+    "The spellbook never names the class; it comes from the window table in pipeline/work/spells/windows.json, derived from a 1 fps keyframe sweep of the whole VOD and hand-labelled from the page headings, the tab icons and the General page's racials. Every label is cross-checked against the page headings.",
     "Lists are bounded by the demo character's level (38) and by which tabs were opened on stream; a tab in coverage.tabsMissing was never shown, so its spells are absent, not missing from the game.",
     "BlizzCon demo build 2026-09-12, read from stream video; nothing here is reviewed.",
     "No page listed one spell at two ranks, so 'Show all spell ranks' was off or the character knew one rank; ranksSeen is the highest rank known, not the full set.",
-    "Page headings the reader could not resolve to a tab, because a hover tooltip stood over them: Exac, Instant. Their entries are in this file without a tab and say so in source.note.",
+    "Page headings the reader could not resolve to a tab, because a hover tooltip stood over them: Exac, Instant, Requires Battle Stance. Their entries are in this file without a tab and say so in source.note.",
     "Entries with a source note were read from a clipped row or a search page; check the crop before quoting them."
   ]
 }
